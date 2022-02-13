@@ -1,0 +1,162 @@
+.filedin > h6{
+    font-size: 13px;
+    font-weight: bold;
+}
+input[type="text"],input[type="email"],input[type="textarea"],select{
+    border: 1px solid #80808033;
+    border-radius: 5px;
+    width: 60%;
+    box-shadow: 0px 1px 18px 1px #0000000d;
+    background: transparent;
+    height:40px;
+}
+input::placeholder{
+    color:#022a3a59;
+    font-family: 'Evest Font';
+    padding-left: 5%;
+}
+
+select{
+    color:gray;
+}
+select option{
+    color:var(--primary-color1) !important;
+    font-weight: 600;
+}
+
+select:after {
+    content:"\f13a ";
+    font-family: FontAwesome;
+    color: #000;
+    position: absolute; 
+    right: 0; 
+    top: 18px;
+    z-index: 1;
+    width: 10%;
+    height: 100%;  
+    pointer-events: none;    
+}
+
+body > main > div > div:nth-child(2) > form > .row+.row{
+    padding-bottom: 3% !important;
+    display: flex;
+    justify-content: flex-start;
+}
+body > main > div > div:nth-child(2) > form > div:nth-child(2) > div:nth-child(1){
+    padding-top: 3%;
+}
+textarea{
+    width:79%;
+    height:240px;
+    border: none;
+    background: transparent;
+    color:var(--primary-color1);
+    border: 1px solid #80808033;
+    border-radius: 5px;
+    box-shadow: 0px 1px 18px 1px #0000000d;
+}
+h5{
+   font-family: 'Evest Font';
+}
+body > main > div > div:nth-child(2) > div:nth-child(7) > button{
+    margin-left: 5%;
+    font-family: 'Evest Font';
+    width: 102px;
+}
+
+body > main > div.container.desktop-img > div:nth-child(2) > form > div:nth-child(5){
+    padding-left: 2%;
+}
+/* 
+.radio{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 30px;
+}
+.radio__input{
+    display:none;
+}
+
+.radio__radio{
+    height:1.25em;
+    width:1.25em;
+    border: 2px solid #022a3a33;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-sizing: border-box;
+    padding: 2px;
+}
+.radio__radio::before{
+    display:none;
+}
+.radio__radio::after{
+    content:"";
+    width:100%;
+    height:100%;
+    display:block;
+    background: var(--primary-color1);
+    border-radius: 50%;
+    transform:scale(0);
+    transition: transform 0.15s;
+}
+.radio__input:checked + .radio__radio::after{
+    transform:scale(1);
+} */
+
+body > main > div > div:nth-child(2) > form > div:nth-child(3) > div:nth-child(1){
+    display:flex;
+    flex-direction: column;
+}
+
+
+@media (max-width: 767px){
+    .filedin > h6{
+        font-size: 10px;
+    }
+    .radio{
+        font-size: 10px;
+        font-family: 'Evest Light';
+        font-weight: bolder;
+    }
+    body > main > div.mobile-img > div:nth-child(2) > form > div:nth-child(6){
+        justify-content:center;
+    }
+    body > main > div.mobile-img > div:nth-child(2) > form > div:nth-child(6) > button{
+        font-size: 12px;
+    }
+}
+
+
+
+/* Responsive for Tablet*/
+@media (max-width: 1023px) and (min-width: 768px){
+    body > main > div > div:nth-child(1){
+        height:320px !important;
+    }
+    body > main > div > div:nth-child(1) > div:nth-child(1) > h1{
+        font-size: 25px !important;
+    }
+    body > main > div > div:nth-child(1) > div:nth-child(1) > h6,body > main > div > div:nth-child(2) > div > h3{
+        font-size: 15px;
+    }
+    body > main > div > div:nth-child(2) > div > h3{
+        margin-left: 2%;
+    }
+    body > main > div > div:nth-child(3) h5{
+        font-size: 15px;
+    }
+}
+
+/* Ipad pro and large tablets*/
+@media (max-width:1365px) and (min-width:1024px){
+}
+
+/*Desktop & laptop Small screens */ 
+@media (max-width:1600px){
+
+}
+/* Desktop & laptop large screen*/
+@media (min-width:1601px) {
+
+}

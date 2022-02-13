@@ -1,0 +1,29 @@
+<div class="container-fluid mobile-img" style="background: url('/images/DEMO BG ENG - 1.png');height:800px;background-size: cover;">
+    <%-page.fields.header.heading %>
+    <%-page.fields.header.subheading %>
+    <button onclick="runPlugin('forexSignup');" class="btn btn-pr" >TRY IT NOW</button></div>
+</div>
+<div class="container mobile-img" style="padding: 8% 9%;">
+    <%- page.fields.mobile_view[0].fields.content  %> 
+</div>
+
+<div class="desktop-img">
+    <div class="row" style="background:url('/images/webp/DEMO Account-01.webp');background-size: cover;">
+        <div class="container " style="height: 530px;color:white;display:flex;align-items: center;">
+            <div class="col-md-6">
+                <img src="/images/webp/DemoA.webp" alt="" width="100%">
+            </div>
+            <div class="col-md-6">
+                <%- page.fields.header.heading %>
+                <%- page.fields.header.subheading %> 
+                <button onclick="runPlugin('forexSignup');" class="btn btn-pr">TRY IT NOW</button></div>
+        </div></div>
+
+
+    <div class="container" style="padding-top: 4%;padding-bottom:6%;">
+        <%- page.fields.sections.section1 %> 
+    </div>
+</div>
+<style>
+    @import "/css/demo.min.css";
+</style>

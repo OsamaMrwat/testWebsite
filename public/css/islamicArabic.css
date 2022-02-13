@@ -1,0 +1,153 @@
+panda-forex-login .forex-button-pandats.simple-button-pandats,
+.mainpandats .forex-button-pandats.simple-button-pandats{
+  font-family: "Arabic Evest",sans-serif !important;
+}
+body{
+  text-align: right;
+  direction: rtl;
+  font-family: "Arabic Evest" ,sans-serif !important;
+}
+
+span{
+font-family: "Evest Font";
+}
+
+.lang-menu .selected-lang:before{
+  background-image: url(https://www.countryflags.io/sa/flat/32.png);
+}
+.btn-pr{
+    background: var(--primary-color3) !important;
+}
+
+.btn-filled{
+    background: var(--primary-color1) !important;
+    color:white !important;
+}
+body > main > div.desktop-img > div:nth-child(1) > div > div:nth-child(2) > ul>li{
+    color: white;
+    font-size: 15px;
+}
+body > main > div.desktop-img > div:nth-child(1) > div > div:nth-child(2) > ul>li>i{
+    color: var(--primary-color3);
+    font-size: 12px;
+}
+body > main > div > div:nth-child(1) > div:nth-child(2) > p:nth-child(3){
+    margin-bottom: 0;
+    margin-top: 5%;
+}
+body > main > div > div:nth-child(2) > .row{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+body > main > div > div:nth-child(2) > div:nth-child(2){
+    flex-direction:row;
+}
+body > main > div > div:nth-child(1) > div:nth-child(2){
+    padding-left: 6%;
+}
+.square{
+    background: #008181;
+    color: var(--primary-color3);
+    font-size: 15px;
+    padding: 13px 42px;
+    line-height: 28px;
+}
+
+.square  >i{
+    font-size: 11px;
+}
+body > main > div > div:nth-child(4) > div:nth-child(3) > button{
+    color: var(--primary-color3) !important;
+    font-weight: lighter !important;
+}
+
+@media (max-width: 767px){
+    body > main > div.mobile-img > div:nth-child(1) > ul>li{
+        color: white;
+        font-size: 13px;
+    }
+    body > main > div.mobile-img > div:nth-child(1) > ul>li>i{
+        color: var(--primary-color3);
+    }
+    .square {
+        background: #008181;
+        color: var(--primary-color3);
+        font-size: 13px;
+        padding: 16px 25px;
+        line-height: 24px;
+    }
+}
+/* Responsive for Tablet*/
+@media (max-width: 1023px) and (min-width: 768px){
+    body > main > div > div:nth-child(1){
+        height:340px !important;
+    }
+    body > main > div:nth-child(1) > div:nth-child(1) >h1{
+        font-size: 20px;
+    }
+    body > main > div:nth-child(1) > div:nth-child(1) >h4{
+        font-size: 14px;
+    }
+    body > main > div:nth-child(1) > div>ul>li,
+    body > main > div > div:nth-child(4) > div > div:nth-child(2) > ul> li{
+        font-size: 11px;
+    }
+    body > main > div > div:nth-child(1) > button{
+        font-size: 12px;
+    }
+    h1 ,.h1,h2{
+        font-size: 20px;
+    }
+    h3,h4,h5{
+        font-size: 15px;
+    }
+    body > main > div > div.container.text-center>p{
+        font-size: 11px;
+    }
+
+    body > main > div > div:nth-child(4) {
+        padding: 61px 16px;
+    }
+    body > main > div > div:nth-child(4) > div > div:nth-child(2) > h6:nth-child(2) > strong{
+        font-size: 12px;
+    }
+    body > main > div > div:nth-child(4) > div > div:nth-child(1) > h1{
+        font-size: 25px;
+        padding-left: 5%;
+    }
+    .col-md-6>.row>h6{
+        font-size: 11px;
+    }
+    body > main > div > div:nth-child(5) > div.row.pt-4 > div:nth-child(2) > div:nth-child(3) > button{
+        font-size: 11px;
+    }
+    body > main > div > div:nth-child(5) > div:nth-child(2) > div:nth-child(1) {
+        text-align: left;
+        padding-left: 5%;
+    }
+    body > main > div > div:nth-child(2) > div:nth-child(2) > p,
+    body > main > div > div:nth-child(3) > div:nth-child(2) > p,
+    .square{
+        font-size: 10px !important;
+    }
+    body > main > div > div:nth-child(3) > div.row.mt-3{
+        margin-top: 0 !important;
+        padding-bottom: 5%;
+    }
+
+}
+
+/* Ipad pro and large tablets*/
+@media (max-width:1365px) and (min-width:1024px){
+}
+
+/*Desktop & laptop Small screens */ 
+@media (max-width:1600px){
+
+}
+/* Desktop & laptop large screen*/
+@media (min-width:1601px) {
+
+}

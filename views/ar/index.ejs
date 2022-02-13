@@ -1,0 +1,137 @@
+ <!--Slider-->
+ <%- page.fields.sections[0].fields.content %>
+ <%- page.fields.mobile_view[0].fields.content %>
+  <!--End of slider-->
+  <!---->
+<div class="row" style="background:url('/images/webp/back1.webp');height: 295px;">
+  <%- page.fields.sections[1].fields.content %>
+</div>
+<div class="row sect2">
+  <%- page.fields.sections[2].fields.content %>
+</div>
+<div class="row section4">
+  <%- page.fields.sections[3].fields.content %>
+</div>  
+<div class="row">
+  <%- page.fields.sections[4].fields.content %>
+</div>
+
+
+<div class="row">
+  <%- page.fields.sections[5].fields.content %>
+</div>
+
+<div class="row" style="background: url('images/webp/MEET THE CEO ARA-02.webp');background-size: cover;">
+  <%- page.fields.sections[6].fields.content %>
+</div>
+
+<div class="row mobileApp" style="background:#64eee02d;box-shadow: -2px -2px 37px #00000017;">
+  <%- page.fields.sections[7].fields.content %>
+</div>
+
+<div class="row" style="background:url('/images/webp/back2.webp');height:295px">
+  <%- page.fields.sections[8].fields.content %>
+</div>
+
+<div class="row" style="background-color: #00384c;">
+  <%- page.fields.sections[9].fields.content %>
+</div>
+
+
+<!--Cookies popup-->
+<div id="popup-modal" class="modal">
+      <div class="modal-content animated bounce">
+      <a class="modal-close">×</a>
+      <div class="modal-text">
+        <p id="WarningArabic" style="display: none;text-align: right;">
+          مرحباً،<br><br>
+
+
+          اذا واجهت مشكلة في منصة التداول بسبب التعديلات والتحديثات يرجى تحميل  منصة الميتاتريدر 5 (MT5) على جهاز الحاسوب الخاص بك من خلال الرابط التالي:<br><br>
+          
+          <a href="https://download.mql5.com/cdn/web/18665/mt5/atriafinancial5setup.exe" style="color: var(--primary-color3);">حمل الميتاتريدر5</a>,<br><br>
+          
+          
+          
+          حتى تتمكن من متابعة صفقاتك والأسواق دون انقطاع<br>
+          
+          
+          نشكر لكم تفهمكم</p>
+        <p id="WarningEnglish" style="display: none">e</p>
+    </div> 
+    <div class="modal-footer">
+      <a class="btn btn-filled" style="background:var(--primary-color1);" id="aCo">أكمل</a> 
+
+      
+    </div>
+      </div>
+</div>
+
+
+<style>
+  @import "/css/arabicHome.min.css";
+</style>
+
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" defer></script>
+<script src="/js/numberRoll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js" integrity="sha512-QMUqEPmhXq1f3DnAVdXvu40C8nbTgxvBGvNruP6RFacy3zWKbNTmx7rdQVVM2gkd2auCWhlPYtcW2tHwzso4SA==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.css" integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw==" crossorigin="anonymous"  defer/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer />
+<script src="/js/scriptsms.min.js" defer></script>
+<script src="/js/pricesWidget.min.js" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+<script>
+  randSlides();
+  var splide=new Splide( '.splide',{
+  heightRatio: 0.3,
+  autoHeight:true,
+  autoplay:true,
+  interval:5000,
+  lazyLoad:true,
+  rewind:true,
+  pauseOnHover: true,
+  pauseOnFocus: true,
+  type:'fade',
+  perPage:1,
+  direction:'rtl'
+} ).mount();
+//change ul li order randomly
+function randSlides() {
+  var ul = document.querySelector('.splide__list');
+var li = document.querySelectorAll('.splide__slide');
+var liArray = Array.prototype.slice.call(li, 0);
+liArray.sort(function() {return 0.5 - Math.random()});
+ul.appendChild(liArray[0]);
+ul.appendChild(liArray[1]);
+ul.appendChild(liArray[2]);
+ul.appendChild(liArray[3]);
+ul.appendChild(liArray[4]);
+ul.appendChild(liArray[5]);
+}
+
+// var modal = document.getElementById('popup-modal');
+// var span = document.getElementsByClassName("modal-close")[0];
+// var closeIt= document.getElementById('aCo');
+
+
+//  window.onload = function() {
+//  setTimeout(function() {
+//    if(window.location.pathname.split("/")[1]=="ar"){
+//     document.getElementById('WarningArabic').style.display = "block";
+//   }else{
+//     document.getElementById('WarningEnglish').style.display = "block";
+//   }
+//  modal.style.display = 'block';
+//  }, 2000);
+//  }
+
+//  span.onclick = function() {
+// modal.style.display = "none";
+// }
+// closeIt.onclick = function() {
+// modal.style.display = "none";
+// }
+</script>

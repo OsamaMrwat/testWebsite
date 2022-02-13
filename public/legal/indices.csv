@@ -1,0 +1,12 @@
+Instument, Leverage Buy/Sell,Commission Per Lot,Long Swaps Base Currency,Short Swaps Base Currency, Contract Size
+CAC40,100,0,-17.6,-17.6,  10 
+DAX40,100,0,-19.7,-19.7,  10 
+DOW30,100,0,-41.2,-41.2,  10 
+IBEX35,100,0,-280.2,-280.2,  10 
+NASDAQ100,100,0,-123.5,-123.5,  100 
+NIKKEI,100,0,-989.6,-989.6,  10 
+SMI,100,0,-38.0,-38.0,  10 
+SPX500,100,0,-46.2,-46.2,  100 
+STOXX50,100,0,-10.9,-10.9,  10 
+FTSE100,100,0,-19.0,-19.0,  100 
+MIB40,100,0,-40.0,-40.0,  10 

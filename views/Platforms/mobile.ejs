@@ -1,0 +1,27 @@
+<style>@import url('/css/mobileTrading.min.css');</style>
+<div class="container mobile-img" style="background-image: url('/images/mobiletradingM.png');height:700px; background-size: cover;">
+    <%- page.fields.mobile_view[0].fields.content %>
+         <button onclick="runPlugin('forexSignup');" class="btn btnprimary" style="margin-left: 11%;" >Register Now</button>
+</div>
+<div class="row" style="background: url('/images/webp/bluBack.webp');background-size: cover;">
+    <div class="container r1 desktop-img" style="height: 500px;display: flex;align-items: center;">
+        <div class="col-lg-6">
+            <img src="/images/webp/phone.webp" alt="phone" width="100%">
+        </div>
+        <div class="col-lg-6">
+            <%- page.fields.header.heading %>
+            <%- page.fields.header.subheading %>
+                 <button onclick="runPlugin('forexSignup');" class="btn btnprimary">Register Now</button>
+        </div>
+    </div>
+</div>
+    <div class="container py-5">
+        <%- page.fields.sections.section1 %> 
+    </div>
+    <div class="row" style="background:url('/images/BG-01.jpg');background-size: cover;height: 500px;">
+        <%- page.fields.sections.section2 %> 
+    </div>
+
+    <div class="container">
+        <%- page.fields.sections.section3 %>
+    </div>

@@ -1,0 +1,82 @@
+ <!-- AddToAny BEGIN -->
+ <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+  <a class="a2a_button_facebook"></a>
+  <a class="a2a_button_twitter"></a>
+  <a class="a2a_button_linkedin"></a>
+  <a class="a2a_button_whatsapp"></a>
+  </div>
+  <script async src="https://static.addtoany.com/menu/page.js"></script>
+  <!-- AddToAny END -->
+<div class="container py-4">
+  <h1 class="text-center pb-3">Gold News</h1>
+  <div class="loader" style="display: flex;justify-content: center;align-items: center;">
+    <div id="loading" style="display:none" class="loadingio-spinner-spinner-r8dyx6mgv4"><div class="ldio-ibuxw2lr7c8">
+      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+      </div></div>
+  </div>
+    <div id="reslut"></div>
+    <div class="pagination">
+      <button >&laquo;</button>
+      <button class="active page" onclick="updatePage(this.innerText,this)">1</button>
+      <button class="page" onclick="updatePage(this.innerText,this)">2</button>
+      <button class="page" onclick="updatePage(this.innerText,this)" >3</button>
+      <button class="page" onclick="updatePage(this.innerText,this)">4</button>
+      <button class="page" onclick="updatePage(this.innerText,this)">5</button>
+      <button class="page" onclick="updatePage(this.innerText,this)">6</button>
+      <button class="page" >&raquo;</button>
+    </div>
+</div>
+<script>
+  function updatePage(number,id){
+    getAll(number);
+    let pages=document.getElementsByClassName("page active");
+    for(let page of pages){
+      page.className="page";
+    }
+    id.className="page active";
+  }
+// showing loading
+function displayLoading() {
+  document.getElementById("loading").style.display = "flex";
+}
+
+// hiding loading 
+function hideLoading() {
+  document.getElementById("loading").style.display="none";
+}
+  
+
+  
+
+function getAll(number){
+  displayLoading();
+        fetch(`https://cms.evest.com/wp-json/wp/v2/posts?_embed&categories=41&per_page=6&page=${number}`).then(res => {
+                return res.json()
+            }).then(data => {
+              hideLoading();
+                const article = data.map(post => {
+                  let date=post.date.split('T')[0];
+                    return `<div class="card">
+                      <div> 
+                             <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">${post.title.rendered}</h5>
+        <div class="card-text description">${post.excerpt.rendered}</div>
+        <button class="btn btn-filled readmore" onclick="window.location.replace('${"/gold-news/"+post.slug}')">Read more</button>
+      </div></div>
+      <div class="card-footer dateCreated">
+        ${date}
+      </div>
+    </div>`
+                }).join("");
+                document.querySelector("#reslut").innerHTML = article;
+                document.documentElement.scrollTop=0;
+      })
+    }
+getAll(1);
+  </script>
+
+
+  <style>
+  @import url('/css/tradingNews.min.css');    
+  </style>

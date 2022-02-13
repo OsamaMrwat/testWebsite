@@ -1,0 +1,8 @@
+File from: [./public/images/blacklogo.jpg]
+
+File to: [./public/images/build/blacklogo.jpg]
+
+Compression algorithm: [mozjpeg]
+
+Description: Error: Command failed: C:\Users\HP\Desktop\website\node_modules\mozjpeg\vendor\cjpeg.exe -quality 60 -outfile ./public/images/build/blacklogo.jpg ./public/images/blacklogo.jpg
+Unrecognized input file format --- perhaps you need -targa

@@ -1,0 +1,57 @@
+<div >
+<div class="row desktop-img" style="background: url('/images/webp/Trading hoursB.webp');background-size: cover; height: 500px;">
+    <div class="container" style="display:flex;align-items: center;">
+      <div class="col-md-6">
+        <div class="row">
+          <%- page.fields.header.heading %>
+          <%- page.fields.header.subheading %>  
+        </div>
+        <div class="row">
+          <button class="btn btnprimary" onclick="runPlugin('forexSignup')"> سجّل الآن</button>
+          <button class="btn btnprimary ml-5"><a href="https://download.mql5.com/cdn/web/18665/mt5/atriafinancial5setup.exe">حمّل ميتاتريدر</a></button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img src="/images/webp/metatrader5 1.webp" alt="metaMHeader" width="100%">
+      </div>
+    </div>
+</div>
+
+<div class="container mobile-img" style="background-image: url('/images/metaMHeader.png');height:700px;background-size: cover;flex-direction: column;">
+  <%- page.fields.mobile_view[1].fields.content %> 
+</div>
+
+<div class="container py-5" style=" display: flex;">
+  <%- page.fields.sections.section1 %> 
+</div>
+
+<div class="row desktop-img" style="background:url('/images/BG-01.jpg');background-size: cover;height: 500px;color:var(--primary-color3);">
+  <%- page.fields.sections.section2 %>
+
+</div>
+
+<div class="container mobile-img" style="background:url('/images/BG-01.jpg');height: 550px;background-size: cover;padding-right: 10%;padding-top: 15%;flex-direction: column;">
+  <%- page.fields.mobile_view[2].fields.content %>
+</div>
+
+<div class="container py-4 justify-center flex-column">
+  <%- page.fields.sections.section3 %>
+</div>
+
+<div class="row desktop-img" style="background: url('/images/webp/MTS-SPA-Artboard 29.webp');background-size: cover; height: 500px;">
+    <%- page.fields.sections.section4 %>
+</div>
+
+<div class="container mobile-img" style="background-image: url('/images/metaM2.png');height: 810px;background-size: cover;flex-direction: column;align-items: center;justify-content: flex-end;">
+  <%- page.fields.mobile_view[3].fields.content %>
+</div>
+
+<div class="container py-5" style="height: 500px;display: flex;">
+  <%- page.fields.mobile_view[0].fields.content %>
+</div>
+
+</div>
+
+
+  <style>@import '/css/metaTraderArabic.min.css';</style>
+</div>

@@ -1,0 +1,32 @@
+<style>@import url('/css/mobileTradingArabic.min.css');</style>
+<div class="container mobile-img" style="background-image: url('/images/mobiletradingM.png');height:700px; background-size: cover;">
+    <%- page.fields.mobile_view[0].fields.content %> 
+</div>
+
+<div>
+        <div class="row desktop-img" style="background:url('/images/webp/bluBack.webp');background-size: cover; height: 500px;">
+            <div class="container r1" style="display:flex;align-items: center;">
+                <div class="col-lg-6">
+                    <%- page.fields.header.heading %> 
+                    <%- page.fields.header.subheading %>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/images/webp/phone.webp" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+
+
+    <div class="container py-5">
+        <%- page.fields.sections.section1 %>
+    </div>
+
+    <div class="row"  style="background:url('/images/BG-01.jpg');background-size: cover;height: 500px;">
+        <%- page.fields.sections.section2 %>
+    </div>
+
+
+    <div class="container py-5">
+        <%- page.fields.sections.section3 %>
+    </div>
+</div>

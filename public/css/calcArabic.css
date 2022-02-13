@@ -1,0 +1,104 @@
+
+body{
+    text-align: right;
+    direction: rtl;
+    font-family: "Arabic Evest" ,sans-serif !important;
+  }
+  .lang-menu .selected-lang:before{
+  background-image: url(https://www.countryflags.io/sa/flat/32.png);
+  }
+  panda-forex-login .forex-button-pandats.simple-button-pandats,
+  .mainpandats .forex-button-pandats.simple-button-pandats{
+  font-family: "Arabic Evest",sans-serif !important;
+  }
+  span{
+    font-family: "Evest Font";
+  }
+/* body > main > div.container > div > div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+body > main > div.container > div:nth-child(2),
+body > main > div.container > div:nth-child(3),
+body > main > div.container > div:nth-child(4){
+    display: flex;
+    height: 600px;
+    padding-top: 6%;
+    padding-bottom: 6%;
+}
+body > main > div > div:nth-child(1) > div:nth-child(1) > h1{
+    padding-top: 20%;
+} */
+iframe{
+    height:100%;
+    width:100%;
+    margin-top: 15%;
+}
+.desktop-img>.container{
+    display: flex;
+    height:500px;
+    justify-content: center;
+}
+.desktop-img>.container>.col-md-6{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+}
+
+@media (max-width: 767px){
+    iframe{
+        height:400px;
+        width:100vw;
+    }
+    body > main > div.mobile-img > div > div:nth-child(2){
+        margin-right: -8%;
+    }
+}
+
+/* Responsive for Tablet*/
+@media (max-width: 1023px) and (min-width: 768px){
+    body > main > div > div:nth-child(1){
+        height:320px !important;
+    }
+    body > main > div > div:nth-child(1) > div:nth-child(1) > h1{
+        font-size: 20px;
+    }
+    body > main > div > div:nth-child(1) > div:nth-child(1)>h5{
+        font-size: 13px;
+    }
+    body > main > div > div:nth-child(1) > div:nth-child(1)>p{
+        font-size: 11px;
+    }
+    h3{
+        font-size: 18px;
+    }
+    p{
+        font-size: 11px;
+    }
+    body > main > div.container > div:nth-child(2), body > main > div.container > div:nth-child(3), body > main > div.container > div:nth-child(4){
+        height:100% !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    iframe{
+        width: 410px;
+        height: 345px;
+    }
+}
+
+/* Ipad pro and large tablets*/
+@media (max-width:1365px) and (min-width:1024px){
+}
+
+/*Desktop & laptop Small screens */ 
+@media (max-width:1600px){
+
+}
+/* Desktop & laptop large screen*/
+@media (min-width:1601px) {
+
+}

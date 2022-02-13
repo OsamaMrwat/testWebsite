@@ -1,0 +1,9 @@
+File from: [./public/images/Website-images-Trading-Fees.png]
+
+File to: [./public/images/build/Website-images-Trading-Fees.png]
+
+Compression algorithm: [pngquant]
+
+Description: Error: Command failed: C:\Users\HP\Desktop\website\node_modules\pngquant-bin\vendor\pngquant.exe --quality=20-50 -o ./public/images/build/Website-images-Trading-Fees.png ./public/images/Website-images-Trading-Fees.png
+  error: Not a PNG file (libpng failed)
+  error: cannot decode image public\images\Website-images-Trading-Fees.png

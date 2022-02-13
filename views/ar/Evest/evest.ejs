@@ -1,0 +1,104 @@
+<div class="container desktop-img">
+    <%- page.fields.sections.section1 %> 
+</div>
+<div class="mobile-img">
+    <%- page.fields.mobile_view[0].fields.content %>
+</div>
+
+<style>
+    panda-forex-login .forex-button-pandats.simple-button-pandats,
+.mainpandats .forex-button-pandats.simple-button-pandats{
+  font-family: "Arabic Evest",sans-serif !important;
+}
+body{
+  text-align: right;
+  direction: rtl;
+  font-family: "Arabic Evest" ,sans-serif !important;
+}
+
+span{
+font-family: "Evest Font";
+}
+    h5{
+        color:var(--primary-color2);
+    }
+    p{
+        font-size: 13px;
+    }
+    .col-md-6{
+        display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    }
+    .leftSide{
+    position: relative;
+    top: 0%;
+    left: -9%;
+    }
+    .rightSide{
+        position: relative;
+    top: 0%;
+    right: 11%;
+    }
+    @media (max-width: 768px) {
+    p{font-size: 12px !important;}
+    }
+
+    @media (max-width:1024px) and (min-width:768px){
+        .leftSide{
+            position: relative;
+    top: 5%;
+    left: -7%;
+        }
+        .rightSide {
+            position: relative;
+    top: 8%;
+    right: 5%;
+}
+        .col-md-6 > h5{
+            font-size: 15px;
+        }
+        .col-md-6 > p{
+            font-size: 11px;
+        }
+        body > main > div.container.desktop-img > div:nth-child(1){
+            height:300px !important;
+        }
+        body > main > div.container.desktop-img > div:nth-child(1) > div.col-md-6.rightSide{
+            top:24% !important;
+        }
+        body > main > div.container.desktop-img > div:nth-child(2){
+            height:225px !important;
+        }
+        body > main > div.container.desktop-img > div:nth-child(3){
+            height:223px !important;
+        }
+        body > main > div.container.desktop-img > div:nth-child(3) > div.col-md-6.rightSide{
+            top:21% !important;
+        }
+        body > main > div.container.desktop-img > div:nth-child(4){
+            height:224px !important;
+        }
+        body > main > div.container.desktop-img > div:nth-child(5),
+        body > main > div.container.desktop-img > div:nth-child(6){
+            height:222px !important;
+        }
+        body > main > div.container.desktop-img > div:nth-child(7),
+        body > main > div.container.desktop-img > div:nth-child(8){
+            height:221px !important;
+        }
+        body > main > div.container.desktop-img > div:nth-child(9),
+        body > main > div.container.desktop-img > div:nth-child(10){
+            height:217px !important;
+        }
+        body > main > div.container.desktop-img > div:nth-child(11),
+        body > main > div.container.desktop-img > div:nth-child(12){
+            height:217px !important;
+        }
+        body > main > div.container.desktop-img > div:nth-child(13){
+            height:234px !important;
+            margin-top: 0 !important;
+        }
+    }
+</style>

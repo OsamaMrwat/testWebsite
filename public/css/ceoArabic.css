@@ -1,0 +1,69 @@
+body{
+  text-align: right;
+  direction: rtl;
+  font-family: "Arabic Evest" ,sans-serif !important;
+}
+.lang-menu .selected-lang:before{
+background-image: url(https://www.countryflags.io/sa/flat/32.png);
+}
+panda-forex-login .forex-button-pandats.simple-button-pandats,
+.mainpandats .forex-button-pandats.simple-button-pandats{
+font-family: "Arabic Evest",sans-serif !important;
+}
+span{
+  font-family: "Evest Font";
+}
+h1{
+  font-size: 60px;
+}
+body > main > div > div:nth-child(2){
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 3%;
+}
+.form-control{
+  border:1px solid rgba(0, 0, 0, 0.185);
+  border-radius:10px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.062);
+}
+form{
+  width:61%;
+  padding-top: 2%;
+}
+body > main > div > div:nth-child(2) > form > div:nth-child(5){
+  justify-content:center;
+  padding: 10%;
+}
+
+
+.col-sm-9{
+  padding-right: 0px;
+}
+
+@media (max-width: 767px){
+      
+}
+
+/* Responsive for Tablet*/
+@media (max-width: 1023px) and (min-width: 768px){
+  body > main > div > div:nth-child(1){
+    height:330px !important;
+  }
+  h1{
+    font-size: 30px;
+  }
+}
+
+/* Ipad pro and large tablets*/
+@media (max-width:1365px) and (min-width:1024px){
+}
+
+/*Desktop & laptop Small screens */ 
+@media (max-width:1600px){
+
+}
+/* Desktop & laptop large screen*/
+@media (min-width:1601px) {
+
+}

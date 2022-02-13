@@ -1,0 +1,66 @@
+<style>
+  @import url("/css/webTrade.min.css");
+</style>
+<div class="container mobile-img" style="background-image: url('/images/WebTraderHeader.png');height:700px;background-size: cover;">
+  <h1 class="text-uppercase" style="
+    padding-top: 122%;
+    color: white;
+    font-size: 25px;
+    padding-left: 10%;
+">Web Trader</h1>
+      <h6 style="
+    color: white;
+    font-size: 13px;
+    padding-left: 10%;
+">
+        Without having to install or download<br>
+        any applications, you can trade directly<br> 
+        from your browser. <br><br>
+        You can trade from anywhere in the<br> world 
+        using any internet-connected <br> device! <br><br>
+      </h6>
+      <button onclick="runPlugin('forexSignup');" class="btn btnprimary" style="
+    font-size: 13px;
+    margin-left: 10%;
+    margin-top: 4%;
+">Register Now</button>
+</div>
+<div class="desktop-img row" style="background:url('/images/webp/Career-En BG-02.webp');background-size: cover; height: 500px;">
+  <div class="container r1" style="display: flex;align-items: center;" >
+    <div class="col-lg-6">
+      <img src="/images/webp/web1.webp" alt="laptop" width="100%">
+    </div>
+    <div class="col-lg-6">
+      <%- page.fields.header.heading %>
+      <%- page.fields.header.subheading %> 
+      <button onclick="runPlugin('forexSignup');"class="btn btnprimary">Register Now</button>
+    </div>
+  </div>
+</div>
+
+<div class="container py-2" style="display: flex; flex-direction: column;align-items: center;justify-content: space-evenly;">
+  <%- page.fields.sections.section1 %> 
+      <button class="btn btn-filled btncol" onclick="runPlugin('forexSignup');">JOIN NOW</button>
+</div>
+
+<div class="row desktop-img"   style="background: url('/images/Section 3-Web Trading.jpg');height: 500px;background-size: cover;">
+  <%- page.fields.sections.section2 %>
+</div>
+
+<div class="container mobile-img" style="background-image: url('/images/webTraderM2.png');height:700px;background-size: cover;display: flex;flex-direction: column;justify-content: space-evenly;align-items: center;">
+  <%- page.fields.mobile_view[0].fields.content %> 
+</div>
+
+<div class="container" style="padding:60px;">
+  <%- page.fields.sections.section3 %>
+</div>
+
+<div class="row desktop-img" style="background-image: url('/images/webp/Trading hoursB.webp');background-size: cover;height: 500px;">
+  <%- page.fields.sections.section4 %>
+</div>
+
+<div class="container mobile-img" style="background-image: url('/images/webTraderM1.png');height:700px;background-size: cover;display: flex;flex-direction: column;justify-content: center;align-items: flex-start;padding-left: 11%;padding-top: 77%;">
+  <%- page.fields.mobile_view[1].fields.content %>
+    <button onclick="runPlugin('forexSignup');" class="btn btnprimary" style="margin-top: 9%;margin-left: 25%;font-size: 13px;" >Register Now</button>
+</div>
+</div>

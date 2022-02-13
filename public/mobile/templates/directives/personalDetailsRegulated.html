@@ -1,0 +1,197 @@
+<div ng-if="!profileRulesHelper.isHidden('tin')">
+    <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border" id="tin"
+         ng-class="{ 'has-error' : (form.tin.$invalid && !form.tin.$pristine) || (form.$submitted && form.tin.$invalid) }">
+        <input type="text"
+               name="tin"
+               ng-model="personalProfileForm.tin"
+               ng-minlength="2"
+               ng-maxlength="50"
+               ng-required="profileRulesHelper.isRequired('tin')"
+               ng-readonly="profileRulesHelper.isReadonly('tin', user.tin)"
+               keyboard-watcher
+               ng-pattern="validator('alphanum')">
+        <span>{{::translation.tin}}</span>
+        <i class="icon ion-ios-close-empty"></i>
+        <i class="icon ion-ios-checkmark-empty"></i>
+    </div>
+    <div class="messages font-12" ng-messages="form.tin.$error" ng-if="form.tin.$dirty || form.$submitted">
+        <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+        <div class="help-block" ng-message="minlength">{{::translation.messages.too_short}}</div>
+        <div class="help-block" ng-message="maxlength">{{::translation.messages.too_long}}</div>
+        <div class="help-block" ng-message="pattern">{{::translation.messages.mixWordsNumbers}}</div>
+    </div>
+</div>
+
+<div ng-If="!profileRulesHelper.isHidden('taxCountry')">
+    <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border"
+         id="taxCountry"
+         ng-class="{ 'has-error' : (form.taxCountry.$invalid && !form.taxCountry.$pristine) || (form.$submitted && form.taxCountry.$invalid) }">
+        <input type="text"
+               class="custom-select custom-input"
+               name="taxCountry"
+               ng-model="personalProfileForm.taxCountry.country"
+               on-tap="openTaxCountryModal()"
+               readonly
+               ng-required="profileRulesHelper.isRequired('taxCountry')">
+        <span>{{::translation.tax_country}}</span>
+        <i class="icon ion-ios-close-empty"></i>
+        <i class="icon ion-ios-checkmark-empty"></i>
+        <country-select ng-if="taxCountryModal"
+                        items="taxCountries"
+                        config="countryModalConfig"
+                        on-submit="setTaxCountry(message)"
+                        on-close="closeModal()">
+        </country-select>
+    </div>
+    <div class="messages font-12" ng-messages="form.taxCountry.$error"
+         ng-if="form.taxCountry.$touched || form.$submitted">
+        <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+    </div>
+</div>
+
+
+<div ng-if="!profileRulesHelper.isHidden('isUSCitizen')">
+    <div class="padding pb-0 pl-0">{{::translation.us_reportable}}</div>
+
+    <div class="form-group item-input mb-3 mt-0 pl-0 pt-0 pb-0 custom-radio" id="usCitizen"
+         ng-class="{ 'has-error' : form.usCitizen.$invalid && !form.usCitizen.$pristine }">
+        <ion-radio ng-value="false"
+                   name="usCitizen"
+                   class="text-transform-capitalize"
+                   ng-model="personalProfileForm.usCitizen"
+                   ng-required="profileRulesHelper.isRequired('isUSCitizen')">
+            {{::translation.no}}
+        </ion-radio>
+        <ion-radio ng-value="true"
+                   name="usCitizen"
+                   class="text-transform-capitalize"
+                   ng-model="personalProfileForm.usCitizen"
+                   ng-required="profileRulesHelper.isRequired('isUSCitizen')"
+                   ng-change="showUsCitizenPopup()">
+            {{::translation.yes}}
+        </ion-radio>
+    </div>
+    <div class="messages font-12" ng-messages="form.usCitizen.$error"
+         ng-if="form.usCitizen.$dirty">
+        <div class="help-block" ng-message="required">Please select at least one option</div>
+    </div>
+</div>
+
+<div ng-if="!profileRulesHelper.isHidden('nationalId')">
+    <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border"
+         id="nationalId"
+         ng-class="{ 'has-error' : (form.nationalId.$invalid && !form.nationalId.$pristine) || (form.$submitted && form.nationalId.$invalid) }">
+        <input type="text"
+               name="nationalId"
+               ng-model="personalProfileForm.nationalId"
+               ng-required="profileRulesHelper.isRequired('nationalId')"
+               ng-readonly="profileRulesHelper.isReadonly('nationalId', user.nationalId)"
+               keyboard-watcher>
+        <span>{{::translation.nationalId}}</span>
+        <i class="icon ion-ios-close-empty"></i>
+        <i class="icon ion-ios-checkmark-empty"></i>
+    </div>
+    <div class="messages font-12" ng-messages="form.nationalId.$error"
+         ng-if="form.nationalId.$touched || form.$submitted">
+        <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+    </div>
+</div>
+
+<div ng-if="!profileRulesHelper.isHidden('companyName')">
+    <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border"
+         id="companyName"
+         ng-class="{ 'has-error' : (form.companyName.$invalid && !form.companyName.$pristine) || (form.$submitted && form.companyName.$invalid) }">
+        <input type="text"
+               name="companyName"
+               ng-model="personalProfileForm.companyName"
+               ng-required="profileRulesHelper.isRequired('companyName')"
+               ng-readonly="profileRulesHelper.isReadonly('companyName', user.companyName)"
+               keyboard-watcher>
+        <span>{{::translation.company_name}}</span>
+        <i class="icon ion-ios-close-empty"></i>
+        <i class="icon ion-ios-checkmark-empty"></i>
+    </div>
+    <div class="messages font-12" ng-messages="form.companyName.$error"
+         ng-if="form.companyName.$touched || form.$submitted">
+        <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+    </div>
+</div>
+
+
+<div ng-if="!profileRulesHelper.isHidden('isMarried')">
+    <div class="padding pb-0 pl-0">{{::translation.isMarried}}</div>
+
+
+    <div class="form-group item-input mb-3 mt-0 pl-0 pt-0 pb-0 custom-radio"
+         id="isMarried"
+         ng-class="{ 'has-error' : form.isMarried.$invalid && !form.isMarried.$pristine }">
+        <ion-radio ng-value="false"
+                   name="isMarried"
+                   class="text-transform-capitalize"
+                   ng-model="personalProfileForm.isMarried"
+                   ng-required="profileRulesHelper.isRequired('isMarried')">
+            {{::translation.no}}
+        </ion-radio>
+        <ion-radio ng-value="true"
+                   name="isMarried"
+                   class="text-transform-capitalize"
+                   ng-model="personalProfileForm.isMarried"
+                   ng-required="profileRulesHelper.isRequired('isMarried')">
+            {{::translation.yes}}
+        </ion-radio>
+    </div>
+    <div class="messages font-12" ng-messages="form.isMarried.$error"
+         ng-if="form.isMarried.$dirty">
+        <div class="help-block" ng-message="required">Please select at least one option</div>
+    </div>
+
+
+    <div class="padding pb-0 pl-0" ng-if="personalProfileForm.isMarried">
+        {{::translation.isSpouse}}
+    </div>
+
+    <div class="form-group item-input mb-3 mt-0 pl-0 pt-0 pb-0 custom-radio" id="isSpouse"
+         ng-if="personalProfileForm.isMarried"
+         ng-class="{ 'has-error' : form.isSpouse.$invalid && !form.isSpouse.$pristine }">
+        <ion-radio ng-value="false"
+                   name="isSpouse"
+                   class="text-transform-capitalize"
+                   ng-model="personalProfileForm.isSpouse"
+                   ng-required="true">
+            {{::translation.no}}
+        </ion-radio>
+        <ion-radio ng-value="true"
+                   name="isSpouse"
+                   class="text-transform-capitalize"
+                   ng-model="personalProfileForm.isSpouse"
+                   ng-required="true">
+            {{::translation.yes}}
+        </ion-radio>
+    </div>
+    <div class="messages font-12" ng-messages="form.isSpouse.$error"
+         ng-if="personalProfileForm.isMarried && form.isSpouse.$dirty">
+        <div class="help-block" ng-message="required">Please select at least one option</div>
+    </div>
+</div>
+
+<div ng-if="!profileRulesHelper.isHidden('birthPlace')">
+    <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border"
+         id="birthPlace"
+         ng-class="{ 'has-error' : (form.birthPlace.$invalid && !form.birthPlace.$pristine) || (form.$submitted && form.birthPlace.$invalid) }">
+        <input type="text"
+               name="birthPlace"
+               ng-model="personalProfileForm.birthPlace"
+               ng-required="profileRulesHelper.isRequired('birthPlace')"
+               ng-readonly="profileRulesHelper.isReadonly('birthPlace', user.birthPlace)"
+               keyboard-watcher>
+        <span>{{::translation.birthPlace}}</span>
+        <i class="icon ion-ios-close-empty"></i>
+        <i class="icon ion-ios-checkmark-empty"></i>
+    </div>
+    <div class="messages font-12" ng-messages="form.birthPlace.$error"
+         ng-if="form.birthPlace.$touched || form.$submitted">
+        <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+    </div>
+</div>
+
+<custom-fields ng-if="personalProfileForm.country && personalProfileForm.country.customFields"></custom-fields>

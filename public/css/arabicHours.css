@@ -1,0 +1,146 @@
+panda-forex-login .forex-button-pandats.simple-button-pandats,
+.mainpandats .forex-button-pandats.simple-button-pandats {
+  font-family: "Arabic Evest", sans-serif !important;
+}
+
+.lang-menu .selected-lang:before {
+  background-image: url(https://www.countryflags.io/sa/flat/32.png);
+}
+body {
+  text-align: right;
+  direction: rtl;
+  font-family: "Arabic Evest", sans-serif !important;
+}
+
+span {
+  font-family: "Evest Font";
+}
+main .container {
+  height: 100%;
+}
+.brandFooter {
+  padding: 0px;
+}
+body > main > div > div:nth-child(6) > ul li {
+  color: #666666 !important;
+  font-size: 14px !important;
+}
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+.tbl-header {
+  background-color: var(--primary-color1);
+}
+.tbl-content {
+  overflow-x: auto;
+  margin-top: 0px;
+}
+th {
+  padding: 0px 15px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+}
+td {
+  text-align: right;
+  vertical-align: middle;
+  font-size: 15px;
+  color: var(--primray-color1);
+  padding-left: 1%;
+}
+#titleTabel {
+  text-align: center;
+  font-size: 20px;
+}
+.line1 {
+  background: #022a3a26;
+}
+.mobile-img{
+  display: none !important;
+}
+
+@media (max-width: 767px){
+  .mobile-img{
+    display: flex !important;
+  }
+  .desktop-img{
+    display:none !important;
+  }
+  body > main > div:nth-child(3) > div.container.p-3 > h4{
+    padding-top: 2%!important;
+    padding-bottom: 10% !important;
+  }
+  td{
+    font-size: 10px;
+  }
+  #titleTabel{
+    font-size: 15px !important;
+  }
+  p{
+    font-size: 12px;
+  }
+  body > main > div.container.my-5.mobile-img > div:nth-child(2)>.row{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  #brandslogos{
+    display: none;
+  }
+}
+
+/* Responsive for Tablet*/
+@media (max-width: 1023px) and (min-width: 768px){
+
+  body > main > div > div.container.headerImg{
+    height: 320px !important;
+  }
+  body > main > div > div.container.headerImg > div.col-md-6.float-left > h1{
+    font-size: 2rem;
+  }
+  body > main > div > div.container.headerImg > div.col-md-6.float-left > h5{
+    font-size:1rem;
+    padding:0 !important;
+  }
+  body > main > div > div.container.headerImg > div.col-md-6.float-left > p{
+    font-size:10px !important;
+  }
+  body > main > div > div.container.p-3 > div.row.my-5 > p{
+    font-size:12px;
+  }
+  p{
+    font-size:12px;
+  }
+  body > main > div > div.container.my-5 > div:nth-child(2) > div > img{
+    width: 23% !important;
+  }
+  body > main > div > div.container.my-5 > div:nth-child(2) > div > p{
+    line-height: 12px;
+  }
+  body > main > div > div.container.mt-5 > div:nth-child(1){
+    padding-right: 3% !important;
+  }
+  body > main > div > div.container.my-5 > div:nth-child(1) > p{
+    margin-right: -6%;
+  }
+  body > main > div > div.container.mt-5 > div:nth-child(1) > h3{
+    font-size: 1.4rem;
+  }
+}
+
+/* Ipad pro and large tablets*/
+@media (max-width:1365px) and (min-width:1024px){
+}
+
+/*Desktop & laptop Small screens */ 
+@media (max-width:1600px){
+
+}
+/* Desktop & laptop large screen*/
+@media (min-width:1601px) {
+
+}

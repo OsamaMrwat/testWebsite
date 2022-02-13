@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="container py-4" id="reslut">
+  </div>
+
+</div>
+<div style="display: none;"  id="pid"><%=slug %></div>
+
+<script>
+      function getAll(){
+          let slug=document.getElementById("pid").innerText;
+        fetch(`https://cms.evest.com/wp-json/wp/v2/posts?_embed&slug=${slug}`).then(res => {
+                return res.json()
+            }).then(data => {
+              addMeta('og:title',data[0].yoast_head_json.og_title);
+              addMeta('og:description',data[0].yoast_head_json.og_description);
+              addMeta('og:type',data[0].yoast_head_json.og_type);
+                const date =data[0].date.replace('T',' ');
+                  const tags=data[0].mtags?data[0].mtags.map(tag=>{
+                  return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">#${tag.name}</a>`
+                }).join(' '):" ";
+
+
+
+                const article = `<article>
+    <!-- Post header-->
+    <header class="mb-4">
+        <!-- Post title-->
+        <h1 class="fw-bolder mb-1">${data[0].title.rendered}</h1>
+        <!-- Post meta content-->
+        <div class="text-muted fst-italic mb-2 date">${date}</div>
+        <!-- Post categories-->
+        ${tags}
+    </header>
+    <!-- Preview image figure-->
+    <figure class="mb-4"><img class="img-fluid rounded" src="${data[0].featured_image_url}" alt="...">
+      <!-- AddToAny BEGIN -->
+ <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+  <a class="a2a_button_facebook"></a>
+  <a class="a2a_button_twitter"></a>
+  <a class="a2a_button_linkedin"></a>
+  <a class="a2a_button_whatsapp"></a>
+  </div>
+  <!-- AddToAny END --></figure>
+
+    <!-- Post content-->
+    <section>
+        ${data[0].content.rendered}
+    </section>
+</article>
+<div name="data" style="display: none"> aa</div>
+`;document.querySelector("#reslut").innerHTML = article;})}
+      getAll();
+      function addMeta(property,content){
+        var meta = document.createElement('meta');
+              meta.setAttribute('property', property);
+              meta.content = content;
+              document.head.appendChild(meta);
+      }
+</script>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<style>
+   @import url('/css/article.min.css');
+</style>

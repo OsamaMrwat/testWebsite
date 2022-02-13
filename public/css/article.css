@@ -1,0 +1,91 @@
+.card{
+    flex-direction: row;
+    margin-bottom: 5%;
+  }
+  #reslut > .card > img{
+    width: 40%;
+  }
+  #reslut > .card > p{
+    font-size: 13px;
+  }
+
+  #reslut{
+    background: #fff;
+    box-shadow: 0 23px 78px #00000045;
+  }
+  #reslut > article > header > a{
+    background-color: var(--primary-color1) !important;
+    color: var(--primary-color3) !important;
+  }
+  #reslut > article > header > a:hover{
+    color: var(--primary-color1) !important;
+    background-color: var(--primary-color3) !important;
+  }
+  
+  #reslut > article > section > h1{
+      display:none;
+  }
+  .aligncenter{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .date{
+      font-family: "Evest Font";
+  }
+
+  #reslut > article > figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #reslut > article > section > p:nth-child(30){
+      display: flex;
+      justify-content: center;
+  }
+  #reslut > article > div
+  {
+      float: right;
+  }
+  #reslut > article > figure > div{
+      padding-top: 3%;
+  }
+
+  @media (max-width: 767px){
+    #reslut > article > header > h1{
+      font-size: 20px;
+    }
+    #reslut > article > header > div{
+      font-size: 9px;
+    }
+    #reslut > article > section {
+      font-size: 10px;
+    }
+    #reslut > article > section b,
+    #reslut > article > section strong{
+      font-size: 18px;
+    }
+    #reslut > article > section img{
+      width:100%;
+      height:50%;
+    }
+  }
+
+  /* Responsive for Tablet*/
+@media (max-width: 1023px) and (min-width: 768px){
+
+}
+
+/* Ipad pro and large tablets*/
+@media (max-width:1365px) and (min-width:1024px){
+  }
+  
+  /*Desktop & laptop Small screens */ 
+  @media (max-width:1600px){
+  
+  }
+  /* Desktop & laptop large screen*/
+  @media (min-width:1601px) {
+  
+  }

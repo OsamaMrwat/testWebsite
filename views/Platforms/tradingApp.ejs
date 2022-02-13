@@ -1,0 +1,60 @@
+<div class="mobile-img">
+    <div class="container" style="background: url('/images/TRADING APP Mobile_header.png');height:800px;background-size: cover;color: white;padding-top: 120%;">
+      <%- page.fields.mobile_view[0].fields.content %>
+        <div class="container">
+            <button class="btn btn-fill" onclick="window.location.replace('/mobile/#/signup')" style="font-size: 10px !important;line-height: 8px;">JOIN NOW</button>
+            <button class="btn btn-outer" style="font-size: 9px;color: white !important;"><a href="https://evest.onelink.me/o6qP/63b4f023" style="color: white;">DOWNLOAD THE APP</a></button>
+        </div>
+        <img src="/images/TRADING APP-icons.png" alt="iconsDownload" style="width: 75%;margin-left: -2%;">
+    </div>
+    <div class="container text-center my-3">
+        <%- page.fields.mobile_view[1].fields.content %> 
+    </div>
+    <div class="container" style="background:url('/images/TRADING APP Mobile_BG.png');height: 460px;background-size: cover;color:var(--primary-color3);display: flex;align-items: flex-end;padding-left: 13%;padding-bottom: 8%;">
+        <%- page.fields.mobile_view[2].fields.content %>
+    </div>
+    <div class="container" style="display: flex;flex-direction: column;">
+        <%- page.fields.mobile_view[3].fields.content %>
+    </div>
+    <div class="container secWhite" style="display: flex;flex-direction: column-reverse;justify-content: space-around;background:url('/images/TRADING APP Mobile_BG2.png');background-size: cover;color:var(--primary-color3);">
+        <%- page.fields.mobile_view[4].fields.content %>
+    </div>
+    <div class="container" style="display: flex;flex-direction: column;">
+        <%- page.fields.mobile_view[5].fields.content %>
+    </div>
+    <div class="container secWhite" style="display: flex;flex-direction: column;background:url('/images/TRADING APP Mobile_BG2.png');background-size: cover;color:var(--primary-color3);justify-content: space-between;" s="">
+        <%- page.fields.mobile_view[6].fields.content %>
+    </div>
+</div>
+
+<div class="desktop-img">
+    <div class="row" style="background: url('/images/webp/MTS-SPA-Artboard 29.webp');background-size: cover;height: 500px;">
+        <div class="container" style="display:flex;align-items:center;color:white">
+            <div class="col-md-6">
+                <img src="/images/webp/phone 2.webp" alt="appPhones" width="100%">
+            </div>
+            <div class="col-md-6">
+                <%- page.fields.header.heading %>
+                <%- page.fields.header.subheading %>
+                <div class="">
+                    <button class="btn btn-fill" onclick="runPlugin('forexSignup');">JOIN NOW</button>
+                    <button class="btn btn-outer"><a href="https://evest.onelink.me/o6qP/63b4f023">DOWNLOAD THE APP</a></button>
+                </div>
+                <img src="/images/TRADING APP-icons.png" alt="iconsDownload" style="width: 75%;margin-left: -2%;">
+            </div>
+            </div>
+    </div>
+    <div class="container text-left" style="display: flex;height: 300px;align-items: center;justify-content: space-around;">
+        <%- page.fields.sections.section1 %>
+    </div>
+    <div class="row" style="background:url('/images/webp/0 commission-07.webp');background-size: cover;height: 100%;">
+        <%- page.fields.sections.section2 %>
+    </div>
+
+    <div class="row" style="background: url('/images/webp/greenBack.webp');background-size: cover;height: 500px;">
+        <%- page.fields.sections.section3 %>
+    </div>
+</div>
+<style>
+    @import "/css/app.min.css";
+</style>

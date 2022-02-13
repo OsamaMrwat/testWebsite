@@ -1,0 +1,64 @@
+<div class="mobile-img">
+    <div class="container" style="background: url('/images/Islamic Accounts Mobile-02.png');height: 800px;background-size: cover;color:white;display:flex;flex-direction: column;align-items: baseline;justify-content: center;">
+        <%- page.fields.header.heading %>
+        <%- page.fields.header.subheading %> 
+        <button onclick="runPlugin('forexSignup');" class="btn btn-pr" >REGISTER NOW</button>
+        <p style="font-size: 9px;padding-top: 6%;">Any position that remains open for more than 3 days,<br>
+            will carry a charge according to the following table per 1 Lot – <br>
+            <a href="/legal/Sharia.pdf" target="_blank" style="color:var(--primary-color3);">View PDF file</a></p>
+</div>
+<div class="container" style="display: flex;align-items: flex-start;flex-direction: column;padding: 38px 13px;">
+<%- page.fields.mobile_view[0].fields.content %> 
+    </div>
+
+    <div class="container" style="background: url('/images/Islamic Accounts-07.jpg');height: 530px;background-size: cover;color:white;padding-top: 6%;padding-left: 8%;">
+        <%- page.fields.mobile_view[1].fields.content %>
+    </div>
+
+
+        <div class="container">
+            <%- page.fields.mobile_view[2].fields.content %>
+            <div class="row mt-4" style="justify-content: center"><button onclick="runPlugin('forexSignup');" class="btn btn-filled"> TRADE NOW </button></div>           
+        </div>
+</div>
+
+
+<div class="desktop-img">
+
+
+    <div class="row" style="background-image: url('/images/webp/Islamic Accounts-01.webp');background-size: cover;">
+        <div class="container" style="color:white;display:flex;align-items:center;">
+        <div class="col-md-6">
+            <img src="/images/webp/GoldDinar.webp" alt="Dinar" width="100%">
+        </div>
+        <div class="col-md-6">
+            <%-page.fields.header.heading  %>
+            <%-page.fields.header.subheading  %> 
+            <button onclick="runPlugin('forexSignup');" class="btn btn-pr" >REGISTER NOW</button>
+            <p style="font-size: 10px;padding-top: 6%;">Any position that remains open for more than 3 days,<br>
+               will carry a charge according to the following table per 1 Lot – 
+               <a href="/legal/Sharia.pdf" target="_blank" style="color:var(--primary-color3);">View PDF file</a></p>
+        </div>
+    </div>
+    </div>
+
+
+    <div class="container" style="display: flex;align-items: baseline;justify-content: center;height: 500px;padding-top: 5%;">
+        <%- page.fields.sections.section1 %> 
+    </div>
+
+    <div class="row"  style="background: url('/images/webp/greenBack.webp');background-size: cover;padding-top: 3%;padding-bottom: 3%;">
+        <div class="container">
+            <%- page.fields.sections.section2 %>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <%- page.fields.sections.section3 %> 
+        <div class="row my-5" style="justify-content: center"><button onclick="runPlugin('forexSignup');" class="btn btn-filled"> TRADE NOW </button></div>           
+    </div>
+</div>
+<style>
+    @import "/css/islamic.min.css";
+</style>

@@ -1,0 +1,49 @@
+<style>
+  @import "/css/arabicHours.min.css";
+</style>
+<div class="container mobile-img" style="background: url('/images/HeaderHours.png');height:700px; background-size: cover;display:flex;flex-direction: column;">
+  <h1 class="text-uppercase text-white" style="font-size: 30px;padding-top: 119%;padding-bottom: 2%;padding-right: 7%;">ساعات التداول <br> مع إيڤست</h1>
+  <h5 class="text-white" style="
+    font-size: 15px;
+    padding-bottom: 1% !important;
+    padding-right: 7%;
+">توقيت الصفقات أمر أساسي <span>100</span>% <br> وضروري للنجاح</h5>
+  <p style="color: white;font-size: 11px;line-height: 1.5;padding-right: 7%;">
+    للأصول المالية أوقات مختلفة يمكنك فيها التعامل معها <br>
+    اعتماداً على فئة الأصل والسوق المُدرج فيه. من ناحية أخرى، <br>
+    تتمتع العقود مقابل الفروقات بتواريخ استحقاق تنتهى فيها <br>
+     صلاحية هذه العقود.
+</p>
+</div>
+
+<div class="headerImg desktop-img" style="background: url('/images/webp/Trading hoursB.webp');background-size: cover;height: 500px;color:white;display: flex;align-items: center;">
+<div class="col-md-6" style="    display: flex;
+justify-content: end;">
+  <img src="/images/webp/clock.webp" alt="clock" width="60%">
+</div>
+<div class="col-md-6 float-left text-white">
+  <%- page.fields.header.heading %>
+  <%- page.fields.header.subheading %>            
+  
+</div>
+</div>
+
+
+<div class="container">
+  <%- page.fields.sections.section1 %> 
+</div>
+
+<div class="container my-5">
+  <%- page.fields.sections.section2 %>
+</div>
+
+<div class="row" style="background-color:#42135b;">
+  <%- page.fields.sections.section3 %>
+</div>
+
+
+<div class="container my-5 mobile-img" style="background-color:#42135b;color: white;display: flex;margin-bottom: 0px !important; flex-direction: column;">
+  <%- page.fields.mobile_view[0].fields.content %> 
+</div>
+
+

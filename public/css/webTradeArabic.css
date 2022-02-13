@@ -1,0 +1,158 @@
+panda-forex-login .forex-button-pandats.simple-button-pandats,
+.mainpandats .forex-button-pandats.simple-button-pandats{
+  font-family: "Arabic Evest",sans-serif !important;
+}
+body{
+  text-align: right;
+  direction: rtl;
+  font-family: "Arabic Evest" ,sans-serif !important;
+}
+
+span{
+font-family: "Evest Font";
+}
+
+.lang-menu .selected-lang:before{
+  background-image: url(https://www.countryflags.io/sa/flat/32.png);
+}
+main .container{
+  height: 500px;
+}
+.brandFooter{
+  padding:0px;
+}
+.r1 h1{
+  color: white;
+  padding-top: 23%;
+}
+.r1 h6{
+  padding-top: 5%;
+  color: white;
+}
+.btnprimary{
+  background: var(--primary-color3);
+  border: none;
+  margin-top: 12%;
+  font-size: 20px;
+  font-weight: normal !important;
+  width: 150px;
+}
+.btnprimary:hover{
+  color:var(--primary-color3);
+  background: var(--primary-color1);
+}
+
+.btncol{
+  color: var(--primary-color3) !important;
+  position: relative;
+  top: 52%;
+  right: 38%;
+  width: 150px;
+  font-size: 20px;
+}
+.mobile-img{
+  display: none;
+}
+@media (max-width: 767px){
+  .mobile-img{
+    display: flex;
+  }
+  main .container{
+    height:auto;
+  }
+  body > main > div:nth-child(7){
+    padding-right: 20px !important;
+    padding-left: 0 !important;
+  }
+      
+      body > main > div.container.py-5{
+        flex-direction: column;
+      }
+      body > main > div.container.py-5 > div:nth-child(1) > div:nth-child(1) > h1{
+        font-size: 25px;
+      }
+      body > main > div.container.py-5 > div:nth-child(1) > div:nth-child(2) > p{
+        font-size: 13px;
+      }
+      body > main > div.container.py-5 > div:nth-child(2) > button{
+        right: 29%;
+        width: 115px;
+        font-size: 14px;
+        margin-top: 7%;
+      }
+      body > main > div:nth-child(7) > div > div:nth-child(1) > h1{
+        font-size: 25px;
+      }
+      body > main > div:nth-child(6) > div > div:nth-child(2) > p{
+        font-size: 14px !important;
+      }
+      body > main > div:nth-child(6){
+        padding:25px !important;
+      }
+}
+
+/* Responsive for Tablet*/
+@media (max-width: 1023px) and (min-width: 768px){
+  main .container{
+    height: auto;
+  }
+  body > main > div:nth-child(2) > div{
+    height: 300px !important;
+    
+  }
+  body > main > div:nth-child(2) > div > div:nth-child(1) > h1{
+    font-size: 1.5rem !important;
+    padding-top: 20% !important;
+  }
+  body > main > div:nth-child(2) > div > div:nth-child(1) > h6{
+    font-size: 0.75rem !important;
+  }
+  .btnprimary{
+    font-size: 15px;
+    margin-top: 7%;
+  }
+  h2,h1{
+    font-size: 1.5rem;
+  }
+  p{
+    font-size: 12px !important;
+    line-height: 13px;
+  }
+  body > main > div:nth-child(4) > div,body > main > div:nth-child(6) > div{
+    height: 300px !important;
+  }
+  body > main > div:nth-child(4) > div > div.row.py-5{
+    padding-top: 0 !important;
+  }
+  body > main > div:nth-child(3) > div.row.py-5 > h2{
+    padding-top: 0 !important;
+  }
+  body > main > div:nth-child(6) > div > div > div > h1{
+    padding-top:0 !important;
+  }
+  .btncol{
+    font-size: 16px;
+  }
+  body > main > div:nth-child(3) > div:nth-child(2){
+    margin-top: -5%;
+  }
+  body > main > div:nth-child(5) > div > button{
+    margin-top: 1% !important;
+  }
+  body > main > div:nth-child(5) > div > div > p{
+    padding-top: 2% !important;
+  }
+}
+
+/* Ipad pro and large tablets*/
+@media (max-width:1365px) and (min-width:1024px){
+}
+
+/*Desktop & laptop Small screens */ 
+@media (max-width:1600px){
+
+}
+/* Desktop & laptop large screen*/
+@media (min-width:1601px) {
+
+}

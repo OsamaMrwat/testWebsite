@@ -1,0 +1,32 @@
+<style>
+  @import "/css/hours.min.css";
+</style>
+<div class="container mobile-img" style="background: url('/images/HeaderHours.png');height:700px; background-size: cover;display:flex;flex-direction: column;">
+  <%- page.fields.header.heading %> 
+  <%- page.fields.header.subheading %>
+</div>
+<div class="headerImg desktop-img" style="background: url('/images/webp/Trading hoursB.webp');background-size: cover;height: 500px;color:white;display: flex;align-items: center;">
+<div class="col-md-6">
+  <img src="/images/webp/clock.webp" alt="clock" width="100%">
+</div>
+<div class="col-md-6">            
+  <%- page.fields.header.heading %>
+  <%- page.fields.header.subheading %> 
+</div>
+
+</div>
+
+<div class="container">
+  <%- page.fields.sections.section1  %> 
+</div>
+
+<div class="row" style="background-color:#42135b;">
+  <%- page.fields.sections.section2  %>
+</div>
+
+<div class="container my-5 mobile-img" style="background-color:#42135b;color: white;display: flex;margin-bottom: 0px !important; flex-direction: column;">
+  <%- page.fields.mobile_view[0].fields.content %> 
+</div>
+
+
+

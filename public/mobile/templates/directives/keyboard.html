@@ -1,0 +1,54 @@
+<ion-modal-view class="modal-page keyboard-container">
+    <ion-header-bar class="bar-stable bar bar-header" align-title="left">
+        <div class="buttons buttons-left" style=""><span class="left-buttons"></span></div>
+        <div class="title title-left header-item" style="left: 20px; right: 59px;"><span class="nav-bar-title">
+        <span class="nav-title white font-14 roboto-light">{{dataModel.viewName}}</span></span></div>
+        <div class="buttons buttons-right">
+            <span class="right-buttons">
+                <div class="button-bar">
+                    <button class="display-flex pl-15 padding-right fake-button disable-user-behavior"
+                            on-tap="onClose()">
+                        <i class="icon ion-close-round align-self font-15"></i>
+                    </button>
+                </div>
+            </span>
+        </div>
+    </ion-header-bar>
+    <ion-content scroll="false" overflow-scroll="false">
+        <div class="row">
+            <div class="col">
+                <div class="text-center view-input">
+                    {{dataModel.model.value}}
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar align-title="left" class="invest-buttons">
+        <div class="grid-container">
+            <div class="grid-col">
+                <div class="button" on-tap="onClick(1)">1</div>
+                <div class="button" on-tap="onClick(4)">4</div>
+                <div class="button" on-tap="onClick(7)">7</div>
+                <div class="button" on-tap="onClick('.')">.</div>
+            </div>
+            <div class="grid-col">
+                <div class="button" on-tap="onClick(2)">2</div>
+                <div class="button" on-tap="onClick(5)">5</div>
+                <div class="button" on-tap="onClick(8)">8</div>
+                <div class="button" on-tap="onClick(0)">0</div>
+            </div>
+            <div class="grid-col">
+                <div class="button" on-tap="onClick(3)">3</div>
+                <div class="button" on-tap="onClick(6)">6</div>
+                <div class="button" on-tap="onClick(9)">9</div>
+                <div class="button" on-tap="onCancel()">Clear</div>
+            </div>
+            <div class="grid-col">
+                <div class="button" on-tap="onDelete()">
+                    <span class="ion-backspace-outline"></span>
+                </div>
+                <div ng-disabled="isDone" class="button" on-tap="onDone()">Done</div>
+            </div>
+        </div>
+    </ion-footer-bar>
+</ion-modal-view>

@@ -1,0 +1,149 @@
+body > main > div.desktop-img > div.row > div > div:nth-child(2) > ul>li{
+    color:white;
+    font-size: 15px;
+}
+body > main > div.desktop-img > div.row > div > div:nth-child(2) > ul>li>i
+{
+    color:var(--primary-color3);
+    font-size: 10px;
+}
+body > main > div.desktop-img  > div:nth-child(1) > div:nth-child(2){
+    padding-left: 12%;
+}
+.btn-fill{
+    background: white;
+    color:var(--primary-color1);
+    border: none;
+    font-size: 13px !important;
+    padding: 10px 20px;
+    font-weight: 700;
+}
+.btn-fill:hover{
+    color: white;
+    background:var(--primary-color1);
+    font-size: 13px !important;
+    padding: 10px 20px;
+}
+
+
+.bttnnn{
+    background:var(--primary-color1);
+    color:white;
+    margin-bottom: 2%;
+}
+body > main > div.container.desktop-img > div:nth-child(7) > div:nth-child(2) > button > a:hover{
+    color: var(--primary-color3);
+}
+.btn-outer{
+    border-color:white !important ;
+    color: var(--primary-color1);
+}
+.btn-outer > a{
+    color:var(--primary-color1);
+    font-weight: 700;
+}
+.btn-outer:hover{
+    color:white !important;
+    border-color: var(--primary-color1) !important;
+}
+body > main > div.container.desktop-img > div:nth-child(1) > div:nth-child(2) > div{
+    padding-left: 0;
+}
+
+.par{
+    font-size: 15px;
+    color: #fff;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+body > main > div.desktop-img > div:nth-child(4) > div > p{
+    color:var(--primary-color1) !important;
+    font-weight: 700;
+}
+
+body > main > div.container.desktop-img > div:nth-child(4),
+body > main > div.container.desktop-img > div:nth-child(5),
+body > main > div.container.desktop-img > div:nth-child(6),
+body > main > div.container.desktop-img > div:nth-child(7){
+    padding: 90px 54px;
+    height: 530px;
+}
+
+@media (max-width: 767px){
+    .par{
+        color:var(--primary-color1) !important;
+    }
+    .secWhite .par{
+        color: white !important;
+    }
+    body > main > div.mobile-img > div > ul>li>i{
+        color:var(--primary-color3);
+        font-size: 6px;
+    }
+    body > main > div.mobile-img > div > ul>li{
+        color: white;
+        font-size: 9px;
+    }
+    .par{
+        font-size: 11px;
+        font-weight: bold;
+
+    }
+}
+
+/* Responsive for Tablet*/
+@media (max-width: 1023px) and (min-width: 768px){
+    body > main > div.container.desktop-img > div:nth-child(1),
+    body > main > div.container.desktop-img > div:nth-child(3){
+        height:330px !important;
+    }
+    body > main > div.container.desktop-img > div:nth-child(1) > div:nth-child(2) > h2{
+        font-size: 20px;
+    }
+    body > main > div.desktop-img > div.row > div > div:nth-child(2) > ul>li{
+        font-size: 11px;
+    }
+    .btn{
+        font-size: 8px !important;
+    }
+    .btn-fill{
+        padding: 8px 20px;
+    }
+    body > main > div.container.desktop-img > div:nth-child(1) > div:nth-child(1) > img{
+        width: 50% !important;
+        margin-right: -4% !important;
+    }
+    body > main > div.container.desktop-img > div.container.text-center > h3{
+        font-size: 16px;
+    }
+    body > main > div.container.desktop-img > div.container.text-center > p{
+        font-size: 11px !important;
+    }
+    body > main > div.container.desktop-img > div:nth-child(3) > h1{
+        font-size: 30px !important;
+    }
+    .par{
+        font-size: 9px;
+    }
+    body > main > div.container.desktop-img > div:nth-child(4),
+    body > main > div.container.desktop-img > div:nth-child(5),
+    body > main > div.container.desktop-img > div:nth-child(6),
+    body > main > div.container.desktop-img > div:nth-child(7){
+        height:330px !important;
+        padding: 50px 54px
+    }
+}
+
+/* Ipad pro and large tablets*/
+@media (max-width:1365px) and (min-width:1024px){
+}
+
+/*Desktop & laptop Small screens */ 
+@media (max-width:1600px){
+
+}
+/* Desktop & laptop large screen*/
+@media (min-width:1601px) {
+
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Evest Website Notifications",
+    "short_name": "Evest Notifications",
+    "gcm_sender_id": "174835192735",
+    "display": "standalone",
+    "gcm_user_visible_only": true
+  }

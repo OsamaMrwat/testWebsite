@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="container p-4" id="reslut">
+    <article>
+      <!-- Post header-->
+      <header class="mb-4">
+          <!-- Post title-->
+          <h1 class="fw-bolder mb-1"><%-titleArticle%></h1>
+          <!-- Post meta content-->
+          <div class="text-muted fst-italic mb-2 date"><%-date%></div>
+          <!-- Post categories-->    
+      </header>
+      <!-- Preview image figure-->
+      <figure class="mb-4"><img class="img-fluid rounded" src="<%- imgUrl %>" alt="...">
+        <div class="container  ">
+          <!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="display: flex;justify-content: center;align-items: center;">
+  <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+  <a class="a2a_button_facebook"></a>
+  <a class="a2a_button_twitter"></a>
+  <a class="a2a_button_linkedin"></a>
+  <a class="a2a_button_whatsapp"></a>
+  <a class="a2a_button_google_gmail"></a>
+  <a class="a2a_button_sms"></a>
+  </div>
+  <script async src="https://static.addtoany.com/menu/page.js"></script>
+  <!-- AddToAny END -->
+        </div>
+  </figure>
+  
+      <!-- Post content-->
+      <section>
+          <%- content %> 
+      </section>
+  </article>
+  </div>
+
+</div>
+<script  src="https://static.addtoany.com/menu/page.js"></script>
+<style>
+   @import url('/css/articleAr.min.css');
+</style>

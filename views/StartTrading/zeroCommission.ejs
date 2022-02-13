@@ -1,0 +1,68 @@
+<div class="mobile-img">
+    <div class="container" style="background:url('/images/ZeroMobileHeader.png');height:700px;background-size: cover;color:white;">
+        <%- page.fields.header.heading %>
+        <%- page.fields.header.subheading %>  
+        <button onclick="runPlugin('forexSignup');" class="btn btn-pr" style="font-size:12px;"> START TRADING</button>
+    </div>
+    <div class="container text-center pt-5">
+      <%- page.fields.mobile_view[0].fields.content %> 
+    </div>
+    <div class="container" style="background: url('/images/0 commission-07.jpg');height: 348px;background-size: cover;color:var(--primary-color3);">
+       <%- page.fields.mobile_view[1].fields.content %> 
+    </div>
+    <div class="container" style="height: 320px;padding: 32px 23px;">
+        <%- page.fields.mobile_view[2].fields.content %>
+    </div>
+    <div class="container text-left" style="background:url('/images/0 commission-08.jpg');background-size: cover;color:white;align-items: baseline;/* padding: 14px 34px; */padding-top: 10%;padding-bottom: 6%;padding-left: 7%;">
+        <%- page.fields.mobile_view[3].fields.content %>
+        <button onclick="runPlugin('forexSignup');" class="btn btn-filled" style="
+    margin-left: 30%;
+">TRADE NOW</button>
+</div>
+</div>
+
+<div class="desktop-img">
+<div class="row" style="background: url('/images/webp/Contact Us En BG-02.webp');background-size: cover;">
+    <div class="container" style="height: 530px;color:white;display: flex;justify-content: center;align-items: center;">
+        <div class="col-md-6">    
+           <%- page.fields.header.heading %>
+           <%- page.fields.header.subheading %>  
+            <button onclick="runPlugin('forexSignup');"class="btn btn-pr"> START TRADING</button>
+        </div>
+        <div class="col-md-6">
+            <img src="/images/webp/stockss.webp" alt="stocks" width="100%">
+        </div>
+
+    </div>
+</div>
+
+<div class="container text-left py-5" style="display: flex;flex-direction: column;">
+    <%- page.fields.sections.section1 %> 
+</div>
+
+<div class="row" style="background: url('/images/0 commission-07.jpg');height: 500px;background-size: cover;color:var(--primary-color3);">
+    <%- page.fields.sections.section2 %> 
+</div>
+
+<div class="row" style="background-image: url('/images/webp/greenBack.webp');height:500px;background-size: cover;align-items: center;">
+<div class="container" >
+    <%- page.fields.sections.section3 %>
+    <div class="row" style="display:flex;justify-content: center;">
+        <button onclick="runPlugin('forexSignup');" class="btn btn-filled mt-4">OPEN FREE ACCOUNT</button>
+    </div>
+</div>
+</div>
+
+<div class="container text-center" style="height: 500px;">
+    
+    <%- page.fields.sections.section4 %> 
+    <div class="row pt-4" style="display:flex;justify-content: center;">
+        <button class="btn btn-filled" onclick="runPlugin('forexSignup');">TRADE NOW</button>
+    </div>
+
+</div>
+
+</div>
+<style> 
+    @import "/css/zero.min.css";
+</style>

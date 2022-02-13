@@ -1,0 +1,13 @@
+Instument,Leverage Buy/Sell,Commission Per Lot,Long Swaps Base Currency,Short Swaps Base Currency, Contract Size
+USTECH,10,0,-100.0,-100.0,  100 
+USBANKS,10,0,-10.0,-10.0,  100 
+GERGIANTS,10,0,-8.4,-8.4,  100 
+USHEAVY,10,0,-10.0,-10.0,  100 
+USRETAIL,10,0,-10.0,-10.0,  100 
+UKBANKS,10,0,-150.0,-150.0,  100 
+BIGPHARMA,10,0,-20.0,-20.0,  100 
+BIGPHARMA2,10,0,-25.0,-25.0,  100 
+BLUECHIPS,10,0,-20.0,-20.0,  100 
+FASHION,10,0,-96.0,-96.0,  100 
+W.BUFFETT1,10,0,-32.0,-32.0,  100 
+W.BUFFETT2,10,0,-15.0,-15.0,  100 

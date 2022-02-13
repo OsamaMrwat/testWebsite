@@ -1,0 +1,8 @@
+Instument,Leverage Buy/Sell,Commission Per Lot,Long Swaps Base Currency,Short Swaps Base Currency, Contract Size
+DOW,100,0,-207,-207,  10 
+FTSE,100,0,-45,-45,  10 
+DAX,100,0,-93,-93,  10 
+SP,100,0,-253,-253,  100 
+NSDQ,100,0,-160,-160,  100 
+RUSS,100,0,-120,-120,  100 
+$IND,100,0,-6,-6,  100 

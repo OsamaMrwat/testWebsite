@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="container p-4" id="reslut">
+    <article>
+      <!-- Post header-->
+      <header class="mb-4">
+          <!-- Post title-->
+          <h1 class="fw-bolder mb-1"><%-titleArticle%></h1>
+          <!-- Post meta content-->
+          <div class="text-muted fst-italic mb-2 date"><%-date%></div>
+          <!-- Post categories-->    
+      </header>
+      <!-- Preview image figure-->
+      <figure class="mb-4"><img class="img-fluid rounded" src="<%- imgUrl %>" alt="...">
+        <div class="container  ">
+          <!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="display: flex;justify-content: center;align-items: center;">
+  <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+  <a class="a2a_button_facebook"></a>
+  <a class="a2a_button_twitter"></a>
+  <a class="a2a_button_linkedin"></a>
+  <a class="a2a_button_whatsapp"></a>
+  <a class="a2a_button_google_gmail"></a>
+  <a class="a2a_button_sms"></a>
+  </div>
+  <script async src="https://static.addtoany.com/menu/page.js"></script>
+  <!-- AddToAny END -->
+        </div>
+  </figure>
+  
+      <!-- Post content-->
+      <section>
+          <%- content %> 
+      </section>
+  </article>
+  </div>
+
+</div>
+
+<script>
+  //add meta data for og_img
+  var meta = document.createElement('meta');
+  meta.setAttribute('property', 'og:image');
+  meta.setAttribute('content', '<%- og_img %>');
+  document.getElementsByTagName('head')[0].appendChild(meta);
+</script>
+<style>
+   @import url('/css/article.min.css');
+   /* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+</style>

@@ -1,0 +1,116 @@
+input{
+    background: #022a3a1f;
+    border:none;
+    width:100%;
+}
+form{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 27%;
+}
+.form-group{
+    align-items: baseline;
+}
+.radio{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 30px;
+}
+.radio__input{
+    display:none;
+}
+
+.radio__radio{
+    height:1.25em;
+    width:1.25em;
+    border: 2px solid #022a3a33;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-sizing: border-box;
+    padding: 2px;
+}
+.radio__radio::before{
+    display:none;
+}
+.radio__radio::after{
+    content:"";
+    width:100%;
+    height:100%;
+    display:block;
+    background: var(--primary-color1);
+    border-radius: 50%;
+    transform:scale(0);
+    transition: transform 0.15s;
+}
+.radio__input:checked + .radio__radio::after{
+    transform:scale(1);
+}
+
+body > main > div > div:nth-child(2) > form > div:nth-child(8),
+body > main > div > div:nth-child(2) > form > div:nth-child(9){
+    padding-left: 1%;
+}
+.reg{
+    color:var(--primary-color3) !important;
+}
+body > main > div > div:nth-child(2) > form > div:nth-child(10){
+    display: flex;
+    justify-content: center;
+    width: 70%;
+}
+#phone{
+    width:150%
+}
+body > main > div > div:nth-child(2) > div{
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+    color:#022a3a87;
+}
+.btn-none{
+    background:none;
+    border: none;
+}
+.btn-none:focus{
+    display:none;
+}
+
+@media (max-width: 767px){
+      form{
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #phone {
+        width: 114%;
+    }
+}
+
+/* Responsive for Tablet*/
+@media (max-width: 1023px) and (min-width: 768px){
+    body > main > div.container > div.container.desktop-img{
+        height:330px !important;
+    }
+    body > main > div.container > div.container.desktop-img > h1{
+        font-size: 25px;
+    }
+    #phone {
+        width: 100%;
+    }
+}
+
+/* Ipad pro and large tablets*/
+@media (max-width:1365px) and (min-width:1024px){
+}
+
+/*Desktop & laptop Small screens */ 
+@media (max-width:1600px){
+
+}
+/* Desktop & laptop large screen*/
+@media (min-width:1601px) {
+
+}

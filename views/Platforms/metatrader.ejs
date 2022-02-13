@@ -1,0 +1,65 @@
+
+<div class="row desktop-img" style="background: url('/images/webp/Trading hoursB.webp');background-size: cover; height: 500px;">
+    <div class="container" style="display:flex;align-items: center;">
+      <div class="col-md-6">
+        <%- page.fields.header.heading %>
+        <%- page.fields.header.subheading %> 
+        <div class="container">
+          <button class="btn btnprimary" onclick="runPlugin('forexSignup');">JOIN NOW</button>
+          <button class="btn btnprimary ml-5"><a href="https://download.mql5.com/cdn/web/18665/mt5/atriafinancial5setup.exe">DOWNLOAD MT5</a></button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img src="/images/webp/metatrader5 1.webp" alt="metaMHeader" width="100%">
+      </div>
+    </div>
+  </div>
+  <div class="container mobile-img" style="background-image: url('/images/metaMHeader.png');padding-bottom:10%;background-size: cover;flex-direction: column;">
+    <%- page.fields.mobile_view[0].fields.content %>
+          <div class="col" style="
+             display: flex;
+    justify-content: space-evenly;
+    margin-left: -15%;
+    margin-top: 5%;
+      ">
+            <button class="btn btnprimary" onclick="runPlugin('forexSignup');">JOIN NOW</button>
+            <button class="btn btnprimary" style="
+      margin-left: -12%;
+  "><a href="https://download.mql5.com/cdn/web/18665/mt5/atriafinancial5setup.exe">DOWNLOAD MT5</a></button>
+          </div>
+    </div>
+  <div class="container py-5" style="display:flex;">
+    <%- page.fields.sections.section1 %> 
+  </div>
+
+  <div class="row desktop-img" style="background:url('/images/BG-01.jpg');background-size: cover;height: 500px;">
+    <%- page.fields.sections.section2 %> 
+  </div>
+
+  <div class="container mobile-img" style="background:url('/images/BG-01.jpg');height: 550px;background-size: cover;padding-left: 10% !important;padding-top: 15%;flex-direction: column;">
+    <%- page.fields.mobile_view[1].fields.content %>
+  </div>
+
+  <div class="container py-4 justify-center flex-column">
+    <%- page.fields.sections.section3 %>
+  </div>
+  <div class="row desktop-img" style="background: url('/images/webp/MTS-SPA-Artboard 29.webp');background-size: cover; height: 500px;">
+    <%- page.fields.sections.section4 %>
+  </div>
+  <div class="container mobile-img" style="background-image: url('/images/metaM2.png');height: 855px;background-size: cover;display: flex;flex-direction: column;align-items: center;justify-content: flex-end;">
+    <%- page.fields.mobile_view[2].fields.content %>
+</div>
+<div class="container py-5" style="height: 500px;display: flex;">
+  <div class="col-lg-6 pt-5">
+    <h1 class="text-uppercase font-weight-bold">JOIN US TODAY! <br>
+      Start trading <br class="desktop-img">with MT5
+      </h1>
+      <p>Join Now and enjoy all the beneﬁts <br>of trading with a regulated broker!</p>
+  </div>
+  <div class="col-lg-6 pt-5" style="display: flex;flex-direction: column;align-items: center;margin-top: 7%;">
+    <button onclick="runPlugin('forexSignup');" class="btn btn-filled text-uppercase btncol mb-4" >Register now</button>
+    <a class="btn btn-filled text-uppercase btncol" href="http://onelink.to/9bwgqd">Download MT5</a>
+  </div>
+</div>
+  <style>@import '/css/metaTrader.min.css';</style>
+</div>

@@ -1,0 +1,97 @@
+
+<div class="mobile-img">
+    <div class="container" style="background: url('/images/sign up mobile-03.png');height:700px;background-size: cover;color:white;padding-top: 100%;padding-right: 10%;">
+        <h1>
+            املأ التفاصيل<br> الخاصة بك<br> 
+            للتسجيل <br><span>100%</span>مجانًا  
+        </h1>
+    </div>
+</div>
+<div class="container">
+    <div class="container desktop-img" style="background:url('/images/Sign Up page-03.png');height:500px;background-size: cover;color:white;display:flex;align-items:center;padding-right:7%;">
+        <h1>
+            املأ التفاصيل الخاصة بك<br> 
+            للتسجيل <span>100%</span> مجانًا            
+        </h1>
+    </div>
+    <div class="container">
+        <form id="registerForm">
+            <div class="form-group row">
+                <label for="firstName" class="col-sm-2 col-form-label">الاسم</label>
+                <div class="col-sm-6">
+                  <input type="text" id="firstName">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="lastName" class="col-sm-2 col-form-label">العائلة</label>
+                <div class="col-sm-6">
+                  <input type="text" id="lastName">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="email" class="col-sm-2 col-form-label">البريد الإلكتروني</label>
+                <div class="col-sm-6">
+                  <input type="email" id="email">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="phone" class="col-sm-2 col-form-label">رقم الهاتف</label>
+                <div class="col-sm-6">
+                <input type="tel" name="phone" id="phone">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="password" class="col-sm-2 col-form-label">كلمة المرور</label>
+                <div class="col-sm-6">
+                  <input type="password" id="password">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="password2" class="col-sm-2 col-form-label">تأكيد كلمة المرور</label>
+                <div class="col-sm-6">
+                  <input type="password" id="password2">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="promocode" class="col-sm-2 col-form-label">الرمز الترويجي</label>
+                <div class="col-sm-6">
+                  <input type="text" id="promocode">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="terms" class="radio">
+                    <input type="radio" name="terms" id="terms" value="terms" class="radio__input">
+                    <div class="radio__radio"></div>
+                    عمري يزيد عن <span> 18 </span> عاماً وأوافق على الشروط والأحكام
+                </label>
+            </div>
+            <div class="form-group row">
+                <label for="promotion" class="radio">
+                    <input type="radio" name="promotion" id="promotion" value="1" class="radio__input">
+                    <div class="radio__radio"></div>
+                    ارسل لي مواد ترويجية
+                </label>
+            </div>
+            <div class="form-group row">
+                <button class="btn btn-filled reg" type="submit" value="submit" name="submit">سجّل</button>
+            </div>
+        </form>
+        <div class="contianer">
+            <p>
+                ينطوي تداول العقود مقابل الفروقات والفوركس على مخاطر تشمل خسارة الأموال.<br>
+                هل لديك حساب ? <button class="btn-none" onclick="runPlugin('forexLogin')">انقر هنا</button>
+            </p>
+        </div>
+    </div>
+</div>
+
+<style>
+    @import "/css/signupArabic.min.css";
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js" integrity="sha512-QMUqEPmhXq1f3DnAVdXvu40C8nbTgxvBGvNruP6RFacy3zWKbNTmx7rdQVVM2gkd2auCWhlPYtcW2tHwzso4SA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css" integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer />
+
+<script src="/js/telinit.min.js"></script>
+<script src="/js/register.min.js"></script>

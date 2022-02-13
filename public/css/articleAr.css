@@ -1,0 +1,220 @@
+panda-forex-login .forex-button-pandats.simple-button-pandats,
+.mainpandats .forex-button-pandats.simple-button-pandats{
+font-family: "Arabic Evest",sans-serif !important;
+}
+body{
+text-align: right;
+direction: rtl;
+font-family: "Arabic Evest" ,sans-serif !important;
+}
+
+span{
+font-family: "Evest Font";
+}
+
+.lang-menu .selected-lang:before{
+background-image: url(https://www.countryflags.io/sa/flat/32.png);
+}
+
+#reslut > article > header > a{
+  color:var(--primary-color1) !important;
+}
+.card{
+    flex-direction: row;
+    margin-bottom: 5%;
+  }
+  #reslut > .card > img{
+    width: 40%;
+  }
+  #reslut > .card > p{
+    font-size: 13px;
+  }
+
+  #reslut{
+    background: #fff;
+    box-shadow: 0 23px 78px #00000045;
+  }
+  #reslut > article > header > .badge{
+    background-color: var(--primary-color1) !important;
+    color: var(--primary-color3) !important;
+  }
+  #reslut > article > header > a:hover{
+    color: var(--primary-color1) !important;
+    background-color: var(--primary-color3) !important;
+  }
+  
+  #reslut > article > section > h1{
+      display:none;
+  }
+  .aligncenter{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .date{
+      font-family: "Evest Font";
+  }
+  span{
+      font-family: "Arabic Evest";
+  }
+  #reslut > article > figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #reslut > article > section > p:nth-child(30){
+      display: flex;
+      justify-content: center;
+  }
+  #reslut > article > div
+  {
+      float: right;
+  }
+  #reslut > article > figure > div{
+      padding-top: 3%;
+  }
+
+
+  
+/*Loader Stylings */
+@keyframes ldio-ibuxw2lr7c8 {
+  0% { opacity: 1 }
+  100% { opacity: 0 }
+}
+.ldio-ibuxw2lr7c8 div {
+  left: 124.645px;
+  top: 50.114999999999995px;
+  position: absolute;
+  animation: ldio-ibuxw2lr7c8 linear 0.4255319148936171s infinite;
+  background: #022a3a;
+  width: 7.709999999999999px;
+  height: 17.99px;
+  border-radius: 0px / 0px;
+  transform-origin: 3.8549999999999995px 78.38499999999999px;
+}.ldio-ibuxw2lr7c8 div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -0.4061895551257254s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(2) {
+  transform: rotate(16.363636363636363deg);
+  animation-delay: -0.38684719535783374s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(3) {
+  transform: rotate(32.72727272727273deg);
+  animation-delay: -0.36750483558994207s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(4) {
+  transform: rotate(49.09090909090909deg);
+  animation-delay: -0.34816247582205034s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(5) {
+  transform: rotate(65.45454545454545deg);
+  animation-delay: -0.3288201160541587s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(6) {
+  transform: rotate(81.81818181818181deg);
+  animation-delay: -0.309477756286267s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(7) {
+  transform: rotate(98.18181818181819deg);
+  animation-delay: -0.29013539651837533s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(8) {
+  transform: rotate(114.54545454545455deg);
+  animation-delay: -0.2707930367504836s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(9) {
+  transform: rotate(130.9090909090909deg);
+  animation-delay: -0.25145067698259194s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(10) {
+  transform: rotate(147.27272727272728deg);
+  animation-delay: -0.23210831721470024s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(11) {
+  transform: rotate(163.63636363636363deg);
+  animation-delay: -0.21276595744680857s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(12) {
+  transform: rotate(180deg);
+  animation-delay: -0.19342359767891687s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(13) {
+  transform: rotate(196.36363636363637deg);
+  animation-delay: -0.17408123791102517s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(14) {
+  transform: rotate(212.72727272727272deg);
+  animation-delay: -0.1547388781431335s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(15) {
+  transform: rotate(229.0909090909091deg);
+  animation-delay: -0.1353965183752418s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(16) {
+  transform: rotate(245.45454545454547deg);
+  animation-delay: -0.11605415860735012s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(17) {
+  transform: rotate(261.8181818181818deg);
+  animation-delay: -0.09671179883945843s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(18) {
+  transform: rotate(278.1818181818182deg);
+  animation-delay: -0.07736943907156675s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(19) {
+  transform: rotate(294.54545454545456deg);
+  animation-delay: -0.05802707930367506s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(20) {
+  transform: rotate(310.90909090909093deg);
+  animation-delay: -0.038684719535783375s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(21) {
+  transform: rotate(327.27272727272725deg);
+  animation-delay: -0.019342359767891688s;
+  background: #022a3a;
+}.ldio-ibuxw2lr7c8 div:nth-child(22) {
+  transform: rotate(343.6363636363636deg);
+  animation-delay: 0s;
+  background: #022a3a;
+}
+.loadingio-spinner-spinner-r8dyx6mgv4 {
+  width: 257px;
+  height: 257px;
+  display: inline-block;
+  overflow: hidden;
+  
+}
+.ldio-ibuxw2lr7c8 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.ldio-ibuxw2lr7c8 div { box-sizing: content-box; }
+/* generated by https://loading.io/ */
+
+@media (max-width: 767px){
+  #reslut > article > header > a > h1{
+    font-size: 20px;
+  }
+  #reslut > article > header > div{
+    font-size: 9px;
+  }
+  #reslut > article > section {
+    font-size: 10px;
+  }
+  #reslut > article > section b,
+  #reslut > article > section strong{
+    font-size: 18px;
+  }
+  #reslut > article > section img{
+    width:100%;
+    height:50%;
+  }
+}

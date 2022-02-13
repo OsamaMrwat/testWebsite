@@ -1,0 +1,46 @@
+<ion-modal-view class="modal-page">
+
+    <ion-header-bar ng-class="data.isProcess ? 'processing' : (data.isError ? 'failed':'success')">
+        <div class="modal-top" ng-class="data.isProcess ? 'processing' : (data.isError ? 'failed':'success')">
+            <div class="icon" ng-if="!data.isProcess"
+                 ng-class="data.isError ? ' ion-ios-close-outline' : 'ion-ios-checkmark-outline'"></div>
+            <div ng-if="data.isProcess">
+                <ion-spinner class="spinner-processing"></ion-spinner>
+            </div>
+            <h1 class="roboto-light pl-5 pr-5">{{ data.textTitle }}</h1>
+        </div>
+    </ion-header-bar>
+
+    <ion-content overflow-scroll="false">
+        <div class="modal-content">
+            <div class="content">
+                <div>
+                    <span class="font-18 text-content" ng-bind-html="data.textContent"></span>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+
+    <ion-footer-bar align-title="left" class="invest-buttons" ng-show="!data.isProcess">
+        <div class="row">
+            <div class="col text-center" ng-if="!data.isMoney">
+                <button class="button button-block success-button button-full roboto-light" on-tap="hide()" ng-if="!data.isProcess">
+                    <span>{{ data.actionText }}</span>
+                </button>
+            </div>
+
+            <div class="col" ng-if="data.isMoney">
+                <button class="button success-button button-full button-full roboto-light" on-tap="hide()" ng-if="!data.isProcess">
+                    <span>{{ data.actionText }}</span>
+                </button>
+            </div>
+            <div class="col" ng-if="data.isMoney">
+                <button class="button success-button button-full button-full roboto-light" on-tap="hide({state: 'root.app.wallet', clearHistory: true, params: {}})" ng-if="!data.isProcess">
+                    <span>{{ data.action2Text }}</span>
+                </button>
+            </div>
+        </div>
+    </ion-footer-bar>
+
+</ion-modal-view>
+

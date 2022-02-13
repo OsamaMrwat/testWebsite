@@ -1,0 +1,90 @@
+
+panda-forex-login .forex-button-pandats.simple-button-pandats,
+.mainpandats .forex-button-pandats.simple-button-pandats{
+  font-family: "Arabic Evest",sans-serif !important;
+}
+body{
+  text-align: right;
+  direction: rtl;
+  font-family: "Arabic Evest" ,sans-serif !important;
+}
+
+span{
+font-family: "Evest Font";
+}
+
+
+body > main > div > div:nth-child(2) > div:nth-child(2) > h3{
+    color: var(--primary-color3);
+    padding-top: 2%;
+    padding-right: 5%;
+}
+body > main > div > div:nth-child(2) > div:nth-child(3){
+    justify-content:center
+}
+body > main > div > div:nth-child(2) > div:nth-child(3) > div.col-md-4 > h5:nth-child(1){
+    font-weight: bold;
+}
+
+.col-md-8{
+    padding-top: 6%;
+    padding-bottom: 3%;
+}
+.col-md-4{
+    padding-top: 6%;
+    padding-right: 5%;
+}
+body > main > div > div:nth-child(2) > div:nth-child(3) > div.col-md-8 > ul>li{
+    color:var(--primary-color1);
+    font-size: 13px;
+}
+body > main > div > div:nth-child(2) > div:nth-child(3) > div.col-md-8 > ul>li>i{
+    font-size: 4px;
+    font-weight: 600;
+    padding-left: 1%;
+}
+body > main > div > div:nth-child(2) > div:nth-child(3) > div.col-md-8 > ul > strong{
+    font-family: 'Arabic Evest';
+}
+
+body > main > div > div:nth-child(2) > div:nth-child(3) > div.col-md-8 > button{
+    color: var(--primary-color3) !important;
+    margin-right: 5%;
+    margin-top: 2%;
+}
+.col-md-8>ul{
+    padding-right: 0;
+}
+.list-unstyled li{
+    color:var(--primary-color1) !important;
+}
+
+@media (max-width: 767px){
+      
+}
+
+/* Responsive for Tablet*/
+@media (max-width: 1023px) and (min-width: 768px){
+    body > main > div > div:nth-child(1){
+        height:320px !important;
+    }
+    body > main > div > div:nth-child(2) > div:nth-child(3) > div.col-md-8 > p{
+        font-size: 13px;
+    }
+    body > main > div > div:nth-child(2) > div:nth-child(3) > div.col-md-8 > ul>li{
+        font-size: 11px;
+    }
+}
+
+/* Ipad pro and large tablets*/
+@media (max-width:1365px) and (min-width:1024px){
+}
+
+/*Desktop & laptop Small screens */ 
+@media (max-width:1600px){
+
+}
+/* Desktop & laptop large screen*/
+@media (min-width:1601px) {
+
+}

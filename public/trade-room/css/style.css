@@ -1,0 +1,1238 @@
+@charset "UTF-8";
+@font-face{
+    font-family: "Evest Font";
+    src: url("/fonts/Gotham/Gotham-Medium.otf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Evest Light";
+    src: url("/fonts/Gotham/Gotham-Light.otf");
+  }
+  @font-face {
+    font-family: "Arabic Evest";
+    src: url("/fonts/EvestMedium.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Arabic Light";
+    src: url("/fonts/GE SS Two/GE SS Text Light.otf");
+  }
+  :root{
+    --primary-color1:#022A3A;
+    --primary-color2:#058080;
+    --primary-color3:#64F0E3;
+    --supportive-color1:#0B0B0B;
+    --supportive-color2:#B7B8BA;
+    --supportive-color3:#DCCB84;
+    --secondary-color1:#42135B;
+    --secondary-color2:#0036B0;
+    --secondary-color3:#1E2D80;
+    --secondary-color4:#1B4544;
+    --secondary-color5:#880004;
+    --secondary-color6:#9B6523;
+    --variable-logoPath:url("/images/logo.png")
+
+  }
+  
+html, body {
+    height: 100%;
+    font-size: 15px;
+}
+
+html {
+    /* 1 */
+    -ms-text-size-adjust: 100%;
+    /* 2 */
+    -webkit-text-size-adjust: 100%;
+    /* 2 */
+}
+body {
+    font-family: "Evest Font", sans-serif !important;
+    color: var(--primary-color1);
+    margin: 0;
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+
+}
+
+/*Evest*/
+.roboto-pandats{
+    font-family: "Evest font", sans-serif !important;
+}
+
+.header {
+    background-color: rgba(11, 51, 46, 0.7);
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+.header nav {
+    box-shadow: none;
+    background: none;
+    position: relative;
+}
+.header .logo {
+    display: inline-block;
+    min-width: 138px;
+    height: 44px;
+    margin-top: 12px;
+    color: #fff;
+    font-size: 40px;
+    line-height: 40px;
+    text-decoration: none;
+}
+
+
+#trading-platform-page .logo {
+    margin-top: 20px;
+}
+
+#tradingPlatform {
+    transition: background-color .7s ease-in-out .1s;
+}
+
+body.theme-dark #tradingPlatform {
+    background-color: #292d33;
+
+}
+
+#Header panda-forex-login .mainpandats .simple-button-pandats.spinner-button-pandats, #Header .user_actions_sidebar .login_button, #Header .mobile_login {
+    background: #3ddb93;
+    border: 0.5px solid #fff !important;
+    color: #fff;
+    font-weight: 500;
+    font-size: 15px;
+    height: 28px;
+    line-height: 28px;
+    width: auto;
+    min-width: 102px;
+    margin: 0 7px 0 0;
+}
+#Header panda-forex-signup .mainpandats .simple-button-pandats.forex-button-pandats, #Header .user_actions_sidebar .signup_button {
+    background: #3ddb93;
+    border: 0.5px solid #fff !important;
+    color: #fff;
+    font-weight: 500;
+    font-size: 15px;
+    height: 28px;
+    line-height: 28px;
+    width: auto;
+    min-width: 102px;
+    margin: 0;
+}
+#Header panda-forex-login .mainpandats .simple-button-pandats.spinner-button-pandats:hover, #Header .user_actions_sidebar .login_button:hover {
+    background: #218c5b;
+}
+#Header panda-forex-signup .mainpandats .simple-button-pandats.forex-button-pandats, #Header .user_actions_sidebar .signup_button {
+    background: rgba(0, 100, 88, 0.43);
+}
+#Header panda-forex-signup .mainpandats .simple-button-pandats.forex-button-pandats:hover, #Header .user_actions_sidebar .signup_button:hover {
+    background: rgba(55, 198, 181, 0.43);
+}
+
+.mainpandats .forex-button-pandats {
+    line-height: initial;
+}
+/* TRADING PLATFORM START */
+#trading-platform-page .header {
+    background: #213834;
+    height: 89px;
+    position: unset;
+}
+
+custom-select .frx-dropbtn-pandats:after {
+    border-right: 2px solid #3ddb93 !important;
+    border-bottom: 2px solid #3ddb93 !important;
+    border-left: none !important;
+    border-top: none !important;
+}
+
+custom-select .frx-dropdown-pandats.dropdown-expanded-pandats .frx-dropbtn-pandats:after {
+    border-left: 2px solid #3ddb93 !important;
+    border-top: 2px solid #3ddb93 !important;
+    border-right: none !important;
+    border-bottom: none !important;
+}
+
+#trading-platform-page .user-actions {
+    margin-top: 0;
+    align-items: center;
+    min-width: 320px;
+}
+
+.header_container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px 0 50px;
+}
+.header_container .logo_container {
+    margin-right: 0;
+}
+
+.top-wrapper {
+    display: flex;
+}
+
+.logo_container a {
+    padding: 0;
+    margin: 0;
+}
+
+.logo_container a img {
+    vertical-align: middle;
+    max-width: 160px;
+}
+
+#trading-platform-page .tp-info-accounts {
+    margin: 0;
+}
+
+#trading-platform-page .user-actions li {
+    display: flex;
+    margin: auto;
+}
+
+#Header .user-name-pandats span.ng-star-inserted,
+#Header .user-name-pandats span.ng-star-inserted span {
+    color: #fff !important;
+}
+#Header panda-forex-clock custom-select .frx-dropbtn-pandats,
+#Header panda-forex-menu .button-pandats {
+    height: 28px;
+    line-height: 28px;
+    border-radius: 0;
+}
+#Header panda-forex-clock custom-select {
+    line-height: unset;
+}
+#Header panda-forex-clock .current-time-pandats {
+    color: #fff !important;
+    line-height: 28px;
+}
+#Header panda-forex-deposit-credit .forex-button-pandats.simple-button-pandats {
+    border: 0.75px solid #fff;
+    height: 28px !important;
+    line-height: 28px !important;
+    background: #3ddb93 !important;
+    border-radius: 0;
+}
+#Header panda-forex-menu {
+    padding: 0;
+}
+#Header panda-forex-account-status .mainpandats li .value-pandats {
+    color: #3ddb93;
+}
+#Header panda-forex-account-status .mainpandats li.profit-pandats.up-pandats {
+    background: #3ddb93;
+}
+#Header panda-forex-account-status .mainpandats .down-pandats .title-pandats, #Header panda-forex-account-status .mainpandats .down-pandats .value-pandats, #Header panda-forex-account-status .mainpandats .profit-pandats .title-pandats, #Header panda-forex-account-status .mainpandats .profit-pandats .value-pandats {
+    color: #3b3b3b !important;
+}
+#Header .profit-pandats .value-pandats {
+    color: #3b3b3b !important;
+}
+#Header panda-forex-accounts .account-pandats .deposit-pandats {
+    line-height: initial;
+}
+#Header panda-forex-menu .dropdown-pandats,
+#Header custom-select .frx-dropdown-content-pandats {
+    background: #000;
+    border: 1px solid #3ddb93;
+    z-index: 9999;
+}
+#Header panda-forex-menu .dropdown-pandats.menu-pandats li,
+#Header custom-select .frx-dropdown-content-pandats span {
+    color: #fff;
+}
+#Header custom-select .wrap-list-pandats .active-pandats {
+    border-bottom: 1px solid #3ddb93;
+}
+#Header panda-forex-menu .dropdown-pandats.menu-pandats li:hover,
+#Header custom-select .frx-dropdown-content-pandats .item-pandats:hover {
+    border-left: 3px solid #3ddb93;
+    background: none;
+    color: #3ddb93;
+}
+#Header panda-forex-menu .button-pandats .icon-pandats {
+    line-height: 26px;
+}
+#Header ul.user-actions li {
+    margin: 0;
+}
+#Header panda-forex-menu .button-pandats .user-name-pandats {
+    line-height: 28px;
+    color: #fff;
+}
+#Header panda-forex-menu .button-pandats {
+    color: #fff;
+}
+
+#trading-platform-page #wrapper panda-forex-menu .wrapper-pandats {
+    top: 0 !important;
+}
+
+panda-forex-account-status .mainpandats li.item-pandats:after {
+    background: #3ddb93 !important;
+}
+
+#wrapper panda-forex-menu .wrapper-pandats {
+    top: 18px;
+}
+
+.user-name-pandats {
+    font-size: 14px !important;
+}
+
+.advanced-title-pandats .icon-pandats.cmicon-arrow-down2:before {
+    color: #15bae9 !important;
+}
+
+panda-forex-deposit-credit .forex-button-pandats.simple-button-pandats {
+    height: 35px !important;
+    line-height: 35px !important;
+    margin-top: 0 !important;
+    background-color: transparent !important;
+}
+
+.mainpandats .button-pandats .icon-action-pandats:before {
+    color: #3ddb93 !important;
+}
+
+.invest-pandats {
+    text-align: center !important;
+}
+
+/* SIDEMENU ON TRADING PLATFORM PAGE */
+body#trading-platform-page .hamburger {
+    z-index: 10;
+    box-shadow: rgba(9, 30, 66, 0.08) 0 0 0 1px, rgba(9, 30, 66, 0.08) 0 2px 4px 1px;
+    color: #fff;
+    cursor: pointer;
+    height: 25px;
+    opacity: 1;
+    position: absolute;
+    top: 42px;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    background: 0 center white;
+    border-width: 0;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 50%;
+    outline: 0;
+    padding: 0;
+    transition: bas, opacity 300ms cubic-bezier(0.2, 0, 0, 1) 0s, transform 300ms cubic-bezier(0.2, 0, 0, 1) 0s;
+    left: 285px;
+    text-align: center;
+}
+
+body#trading-platform-page .hamburger:hover {
+    box-shadow: 0 0 12px 3px #3ddb93;
+}
+
+.hide-overlay {
+    display: none;
+}
+
+#Trading_sidemenu {
+    position: fixed;
+    height: 100%;
+    background-color: rgba(11, 51, 46, 0.9);
+    border-right: 1px solid #3ddb93;
+    min-width: 285px;
+    box-shadow: 1px 0 15px 0 #04000785;
+    z-index: 50;
+}
+
+#Trading_sidemenu .logo {
+    width: 200px;
+    margin: auto;
+    padding: 24px 10px 5px 5px;
+}
+
+#Trading_sidemenu .logo a {
+    width: 100%;
+    margin: auto;
+    max-width: 160px;
+    color: #fff;
+    font-size: 40px;
+    line-height: 40px;
+    text-decoration: none;
+}
+
+
+#Trading_sidemenu .menu {
+    overflow-y: scroll;
+    height: calc( 100vh - 77px );
+    padding-left: 0;
+}
+
+#Trading_sidemenu .menu::-webkit-scrollbar {
+    width: 5px;
+    background-color: #3ddb93;
+}
+
+#Trading_sidemenu .menu::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background-color: #9f9f9f;
+}
+
+#Trading_sidemenu:not(.has_children) a {
+    text-transform: uppercase;
+}
+
+#Trading_sidemenu ul li {
+    transition: all 550ms;
+    list-style: none;
+    padding: 10px 0;
+}
+
+#Trading_sidemenu .has_children ul {
+    display: none;
+}
+
+#Trading_sidemenu .has_children.hover ul {
+    display: block;
+    background-color: #0b332e;
+}
+
+#Trading_sidemenu .has_children.hover {
+    background-color: #0b332e;
+}
+
+#Trading_sidemenu .hover > a {
+    color: #fff;
+}
+
+#Trading_sidemenu ul li a, #Trading_sidemenu ul li .meni-item {
+    display: block;
+    margin-left: 20px;
+    margin-right: 30px;
+    font-size: 17px;
+    color: #fff;
+    line-height: 30px;
+    transition: color .2s;
+    text-transform: uppercase;
+}
+#Trading_sidemenu ul li a:hover, #Trading_sidemenu ul li .meni-item:hover {
+    color: #3ddb93;
+}
+
+#Trading_sidemenu ul li.has_children:first-child {
+    border-top: 1px solid #c1c1c1;
+    transition: all 350ms;
+}
+
+#Trading_sidemenu ul li {
+    transition: all 350ms;
+}
+
+#Trading_sidemenu nav ul li:hover {
+    color: #3ddb93;
+    background-color: #bfbfca54;
+}
+
+#Trading_sidemenu nav ul li:hover a {
+    color: #3ddb93;
+}
+
+.menu-inactive ul {
+    display: none !important;
+}
+
+.menu-active ul {
+    display: initial !important;
+}
+
+#Trading_sidemenu .open {
+    background-color: #f4f7fa08;
+}
+
+#Trading_sidemenu .open > a {
+    color: white;
+}
+
+#Trading_sidemenu .menu li,
+#Trading_sidemenu .has_children {
+    position: relative;
+}
+
+#Trading_sidemenu .has_children.open:after,
+#Trading_sidemenu .has_children:after {
+    cursor: pointer;
+    font-size: 25px;
+    height: 100%;
+    line-height: 42px;
+    position: absolute;
+    right: 8px;
+    text-align: center;
+    top: 0;
+    width: 30px;
+    color: #FFF;
+}
+
+#Trading_sidemenu .has_children.hover:after {
+    content: '-';
+}
+
+#Trading_sidemenu .has_children:after {
+    content: '+';
+}
+
+body#trading-platform-page .hamburger {
+    background-size: 15px 14px;
+    background: url("../images/hamburger-icon.png") no-repeat center;
+    background-color: #fff;
+    border-width: 0;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 50%;
+    outline: 0;
+    padding: 0;
+    transition: box-shadow 300ms;
+    left: 285px;
+    text-align: center;
+    z-index: 11;
+}
+
+body#trading-platform-page .hamburger a {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+body#trading-platform-page .hamburger.active3 {
+    background-image: url("../images/hamburger-arrow.png");
+}
+
+body#trading-platform-page .hamburger:hover {
+    box-shadow: 0 0 12px 3px #18b83b;
+}
+
+mainpandats login-popup .popup-wrapper-pandats form input {
+    width: 100%;
+    background: 0 0;
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 12px;
+    margin-top: 0;
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+
+/* TRADING PLATFORM END */
+
+.container {
+    max-width: 1280px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+#wrapper {
+    overflow: hidden;
+}
+
+#footer {
+    background: #303c3a;
+    color: #fff;
+    padding: 20px 0 20px;
+}
+#footer #copyright {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+#footer .footer_logo .logo {
+    display: block;
+    width: 138px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 40px;
+    line-height: 40px;
+    text-decoration: none;
+}
+#footer .footer-list {
+    margin-top: 0;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+#footer .footer-list a {
+    color: #fff;
+    font-size: 14px;
+    transition: color .2s;
+}
+#footer .footer-list a:hover {
+    color: #3ddb93;
+}
+#footer .risk_content {
+    margin-bottom: 0;
+}
+#footer .menu-footer-horizontal-menu {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+#footer .menu-footer-horizontal-menu li:not(:last-child):after {
+    content: "|";
+    padding: 0 12px 0 8px;
+}
+#footer .menu-footer-horizontal-menu a {
+    color: #fff;
+    font-size: 13px;
+    transition: color .2s;
+}
+#footer .menu-footer-horizontal-menu a:hover {
+    color: #3ddb93;
+}
+#footer .footer-menu-holder {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/***=================
+Panda Trading Platform Fixes
+=================***/
+/* fix  countries dropdown in signup popup*/
+countries-popup li.ng-star-inserted {
+    float: none !important;
+    line-height: initial !important;
+}
+
+.content-popup-pandats form[class*='ng-'] div {
+    line-height: normal;
+    text-align: left;
+}
+
+#pts-forx-init-wraper {
+    height: 0;
+}
+
+ul.user-actions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+ul.user-actions li {
+    padding: 0;
+    margin: auto;
+}
+
+/*Clock*/
+#nav panda-forex-clock .current-time-pandats {
+    line-height: inherit;
+    color: #fff;
+    padding: 0;
+    text-align: left;
+    text-indent: 13px;
+    padding-top: 2px;
+}
+
+/*Clock*/
+/* Main Buttons */
+panda-forex-login .mainpandats .simple-button-pandats.spinner-button-pandats,
+panda-forex-signup .mainpandats .simple-button-pandats.forex-button-pandats,
+.user_actions_sidebar .login_button,
+.user_actions_sidebar .signup_button {
+    margin: 6px 10px 0;
+    height: 40px;
+    line-height: 38px;
+    border: 2px solid #6b97b3 !important;
+    transition: background-color 0.3s linear;
+    font-size: 14px;
+    box-shadow: none;
+}
+
+panda-forex-login .mainpandats .simple-button-pandats.spinner-button-pandats,
+.user_actions_sidebar .login_button {
+    background-color: transparent;
+    color: #fff !important;
+}
+
+panda-forex-login .mainpandats .simple-button-pandats.spinner-button-pandats:hover,
+panda-forex-signup .mainpandats .simple-button-pandats.forex-button-pandats:hover,
+.user_actions_sidebar .login_button:hover,
+.user_actions_sidebar .signup_button:hover {
+    background-color: #15bae9;
+    color: #fff !important;
+}
+
+panda-forex-signup .mainpandats .simple-button-pandats.forex-button-pandats,
+.user_actions_sidebar .signup_button {
+    background-color: #fff;
+    color: #101b2b;
+}
+
+/* // Main Buttons */
+/*Signup form submit button */
+#wrapper div[class*="pandats"] .forex-button-pandats.signup-button-pandats {
+    height: 54px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#wrapper div[class*="pandats"] .forex-button-pandats.signup-button-pandats:disabled {
+    color: #000;
+    background-color: #7695bb;
+}
+
+/*Signup form submit button */
+/*Buttons*/
+/*Form*/
+#wrapper #nav div[class*="pandats"] form input {
+    color: #051225;
+}
+
+div[class*="pandats"] form {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+}
+
+div[class*="pandats"] form input[type="checkbox"] + label, input[type="radio"] + label {
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-rendering: auto;
+    color: #292b2c;
+}
+
+.amount-group-pandats .form-group-pandats input {
+    width: 100% !important;
+    border: none !important;
+}
+
+custom-input .disabledGroup input {
+    width: 100px !important;
+    height: 26px !important;
+}
+
+.custom-input-field-pandats {
+    width: 100% !important;
+    height: 26px !important;
+}
+
+/*Signup form inputs*/
+panda-forex-signup div[class*="pandats"] form input[type="text"],
+panda-forex-signup div[class*="pandats"] form input[type="password"],
+panda-forex-signup div[class*="pandats"] form input[type="email"],
+panda-forex-signup div[class*="pandats"] form select {
+    height: 49px;
+    line-height: 21px;
+    padding: 13px 45px 13px 16px;
+    font-size: 14px;
+}
+
+/*Signup form inputs*/
+/*Login form inputs*/
+.mainpandats panda-forex-login .popup-wrapper-pandats form .group-pandats .cmicon-pandats {
+    line-height: 98px;
+}
+
+#nav panda-forex-login .popup-wrapper-pandats form .buttons-pandats a {
+    color: #212931;
+}
+
+#wrapper #nav div[class*="pandats"] .openLogin {
+    color: #051225;
+}
+
+panda-forex-signup .mainpandats .popup-wrapper-pandats .footer-pandats .openLogin {
+    color: #54c3e5 !important;
+}
+
+/*Form*/
+/*Client Area menu*/
+#wrapper panda-forex-menu .wrapper-pandats {
+    /* top: 27px; */
+}
+
+#wrapper #nav panda-forex-menu .button-pandats {
+    color: #fff;
+}
+
+#wrapper #nav panda-forex-menu .dropdown-pandats.menu-pandats li {
+    display: block;
+}
+
+.user-name-pandats span.ng-star-inserted {
+    text-transform: capitalize;
+}
+
+.user-name-pandats span.ng-star-inserted span {
+    margin: 0 3px;
+    text-transform: capitalize;
+}
+
+/*Client Area menu*/
+/*Client area popups*/
+#wrapper panda-forex-client-area .mainpandats .popup-wrapper-pandats .wrap-content-pandats .section-pandats .title-section-pandats {
+    font-size: 18px;
+    background-color: #fff;
+    display: block;
+    line-height: 24px;
+    top: 11px;
+    position: relative;
+}
+
+#wrapper verification-center .content-section-pandats perfect-scrollbar .verif-row-pandats {
+    margin-bottom: 5px;
+}
+
+#wrapper panda-forex-client-area .base-categories-pandats label {
+    margin-bottom: 3px;
+}
+
+
+#wrapper .content-pandats {
+    text-align: left;
+}
+
+.popup-wrapper-pandats
+#wrapper div[class*="pandats"] form label {
+    letter-spacing: normal;
+    font-size: 13px;
+    text-transform: capitalize;
+    margin: 5px 0 10px 0;
+}
+
+#wrapper panda-forex-personal-profile .mainpandats .popup-wrapper-pandats form input {
+    height: auto;
+    border: 1px solid #c9cbcd;
+}
+
+
+/*Client area popups*/
+/*Theme fixes*/
+div[class*="pandats"] input[type="checkbox"] + label,
+div[class*="pandats"] input[type="radio"] + label {
+    font-size: 14px;
+    padding-left: 30px;
+}
+
+div[class*="pandats"] input[type="checkbox"] + label:before,
+div[class*="pandats"] input[type="radio"] + label:before {
+    height: 21px;
+    left: 0;
+    line-height: 18px;
+    top: 0px;
+    width: 21px;
+    font-size: 13px;
+}
+
+body#trading-platform-page #header {
+    height: 13rem;
+    padding-bottom: 6rem;
+}
+
+#intro {
+    padding: 6rem 4rem 13rem 4rem;
+}
+
+body#trading-platform-page #nav #trade-room-link {
+    padding: 0 .6rem;
+}
+
+/*Theme fixes*/
+/*Trading platform page*/
+body#trading-platform-page #header {
+    height: 86px;
+    padding-bottom: 0;
+    z-index: 9999;
+}
+
+body#trading-platform-page #nav {
+    height: 86px;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 0.3rem;
+    pointer-events: auto;
+}
+
+body#trading-platform-page #nav > * {
+    flex: 1 100%;
+}
+
+body#trading-platform-page #nav .logo {
+    font-size: 20px;
+    max-width: 138px;
+    min-width: max-content;
+    padding: 0;
+    line-height: 48px;
+    height: 51px;
+    vertical-align: baseline;
+    margin: 15px 0 0 0;
+    border-width: 3px !important;
+}
+
+body#trading-platform-page #nav .user-actions {
+    list-style: none;
+    padding: 0;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+body#trading-platform-page #nav .user-actions > li {
+    padding: 0;
+    margin: 0;
+    float: left;
+    line-height: 83px;
+}
+
+/* Theme change Switch*/
+
+/* Switch
+   ========================================================================== */
+
+.user-actions {
+    opacity: 0;
+    transition: opacity 1s linear .3s;
+}
+
+body[class^="theme"] .user-actions {
+    opacity: 1;
+}
+
+.switch,
+.switch * {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.switch label {
+  cursor: pointer;
+}
+
+.switch label input[type=checkbox] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.switch label input[type=checkbox]:checked + .lever {
+  background-color: #84c7c1;
+}
+
+.switch label input[type=checkbox]:checked + .lever:before, .switch label input[type=checkbox]:checked + .lever:after {
+  left: 18px;
+}
+
+.switch label input[type=checkbox]:checked + .lever:after {
+  background-color: #26a69a;
+}
+
+.switch label .lever {
+  content: "";
+  display: inline-block;
+  position: relative;
+  width: 36px;
+  height: 14px;
+  background-color: rgba(0, 0, 0, 0.38);
+  border-radius: 15px;
+  margin-right: 10px;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+  vertical-align: middle;
+  margin: 0 16px;
+}
+
+.switch label .lever:before, .switch label .lever:after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  left: 0;
+  top: -3px;
+  -webkit-transition: left 0.3s ease, background .3s ease, -webkit-box-shadow 0.1s ease, -webkit-transform .1s ease;
+  transition: left 0.3s ease, background .3s ease, -webkit-box-shadow 0.1s ease, -webkit-transform .1s ease;
+  transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease, transform .1s ease;
+  transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease, transform .1s ease, -webkit-box-shadow 0.1s ease, -webkit-transform .1s ease;
+}
+
+.switch label .lever:before {
+  background-color: rgba(38, 166, 154, 0.15);
+}
+
+.switch label .lever:after {
+  background-color: #F1F1F1;
+  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+input[type=checkbox]:checked:not(:disabled) ~ .lever:active::before,
+input[type=checkbox]:checked:not(:disabled).tabbed:focus ~ .lever::before {
+  -webkit-transform: scale(2.4);
+          transform: scale(2.4);
+  background-color: rgba(38, 166, 154, 0.15);
+}
+
+input[type=checkbox]:not(:disabled) ~ .lever:active:before,
+input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::before {
+  -webkit-transform: scale(2.4);
+          transform: scale(2.4);
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.switch input[type=checkbox][disabled] + .lever {
+  cursor: default;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.switch label input[type=checkbox][disabled] + .lever:after,
+.switch label input[type=checkbox][disabled]:checked + .lever:after {
+  background-color: #949494;
+}
+
+.switch {
+  margin: auto 15px auto auto;
+}
+.switch label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.switch label .lever {
+  display: block;
+  width: 50px;
+  height: 16px;
+  margin: 0;
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  background-color: #3ddb93;
+  background-size: 23px 23px;
+}
+.switch label .lever:active::before, .switch label .lever:active::after {
+  transform: scale(1) translateY(-50%) !important;
+}
+.switch label .lever:before, .switch label .lever:after {
+  top: 50%;
+  left: 21px;
+  transform: translateY(-50%);
+  background-image: url(../images/switch_day.svg);
+  background-color: #FFF !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 17px;
+  width: 30px;
+  height: 30px;
+  filter: hue-rotate(300deg);
+}
+.switch label .lever:after {
+  background-color: #FFF;
+}
+.switch label input[type=checkbox]:checked + .lever {
+  background-position: 32px center;
+  background-color: #3ddb93;
+}
+.switch label input[type=checkbox]:checked + .lever:before, .switch label input[type=checkbox]:checked + .lever:after {
+  top: 50%;
+  left: 0;
+  background-image: url(../images/switch_night.svg);
+}
+
+/*Theme change Switch end*/
+
+
+#tradingPlatform {
+    height: calc(100vh - 109px); /*calculation of the Trading platform height to fill the full view port height (view port height minus header height) */
+    padding: 10px 10px 10px 30px;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    background: white;
+    margin: 0 auto;
+    position: relative;
+    width: calc(100vw - 56px);
+}
+
+#platform-wrapper,
+#trading-platform,
+#tp-wrapper {
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+}
+
+#trading-platform-page panda-forex-accounts .wrapper-pandats {
+    margin: 24px 0 0px;
+}
+
+#trading-platform-page panda-forex-accounts .button-pandats.account-pandats {
+    border-left: none;
+}
+
+#trading-platform-page panda-forex-account-status .mainpandats {
+    margin: 23px 0 0px;
+}
+
+#trading-platform-page panda-forex-menu .mainpandats,
+#trading-platform-page panda-forex-clock .wrapper-pandats {
+    margin: 0 4px;
+    /*height: 100%;*/
+    /*line-height: 84px;*/
+}
+
+.tp-info-accounts {
+    max-width: 100px;
+}
+
+#trading-platform-page #wrapper panda-forex-menu .wrapper-pandats {
+    top: 27px;
+}
+
+#trading-platform-page #nav .user-actions > li:last-child button {
+    margin-right: 0;
+}
+
+.mainpandats amount .body-pandats form .currency-pandats {
+    line-height: 30px;
+}
+
+/* Panda Forex Plugin Popup laptop fixes: screens less than 1366 */
+@media only screen and (max-width: 1366px) {
+    panda-forex-personal-profile .mainpandats .popup-wrapper-pandats {
+        min-height: unset;
+        margin-top: 0%;
+    }
+
+    panda-forex-client-area .mainpandats .popup-wrapper-pandats .wrap-content-pandats {
+        height: 550px !important;
+    }
+
+    panda-forex-personal-profile .mainpandats .popup-wrapper-pandats form {
+        height: unset;
+    }
+
+    .mainpandats .popup-wrapper-pandats {
+        top: 1% !important;
+    }
+}
+/*Trading platform page*/
+/* Overlay */
+/* to the body element */
+.noscroll {
+    overflow: hidden;
+    padding-right: 15px;
+}
+
+/*Fade effect*/
+.backdrop-pandats,
+.popup-wrapper-pandats {
+    -webkit-animation: fadein .3s;
+    /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein .3s;
+    /* Firefox < 16 */
+    -ms-animation: fadein .3s;
+    /* Internet Explorer */
+    -o-animation: fadein .3s;
+    /* Opera < 12.1 */
+    animation: fadein .3s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: .8;
+    }
+}
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: .8;
+    }
+}
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: .8;
+    }
+}
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: .8;
+    }
+}
+
+/* Tablet & Mobile */
+@media screen and (max-width: 980px) {
+    /* Hide Panda User Action buttons */
+    .user-actions.mainpandats,
+    .user-actions {
+        display: none;
+    }
+}
+.ns-box {
+    pointer-events: all;
+}
+
+.mainpandats [type=checkbox]:checked + label:before, .mainpandats [type=checkbox]:not(:checked) + label:before {
+    top: 2px !important;
+}
+
+panda-forex-trading-platform .mainpandats input[type=text], panda-forex-client-area .mainpandats form input, panda-forex-client-area .mainpandats form textarea, panda-forex-personal-profile .mainpandats .popup-wrapper-pandats form input {
+    height: 34px !important;
+}
+
+change-password .form-col-pandats input {
+    margin-bottom: 0 !important;
+}
+
+.mainpandats personal-details .date-pandats > div:first-of-type,
+panda-forex-personal-profile .mainpandats .popup-wrapper-pandats form .date-pandats > div:last-of-type,
+panda-forex-personal-profile .mainpandats .popup-wrapper-pandats form .date-pandats > div:first-of-type {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.hidePanel-pandats.ng-trigger-showPanel custom-input input[type=text].custom-input-field-pandats {
+    max-width: 100px;
+}
+
+.mainpandats sltp-popup .tr-pandats .td-row-pandats {
+    width: 100%;
+}
+
+custom-input input[type=text].custom-input-field-pandats {
+    width: 100% !important;
+}

@@ -1,0 +1,128 @@
+main .container{
+  height: 500px;
+}
+.brandFooter{
+  padding:0px;
+}
+.r1 h1{
+  color: white;
+}
+.r1 h6{
+  color: white;
+}
+.btnprimary{
+  background: var(--primary-color1) !important;
+  border: none;
+  margin-top: 2%;
+  font-size: 20px;
+  font-weight: inherit;
+  color:white;
+}
+.btnprimary:hover{
+  color:var(--primary-color3);
+  background: var(--primary-color1);
+}
+
+.mobile-img{
+  display: none !important;
+}
+body > main > div:nth-child(3) > div > div:nth-child(2) > p{
+  color:white;
+}
+@media (max-width: 767px){
+
+ 
+  body > main > div.container.py-2 > p{
+    font-size: 13px;
+  }
+
+  .mobile-img{
+    display: flex !important;
+  }
+  body > main > div:nth-child(2){
+    display:block !important;
+  }
+  main .container{
+    height:auto;
+  }
+      .desktop-img{
+        display: none !important;
+      }
+      body > main > div.container.py-5 > div{
+        flex-direction: column;
+      }
+      body > main > div.container.py-5 > div > div:nth-child(1) > div:nth-child(1) > h2{
+        font-size: 20px;
+      }
+      body > main > div.container.py-5 > div > div:nth-child(1) > div:nth-child(2) > p{
+        font-size: 11px;
+      }
+      body > main > div.container.py-5 > div > div:nth-child(2) > button{
+        top: 176%;
+    left: 30%;
+      }
+      body > main > div:nth-child(7){
+        padding:22px !important;
+      }
+      body > main > div:nth-child(7) > div > div:nth-child(1) > h1{
+        font-size: 20px;
+      }
+      body > main > div:nth-child(7) > div > div:nth-child(2) > p{
+        font-size: 12px;
+      }
+
+}
+
+/* Responsive for Tablet*/
+@media (max-width: 1023px) and (min-width: 768px){
+  main .container{
+    height: auto;
+  }
+  body > main > div:nth-child(2) > div{
+    height: 300px !important;
+  }
+  body > main > div:nth-child(2) > div > div:nth-child(2) > h1{
+    font-size: 1.5rem !important;
+    padding-top: 20% !important;
+  }
+  body > main > div:nth-child(2) > div > div:nth-child(2) > h6{
+    font-size: 0.75rem !important;
+  }
+  .btnprimary{
+    font-size: 15px;
+    margin-top: 7%;
+  }
+  h2,h1{
+    font-size: 1.5rem;
+  }
+  p{
+    font-size: 10px;
+    line-height: 13px;
+  }
+  body > main > div:nth-child(4) > div,body > main > div:nth-child(6) > div{
+    height: 300px !important;
+  }
+  body > main > div:nth-child(4) > div > div.row.py-5{
+    padding-top: 0 !important;
+  }
+  body > main > div:nth-child(6) > div > div > div > h4{
+    font-size: 0.9rem;
+    padding-top: 0 !important;
+  }
+  body > main > div:nth-child(6) > div > div > div > h1{
+    padding-top:0 !important;
+  }
+}
+
+/* Ipad pro and large tablets*/
+@media (max-width:1365px) and (min-width:1024px){
+}
+
+/*Desktop & laptop Small screens */ 
+@media (max-width:1600px){
+
+}
+/* Desktop & laptop large screen*/
+@media (min-width:1601px) {
+
+}
