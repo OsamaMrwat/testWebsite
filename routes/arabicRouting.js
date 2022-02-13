@@ -301,16 +301,22 @@ router.get("/"+encodeURIComponent("اخبار-النفط")+"/:slug", async(req,r
   }
   const response = await fetch(url, options).then(res=>res.json()).then(data=>{
     var article=data;
-    
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
-    
+    const data_tags=Object.keys(data[0].yoast_head_json.schema).map(function(key){return data[0].yoast_head_json.schema[key];});
+    const tags=data_tags[1][5]?data_tags[1][5].keywords.map(tag=>{
+    return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`
+  }).join(' '):" ";
+  
+
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
-      date:article[0].date.split("T")[1]+" "+article[0].date.split("T")[0],
+      date:article[0].date.split('T')[1].split(":")[0]+":"+article[0].date.split('T')[1].split(":")[1]+" "+article[0].date.split('T')[0],
       url:article[0].link,
+      tags:tags,
       og_img:`${article[0].yoast_head_json.og_image.url}`});
   }).catch(err=>console.log(err));
+  
   
 });
 router.get("/:slug"+"/"+encodeURIComponent("اخبار-النفط"), async(req,res)=>{
@@ -320,14 +326,19 @@ router.get("/:slug"+"/"+encodeURIComponent("اخبار-النفط"), async(req,r
   }
   const response = await fetch(url, options).then(res=>res.json()).then(data=>{
     var article=data;
-    
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
-    
+    const data_tags=Object.keys(data[0].yoast_head_json.schema).map(function(key){return data[0].yoast_head_json.schema[key];});
+    const tags=data_tags[1][5]?data_tags[1][5].keywords.map(tag=>{
+    return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`
+  }).join(' '):" ";
+  
+
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
-      date:article[0].date.split("T")[1]+" "+article[0].date.split("T")[0],
+      date:article[0].date.split('T')[1].split(":")[0]+":"+article[0].date.split('T')[1].split(":")[1]+" "+article[0].date.split('T')[0],
       url:article[0].link,
+      tags:tags,
       og_img:`${article[0].yoast_head_json.og_image.url}`});
   }).catch(err=>console.log(err));
   
@@ -347,14 +358,19 @@ router.get("/"+encodeURIComponent("اخبار-الذهب")+"/:slug",async(req,re
   }
   const response = await fetch(url, options).then(res=>res.json()).then(data=>{
     var article=data;
-    
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
-    
+    const data_tags=Object.keys(data[0].yoast_head_json.schema).map(function(key){return data[0].yoast_head_json.schema[key];});
+    const tags=data_tags[1][5]?data_tags[1][5].keywords.map(tag=>{
+    return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`
+  }).join(' '):" ";
+  
+
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
-      date:article[0].date.split("T")[1]+" "+article[0].date.split("T")[0],
+      date:article[0].date.split('T')[1].split(":")[0]+":"+article[0].date.split('T')[1].split(":")[1]+" "+article[0].date.split('T')[0],
       url:article[0].link,
+      tags:tags,
       og_img:`${article[0].yoast_head_json.og_image.url}`});
   }).catch(err=>console.log(err));
   
@@ -366,14 +382,19 @@ router.get("/:slug"+"/"+encodeURIComponent("اخبار-الذهب"),async(req,re
   }
   const response = await fetch(url, options).then(res=>res.json()).then(data=>{
     var article=data;
-    
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
-    
+    const data_tags=Object.keys(data[0].yoast_head_json.schema).map(function(key){return data[0].yoast_head_json.schema[key];});
+    const tags=data_tags[1][5]?data_tags[1][5].keywords.map(tag=>{
+    return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`
+  }).join(' '):" ";
+  
+
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
-      date:article[0].date.split("T")[1]+" "+article[0].date.split("T")[0],
+      date:article[0].date.split('T')[1].split(":")[0]+":"+article[0].date.split('T')[1].split(":")[1]+" "+article[0].date.split('T')[0],
       url:article[0].link,
+      tags:tags,
       og_img:`${article[0].yoast_head_json.og_image.url}`});
   }).catch(err=>console.log(err));
   
@@ -392,14 +413,19 @@ router.get("/"+encodeURIComponent("أخبار-التداول")+"/:slug",async(re
   }
   const response = await fetch(url, options).then(res=>res.json()).then(data=>{
     var article=data;
-    
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
-    
+    const data_tags=Object.keys(data[0].yoast_head_json.schema).map(function(key){return data[0].yoast_head_json.schema[key];});
+    const tags=data_tags[1][5]?data_tags[1][5].keywords.map(tag=>{
+    return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`
+  }).join(' '):" ";
+  
+
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
-      date:article[0].date.split("T")[1]+" "+article[0].date.split("T")[0],
+      date:article[0].date.split('T')[1].split(":")[0]+":"+article[0].date.split('T')[1].split(":")[1]+" "+article[0].date.split('T')[0],
       url:article[0].link,
+      tags:tags,
       og_img:`${article[0].yoast_head_json.og_image.url}`});
   }).catch(err=>console.log(err));
   
@@ -411,14 +437,19 @@ router.get("/:slug"+"/"+encodeURIComponent("أخبار-التداول"),async(re
   }
   const response = await fetch(url, options).then(res=>res.json()).then(data=>{
     var article=data;
-    
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
-    
+    const data_tags=Object.keys(data[0].yoast_head_json.schema).map(function(key){return data[0].yoast_head_json.schema[key];});
+    const tags=data_tags[1][5]?data_tags[1][5].keywords.map(tag=>{
+    return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`
+  }).join(' '):" ";
+  
+
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
-      date:article[0].date.split("T")[1]+" "+article[0].date.split("T")[0],
+      date:article[0].date.split('T')[1].split(":")[0]+":"+article[0].date.split('T')[1].split(":")[1]+" "+article[0].date.split('T')[0],
       url:article[0].link,
+      tags:tags,
       og_img:`${article[0].yoast_head_json.og_image.url}`});
   }).catch(err=>console.log(err));
   
@@ -437,14 +468,19 @@ router.get("/"+encodeURIComponent("اخبار-السوق")+"/:slug",async(req,re
   }
   const response = await fetch(url, options).then(res=>res.json()).then(data=>{
     var article=data;
-    
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
-    
+    const data_tags=Object.keys(data[0].yoast_head_json.schema).map(function(key){return data[0].yoast_head_json.schema[key];});
+    const tags=data_tags[1][5]?data_tags[1][5].keywords.map(tag=>{
+    return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`
+  }).join(' '):" ";
+  
+
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
-      date:article[0].date.split("T")[1]+" "+article[0].date.split("T")[0],
+      date:article[0].date.split('T')[1].split(":")[0]+":"+article[0].date.split('T')[1].split(":")[1]+" "+article[0].date.split('T')[0],
       url:article[0].link,
+      tags:tags,
       og_img:`${article[0].yoast_head_json.og_image.url}`});
   }).catch(err=>console.log(err));
   
@@ -456,14 +492,19 @@ router.get("/:slug"+"/"+encodeURIComponent("اخبار-السوق"),async(req,re
   }
   const response = await fetch(url, options).then(res=>res.json()).then(data=>{
     var article=data;
-    
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
-    
+    const data_tags=Object.keys(data[0].yoast_head_json.schema).map(function(key){return data[0].yoast_head_json.schema[key];});
+    const tags=data_tags[1][5]?data_tags[1][5].keywords.map(tag=>{
+    return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`
+  }).join(' '):" ";
+  
+
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
-      date:article[0].date.split("T")[1]+" "+article[0].date.split("T")[0],
+      date:article[0].date.split('T')[1].split(":")[0]+":"+article[0].date.split('T')[1].split(":")[1]+" "+article[0].date.split('T')[0],
       url:article[0].link,
+      tags:tags,
       og_img:`${article[0].yoast_head_json.og_image.url}`});
   }).catch(err=>console.log(err));
   
@@ -483,14 +524,19 @@ router.get("/"+encodeURIComponent("مدونة-التداول")+"/:slug",async(re
   }
   const response = await fetch(url, options).then(res=>res.json()).then(data=>{
     var article=data;
-    
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
-    
+    const data_tags=Object.keys(data[0].yoast_head_json.schema).map(function(key){return data[0].yoast_head_json.schema[key];});
+    const tags=data_tags[1][5]?data_tags[1][5].keywords.map(tag=>{
+    return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`
+  }).join(' '):" ";
+  
+
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
-      date:article[0].date.split("T")[1]+" "+article[0].date.split("T")[0],
+      date:article[0].date.split('T')[1].split(":")[0]+":"+article[0].date.split('T')[1].split(":")[1]+" "+article[0].date.split('T')[0],
       url:article[0].link,
+      tags:tags,
       og_img:`${article[0].yoast_head_json.og_image.url}`});
   }).catch(err=>console.log(err));
   
@@ -502,14 +548,19 @@ router.get("/:slug"+"/"+encodeURIComponent("مدونة-التداول"),async(re
   }
   const response = await fetch(url, options).then(res=>res.json()).then(data=>{
     var article=data;
-    
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
-    
+    const data_tags=Object.keys(data[0].yoast_head_json.schema).map(function(key){return data[0].yoast_head_json.schema[key];});
+    const tags=data_tags[1][5]?data_tags[1][5].keywords.map(tag=>{
+    return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`
+  }).join(' '):" ";
+  
+
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
-      date:article[0].date.split("T")[1]+" "+article[0].date.split("T")[0],
+      date:article[0].date.split('T')[1].split(":")[0]+":"+article[0].date.split('T')[1].split(":")[1]+" "+article[0].date.split('T')[0],
       url:article[0].link,
+      tags:tags,
       og_img:`${article[0].yoast_head_json.og_image.url}`});
   }).catch(err=>console.log(err));
   
