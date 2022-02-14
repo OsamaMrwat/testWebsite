@@ -100,20 +100,24 @@
   
     #englishNavBar > a > img,
     #spainshNavBar > a > img{
-      margin-top: -35px;
+      margin-top: -25px;
       margin-left: -5%;
       width: 35%!important;
       position: absolute;
       z-index: 9999;
     }
+    #spainshNavBar > a > img{
+      margin-left: 0%;
+    }
 
 
     #arabicNavBar > a > img{
-      margin-top: -24px;
-      margin-right: 0%;
-      width: 35%!important;
+      margin-top: -26px;
+      margin-right: -39px;
+      width: 37%!important;
       position: absolute;
       z-index: 9999;
+      height: 74% !important;
     }
     #arabicNavBar > #navbarSupportedContent>div{
       margin-right: 15%;
@@ -145,7 +149,7 @@
     #englishFooter .icons li+li{
       margin-left: 35%;
     }
-  #navbarSupportedContent{
+  #arabicNavBar > #navbarSupportedContent{
     position: fixed;
     top: 0;
     right: 0;
@@ -156,7 +160,18 @@
     flex-direction: column;
     justify-content: center;
   }
-  
+  #englishNavBar > #navbarSupportedContent,
+  #spainshNavBar > #navbarSupportedContent{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: white;
+    height: 100vh !important;
+    animation: openIt 1s;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+  }
   #englishNavBar > button,
   #spainshNavBar > button{
     z-index: 100;
@@ -336,10 +351,10 @@
   .lang-menu{
     position: absolute;
     top: 4%;
-    right: 25%;
+    right: 20%;
   }
   #arabicNavBar   .lang-menu{
-    right:50% !important;
+    right:45% !important;
   }
   }
 

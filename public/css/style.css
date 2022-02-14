@@ -500,7 +500,6 @@ body > main > div:nth-child(6) > div > div > div:nth-child(1)>img:hover{
 #navbarSupportedContent{
   justify-content: space-between;
   align-items: center;
-  margin-left:-1.2%;
 }
 
 #spainshNavBar #navbarSupportedContent{
