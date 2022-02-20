@@ -1,0 +1,192 @@
+<div class="container pt-2">
+    <div class="breadcrumbs" id="breadcrumbs"></div>
+    <div class="container bg-white" style="padding:2% 2%;">
+        <div class="row">
+            <h5>US Stocks</h5>
+        </div>
+        <div class="row">
+            <!--paragraph withe random text-->
+            <p class="">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                Donec eget nunc vitae nunc tincidunt euismod.<br>
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;<br>
+                Nulla facilisi.</p>
+        </div>
+
+    </div>
+    <div class="container bg-white my-4" style="display:flex;flex-direction:column;justify-content:space-between;align-items: baseline;">
+        <div class="row" style="width:20%">
+            <div class="contianer py-3 mx-4" style="display: flex;justify-content: space-between;align-items: baseline;width:100%;">
+                <a class="btn btn-filled" id="sector">Sector</a>
+                <a class="" id="industry">Industry</a>
+            </div>
+        </div>
+        <div class="row">                
+            <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#"class="active">Comerciales Services</a>
+            <a href="#">Comerciales Services</a>
+            <a href="#">Comerciales Services</a>
+            <a href="#">Comerciales Services</a>
+            <a href="#">Comerciales Services</a>
+            <a href="#" style="display:none">Comerciales Services</a>
+            <a href="#">&raquo;</a>
+        </div>
+            <div class="container" style="background:#d1d1d1;">
+                <div class="container py-3" >
+                    <span style="color:var(--primary-color2);">Comerciales Services:</span>lorem ipsum dolor sit am et, consectetur adipiscing elit. Donec eget nunc vitae nunc tincidunt euismod.<br>
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla facilisi.<br>
+                    lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget nunc vitae nunc tincidunt euismod.<br> 
+                </div>
+                <div class="container">
+                    <div class="row">
+                    </div>
+                    <div class="row"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                
+<table id="myTable">
+<tr class="header">
+<th style="    display: flex;
+justify-content: space-evenly;
+align-items: baseline;">
+    <div class="col-md-6">TICKER</div>
+    <div class="col-md-6"><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."></div>
+</th>
+<th style="width:10%">LAST</th>
+<th style="width:10%">CHG %</th>
+<th style="width:10%">CHG</th>
+<th style="width:10%">RATING</th>
+<th style="width:10%">VOL</th>
+<th style="width:10%">MKT CAP</th>
+<th style="width:10%">P/E</th>
+</tr>
+<tr>
+<td>Alfreds Futterkiste</td>
+<td>Germany</td>
+</tr>
+<tr>
+<td>Berglunds snabbkop</td>
+<td>Sweden</td>
+</tr>
+<tr>
+<td>Island Trading</td>
+<td>UK</td>
+</tr>
+<tr>
+<td>Koniglich Essen</td>
+<td>Germany</td>
+</tr>
+</table>
+        </div>
+    </div>
+
+
+</div>
+<style>
+    #myInput {
+  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myTable {
+  border-collapse: collapse; /* Collapse borders */
+  width: 100%; /* Full-width */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
+}
+
+#myTable th, #myTable td {
+  text-align: left; /* Left-align text */
+  padding: 12px; /* Add padding */
+}
+
+#myTable tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #f1f1f1;
+}
+
+    .pagination {
+  display: inline-block;
+  background-color:white;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  background:white
+}
+
+.pagination a.active {
+  background-color: #d1d1d1;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+</style>
+
+<script>
+    //function generate breadcrumbs from url
+    function generateBreadcrumbs(url) {
+        var url = url.split("/");
+        var breadcrumbs = "";
+        for (var i = 0; i < url.length; i++) {
+            if (url[i] != "") {
+                breadcrumbs += "<a href='/markets/" + url[i] + "'>" + url[i] + "</a>";
+                if (i != url.length - 1) {
+                    breadcrumbs += " > ";
+                }
+            }
+        }
+        document.getElementById("breadcrumbs").innerHTML = breadcrumbs;
+    }
+    generateBreadcrumbs(window.location.pathname);
+
+    //pagination function change active class when click
+    $(document).ready(function() {
+        $(".pagination a").on("click", function() {
+            $(".pagination a").removeClass("active");
+            $(this).addClass("active");
+        });
+    });
+
+    function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+</script>

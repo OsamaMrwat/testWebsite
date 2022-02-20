@@ -7,9 +7,7 @@ const upload=require('express-fileupload');
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 var butter = require('buttercms')(process.env.BUTTER_KEY);
-
 const fetch = require('node-fetch');
-
 const cors=require('cors');
 
 
@@ -27,6 +25,7 @@ const tradingplatform=require('./routes/tradingPlatforms');
 const startTrading=require('./routes/startTrading');
 const arabicRouting=require('./routes/arabicRouting');
 const spainshRouting=require('./routes/spainshRouting');
+const marketsRouting=require('./routes/marketsRouting');
 
 // Body Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -422,7 +421,7 @@ app.get('/oil-news/:slug', async (req,res)=>{
   }).join(' '):" ";
   
 
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:`${data_tags[1][5].keywords}`,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
@@ -454,7 +453,7 @@ app.get('/gold-news/:slug', async (req,res)=>{
   }).join(' '):" ";
   
 
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:`${data_tags[1][5].keywords}`,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
@@ -486,7 +485,7 @@ app.get('/market-news/:slug', async(req,res)=>{
   }).join(' '):" ";
   
 
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:`${data_tags[1][5].keywords}`,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
@@ -517,7 +516,7 @@ app.get('/trading-news/:slug',async (req,res)=>{
   }).join(' '):" ";
   
 
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:`${data_tags[1][5].keywords}`,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
@@ -592,7 +591,7 @@ app.post('/ceo',(req,res)=>{
 app.use('/evest',evestRoutes);
 app.use('/',tradingplatform);
 app.use('/start-trading',startTrading);
-
+app.use('/markets',marketsRouting);
 
 /*Arabic Routing*/
 app.use('/ar',arabicRouting);

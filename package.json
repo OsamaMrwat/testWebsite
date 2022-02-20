@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js -e ejs,js,css,html,jpg,png,scss",
+    "check": "depcheck"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@sendgrid/mail": "^7.6.0",
-    "accessibility": "^3.0.13",
     "axios": "^0.21.4",
     "body-parser": "^1.19.0",
     "buttercms": "^1.2.8",
@@ -21,13 +21,11 @@
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
     "express-fileupload": "^1.2.1",
-    "fetch": "^1.1.0",
-    "googleapis": "^89.0.0",
+    "lightweight-charts": "^3.7.0",
     "node-fetch": "^2.6.7",
     "nodemailer": "^6.6.3",
     "nodemon": "^2.0.7",
     "sitemap-generator": "^8.5.1",
-    "stocksocket": "^2.1.2",
     "x-frame-options": "^1.0.0",
     "yahoo-finance": "^0.3.7"
   }

@@ -46,7 +46,7 @@ router.get('/help-desk',(req,res)=>{
     butter.page.retrieve('*', 'help-desk')
     .then(function(resp) {
         var page1 = resp.data.data;
-        res.render('Evest/helpDesk', {
+        res.render('Evest/helpdesk', {
             page:page1
         })
     })

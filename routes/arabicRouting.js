@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
 
 router.get("/"+encodeURIComponent("أكاديمية-التداول"),(req,res)=>{
   var page={fields:{seo:{meta_description:`أكاديمية التداول هي اكاديمية تعليمية تعمل على ارشاد وتعليم في الاستثمار بأسواق المال العالمية والمحلية,يتم تجديد الفيديوهات`,
-  meta_keywords:`أكاديمية التداول`,page_title:`أكاديمية التداول - Evest تعلم تداول الأسهم, استثمر في الأسهم العالمية 100% بدون عمولة`}}};
+  meta_keyword:`أكاديمية التداول`,page_title:`أكاديمية التداول - Evest تعلم تداول الأسهم, استثمر في الأسهم العالمية 100% بدون عمولة`}}};
   res.render('ar/tradingAcademy',{page:page});
 })
 
@@ -307,7 +307,7 @@ router.get("/"+encodeURIComponent("اخبار-النفط")+"/:slug", async(req,r
   }).join(' '):" ";
   
 
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:`${data_tags[1][5].keywords}`,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
@@ -332,7 +332,7 @@ router.get("/:slug"+"/"+encodeURIComponent("اخبار-النفط"), async(req,r
   }).join(' '):" ";
   
 
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:`${data_tags[1][5].keywords}`,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
@@ -364,7 +364,7 @@ router.get("/"+encodeURIComponent("اخبار-الذهب")+"/:slug",async(req,re
   }).join(' '):" ";
   
 
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:`${data_tags[1][5].keywords}`,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
@@ -388,7 +388,7 @@ router.get("/:slug"+"/"+encodeURIComponent("اخبار-الذهب"),async(req,re
   }).join(' '):" ";
   
 
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:`${data_tags[1][5].keywords}`,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
@@ -419,7 +419,7 @@ router.get("/"+encodeURIComponent("أخبار-التداول")+"/:slug",async(re
   }).join(' '):" ";
   
 
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:`${data_tags[1][5].keywords}`,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
@@ -442,8 +442,9 @@ router.get("/:slug"+"/"+encodeURIComponent("أخبار-التداول"),async(re
     return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`
   }).join(' '):" ";
   
+  console(data_tags[1][5].keywords)
 
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:`${data_tags[1][5].keywords}`,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
@@ -474,7 +475,7 @@ router.get("/"+encodeURIComponent("اخبار-السوق")+"/:slug",async(req,re
   }).join(' '):" ";
   
 
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:`${data_tags[1][5].keywords}`,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
@@ -498,7 +499,7 @@ router.get("/:slug"+"/"+encodeURIComponent("اخبار-السوق"),async(req,re
   }).join(' '):" ";
   
 
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:`${data_tags[1][5].keywords}`,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
@@ -530,7 +531,7 @@ router.get("/"+encodeURIComponent("مدونة-التداول")+"/:slug",async(re
   }).join(' '):" ";
   
 
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:`${data_tags[1][5].keywords}`,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,
@@ -554,7 +555,7 @@ router.get("/:slug"+"/"+encodeURIComponent("مدونة-التداول"),async(re
   }).join(' '):" ";
   
 
-    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keywords:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
+    var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:`${data_tags[1][5].keywords}`,page_title:`${article[0].yoast_head_json.og_title}`}}};
     res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
       titleArticle:article[0].title.rendered,
       imgUrl:article[0].featured_image_url,

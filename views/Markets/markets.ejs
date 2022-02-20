@@ -1,0 +1,186 @@
+<div class="container pt-2">
+    <div class="breadcrumbs" id="breadcrumbs"></div>
+    <div class="container bg-white" style="padding:2% 2%;">
+        <div class="row">
+            <h5>Markets</h5>
+        </div>
+        <div class="row">
+            <!--paragraph withe random text-->
+            <p class="">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                Donec eget nunc vitae nunc tincidunt euismod.<br>
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;<br>
+                Nulla facilisi.</p>
+        </div>
+
+    </div>
+
+    <div class="container charts">
+        <div class="row">
+            <div class="col-md-4 bg-white" style="flex-direction: column;">
+                <h5>Stocks</h5>
+                <div id="chart1"></div>
+                <div id="intervalTime">
+                    <a class="btn btn-filled range">1D</a>
+                    <a class="btn btn-filled range">1M</a>
+                    <a class="btn btn-filled range">3M</a>
+                    <a class="btn btn-filled range">1Y</a>
+                    <a class="btn btn-filled range">5Y</a>
+                    <a class="btn btn-filled range">All</a>
+                </div>
+
+                
+            </div>
+            <div class="col-md-4">
+                Chart
+            </div>
+            <div class="col-md-4">
+                Chart
+            </div>
+        </div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+    </div>
+
+</div>
+
+<style>
+    .charts > .row > .col-md-4{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .switcher {
+	display: flex;
+	align-items: center;
+	height: 30px;
+	margin-top: 8px;
+	color: #2196F3;
+}
+
+.switcher-item {
+	cursor: pointer;
+	text-decoration: none;
+	display: inline-block;
+	padding: 6px 8px;
+	font-size: 14px;
+	color: #262b3e;
+	background-color: transparent;
+	margin-right: 8px;
+	border: none;
+	border-radius: 4px;
+	outline: none;
+}
+
+.switcher-item:hover {
+	background-color: #f2f3f5;
+}
+
+.switcher-active-item {
+	text-decoration: none;
+	cursor: default;
+	color: #262b3e;
+}
+
+.switcher-active-item,
+.switcher-active-item:hover {
+	background-color: #e1eff9;
+}
+
+</style>
+
+<script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+
+<script>
+var chartElement = document.getElementById('chart1');
+
+const chartProperties = {
+  width:300,
+  height:200,
+  timeScale:{
+    timeVisible:true,
+    secondsVisible:false,
+  },	watermark: {
+		visible: true,
+		fontSize: 24,
+		horzAlign: 'center',
+		vertAlign: 'center',
+		color: '#058080',
+		text: 'Evest',
+	},
+}
+const chart = LightweightCharts.createChart(chartElement,chartProperties);
+var areaSeries = chart.addAreaSeries({
+  topColor: '#64F0E3',
+  bottomColor: '#64f0e354',
+  lineColor: '#058080',
+  lineWidth: 2,
+	symbol: 'AAPL',
+});
+
+
+function getChart(range,symbol){
+    fetch(`https://yfapi.net/v8/finance/chart/${symbol}?range=${range}&region=US&interval=1d&lang=en&events=div%2Csplit`,{
+    method : 'GET',
+    headers:{
+        'Content-Type': 'application/json',
+        'X-API-KEY' : 'ey1Pl4aShiaVWabUX4hc42GOjOr1ONMK9BRaA9OK'
+    }})
+  .then(res => res.json())
+  .then(data => {
+      const dataArray = data.chart.result[0];
+      const timeArray = data.chart.result[0].timestamp;
+      const cdata = timeArray.map((d,index) => {
+        return {time:d,value:parseFloat(dataArray.indicators.quote[0].close[index])}
+    });
+    areaSeries.setData(cdata);
+  })
+  .catch(err => console.log(err))
+
+}
+
+getChart('max','AAPL');
+
+// addeventlistener to group of buttons
+const intervalTime = document.getElementById('intervalTime');
+intervalTime.addEventListener('click',(e) => {
+    if(e.target.classList.contains('range')){
+        const range = e.target.innerText;
+        console.log(range)
+        const timeRange=[
+    {text:'1D',range:'1d'},{text:'1M',  range:'1mo'},{text:'3M',  range:'3mo'},
+    {text:'1Y',  range:'1y'},{text:'5Y',  range:'5y'},{text:'All', range:'max'}
+    ];
+        timeRange.forEach(item => {
+            console.log(item.text==range)
+            if(item.text === range){
+                getChart(item.range,'AAPL');
+                e.target.classList.add('switcher-active-item');
+            }else{
+                
+                e.target.classList.remove('switcher-active-item');
+            }
+        });
+    }
+})
+
+</script>
+
+<script>
+    //function generate breadcrumbs from url
+    function generateBreadcrumbs(url) {
+        var url = url.split("/");
+        var breadcrumbs = "";
+        for (var i = 0; i < url.length; i++) {
+            if (url[i] != "") {
+                breadcrumbs += "<a href='/markets/" + url[i] + "'>" + url[i] + "</a>";
+                if (i != url.length - 1) {
+                    breadcrumbs += " > ";
+                }
+            }
+        }
+        document.getElementById("breadcrumbs").innerHTML = breadcrumbs;
+    }
+    generateBreadcrumbs(window.location.pathname);
+</script>
