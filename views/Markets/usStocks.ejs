@@ -1,89 +1,76 @@
 <div class="container pt-2">
-    <div class="breadcrumbs" id="breadcrumbs"></div>
-    <div class="container bg-white" style="padding:2% 2%;">
-        <div class="row">
-            <h5>US Stocks</h5>
-        </div>
-        <div class="row">
-            <!--paragraph withe random text-->
-            <p class="">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                Donec eget nunc vitae nunc tincidunt euismod.<br>
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;<br>
-                Nulla facilisi.</p>
-        </div>
-
+  <div class="breadcrumbs" id="breadcrumbs"></div>
+  <div class="container bg-white" style="padding:2% 2%;">
+    <div class="row">
+      <h5>US Stocks</h5>
     </div>
-    <div class="container bg-white my-4" style="display:flex;flex-direction:column;justify-content:space-between;align-items: baseline;">
-        <div class="row" style="width:20%">
-            <div class="contianer py-3 mx-4" style="display: flex;justify-content: space-between;align-items: baseline;width:100%;">
-                <a class="btn btn-filled" id="sector">Sector</a>
-                <a class="" id="industry">Industry</a>
-            </div>
+    <div class="row">
+      <!--paragraph withe random text-->
+      <p class="">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+        Donec eget nunc vitae nunc tincidunt euismod.<br>
+        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;<br>
+        Nulla facilisi.</p>
+    </div>
+
+  </div>
+  <div class="container bg-white my-4"
+    style="display:flex;flex-direction:column;">
+    <div class="row" style="width:20%">
+      <div class="contianer py-3 mx-4"
+        style="display: flex;justify-content: space-between;align-items: baseline;width:100%;">
+        <a class="btn btn-filled" id="sector">Sector</a>
+        <a class="" id="industry">Industry</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#" class="active">Comerciales Services</a>
+        <a href="#">Comerciales Services</a>
+        <a href="#">Comerciales Services</a>
+        <a href="#">Comerciales Services</a>
+        <a href="#">Comerciales Services</a>
+        <a href="#" style="display:none">Comerciales Services</a>
+        <a href="#">&raquo;</a>
+      </div>
+      <div class="container" style="background:#d1d1d1;">
+        <div class="container py-3">
+          <span style="color:var(--primary-color2);">Comerciales Services:</span>lorem ipsum dolor sit am et,
+          consectetur adipiscing elit. Donec eget nunc vitae nunc tincidunt euismod.<br>
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla facilisi.<br>
+          lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget nunc vitae nunc tincidunt euismod.<br>
         </div>
-        <div class="row">                
-            <div class="pagination">
-            <a href="#">&laquo;</a>
-            <a href="#"class="active">Comerciales Services</a>
-            <a href="#">Comerciales Services</a>
-            <a href="#">Comerciales Services</a>
-            <a href="#">Comerciales Services</a>
-            <a href="#">Comerciales Services</a>
-            <a href="#" style="display:none">Comerciales Services</a>
-            <a href="#">&raquo;</a>
+        <div class="container">
+          <div class="row">
+          </div>
+          <div class="row"></div>
         </div>
-            <div class="container" style="background:#d1d1d1;">
-                <div class="container py-3" >
-                    <span style="color:var(--primary-color2);">Comerciales Services:</span>lorem ipsum dolor sit am et, consectetur adipiscing elit. Donec eget nunc vitae nunc tincidunt euismod.<br>
-                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla facilisi.<br>
-                    lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget nunc vitae nunc tincidunt euismod.<br> 
-                </div>
-                <div class="container">
-                    <div class="row">
-                    </div>
-                    <div class="row"></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-                
-<table id="myTable">
-<tr class="header">
-<th style="    display: flex;
+      </div>
+    </div>
+    <div class="row">
+
+      <table id="myTable">
+        <tr class="header">
+          <th style="    display: flex;
 justify-content: space-evenly;
 align-items: baseline;">
-    <div class="col-md-6">TICKER</div>
-    <div class="col-md-6"><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."></div>
-</th>
-<th style="width:10%">LAST</th>
-<th style="width:10%">CHG %</th>
-<th style="width:10%">CHG</th>
-<th style="width:10%">RATING</th>
-<th style="width:10%">VOL</th>
-<th style="width:10%">MKT CAP</th>
-<th style="width:10%">P/E</th>
-</tr>
-<tr>
-<td>Alfreds Futterkiste</td>
-<td>Germany</td>
-</tr>
-<tr>
-<td>Berglunds snabbkop</td>
-<td>Sweden</td>
-</tr>
-<tr>
-<td>Island Trading</td>
-<td>UK</td>
-</tr>
-<tr>
-<td>Koniglich Essen</td>
-<td>Germany</td>
-</tr>
-</table>
-        </div>
+            <div class="col-md-6">TICKER</div>
+            <div class="col-md-6"><input type="text" id="myInput" onkeyup="myFunction()"
+                placeholder="Search for names.."></div>
+          </th>
+          <th style="width:10%">LAST</th>
+          <th style="width:10%">CHG %</th>
+          <th style="width:10%">CHG</th>
+          <th style="width:10%">RATING</th>
+          <th style="width:10%">VOL</th>
+          <th style="width:10%">MKT CAP</th>
+          <th style="width:10%">P/E</th>
+        </tr>
+        <%- stocks %>
+      </table>
     </div>
-
-
+  </div>
 </div>
 <style>
     #myInput {
@@ -189,4 +176,5 @@ align-items: baseline;">
   }
 }
 
+fetch('')
 </script>

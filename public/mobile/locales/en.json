@@ -1068,6 +1068,14 @@
             {
                 "pattern": "BUFFETS-2",
                 "text": "Warren’s top 09 favorite general stocks<br/><br/>The proportionate distribution of the stocks making this basket:<br/><ul class='desc-list-pandats'><li>4% Kraft Heinz</li> <li>10% American Express</li> <li>33% Bank of America</li> <li>1% DaVita Inc.</li> <li>9% General Motors Co.</li> <li>3% Kroger Co.</li> <li>5% Moodys Corp.</li> <li>18% The Coca Cola Co.</li> <li>17% Verizon Comms Inc.</li></ul>"
+            },
+            {
+                "pattern": "UKBANKS",
+                "text": "The biggest retail and commercial UK Banks<br/><br/>The proportionate distribution of the stocks making this basket:<br/><ul class='desc-list-pandats'><li>34% Lloyds Banking Group Plc</li><li>17% Barclays Plc</li><li>37% HSBC Holdings</li><li>12% NatWest Group</li></ul>"
+            },
+            {
+                "pattern": "CRYPTOETF",
+                "text": "04 well known and trendiest cryptocurrencies<br/><br/>The proportionate distribution of the cryptocurrencies making this basket:<br/><ul class='desc-list-pandats'><li>48% XRP (Ripple)</li><li>30% DOT (Polkadot)</li><li>14% LTC (Litecoin)</li><li>8% XLM (Stellar)</li></ul>"
             }
         ]
     }

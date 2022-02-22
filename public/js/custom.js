@@ -17,7 +17,6 @@ isMobile();
 
 
 
-
 var forexEvents = {
   depositSuccess: depositSuccessCallback,
   depositFail: depositFailCallback,
@@ -35,7 +34,6 @@ function signupSuccessCallback(e) {}
 function signupFailCallback(e) {}
 function loginSuccessCallback(e) {
   localStorage.setItem("loggedin", "true");
-
 //   let encId=e.customer.customerId;
 //   console.log(decIt(encId));
 //   console.log(e.customer.customerId)

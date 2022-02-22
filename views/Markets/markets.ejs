@@ -140,7 +140,7 @@ function getChart(range,symbol){
 
 }
 
-getChart('max','AAPL');
+getChart('3mo','AAPL');
 
 // addeventlistener to group of buttons
 const intervalTime = document.getElementById('intervalTime');
@@ -153,13 +153,9 @@ intervalTime.addEventListener('click',(e) => {
     {text:'1Y',  range:'1y'},{text:'5Y',  range:'5y'},{text:'All', range:'max'}
     ];
         timeRange.forEach(item => {
-            console.log(item.text==range)
+            console.log(item.text==range ? item.range : console.log('nooo'))
             if(item.text === range){
-                getChart(item.range,'AAPL');
-                e.target.classList.add('switcher-active-item');
-            }else{
-                
-                e.target.classList.remove('switcher-active-item');
+                getChart(item.range,'AAPL');        
             }
         });
     }
