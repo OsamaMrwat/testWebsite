@@ -15,6 +15,9 @@ function isMobile() {
 
 isMobile();
 
+var tradingAcademyLink=document.querySelector(".ta-link");
+var tradingAcademyLinkAr=document.querySelector(".ta-linkAr");
+console.log(tradingAcademyLink.href);
 
 
 var forexEvents = {
@@ -34,6 +37,8 @@ function signupSuccessCallback(e) {}
 function signupFailCallback(e) {}
 function loginSuccessCallback(e) {
   localStorage.setItem("loggedin", "true");
+  tradingAcademyLink.href=tradingAcademyLink.href+"/true";
+  tradingAcademyLinkAr.href="/ar/أكاديمية-التداول/true?lang=ar";
 //   let encId=e.customer.customerId;
 //   console.log(decIt(encId));
 //   console.log(e.customer.customerId)
@@ -55,6 +60,7 @@ function loginFailCallback(e) {}
 function logoutCallback(e) {
  location.reload();
  localStorage.removeItem("loggedin");
+ window.Loggedin=false;
 }
 function appInitCallback(e) {
   "function" == typeof changeThemeColorCHKBX && changeThemeColorCHKBX("load");

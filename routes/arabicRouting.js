@@ -13,10 +13,19 @@ router.get("/", (req, res) => {
   })
 });
 
+router.get("/"+encodeURIComponent("أكاديمية-التداول")+"/:loginStatus",(req,res)=>{
+  var page={fields:{seo:{meta_description:`أكاديمية التداول هي اكاديمية تعليمية تعمل على ارشاد وتعليم في الاستثمار بأسواق المال العالمية والمحلية,يتم تجديد الفيديوهات`,
+  meta_keyword:`أكاديمية التداول`,page_title:`أكاديمية التداول - Evest تعلم تداول الأسهم, استثمر في الأسهم العالمية 100% بدون عمولة`}}};
+  if(req.params.loginStatus=='true'){
+    res.render('ar/tradingAcademylogedin',{page:page});
+  }else{
+    res.render('ar/tradingAcademy',{page:page});
+  }
+})
 router.get("/"+encodeURIComponent("أكاديمية-التداول"),(req,res)=>{
   var page={fields:{seo:{meta_description:`أكاديمية التداول هي اكاديمية تعليمية تعمل على ارشاد وتعليم في الاستثمار بأسواق المال العالمية والمحلية,يتم تجديد الفيديوهات`,
   meta_keyword:`أكاديمية التداول`,page_title:`أكاديمية التداول - Evest تعلم تداول الأسهم, استثمر في الأسهم العالمية 100% بدون عمولة`}}};
-  res.render('ar/tradingAcademy',{page:page});
+    res.render('ar/tradingAcademy',{page:page});
 })
 
 router.get("/"+encodeURIComponent('أسئلة-شائعة'),(req,res)=>{

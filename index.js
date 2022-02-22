@@ -374,14 +374,32 @@ app.get('/mobile',(req,res)=>{
   res.sendFile(__dirname+'/public/mobile/index.html');
 });
 
+app.get('/trading-academy/:loginStatus',(req,res)=>{
+  butter.page.retrieve('*', 'trading-academy')
+  .then(function(resp) {
+    var page1 = resp.data.data;
+    if(req.params.loginStatus=='true'){
+      res.render('tradingAcademyLoggedin', {
+        page:page1
+      })
+    }else{
+      res.render('tradingAcademy', {
+        page:page1
+      }) 
+    }
+  })
+  .catch(function(resp) {
+      console.log(resp)
+  });
+})
 app.get('/trading-academy',(req,res)=>{
   butter.page.retrieve('*', 'trading-academy')
   .then(function(resp) {
     var page1 = resp.data.data;
-    res.render('tradingAcademy', {
-      page:page1
+      res.render('tradingAcademy', {
+        page:page1
+      }) 
     })
-  })
   .catch(function(resp) {
       console.log(resp)
   });
