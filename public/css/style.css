@@ -55,7 +55,6 @@ body {
 }*/
 
 
-
 .support-icon{
   z-index: 999;
   position: fixed;
@@ -353,6 +352,7 @@ panda-forex-menu .mainpandats .button-pandats:hover{
   background: var(--supportive-color2) !important;
 }
 
+
 /*client area*/
 .mainpandats .popup-wrapper-pandats .title-popup-pandats{
   background-color: white !important;
@@ -450,6 +450,29 @@ nav a{
   transition: 0.5s ease-out;
   font-family: 'Evest Med';
 }
+.CryptoItem{
+  font-family: 'Evest Med';
+  animation: glow 1s infinite;
+  display: block;
+  padding: .5rem 1rem;
+}
+:lang(ar) > .CryptoItem{
+  font-family: 'Arabic Evest';
+}
+
+@keyframes glow {
+  0% {
+    color:var(--primary-color1);
+  }
+  50% {
+    color:var(--primary-color3);
+  }
+  100% {
+    color:var(--primary-color1);
+  }
+}
+
+
 
 #arabicNavBar .nav-link{
   font-family: 'Arabic Evest' !important;
@@ -458,6 +481,7 @@ nav a{
 .nav-link:hover{
   background-position: -200%;
 }
+
 .dropdown-item:hover{
   cursor: pointer;
 }
@@ -481,6 +505,7 @@ body > main > div:nth-child(6) > div > div > div:nth-child(1)>img:hover{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-flow: row nowrap;
 }
 
 #englishNavBar .dropdown-toggle::after,

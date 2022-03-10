@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const fetch = require('node-fetch');
-
+const yahooFinance = require("yahoo-finance");
 
 router.get('/test',async(req,res)=>{
     const url=`https://script.google.com/macros/s/AKfycbwpBePFAYnwnBxzG4zhtcrzYtauLDYSVPkaMQp7YAenSO8DaVNG_dItbaCOQZF9W0ti/exec`;
@@ -39,19 +39,28 @@ router.get('/stocks/us-stocks',async(req,res)=>{
         cdata.forEach(elem=>{
             if(elem.Market=='US Stocks'){
                 dataStocks.push(elem);
-                console.log(elem.Symbol)
             }
         })
     });
     // console.log(dataStocks.length)
     const stocks=dataStocks.map(elem=>{
+        fetch(`https://yfapi.net/ws/insights/v1/finance/insights?symbol=${elem.Symbol}`,{
+            method : 'GET',
+            headers:{
+                'Content-Type': 'application/json',
+                'X-API-KEY' : 'ey1Pl4aShiaVWabUX4hc42GOjOr1ONMK9BRaA9OK'
+            }}).then(res=>res.json()).then(data=>{
+                console.log(data.result);
+            })
+        let rating=''
         return`<tr>
         <th>${elem.PandaAssetName}</th>
         <th>${elem.Price}</th>
-        <th>${elem.Change}</th>
         <th>${elem.ChangePct}</th>
-        <th>${elem.Volume}</th>
-        <th>${elem.MarketCAP}</th>
+        <th>${elem.Change}</th>
+        <th>${rating}</th>
+        <th>${elem.Volume.toLocaleString("en-US")}</th>
+        <th>${elem.MarketCAP.toLocaleString("en-US")}</th>
         </tr>`
     }).join(' ');
     var page={fields:{seo:{meta_description:"test",meta_keyword:"test"},title:"test"}}

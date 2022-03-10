@@ -1,0 +1,63 @@
+<div class="desktop-img">
+    <div class="row" style="background:url('/images/Crypto web page En-13.png');height:500px;background-size:cover;color:white">
+        <%- page.fields.header.heading %> 
+    </div>
+    <div class="row py-4">
+        <%- page.fields.sections.section1 %> 
+    </div>
+    <div class="row pt-4" style="background:url('/images/Crypto web page En-12.png');color:white;background-size: cover;">
+        <%- page.fields.sections.section2 %>
+    </div>
+</div>
+
+<div class="mobile-img">
+    <div class="container" style="background-image: url('/images/Crypto En-Mobile-02.png');height:650px;color:white;background-size: cover;padding-top: 90%;">
+        <%- page.fields.mobile_view[0].fields.content %>
+    </div>
+    <div class="row py-4">
+        <%- page.fields.mobile_view[1].fields.content %>
+    </div>
+    <div class="row pt-4" style="background:url('/images/Crypto web page En-12.png');color:white;background-size: cover;">
+        <%- page.fields.mobile_view[2].fields.content %>
+    </div>
+</div>
+
+<style>
+    body > main > div > div > div > div:nth-child(1) > ul>li,
+    .mobile-img>.container>ul>li {
+        color:white !important;
+    }
+    ul > li{
+        color:var(--primary-color1) !important;
+    }
+    .c1{
+        font-size: 10px;
+    }
+    .col-md-4 > div{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 400px;
+    }
+    .col-md-4 > div > p{
+        height:200px;
+    }
+    .coinsMobile{
+        display: flex;
+    height: 400px;
+    align-items: baseline;
+    justify-content: center;
+    }
+    .coinsMobile > .col-md-6{
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+    .coinsMobile > .col-md-6 > p{
+        text-align:justify;
+        height:150px;
+        width:150px;
+    }
+</style>

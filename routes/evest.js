@@ -80,5 +80,18 @@ router.get('/',(req,res)=>{
     }); 
 })
 
+router.get('/evest-ambassador',(req,res)=>{
+    butter.page.retrieve('*', 'ambassador')
+    .then(function(resp) {
+      var page1 = resp.data.data;
+      res.render('Evest/ambassador', {
+        page:page1
+      })
+    })
+    .catch(function(resp) {
+        console.log(resp)
+    }); 
+})
+
 
 module.exports = router;

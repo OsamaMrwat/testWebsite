@@ -1,0 +1,118 @@
+<div class="desktop-img">
+    <div class="row" style="background:url('/images/webp/Islamic Accounts-01.webp');background-size: cover;height:500px;">
+        <%- page.fields.header.heading %> 
+    </div>
+    <div class="row py-4">
+        <%- page.fields.sections.section1 %>
+    </div>
+    <div class="row" style="background-color: var(--secondary-color4);height:60px;color:white;">
+        <%- page.fields.sections.section2 %>
+    </div>
+    <div class="row vids">
+        <%- page.fields.sections.section3 %>
+    </div>
+</div>
+
+<div class="mobile-img">
+    <div class="container" style="background:url('/images/ENG_Muhannad Mobile.png');height:650px;background-size: cover;color:white;padding-top: 110%;">
+        <%- page.fields.mobile_view[0].fields.content %>
+    </div>
+    <div class="row py-4">
+        <%- page.fields.mobile_view[1].fields.content %> 
+    </div>
+    <div class="row" style="background-color: var(--secondary-color4);height:60px;color:white;">
+        <%- page.fields.mobile_view[2].fields.content %>
+    </div>
+    <div class="row vids">
+        <%- page.fields.mobile_view[3].fields.content %>
+    </div>
+</div>
+
+<style>
+    panda-forex-login .forex-button-pandats.simple-button-pandats,
+.mainpandats .forex-button-pandats.simple-button-pandats{
+  font-family: "Arabic Evest",sans-serif !important;
+}
+body{
+  text-align: right;
+  direction: rtl;
+  font-family: "Arabic Evest" ,sans-serif !important;
+}
+
+span{
+font-family: "Evest Font";
+}
+
+    .btnprimary{
+        background-color:var(--primary-color3);
+        color:var(--primary-color1);
+        font-weight: 500 !important;
+        font-size: 17px;
+        width:150px;
+        height:50px;
+    }
+    .mobileBtn{
+        font-size: 12px;
+        width:100px;
+        height:30px;
+    }
+    h1{
+        color:white;
+        padding-top: 25%;
+    }
+    #mohanadImg{
+        width: 70%;
+    padding-top: 25px;
+    }
+    p{
+        text-align: justify;
+    }
+    .vids > .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 3%;
+        padding-bottom: 3%;
+    }
+    .vids > .container.even{
+        flex-direction: row-reverse;
+    }
+    .vids > .container.even > .col-8{
+        display: flex;
+    flex-direction: row-reverse;
+    }
+    @media (max-width:767px){
+        body > main > div.mobile-img > div.row.py-4 > div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .vids h6{
+            font-size: 12px;
+        }
+    }
+    @media (max-width:1280px){
+        .vids > .container >.col-8 > iframe{
+        width:100%;
+    }
+    .vids h3{
+        font-size: 20px;
+    }
+    #mohanadImg {
+        width: 93%;
+    padding-top: 1px;
+    }
+    body > main > div.desktop-img > div:nth-child(1) > div > div:nth-child(1) > h1{
+        font-size: 25px;
+    }
+    body > main > div.desktop-img > div:nth-child(1){
+        height:380px !important;
+    }
+}
+</style>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>

@@ -24,8 +24,7 @@
     <!-- Latest compiled JavaScript -->
     <script   src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script> 
     <!--Font Awesome ICONS-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--Evest Styling CSS-->
     <link rel="icon" type="image/png" href="/images/webp/icon2.webp"/>
     <link rel="stylesheet" href="/css/style.min.css"/>
@@ -79,6 +78,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <li><a class="dropdown-item" href="/evest">Evest</a></li>
               <li><a class="dropdown-item" href="/evest/why-evest">Why Evest?</a></li>
               <li><a class="dropdown-item" href="/evest/regulatory-authorisation">Regulatory Authorisation</a></li>
+              <li><a class="dropdown-item" href="/evest/evest-ambassador">Evest Ambassador</a></li>
               <li><a class="dropdown-item" href="/ceo">Meet the CEO</a></li>
               <li><a class="dropdown-item" href="/evest/contact-us">Contact us</a></li>
               <li><a class="dropdown-item" href="/evest/careers">Careers</a></li>
@@ -149,6 +149,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <li><a class="dropdown-item" href="/faq">F.A.Q</a></li>
             </ul>
           </li>
+          <li class="nav-item">
+            <p class="CryptoItem" href="#">Crypto</p>
+          </li>
         </ul>
         
         <div class="form-inline my-2 my-lg-0">
@@ -200,6 +203,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a class="dropdown-item" href="/ar/إيڤست?lang=ar"> إيڤست</a></li>
             <li><a class="dropdown-item" href="/ar/إيڤست/لماذا-إيڤست?lang=ar">لماذا إيڤست?</a></li>
             <li><a class="dropdown-item" href="/ar/إيڤست/تراخيص-التداول?lang=ar">تراخيص التداول</a></li>
+            <li><a class="dropdown-item" href="/ar/إيڤست/سفير-إيڤست?lang=ar">سفير ايفست</a></li>
             <li><a class="dropdown-item" href="/ar/المدير-التنفيذي?lang=ar">تحدث مع ال CEO</a></li>
             <li><a class="dropdown-item" href="/ar/إيڤست/اتصل-بنا?lang=ar">إتصل بنا</a></li>
             <li><a class="dropdown-item" href="/ar/إيڤست/وظائف-إيڤست?lang=ar">وظائف إيڤست</a></li>
@@ -269,6 +273,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
           </ul>
         </li>
+        <li class="nav-item">
+          <p class="CryptoItem" href="#">كربتو</p>
+        </li>
       </ul>
       <div class="form-inline my-2 my-lg-0">
         <panda-forex-login  show-logout="false" redirect-after-login="/trade-room" ></panda-forex-login>
@@ -316,6 +323,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a class="dropdown-item" href="/es/evest?lang=es">Evest</a></li>
             <li><a class="dropdown-item" href="/es/evest/Por-qué-Evest?lang=es">¿Por qué Evest?</a></li>
             <li><a class="dropdown-item" href="/es/evest/autorización-reglamentaria?lang=es">Autorización Reglamentaria</a></li>
+            <li><a class="dropdown-item" href="/es/evest/Embajador-de-Evest?lang=es">Embajador de Evest</a></li>
             <li><a class="dropdown-item" href="es/Conocer-al-CEO?lang=es">Meet the CEO</a></li>
             <li><a class="dropdown-item" href="/es/evest/Contáctenos?lang=es">Contáctenos</a></li>
             <li><a class="dropdown-item" href="/es/evest/carrera?lang=es">Carreras</a></li>
@@ -384,6 +392,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </li>
             <li><a class="dropdown-item" href="/es/faq">F.A.Q</a></li>
           </ul>
+        </li>
+        <li class="nav-item">
+          <p class="CryptoItem" href="#">Crypto</p>
         </li>
       </ul>
       
@@ -703,12 +714,15 @@ images.forEach(image=>{
 
 /*support-Channels*/
 $(document).ready(function() {
-  
-  if($(location).attr('pathname')=='/ar'){
+  //get lang attribute
+  var lang = $('html').attr('lang');
+  if(lang=='ar'){
     $('#helpAr').show();
+    $('.support-icon').css('right','auto')
+    $('.support-icon').css('left','6%')
     $('#helpEn').hide();
     $('#helpEs').hide();
-  }else if($(location).attr('pathname')=='/es'){
+  }else if(lang=='es'){
     $('#helpEs').show();
     $('#helpAr').hide();
     $('#helpEn').hide();

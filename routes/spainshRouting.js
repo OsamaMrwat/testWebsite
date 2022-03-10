@@ -84,6 +84,14 @@ router.get("/evest/"+encodeURIComponent("Por-qué-Evest"), (req, res) => {
     res.render('es/Evest/regulatoryAuthorisation',{page:page});
   })
 
+  router.get("/evest/"+encodeURIComponent("Embajador-de-Evest"), (req, res)=>{
+    butter.page.retrieve('*', 'ambassador-es')
+    .then(function(resp){
+      var page1=resp.data.data;
+      res.render('es/Evest/ambassador',{page:page1});
+    })
+  }) 
+  
   /* Start Trading*/
   
   router.get("/comience-hacer-trading/"+encodeURIComponent("Tipos-de-cuentas-de-trading"), (req, res) => {
@@ -139,6 +147,14 @@ router.get("/evest/"+encodeURIComponent("Por-qué-Evest"), (req, res) => {
     var page={fields:{seo:{meta_description:"Calculadora de operaciones, nuestra calculadora de operaciones con divisas y CFD le ayuda a decidir los detalles de su operación antes de actuar",
     meta_keywords:`Calculadora de operaciones`,page_title:`Calculadora Trading : Evest calcula el precio de las acciones en línea`}}};
     res.render('es/StartTrading/tradingCalculator',{page:page}); 
+  })
+
+  router.get("/comience-hacer-trading/"+encodeURIComponent("criptomonedas"), (req, res) => {
+    butter.page.retrieve('*', 'crypto-es')
+    .then(function(resp){
+      var page1=resp.data.data;
+      res.render('es/StartTrading/crypto',{page:page1});
+    })
   })
 
   /* Trading Platforms */

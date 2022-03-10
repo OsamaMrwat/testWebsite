@@ -17,7 +17,7 @@ isMobile();
 
 var tradingAcademyLink=document.querySelector(".ta-link");
 var tradingAcademyLinkAr=document.querySelector(".ta-linkAr");
-console.log(tradingAcademyLink.href);
+
 
 
 var forexEvents = {
@@ -193,6 +193,11 @@ var arLinks = [
     es:'/es/academia-de-trading'
   },
   {
+    en:"/trading-academy/true",
+    ar:"/ar/%D8%A3%D9%83%D8%A7%D8%AF%D9%8A%D9%85%D9%8A%D8%A9-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/true",
+    es:'/es/academia-de-trading/true'
+  },
+  {
     en:"/start-trading/trading-calculator",
     ar:"/ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%AD%D8%A7%D8%B3%D8%A8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84",
     es:'/es/comience-hacer-trading/Calculadoras-de-Trading'
@@ -264,7 +269,15 @@ var arLinks = [
     en:'/faq',
     ar:'/ar/%D8%A3%D8%B3%D8%A6%D9%84%D8%A9-%D8%B4%D8%A7%D8%A6%D8%B9%D8%A9',
     es:'/es/faq'
-  }
+  },
+  { en:'/evest/evest-ambassador',
+    ar:'/ar/%D8%A5%D9%8A%DA%A4%D8%B3%D8%AA/%D8%B3%D9%81%D9%8A%D8%B1-%D8%A5%D9%8A%DA%A4%D8%B3%D8%AA',
+    es:'/es/evest/Embajador-de-Evest'},
+    {
+      en:'/start-trading/cryptocurrency',
+      ar:'/ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9',
+      es:'/es/comience-hacer-trading/criptomonedas'
+    }
 ];
 let page = window.location.pathname;
 
@@ -328,24 +341,6 @@ function checkLang() {
          (document.getElementById("englishFooter").style.display = "block")
          };
 }
-
-/*Hamburger menu to X*/
-// document.querySelector("nav > button").addEventListener("click", function () {
-//   let open=document.querySelector("nav > button").classList.length;
-//   console.log(document.querySelector("nav > button").classList.length)
-//    if(open==1){
-//     console.log("true")
-//     document.querySelector("nav > button > span").style.backgroundImage = "url(/images/hamburger.svg)";
-//    }else{
-
-//      console.log("X")
-//      document.querySelector("nav > button > span").style.backgroundImage = "url(/images/x.svg)";
-//   }
-// });
-
-
-
-
 
 
 

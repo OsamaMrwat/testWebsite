@@ -17,7 +17,7 @@ router.get("/"+encodeURIComponent("أكاديمية-التداول")+"/:loginSta
   var page={fields:{seo:{meta_description:`أكاديمية التداول هي اكاديمية تعليمية تعمل على ارشاد وتعليم في الاستثمار بأسواق المال العالمية والمحلية,يتم تجديد الفيديوهات`,
   meta_keyword:`أكاديمية التداول`,page_title:`أكاديمية التداول - Evest تعلم تداول الأسهم, استثمر في الأسهم العالمية 100% بدون عمولة`}}};
   if(req.params.loginStatus=='true'){
-    res.render('ar/tradingAcademylogedin',{page:page});
+    res.render('ar/tradingAcademyLogedin',{page:page});
   }else{
     res.render('ar/tradingAcademy',{page:page});
   }
@@ -136,6 +136,14 @@ encodeURIComponent("حساب-تداول-إسلامي"),(req,res)=>(
   })
 ));
 
+router.get("/"+encodeURIComponent("ابدا-التداول") +"/"+encodeURIComponent('العملات-الرقمية'),(req,res)=>{
+  butter.page.retrieve('*','crypto-ar')
+  .then(function(resp){
+    var page1=resp.data.data;
+    res.render('ar/StartTrading/crypto',{page:page1});
+  })
+})
+
 
 
 
@@ -252,6 +260,14 @@ router.get("/"+encodeURIComponent("إيڤست")+"/"+encodeURIComponent("تراخ
   })
 })
 
+router.get("/"+encodeURIComponent("إيڤست")+"/"+encodeURIComponent("سفير-إيڤست"),(req,res)=>{
+  butter.page.retrieve('*','ambassador-ar')
+  .then(function(resp){
+    var page1=resp.data.data;
+    res.render('ar/Evest/ambassador',{page:page1});
+  })  
+})
+
 
 
 router.get("/"+encodeURIComponent("المدير-التنفيذي"),(req,res)=>{
@@ -292,6 +308,8 @@ router.post("/"+encodeURIComponent("المدير-التنفيذي"),(req,res)=>{
       res.render('ar/ceo',{page:page1});
     })
 })
+
+
 
 /** News and Articles**/
 

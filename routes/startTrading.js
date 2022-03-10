@@ -120,4 +120,17 @@ router.get('/0-commission-on-stocks',(req,res)=>{
     }
     )
 });
+
+router.get('/cryptocurrency',(req,res)=>{
+    butter.page.retrieve('*', 'crypto')
+    .then(function(resp) {
+        var page1 = resp.data.data;
+        res.render('StartTrading/crypto', {
+            page:page1
+        })
+    }).catch(function(resp) {
+        console.log(resp)
+    }
+    )
+})
 module.exports = router;
