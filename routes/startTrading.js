@@ -133,4 +133,17 @@ router.get('/cryptocurrency',(req,res)=>{
     }
     )
 })
+
+router.get('/eib',(req,res)=>{
+    butter.page.retrieve('*', 'eib')
+    .then(function(resp) {
+        var page1 = resp.data.data;
+        res.render('StartTrading/EIBS', {
+            page:page1
+        })
+    }).catch(function(resp) {
+        console.log(resp)
+    }
+    )
+})
 module.exports = router;

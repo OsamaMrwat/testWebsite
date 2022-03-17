@@ -1,6 +1,6 @@
 const express=require('express');
 const router = express.Router();
-var butter = require('buttercms')('eabb7d00a1cecacc7a57f771cc86fb0126ad94d8');
+var butter = require('buttercms')(process.env.BUTTER_KEY);
 
 router.get('/mobile-trading',(req,res)=>{
     butter.page.retrieve('*', 'mobile-trading')

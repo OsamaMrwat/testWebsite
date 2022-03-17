@@ -42,18 +42,30 @@ router.get('/stocks/us-stocks',async(req,res)=>{
             }
         })
     });
-    // console.log(dataStocks.length)
+    var rating=''
     const stocks=dataStocks.map(elem=>{
+        
         fetch(`https://yfapi.net/ws/insights/v1/finance/insights?symbol=${elem.Symbol}`,{
             method : 'GET',
             headers:{
                 'Content-Type': 'application/json',
                 'X-API-KEY' : 'ey1Pl4aShiaVWabUX4hc42GOjOr1ONMK9BRaA9OK'
             }}).then(res=>res.json()).then(data=>{
-                console.log(data.result);
+                rating=
+        `<tr class="${elem.Sector} ${elem.Industry}">
+        <th>${elem.PandaAssetName}</th>
+        <th>${elem.Price}</th>
+        <th>${elem.ChangePct}</th>
+        <th>${elem.Change}</th>
+        <th>${data.finance.result.instrumentInfo.recommendation.rating}</th>
+        <th>${elem.Volume.toLocaleString("en-US")}</th>
+        <th>${elem.MarketCAP.toLocaleString("en-US")}</th>
+        </tr>`
+            }).catch(error=>{
+                console.log(error)
             })
-        let rating=''
-        return`<tr>
+            console.log(rating)
+        return`<tr class="${elem.Sector} ${elem.Industry}">
         <th>${elem.PandaAssetName}</th>
         <th>${elem.Price}</th>
         <th>${elem.ChangePct}</th>
@@ -63,6 +75,8 @@ router.get('/stocks/us-stocks',async(req,res)=>{
         <th>${elem.MarketCAP.toLocaleString("en-US")}</th>
         </tr>`
     }).join(' ');
+    
+
     var page={fields:{seo:{meta_description:"test",meta_keyword:"test"},title:"test"}}
     res.render('Markets/usStocks',{page:page,stocks:stocks})
 })

@@ -184,6 +184,16 @@ router.get("/evest/"+encodeURIComponent("Por-qué-Evest"), (req, res) => {
     res.render('es/Platforms/tradingApp',{page:page});
   })
 
+
+  /* Trading Products */
+  router.get("/productos-de-trading", (req, res) => {
+    butter.page.retrieve('*', 'tools-es')
+    .then(function(resp){
+      var page1=resp.data.data;
+      res.render('es/TradingProducts/products',{page:page1});
+    })
+  })
+
   /*Education*/
   router.get("/academia-de-trading",(req, res) => {
     var page={fields:{seo:{meta_description:"Academia de Trading , Trading con Evest Educacion, el mejor lugar para comenzar a aprender cómo operar en línea, para comenzar con Evest, siganos",

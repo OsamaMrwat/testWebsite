@@ -26,7 +26,7 @@ const startTrading=require('./routes/startTrading');
 const arabicRouting=require('./routes/arabicRouting');
 const spainshRouting=require('./routes/spainshRouting');
 const marketsRouting=require('./routes/marketsRouting');
-
+const productsRouting=require('./routes/productsRouting');
 // Body Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -610,6 +610,7 @@ app.use('/evest',evestRoutes);
 app.use('/',tradingplatform);
 app.use('/start-trading',startTrading);
 app.use('/markets',marketsRouting);
+app.use('/trading-products',productsRouting);
 
 /*Arabic Routing*/
 app.use('/ar',arabicRouting);

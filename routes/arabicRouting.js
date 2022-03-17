@@ -309,6 +309,13 @@ router.post("/"+encodeURIComponent("المدير-التنفيذي"),(req,res)=>{
     })
 })
 
+router.get("/"+encodeURIComponent("منتجات-التداول"),(req,res)=>{
+  butter.page.retrieve('*', 'tools-ar')
+  .then(function(resp){
+    var page1=resp.data.data;
+    res.render('ar/TradingProducts/products',{page:page1});
+  })
+})
 
 
 /** News and Articles**/

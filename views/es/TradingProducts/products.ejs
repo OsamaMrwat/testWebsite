@@ -1,0 +1,100 @@
+<div class="desktop-img">
+    <div class="row" style="background:url('/images/Tools Desktop ARA-03.png');height:500px;color:white;background-size: cover;">
+        <%- page.fields.header.heading %>
+    </div>
+    <div class="row">
+        <%- page.fields.sections.section1 %>
+    </div>
+    <div class="row">
+        <%- page.fields.sections.section2 %>
+    </div>
+</div>
+
+<div class="mobile-img">
+    <div class="container" style="background:url('/images/Tolls ENG Mobile-10.png');height:650px;color:white;background-size: cover; padding-top:100%">
+        <%- page.fields.mobile_view[0].fields.content  %> 
+    </div>
+    <div class="container py-5 text-center text-uppercase" style="display: flex;align-items: center;justify-content: center;flex-direction: column;">
+        <%- page.fields.mobile_view[1].fields.content  %>
+    </div>
+    <div class="row" style="display:flex;flex-direction: column;">
+        <%- page.fields.mobile_view[2].fields.content  %>
+    </div>
+</div>
+
+
+<style>
+    body > main > div > div:nth-child(1) > div > div:nth-child(2){
+        display:flex;
+        justify-content:center;
+    }
+    .desktop-img > .row > .container >.col-md-6 > ul > li ,
+    body > main > div.mobile-img > div > ul > li{
+        color:white;
+    }
+    .desktop-img .col-md-4{
+        display:flex;
+        align-items:center;
+        flex-direction: column;
+        height:510px;
+        background-image: url('/images/Tolls ENG Mobile-02.png');
+        background-size: cover;
+        color:white;
+        margin:-0.05%;
+    }
+    .desktop-img .col-md-4.even{
+        background-image: url('/images/Tolls ENG Mobile-03.png');
+    }
+
+
+    .desktop-img .col-md-4>p{
+        text-align:justify;
+        width:320px;
+    }
+    .col-md-2{
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background:url('/images/Tolls ENG Mobile-02.png');
+    height:500px;
+    color:white;
+    margin-top: -1%;
+    }
+    .col-md-2.even{
+        background:url('/images/Tolls ENG Mobile-03.png');
+    }
+    .mobile-img .col-md-2>p{
+        font-size: 16px !important;
+        text-align:justify;
+        width:320px;
+    }
+
+    @media(max-width: 768px) {
+        body > main > div.desktop-img > div:nth-child(1) > div > div:nth-child(2) > img{
+            width:80%;
+        }
+        body > main > div.desktop-img > div:nth-child(1) > div > div:nth-child(1)  > h2{
+            font-size:23px;
+        }
+        body > main > div.desktop-img > div:nth-child(1) > div > div:nth-child(1) > h6{
+            font-size: 15px;
+        }
+        body > main > div.desktop-img > div:nth-child(2) > div > h3{
+            font-size: 18px;
+        }
+        .desktop-img .col-md-4>p {
+            text-align: justify;
+    width: 205px;
+}
+    .desktop-img .col-md-4{
+        height:560px;
+    }
+    .desktop-img .col-md-4 > img{
+        height:150px
+    }
+    body > main > div.desktop-img > div:nth-child(3) > div:nth-child(2){
+        height:100%;
+    }
+    }
+</style>
