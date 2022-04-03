@@ -1,6 +1,8 @@
 const express=require('express');
 const router = express.Router();
 var butter = require('buttercms')('eabb7d00a1cecacc7a57f771cc86fb0126ad94d8');
+const fetch = require('node-fetch');
+
 router.get('/trading-account-types',(req,res)=>{
     butter.page.retrieve('*', 'trading-account-types')
     .then(function(resp) {
@@ -121,7 +123,15 @@ router.get('/0-commission-on-stocks',(req,res)=>{
     )
 });
 
-router.get('/cryptocurrency',(req,res)=>{
+router.get('/cryptocurrency',async(req,res)=>{
+    const url=`https://evest.com/crypto`;
+    const options = {
+      "method": "GET",
+    }
+    const response = await fetch(url, options).then(res=>res.json()).then(data=>{
+        
+    });
+
     butter.page.retrieve('*', 'crypto')
     .then(function(resp) {
         var page1 = resp.data.data;

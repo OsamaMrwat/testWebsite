@@ -27,6 +27,8 @@ const arabicRouting=require('./routes/arabicRouting');
 const spainshRouting=require('./routes/spainshRouting');
 const marketsRouting=require('./routes/marketsRouting');
 const productsRouting=require('./routes/productsRouting');
+
+const mysql = require("mysql");
 // Body Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -50,6 +52,32 @@ app.use('/node_modules',express.static(__dirname+'/node_modules'))
 app.use('/trade-room',express.static(__dirname+'/public/trade-room'))
 app.use('/legal',express.static(__dirname+'/public/legal'))
 
+
+var connection = mysql.createConnection({
+  host     : '34.78.96.13',
+  user     : 'mena-evest_data',
+  password : 'GCR4134S4MeqE3TnzyyzdWwP',
+  database : 'panda_db'
+});
+ 
+app.get("/coins/:id", (req, res) => {
+  connection.query(
+    `select * from panda_db.trading_trades where login=${req.params.id} and volume>0 and open_time<='2022-04-01' and open_time>='2022-04-30'`,
+    function (error, results, fields) {
+      if (error) throw error;
+      var volumeCount=0;
+      results.forEach(element => {
+        volumeCount+=element.volume;
+      })
+      var dataToSend={
+        coins:(volumeCount*5)
+      }
+      res.send(dataToSend);
+    }
+  );
+
+});
+ 
 
 /*SiteMaps*/
 const axios=require('axios')
@@ -570,11 +598,17 @@ app.post('/send',(req,res)=>{
         console.error(error.response.body)
       }
     });
-  res.render('Evest/contactUs',{title:"Contact Us - Evest Trading Platform, 0% commission fees",
-  description:"Contact Us: Submit a request below, and one of our support professionals will happily get back to you. Got Questions? We're here to help!",
-  keywords:'Contact us',
-  message:'Message Sent Thank You,We will contact you soon .'
+butter.page.retrieve('*', 'contact-us')
+.then(function(resp) {
+    var page1 = resp.data.data;
+    res.render('Evest/contactUs', {
+        page:page1,
+        message:'Message Sent Thank You,We will contact you soon .'
+    })
 })
+.catch(function(resp) {
+    console.log(resp)
+});
 })
 
 app.post('/ceo',(req,res)=>{
@@ -600,7 +634,7 @@ app.post('/ceo',(req,res)=>{
         console.error(error.response.body)
       }
     });
-  res.render('ceo',{title:"Meet The CEO",description:'sent',keywords:''});
+  res.redirect('/ceo')
 })
 
 

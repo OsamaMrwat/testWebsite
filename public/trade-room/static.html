@@ -107,13 +107,18 @@
                     <a class="dropdown-item" href="#">F.A.Q</a>
                   </div>
                 </li>
+                <li>
+                  <div class="container" id="tvIcon">
+                    <p style="font-size: 11px;">Web TV</p>
+                      <i class="fas fa-television"></i>     
+                  </div>
+                </li>
         </ul>
     </div>
 </div>
 <!-- panda Forex plugin initialisation -->
 <div id="pts-forx-init-wraper">
     <panda-forex-init></panda-forex-init>
-    <panda-forex-tour></panda-forex-tour>
     <panda-forex-personal-profile></panda-forex-personal-profile>
     <panda-forex-client-area></panda-forex-client-area>
 
@@ -193,13 +198,15 @@
 <!--Wrapper End-->
 <!--WebTV-->
 <div id="tvDiv" style="display: none;">
-<div class="container" id="tvIcon">
-  <p style="font-size: 11px;">Web TV</p>
-    <i class="fas fa-television"></i>     
-</div>
+
+<!--Coins-->
+  <div class="container" id="coinsIcon">
+    <p style="font-size: 11px;">Coins: <strong id="coinsNumber"></strong> </p>
+    <img src="/images/coinssevest.png" width="90px"/> 
+  </div>
+  
 </div>
 <!--End WebTV -->
-
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -294,6 +301,10 @@ $(window).click(function(event) {
   if (event.target.id == 'myModal') {
     $('#myModal').hide();
   }
+});
+
+$('#coinsIcon').click(function(){
+  window.open("https://evest.store");
 });
 </script>
 

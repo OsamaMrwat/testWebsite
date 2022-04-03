@@ -30,9 +30,20 @@ function signupFailCallback(event) {
 }
 
 function loginSuccessCallback(event) {
+    var totalCoins=0;
     console.log('login success callback event', event);
     localStorage.setItem("loggedin", "true");
     $('#tvDiv').show();
+    $('#coinsDiv').show();
+    const accounts=event.customer.tradingAccounts;
+    accounts.forEach(account=>
+      fetch(`/coins/${account.login}`).then(res=>res.json()).then(data=>
+    {
+        totalCoins+=data.coins;
+        console.log(totalCoins);
+    document.getElementById('coinsNumber').innerHTML=totalCoins.toFixed(2)+"$";}
+    ));
+
 }
 
 function loginFailCallback(event) {
@@ -118,5 +129,3 @@ function isMobile() {
   };
 
 isMobile();
-  
- 

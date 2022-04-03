@@ -227,23 +227,38 @@ body.theme-dark custom-select .frx-dropdown-pandats.dropdown-expanded-pandats .f
 /*WebTv */
 #tvDiv{
     position: fixed;
-    top: 4%;
-    font-size: 20px;
-    right: 32%;
+    top: 0%;
+    font-size: 15px;
+    right: 30%;
+    display: flex;
+    align-items: center;
+    width: 240px;
 }
-#tvDiv .container{
+#tvIcon{
     background-color: var(--primary-color1) !important;
-    width: 120px;
-    border-radius: 10%;
+    width: 100px;
+    border-radius: 11px;
     color: white;
     display: flex;
     justify-content: space-evenly;
     align-items: baseline;
-    height: 35px;
-    padding-top: 5%;
+    height: 33px;
+    padding-top: 4%;
 }
 
 
+/*Coins Div*/
+#coinsIcon{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 130px;
+    /* border: var(--primary-color1) solid; */
+    border-radius: 6px;
+}
+#coinsIcon > p{
+    margin-bottom: 0;
+}
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
