@@ -62,7 +62,7 @@ var connection = mysql.createConnection({
  
 app.get("/coins/:id", (req, res) => {
   connection.query(
-    `select * from panda_db.trading_trades where login=${req.params.id} and volume>0 and open_time<='2022-04-02' and open_time>='2022-04-30'`,
+    `select * from panda_db.trading_trades where login=${req.params.id} and volume>0 and open_time<='2022-04-01' and open_time>='2022-04-30'`,
     function (error, results, fields) {
       if (error) throw error;
       var volumeCount=0;
