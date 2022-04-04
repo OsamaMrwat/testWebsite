@@ -227,12 +227,13 @@ body.theme-dark custom-select .frx-dropdown-pandats.dropdown-expanded-pandats .f
 /*WebTv */
 #tvDiv{
     position: fixed;
-    top: 0%;
+    top: 3%;
     font-size: 15px;
     right: 30%;
     display: flex;
     align-items: center;
     width: 240px;
+    cursor: pointer;
 }
 #tvIcon{
     background-color: var(--primary-color1) !important;
@@ -255,6 +256,7 @@ body.theme-dark custom-select .frx-dropdown-pandats.dropdown-expanded-pandats .f
     width: 130px;
     /* border: var(--primary-color1) solid; */
     border-radius: 6px;
+    width: 100%;
 }
 #coinsIcon > p{
     margin-bottom: 0;
