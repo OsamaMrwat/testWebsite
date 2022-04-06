@@ -94,7 +94,7 @@
           </button>
         </div>
         <div class="modal-body">
-            <div class="container pb-5 pt-2" id="usBanks" style="display: none;">
+            <div class="container pb-5 pt-2" id="usBanksContent" style="display: none;">
                 <h6 class="text-uppercase text-white text-center">The relative weight of the<br> American banks' basket shares</h6>
                 <img src="/images/EIB/US Bank LP-16.png" alt="Citigroup" width="100%">
                 <img src="/images/EIB/US Bank LP-17.png" alt="Citigroup" width="100%">
@@ -170,9 +170,12 @@
         $(this).attr('data-target','#exampleModal');
         $(this).attr('data-toggle','modal');
         $('.modal-title').text($(this).find('h5').text());
-        var idd='#'+$(this).attr('id');
+        var idd='#'+$(this).attr('id')+'Content';
         console.log(idd);
-        $('.modal-body').find(idd).css('display','block');
+        $('.modal-body').find(idd).show();
+        //hide all other containers
+        $('.modal-body').find('div').not(idd).hide(); 
     });
     //hide
+
 </script>
