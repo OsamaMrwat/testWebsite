@@ -2,16 +2,17 @@
     <div class="row" style="background:url('/images/EIB Desktop ENG-03.png');background-size:cover;height: 500px;color:white">
         <div class="container" style="display:flex;justify-content: center;align-items: center">
             <div class="col-md-6">
-                <h1 class="text-uppercase">Evest Investment <br> Basket - EIBs</h1>
-                <p>
-                    Evest's most powerful and exclusive trading tools are combined into investing baskets
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-circle" style="color:var(--primary-color3);"></i> +10 baskets </li>
-                        <li><i class="fas fa-circle" style="color:var(--primary-color3);"></i> %100 lowered risk </li>
-                        <li><i class="fas fa-circle" style="color:var(--primary-color3);"></i> %100 feasible trade cost</li>
+                <h1 class="text-uppercase">سلال إيفست <br>الاستثمارية - EIBs </h1>
+                <p style="width:49%;font-size: 18px;color:var(--primary-color3);">
+                    يتم دمج أدوات المتاحة للتداول الأكثر قوة في سلال استثمار خاصة من إيفست
+
+                    <ul style="margin-right:-8% !important;" class="list-unstyled">
+                        <li><i class="fas fa-circle" style="color:var(--primary-color3);"></i>+10 سلال متاحة </li>
+                        <li><i class="fas fa-circle" style="color:var(--primary-color3);"></i>  %100 مخاطر أقل نسبياً </li>
+                        <li><i class="fas fa-circle" style="color:var(--primary-color3);"></i>  %100 تكلفة ذات جدوى اقتصادية</li>
                     </ul>
                 </p>
-                <button class="btn btnprimary" onclick="runPlugin('forexSignup');">JOIN NOW</button>
+                <button id="register-btn" class="btn btnprimary" onclick="runPlugin('forexSignup');">سجّل الآن</button>
             </div>
             <div class="col-md-6">
                 <image src="/images/EIB/EIB basket.png" width="100%"></image>
@@ -21,21 +22,23 @@
     <div class="row py-5">
         <div class="container">
                 <div class="container">
-                    <h2 class="text-uppercase">100% Innovative trading solution <br> for long-term trading</h2>
+                    <h2 class="text-uppercase">%100 حل ابتكاري لتداول طويل الأجل </h2>
                 </div>
                 <div class="container" style="display:flex;">
                     <div class="col-md-6" style="padding-left: 0;">
-                        <p>We are proud to present Evest’s investment baskets that include the most promising financial instruments grouped based on weighted average, the price during the last 60 sessions and the closing price.</p>
+                        <p id="section2-p"> نحن فخورون بتقديم سلال استثمار إيفست التي تشمل الأدوات المالية الواعدة والمجمعة على أساس المتوسط ​​المرجح والسعر خلال آخر 60 جلسة وسعر الإغلاق الأخير.
+                        </p>
                     </div>
                     <div class="col-md-6">
-                        <p>
-                            The EIBs are designed for different types of traders that can be but not limited to:<br><br>
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-circle"></i> Don’t have time</li>
-                                <li><i class="fas fa-circle"></i> Risk conservative</li>
-                                <li><i class="fas fa-circle"></i> Interested in ETFs</li>
-                                <li><i class="fas fa-circle"></i> Want to trade long-term</li>
-                                <li><i class="fas fa-circle"></i> Looking for investment like tool</li>
+                        <p id="section2-p">
+                            تم تصميم السلال الاستثمارية لتلائم أنواع مختلفة من المتداولين الذين يمكن أن يكونوا على سبيل المثال لا الحصر:<br><br>
+                            <ul id="list-unstyled" class="list-unstyled">
+                                <li><i class="fas fa-circle"></i> ليس لديهم وقت
+                                </li>
+                                <li><i class="fas fa-circle"></i> متحفظين للمخاطر</li>
+                                <li><i class="fas fa-circle"></i> مهتمين بصناديق الاستثمار</li>
+                                <li><i class="fas fa-circle"></i> راغبين بالتداول على المدى الطويل</li>
+                                <li><i class="fas fa-circle"></i> يبحثون عن أدوات تداول شبيهة بالاستثمار</li>
                             </ul>
                         </p>
                     </div>
@@ -43,43 +46,43 @@
         </div>
     </div>
     <div class="row text-center" style="background-color: var(--primary-color1);color:white">
-        <div class="container py-3">    <h2 class="text-center text-uppercase">Some of the EIBs available for trading</h2></div>
+        <div class="container py-3">    <h2 class="text-center text-uppercase">بعض من سلال التداول المتاحة على منصة إيفست</h2></div>
     </div>
     <div class="row" style="background:url('/images/EIB Desktop ENG-03.png');background-size:cover;color:white">
         <div class="container" style="display: flex;align-items: center;">
             <div class="col-lg-3" id="usBanks">
                 <img src="/images/EIB Desktop ENG-35.png" alt="usBanks" width="100%">
-                <h5 class="text-center">US Banks<br> Basket</h5>
+                <h5 class="text-center">سلة البنوك والمصارف الأمريكية</h5>
             </div>
             <div class="col-lg-3" id="germanGiants" > 
                 <img src="/images/EIB Desktop ENG-34.png" alt="German Giants Basket" width="100%">
-                <h5 class="text-center">German Giants<br>Basket</h5>
+                <h5 class="text-center">سلة عمالقة الصناعة الألمانية</h5>
             </div>
             <div class="col-lg-3" id="usTechnology">
                 <img src="/images/EIB Desktop ENG-33.png" alt="US Technology Basket" width="100%">
-                <h5 class="text-center">US Technology<br> Basket</h5>
+                <h5 class="text-center">سلة التكنولوجيا الأمريكية</h5>
             </div>
             <div class="col-lg-3" id="uSHeavyIndustries">
                 <img src="/images/EIB Desktop ENG-32.png" alt="US Heavy Industries Basket" width="100%">
-                <h5 class="text-center">US Heavy Industries<br> Basket</h5>
+                <h5 class="text-center">سلة الصناعات الأمريكية الثقيلة </h5>
             </div>
         </div>
         <div class="container" style="display: flex;align-items: center;">
             <div class="col-lg-3" id="bPh">
                 <img src="/images/EIB Desktop ENG-28.png" alt="Big pharma Basket" width="100%">
-                <h5 class="text-center">Big Pharmaceuticals<br>Basket</h5>
+                <h5 class="text-center">سلة الصناعات الدوائية #1</h5>
             </div>
             <div class="col-lg-3" id="bPh2"> 
                 <img src="/images/EIB Desktop ENG-29.png" alt="big pharma 2 Basket" width="100%">
-                <h5 class="text-center">Big Pharmaceuticals 2 <br>Basket</h5>
+                <h5 class="text-center">سلة الصناعات الدوائية #2 </h5>
             </div>
             <div class="col-lg-3" id="bluChips">
                 <img src="/images/EIB Desktop ENG-30.png" alt="BLU chips Basket" width="100%">
-                <h5 class="text-center">Blu Chips <br> Basket</h5>
+                <h5 class="text-center">سلّة الرقائق الزرقاء</h5>
             </div>
             <div class="col-lg-3" id="frenchFashion">
                 <img src="/images/EIB Desktop ENG-31.png" alt="French Fashion Basket" width="100%">
-                <h5 class="text-center">French Fashion <br>Basket</h5>
+                <h5 class="text-center">سلة الموضة الفرنسية</h5>
             </div>
         </div>
         <div class="container" style="display: flex;align-items: center;justify-content: space-between;">
@@ -88,24 +91,24 @@
             
             <div class="col-lg-2" id="AmericanRetail">
                 <img src="/images/EIB/EIB Desktop ARA 2-09.png" alt="American Retail Basket" width="100%">
-                <h5 class="text-center">American Retail <br>Basket</h5>
+                <h5 class="text-center">سلة التجزئة الأمريكية</h5>
             </div>
             <div class="col-lg-2" id="UKBanks">
                 <img src="/images/EIB/EIB Desktop ARA 2-10.png" alt="UK Banks Basket" width="100%">
-                <h5 class="text-center">UK Banks <br>Basket</h5>
+                <h5 class="text-center">سلة البنوك البريطانية</h5>
             </div>
             <div class="col-lg-2" id="Warren1">
                 <img src="/images/EIB/EIB Desktop ARA 2-11.png" alt="Warren Buffet Basket #1" width="100%">
-                <h5 class="text-center">Warren Buffet <br> Basket #1</h5>
+                <h5 class="text-center">سلة وارن بافت #1</h5>
             </div>
              
             <div class="col-lg-2" id="Warren2"> 
                 <img src="/images/EIB/EIB Desktop ARA 2-11.png" alt="Warren Buffet Basket #2" width="100%">
-                <h5 class="text-center">Warren Buffet <br>Basket #2</h5>
+                <h5 class="text-center">سلة وارن بافت #2</h5>
             </div>
             <div class="col-lg-2" id="Crypto">
                 <img src="/images/EIB/EIB Desktop ARA 2-12.png" alt="Crypto Currency Basket" width="100%">
-                <h5 class="text-center">Crypto Currency <br> Basket</h5>
+                <h5 class="text-center">سلة العملات الرقمية</h5>
             </div>
         </div>
     </div>
@@ -118,38 +121,39 @@
                 <div class="row">
                     <image id="basket" src="/images/EIB/EIB basket.png" ></image>
                 </div>
-                <h1 id="main-h1" class="text-uppercase" >Evest Investment <br> Basket - EIBs</h1>
+                <h1 id="main-h1" class="text-uppercase" >سلال إيفست <br>الاستثمارية - EIB</h1>
                 <p id="main-p" style="color:var(--primary-color3)">
-                    Evest's most powerful and exclusive trading tools are combined into investing baskets
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-circle" style="color:var(--primary-color3);"></i> +10 baskets </li>
-                        <li><i class="fas fa-circle" style="color:var(--primary-color3);"></i> %100 lowered risk </li>
-                        <li><i class="fas fa-circle" style="color:var(--primary-color3);"></i> %100 feasible trade cost</li>
+                    يتم دمج أدوات المتاحة للتداول الأكثر قوة في سلال استثمار خاصة من إيفست
+                    <ul class="list-unstyled" >
+                        <li><i class="fas fa-circle" style="color:var(--primary-color3);"></i>+10 سلال متاحة </li>
+                        <li><i class="fas fa-circle" style="color:var(--primary-color3);"></i> %100 مخاطر أقل نسبياً</li>
+                        <li><i class="fas fa-circle" style="color:var(--primary-color3);"></i> %100 تكلفة ذات جدوى اقتصادية</li>
                     </ul>
                 </p>
-                <button class="btn btnprimary" onclick="runPlugin('forexSignup');">JOIN NOW</button>
+                <button id="register-btn" class="btn btnprimary" onclick="runPlugin('forexSignup');">سجّل الآن</button>
             </div>
         </div>
     </div>
     <div class="row py-5">
         <div class="container">
                 <div class="container">
-                    <h2 id="h2" class="text-uppercase">100% Innovative trading solution <br> for long-term trading</h2>
+                    <h2 id="h2" class="text-uppercase">%100 حل ابتكاري لتداول طويل الأجل</h2>
                 </div>
                 <div class="container">
                     <div id="second-section">
                     <div class="col-md-6" style="padding-left: 0;">
-                        <p>We are proud to present Evest’s investment baskets that include the most promising financial instruments grouped based on weighted average, the price during the last 60 sessions and the closing price.</p>
+                        <p>نحن فخورون بتقديم سلال استثمار إيفست التي تشمل الأدوات المالية الواعدة والمجمعة على أساس المتوسط ​​المرجح والسعر خلال آخر 60 جلسة وسعر الإغلاق الأخير.</p id="section2-p">
                     </div>
                     <div class="col-md-6">
-                        <p>
-                            The EIBs are designed for different types of traders that can be but not limited to:<br><br>
+                        <p id="section2-p">
+                            تم تصميم السلال الاستثمارية لتلائم أنواع مختلفة من المتداولين الذين يمكن أن يكونوا على سبيل المثال لا الحصر:
+<br><br>
                             <ul class="list-unstyled">
-                                <li><i class="fas fa-circle"></i> Don’t have time</li>
-                                <li><i class="fas fa-circle"></i> Risk conservative</li>
-                                <li><i class="fas fa-circle"></i> Interested in ETFs</li>
-                                <li><i class="fas fa-circle"></i> Want to trade long-term</li>
-                                <li><i class="fas fa-circle"></i> Looking for investment like tool</li>
+                                <li><i class="fas fa-circle"></i> ليس لديهم وقت</li>
+                                <li><i class="fas fa-circle"></i> متحفظين للمخاطر</li>
+                                <li><i class="fas fa-circle"></i> مهتمين بصناديق الاستثمار</li>
+                                <li><i class="fas fa-circle"></i> راغبين بالتداول على المدى الطويل</li>
+                                <li><i class="fas fa-circle"></i> يبحثون عن أدوات تداول شبيهة بالاستثمار</li>
                             </ul>
                         </p>
                     </div></div>
@@ -157,29 +161,29 @@
         </div>
     </div>
     <div class="row text-center" style="background-color: var(--primary-color1);color:white">
-        <div class="container py-3">    <h2 id="h2_1" class="text-center text-uppercase">Some of the EIBs available for trading</h2></div>
+        <div class="container py-3">    <h2 id="h2_1" class="text-center text-uppercase">بعض من سلال التداول المتاحة على منصة إيفست</h2></div>
     </div>
     <div class="row" style="background:url('/images/EIB Desktop ENG-03.png');background-size:cover;color:white">
         <div class="container" style="display: flex;align-items: center;">
             <div id="sub-container">
                 <div class="col-lg-3" id="usBanks">
                     <img src="/images/EIB Desktop ENG-35.png" alt="usBanks" width="100%">
-                    <h5 class="text-center">US Banks<br> Basket</h5>
+                    <h5 class="text-center">سلة البنوك والمصارف الأمريكية</h5>
                 </div>
                 <div class="col-lg-3" id="germanGiants" > 
                     <img src="/images/EIB Desktop ENG-34.png" alt="German Giants Basket" width="100%">
-                    <h5 class="text-center">German Giants<br>Basket</h5>
+                    <h5 class="text-center">سلة عمالقة الصناعة الألمانية</h5>
                 </div>
             </div>
 
             <div id="sub-container">
                 <div class="col-lg-3" id="usTechnology">
                     <img src="/images/EIB Desktop ENG-33.png" alt="US Technology Basket" width="100%">
-                    <h5 class="text-center">US Technology<br> Basket</h5>
+                    <h5 class="text-center">سلة التكنولوجيا الأمريكية</h5>
                 </div>
                 <div class="col-lg-3" id="uSHeavyIndustries">
                     <img src="/images/EIB Desktop ENG-32.png" alt="US Heavy Industries Basket" width="100%">
-                    <h5 class="text-center">US Heavy Industries<br> Basket</h5>
+                    <h5 class="text-center">سلة الصناعات الأمريكية الثقيلة </h5>
                 </div>
             </div>
             </div>
@@ -189,22 +193,22 @@
             <div id="sub-container">
                 <div class="col-lg-3" id="bPh">
                     <img src="/images/EIB Desktop ENG-28.png" alt="Big pharma Basket" width="100%">
-                    <h5 class="text-center">Big Pharmaceuticals<br>Basket</h5>
+                    <h5 class="text-center">سلة الصناعات الدوائية #1</h5>
                 </div>
                 <div class="col-lg-3" id="bPh2"> 
                     <img src="/images/EIB Desktop ENG-29.png" alt="big pharma 2 Basket" width="100%">
-                    <h5 class="text-center">Big Pharmaceuticals 2 <br>Basket</h5>
+                    <h5 class="text-center">سلة الصناعات الدوائية #2</h5>
                 </div>
             </div>
 
             <div id="sub-container">
                 <div class="col-lg-3" id="bluChips">
                     <img src="/images/EIB Desktop ENG-30.png" alt="BLU chips Basket" width="100%">
-                    <h5 class="text-center">Blu Chips <br> Basket</h5>
+                    <h5 class="text-center">سلّة الرقائق الزرقاء</h5>
                 </div>
                 <div class="col-lg-3" id="frenchFashion">
                     <img src="/images/EIB Desktop ENG-31.png" alt="French Fashion Basket" width="100%">
-                    <h5 class="text-center">French Fashion <br>Basket</h5>
+                    <h5 class="text-center">سلة الموضة الفرنسية</h5>
                 </div>
             </div>
         </div>
@@ -214,23 +218,23 @@
             <div id="sub-container">
                 <div class="col-lg-2" id="AmericanRetail">
                     <img src="/images/EIB/EIB Desktop ARA 2-09.png" alt="American Retail Basket" width="100%">
-                    <h5 class="text-center">American Retail <br>Basket</h5>
+                    <h5 class="text-center">سلة التجزئة الأمريكية</h5>
                 </div>
                 <div class="col-lg-2" id="UKBanks">
                     <img src="/images/EIB/EIB Desktop ARA 2-10.png" alt="UK Banks Basket" width="100%">
-                    <h5 class="text-center">UK Banks <br>Basket</h5>
+                    <h5 class="text-center">سلة البنوك البريطانية</h5>
                 </div>
             </div>
 
             <div id="sub-container">
                 <div class="col-lg-2" id="Warren1">
                     <img src="/images/EIB/EIB Desktop ARA 2-11.png" alt="Warren Buffet Basket #1" width="100%">
-                    <h5 class="text-center">Warren Buffet <br> Basket #1</h5>
+                    <h5 class="text-center">سلة وارن بافت #1</h5>
                 </div>
                  
                 <div class="col-lg-2" id="Warren2"> 
                     <img src="/images/EIB/EIB Desktop ARA 2-11.png" alt="Warren Buffet Basket #2" width="100%">
-                    <h5 class="text-center">Warren Buffet <br>Basket #2</h5>
+                    <h5 class="text-center">سلة وارن بافت #2</h5>
                 </div>
                 
             </div>    
@@ -239,7 +243,7 @@
         <div id="sub-container-crypto">
             <div class="col-lg-2" id="Crypto" width="50%">
                 <img src="/images/EIB/EIB Desktop ARA 2-12.png" alt="Crypto Currency Basket" width="100%">
-                <h5 class="text-center">Crypto Currency <br> Basket</h5>
+                <h5 class="text-center">سلة العملات الرقمية</h5>
             </div>
         </div>
 
@@ -252,8 +256,8 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -264,90 +268,113 @@
         <!-- Big pharmaceuticals (2nd row) section-->
         <div class="modal-body">
             <div class="container pb-5 pt-2" id="bPh" style="display: none;" tradeLink="BIGPHARMA">
-                <h6 class="text-uppercase text-white text-center">The proportionate distribution <br> Of the stocks making this basket</h6>
-                <img src="/images/EIB/EIB Desktop ENG 2-43.png" alt="Big pharmaceuticals 1" width="100%">
+                <h6 id="h6" class="text-uppercase text-white text-center">تداول افضل 04 أسهم لشركات صناعة اللقاحات</h6>
+                <img src="\images\EIB\EIB Desktop ARA 2-43.png" alt="Big pharmaceuticals 1" width="100%">
             </div>
     
         <div class="container pb-5 pt-2" id="bPh2" style="display: none;" tradeLink="BIGPHARMA2">
-            <h6 class="text-uppercase text-white text-center">The proportionate distribution <br> Of the stocks making this basket</h6>
-            <img src="/images/EIB/EIB-02.png" alt="Big Pharmaceuticals 2" width="100%">
+            <h6 id="h6" class="text-uppercase text-white text-center">تداول افضل 04 أسهم لشركات صناعة اللقاحات</h6>
+            <img src="\images\EIB\ARA ARA-02.png" alt="Big Pharmaceuticals 2" width="100%">
         </div>
         <div class="container pb-5 pt-2" id="bluChips" style="display: none;" tradeLink="BLUECHIPS">
-        <h6 class="text-uppercase text-white text-center">The proportionate distribution <br> Of the stocks making this basket</h6>
-        <img src="/images/EIB/EIB Desktop ENG 2-42.png" alt="Blue Chips" width="100%">
+        <h6 id="h6" class="text-uppercase text-white text-center">جلبنا لك أسهم 07 إمبراطوريات تجارية عملاقة في سلة واحدة</h6>
+        <img src="\images\EIB\EIB Desktop ARA 2-42.png" alt="Blue Chips" width="100%">
     </div>
     <div class="container pb-5 pt-2" id="frenchFashion" style="display: none;" tradeLink="FASHION">
-    <h6 class="text-uppercase text-white text-center">The proportionate distribution <br> Of the stocks making this basket</h6>
-    <img src="/images/EIB/EIB Desktop ENG 2-41.png" alt="French Fashion" width="100%">
+    <h6 id="h6" class="text-uppercase text-white text-center">نجلب لك 04 أسهم لأكثر بيوت الأزياء والأناقة مدرجة في بورصة باريس ونجمعها في أداة مالية واحدة لكي تحصل على أداء موحد</h6>
+    <img src="\images\EIB\EIB Desktop ARA 2-41.png" alt="French Fashion" width="100%">
 </div>
 
                 <div class="container pb-5 pt-2" id="AmericanRetail" style="display: none;" tradeLink="USRETAIL">
-                    <h6 class="text-uppercase text-white text-center">The proportionate distribution <br> Of the stocks making this basket</h6>
-                    <img src="/images/EIB/EIB Desktop ENG 2-45.png" alt="AmericanRetail" width="100%">
+                    <h6 id="h6" class="text-uppercase text-white text-center">تداول أهم 05 أسهم في عالم تجارة التجزئة في الولايات المتحدة الأمريكية كأداة مالية واحدة من خلال سلّة التجزئة الأمريكية</h6>
+                    <img src="\images\EIB\EIB Desktop ARA 2-45.png" alt="AmericanRetail" width="100%">
                 </div>
 
 
 
 
             <div class="container pb-5 pt-2" id="UKBanks" style="display: none;" tradeLink="UKBANKS">
-                <h6 class="text-uppercase text-white text-center">The proportionate distribution <br> Of the stocks making this basket</h6>
-                <img src="/images/EIB/ENG 2-49.png" alt="UKBanks" width="100%">
+                <h6 id="h6" class="text-uppercase text-white text-center">هل تعلم أن لندن هي عاصمة المال في العالم؟ تداول أهم 04 أسهم بريطانية في القطاع المالي على الإطلاق مع سلة البنوك البريطانية</h6>
+                <img src="\images\EIB\ARA 2-45.png" alt="UKBanks" width="100%">
             </div>
 
 
         <div class="container pb-5 pt-2" id="Warren1" style="display: none;" tradeLink="W.BUFFETT 1">
-            <h6 class="text-uppercase text-white text-center">The proportionate distribution <br> Of the stocks making this basket</h6>
-            <img src="/images/EIB/EIB Desktop ENG 2-46.png" alt="Warren1" width="100%">
+            <h6 id="h6" class="text-uppercase text-white text-center">الخيار الأول من الأسهم لعملاق الاستثمارات وارن بافت. تداول هذه الأسهم الـ 04 كأداة مالية واحدة مع سلة وارن بافت #1</h6>
+            <img src="\images\EIB\EIB Desktop ARA 2-46.png" alt="Warren1" width="100%">
         </div>
 
 
 
     <div class="container pb-5 pt-2" id="Warren2" style="display: none;" tradeLink="W.BUFFETT 2">
-        <h6 class="text-uppercase text-white text-center">The proportionate distribution <br> Of the stocks making this basket</h6>
-        <img src="/images/EIB/EIB Desktop ENG 2-47.png" alt="Warren2" width="100%">
+        <h6 id="h6" class="text-uppercase text-white text-center">الخيار الثاني من الأسهم لعملاق الاستثمارات وارن بافت. تداول هذه الأسهم الـ 09 كأداة مالية واحدة مع سلة وارن بافت #2</h6>
+        <img src="\images\EIB\EIB Desktop ARA 2-47.png" alt="Warren2" width="100%">
     </div>
 
 
 
     <div class="container pb-5 pt-2" id="Crypto" style="display: none;" tradeLink="CRYPTOETF">
-        <h6 class="text-uppercase text-white text-center">The proportionate distribution <br> Of the stocks making this basket</h6>
-        <img src="/images/EIB/EIB Desktop ENG 2-48.png" alt="Crypto" width="100%">
+        <h6 id="h6" class="text-uppercase text-white text-center">وحّد قوة العملات الرقمية في أداة مالية واحدة تشمل 04 من أهم العملات الرقمية في العالم وأشهرها من خلال سلة العملات الرقمية من إيفست.</h6>
+        <img src="\images\EIB\EIB Desktop ARA 2-48.png" alt="Crypto" width="100%">
     </div>
 
 <!-- US Banks (1st row) section -->
     <div class="container pb-5 pt-2" id="usBanks" style="display: none;" tradeLink="USBANKS">
-        <h6 class="text-uppercase text-white text-center">The relative weight of the<br> American banks' basket shares</h6>
-        <img src="/images/EIB/EIB Desktop ENG 2-37.png" alt="Citigroup" width="100%">
+        <h6 id="h6" class="text-uppercase text-white text-center">افضل 04 أسهم مصارف وبنوك الولايات المتحدة الأمريكية</h6>
+        <img src="\images\EIB\EIB Desktop ARA 2-37.png" alt="Citigroup" width="100%">
 </div>
     <div class="container pb-5 pt-2" id="germanGiants" style="display: none;" tradeLink="GERGIANTS">
-        <h6 class="text-uppercase text-white text-center">The relative weight of the<br> American banks' basket shares</h6>
-        <img src="/images/EIB/EIB-01.png" alt="Citigroup" width="100%">German Giants" width="100%">
+        <h6 id="h6" class="text-uppercase text-white text-center">أفضل 05 شركات صناعية ألمانية أداءً نجمعها لك في أداة مالية واحدة لكي تستثمر في هذا القطاع كوحدة واحدة</h6>
+        <img src="\images\EIB\ARA ARA-01.png" alt="Citigroup" width="100%">German Giants" width="100%">
     </div>
     <div class="container pb-5 pt-2" id="usTechnology" style="display: none;" tradeLink="USTECH">
-        <h6 class="text-uppercase text-white text-center">The relative weight of the<br> American banks' basket shares</h6>
-        <img src="/images/EIB/EIB Desktop ENG 2-38.png" alt="US Technology" width="100%">
+        <h6 id="h6" class="text-uppercase text-white text-center">تداول 06 أسهم شركات التكنولوجيا الأمريكية الرائدة في العالم من خلال أداة واحدة</h6>
+        <img src="\images\EIB\EIB Desktop ARA 2-38.png" alt="US Technology" width="100%">
     </div>
     <div class="container pb-5 pt-2" id="uSHeavyIndustries" style="display: none;" tradeLink="USHEAVY">
-        <h6 class="text-uppercase text-white text-center">The relative weight of the<br> American banks' basket shares</h6>
-        <img src="/images/EIB/EIB Desktop ENG 2-39.png" alt="US Heavy Industries" width="100%">
+        <h6 id="h6" class="text-uppercase text-white text-center">تداول أفضل 05 أسهم لشركات الصناعات الثقيلة العسكرية والفضائية والطبية في الولايات المتحدة من خلال سلة الصناعات الأمريكية الثقيلة كأداة واحدة</h6>
+        <img src="\images\EIB\EIB Desktop ARA 2-39.png" alt="US Heavy Industries" width="100%">
     </div>
 </div>
 
         <div class="modal-footer">
-          <button id="close-btn" type="button" class="btn " data-dismiss="modal">Close</button>
-          <button id="btn-ST" type="button"  class="btn btn-filled" onclick="runPlugin('');" data-dismiss="modal">START TRADING</button>
-          <button type="button" class="btn" onclick="runPlugin('forexSignup');" data-dismiss="modal">JOIN NOW</button>
+          <button id="close-btn" type="button" class="btn " data-dismiss="modal">اغلاق</button>
+          <button id="btn-ST" type="button"  class="btn btn-filled" onclick="runPlugin('');" data-dismiss="modal">ابدأ التداول</button>
+          <button type="button" class="btn" onclick="runPlugin('forexSignup');" data-dismiss="modal">سجّل الآن</button>
         </div>
       </div>
     </div>
   </div>
 
 <style>
+    panda-forex-login .forex-button-pandats.simple-button-pandats,
+    .mainpandats .forex-button-pandats.simple-button-pandats{
+    font-family: "Arabic Evest",sans-serif !important;
+    }
+    body{
+      text-align: right;
+      direction: rtl;
+      font-family: "Arabic Evest" ,sans-serif !important;
+    }
+
+span{
+font-family: "Evest Font";
+}
+#list-unstyled{
+    margin-right: -7%;
+
+}
+
     .btnprimary{
         font-family: 'Evest Med';
         color:var(--primary-color1);
         background:var(--primary-color3);
     }
+
+    h6,h5,.btn{
+        font-family: 'Arabic Evest' !important;
+    }
+
     body > main > div > div:nth-child(1) > div > div:nth-child(1) > ul > li{
         color:white !important;
     }
@@ -402,6 +429,9 @@
     border-radius: .3rem;
     outline: 0;
     }
+    #section2-p{
+        margin-top:10%;
+    }
 
     @media screen and (min-width: 768px) {
         div.mobile-img{
@@ -433,8 +463,8 @@
 
         }
         #h2_1{         
-        width: 121% !important;
-        font-size: 170% !important;
+        width: 100% !important;
+        font-size: 149% !important;
         margin-left: -11% !important;
         }
         .modal-content{
@@ -449,6 +479,15 @@
         }
         #close-btn{
             display:none;
+        }
+        .fas.fa-circle{
+            margin-right: -10% !important;
+        }
+        .btn.btnprimary,#exampleModalLabel,#h6{
+            font-family: 'Arabic Evest' !important;
+        }
+        #exampleModalLabel{
+            margin-left: 25% !important;
         }
         
     
@@ -493,74 +532,75 @@
         console.log(route);
 
             switch (route) {
-            case "UKBanksBasket":
-            var url=`http://localhost:8080/trade-room/?asset=UKBANKS`;    
+            case "سلةالبنوكالبريطانية":
+            var url=`http://localhost:8080/trade-room/?lang=ar&asset=UKBANKS#/`;    
             location.replace(url)
                 break;        
             
-                case "USBanksBasket":
-                var url=`http://localhost:8080/trade-room/?asset=USBANKS`;
+                case "سلةالبنوكوالمصارفالأمريكية":
+                var url=`http://localhost:8080/trade-room/?lang=ar&asset=USBANKS#/`;
                 location.replace(url);    
                 break;
 
-                case "GermanGiantsBasket":
-                var url=`http://localhost:8080/trade-room/?asset=GERGIANTS`;
+                case "سلةعمالقةالصناعةالألمانية":
+                var url=`http://localhost:8080/trade-room/?lang=ar&asset=GERGIANTS`;
                 location.replace(url);    
                 break;
 
-                case "USTechnologyBasket":
-                var url=`http://localhost:8080/trade-room/?asset=USTECH`;
+                case "سلةالتكنولوجياالأمريكية":
+                var url=`http://localhost:8080/trade-room/?lang=ar&asset=USTECH`;
                 location.replace(url);    
                 break;
 
-                case "BigPharmaceuticalsBasket":
-                var url=`http://localhost:8080/trade-room/?asset=BIGPHARMA`;
+                case "سلةالصناعاتالدوائية#1":
+                var url=`http://localhost:8080/trade-room/?lang=ar&asset=BIGPHARMA`;
                 location.replace(url);    
                 break;
 
-                case "BigPharmaceuticals2Basket":
-                var url=`http://localhost:8080/trade-room/?asset=BIGPHARMA2`;
+                case "سلةالصناعاتالدوائية#2":
+                var url=`http://localhost:8080/trade-room/?lang=ar&asset=BIGPHARMA2`;
                 location.replace(url);    
                 break;
 
-                case "BluChipsBasket":
-                var url=`http://localhost:8080/trade-room/?asset=BLUECHIPS`;
+                case "سلّةالرقائقالزرقاء":
+                var url=`http://localhost:8080/trade-room/?lang=ar&asset=BLUECHIPS`;
                 location.replace(url);    
                 break;
 
-                case "FrenchFashionBasket":
-                var url=`http://localhost:8080/trade-room/?asset=FASHION`;
+                case "سلةالموضةالفرنسية":
+                var url=`http://localhost:8080/trade-room/?lang=ar&asset=FASHION`;
                 location.replace(url);    
                 break;
 
-                case "AmericanRetailBasket":
-                var url=`http://localhost:8080/trade-room/?asset=USRETAIL`;
+                case "سلةالتجزئةالأمريكية":
+                var url=`http://localhost:8080/trade-room/?lang=ar&asset=USRETAIL`;
                 location.replace(url);    
                 break;
 
-                case "WarrenBuffetBasket#1":
-                var url='http://localhost:8080/trade-room/?asset=W.BUFFETT%201';
+                case "سلةوارنبافت#1":
+                var url='http://localhost:8080/trade-room/?lang=ar&asset=W.BUFFETT%201';
                 location.replace(url);    
                 break;
 
-                case "WarrenBuffetBasket#2":
-                var url=`http://localhost:8080/trade-room/?asset=W.BUFFETT%202`;
+                case "سلةوارنبافت#2":
+                var url=`http://localhost:8080/trade-room/?lang=ar&asset=W.BUFFETT%202`;
                 location.replace(url);    
                 break;
 
-                case "CryptoCurrencyBasket":
-                var url=`http://localhost:8080/trade-room/?asset=CRYPTOETF`;
+                case "سلةالعملاتالرقمية":
+                var url=`http://localhost:8080/trade-room/?lang=ar&asset=CRYPTOETF`;
                 location.replace(url);    
                 break;
 
-                case "USHeavyIndustriesBasket":
-                var url=`http://localhost:8080/trade-room/?asset=USHEAVY`;
+                case "سلةالصناعاتالأمريكيةالثقيلة":
+                var url=`http://localhost:8080/trade-room/?lang=ar&asset=USHEAVY`;
                 location.replace(url);    
                 break;
 
         }
                
     });
+
 
 
 
