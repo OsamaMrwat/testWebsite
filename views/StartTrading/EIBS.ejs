@@ -263,6 +263,7 @@
 
         <!-- Big pharmaceuticals (2nd row) section-->
         <div class="modal-body">
+
             <div class="container pb-5 pt-2" id="bPh" style="display: none;" tradeLink="BIGPHARMA">
                 <h6 class="text-uppercase text-white text-center">The proportionate distribution <br> Of the stocks making this basket</h6>
                 <img src="/images/EIB/EIB Desktop ENG 2-43.png" alt="Big pharmaceuticals 1" width="100%">
@@ -462,7 +463,7 @@
         $(this).attr('data-target','#exampleModal');
         $(this).attr('data-toggle','modal');
         $('.modal-title').text($(this).find('h5').text());
-        var idd='#'+$(this).attr('id');
+        var idd='#'+$(this).attr('id')+'Content';
         console.log(idd);
         $('.modal-body').find('div').not(idd).hide(); 
         $('.modal-body').find(idd).css('display','block');
@@ -566,4 +567,12 @@
 
 
     
+
+        $('.modal-body').find(idd).show();
+        //hide all other containers
+        $('.modal-body').find('div').not(idd).hide(); 
+    });
+    //hide
+
+
 </script>

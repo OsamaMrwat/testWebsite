@@ -41,7 +41,7 @@ function loginSuccessCallback(event) {
     {
         totalCoins+=data.coins;
         console.log(totalCoins);
-    document.getElementById('coinsNumber').innerHTML=totalCoins.toFixed(2)+"$";}
+    document.getElementById('coinsNumber').innerHTML=totalCoins.toFixed(3);}
     ));
 
 }

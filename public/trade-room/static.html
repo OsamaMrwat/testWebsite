@@ -202,7 +202,7 @@
 <!--Coins-->
   <div class="container" id="coinsIcon">
     <p style="font-size: 11px;">Coins: <strong id="coinsNumber"></strong> </p>
-    <img src="/images/coinssevest.png" width="90px"/> 
+    <img src="/images/coinssevest.png" width="50px"/> 
   </div>
   
 </div>
@@ -218,6 +218,17 @@
       <h4>Evest Web-Tv</h4>
       <iframe id="vzpl-29464" name="vzpl-29464" title="video player" class="video player" type="text/html" width="768" height="562" frameborder="0" allowFullScreen allowTransparency="true" mozallowfullscreen webkitAllowFullScreen src="https://view.vzaar.com/playlists/29464" allow="autoplay" style="display: none"></iframe>
       <iframe id="vzpl-29465" name="vzpl-29465" title="video player" class="video player" type="text/html" width="768" height="562" frameborder="0" allowFullScreen allowTransparency="true" mozallowfullscreen webkitAllowFullScreen src="https://view.vzaar.com/playlists/29465" allow="autoplay" style="display: none"></iframe>  
+    </div>
+  </div>
+
+</div>
+<div id="storeModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="container text-center">
+      <iframe src="https://evest.store" frameborder="0" width="100%" height="550px"></iframe>
     </div>
   </div>
 
@@ -294,17 +305,22 @@ $('#tvIcon').click(function(){
 });
 $('.close').click(function(){
   $('#myModal').hide();
+  $('#storeModal').hide();
 });
 
 //click anywhere on the window to close the modal
 $(window).click(function(event) {
   if (event.target.id == 'myModal') {
     $('#myModal').hide();
+  }else if(event.target.id== 'storeModal'){
+    $('#storeModal').hide();
   }
+
 });
 
 $('#coinsIcon').click(function(){
-  window.open("https://evest.store");
+  // window.open("https://evest.store");
+  $('#storeModal').show();
 });
 </script>
 

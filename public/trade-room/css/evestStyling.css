@@ -227,12 +227,13 @@ body.theme-dark custom-select .frx-dropdown-pandats.dropdown-expanded-pandats .f
 /*WebTv */
 #tvDiv{
     position: fixed;
-    top: 0%;
+    top: 3%;
     font-size: 15px;
     right: 30%;
     display: flex;
     align-items: center;
     width: 240px;
+    cursor: pointer;
 }
 #tvIcon{
     background-color: var(--primary-color1) !important;
@@ -255,10 +256,12 @@ body.theme-dark custom-select .frx-dropdown-pandats.dropdown-expanded-pandats .f
     width: 130px;
     /* border: var(--primary-color1) solid; */
     border-radius: 6px;
+    width: 100%;
 }
 #coinsIcon > p{
     margin-bottom: 0;
 }
+body.theme-dark #coinsIcon >p{color:white;}
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -281,7 +284,10 @@ body.theme-dark custom-select .frx-dropdown-pandats.dropdown-expanded-pandats .f
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
   }
-  
+  #storeModal{
+      z-index: 2;
+  }
+
   /* The Close Button */
   .close {
     color: #aaa;
