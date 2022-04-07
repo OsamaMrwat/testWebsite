@@ -298,7 +298,7 @@ router.get(
   (req, res) => {
     butter.page.retrieve("*", "eib-es").then(function (resp) {
       var page1 = resp.data.data;
-      res.render("es/StartTrading/eibs", { page: page1 });
+      res.render("es/StartTrading/EIBS", { page: page1 });
     });
   }
 );
