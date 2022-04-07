@@ -463,7 +463,7 @@
         $(this).attr('data-target','#exampleModal');
         $(this).attr('data-toggle','modal');
         $('.modal-title').text($(this).find('h5').text());
-        var idd='#'+$(this).attr('id')+'Content';
+        var idd='#'+$(this).attr('id');
         console.log(idd);
         $('.modal-body').find('div').not(idd).hide(); 
         $('.modal-body').find(idd).css('display','block');
@@ -495,67 +495,67 @@
 
             switch (route) {
             case "UKBanksBasket":
-            var url=`http://localhost:8080/trade-room/?asset=UKBANKS`;    
+            var url=`/trade-room/?asset=UKBANKS`;    
             location.replace(url)
                 break;        
             
                 case "USBanksBasket":
-                var url=`http://localhost:8080/trade-room/?asset=USBANKS`;
+                var url=`/trade-room/?asset=USBANKS`;
                 location.replace(url);    
                 break;
 
                 case "GermanGiantsBasket":
-                var url=`http://localhost:8080/trade-room/?asset=GERGIANTS`;
+                var url=`/trade-room/?asset=GERGIANTS`;
                 location.replace(url);    
                 break;
 
                 case "USTechnologyBasket":
-                var url=`http://localhost:8080/trade-room/?asset=USTECH`;
+                var url=`/trade-room/?asset=USTECH`;
                 location.replace(url);    
                 break;
 
                 case "BigPharmaceuticalsBasket":
-                var url=`http://localhost:8080/trade-room/?asset=BIGPHARMA`;
+                var url=`/trade-room/?asset=BIGPHARMA`;
                 location.replace(url);    
                 break;
 
                 case "BigPharmaceuticals2Basket":
-                var url=`http://localhost:8080/trade-room/?asset=BIGPHARMA2`;
+                var url=`/trade-room/?asset=BIGPHARMA2`;
                 location.replace(url);    
                 break;
 
                 case "BluChipsBasket":
-                var url=`http://localhost:8080/trade-room/?asset=BLUECHIPS`;
+                var url=`/trade-room/?asset=BLUECHIPS`;
                 location.replace(url);    
                 break;
 
                 case "FrenchFashionBasket":
-                var url=`http://localhost:8080/trade-room/?asset=FASHION`;
+                var url=`/trade-room/?asset=FASHION`;
                 location.replace(url);    
                 break;
 
                 case "AmericanRetailBasket":
-                var url=`http://localhost:8080/trade-room/?asset=USRETAIL`;
+                var url=`/trade-room/?asset=USRETAIL`;
                 location.replace(url);    
                 break;
 
                 case "WarrenBuffetBasket#1":
-                var url='http://localhost:8080/trade-room/?asset=W.BUFFETT%201';
+                var url='/trade-room/?asset=W.BUFFETT%201';
                 location.replace(url);    
                 break;
 
                 case "WarrenBuffetBasket#2":
-                var url=`http://localhost:8080/trade-room/?asset=W.BUFFETT%202`;
+                var url=`/trade-room/?asset=W.BUFFETT%202`;
                 location.replace(url);    
                 break;
 
                 case "CryptoCurrencyBasket":
-                var url=`http://localhost:8080/trade-room/?asset=CRYPTOETF`;
+                var url=`/trade-room/?asset=CRYPTOETF`;
                 location.replace(url);    
                 break;
 
                 case "USHeavyIndustriesBasket":
-                var url=`http://localhost:8080/trade-room/?asset=USHEAVY`;
+                var url=`/trade-room/?asset=USHEAVY`;
                 location.replace(url);    
                 break;
 
@@ -567,12 +567,4 @@
 
 
     
-
-        $('.modal-body').find(idd).show();
-        //hide all other containers
-        $('.modal-body').find('div').not(idd).hide(); 
-    });
-    //hide
-
-
 </script>

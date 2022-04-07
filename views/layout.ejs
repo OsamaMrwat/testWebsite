@@ -60,7 +60,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="row" style="height:5px;background:var(--primary-color3);">
 </div>
     <!--Nav Bar-->
-    <nav id="englishNavBar" class="navbar navbar-expand-xl navbar-light bg-light sticky-top" style="display:none;height: 80px;background: white !important;" >
+<nav id="englishNavBar" class="navbar navbar-expand-xl navbar-light bg-light sticky-top" style="display:none;height: 80px;background: white !important;" >
       <a  href="/"><img alt="logo" src="/images/LOGO-RAMADAN-ENG.png" id="engLogo"/></a>
       
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -96,6 +96,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <a class="dropdown-item" href="/start-trading/trading-account-types">Trading Account Types</a>
               <a class="dropdown-item" href="/start-trading/trading-demo-account">Trading Demo Account</a>
               <a class="dropdown-item" href="/start-trading/0-commission-on-stocks">0 Commission Stocks Trading</a>
+              <a class="dropdown-item" href="/start-trading/eib">Evest Investment Basket</a>
               <a class="dropdown-item" href="/start-trading/islamic-trading-account">Islamic Trading Account</a>
               <a class="dropdown-item" href="/start-trading/documents-policies">Documents & Policies</a>
               <a class="dropdown-item" href="/start-trading/deposit-withdrawal">Deposit & Withdrawals</a>
@@ -154,8 +155,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
         
         <div class="form-inline my-2 my-lg-0">
-        <panda-forex-login  show-logout="false" redirect-after-login="/trade-room" ></panda-forex-login>
-         <panda-forex-signup redirect-after-signup="/trade-room"></panda-forex-signup>
+          <div class="container" id="englishTools" style="display:flex;">
+          </div>
          <a class="btn btn-default navbar-btn btn-filled mobile-img" href="/mobile/#/login">Login</a>
          <a class="btn btn-default navbar-btn btn-filled mobile-img" href="/mobile/#/signup">Sign Up</a>
          
@@ -180,8 +181,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       </div>
 
-    </nav>
-
+</nav>
   <nav id="arabicNavBar" class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="display:none;height: 80px;background: white !important;">
     <a href="/ar?lang=ar"><img alt="logo" data-src="/images/LOGO-RAMADAN-AR.png" style="width: 145px;height: 65px;"/></a>
     
@@ -217,6 +217,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><a class="dropdown-item" href="/ar/ابدا-التداول/انواع-الحسابات?lang=ar">أنواع حسابات التداول</a></li>
           <li><a class="dropdown-item" href="/ar/ابدا-التداول/حساب-تداول-تجريبي?lang=ar">حساب تداول تجريبي</a></li>
           <li><a class="dropdown-item" href="/ar/ابدا-التداول/تداول-الاسهم-0-عمولة?lang=ar">تداول الاسهم ب 0% عمولة</a></li>
+          <li><a class="dropdown-item" href="/ar/ابدا-التداول/سَلاَّت-تداول-استثمارية?lang=ar">سَلاَّت إيفست الاستثمارية</a></li>
           <li><a class="dropdown-item" href="/ar/ابدا-التداول/حساب-تداول-إسلامي?lang=ar">حساب تداول إسلامي</a></li>
           <li><a class="dropdown-item" href="/ar/ابدا-التداول/الوثائق-و-السياسات?lang=ar">الوثائق والسياسات</a></li>
           <li><a class="dropdown-item" href="/ar/ابدا-التداول/الإيداع-و-السحب?lang=ar">الإيداع والسحب</a></li>
@@ -274,8 +275,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </li>
       </ul>
       <div class="form-inline my-2 my-lg-0">
-        <panda-forex-login  show-logout="false" redirect-after-login="/trade-room" ></panda-forex-login>
-        <panda-forex-signup redirect-after-signup="/trade-room?lang=ar"></panda-forex-signup>
+        <div class="container" id="arabicTools" style="display:flex;">
+        </div>
         <a class="btn btn-default navbar-btn btn-filled mobile-img" href="/mobile/#/login?lang=ar">تسجيل الدخول</a>
         <a class="btn btn-default navbar-btn btn-filled mobile-img" href="/mobile/#/signup?lang=ar">تسجيل</a>
         <panda-forex-menu>
@@ -392,8 +393,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </ul>
       
       <div class="form-inline my-2 my-lg-0">
-        <panda-forex-login  show-logout="false" redirect-after-login="/trade-room" ></panda-forex-login>
-       <panda-forex-signup redirect-after-signup="/trade-room"></panda-forex-signup>
+        <div class="container" id="esTools" style="display:flex;">
+        </div>
        <a class="btn btn-default navbar-btn btn-filled mobile-img" href="/mobile/#/login">Login</a>
        <a class="btn btn-default navbar-btn btn-filled mobile-img" href="/mobile/#/signup">Sign Up</a>
         <panda-forex-menu>
@@ -435,6 +436,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
+    <div class="container" id="pandaBtns" style="display: flex;position: fixed; top: 23px;z-index: 999999999999999;width: fit-content;right: 9%;">
+      <panda-forex-login  show-logout="false" redirect-after-login="/trade-room" ></panda-forex-login>
+          <panda-forex-signup redirect-after-signup="/trade-room?lang=ar"></panda-forex-signup>
+    </div>
 
 
 
@@ -662,6 +667,13 @@ $(document).ready(function(){
     });
 })
 
+  $(document).ready(function () {
+    console.log($('html')[0].lang)
+    if ($('html')[0].lang == 'ar') {
+      $('#pandaBtns').css('left', '9%')
+      $('#pandaBtns').css('right', 'auto')
+    }
+  })
 
     if (screen && screen.width > 480) {
     document.write('<script src="https://nfp.pandats.com/mena-evest-static/loader.js" defer><\/script>');

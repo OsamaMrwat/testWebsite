@@ -282,7 +282,11 @@ var arLinks = [
       en:'/trading-products',
       ar:'/ar/%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84',
       es:'/es/productos-de-trading'
-    }
+    },
+    { en:'/start-trading/eib',
+      ar:'/ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%B3%D9%8E%D9%84%D8%A7%D9%91%D9%8E%D8%AA-%D8%AA%D8%AF%D8%A7%D9%88%D9%84-%D8%A7%D8%B3%D8%AA%D8%AB%D9%85%D8%A7%D8%B1%D9%8A%D8%A9',
+      es:'/es/comience-hacer-trading/Cestas-de-Inversi%C3%B3n-Evest'
+  }
 ];
 let page = window.location.pathname;
 
@@ -290,7 +294,8 @@ var engLang=document.getElementsByClassName('englang');
 for(var i=0; i<engLang.length; i++){
   if(engLang[i] !== null){
     engLang[i].addEventListener("click", function () {
-      let lang = window.location.pathname.split("/")[1];
+      let lang = document.getElementsByTagName('html')[0].lang;
+      console.log(lang)
       if(lang=="ar"){
         location.href = arLinks.find((e) => e.ar == page).en;
       }else{
@@ -303,7 +308,8 @@ var arLang=document.getElementsByClassName('arlang');
 for(var i=0; i<arLang.length; i++){
   if(arLang[i] !== null){
     arLang[i].addEventListener("click", function () {
-      let lang = window.location.pathname.split("/")[1];
+      let lang = document.getElementsByTagName('html')[0].lang;
+      console.log(lang)
       if(lang=="es"){
         location.href = arLinks.find((e) => e.es == page).ar+"?lang=ar"
       }else{
@@ -335,7 +341,8 @@ function checkLang() {
       (document.getElementsByTagName("html")[0].lang = "ar"),
     (document.getElementById("arabicNavBar").style.display = "flex"),
     (document.getElementById("arabicFooter").style.display = "block")
-  } else if ("es"==lang){
+    }
+    else if ("es"==lang){
         (document.getElementsByTagName("html")[0].lang = "es"),
       (document.getElementById("englishFooter").style.display = "block"),
       (document.getElementById("spainshNavBar").style.display = "flex")
