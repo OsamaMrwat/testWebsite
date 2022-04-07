@@ -183,7 +183,7 @@ router.get(
   (req, res) => {
     butter.page.retrieve("*", "eib-ar").then(function (resp) {
       var page1 = resp.data.data;
-      res.render("ar/StartTrading/eibs", { page: page1 });
+      res.render("ar/StartTrading/EIBS", { page: page1 });
     });
   }
 );
