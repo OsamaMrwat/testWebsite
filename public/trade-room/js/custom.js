@@ -36,13 +36,14 @@ function loginSuccessCallback(event) {
     $('#tvDiv').show();
     $('#coinsDiv').show();
     const accounts=event.customer.tradingAccounts;
-    accounts.forEach(account=>
-      fetch(`/coins/${account.login}`).then(res=>res.json()).then(data=>
-    {
-        totalCoins+=data.coins;
-        console.log(totalCoins);
-    document.getElementById('coinsNumber').innerHTML=totalCoins.toFixed(3);}
-    ));
+    accounts.forEach(account=> {if(account.live == true){
+        fetch(`/coins/${account.login}`).then(res=>res.json()).then(data=>
+            {
+                totalCoins+=data.coins;
+                console.log(totalCoins);
+            document.getElementById('coinsNumber').innerHTML=totalCoins.toFixed(3);}
+            )
+    }});
 
 }
 

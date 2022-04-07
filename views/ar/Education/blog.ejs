@@ -66,7 +66,7 @@ function getAll(number){
       <div class="card-body">
         <a href='${"/ar/"+encodeURIComponent("مدونة-التداول")+"/"+post.slug}' ><h5 class="card-title">${post.title.rendered}</h5></a>
         <div class="card-text description">${post.excerpt.rendered}</div>
-        <button class="btn btn-filled readmore" onclick="window.location.replace('${"/ar/"+encodeURIComponent("مدونة-التداول")+"/"+post.slug}')">اقرا المزيد</button>
+        <button class="btn btn-filled readmore" onclick="window.location.replace('${"/ar/"+encodeURIComponent("مدونة-التداول")+"/"+post.slug+"?lang=ar"}')">اقرا المزيد</button>
       </div></div>
       <div class="card-footer dateCreated">
         ${date}
