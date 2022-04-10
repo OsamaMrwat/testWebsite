@@ -8,6 +8,7 @@
   </div>
   <input id="pageTitle" name="pageTitle" style="display: none;" type="text"></input>
     <div id="reslut">
+      <%- articles %>
     </div>
     <div class="pagination" >
       <button >&laquo;</button>
@@ -72,7 +73,6 @@ function getAll(number){
                 document.documentElement.scrollTop=0;
       })
     }
-getAll(1);
   </script>
 
 

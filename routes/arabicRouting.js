@@ -365,18 +365,45 @@ router.get("/" + encodeURIComponent("منتجات-التداول"), (req, res) =
 
 /** News and Articles**/
 
-router.get("/" + encodeURIComponent("اخبار-النفط"), (req, res) => {
-  var page = {
-    fields: {
-      seo: {
-        meta_description: `أخبار النفط : هل أنت مهتم بأخبار النفط في الأسواق الخليجية والعالمية ؟ تبحث عن مواضيع حول النفط عبر الانترنت تابع تداول النفط عبر EVEST استثمر في الأسهم`,
-        meta_keyword: ` أخبار النفط`,
-        page_title: `أخبار النفط - Evest | استثمر في الأسهم العالمية 100% بدون عمولة`,
-      },
-    },
+router.get("/" + encodeURIComponent("اخبار-النفط"), async (req, res) => {
+  const url = 'https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&categories=42&per_page=6&page=1';
+  const options = {
+    method: "GET",
   };
-  res.render("ar/Education/oil", { page: page });
+  const response = await fetch(url, options)
+  .then((res) => res.json())
+  .then((data)=>{
+    var page = {
+      fields: {
+        seo: {
+          meta_description: `أخبار النفط : هل أنت مهتم بأخبار النفط في الأسواق الخليجية والعالمية ؟ تبحث عن مواضيع حول النفط عبر الانترنت تابع تداول النفط عبر EVEST استثمر في الأسهم`,
+          meta_keyword: ` أخبار النفط`,
+          page_title: `أخبار النفط - Evest | استثمر في الأسهم العالمية 100% بدون عمولة`,
+        },
+      },
+    };
+    const article = data.map(post => {
+      let date=post.date.split('T')[0];
+        return `<div class="card">
+          <div> 
+                <a href='${"/ar/"+encodeURIComponent("اخبار-النفط")+"/"+post.slug}'> 
+                  <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}" ></a>
+<div class="card-body">
+<a href='${"/ar/"+encodeURIComponent("اخبار-النفط")+"/"+post.slug}'><h5 class="card-title">${post.title.rendered}</h5></a>
+<div class="card-text description">${post.excerpt.rendered}</div>
+<button class="btn btn-filled readmore" onclick="window.location.replace('${"/ar/"+encodeURIComponent("اخبار-النفط")+"/"+post.slug+"?lang=ar"}')">اقرا المزيد</button>
+</div></div>
+<div class="card-footer dateCreated">
+${date}
+</div>
+</div>`
+    }).join("");
+    res.render("ar/Education/oil", { page: page , articles: article});
+  });
+
+  
 });
+
 router.get(
   "/" + encodeURIComponent("اخبار-النفط") + "/:slug",
   async (req, res) => {
@@ -482,17 +509,42 @@ router.get(
   }
 );
 
-router.get("/" + encodeURIComponent("اخبار-الذهب"), (req, res) => {
-  var page = {
-    fields: {
-      seo: {
-        meta_description: `اخبار تداول الذهب : هل أنت مهتم باخبار الذهب في الأسواق الخليجية والعالمية ؟ تبحث عن مواضيع حول الذهب عبر الانترنت تابع تداول EVEST`,
-        meta_keyword: `اخبار تداول الذهب`,
-        page_title: `اخبار تداول الذهب - أخبار سوق الذهب، تداول اون لاين | إيڤست وسيط موثوق 100% Evest`,
+router.get("/" + encodeURIComponent("اخبار-الذهب"), async(req, res) => {
+const url=`https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&categories=41&per_page=6&page=1`;
+const options = {
+  method: "GET",
+};
+const response = await fetch(url, options)
+  .then((res) => res.json())
+  .then((data) => {
+    var page = {
+      fields: {
+        seo: {
+          meta_description: `اخبار تداول الذهب : هل أنت مهتم باخبار الذهب في الأسواق الخليجية والعالمية ؟ تبحث عن مواضيع حول الذهب عبر الانترنت تابع تداول EVEST`,
+          meta_keyword: `اخبار تداول الذهب`,
+          page_title: `اخبار تداول الذهب - أخبار سوق الذهب، تداول اون لاين | إيڤست وسيط موثوق 100% Evest`,
+        },
       },
-    },
-  };
-  res.render("ar/Education/gold", { page: page });
+    };
+    const article = data.map(post => {
+      let date=post.date.split('T')[0];
+        return `<div class="card">
+          <div> 
+                 <a href='${"/ar/"+encodeURIComponent("اخبار-الذهب")+"/"+post.slug}'><img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}"></a>
+<div class="card-body">
+<a href='${"/ar/"+encodeURIComponent("اخبار-الذهب")+"/"+post.slug}'><h5 class="card-title">${post.title.rendered}</h5></a>
+<div class="card-text description">${post.excerpt.rendered}</div>
+<button class="btn btn-filled readmore" onclick="window.location.replace('${"/ar/"+encodeURIComponent("اخبار-الذهب")+"/"+post.slug}')">اقرا المزيد</button>
+</div></div>
+<div class="card-footer dateCreated">
+${date}
+</div>
+</div>`
+    }).join("");
+    
+  res.render("ar/Education/gold", { page: page, articles: article});
+  });
+
 });
 router.get(
   "/" + encodeURIComponent("اخبار-الذهب") + "/:slug",
@@ -599,17 +651,45 @@ router.get(
   }
 );
 
-router.get("/" + encodeURIComponent("أخبار-التداول"), (req, res) => {
-  var page = {
-    fields: {
-      seo: {
-        meta_description: `أخبار التداول : هل أنت مهتم بأخبار التداول في الأسواق الخليجية والعالمية ؟ تبحث عن مواضيع الأكثر ثقة عبر الانترنت, والمواضيع التي تهمك؟ تابع EVEST`,
-        meta_keyword: `أخبار التداول`,
-        page_title: `أخبار التداول ايفست | الأسواق المالية | استثمر في الأسهم العالمية 100% بدون عمولة Evest`,
-      },
-    },
+
+
+router.get("/" + encodeURIComponent("أخبار-التداول"), async(req, res) => {
+  const url='https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&per_page=6&page=1'
+  const options = {
+    method: "GET",
   };
-  res.render("ar/Education/tradingNews", { page: page });
+  const response = await fetch(url, options)
+    .then((res) => res.json())
+    .then((data) => {
+      var page = {
+        fields: {
+          seo: {
+            meta_description: `أخبار التداول : هل أنت مهتم بأخبار التداول في الأسواق الخليجية والعالمية ؟ تبحث عن مواضيع الأكثر ثقة عبر الانترنت, والمواضيع التي تهمك؟ تابع EVEST`,
+            meta_keyword: `أخبار التداول`,
+            page_title: `أخبار التداول ايفست | الأسواق المالية | استثمر في الأسهم العالمية 100% بدون عمولة Evest`,
+          },
+        },
+      };
+      const article = data.map(post => {
+        let date=post.date.split('T')[0];
+          return `<div class="card">
+            <div> 
+                   <a href='${"/ar/"+encodeURIComponent("أخبار-التداول")+"/"+post.slug}'>
+                    <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}" ></a>
+<div class="card-body">
+<a href='${"/ar/"+encodeURIComponent("أخبار-التداول")+"/"+post.slug}'><h5 class="card-title">${post.title.rendered}</h5></a>
+<div class="card-text description">${post.excerpt.rendered}</div>
+<button class="btn btn-filled readmore" onclick="document.getElementById('pageTitle').innerText ='${post.title.rendered}';window.location.replace('${"/ar/"+encodeURIComponent("أخبار-التداول")+"/"+post.slug+"?lang=ar"}');">اقرا المزيد</button>
+</div></div>
+<div class="card-footer dateCreated">
+${date}
+</div>
+</div>`
+      }).join("");
+      res.render("ar/Education/tradingNews", { page: page , articles: article});
+    })
+
+  
 });
 router.get(
   "/" + encodeURIComponent("أخبار-التداول") + "/:slug",
@@ -718,17 +798,43 @@ router.get(
   }
 );
 
-router.get("/" + encodeURIComponent("اخبار-السوق"), (req, res) => {
-  var page = {
-    fields: {
-      seo: {
-        meta_description: `أخبار سوق التداول : هل أنت مهتم بأخبار سوق التداول في الأسواق الخليجية والعالمية ؟ تبحث عن مواضيع حول أخبار السوق والأكثر ثقة عبر الانترنت, تابعنا`,
-        meta_keyword: `أخبار سوق التداول`,
-        page_title: `أخبار سوق التداول - ايفست، تداول اون لاين | وسيط موثوق 100% Evest`,
-      },
-    },
+
+
+router.get("/" + encodeURIComponent("اخبار-السوق"),  async(req, res) => {
+  const url = 'https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&categories=46&per_page=6&page=1';
+  const options = {
+    method: "GET",
   };
-  res.render("ar/Education/market", { page: page });
+  const response = await fetch(url, options)
+    .then((res) => res.json())
+    .then((data) => {
+      var page = {
+        fields: {
+          seo: {
+            meta_description: `أخبار سوق التداول : هل أنت مهتم بأخبار سوق التداول في الأسواق الخليجية والعالمية ؟ تبحث عن مواضيع حول أخبار السوق والأكثر ثقة عبر الانترنت, تابعنا`,
+            meta_keyword: `أخبار سوق التداول`,
+            page_title: `أخبار سوق التداول - ايفست، تداول اون لاين | وسيط موثوق 100% Evest`,
+          },
+        },
+      };
+      const article = data.map(post => {
+        let date=post.date.split('T')[0];
+          return `<div class="card">
+            <div> 
+                   <a href='${"/ar/"+encodeURIComponent("اخبار-السوق")+"/"+post.slug}'>
+                    <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}"></a>
+<div class="card-body">
+<a href='${"/ar/"+encodeURIComponent("اخبار-السوق")+"/"+post.slug}'> <h5 class="card-title">${post.title.rendered}</h5></a>
+<div class="card-text description">${post.excerpt.rendered}</div>
+<button class="btn btn-filled readmore" onclick="window.location.replace('${"/ar/"+encodeURIComponent("اخبار-السوق")+"/"+post.slug+"?lang=ar"}')">اقرا المزيد</button>
+</div></div>
+<div class="card-footer dateCreated">
+${date}
+</div>
+</div>`
+      }).join("");
+      res.render("ar/Education/market", { page: page , articles: article});
+    })
 });
 router.get(
   "/" + encodeURIComponent("اخبار-السوق") + "/:slug",
@@ -835,19 +941,46 @@ router.get(
   }
 );
 
-router.get("/" + encodeURIComponent("مدونة-التداول"), (req, res) => {
-  var page = {
-    fields: {
-      seo: {
-        meta_description: `مدونة التداول : هل أنت مهتم باخر المواضيع التي تخص التداول اون لاين من أسهم ومؤشرات في الأسواق الخليجية والعالمية ؟ البحث عن مواضيع الأكثر ثقة عبر الانترنت, والمواضيع التي تهمك؟ تابع EVEST`,
-        meta_keyword: `مدونة التداول`,
-        page_title: `مدونة التداول - Evest ايفست، استثمر اون لاين مع إيفست EVEST`,
-      },
-    },
-  };
-  res.render("ar/Education/blog", { page: page });
-});
 
+
+router.get("/" + encodeURIComponent("مدونة-التداول"),  async (req, res) => {
+  const url='https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&categories=45&per_page=6&page=1'
+  const options = {
+    method: "GET",
+  };
+  const response = await fetch(url, options)
+    .then((res) => res.json())
+    .then((data) => {
+      var page = {
+        fields: {
+          seo: {
+            meta_description: `مدونة التداول : هل أنت مهتم باخر المواضيع التي تخص التداول اون لاين من أسهم ومؤشرات في الأسواق الخليجية والعالمية ؟ البحث عن مواضيع الأكثر ثقة عبر الانترنت, والمواضيع التي تهمك؟ تابع EVEST`,
+            meta_keyword: `مدونة التداول`,
+            page_title: `مدونة التداول - Evest ايفست، استثمر اون لاين مع إيفست EVEST`,
+          },
+        },
+      };
+      const article = data.map(post => {
+        let date=post.date.split('T')[0];
+          return `<div class="card">
+            <div> 
+                   <a href='${"/ar/"+encodeURIComponent("مدونة-التداول")+"/"+post.slug}'>  <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}"> </a>
+<div class="card-body">
+<a href='${"/ar/"+encodeURIComponent("مدونة-التداول")+"/"+post.slug}' ><h5 class="card-title">${post.title.rendered}</h5></a>
+<div class="card-text description">${post.excerpt.rendered}</div>
+<button class="btn btn-filled readmore" onclick="window.location.replace('${"/ar/"+encodeURIComponent("مدونة-التداول")+"/"+post.slug+"?lang=ar"}')">اقرا المزيد</button>
+</div></div>
+<div class="card-footer dateCreated">
+${date}
+</div>
+</div>`
+      }).join("");
+      res.render("ar/Education/blog", { page: page , articles: article});
+    });
+
+
+ 
+});
 router.get(
   "/" + encodeURIComponent("مدونة-التداول") + "/:slug",
   async (req, res) => {

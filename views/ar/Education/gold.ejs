@@ -15,6 +15,7 @@
       </div></div>
   </div>
     <div id="reslut">
+      <%- articles %>
     </div>
     <div class="pagination" >
       <button >&laquo;</button>
@@ -76,8 +77,7 @@ function getAll(number){
                 document.querySelector("#reslut").innerHTML = article;
                 document.documentElement.scrollTop=0;
       })
-    }
-getAll(1);
+    };
   </script>
 
 

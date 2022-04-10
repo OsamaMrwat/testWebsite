@@ -39,6 +39,11 @@ function loginSuccessCallback(e) {
   localStorage.setItem("loggedin", "true");
   tradingAcademyLink.href=tradingAcademyLink.href+"/true";
   tradingAcademyLinkAr.href="/ar/أكاديمية-التداول/true?lang=ar";
+  let clicks=$('body *').toArray().filter(function(el) { return $(el).attr('onclick') });
+  for(let i=0;i<clicks.length;i++){
+      clicks[i].setAttribute("onclick","window.location.replace('/trade-room')");
+    }
+
 //   let encId=e.customer.customerId;
 //   console.log(decIt(encId));
 //   console.log(e.customer.customerId)

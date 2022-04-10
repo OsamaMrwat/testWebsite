@@ -15,6 +15,7 @@
       </div></div>
   </div>
     <div id="reslut">
+      <%- articles %>
     </div>
     <div class="pagination" >
       <button >&laquo;</button>
@@ -67,7 +68,7 @@ function getAll(number){
       <div class="card-body">
        <a href='${"/ar/"+encodeURIComponent("اخبار-النفط")+"/"+post.slug}'><h5 class="card-title">${post.title.rendered}</h5></a>
         <div class="card-text description">${post.excerpt.rendered}</div>
-        <button class="btn btn-filled readmore" onclick="window.location.replace('${"/ar/"+encodeURIComponent("اخبار-النفط")+"/"+post.slug}')">اقرا المزيد</button>
+        <button class="btn btn-filled readmore" onclick="window.location.replace('${"/ar/"+encodeURIComponent("اخبار-النفط")+"/"+post.slug+"?lang=ar"}')">اقرا المزيد</button>
       </div></div>
       <div class="card-footer dateCreated">
         ${date}
@@ -77,8 +78,7 @@ function getAll(number){
                 document.querySelector("#reslut").innerHTML = article;
                 document.documentElement.scrollTop=0;
       })
-    }
-getAll(1);
+    };
   </script>
 
 

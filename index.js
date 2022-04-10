@@ -785,12 +785,35 @@ app.get('/faq',(req,res)=>{
 
 
 
-app.get('/oil-news',(req,res)=>{
-  var page={fields:{seo:{meta_description:`Oil news, stay up to date with the latest updates with Evest on the latest Oil news and updates including the economy, the stock`,
-  meta_keywords:`Oil News`,page_title:`Oil News - Evest latest updates and news about oil trading`}}};
-  res.render('Education/oil',{page:page});
+app.get('/oil-news',async (req,res)=>{
+  const url="https://cms.evest.com/wp-json/wp/v2/posts?_embed&categories=42&per_page=6&page=1";
+  const options = {
+    method: 'GET',
+  };
+  const response = await fetch(url, options)
+  .then(res=>res.json())
+  .then((data)=>{
+    var page={fields:{seo:{meta_description:`Oil news, stay up to date with the latest updates with Evest on the latest Oil news and updates including the economy, the stock`,
+    meta_keywords:`Oil News`,page_title:`Oil News - Evest latest updates and news about oil trading`}}};
+    
+    const article = data.map(post => {
+      let date=post.date.split('T')[0];
+        return `<div class="card">
+          <div> 
+                 <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap">
+<div class="card-body">
+<h5 class="card-title">${post.title.rendered}</h5>
+<div class="card-text description">${post.excerpt.rendered}</div>
+<button class="btn btn-filled readmore" onclick="window.location.replace('${"/oil-news/"+post.slug}')">Read more</button>
+</div></div>
+<div class="card-footer dateCreated">
+${date}
+</div>
+</div>`
+    }).join("");
+    res.render('Education/oil',{page:page,articles:article});
+  })
 });
-
 app.get('/oil-news/:slug', async (req,res)=>{
   const url=`https://cms.evest.com/wp-json/wp/v2/posts?_embed&slug=${req.params.slug}`;
   const options = {
@@ -817,12 +840,37 @@ app.get('/oil-news/:slug', async (req,res)=>{
 });
 
 
-app.get('/gold-news',(req,res)=>{
-  var page={fields:{seo:{meta_description:`Gold trading news, stay up to date with the latest updates with Evest on the latest gold news and economy, stock, share market online`,
-  meta_keywords:`Gold News`,page_title:`Gold Trading News - Evest latest news and updates on gold trading`}}};
-  res.render('Education/gold',{page:page});
-});
 
+app.get('/gold-news', async(req,res)=>{
+  const url='https://cms.evest.com/wp-json/wp/v2/posts?_embed&categories=41&per_page=6&page=1';
+  const options = {
+    method: 'GET',
+  };
+  const response = await fetch(url, options)
+  .then(res=>res.json())
+  .then((data)=>{
+    var page={fields:{seo:{meta_description:`Gold trading news, stay up to date with the latest updates with Evest on the latest gold news and economy, stock, share market online`,
+    meta_keywords:`Gold News`,page_title:`Gold Trading News - Evest latest news and updates on gold trading`}}};
+    const article = data.map(post => {
+      let date=post.date.split('T')[0];
+        return `<div class="card">
+          <div> 
+                 <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap">
+<div class="card-body">
+<h5 class="card-title">${post.title.rendered}</h5>
+<div class="card-text description">${post.excerpt.rendered}</div>
+<button class="btn btn-filled readmore" onclick="window.location.replace('${"/gold-news/"+post.slug}')">Read more</button>
+</div></div>
+<div class="card-footer dateCreated">
+${date}
+</div>
+</div>`
+    }).join("");
+    
+    res.render('Education/gold',{page:page,articles: article});
+  });
+
+});
 app.get('/gold-news/:slug', async (req,res)=>{
   const url=`https://cms.evest.com/wp-json/wp/v2/posts?_embed&slug=${req.params.slug}`;
   const options = {
@@ -850,10 +898,35 @@ app.get('/gold-news/:slug', async (req,res)=>{
 });
 
 
-app.get('/market-news',(req,res)=>{
-  var page={fields:{seo:{meta_description:`Stock market news, stay up to date with the latest updates with Evest on the economy stock market and share market, ٍstock news`,
-  meta_keywords:`Stock Market News`,page_title:`Stock Market News - Evest latest financial news and updates`}}};
-  res.render('Education/gold',{page:page});
+app.get('/market-news', async(req,res)=>{
+  const url='https://cms.evest.com/wp-json/wp/v2/posts?_embed&categories=46&per_page=6&page=1';
+  const options = {
+    method: 'GET',
+  };
+  const response = await fetch(url, options)
+  .then(res=>res.json())
+  .then((data)=>{
+    var page={fields:{seo:{meta_description:`Stock market news, stay up to date with the latest updates with Evest on the economy stock market and share market, ٍstock news`,
+    meta_keywords:`Stock Market News`,page_title:`Stock Market News - Evest latest financial news and updates`}}};
+    const article = data.map(post => {
+      let date=post.date.split('T')[0];
+        return `<div class="card">
+          <div> 
+                 <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap">
+<div class="card-body">
+<h5 class="card-title">${post.title.rendered}</h5>
+<div class="card-text description">${post.excerpt.rendered}</div>
+<button class="btn btn-filled readmore" onclick="window.location.replace('${"/market-news/"+post.slug}')">Read more</button>
+</div></div>
+<div class="card-footer dateCreated">
+${date}
+</div>
+</div>`
+    }).join("");
+    res.render('Education/market',{page:page, articles: article});
+  });
+
+
 });
 app.get('/market-news/:slug', async(req,res)=>{
   const url=`https://cms.evest.com/wp-json/wp/v2/posts?_embed&slug=${req.params.slug}`;
@@ -881,10 +954,35 @@ app.get('/market-news/:slug', async(req,res)=>{
 });
 
 
-app.get('/trading-news',(req,res)=>{
-  var page={fields:{seo:{meta_description:`Trading News, Get the latest Trading News of the market now from anywhere in the world directly to you! Top and latest news about stock market`,
-  meta_keywords:`Trading News`,page_title:`Trading News - Evest Top and latest news about stock market`}}};
-  res.render('Education/tradingNews',{page:page});
+app.get('/trading-news',async(req,res)=>{
+  const url='https://cms.evest.com/wp-json/wp/v2/posts?_embed&per_page=6&page=1';
+  const options = {
+    method: 'GET',
+  };
+  const response = await fetch(url, options)
+  .then(res=>res.json())
+  .then((data)=>{
+    var page={fields:{seo:{meta_description:`Trading News, Get the latest Trading News of the market now from anywhere in the world directly to you! Top and latest news about stock market`,
+    meta_keywords:`Trading News`,page_title:`Trading News - Evest Top and latest news about stock market`}}};
+    const article = data.map(post => {
+      let date=post.date.split('T')[0];
+        return `<div class="card">
+          <div> 
+                 <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap">
+<div class="card-body">
+<h5 class="card-title">${post.title.rendered}</h5>
+<div class="card-text description">${post.excerpt.rendered}</div>
+<button class="btn btn-filled readmore" onclick="window.localStorage.setItem('data','a2a3a');window.location.replace('${"/trading-news/"+post.slug}');">Read more</button>
+</div></div>
+<div class="card-footer dateCreated">
+${date}
+</div>
+</div>`
+    }).join('');
+    res.render('Education/tradingNews',{page:page ,articles:article});
+  });
+
+
 });
 app.get('/trading-news/:slug',async (req,res)=>{
   const url=`https://cms.evest.com/wp-json/wp/v2/posts?_embed&slug=${req.params.slug}`;
@@ -983,6 +1081,8 @@ app.use('/start-trading',startTrading);
 app.use('/markets',marketsRouting);
 app.use('/trading-products',productsRouting);
 
+
+
 /*Arabic Routing*/
 app.use('/ar',arabicRouting);
 
@@ -1011,7 +1111,6 @@ app.get('/upload',(req,res)=>{
   }
   res.render('upload',{title:"Upload files",description:'',keywords:''})
 })
-
 app.post('/upload',(req,res)=>{
   if(req.files){
     var file = req.files.file;

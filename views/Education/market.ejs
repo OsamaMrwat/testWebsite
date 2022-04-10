@@ -14,7 +14,9 @@
       <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
       </div></div>
   </div>
-    <div id="reslut"></div>
+    <div id="reslut">
+      <%- articles  %> 
+    </div>
     <div class="pagination">
       <button >&laquo;</button>
       <button class="active page" onclick="updatePage(this.innerText,this)">1</button>
@@ -72,8 +74,7 @@ function getAll(number){
                 document.querySelector("#reslut").innerHTML = article;
                 document.documentElement.scrollTop=0;
       })
-    }
-getAll(1);
+    };
   </script>
 
 
