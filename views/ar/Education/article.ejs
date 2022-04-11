@@ -32,13 +32,14 @@
           <%- content %> 
       </section>
   </article>
-  </div>
+
 
 </div>
 <script  src="https://static.addtoany.com/menu/page.js"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script>
   $(document).ready(function(){
-    if(localStorage.getItem("loggedin")== false){
+    if(localStorage.getItem("loggedin")== false || localStorage.getItem("loggedin") == null){
       $('.articlebtn').on('click', function(){
       runPlugin('forexSignup');
     })
@@ -49,7 +50,84 @@
     }
 
   })
+
+  //back to top page
+  $(document).ready(function(){
+    $(window).scroll(function(){
+      if ($(this).scrollTop() > 100) {
+        $('.back-to-top').fadeIn();
+      } else {
+        $('.back-to-top').fadeOut();
+      }
+    });
+    $('.back-to-top').click(function(){
+      $("html, body").animate({ scrollTop: 0 }, 600);
+      return false;
+    });
+  });
+
 </script>
 <style>
    @import url('/css/articleAr.min.css');
+
+   /*back to top page*/
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      background: var(--primary-color3);
+      color: var(--primary-color1);
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      border-radius: 50%;
+      opacity: 0.4;
+      transition: opacity 0.2s linear;
+      }
+      .back-to-top:hover{
+        opacity: 1;
+        font-size:20px;
+        font-weight: bolder;
+      }
+      .card.mb-4{
+        flex-direction:column;
+      }
+
+
+
+      /*styling RegForm popup*/
+      .modal-content {
+    background-color: whitesmoke;
+    color:var(--primary-color1);
+    width: 100%;
+    padding: 15px;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    max-width: 650px;
+    margin: auto;
+    border-radius: 0;
+    border: 0 solid #fcfcfc;
+    padding: 15px;
+    -o-border-image: url(none) 30 stretch;
+    border-image: url(none) 30 stretch;
+    direction:rtl;
+}
+.modal-footer{
+  justify-content: center;
+}
+.modal-footer > button{
+  background-color:var(--primary-color2);
+  color:white;
+  border:none;
+}
+.modal-footer > button:hover{
+  background-color:var(--primary-color2);
+  color:white !important;
+  font-weight: bolder;
+}
+
 </style>
+

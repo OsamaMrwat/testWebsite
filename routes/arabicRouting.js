@@ -451,6 +451,7 @@ router.get(
           url: article[0].link,
           tags: tags,
           og_img: `${article[0].yoast_head_json.og_image.url}`,
+          post_category:42,
         });
       })
       .catch((err) => console.log(err));
@@ -503,6 +504,7 @@ router.get(
           url: article[0].link,
           tags: tags,
           og_img: `${article[0].yoast_head_json.og_image.url}`,
+          post_category:42,
         });
       })
       .catch((err) => console.log(err));
