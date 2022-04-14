@@ -1,14 +1,14 @@
-,Silver,Gold ,Platinum ,Diamond ,Islamic,IslamicPro
-,,,,,,
-Instument,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:
-CAC40,30,30,30,30,30,30
-DAX40,N/A,25,25,25,25,25
-DOW30,N/A,46,46,46,46,46
-IBEX35,20,20,20,20,20,20
-NASDAQ100,N/A,20,20,20,20,20
-NIKKEI,N/A,20,20,20,20,20
-SMI,20,20,20,20,20,20
-SPX500,N/A,36,36,36,36,36
-STOXX50,50,50,50,50,50,50
-FTSE100,25,25,25,25,25,25
-MIB40,25,25,25,25,25,25
+,Silver,Gold ,Platinum ,Diamond ,Islamic
+,,,,,
+Instument,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:
+CAC40,30,30,30,30,30
+DAX40,N/A,25,25,25,25
+DOW30,N/A,46,46,46,46
+IBEX35,20,20,20,20,20
+NASDAQ100,N/A,20,20,20,20
+NIKKEI,N/A,20,20,20,20
+SMI,20,20,20,20,20
+SPX500,N/A,36,36,36,36
+STOXX50,50,50,50,50,50
+FTSE100,25,25,25,25,25
+MIB40,25,25,25,25,25

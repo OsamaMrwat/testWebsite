@@ -32,11 +32,101 @@
           <%- content %> 
       </section>
   </article>
-
-
 </div>
+
+  <!--back to top-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="back-to-top">
+          <a href="#"><i class="fa fa-angle-up"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLongTitle" style="font-family: 'Arabic Evest';">سجّل الآن و ابدأ التداول مجانًا</h5>
+      </div>
+      <div class="modal-body">
+       <!--SignUp Popup-->
+       <div class="container">
+        <form id="regForm">
+          <!--input group first and last name-->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" id="firstName" placeholder="الاسم الاول" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" id="lastName" placeholder="الاسم الاخير" required>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="البريد الالكتروني" required>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="tel" id="phone">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-xs-12 text-right" style="padding-left: 5px;text-align: right;margin-bottom: 5px;font-size:12px;"><span style="text-align: right;margin-right: 0px;">بالضغط على زر التسجيل انت توافق&nbsp;على&nbsp;<a href="https://mena.evest.com/legal/ar/AR-Atria%20financial-TERMS_AND_CONDITIONS.pdf">شروط الاستخدام&nbsp;</a>و&nbsp;<a href="https://mena.evest.com/legal/ar/AR-Atria_financial__Privacy_Policy.pdf">سياسة الخصوصية&nbsp;</a></span></div>
+            <div class="col-md-12 col-xs-12 text-right" style="padding-left: 5px;text-align: right;margin-bottom: 5px;font-size:11px;"><input type="checkbox" name="promotions" checked=""><span style="text-align: right;margin-right: 6px;">ارغب في تلقي الرسائل التسويقية</span></div>
+        </div>
+        </form>
+      </div>
+
+      </div>
+      <div class="modal-footer text-center">
+        <button type="button" class="btn btn-primary" style="font-family: 'Arabic Evest';">سجّل الآن</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button> -->
+
+
 <script  src="https://static.addtoany.com/menu/page.js"></script>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<link rel="stylesheet" href="/js/phone/intl-tel-input-17.0.0/build/css/intlTelInput.css">
+<script src="/js/phone/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
+<script>
+  var input = document.querySelector("#phone");
+  window.intlTelInput(input, {
+    // any initialisation options go here
+    utilsScript:
+      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/js/utils.js",
+    initialCountry: "auto",
+    geoIpLookup: function (e, a) {
+      $.get(
+        "https://ipinfo.io/?token=cc7afc256c9864",
+        function () {},
+        "jsonp"
+      ).always(function (a) {
+        var d = a && a.country ? a.country : "kw";
+        e(d);
+      });
+    },
+  });
+</script>
+<script src="/js/register.min.js"></script>
 <script>
   $(document).ready(function(){
     if(localStorage.getItem("loggedin")== false || localStorage.getItem("loggedin") == null){
@@ -69,7 +159,14 @@
 </script>
 <style>
    @import url('/css/articleAr.min.css');
+   .iti__flag {background-image: url("/js/phone/intl-tel-input-17.0.0/build/img/flags.png");}
 
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {background-image: url("/js/phone/intl-tel-input-17.0.0/build/img/flags@2x.png");}
+}
+.iti.iti--allow-dropdown,#phone{
+  width: 100%;
+}
    /*back to top page*/
     .back-to-top {
       position: fixed;
@@ -114,6 +211,7 @@
     -o-border-image: url(none) 30 stretch;
     border-image: url(none) 30 stretch;
     direction:rtl;
+    font-family: 'Arabic Evest';
 }
 .modal-footer{
   justify-content: center;

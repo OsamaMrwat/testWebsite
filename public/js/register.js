@@ -489,7 +489,7 @@ function SHA1(msg) {
 
 //---------------Form submit -----------------//
 const errorText=document.getElementById("errorText");
-const myForm = document.getElementById("registerForm");
+const myForm = document.getElementById("regForm");
 
 myForm.addEventListener("submit", (e) => {
   console.log("innn");
