@@ -214,7 +214,7 @@ background-image: url(https://www.countryflags.io/sa/flat/32.png);
     font-size: 18px;
   }
   #reslut > article > section img{
-    width:100%;
+    width:100% !important;
     height:50%;
   }
 }

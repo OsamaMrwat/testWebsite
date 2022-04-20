@@ -8,10 +8,11 @@ function isMobile() {
   let clicks=$('body *').toArray().filter(function(el) { return $(el).attr('onclick') });
   if(check){
     for(let i=0;i<clicks.length;i++){
-      clicks[i].setAttribute("onclick","window.location.replace('/mobile/#/signup')");
+      if(!clicks[i].className.includes('readmore')){
+        clicks[i].setAttribute("onclick","window.location.replace('/mobile/#/signup')");
+      }
     }
-    }
-};
+};}
 
 isMobile();
 
