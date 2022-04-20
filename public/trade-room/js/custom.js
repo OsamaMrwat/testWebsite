@@ -7,8 +7,22 @@ var forexEvents = {
     loginFail: loginFailCallback,
     logout: logoutCallback,
     init: appInitCallback,
-    themeChange: themeChangeCallback
+    themeChange: themeChangeCallback,
+    platformHide: platformHide,
+    platformShow: platformShow
 };
+
+function platformHide() {
+  console.log("Trading platform is hidden");
+
+  $(".platform").fadeOut(250);
+}
+
+function platformShow() {
+  console.log("Trading platform is shown");
+
+  $(".platform").fadeIn(500);
+}
 
 
 //Panda platform events

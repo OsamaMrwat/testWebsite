@@ -51,6 +51,7 @@ app.use('/js',express.static(__dirname+'/public/js'))
 app.use('/node_modules',express.static(__dirname+'/node_modules'))
 app.use('/trade-room',express.static(__dirname+'/public/trade-room'))
 app.use('/legal',express.static(__dirname+'/public/legal'))
+app.use('/publicFiles',express.static(__dirname+'/public/publicFiles'))
 
 
 var connection = mysql.createConnection({
@@ -1109,17 +1110,39 @@ app.get('/upload',(req,res)=>{
   if(! (username === 'admin' && password === 'q53hh=-Y5Sat?vUj')) {
     return reject()
   }
-  res.render('upload',{title:"Upload files",description:'',keywords:''})
+  var page = {
+    fields: {
+      seo: {
+        meta_description:
+          "",
+        meta_keywords: ``,
+        page_title: `upload file to get public link`,
+      },
+    },
+  };
+  res.render('upload',{page:page,link:""});
 })
+
+
 app.post('/upload',(req,res)=>{
   if(req.files){
     var file = req.files.file;
     var filename= file.name;
-    file.mv('./public/legal/'+filename,function(err){
+    file.mv('./public/publicFiles/'+filename,function(err){
       if(err){
         res.send(err)
       }else{
-        res.send("File Uploaded") 
+        var page = {
+          fields: {
+            seo: {
+              meta_description:
+                "",
+              meta_keywords: ``,
+              page_title: `upload file to get public link`,
+            },
+          },
+        };
+        res.render('upload',{page:page,link:`https://evest.com/publicFiles/${filename}`})
       }
     })
   }

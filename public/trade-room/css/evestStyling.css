@@ -261,6 +261,8 @@ body.theme-dark custom-select .frx-dropdown-pandats.dropdown-expanded-pandats .f
 #coinsIcon > p{
     margin-bottom: 0;
 }
+body #coinsIcon > p{
+    color:black;}
 body.theme-dark #coinsIcon >p{color:white;}
 /* The Modal (background) */
 .modal {
