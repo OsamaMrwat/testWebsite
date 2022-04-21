@@ -121,7 +121,6 @@
     <panda-forex-init></panda-forex-init>
     <panda-forex-personal-profile></panda-forex-personal-profile>
     <panda-forex-client-area></panda-forex-client-area>
-
 </div>
 <!-- panda Forex plugin initialisation -->
 <!-- Wrapper -->
@@ -154,6 +153,8 @@
                   <a class="dropdown-item eslang" style="font-family: 'Evest Med';" href="/trade-room?lang=es">Spainsh</a>
                 </div>
               </div></li>
+              <li>    <panda-forex-social-switch show-switch="true" auto-login="false">
+              </panda-forex-social-switch></li>
                 <li>
                     <panda-forex-theme-switch show-switch="false"></panda-forex-theme-switch>
                 </li>
@@ -185,7 +186,7 @@
     <!-- Main -->
     <div id="tradingPlatform">
         <!-- Post -->
-        <section id="platform-wrapper">
+        <section id="platform-wrapper" class="platform">
             <div id="trading-platform" class="trading_platform">
                 <div id="tp-wrapper">
                     <panda-forex-trading-platform></panda-forex-trading-platform>
@@ -198,9 +199,6 @@
     </div>
 </div>
 
-<panda-forex-social-switch show-switch="true" auto-login="false">
-
-</panda-forex-social-switch>
 <!--Wrapper End-->
 <!--WebTV-->
 <div id="tvDiv" style="display: none;">

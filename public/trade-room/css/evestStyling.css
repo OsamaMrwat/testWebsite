@@ -305,6 +305,9 @@ body.theme-dark #coinsIcon >p{color:white;}
     cursor: pointer;
   }
 
+  .social{
+      overflow-y: scroll;
+  }
 
 /* 1280*800 screens*/
 @media (min-width: 1280px){

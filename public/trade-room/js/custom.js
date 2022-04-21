@@ -14,14 +14,14 @@ var forexEvents = {
 
 function platformHide() {
   console.log("Trading platform is hidden");
-
   $(".platform").fadeOut(250);
+  $(".social").css("width","100%");
 }
 
 function platformShow() {
   console.log("Trading platform is shown");
-
   $(".platform").fadeIn(500);
+  $(".social").css("width","0%");
 }
 
 
