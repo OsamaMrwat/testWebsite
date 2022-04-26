@@ -423,7 +423,7 @@ router.get(
         const tags = data_tags[1][5]
           ? data_tags[1][5].keywords
               .map((tag) => {
-                return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`;
+                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`;
               })
               .join(" ")
           : " ";
@@ -476,7 +476,7 @@ router.get(
         const tags = data_tags[1][5]
           ? data_tags[1][5].keywords
               .map((tag) => {
-                return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`;
+                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`;
               })
               .join(" ")
           : " ";
@@ -567,7 +567,7 @@ router.get(
         const tags = data_tags[1][5]
           ? data_tags[1][5].keywords
               .map((tag) => {
-                return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`;
+                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`;
               })
               .join(" ")
           : " ";
@@ -619,7 +619,7 @@ router.get(
         const tags = data_tags[1][5]
           ? data_tags[1][5].keywords
               .map((tag) => {
-                return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`;
+                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`;
               })
               .join(" ")
           : " ";
@@ -712,7 +712,7 @@ router.get(
         const tags = data_tags[1][5]
           ? data_tags[1][5].keywords
               .map((tag) => {
-                return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`;
+                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`;
               })
               .join(" ")
           : " ";
@@ -764,7 +764,7 @@ router.get(
         const tags = data_tags[1][5]
           ? data_tags[1][5].keywords
               .map((tag) => {
-                return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`;
+                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`;
               })
               .join(" ")
           : " ";
@@ -857,7 +857,7 @@ router.get(
         const tags = data_tags[1][5]
           ? data_tags[1][5].keywords
               .map((tag) => {
-                return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`;
+                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`;
               })
               .join(" ")
           : " ";
@@ -909,7 +909,7 @@ router.get(
         const tags = data_tags[1][5]
           ? data_tags[1][5].keywords
               .map((tag) => {
-                return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`;
+                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`;
               })
               .join(" ")
           : " ";
@@ -1002,7 +1002,7 @@ router.get(
         const tags = data_tags[1][5]
           ? data_tags[1][5].keywords
               .map((tag) => {
-                return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`;
+                return `<a class="badge bg-secondary text-decoration-none link-light" href="//ar/tag/${tag}">${tag}</a>`;
               })
               .join(" ")
           : " ";
@@ -1046,19 +1046,10 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
-        const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
-          function (key) {
-            return data[0].yoast_head_json.schema[key];
-          }
-        );
-        const tags = data_tags[1][5]
-          ? data_tags[1][5].keywords
-              .map((tag) => {
-                return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`;
-              })
-              .join(" ")
-          : " ";
-
+        const data_tags=Object.keys(data[0].yoast_head_json.schema).map(function(key){return data[0].yoast_head_json.schema[key];});
+        const tags=data_tags[1][5]?data_tags[1][5].keywords.map(tag=>{
+        return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`
+      }).join(' '):"";
         var page = {
           fields: {
             seo: {
@@ -1087,5 +1078,64 @@ router.get(
       .catch((err) => console.log(err));
   }
 );
+
+
+router.get('/tag/:tag',async (req,res)=>{
+  var page=1;
+  console.log(req.params.tag);
+  do{
+    const url=`https://cms.evest.com/ar/wp-json/wp/v2/tags?per_page=100&page=${page}&order=desc`;
+    const options={
+      method:'GET'
+    }
+    var response=await fetch(url,options)
+    .then((res)=>res.json())
+    .then((data)=>{
+      var count=0;
+      data.forEach(element => {
+        if(element.name==req.params.tag){
+          
+          const url=`https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&tags=${element.id}&per_page=6&page=1`
+          const options = {
+            method: "GET",
+          };
+          const response = fetch(url, options)
+            .then((res) => res.json())
+            .then((data) => {
+              var page = {
+                fields: {
+                  seo: {
+                    meta_description: `${element.name}`,
+                    meta_keyword: `${element.name}`,
+                    page_title: `${element.yoast_head_json.title}`,
+                  },
+                },
+              };
+              const article = data.map(post => {
+                let date=post.date.split('T')[0];
+                  return `<div class="card">
+                    <div> 
+                           <a href='${post.link}'>  <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}"> </a>
+        <div class="card-body">
+        <a href='${post.link}' ><h5 class="card-title">${post.title.rendered}</h5></a>
+        <div class="card-text description">${post.excerpt.rendered}</div>
+        <a class="btn btn-filled readmore" href='${post.link}'>اقرا المزيد</a>
+        </div></div>
+        <div class="card-footer dateCreated">
+        ${date}
+        </div>
+        </div>`
+              }).join("");
+              res.render("ar/Education/tags", { page: page , articles: article,pageTitle:element.yoast_head_json.title,tagId:element.id});
+              res.end();
+            });
+        }
+      });
+    });
+    page++;
+  }while(!response);
+});
+
+
 
 module.exports = router;

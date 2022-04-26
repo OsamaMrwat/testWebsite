@@ -9,6 +9,8 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 var butter = require('buttercms')(process.env.BUTTER_KEY);
 const fetch = require('node-fetch');
 const cors=require('cors');
+const { ToadScheduler, SimpleIntervalJob, Task } = require('toad-scheduler')
+
 
 
 const app=express();
@@ -428,7 +430,8 @@ async function getPostSiteMaps(){
       .then((res) => {
         // push all links into our all_links variable
         for (let ele in res.data) {
-          all_links.push(res.data[ele].link.substring(22,));
+          if(!res.data[ele].link.includes('commodities')){
+          all_links.push(res.data[ele].link.substring(22,));}
         }
       })
       .catch((error) => {
@@ -463,10 +466,12 @@ xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entrie
 
 // writeFile function with filename, content and callback function
 fs.writeFile('./public/post-sitemap.xml', sitemap, function (err) {
+  var count=0;
   if (err) throw err;
-  console.log('File is created successfully.');
+  console.log('File is created successfully.'+" "+count++);
 });
 }
+
 async function getPagesSiteMaps(){
   let all_links=[];
   for (let page = 1; page < 10; page++) {
@@ -670,6 +675,14 @@ getCategoriesSiteMaps();
 getTagsSiteMaps();
 getCommoditiesSiteMaps();
 
+// const postSitemap=
+
+const scheduler = new ToadScheduler()
+
+const task = new Task('simple task', getPostSiteMaps())
+const job = new SimpleIntervalJob({ hours:2, }, task)
+
+scheduler.addSimpleIntervalJob(job)
 
 const SitemapGenerator = require('sitemap-generator');
 // create generator
@@ -688,6 +701,64 @@ generator.on('done', () => {
 
 // start the crawler
 generator.start();
+
+
+app.get('/post-sitemap.xml', async(req, res)=>{
+  let all_links=[];
+  for (let page = 1; page < 10; page++) {
+    await axios
+      .get(
+        `https://cms.evest.com/wp-json/wp/v2/posts?page=${page}&per_page=100`
+      )
+      .then((res) => {
+        // push all links into our all_links variable
+        for (let ele in res.data) {
+          if(!res.data[ele].link.includes('commodities')){
+          all_links.push(res.data[ele].link.substring(22,));}
+        }
+      })
+      .catch((error) => {
+        return;
+      });
+  }
+  for (let page = 1; page < 10; page++) {
+    await axios
+      .get(
+        `https://cms.evest.com/ar/wp-json/wp/v2/posts?page=${page}&per_page=100`
+      )
+      .then((res) => {
+        // push all links into our all_links variable
+        for (let ele in res.data) {
+          all_links.push(res.data[ele].link.substring(22,));
+        }
+      })
+      .catch((error) => {
+        return;
+      });
+  }
+  let sitemap_entries = all_links.map((link) => {
+    // you got access to every property of those links here. Note the \n I've added to format it in the output - you don't need that in the real XML.
+    return `\n<url><loc>https://www.evest.com/${link}</loc></url>`
+  })
+
+  // the actual sitemap with all it's entries.
+  let sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/1.1" 
+xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entries.join('')}
+</urlset>`
+
+// writeFile function with filename, content and callback function
+fs.writeFile('./public/post-sitemap.xml', sitemap, function (err) {
+  var count=0;
+  if (err) throw err;
+  console.log('File is created successfully.'+" "+count++);
+  res.sendFile(__dirname+'/public/post-sitemap.xml');
+});
+
+  // getPagesSiteMaps();
+  // res.sendFile(__dirname+'/public/post_sitemap.xml');
+})
+
 
 
 /*StockWidget API*/
@@ -994,7 +1065,7 @@ app.get('/trading-news/:slug',async (req,res)=>{
     var article=data;
     const data_tags=Object.keys(data[0].yoast_head_json.schema).map(function(key){return data[0].yoast_head_json.schema[key];});
     const tags=data_tags[1][5]?data_tags[1][5].keywords.map(tag=>{
-    return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`
+    return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag}">${tag}</a>`
   }).join(' '):" ";
   
 
@@ -1008,6 +1079,61 @@ app.get('/trading-news/:slug',async (req,res)=>{
       og_img:`${article[0].yoast_head_json.og_image.url}`});
   }).catch(err=>console.log(err));
   
+});
+
+app.get('/tag/:tag',async (req,res)=>{
+  var page=1;
+  console.log(req.params.tag);
+  while(page<100){
+    const url=`https://cms.evest.com/wp-json/wp/v2/tags?per_page=100&page=${page}`;
+    const options={
+      method:'GET'
+    }
+    var response=await fetch(url,options)
+    .then((res)=>res.json())
+    .then((data)=>{
+      var count=0;
+      data.forEach(element => {
+        if(element.name==req.params.tag){
+          
+          const url=`https://cms.evest.com/wp-json/wp/v2/posts?_embed&tags=${element.id}&per_page=6&page=1`
+          const options = {
+            method: "GET",
+          };
+          const response = fetch(url, options)
+            .then((res) => res.json())
+            .then((data) => {
+              var page = {
+                fields: {
+                  seo: {
+                    meta_description: `${element.description}`,
+                    meta_keyword: `${element.description}`,
+                    page_title: `${element.yoast_head_json.title}`,
+                  },
+                },
+              };
+              const article = data.map(post => {
+                let date=post.date.split('T')[0];
+                  return `<div class="card">
+                    <div> 
+                           <a href='${post.link}'>  <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}"> </a>
+        <div class="card-body">
+        <a href='${post.link}' ><h5 class="card-title">${post.title.rendered}</h5></a>
+        <div class="card-text description">${post.excerpt.rendered}</div>
+        <a class="btn btn-filled readmore" href='${post.link}'>read more</a>
+        </div></div>
+        <div class="card-footer dateCreated">
+        ${date}
+        </div>
+        </div>`
+              }).join("");
+              res.render("Education/tags", { page: page , articles: article,pageTitle:element.yoast_head_json.title,tagId:element.id});
+            });
+        }
+      });
+    });
+    page++;
+  };
 });
 
 

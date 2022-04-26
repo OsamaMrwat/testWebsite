@@ -42,7 +42,12 @@ function loginSuccessCallback(e) {
   tradingAcademyLinkAr.href="/ar/أكاديمية-التداول/true?lang=ar";
   let clicks=$('body *').toArray().filter(function(el) { return $(el).attr('onclick') });
   for(let i=0;i<clicks.length;i++){
+    if(clicks[i].className.includes('page')||clicks[i].className.includes('readmore')){
+      i++   
+    }else{
       clicks[i].setAttribute("onclick","window.location.replace('/trade-room')");
+    }
+      
     }
 
 //   let encId=e.customer.customerId;
