@@ -264,11 +264,45 @@ body.theme-dark custom-select .frx-dropdown-pandats.dropdown-expanded-pandats .f
 body #coinsIcon > p{
     color:black;}
 body.theme-dark #coinsIcon >p{color:white;}
+
+/* responsive coin div*/
+@media (max-width:1679px){
+    #tvDiv{
+        right:38%;
+        width:160px;
+        top:4%;  
+    }
+    #Header > div > ul > li:nth-child(1) {
+    margin-right: 0%;
+    }
+    #coinsIcon > img{
+        width:25%
+    }
+    .mainpandats .forex-button-pandats.simple-button-pandats{
+        width:100px;
+    }
+    .switch {
+        margin: auto 9px auto 10px;
+    }
+}
+@media(max-width:1440px){
+    #tvDiv {
+        right: 2%;
+        width: 160px;
+        top: 93%;
+        background: var(--primary-color1);
+        border-radius: 27px;
+        height: 50px;
+    }
+    #coinsIcon > p{color:white !important;}
+}
+
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 231; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
