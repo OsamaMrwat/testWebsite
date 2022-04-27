@@ -1,0 +1,114 @@
+﻿<html>
+    <head></head>
+<body>
+
+<div class="adv-dialog-content" id="dlg-indicator">
+    <div class="properties-tabs">
+        <a class ="properties-tabs-label active" href="javascript:void(0);">Parameters</a>
+        <a class ="properties-tabs-label" href="javascript:void(0);">Style</a>
+        <!--<a class ="properties-tabs-label" href="javascript:void(0);">Levels</a>-->
+    </div>
+    <div id="defauls-css" style ="display: none" ></div>
+
+    <div class="main-properties" style ="display:block ">
+        <table class="property-page" cellpadding="0" cellspacing="2">
+            <tbody id="tbody-parameters">
+                
+            </tbody>
+        </table>
+          <table class="property-page" cellpadding="0" cellspacing="2">
+             <tbody id="tbody-sources"></tbody>
+          </table>
+    </div>
+    <div class="main-properties" style ="display:none ">
+         <table class="property-page" cellpadding="0" cellspacing="2">
+             <tbody>
+                 <tr id="histogram-line">
+                            <td><input  class="visibility-onoff line-visible" type="checkbox" checked="checked"/></td>
+                            <td>Histogram</td>
+                            <td><input type="color" class ="line-color class-color-widget"  /></td>
+                             <td><div   class="line-width class-slider-5 slider-border slider-horizontal"> 
+                             <div class="gradient" ></div></div>
+                             <div class="line-opacity slider-coloropaciry " style="display:none; ">
+                                    <div class="gradient" ></div>
+                              </div>
+                            </td>
+                            <td><select class ="linedesign-type dialog-select lineselect">  
+                               
+                                </select>
+                            </td>
+                        </tr>
+                 <tr id="macd-line">
+                     <td><input  class="visibility-onoff line-visible" type="checkbox" checked="checked"/></td>
+                     <td>MACD</td>
+                     <td><input type="color" class ="line-color class-color-widget"  /></td>
+                     <td><div   class="line-width class-slider-5 slider-border slider-horizontal"> 
+                             <div class="gradient" ></div></div>
+                             <div class="line-opacity slider-coloropaciry " style="display:none; ">
+                                    <div class="gradient" ></div>
+                              </div>
+                     </td>
+                     <td><select class ="linedesign-type dialog-select lineselect">  
+                             
+                         </select>
+                     </td>
+                 </tr>
+                 <tr id="signal-line">
+                            <td><input  class="visibility-onoff line-visible" type="checkbox" checked="checked"/></td>
+                            <td>Signal</td>
+                            <td><input type="color" class ="line-color class-color-widget"  /></td>
+                            <td><div   class="line-width class-slider-5 slider-border slider-horizontal"> 
+                             <div class="gradient" ></div></div>
+                             <div class="line-opacity slider-coloropaciry " style="display:none; ">
+                                    <div class="gradient" ></div>
+                              </div>
+                            </td>
+                            <td><select class ="linedesign-type dialog-select lineselect">  
+                                    
+                                </select>
+                            </td>
+                        </tr>
+                 <!--<tr id="rsi-line">
+                            <td><input  class="visibility-onoff line-visible" type="checkbox" checked="checked"/></td>
+                            <td>Line</td>
+                            <td><input id="line-color" type="color" class ="class-color-widget"  /></td>
+                            <td><div id="line-width"  class="class-slider-5 slider-border slider-horizontal"> 
+                                    <div class="gradient" ></div></div>
+                            </td>
+                            <td><select id="linedesign-type" class ="dialog-select lineselect">  
+                                    <option value="0">Line</option> 
+                                    <option value="1">Histogramm</option> 
+                                    <option value="2">Cross</option>
+                                    <option value="2">Area</option>
+                                    <option value="2">Dotted</option>
+                                </select>
+                            </td>
+                        </tr>-->
+                      </tbody>
+          </table>
+    </div>
+    <div class ="main-properties" style ="display:none ">
+         <table class="property-page" cellpadding="0" cellspacing="2">
+                     <tbody id="tbody-indicatorlevels">
+
+                     </tbody>
+                </table>
+                <table class="property-page" cellpadding="0" cellspacing="2">
+                    <tbody id="tbody-indicatorlevels-bk">
+                        <tr>
+                          <td><input id="control-background" class="visibility-switch" type="checkbox" checked="checked"/>
+                            </td>
+                            <td>Background</td>
+                            <td><input id="color-bk-levels" type="color"  /></td>
+                            <td><div id="opacity-bk-levels" class="slider-coloropaciry ">
+                                    <div class="gradient" ></div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+    </div>
+    
+</div>
+ </body>
+</html>
