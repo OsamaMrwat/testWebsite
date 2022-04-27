@@ -415,6 +415,9 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
+        if(data[0].yoast_head_json == undefined) {
+          data[0].yoast_head_json =null;
+        }
         const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
           function (key) {
             return data[0].yoast_head_json.schema[key];
@@ -468,6 +471,9 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
+        if(data[0].yoast_head_json == undefined) {
+          data[0].yoast_head_json =null;
+        }
         const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
           function (key) {
             return data[0].yoast_head_json.schema[key];
@@ -559,6 +565,9 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
+        if(data[0].yoast_head_json == undefined) {
+          data[0].yoast_head_json =null;
+        }
         const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
           function (key) {
             return data[0].yoast_head_json.schema[key];
@@ -611,6 +620,9 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
+        if(data[0].yoast_head_json == undefined) {
+          data[0].yoast_head_json =null;
+        }
         const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
           function (key) {
             return data[0].yoast_head_json.schema[key];
@@ -704,6 +716,9 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
+        if(data[0].yoast_head_json == undefined) {
+          data[0].yoast_head_json =null;
+        }
         const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
           function (key) {
             return data[0].yoast_head_json.schema[key];
@@ -756,6 +771,9 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
+        if(data[0].yoast_head_json == undefined) {
+          data[0].yoast_head_json =null;
+        }
         const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
           function (key) {
             return data[0].yoast_head_json.schema[key];
@@ -849,6 +867,9 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
+        if(data[0].yoast_head_json == undefined) {
+          data[0].yoast_head_json =null;
+        }
         const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
           function (key) {
             return data[0].yoast_head_json.schema[key];
@@ -901,6 +922,9 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
+        if(data[0].yoast_head_json == undefined) {
+          data[0].yoast_head_json =null;
+        }
         const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
           function (key) {
             return data[0].yoast_head_json.schema[key];
@@ -994,6 +1018,9 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
+        if(data[0].yoast_head_json == undefined) {
+          data[0].yoast_head_json =null;
+        }
         const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
           function (key) {
             return data[0].yoast_head_json.schema[key];
@@ -1046,6 +1073,9 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
+        if(data[0].yoast_head_json == undefined) {
+          data[0].yoast_head_json =null;
+        }
         const data_tags=Object.keys(data[0].yoast_head_json.schema).map(function(key){return data[0].yoast_head_json.schema[key];});
         const tags=data_tags[1][5]?data_tags[1][5].keywords.map(tag=>{
         return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`
