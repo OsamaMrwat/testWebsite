@@ -405,60 +405,60 @@ ${date}
 
   
 });
-router.get(
-  "/" + encodeURIComponent("اخبار-النفط") + "/:slug",
-  async (req, res) => {
-    const url = `https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&slug=${req.params.slug}`;
-    const options = {
-      "method": "GET",
-    };
-    const response = await fetch(url, options)
-      .then((res) => res.json())
-      .then((data) => {
-        var article = data;
-        console.log(article);
-        const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
-          function (key) {
-            return data[0].yoast_head_json.schema[key];
-          }
-        );
-        const tags = data_tags[1][5]
-          ? data_tags[1][5].keywords
-              .map((tag) => {
-                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
-              })
-              .join(" ")
-          : " ";
+// router.get(
+//   "/" + encodeURIComponent("اخبار-النفط") + "/:slug",
+//   async (req, res) => {
+//     const url = `https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&slug=${req.params.slug}`;
+//     const options = {
+//       "method": "GET",
+//     };
+//     const response = await fetch(url, options)
+//       .then((res) => res.json())
+//       .then((data) => {
+//         var article = data;
+//         console.log(article);
+//         const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
+//           function (key) {
+//             return data[0].yoast_head_json.schema[key];
+//           }
+//         );
+//         const tags = data_tags[1][5]
+//           ? data_tags[1][5].keywords
+//               .map((tag) => {
+//                 return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
+//               })
+//               .join(" ")
+//           : " ";
 
-        var page = {
-          fields: {
-            seo: {
-              meta_description: `${article[0].yoast_head_json.og_description}`,
-              meta_keyword: `${data_tags[1][5].keywords}`,
-              page_title: `${article[0].yoast_head_json.og_title}`,
-            },
-          },
-        };
-        res.render("ar/Education/article", {
-          page: page,
-          content: article[0].content.rendered,
-          titleArticle: article[0].title.rendered,
-          imgUrl: article[0].featured_image_url,
-          date:
-            article[0].date.split("T")[1].split(":")[0] +
-            ":" +
-            article[0].date.split("T")[1].split(":")[1] +
-            " " +
-            article[0].date.split("T")[0],
-          url: article[0].link,
-          tags: tags,
-          og_img: `${article[0].yoast_head_json.og_image.url}`,
-          post_category:42,
-        });
-      })
-      .catch((err) => console.log(err));
-  }
-);
+//         var page = {
+//           fields: {
+//             seo: {
+//               meta_description: `${article[0].yoast_head_json.og_description}`,
+//               meta_keyword: `${data_tags[1][5].keywords}`,
+//               page_title: `${article[0].yoast_head_json.og_title}`,
+//             },
+//           },
+//         };
+//         res.render("ar/Education/article", {
+//           page: page,
+//           content: article[0].content.rendered,
+//           titleArticle: article[0].title.rendered,
+//           imgUrl: article[0].featured_image_url,
+//           date:
+//             article[0].date.split("T")[1].split(":")[0] +
+//             ":" +
+//             article[0].date.split("T")[1].split(":")[1] +
+//             " " +
+//             article[0].date.split("T")[0],
+//           url: article[0].link,
+//           tags: tags,
+//           og_img: `${article[0].yoast_head_json.og_image.url}`,
+//           post_category:42,
+//         });
+//       })
+//       .catch((err) => console.log(err));
+//   }
+// );
 router.get(
   "/:slug" + "/" + encodeURIComponent("اخبار-النفط"),
   async (req, res) => {
@@ -551,59 +551,59 @@ ${date}
   });
 
 });
-router.get(
-  "/" + encodeURIComponent("اخبار-الذهب") + "/:slug",
-  async (req, res) => {
-    const url = `https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&slug=${req.params.slug}`;
-    const options = {
-      method: "GET",
-    };
-    const response = await fetch(url, options)
-      .then((res) => res.json())
-      .then((data) => {
-        var article = data;
-        const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
-          function (key) {
-            return data[0].yoast_head_json.schema[key];
-          }
-        );
-        const tags = data_tags[1][5]
-          ? data_tags[1][5].keywords
-              .map((tag) => {
-                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
-              })
-              .join(" ")
-          : " ";
+// router.get(
+//   "/" + encodeURIComponent("اخبار-الذهب") + "/:slug",
+//   async (req, res) => {
+//     const url = `https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&slug=${req.params.slug}`;
+//     const options = {
+//       method: "GET",
+//     };
+//     const response = await fetch(url, options)
+//       .then((res) => res.json())
+//       .then((data) => {
+//         var article = data;
+//         const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
+//           function (key) {
+//             return data[0].yoast_head_json.schema[key];
+//           }
+//         );
+//         const tags = data_tags[1][5]
+//           ? data_tags[1][5].keywords
+//               .map((tag) => {
+//                 return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
+//               })
+//               .join(" ")
+//           : " ";
 
-        var page = {
-          fields: {
-            seo: {
-              meta_description: `${article[0].yoast_head_json.og_description}`,
-              meta_keyword: `${data_tags[1][5].keywords}`,
-              page_title: `${article[0].yoast_head_json.og_title}`,
-            },
-          },
-        };
-        res.render("ar/Education/article", {
-          page: page,
-          content: article[0].content.rendered,
-          titleArticle: article[0].title.rendered,
-          imgUrl: article[0].featured_image_url,
-          date:
-            article[0].date.split("T")[1].split(":")[0] +
-            ":" +
-            article[0].date.split("T")[1].split(":")[1] +
-            " " +
-            article[0].date.split("T")[0],
-          url: article[0].link,
-          tags: tags,
-          og_img: `${article[0].yoast_head_json.og_image.url}`,
-          post_category:42,
-        });
-      })
-      .catch((err) => console.log(err));
-  }
-);
+//         var page = {
+//           fields: {
+//             seo: {
+//               meta_description: `${article[0].yoast_head_json.og_description}`,
+//               meta_keyword: `${data_tags[1][5].keywords}`,
+//               page_title: `${article[0].yoast_head_json.og_title}`,
+//             },
+//           },
+//         };
+//         res.render("ar/Education/article", {
+//           page: page,
+//           content: article[0].content.rendered,
+//           titleArticle: article[0].title.rendered,
+//           imgUrl: article[0].featured_image_url,
+//           date:
+//             article[0].date.split("T")[1].split(":")[0] +
+//             ":" +
+//             article[0].date.split("T")[1].split(":")[1] +
+//             " " +
+//             article[0].date.split("T")[0],
+//           url: article[0].link,
+//           tags: tags,
+//           og_img: `${article[0].yoast_head_json.og_image.url}`,
+//           post_category:42,
+//         });
+//       })
+//       .catch((err) => console.log(err));
+//   }
+// );
 router.get(
   "/:slug" + "/" + encodeURIComponent("اخبار-الذهب"),
   async (req, res) => {
@@ -698,60 +698,60 @@ ${date}
 
   
 });
-router.get(
-  "/" + encodeURIComponent("أخبار-التداول") + "/:slug",
-  async (req, res) => {
-    const url = `https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&slug=${req.params.slug}`;
-    const options = {
-      method: "GET",
-    };
-    const response = await fetch(url, options)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        var article = data;
-        const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
-          function (key) {
-            return data[0].yoast_head_json.schema[key];
-          }
-        );
-        const tags = data_tags[1][5]
-          ? data_tags[1][5].keywords
-              .map((tag) => {
-                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
-              })
-              .join(" ")
-          : " ";
+// router.get(
+//   "/" + encodeURIComponent("أخبار-التداول") + "/:slug",
+//   async (req, res) => {
+//     const url = `https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&slug=${req.params.slug}`;
+//     const options = {
+//       method: "GET",
+//     };
+//     const response = await fetch(url, options)
+//       .then((res) => res.json())
+//       .then((data) => {
+//         console.log(data);
+//         var article = data;
+//         const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
+//           function (key) {
+//             return data[0].yoast_head_json.schema[key];
+//           }
+//         );
+//         const tags = data_tags[1][5]
+//           ? data_tags[1][5].keywords
+//               .map((tag) => {
+//                 return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
+//               })
+//               .join(" ")
+//           : " ";
 
-        var page = {
-          fields: {
-            seo: {
-              meta_description: `${article[0].yoast_head_json.og_description}`,
-              meta_keyword: `${data_tags[1][5].keywords}`,
-              page_title: `${article[0].yoast_head_json.og_title}`,
-            },
-          },
-        };
-        res.render("ar/Education/article", {
-          page: page,
-          content: article[0].content.rendered,
-          titleArticle: article[0].title.rendered,
-          imgUrl: article[0].featured_image_url,
-          date:
-            article[0].date.split("T")[1].split(":")[0] +
-            ":" +
-            article[0].date.split("T")[1].split(":")[1] +
-            " " +
-            article[0].date.split("T")[0],
-          url: article[0].link,
-          tags: tags,
-          og_img: `${article[0].yoast_head_json.og_image.url}`,
-          post_category:42,
-        });
-      })
-      .catch((err) => console.log(err));
-  }
-);
+//         var page = {
+//           fields: {
+//             seo: {
+//               meta_description: `${article[0].yoast_head_json.og_description}`,
+//               meta_keyword: `${data_tags[1][5].keywords}`,
+//               page_title: `${article[0].yoast_head_json.og_title}`,
+//             },
+//           },
+//         };
+//         res.render("ar/Education/article", {
+//           page: page,
+//           content: article[0].content.rendered,
+//           titleArticle: article[0].title.rendered,
+//           imgUrl: article[0].featured_image_url,
+//           date:
+//             article[0].date.split("T")[1].split(":")[0] +
+//             ":" +
+//             article[0].date.split("T")[1].split(":")[1] +
+//             " " +
+//             article[0].date.split("T")[0],
+//           url: article[0].link,
+//           tags: tags,
+//           og_img: `${article[0].yoast_head_json.og_image.url}`,
+//           post_category:42,
+//         });
+//       })
+//       .catch((err) => console.log(err));
+//   }
+// );
 router.get(
   "/:slug" + "/" + encodeURIComponent("أخبار-التداول"),
   async (req, res) => {
@@ -844,59 +844,59 @@ ${date}
       res.render("ar/Education/market", { page: page , articles: article});
     })
 });
-router.get(
-  "/" + encodeURIComponent("اخبار-السوق") + "/:slug",
-  async (req, res) => {
-    const url = `https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&slug=${req.params.slug}`;
-    const options = {
-      method: "GET",
-    };
-    const response = await fetch(url, options)
-      .then((res) => res.json())
-      .then((data) => {
-        var article = data;
-        const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
-          function (key) {
-            return data[0].yoast_head_json.schema[key];
-          }
-        );
-        const tags = data_tags[1][5]
-          ? data_tags[1][5].keywords
-              .map((tag) => {
-                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
-              })
-              .join(" ")
-          : " ";
+// router.get(
+//   "/" + encodeURIComponent("اخبار-السوق") + "/:slug",
+//   async (req, res) => {
+//     const url = `https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&slug=${req.params.slug}`;
+//     const options = {
+//       method: "GET",
+//     };
+//     const response = await fetch(url, options)
+//       .then((res) => res.json())
+//       .then((data) => {
+//         var article = data;
+//         const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
+//           function (key) {
+//             return data[0].yoast_head_json.schema[key];
+//           }
+//         );
+//         const tags = data_tags[1][5]
+//           ? data_tags[1][5].keywords
+//               .map((tag) => {
+//                 return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
+//               })
+//               .join(" ")
+//           : " ";
 
-        var page = {
-          fields: {
-            seo: {
-              meta_description: `${article[0].yoast_head_json.og_description}`,
-              meta_keyword: `${data_tags[1][5].keywords}`,
-              page_title: `${article[0].yoast_head_json.og_title}`,
-            },
-          },
-        };
-        res.render("ar/Education/article", {
-          page: page,
-          content: article[0].content.rendered,
-          titleArticle: article[0].title.rendered,
-          imgUrl: article[0].featured_image_url,
-          date:
-            article[0].date.split("T")[1].split(":")[0] +
-            ":" +
-            article[0].date.split("T")[1].split(":")[1] +
-            " " +
-            article[0].date.split("T")[0],
-          url: article[0].link,
-          tags: tags,
-          og_img: `${article[0].yoast_head_json.og_image.url}`,
-          post_category:42,
-        });
-      })
-      .catch((err) => console.log(err));
-  }
-);
+//         var page = {
+//           fields: {
+//             seo: {
+//               meta_description: `${article[0].yoast_head_json.og_description}`,
+//               meta_keyword: `${data_tags[1][5].keywords}`,
+//               page_title: `${article[0].yoast_head_json.og_title}`,
+//             },
+//           },
+//         };
+//         res.render("ar/Education/article", {
+//           page: page,
+//           content: article[0].content.rendered,
+//           titleArticle: article[0].title.rendered,
+//           imgUrl: article[0].featured_image_url,
+//           date:
+//             article[0].date.split("T")[1].split(":")[0] +
+//             ":" +
+//             article[0].date.split("T")[1].split(":")[1] +
+//             " " +
+//             article[0].date.split("T")[0],
+//           url: article[0].link,
+//           tags: tags,
+//           og_img: `${article[0].yoast_head_json.og_image.url}`,
+//           post_category:42,
+//         });
+//       })
+//       .catch((err) => console.log(err));
+//   }
+// );
 router.get(
   "/:slug" + "/" + encodeURIComponent("اخبار-السوق"),
   async (req, res) => {
@@ -991,59 +991,59 @@ ${date}
 
  
 });
-router.get(
-  "/" + encodeURIComponent("مدونة-التداول") + "/:slug",
-  async (req, res) => {
-    const url = `https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&slug=${req.params.slug}`;
-    const options = {
-      method: "GET",
-    };
-    const response = await fetch(url, options)
-      .then((res) => res.json())
-      .then((data) => {
-        var article = data;
-        const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
-          function (key) {
-            return data[0].yoast_head_json.schema[key];
-          }
-        );
-        const tags = data_tags[1][5]
-          ? data_tags[1][5].keywords
-              .map((tag) => {
-                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
-              })
-              .join(" ")
-          : " ";
+// router.get(
+//   "/" + encodeURIComponent("مدونة-التداول") + "/:slug",
+//   async (req, res) => {
+//     const url = `https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&slug=${req.params.slug}`;
+//     const options = {
+//       method: "GET",
+//     };
+//     const response = await fetch(url, options)
+//       .then((res) => res.json())
+//       .then((data) => {
+//         var article = data;
+//         const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
+//           function (key) {
+//             return data[0].yoast_head_json.schema[key];
+//           }
+//         );
+//         const tags = data_tags[1][5]
+//           ? data_tags[1][5].keywords
+//               .map((tag) => {
+//                 return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
+//               })
+//               .join(" ")
+//           : " ";
 
-        var page = {
-          fields: {
-            seo: {
-              meta_description: `${article[0].yoast_head_json.og_description}`,
-              meta_keyword: `${data_tags[1][5].keywords}`,
-              page_title: `${article[0].yoast_head_json.og_title}`,
-            },
-          },
-        };
-        res.render("ar/Education/article", {
-          page: page,
-          content: article[0].content.rendered,
-          titleArticle: article[0].title.rendered,
-          imgUrl: article[0].featured_image_url,
-          date:
-            article[0].date.split("T")[1].split(":")[0] +
-            ":" +
-            article[0].date.split("T")[1].split(":")[1] +
-            " " +
-            article[0].date.split("T")[0],
-          url: article[0].link,
-          tags: tags,
-          og_img: `${article[0].yoast_head_json.og_image.url}`,
-          post_category:42,
-        });
-      })
-      .catch((err) => console.log(err));
-  }
-);
+//         var page = {
+//           fields: {
+//             seo: {
+//               meta_description: `${article[0].yoast_head_json.og_description}`,
+//               meta_keyword: `${data_tags[1][5].keywords}`,
+//               page_title: `${article[0].yoast_head_json.og_title}`,
+//             },
+//           },
+//         };
+//         res.render("ar/Education/article", {
+//           page: page,
+//           content: article[0].content.rendered,
+//           titleArticle: article[0].title.rendered,
+//           imgUrl: article[0].featured_image_url,
+//           date:
+//             article[0].date.split("T")[1].split(":")[0] +
+//             ":" +
+//             article[0].date.split("T")[1].split(":")[1] +
+//             " " +
+//             article[0].date.split("T")[0],
+//           url: article[0].link,
+//           tags: tags,
+//           og_img: `${article[0].yoast_head_json.og_image.url}`,
+//           post_category:42,
+//         });
+//       })
+//       .catch((err) => console.log(err));
+//   }
+// );
 router.get(
   "/:slug" + "/" + encodeURIComponent("مدونة-التداول"),
   async (req, res) => {
