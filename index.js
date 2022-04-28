@@ -14,7 +14,7 @@ const { ToadScheduler, SimpleIntervalJob, Task } = require('toad-scheduler')
 
 
 const app=express();
-
+app.use(require('express-status-monitor')());
 
 const fs = require('fs');
 const PORT= process.env.PORT||8080;
