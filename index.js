@@ -1121,7 +1121,7 @@ app.get('/tag/:tag',async (req,res)=>{
               }).join("");
               res.render("Education/tags", { page: page , articles: article,pageTitle:`Evest- ${req.params.tag} Archive`,tagId:tag_id});
             }).catch(err=>{
-              console.log(err);
+              console.log('this is error from tag in index page');
               res.redirect('/');
             });
 });

@@ -1139,7 +1139,7 @@ router.get('/tag/:tag',async (req,res)=>{
               }).join("");
               res.render("ar/Education/tags", { page: page , articles: article,pageTitle:`Evest- ${req.params.tag} أرشيف`,tagId:tag_id});
             }).catch(err=>{
-              console.log(err);
+              console.log('this is error from arabic routing');
               res.redirect('/');
             });
 });
