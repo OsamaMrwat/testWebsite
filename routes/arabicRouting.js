@@ -708,6 +708,7 @@ router.get(
     const response = await fetch(url, options)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         var article = data;
         const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
           function (key) {
@@ -1166,6 +1167,7 @@ router.get('/tag/:tag',async (req,res)=>{
                 } [CLOSED] ${durationInMilliseconds.toLocaleString()} ms`
               );
             });
+            res.next();
 });
 
 module.exports = router;
