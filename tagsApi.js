@@ -3267,13 +3267,16 @@ const tags = [
 
 
 
-module.exports = function getTag(name , lang){
-  console.log(lang)
-    if(lang=='en'){
-      console.log('in En section')
-        return (enTags.find(tag => tag.Name === name).tag_id)
-    }else if(lang=='ar'){
-      console.log('in ar section')
-        return (tags.find(tag => tag.Name === name).tag_id)
-    }
-};
+// module.exports = function getTag(name , lang){
+//   console.log(lang)
+//     if(lang=='en'){
+//       console.log('in En section')
+//         return (enTags.find(tag => tag.Name === name).tag_id)
+//     }else if(lang=='ar'){
+//       console.log('in ar section')
+//         return (tags.find(tag => tag.Name === name).tag_id)
+//     }
+// };
+
+exports.arabicTags=tags;
+exports.englishTags=enTags;

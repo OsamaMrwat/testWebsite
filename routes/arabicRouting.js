@@ -1097,15 +1097,23 @@ router.get(
   }
 );
 
+const getDurationInMilliseconds = (start) => {
+  const NS_PER_SEC = 1e9
+  const NS_TO_MS = 1e6
+  const diff = process.hrtime(start)
+
+  return (diff[0] * NS_PER_SEC + diff[1]) / NS_TO_MS
+}
+
 
 const getTag=require('../tagsApi')
 router.get('/tag/:tag',async (req,res)=>{  
-  console.log(req.params.tag)
-  const tag_id=getTag(req.params.tag,'ar');
+  const start = process.hrtime();
+  const tag_id=getTag.arabicTags.find(elem=>elem.Name === req.params.tag).tag_id;
+  console.log(req.params.tag+" "+tag_id);
   if(tag_id === undefined){
     res.redirect('/');
   }
-  console.log(tag_id);
           const url=`https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&tags=${tag_id}&per_page=6&page=1`
           const options = {
             method: "GET",
@@ -1139,8 +1147,24 @@ router.get('/tag/:tag',async (req,res)=>{
               }).join("");
               res.render("ar/Education/tags", { page: page , articles: article,pageTitle:`Evest- ${req.params.tag} أرشيف`,tagId:tag_id});
             }).catch(err=>{
-              console.log('this is error from arabic routing');
               res.redirect('/');
+            });
+            res.on("finish", () => {
+              const durationInMilliseconds = getDurationInMilliseconds(start);
+              console.log(
+                `${req.method} ${
+                  req.originalUrl
+                } [FINISHED] ${durationInMilliseconds.toLocaleString()} ms`
+              );
+            });
+  
+            res.on("close", () => {
+              const durationInMilliseconds = getDurationInMilliseconds(start);
+              console.log(
+                `${req.method} ${
+                  req.originalUrl
+                } [CLOSED] ${durationInMilliseconds.toLocaleString()} ms`
+              );
             });
 });
 

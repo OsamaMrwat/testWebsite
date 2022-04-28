@@ -895,7 +895,7 @@ app.get('/oil-news/:slug', async (req,res)=>{
     var article=data;
     const data_tags=Object.keys(data[0].yoast_head_json.schema).map(function(key){return data[0].yoast_head_json.schema[key];});
     const tags=data_tags[1][5]?data_tags[1][5].keywords.map(tag=>{
-    return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`
+    return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag}">${tag}</a>`
   }).join(' '):" ";
   
 
@@ -952,7 +952,7 @@ app.get('/gold-news/:slug', async (req,res)=>{
     var article=data;
     const data_tags=Object.keys(data[0].yoast_head_json.schema).map(function(key){return data[0].yoast_head_json.schema[key];});
     const tags=data_tags[1][5]?data_tags[1][5].keywords.map(tag=>{
-    return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`
+    return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag}">${tag}</a>`
   }).join(' '):" ";
   
 
@@ -1009,7 +1009,7 @@ app.get('/market-news/:slug', async(req,res)=>{
     var article=data;
     const data_tags=Object.keys(data[0].yoast_head_json.schema).map(function(key){return data[0].yoast_head_json.schema[key];});
     const tags=data_tags[1][5]?data_tags[1][5].keywords.map(tag=>{
-    return `<a class="badge bg-secondary text-decoration-none link-light" href="#!">${tag}</a>`
+    return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag}">${tag}</a>`
   }).join(' '):" ";
   
 
@@ -1081,50 +1081,8 @@ app.get('/trading-news/:slug',async (req,res)=>{
   
 });
 
-const getTag=require('./tagsApi')
-app.get('/tag/:tag',async (req,res)=>{  
-  const tag_id=getTag(req.params.tag,'en');
-  if(tag_id === undefined){
-    res.redirect('/');
-  }
-  console.log(tag_id);
-          const url=`https://cms.evest.com/wp-json/wp/v2/posts?_embed&tags=${tag_id}&per_page=6&page=1`
-          const options = {
-            method: "GET",
-          };
-          const response = fetch(url, options)
-            .then((res) => res.json())
-            .then((data) => {
-              var page = {
-                fields: {
-                  seo: {
-                    meta_description: `Archive of ${req.params.tag}`,
-                    meta_keyword: `${req.params.tag}`,
-                    page_title: `Evest- ${req.params.tag} Archive`,
-                  },
-                },
-              };
-              const article = data.map(post => {
-                let date=post.date.split('T')[0];
-                  return `<div class="card">
-                    <div> 
-                           <a href='${post.link}'>  <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}"> </a>
-        <div class="card-body">
-        <a href='${post.link}' ><h5 class="card-title">${post.title.rendered}</h5></a>
-        <div class="card-text description">${post.excerpt.rendered}</div>
-        <a class="btn btn-filled readmore" href='${post.link}'>read more</a>
-        </div></div>
-        <div class="card-footer dateCreated">
-        ${date}
-        </div>
-        </div>`
-              }).join("");
-              res.render("Education/tags", { page: page , articles: article,pageTitle:`Evest- ${req.params.tag} Archive`,tagId:tag_id});
-            }).catch(err=>{
-              console.log('this is error from tag in index page');
-              res.redirect('/');
-            });
-});
+
+
 
 
 app.post('/send',(req,res)=>{
@@ -1189,6 +1147,58 @@ app.post('/ceo',(req,res)=>{
 })
 
 
+const getTag=require('./tagsApi')
+app.get('/tag/:tag',async (req,res)=>{ 
+  const tag_id=getTag.englishTags.find(elem=>elem.Name === req.params.tag).tag_id;
+  console.log(+req.params.tag+" "+tag_id);
+  if(tag_id === undefined){
+    res.redirect('/');
+  }
+          const url = `https://cms.evest.com/wp-json/wp/v2/posts?_embed&tags=${tag_id}&per_page=6&page=1`;
+          const options = {
+            method: "GET",
+          };
+          const response = fetch(url, options)
+            .then((res) => res.json())
+            .then((data) => {
+              var page = {
+                fields: {
+                  seo: {
+                    meta_description: `Archive of ${req.params.tag}`,
+                    meta_keyword: `${req.params.tag}`,
+                    page_title: `Evest- ${req.params.tag} Archive`,
+                  },
+                },
+              };
+              const article = data
+                .map((post) => {
+                  let date = post.date.split("T")[0];
+                  return `<div class="card">
+                    <div> 
+                           <a href='${post.link}'>  <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}"> </a>
+        <div class="card-body">
+        <a href='${post.link}' ><h5 class="card-title">${post.title.rendered}</h5></a>
+        <div class="card-text description">${post.excerpt.rendered}</div>
+        <a class="btn btn-filled readmore" href='${post.link}'>read more</a>
+        </div></div>
+        <div class="card-footer dateCreated">
+        ${date}
+        </div>
+        </div>`;
+                })
+                .join("");
+              res.render("Education/tags", {
+                page: page,
+                articles: article,
+                pageTitle: `Evest- ${req.params.tag} Archive`,
+                tagId: tag_id,
+              });
+            })
+            .catch((err) => {
+              console.log("this is error from tag in index page");
+              res.redirect("/");
+            });
+});
 
 
 app.use('/evest',evestRoutes);
