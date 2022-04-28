@@ -1107,67 +1107,67 @@ const getDurationInMilliseconds = (start) => {
 }
 
 
-const getTag=require('../tagsApi')
-router.get('/tag/:tag',async (req,res)=>{  
-  const start = process.hrtime();
-  const tag_id=getTag.arabicTags.find(elem=>elem.Name === req.params.tag).tag_id;
-  console.log(req.params.tag+" "+tag_id);
-  if(tag_id === undefined){
-    res.redirect('/');
-  }
-          const url=`https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&tags=${tag_id}&per_page=6&page=1`
-          const options = {
-            method: "GET",
-          };
-          const response = fetch(url, options)
-            .then((res) => res.json())
-            .then((data) => {
-              var page = {
-                fields: {
-                  seo: {
-                    meta_description: `${req.params.tag}-أرشيف`,
-                    meta_keyword: `${req.params.tag}`,
-                    page_title: `Evest- أرشيف ${req.params.tag} `,
-                  },
-                },
-              };
-              const article = data.map(post => {
-                let date=post.date.split('T')[0];
-                  return `<div class="card">
-                    <div> 
-                           <a href='${post.link}'>  <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}"> </a>
-        <div class="card-body">
-        <a href='${post.link}' ><h5 class="card-title">${post.title.rendered}</h5></a>
-        <div class="card-text description">${post.excerpt.rendered}</div>
-        <a class="btn btn-filled readmore" href='${post.link}'>أقرا المزيد</a>
-        </div></div>
-        <div class="card-footer dateCreated">
-        ${date}
-        </div>
-        </div>`
-              }).join("");
-              res.render("ar/Education/tags", { page: page , articles: article,pageTitle:`Evest- ${req.params.tag} أرشيف`,tagId:tag_id});
-            }).catch(err=>{
-              res.redirect('/');
-            });
-            res.on("finish", () => {
-              const durationInMilliseconds = getDurationInMilliseconds(start);
-              console.log(
-                `${req.method} ${
-                  req.originalUrl
-                } [FINISHED] ${durationInMilliseconds.toLocaleString()} ms`
-              );
-            });
+// const getTag=require('../tagsApi')
+// router.get('/tag/:tag',async (req,res)=>{  
+//   const start = process.hrtime();
+//   const tag_id=getTag.arabicTags.find(elem=>elem.Name === req.params.tag).tag_id;
+//   console.log(req.params.tag+" "+tag_id);
+//   if(tag_id === undefined){
+//     res.redirect('/');
+//   }
+//           const url=`https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&tags=${tag_id}&per_page=6&page=1`
+//           const options = {
+//             method: "GET",
+//           };
+//           const response = fetch(url, options)
+//             .then((res) => res.json())
+//             .then((data) => {
+//               var page = {
+//                 fields: {
+//                   seo: {
+//                     meta_description: `${req.params.tag}-أرشيف`,
+//                     meta_keyword: `${req.params.tag}`,
+//                     page_title: `Evest- أرشيف ${req.params.tag} `,
+//                   },
+//                 },
+//               };
+//               const article = data.map(post => {
+//                 let date=post.date.split('T')[0];
+//                   return `<div class="card">
+//                     <div> 
+//                            <a href='${post.link}'>  <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}"> </a>
+//         <div class="card-body">
+//         <a href='${post.link}' ><h5 class="card-title">${post.title.rendered}</h5></a>
+//         <div class="card-text description">${post.excerpt.rendered}</div>
+//         <a class="btn btn-filled readmore" href='${post.link}'>أقرا المزيد</a>
+//         </div></div>
+//         <div class="card-footer dateCreated">
+//         ${date}
+//         </div>
+//         </div>`
+//               }).join("");
+//               res.render("ar/Education/tags", { page: page , articles: article,pageTitle:`Evest- ${req.params.tag} أرشيف`,tagId:tag_id});
+//             }).catch(err=>{
+//               res.redirect('/');
+//             });
+//             res.on("finish", () => {
+//               const durationInMilliseconds = getDurationInMilliseconds(start);
+//               console.log(
+//                 `${req.method} ${
+//                   req.originalUrl
+//                 } [FINISHED] ${durationInMilliseconds.toLocaleString()} ms`
+//               );
+//             });
   
-            res.on("close", () => {
-              const durationInMilliseconds = getDurationInMilliseconds(start);
-              console.log(
-                `${req.method} ${
-                  req.originalUrl
-                } [CLOSED] ${durationInMilliseconds.toLocaleString()} ms`
-              );
-            });
-            res.next();
-});
+//             res.on("close", () => {
+//               const durationInMilliseconds = getDurationInMilliseconds(start);
+//               console.log(
+//                 `${req.method} ${
+//                   req.originalUrl
+//                 } [CLOSED] ${durationInMilliseconds.toLocaleString()} ms`
+//               );
+//             });
+//             res.next();
+// });
 
 module.exports = router;
