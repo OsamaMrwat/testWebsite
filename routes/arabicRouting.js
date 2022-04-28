@@ -1130,7 +1130,7 @@ router.get('/tag/:tag',async (req,res)=>{
         <div class="card-body">
         <a href='${post.link}' ><h5 class="card-title">${post.title.rendered}</h5></a>
         <div class="card-text description">${post.excerpt.rendered}</div>
-        <a class="btn btn-filled readmore" href='${post.link}'>read more</a>
+        <a class="btn btn-filled readmore" href='${post.link}'>أقرا المزيد</a>
         </div></div>
         <div class="card-footer dateCreated">
         ${date}
