@@ -1081,22 +1081,14 @@ app.get('/trading-news/:slug',async (req,res)=>{
   
 });
 
-app.get('/tag/:tag',async (req,res)=>{
-  var page=1;
-  console.log(req.params.tag);
-  while(page<100){
-    const url=`https://cms.evest.com/wp-json/wp/v2/tags?per_page=100&page=${page}`;
-    const options={
-      method:'GET'
-    }
-    var response=await fetch(url,options)
-    .then((res)=>res.json())
-    .then((data)=>{
-      var count=0;
-      data.forEach(element => {
-        if(element.name==req.params.tag){
-          
-          const url=`https://cms.evest.com/wp-json/wp/v2/posts?_embed&tags=${element.id}&per_page=6&page=1`
+const getTag=require('./tagsApi')
+app.get('/tag/:tag',async (req,res)=>{  
+  const tag_id=getTag(req.params.tag,'en');
+  if(tag_id === undefined){
+    res.redirect('/');
+  }
+  console.log(tag_id);
+          const url=`https://cms.evest.com/wp-json/wp/v2/posts?_embed&tags=${tag_id}&per_page=6&page=1`
           const options = {
             method: "GET",
           };
@@ -1106,9 +1098,9 @@ app.get('/tag/:tag',async (req,res)=>{
               var page = {
                 fields: {
                   seo: {
-                    meta_description: `${element.description}`,
-                    meta_keyword: `${element.description}`,
-                    page_title: `${element.yoast_head_json.title}`,
+                    meta_description: `Archive of ${req.params.tag}`,
+                    meta_keyword: `${req.params.tag}`,
+                    page_title: `Evest- ${req.params.tag} Archive`,
                   },
                 },
               };
@@ -1127,22 +1119,19 @@ app.get('/tag/:tag',async (req,res)=>{
         </div>
         </div>`
               }).join("");
-              res.render("Education/tags", { page: page , articles: article,pageTitle:element.yoast_head_json.title,tagId:element.id});
+              res.render("Education/tags", { page: page , articles: article,pageTitle:`Evest- ${req.params.tag} Archive`,tagId:tag_id});
+            }).catch(err=>{
+              console.log(err);
+              res.redirect('/');
             });
-        }
-      });
-    });
-    page++;
-  };
 });
-
 
 
 app.post('/send',(req,res)=>{
   const msg = {
     to: 'support@evest.com',
     from: 'no-replay@customers-evest.com', // Use the email address or domain you verified above
-    subject: `${req.body.email} Send You New Message from the CEO website page`,
+    subject: `${req.body.email} Send You New Message from the support website page`,
     html: `  <h1>You Got New Message</h1>
     <p>EMAIL: ${req.body.email}.<br><br>
     FULL NAME: ${req.body.fullName}.<br><br>

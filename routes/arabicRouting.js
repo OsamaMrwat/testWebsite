@@ -410,81 +410,51 @@ router.get(
   async (req, res) => {
     const url = `https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&slug=${req.params.slug}`;
     const options = {
-      method: "GET",
+      "method": "GET",
     };
     const response = await fetch(url, options)
       .then((res) => res.json())
       .then((data) => {
         var article = data;
-        if(data[0].yoast_head_json === undefined || data[0].yoast_head_json === null) {
+        console.log(article);
+        const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
+          function (key) {
+            return data[0].yoast_head_json.schema[key];
+          }
+        );
+        const tags = data_tags[1][5]
+          ? data_tags[1][5].keywords
+              .map((tag) => {
+                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
+              })
+              .join(" ")
+          : " ";
 
-          const tags=" ";
-          var page = {
-            fields: {
-              seo: {
-                meta_description: ``,
-                meta_keyword: ``,
-                page_title: `${article[0].title.rendered}`,
-              },
+        var page = {
+          fields: {
+            seo: {
+              meta_description: `${article[0].yoast_head_json.og_description}`,
+              meta_keyword: `${data_tags[1][5].keywords}`,
+              page_title: `${article[0].yoast_head_json.og_title}`,
             },
-          };
-          res.render("ar/Education/article", {
-            page: page,
-            content: article[0].content.rendered,
-            titleArticle: article[0].title.rendered,
-            imgUrl: article[0].featured_image_url,
-            date:
-              article[0].date.split("T")[1].split(":")[0] +
-              ":" +
-              article[0].date.split("T")[1].split(":")[1] +
-              " " +
-              article[0].date.split("T")[0],
-            url: article[0].link,
-            tags: tags,
-            og_img: ``,
-            post_category:42,
-          });
-        }
-        else{
-          const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
-            function (key) {
-              return data[0].yoast_head_json.schema[key];
-            }
-          );
-          const tags = data_tags[1][5]
-            ? data_tags[1][5].keywords
-                .map((tag) => {
-                  return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`;
-                })
-                .join(" ")
-            : " ";
-  
-          var page = {
-            fields: {
-              seo: {
-                meta_description: `${article[0].yoast_head_json.og_description}`,
-                meta_keyword: `${data_tags[1][5].keywords}`,
-                page_title: `${article[0].yoast_head_json.og_title}`,
-              },
-            },
-          };
-          res.render("ar/Education/article", {
-            page: page,
-            content: article[0].content.rendered,
-            titleArticle: article[0].title.rendered,
-            imgUrl: article[0].featured_image_url,
-            date:
-              article[0].date.split("T")[1].split(":")[0] +
-              ":" +
-              article[0].date.split("T")[1].split(":")[1] +
-              " " +
-              article[0].date.split("T")[0],
-            url: article[0].link,
-            tags: tags,
-            og_img: `${article[0].yoast_head_json.og_image.url}`,
-            post_category:42,
-          });
-        } 
+          },
+        };
+        res.render("ar/Education/article", {
+          page: page,
+          content: article[0].content.rendered,
+          titleArticle: article[0].title.rendered,
+          imgUrl: article[0].featured_image_url,
+          date:
+            article[0].date.split("T")[1].split(":")[0] +
+            ":" +
+            article[0].date.split("T")[1].split(":")[1] +
+            " " +
+            article[0].date.split("T")[0],
+          url: article[0].link,
+          tags: tags,
+          og_img: `${article[0].yoast_head_json.og_image.url}`,
+          post_category:42,
+        });
       })
       .catch((err) => console.log(err));
   }
@@ -500,75 +470,44 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
-        if(data[0].yoast_head_json === undefined || data[0].yoast_head_json === null) {
+        const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
+          function (key) {
+            return data[0].yoast_head_json.schema[key];
+          }
+        );
+        const tags = data_tags[1][5]
+          ? data_tags[1][5].keywords
+              .map((tag) => {
+                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
+              })
+              .join(" ")
+          : " ";
 
-          const tags=" ";
-          var page = {
-            fields: {
-              seo: {
-                meta_description: ``,
-                meta_keyword: ``,
-                page_title: `${article[0].title.rendered}`,
-              },
+        var page = {
+          fields: {
+            seo: {
+              meta_description: `${article[0].yoast_head_json.og_description}`,
+              meta_keyword: `${data_tags[1][5].keywords}`,
+              page_title: `${article[0].yoast_head_json.og_title}`,
             },
-          };
-          res.render("ar/Education/article", {
-            page: page,
-            content: article[0].content.rendered,
-            titleArticle: article[0].title.rendered,
-            imgUrl: article[0].featured_image_url,
-            date:
-              article[0].date.split("T")[1].split(":")[0] +
-              ":" +
-              article[0].date.split("T")[1].split(":")[1] +
-              " " +
-              article[0].date.split("T")[0],
-            url: article[0].link,
-            tags: tags,
-            og_img: ``,
-            post_category:42,
-          });
-        }
-        else{
-          const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
-            function (key) {
-              return data[0].yoast_head_json.schema[key];
-            }
-          );
-          const tags = data_tags[1][5]
-            ? data_tags[1][5].keywords
-                .map((tag) => {
-                  return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`;
-                })
-                .join(" ")
-            : " ";
-  
-          var page = {
-            fields: {
-              seo: {
-                meta_description: `${article[0].yoast_head_json.og_description}`,
-                meta_keyword: `${data_tags[1][5].keywords}`,
-                page_title: `${article[0].yoast_head_json.og_title}`,
-              },
-            },
-          };
-          res.render("ar/Education/article", {
-            page: page,
-            content: article[0].content.rendered,
-            titleArticle: article[0].title.rendered,
-            imgUrl: article[0].featured_image_url,
-            date:
-              article[0].date.split("T")[1].split(":")[0] +
-              ":" +
-              article[0].date.split("T")[1].split(":")[1] +
-              " " +
-              article[0].date.split("T")[0],
-            url: article[0].link,
-            tags: tags,
-            og_img: `${article[0].yoast_head_json.og_image.url}`,
-            post_category:42,
-          });
-        } 
+          },
+        };
+        res.render("ar/Education/article", {
+          page: page,
+          content: article[0].content.rendered,
+          titleArticle: article[0].title.rendered,
+          imgUrl: article[0].featured_image_url,
+          date:
+            article[0].date.split("T")[1].split(":")[0] +
+            ":" +
+            article[0].date.split("T")[1].split(":")[1] +
+            " " +
+            article[0].date.split("T")[0],
+          url: article[0].link,
+          tags: tags,
+          og_img: `${article[0].yoast_head_json.og_image.url}`,
+          post_category:42,
+        });
       })
       .catch((err) => console.log(err));
   }
@@ -623,75 +562,44 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
-        if(data[0].yoast_head_json === undefined || data[0].yoast_head_json === null) {
+        const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
+          function (key) {
+            return data[0].yoast_head_json.schema[key];
+          }
+        );
+        const tags = data_tags[1][5]
+          ? data_tags[1][5].keywords
+              .map((tag) => {
+                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
+              })
+              .join(" ")
+          : " ";
 
-          const tags=" ";
-          var page = {
-            fields: {
-              seo: {
-                meta_description: ``,
-                meta_keyword: ``,
-                page_title: `${article[0].title.rendered}`,
-              },
+        var page = {
+          fields: {
+            seo: {
+              meta_description: `${article[0].yoast_head_json.og_description}`,
+              meta_keyword: `${data_tags[1][5].keywords}`,
+              page_title: `${article[0].yoast_head_json.og_title}`,
             },
-          };
-          res.render("ar/Education/article", {
-            page: page,
-            content: article[0].content.rendered,
-            titleArticle: article[0].title.rendered,
-            imgUrl: article[0].featured_image_url,
-            date:
-              article[0].date.split("T")[1].split(":")[0] +
-              ":" +
-              article[0].date.split("T")[1].split(":")[1] +
-              " " +
-              article[0].date.split("T")[0],
-            url: article[0].link,
-            tags: tags,
-            og_img: ``,
-            post_category:42,
-          });
-        }
-        else{
-          const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
-            function (key) {
-              return data[0].yoast_head_json.schema[key];
-            }
-          );
-          const tags = data_tags[1][5]
-            ? data_tags[1][5].keywords
-                .map((tag) => {
-                  return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`;
-                })
-                .join(" ")
-            : " ";
-  
-          var page = {
-            fields: {
-              seo: {
-                meta_description: `${article[0].yoast_head_json.og_description}`,
-                meta_keyword: `${data_tags[1][5].keywords}`,
-                page_title: `${article[0].yoast_head_json.og_title}`,
-              },
-            },
-          };
-          res.render("ar/Education/article", {
-            page: page,
-            content: article[0].content.rendered,
-            titleArticle: article[0].title.rendered,
-            imgUrl: article[0].featured_image_url,
-            date:
-              article[0].date.split("T")[1].split(":")[0] +
-              ":" +
-              article[0].date.split("T")[1].split(":")[1] +
-              " " +
-              article[0].date.split("T")[0],
-            url: article[0].link,
-            tags: tags,
-            og_img: `${article[0].yoast_head_json.og_image.url}`,
-            post_category:42,
-          });
-        } 
+          },
+        };
+        res.render("ar/Education/article", {
+          page: page,
+          content: article[0].content.rendered,
+          titleArticle: article[0].title.rendered,
+          imgUrl: article[0].featured_image_url,
+          date:
+            article[0].date.split("T")[1].split(":")[0] +
+            ":" +
+            article[0].date.split("T")[1].split(":")[1] +
+            " " +
+            article[0].date.split("T")[0],
+          url: article[0].link,
+          tags: tags,
+          og_img: `${article[0].yoast_head_json.og_image.url}`,
+          post_category:42,
+        });
       })
       .catch((err) => console.log(err));
   }
@@ -707,75 +615,44 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
-        if(data[0].yoast_head_json === undefined || data[0].yoast_head_json === null) {
+        const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
+          function (key) {
+            return data[0].yoast_head_json.schema[key];
+          }
+        );
+        const tags = data_tags[1][5]
+          ? data_tags[1][5].keywords
+              .map((tag) => {
+                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
+              })
+              .join(" ")
+          : " ";
 
-          const tags=" ";
-          var page = {
-            fields: {
-              seo: {
-                meta_description: ``,
-                meta_keyword: ``,
-                page_title: `${article[0].title.rendered}`,
-              },
+        var page = {
+          fields: {
+            seo: {
+              meta_description: `${article[0].yoast_head_json.og_description}`,
+              meta_keyword: `${data_tags[1][5].keywords}`,
+              page_title: `${article[0].yoast_head_json.og_title}`,
             },
-          };
-          res.render("ar/Education/article", {
-            page: page,
-            content: article[0].content.rendered,
-            titleArticle: article[0].title.rendered,
-            imgUrl: article[0].featured_image_url,
-            date:
-              article[0].date.split("T")[1].split(":")[0] +
-              ":" +
-              article[0].date.split("T")[1].split(":")[1] +
-              " " +
-              article[0].date.split("T")[0],
-            url: article[0].link,
-            tags: tags,
-            og_img: ``,
-            post_category:42,
-          });
-        }
-        else{
-          const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
-            function (key) {
-              return data[0].yoast_head_json.schema[key];
-            }
-          );
-          const tags = data_tags[1][5]
-            ? data_tags[1][5].keywords
-                .map((tag) => {
-                  return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`;
-                })
-                .join(" ")
-            : " ";
-  
-          var page = {
-            fields: {
-              seo: {
-                meta_description: `${article[0].yoast_head_json.og_description}`,
-                meta_keyword: `${data_tags[1][5].keywords}`,
-                page_title: `${article[0].yoast_head_json.og_title}`,
-              },
-            },
-          };
-          res.render("ar/Education/article", {
-            page: page,
-            content: article[0].content.rendered,
-            titleArticle: article[0].title.rendered,
-            imgUrl: article[0].featured_image_url,
-            date:
-              article[0].date.split("T")[1].split(":")[0] +
-              ":" +
-              article[0].date.split("T")[1].split(":")[1] +
-              " " +
-              article[0].date.split("T")[0],
-            url: article[0].link,
-            tags: tags,
-            og_img: `${article[0].yoast_head_json.og_image.url}`,
-            post_category:42,
-          });
-        } 
+          },
+        };
+        res.render("ar/Education/article", {
+          page: page,
+          content: article[0].content.rendered,
+          titleArticle: article[0].title.rendered,
+          imgUrl: article[0].featured_image_url,
+          date:
+            article[0].date.split("T")[1].split(":")[0] +
+            ":" +
+            article[0].date.split("T")[1].split(":")[1] +
+            " " +
+            article[0].date.split("T")[0],
+          url: article[0].link,
+          tags: tags,
+          og_img: `${article[0].yoast_head_json.og_image.url}`,
+          post_category:42,
+        });
       })
       .catch((err) => console.log(err));
   }
@@ -832,75 +709,44 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
-        if(data[0].yoast_head_json === undefined || data[0].yoast_head_json === null) {
+        const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
+          function (key) {
+            return data[0].yoast_head_json.schema[key];
+          }
+        );
+        const tags = data_tags[1][5]
+          ? data_tags[1][5].keywords
+              .map((tag) => {
+                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
+              })
+              .join(" ")
+          : " ";
 
-          const tags=" ";
-          var page = {
-            fields: {
-              seo: {
-                meta_description: ``,
-                meta_keyword: ``,
-                page_title: `${article[0].title.rendered}`,
-              },
+        var page = {
+          fields: {
+            seo: {
+              meta_description: `${article[0].yoast_head_json.og_description}`,
+              meta_keyword: `${data_tags[1][5].keywords}`,
+              page_title: `${article[0].yoast_head_json.og_title}`,
             },
-          };
-          res.render("ar/Education/article", {
-            page: page,
-            content: article[0].content.rendered,
-            titleArticle: article[0].title.rendered,
-            imgUrl: article[0].featured_image_url,
-            date:
-              article[0].date.split("T")[1].split(":")[0] +
-              ":" +
-              article[0].date.split("T")[1].split(":")[1] +
-              " " +
-              article[0].date.split("T")[0],
-            url: article[0].link,
-            tags: tags,
-            og_img: ``,
-            post_category:42,
-          });
-        }
-        else{
-          const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
-            function (key) {
-              return data[0].yoast_head_json.schema[key];
-            }
-          );
-          const tags = data_tags[1][5]
-            ? data_tags[1][5].keywords
-                .map((tag) => {
-                  return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`;
-                })
-                .join(" ")
-            : " ";
-  
-          var page = {
-            fields: {
-              seo: {
-                meta_description: `${article[0].yoast_head_json.og_description}`,
-                meta_keyword: `${data_tags[1][5].keywords}`,
-                page_title: `${article[0].yoast_head_json.og_title}`,
-              },
-            },
-          };
-          res.render("ar/Education/article", {
-            page: page,
-            content: article[0].content.rendered,
-            titleArticle: article[0].title.rendered,
-            imgUrl: article[0].featured_image_url,
-            date:
-              article[0].date.split("T")[1].split(":")[0] +
-              ":" +
-              article[0].date.split("T")[1].split(":")[1] +
-              " " +
-              article[0].date.split("T")[0],
-            url: article[0].link,
-            tags: tags,
-            og_img: `${article[0].yoast_head_json.og_image.url}`,
-            post_category:42,
-          });
-        } 
+          },
+        };
+        res.render("ar/Education/article", {
+          page: page,
+          content: article[0].content.rendered,
+          titleArticle: article[0].title.rendered,
+          imgUrl: article[0].featured_image_url,
+          date:
+            article[0].date.split("T")[1].split(":")[0] +
+            ":" +
+            article[0].date.split("T")[1].split(":")[1] +
+            " " +
+            article[0].date.split("T")[0],
+          url: article[0].link,
+          tags: tags,
+          og_img: `${article[0].yoast_head_json.og_image.url}`,
+          post_category:42,
+        });
       })
       .catch((err) => console.log(err));
   }
@@ -916,75 +762,44 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
-        if(data[0].yoast_head_json === undefined || data[0].yoast_head_json === null) {
+        const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
+          function (key) {
+            return data[0].yoast_head_json.schema[key];
+          }
+        );
+        const tags = data_tags[1][5]
+          ? data_tags[1][5].keywords
+              .map((tag) => {
+                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
+              })
+              .join(" ")
+          : " ";
 
-          const tags=" ";
-          var page = {
-            fields: {
-              seo: {
-                meta_description: ``,
-                meta_keyword: ``,
-                page_title: `${article[0].title.rendered}`,
-              },
+        var page = {
+          fields: {
+            seo: {
+              meta_description: `${article[0].yoast_head_json.og_description}`,
+              meta_keyword: `${data_tags[1][5].keywords}`,
+              page_title: `${article[0].yoast_head_json.og_title}`,
             },
-          };
-          res.render("ar/Education/article", {
-            page: page,
-            content: article[0].content.rendered,
-            titleArticle: article[0].title.rendered,
-            imgUrl: article[0].featured_image_url,
-            date:
-              article[0].date.split("T")[1].split(":")[0] +
-              ":" +
-              article[0].date.split("T")[1].split(":")[1] +
-              " " +
-              article[0].date.split("T")[0],
-            url: article[0].link,
-            tags: tags,
-            og_img: ``,
-            post_category:42,
-          });
-        }
-        else{
-          const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
-            function (key) {
-              return data[0].yoast_head_json.schema[key];
-            }
-          );
-          const tags = data_tags[1][5]
-            ? data_tags[1][5].keywords
-                .map((tag) => {
-                  return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`;
-                })
-                .join(" ")
-            : " ";
-  
-          var page = {
-            fields: {
-              seo: {
-                meta_description: `${article[0].yoast_head_json.og_description}`,
-                meta_keyword: `${data_tags[1][5].keywords}`,
-                page_title: `${article[0].yoast_head_json.og_title}`,
-              },
-            },
-          };
-          res.render("ar/Education/article", {
-            page: page,
-            content: article[0].content.rendered,
-            titleArticle: article[0].title.rendered,
-            imgUrl: article[0].featured_image_url,
-            date:
-              article[0].date.split("T")[1].split(":")[0] +
-              ":" +
-              article[0].date.split("T")[1].split(":")[1] +
-              " " +
-              article[0].date.split("T")[0],
-            url: article[0].link,
-            tags: tags,
-            og_img: `${article[0].yoast_head_json.og_image.url}`,
-            post_category:42,
-          });
-        } 
+          },
+        };
+        res.render("ar/Education/article", {
+          page: page,
+          content: article[0].content.rendered,
+          titleArticle: article[0].title.rendered,
+          imgUrl: article[0].featured_image_url,
+          date:
+            article[0].date.split("T")[1].split(":")[0] +
+            ":" +
+            article[0].date.split("T")[1].split(":")[1] +
+            " " +
+            article[0].date.split("T")[0],
+          url: article[0].link,
+          tags: tags,
+          og_img: `${article[0].yoast_head_json.og_image.url}`,
+          post_category:42,
+        });
       })
       .catch((err) => console.log(err));
   }
@@ -1039,75 +854,44 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
-        if(data[0].yoast_head_json === undefined || data[0].yoast_head_json === null) {
+        const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
+          function (key) {
+            return data[0].yoast_head_json.schema[key];
+          }
+        );
+        const tags = data_tags[1][5]
+          ? data_tags[1][5].keywords
+              .map((tag) => {
+                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
+              })
+              .join(" ")
+          : " ";
 
-          const tags=" ";
-          var page = {
-            fields: {
-              seo: {
-                meta_description: ``,
-                meta_keyword: ``,
-                page_title: `${article[0].title.rendered}`,
-              },
+        var page = {
+          fields: {
+            seo: {
+              meta_description: `${article[0].yoast_head_json.og_description}`,
+              meta_keyword: `${data_tags[1][5].keywords}`,
+              page_title: `${article[0].yoast_head_json.og_title}`,
             },
-          };
-          res.render("ar/Education/article", {
-            page: page,
-            content: article[0].content.rendered,
-            titleArticle: article[0].title.rendered,
-            imgUrl: article[0].featured_image_url,
-            date:
-              article[0].date.split("T")[1].split(":")[0] +
-              ":" +
-              article[0].date.split("T")[1].split(":")[1] +
-              " " +
-              article[0].date.split("T")[0],
-            url: article[0].link,
-            tags: tags,
-            og_img: ``,
-            post_category:42,
-          });
-        }
-        else{
-          const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
-            function (key) {
-              return data[0].yoast_head_json.schema[key];
-            }
-          );
-          const tags = data_tags[1][5]
-            ? data_tags[1][5].keywords
-                .map((tag) => {
-                  return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`;
-                })
-                .join(" ")
-            : " ";
-  
-          var page = {
-            fields: {
-              seo: {
-                meta_description: `${article[0].yoast_head_json.og_description}`,
-                meta_keyword: `${data_tags[1][5].keywords}`,
-                page_title: `${article[0].yoast_head_json.og_title}`,
-              },
-            },
-          };
-          res.render("ar/Education/article", {
-            page: page,
-            content: article[0].content.rendered,
-            titleArticle: article[0].title.rendered,
-            imgUrl: article[0].featured_image_url,
-            date:
-              article[0].date.split("T")[1].split(":")[0] +
-              ":" +
-              article[0].date.split("T")[1].split(":")[1] +
-              " " +
-              article[0].date.split("T")[0],
-            url: article[0].link,
-            tags: tags,
-            og_img: `${article[0].yoast_head_json.og_image.url}`,
-            post_category:42,
-          });
-        } 
+          },
+        };
+        res.render("ar/Education/article", {
+          page: page,
+          content: article[0].content.rendered,
+          titleArticle: article[0].title.rendered,
+          imgUrl: article[0].featured_image_url,
+          date:
+            article[0].date.split("T")[1].split(":")[0] +
+            ":" +
+            article[0].date.split("T")[1].split(":")[1] +
+            " " +
+            article[0].date.split("T")[0],
+          url: article[0].link,
+          tags: tags,
+          og_img: `${article[0].yoast_head_json.og_image.url}`,
+          post_category:42,
+        });
       })
       .catch((err) => console.log(err));
   }
@@ -1123,75 +907,44 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
-        if(data[0].yoast_head_json === undefined || data[0].yoast_head_json === null) {
+        const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
+          function (key) {
+            return data[0].yoast_head_json.schema[key];
+          }
+        );
+        const tags = data_tags[1][5]
+          ? data_tags[1][5].keywords
+              .map((tag) => {
+                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
+              })
+              .join(" ")
+          : " ";
 
-          const tags=" ";
-          var page = {
-            fields: {
-              seo: {
-                meta_description: ``,
-                meta_keyword: ``,
-                page_title: `${article[0].title.rendered}`,
-              },
+        var page = {
+          fields: {
+            seo: {
+              meta_description: `${article[0].yoast_head_json.og_description}`,
+              meta_keyword: `${data_tags[1][5].keywords}`,
+              page_title: `${article[0].yoast_head_json.og_title}`,
             },
-          };
-          res.render("ar/Education/article", {
-            page: page,
-            content: article[0].content.rendered,
-            titleArticle: article[0].title.rendered,
-            imgUrl: article[0].featured_image_url,
-            date:
-              article[0].date.split("T")[1].split(":")[0] +
-              ":" +
-              article[0].date.split("T")[1].split(":")[1] +
-              " " +
-              article[0].date.split("T")[0],
-            url: article[0].link,
-            tags: tags,
-            og_img: ``,
-            post_category:42,
-          });
-        }
-        else{
-          const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
-            function (key) {
-              return data[0].yoast_head_json.schema[key];
-            }
-          );
-          const tags = data_tags[1][5]
-            ? data_tags[1][5].keywords
-                .map((tag) => {
-                  return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`;
-                })
-                .join(" ")
-            : " ";
-  
-          var page = {
-            fields: {
-              seo: {
-                meta_description: `${article[0].yoast_head_json.og_description}`,
-                meta_keyword: `${data_tags[1][5].keywords}`,
-                page_title: `${article[0].yoast_head_json.og_title}`,
-              },
-            },
-          };
-          res.render("ar/Education/article", {
-            page: page,
-            content: article[0].content.rendered,
-            titleArticle: article[0].title.rendered,
-            imgUrl: article[0].featured_image_url,
-            date:
-              article[0].date.split("T")[1].split(":")[0] +
-              ":" +
-              article[0].date.split("T")[1].split(":")[1] +
-              " " +
-              article[0].date.split("T")[0],
-            url: article[0].link,
-            tags: tags,
-            og_img: `${article[0].yoast_head_json.og_image.url}`,
-            post_category:42,
-          });
-        } 
+          },
+        };
+        res.render("ar/Education/article", {
+          page: page,
+          content: article[0].content.rendered,
+          titleArticle: article[0].title.rendered,
+          imgUrl: article[0].featured_image_url,
+          date:
+            article[0].date.split("T")[1].split(":")[0] +
+            ":" +
+            article[0].date.split("T")[1].split(":")[1] +
+            " " +
+            article[0].date.split("T")[0],
+          url: article[0].link,
+          tags: tags,
+          og_img: `${article[0].yoast_head_json.og_image.url}`,
+          post_category:42,
+        });
       })
       .catch((err) => console.log(err));
   }
@@ -1248,75 +1001,44 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
-        if(data[0].yoast_head_json === undefined || data[0].yoast_head_json === null) {
+        const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
+          function (key) {
+            return data[0].yoast_head_json.schema[key];
+          }
+        );
+        const tags = data_tags[1][5]
+          ? data_tags[1][5].keywords
+              .map((tag) => {
+                return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
+              })
+              .join(" ")
+          : " ";
 
-          const tags=" ";
-          var page = {
-            fields: {
-              seo: {
-                meta_description: ``,
-                meta_keyword: ``,
-                page_title: `${article[0].title.rendered}`,
-              },
+        var page = {
+          fields: {
+            seo: {
+              meta_description: `${article[0].yoast_head_json.og_description}`,
+              meta_keyword: `${data_tags[1][5].keywords}`,
+              page_title: `${article[0].yoast_head_json.og_title}`,
             },
-          };
-          res.render("ar/Education/article", {
-            page: page,
-            content: article[0].content.rendered,
-            titleArticle: article[0].title.rendered,
-            imgUrl: article[0].featured_image_url,
-            date:
-              article[0].date.split("T")[1].split(":")[0] +
-              ":" +
-              article[0].date.split("T")[1].split(":")[1] +
-              " " +
-              article[0].date.split("T")[0],
-            url: article[0].link,
-            tags: tags,
-            og_img: ``,
-            post_category:42,
-          });
-        }
-        else{
-          const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
-            function (key) {
-              return data[0].yoast_head_json.schema[key];
-            }
-          );
-          const tags = data_tags[1][5]
-            ? data_tags[1][5].keywords
-                .map((tag) => {
-                  return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`;
-                })
-                .join(" ")
-            : " ";
-  
-          var page = {
-            fields: {
-              seo: {
-                meta_description: `${article[0].yoast_head_json.og_description}`,
-                meta_keyword: `${data_tags[1][5].keywords}`,
-                page_title: `${article[0].yoast_head_json.og_title}`,
-              },
-            },
-          };
-          res.render("ar/Education/article", {
-            page: page,
-            content: article[0].content.rendered,
-            titleArticle: article[0].title.rendered,
-            imgUrl: article[0].featured_image_url,
-            date:
-              article[0].date.split("T")[1].split(":")[0] +
-              ":" +
-              article[0].date.split("T")[1].split(":")[1] +
-              " " +
-              article[0].date.split("T")[0],
-            url: article[0].link,
-            tags: tags,
-            og_img: `${article[0].yoast_head_json.og_image.url}`,
-            post_category:42,
-          });
-        } 
+          },
+        };
+        res.render("ar/Education/article", {
+          page: page,
+          content: article[0].content.rendered,
+          titleArticle: article[0].title.rendered,
+          imgUrl: article[0].featured_image_url,
+          date:
+            article[0].date.split("T")[1].split(":")[0] +
+            ":" +
+            article[0].date.split("T")[1].split(":")[1] +
+            " " +
+            article[0].date.split("T")[0],
+          url: article[0].link,
+          tags: tags,
+          og_img: `${article[0].yoast_head_json.og_image.url}`,
+          post_category:42,
+        });
       })
       .catch((err) => console.log(err));
   }
@@ -1332,36 +1054,6 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
-        if(data[0].yoast_head_json === undefined || data[0].yoast_head_json === null) {
-
-          const tags=" ";
-          var page = {
-            fields: {
-              seo: {
-                meta_description: ``,
-                meta_keyword: ``,
-                page_title: `${article[0].title.rendered}`,
-              },
-            },
-          };
-          res.render("ar/Education/article", {
-            page: page,
-            content: article[0].content.rendered,
-            titleArticle: article[0].title.rendered,
-            imgUrl: article[0].featured_image_url,
-            date:
-              article[0].date.split("T")[1].split(":")[0] +
-              ":" +
-              article[0].date.split("T")[1].split(":")[1] +
-              " " +
-              article[0].date.split("T")[0],
-            url: article[0].link,
-            tags: tags,
-            og_img: ``,
-            post_category:42,
-          });
-        }
-        else{
           const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
             function (key) {
               return data[0].yoast_head_json.schema[key];
@@ -1370,7 +1062,7 @@ router.get(
           const tags = data_tags[1][5]
             ? data_tags[1][5].keywords
                 .map((tag) => {
-                  return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}">${tag}</a>`;
+                  return `<a class="badge bg-secondary text-decoration-none link-light" href="/ar/tag/${tag}?lang=ar">${tag}</a>`;
                 })
                 .join(" ")
             : " ";
@@ -1400,29 +1092,21 @@ router.get(
             og_img: `${article[0].yoast_head_json.og_image.url}`,
             post_category:42,
           });
-        } 
       })
       .catch((err) => console.log(err));
   }
 );
 
 
-router.get('/tag/:tag',async (req,res)=>{
-  var page=1;
-  console.log(req.params.tag);
-  do{
-    const url=`https://cms.evest.com/ar/wp-json/wp/v2/tags?per_page=100&page=${page}&order=desc`;
-    const options={
-      method:'GET'
-    }
-    var response=await fetch(url,options)
-    .then((res)=>res.json())
-    .then((data)=>{
-      var count=0;
-      data.forEach(element => {
-        if(element.name==req.params.tag){
-          
-          const url=`https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&tags=${element.id}&per_page=6&page=1`
+const getTag=require('../tagsApi')
+router.get('/tag/:tag',async (req,res)=>{  
+  console.log(req.params.tag)
+  const tag_id=getTag(req.params.tag,'ar');
+  if(tag_id === undefined){
+    res.redirect('/');
+  }
+  console.log(tag_id);
+          const url=`https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&tags=${tag_id}&per_page=6&page=1`
           const options = {
             method: "GET",
           };
@@ -1432,9 +1116,9 @@ router.get('/tag/:tag',async (req,res)=>{
               var page = {
                 fields: {
                   seo: {
-                    meta_description: `${element.name}`,
-                    meta_keyword: `${element.name}`,
-                    page_title: `${element.yoast_head_json.title}`,
+                    meta_description: `${req.params.tag}-أرشيف`,
+                    meta_keyword: `${req.params.tag}`,
+                    page_title: `Evest- أرشيف ${req.params.tag} `,
                   },
                 },
               };
@@ -1446,23 +1130,18 @@ router.get('/tag/:tag',async (req,res)=>{
         <div class="card-body">
         <a href='${post.link}' ><h5 class="card-title">${post.title.rendered}</h5></a>
         <div class="card-text description">${post.excerpt.rendered}</div>
-        <a class="btn btn-filled readmore" href='${post.link}'>اقرا المزيد</a>
+        <a class="btn btn-filled readmore" href='${post.link}'>read more</a>
         </div></div>
         <div class="card-footer dateCreated">
         ${date}
         </div>
         </div>`
               }).join("");
-              res.render("ar/Education/tags", { page: page , articles: article,pageTitle:element.yoast_head_json.title,tagId:element.id});
-              res.end();
+              res.render("ar/Education/tags", { page: page , articles: article,pageTitle:`Evest- ${req.params.tag} أرشيف`,tagId:tag_id});
+            }).catch(err=>{
+              console.log(err);
+              res.redirect('/');
             });
-        }
-      });
-    });
-    page++;
-  }while(!response);
 });
-
-
 
 module.exports = router;
