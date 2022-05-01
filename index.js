@@ -468,7 +468,7 @@ xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entrie
 fs.writeFile('./public/post-sitemap.xml', sitemap, function (err) {
   
   if (err) throw err;
-  console.log('File is created successfully.'+" "+count++);
+  console.log(' Post Sitemap -File is created successfully.'+" "+count++);
 });
 
 }
