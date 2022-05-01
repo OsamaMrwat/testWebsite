@@ -416,7 +416,7 @@ app.get("/coins/:id", (req, res) => {
     }
   );
 });
- 
+var count=0;
 
 /*SiteMaps*/
 const axios=require('axios')
@@ -457,7 +457,7 @@ async function getPostSiteMaps(){
     // you got access to every property of those links here. Note the \n I've added to format it in the output - you don't need that in the real XML.
     return `\n<url><loc>https://www.evest.com/${link}</loc></url>`
   })
-
+00
   // the actual sitemap with all it's entries.
   let sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
 xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/1.1" 
@@ -466,12 +466,12 @@ xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entrie
 
 // writeFile function with filename, content and callback function
 fs.writeFile('./public/post-sitemap.xml', sitemap, function (err) {
-  var count=0;
+  
   if (err) throw err;
   console.log('File is created successfully.'+" "+count++);
 });
-}
 
+}
 async function getPagesSiteMaps(){
   let all_links=[];
   for (let page = 1; page < 10; page++) {
@@ -679,7 +679,7 @@ getCommoditiesSiteMaps();
 
 const scheduler = new ToadScheduler()
 
-const task = new Task('simple task', getPostSiteMaps())
+const task = new Task('simple task', getPostSiteMaps)
 const job = new SimpleIntervalJob({ hours:2, }, task)
 
 scheduler.addSimpleIntervalJob(job)
