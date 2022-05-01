@@ -416,7 +416,6 @@ router.get(
       .then((res) => res.json())
       .then((data) => {
         var article = data;
-        console.log(article);
         const data_tags = Object.keys(data[0].yoast_head_json.schema).map(
           function (key) {
             return data[0].yoast_head_json.schema[key];
