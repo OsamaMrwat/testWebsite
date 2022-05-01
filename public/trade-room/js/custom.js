@@ -1,3 +1,45 @@
+/* TipRanks Analytics GTM dataLayer push  */
+function tipRanksAnalytics( event ) {
+    let uniqueID = event.customer.customerId;
+    let targetElements = [
+        'app-tipranks-trending-stocks',
+        'app-tipranks-daily-ratings',
+        'app-tipranks-analyst-ratings',
+        'app-tipranks-news-and-sentiment',
+        'app-tipranks-insider-activity'
+    ];
+
+    (function visibilityCheck() {
+        setInterval( function(){
+            let isVisible = false;
+            let detailedEvent = [];
+            targetElements.forEach(( element ) => {
+                if( document.querySelector( element ) !== null ) {
+                    isVisible = true;
+                    detailedEvent.push(element.split('app-tipranks-')[1]);
+                }
+            });
+            if( isVisible ) {
+
+                function dataLayerHandler(eventSuffix) {
+                    let payload =  {
+                        'event': 'tip_ranks_' + eventSuffix,
+                        'uniqueID': uniqueID,
+                        'timeIncrement': 10
+                    };
+
+                    return payload;
+                }
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.length = 0;
+                window.dataLayer.push( dataLayerHandler('useTime') );
+                window.dataLayer.push( dataLayerHandler( detailedEvent[0] ) );
+            }
+        }, 10000);
+    })();
+}
+
+
 var forexEvents = {
     depositSuccess: depositSuccessCallback,
     depositFail: depositFailCallback,
@@ -44,6 +86,7 @@ function signupFailCallback(event) {
 }
 
 function loginSuccessCallback(event) {
+    tipRanksAnalytics(event);
     var totalCoins=0;
     console.log('login success callback event', event);
     localStorage.setItem("loggedin", "true");
