@@ -876,7 +876,7 @@ app.get('/oil-news',async (req,res)=>{
 <div class="card-body">
 <h5 class="card-title">${post.title.rendered}</h5>
 <div class="card-text description">${post.excerpt.rendered}</div>
-<button class="btn btn-filled readmore" onclick="window.location.replace('${"/oil-news/"+post.slug}')">Read more</button>
+<button class="btn btn-filled readmore" onclick="window.location.assign('${"/oil-news/"+post.slug}')">Read more</button>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -931,7 +931,7 @@ app.get('/gold-news', async(req,res)=>{
 <div class="card-body">
 <h5 class="card-title">${post.title.rendered}</h5>
 <div class="card-text description">${post.excerpt.rendered}</div>
-<button class="btn btn-filled readmore" onclick="window.location.replace('${"/gold-news/"+post.slug}')">Read more</button>
+<button class="btn btn-filled readmore" onclick="window.location.assign('${"/gold-news/"+post.slug}')">Read more</button>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -988,7 +988,7 @@ app.get('/market-news', async(req,res)=>{
 <div class="card-body">
 <h5 class="card-title">${post.title.rendered}</h5>
 <div class="card-text description">${post.excerpt.rendered}</div>
-<button class="btn btn-filled readmore" onclick="window.location.replace('${"/market-news/"+post.slug}')">Read more</button>
+<button class="btn btn-filled readmore" onclick="window.location.assign('${"/market-news/"+post.slug}')">Read more</button>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -1044,7 +1044,7 @@ app.get('/trading-news',async(req,res)=>{
 <div class="card-body">
 <h5 class="card-title">${post.title.rendered}</h5>
 <div class="card-text description">${post.excerpt.rendered}</div>
-<button class="btn btn-filled readmore" onclick="window.localStorage.setItem('data','a2a3a');window.location.replace('${"/trading-news/"+post.slug}');">Read more</button>
+<button class="btn btn-filled readmore" onclick="window.localStorage.setItem('data','a2a3a');window.location.assign('${"/trading-news/"+post.slug}');">Read more</button>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}

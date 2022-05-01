@@ -64,7 +64,7 @@ function getAll(number){
       <div class="card-body">
         <h5 class="card-title">${post.title.rendered}</h5>
         <div class="card-text description">${post.excerpt.rendered}</div>
-        <button class="btn btn-filled readmore" onclick="window.location.replace('${"/gold-news/"+post.slug}')">Read more</button>
+        <button class="btn btn-filled readmore" onclick="window.location.assign('${"/gold-news/"+post.slug}')">Read more</button>
       </div></div>
       <div class="card-footer dateCreated">
         ${date}

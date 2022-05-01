@@ -393,7 +393,7 @@ router.get("/" + encodeURIComponent("اخبار-النفط"), async (req, res) =
 <div class="card-body">
 <a href='${"/ar/"+encodeURIComponent("اخبار-النفط")+"/"+post.slug}'><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.excerpt.rendered}</div>
-<button class="btn btn-filled readmore" onclick="window.location.replace('${"/ar/"+encodeURIComponent("اخبار-النفط")+"/"+post.slug+"?lang=ar"}')">اقرا المزيد</button>
+<button class="btn btn-filled readmore" onclick="window.location.assign('${"/ar/"+encodeURIComponent("اخبار-النفط")+"/"+post.slug+"?lang=ar"}')">اقرا المزيد</button>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -540,7 +540,7 @@ const response = await fetch(url, options)
 <div class="card-body">
 <a href='${"/ar/"+encodeURIComponent("اخبار-الذهب")+"/"+post.slug}'><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.excerpt.rendered}</div>
-<button class="btn btn-filled readmore" onclick="window.location.replace('${"/ar/"+encodeURIComponent("اخبار-الذهب")+"/"+post.slug}')">اقرا المزيد</button>
+<button class="btn btn-filled readmore" onclick="window.location.assign('${"/ar/"+encodeURIComponent("اخبار-الذهب")+"/"+post.slug}')">اقرا المزيد</button>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -689,7 +689,7 @@ router.get("/" + encodeURIComponent("أخبار-التداول"), async(req, res
 <div class="card-body">
 <a href='${"/ar/"+encodeURIComponent("أخبار-التداول")+"/"+post.slug}'><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.excerpt.rendered}</div>
-<button class="btn btn-filled readmore" onclick="document.getElementById('pageTitle').innerText ='${post.title.rendered}';window.location.replace('${"/ar/"+encodeURIComponent("أخبار-التداول")+"/"+post.slug+"?lang=ar"}');">اقرا المزيد</button>
+<button class="btn btn-filled readmore" onclick="document.getElementById('pageTitle').innerText ='${post.title.rendered}';window.location.assign('${"/ar/"+encodeURIComponent("أخبار-التداول")+"/"+post.slug+"?lang=ar"}');">اقرا المزيد</button>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -837,7 +837,7 @@ router.get("/" + encodeURIComponent("اخبار-السوق"),  async(req, res) =
 <div class="card-body">
 <a href='${"/ar/"+encodeURIComponent("اخبار-السوق")+"/"+post.slug}'> <h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.excerpt.rendered}</div>
-<button class="btn btn-filled readmore" onclick="window.location.replace('${"/ar/"+encodeURIComponent("اخبار-السوق")+"/"+post.slug+"?lang=ar"}')">اقرا المزيد</button>
+<button class="btn btn-filled readmore" onclick="window.location.assign('${"/ar/"+encodeURIComponent("اخبار-السوق")+"/"+post.slug+"?lang=ar"}')">اقرا المزيد</button>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -983,7 +983,7 @@ router.get("/" + encodeURIComponent("مدونة-التداول"),  async (req, r
 <div class="card-body">
 <a href='${"/ar/"+encodeURIComponent("مدونة-التداول")+"/"+post.slug}' ><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.excerpt.rendered}</div>
-<button class="btn btn-filled readmore" onclick="window.location.replace('${"/ar/"+encodeURIComponent("مدونة-التداول")+"/"+post.slug+"?lang=ar"}')">اقرا المزيد</button>
+<button class="btn btn-filled readmore" onclick="window.location.assign('${"/ar/"+encodeURIComponent("مدونة-التداول")+"/"+post.slug+"?lang=ar"}')">اقرا المزيد</button>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}

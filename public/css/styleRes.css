@@ -210,8 +210,8 @@
     position: inherit;
     left: 10% !important;
   }
+  #navbarSupportedContent > div > a:nth-child(2),
   #navbarSupportedContent > div > a:nth-child(3),
-  #navbarSupportedContent > div > a:nth-child(4),
   #navbarSupportedContent > div > button{
     margin-bottom:2%;
     width: 200px !important;
