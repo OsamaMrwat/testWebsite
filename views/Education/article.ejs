@@ -39,11 +39,22 @@
 </div>
 
 <script>
-  //add meta data for og_img
-  var meta = document.createElement('meta');
-  meta.setAttribute('property', 'og:image');
-  meta.setAttribute('content', '<%- og_img %>');
-  document.getElementsByTagName('head')[0].appendChild(meta);
+    $(document).ready(function(){
+    if(localStorage.getItem("loggedin")== false || localStorage.getItem("loggedin") == null){
+      $('.articlebtn').on('click', function(){
+        if(isMobileArticle()){
+          console.log('from mobile view');
+          window.location.replace('/mobile/#/signup');
+        }else{runPlugin('forexSignup');}
+      
+    })
+    }else{
+      $('.articlebtn').on('click', function(){
+      window.location.replace('/trade-room?lang=ar')
+    })
+    }
+
+  })
 </script>
 <style>
    @import url('/css/article.min.css');
