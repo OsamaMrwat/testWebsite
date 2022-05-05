@@ -59,9 +59,8 @@ function isMobile() {
 
 isMobile();
 
-var tradingAcademyLink=document.querySelector(".ta-link");
-var tradingAcademyLinkAr=document.querySelector(".ta-linkAr");
-
+// var tradingAcademyLink=document.querySelector(".ta-link");
+// var tradingAcademyLinkAr=document.querySelector(".ta-linkAr");
 
 
 var forexEvents = {
@@ -80,42 +79,26 @@ function depositFailCallback(e) {}
 function signupSuccessCallback(e) {}
 function signupFailCallback(e) {}
 function loginSuccessCallback(e) {
-  tipRanksAnalytics(event);
+  tipRanksAnalytics(e);
   localStorage.setItem("loggedin", "true");
-  tradingAcademyLink.href=tradingAcademyLink.href+"/true";
-  tradingAcademyLinkAr.href="/ar/أكاديمية-التداول/true?lang=ar";
+  window.Loggedin = 'true';
+  // tradingAcademyLink.href=tradingAcademyLink.href+"/true";
+  // tradingAcademyLinkAr.href="/ar/أكاديمية-التداول/true?lang=ar";
+
   let clicks=$('body *').toArray().filter(function(el) { return $(el).attr('onclick') });
   for(let i=0;i<clicks.length;i++){
     if(clicks[i].className.includes('page')||clicks[i].className.includes('readmore')){
       i++   
     }else{
       clicks[i].setAttribute("onclick","window.location.replace('/trade-room')");
+    }  
     }
-      
-    }
-
-//   let encId=e.customer.customerId;
-//   console.log(decIt(encId));
-//   console.log(e.customer.customerId)
-// }
-
-// function decIt(id){
-//  return( fetch("https://lpevest.com/decphp/dec.php", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-      
-//     },
-//     mode:"no-cors",
-//     body: `id=${id}`,
-//   })
-//   .then((response) => {console.log(response);response.json()}).then(data=>console.log(data)));
 }
 function loginFailCallback(e) {}
 function logoutCallback(e) {
  location.reload();
  localStorage.removeItem("loggedin");
- window.Loggedin=false;
+ window.Loggedin='false';
 }
 function appInitCallback(e) {
   "function" == typeof changeThemeColorCHKBX && changeThemeColorCHKBX("load");
