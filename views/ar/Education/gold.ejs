@@ -61,19 +61,20 @@ function getAll(number){
               hideLoading()
                 const article = data.map(post => {
                   let date=post.date.split('T')[0];
-                    return `<div class="card">
-                      <div> 
-                             <a href='${"/ar/"+encodeURIComponent("اخبار-الذهب")+"/"+post.slug}'><img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}"></a>
-      <div class="card-body">
-        <a href='${"/ar/"+encodeURIComponent("اخبار-الذهب")+"/"+post.slug}'><h5 class="card-title">${post.title.rendered}</h5></a>
-        <div class="card-text description">${post.excerpt.rendered}</div>
-        <button class="btn btn-filled readmore" onclick="window.location.assign('${"/ar/"+encodeURIComponent("اخبار-الذهب")+"/"+post.slug}')">اقرا المزيد</button>
-      </div></div>
-      <div class="card-footer dateCreated">
-        ${date}
-      </div>
-    </div>`
-                }).join("");
+                  return `<div class="card">
+          <div> 
+                <a href='${post.link+"?lang=ar"}'> 
+                  <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}" ></a>
+<div class="card-body">
+<a href='${post.link+"?lang=ar"}'><h5 class="card-title">${post.title.rendered}</h5></a>
+<div class="card-text description">${post.excerpt.rendered}</div>
+<a class="btn btn-filled readmore" href="${post.link+"?lang=ar"}">اقرا المزيد</a>
+</div></div>
+<div class="card-footer dateCreated">
+${date}
+</div>
+</div>`
+    }).join("");
                 document.querySelector("#reslut").innerHTML = article;
                 document.documentElement.scrollTop=0;
       })

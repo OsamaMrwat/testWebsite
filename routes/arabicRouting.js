@@ -388,12 +388,12 @@ router.get("/" + encodeURIComponent("اخبار-النفط"), async (req, res) =
       let date=post.date.split('T')[0];
         return `<div class="card">
           <div> 
-                <a href='${"/ar/"+encodeURIComponent("اخبار-النفط")+"/"+post.slug}'> 
+                <a href='${post.link+"?lang=ar"}'> 
                   <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}" ></a>
 <div class="card-body">
-<a href='${"/ar/"+encodeURIComponent("اخبار-النفط")+"/"+post.slug}'><h5 class="card-title">${post.title.rendered}</h5></a>
+<a href='${post.link+"?lang=ar"}'><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.excerpt.rendered}</div>
-<button class="btn btn-filled readmore" onclick="window.location.assign('${"/ar/"+encodeURIComponent("اخبار-النفط")+"/"+post.slug+"?lang=ar"}')">اقرا المزيد</button>
+<a class="btn btn-filled readmore" href="${post.link+"?lang=ar"}">اقرا المزيد</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -536,11 +536,11 @@ const response = await fetch(url, options)
       let date=post.date.split('T')[0];
         return `<div class="card">
           <div> 
-                 <a href='${"/ar/"+encodeURIComponent("اخبار-الذهب")+"/"+post.slug}'><img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}"></a>
+                 <a href='${post.link+"?lang=ar"}'><img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}"></a>
 <div class="card-body">
-<a href='${"/ar/"+encodeURIComponent("اخبار-الذهب")+"/"+post.slug}'><h5 class="card-title">${post.title.rendered}</h5></a>
+<a href='${post.link+"?lang=ar"}'><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.excerpt.rendered}</div>
-<button class="btn btn-filled readmore" onclick="window.location.assign('${"/ar/"+encodeURIComponent("اخبار-الذهب")+"/"+post.slug}')">اقرا المزيد</button>
+<a class="btn btn-filled readmore" href="${post.link+"?lang=ar"}">اقرا المزيد</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -684,12 +684,12 @@ router.get("/" + encodeURIComponent("أخبار-التداول"), async(req, res
         let date=post.date.split('T')[0];
           return `<div class="card">
             <div> 
-                   <a href='${"/ar/"+encodeURIComponent("أخبار-التداول")+"/"+post.slug}'>
+                   <a href='${post.link+"?lang=ar"}'>
                     <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}" ></a>
 <div class="card-body">
-<a href='${"/ar/"+encodeURIComponent("أخبار-التداول")+"/"+post.slug}'><h5 class="card-title">${post.title.rendered}</h5></a>
+<a href='${post.link+"?lang=ar"}'><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.excerpt.rendered}</div>
-<button class="btn btn-filled readmore" onclick="document.getElementById('pageTitle').innerText ='${post.title.rendered}';window.location.assign('${"/ar/"+encodeURIComponent("أخبار-التداول")+"/"+post.slug+"?lang=ar"}');">اقرا المزيد</button>
+<a class="btn btn-filled readmore" href="${post.link+"?lang=ar"}">اقرا المزيد</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -832,12 +832,12 @@ router.get("/" + encodeURIComponent("اخبار-السوق"),  async(req, res) =
         let date=post.date.split('T')[0];
           return `<div class="card">
             <div> 
-                   <a href='${"/ar/"+encodeURIComponent("اخبار-السوق")+"/"+post.slug}'>
+                   <a href='${post.link+"?lang=ar"}'>
                     <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}"></a>
 <div class="card-body">
-<a href='${"/ar/"+encodeURIComponent("اخبار-السوق")+"/"+post.slug}'> <h5 class="card-title">${post.title.rendered}</h5></a>
+<a href='${post.link+"?lang=ar"}'> <h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.excerpt.rendered}</div>
-<button class="btn btn-filled readmore" onclick="window.location.assign('${"/ar/"+encodeURIComponent("اخبار-السوق")+"/"+post.slug+"?lang=ar"}')">اقرا المزيد</button>
+<a class="btn btn-filled readmore" href="${post.link+"?lang=ar"}">اقرا المزيد</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -979,11 +979,11 @@ router.get("/" + encodeURIComponent("مدونة-التداول"),  async (req, r
         let date=post.date.split('T')[0];
           return `<div class="card">
             <div> 
-                   <a href='${"/ar/"+encodeURIComponent("مدونة-التداول")+"/"+post.slug}'>  <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}"> </a>
+                   <a href='${post.link+"?lang=ar"}'>  <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}"> </a>
 <div class="card-body">
-<a href='${"/ar/"+encodeURIComponent("مدونة-التداول")+"/"+post.slug}' ><h5 class="card-title">${post.title.rendered}</h5></a>
+<a href='${post.link+"?lang=ar"}' ><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.excerpt.rendered}</div>
-<button class="btn btn-filled readmore" onclick="window.location.assign('${"/ar/"+encodeURIComponent("مدونة-التداول")+"/"+post.slug+"?lang=ar"}')">اقرا المزيد</button>
+<a class="btn btn-filled readmore" href="${post.link+"?lang=ar"}">اقرا المزيد</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -1142,11 +1142,11 @@ router.get('/tag/:tag',async (req,res)=>{
                 let date=post.date.split('T')[0];
                   return `<div class="card">
                     <div> 
-                           <a href='${post.link}'>  <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}"> </a>
+                           <a href='${post.link+"?lang=ar"}'>  <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}"> </a>
         <div class="card-body">
-        <a href='${post.link}' ><h5 class="card-title">${post.title.rendered}</h5></a>
+        <a href='${post.link+"?lang=ar"}' ><h5 class="card-title">${post.title.rendered}</h5></a>
         <div class="card-text description">${post.excerpt.rendered}</div>
-        <a class="btn btn-filled readmore" href='${post.link}'>أقرا المزيد</a>
+        <a class="btn btn-filled readmore" href='${post.link+"?lang=ar"}'>أقرا المزيد</a>
         </div></div>
         <div class="card-footer dateCreated">
         ${date}

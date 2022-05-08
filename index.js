@@ -872,11 +872,11 @@ app.get('/oil-news',async (req,res)=>{
       let date=post.date.split('T')[0];
         return `<div class="card">
           <div> 
-                 <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap">
+                <a href="${post.link}"> <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap"></a>
 <div class="card-body">
-<h5 class="card-title">${post.title.rendered}</h5>
+<a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.excerpt.rendered}</div>
-<button class="btn btn-filled readmore" onclick="window.location.assign('${"/oil-news/"+post.slug}')">Read more</button>
+<a class="btn btn-filled readmore" href="${post.link}">Read more</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -927,11 +927,11 @@ app.get('/gold-news', async(req,res)=>{
       let date=post.date.split('T')[0];
         return `<div class="card">
           <div> 
-                 <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap">
+                 <a href="${post.link}"><img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap"></a>
 <div class="card-body">
-<h5 class="card-title">${post.title.rendered}</h5>
+<a hef="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.excerpt.rendered}</div>
-<button class="btn btn-filled readmore" onclick="window.location.assign('${"/gold-news/"+post.slug}')">Read more</button>
+<a class="btn btn-filled readmore" href="${post.link}">Read more</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -984,11 +984,11 @@ app.get('/market-news', async(req,res)=>{
       let date=post.date.split('T')[0];
         return `<div class="card">
           <div> 
-                 <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap">
+              <a href="${post.link}"><img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap"></a>
 <div class="card-body">
-<h5 class="card-title">${post.title.rendered}</h5>
+<a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.excerpt.rendered}</div>
-<button class="btn btn-filled readmore" onclick="window.location.assign('${"/market-news/"+post.slug}')">Read more</button>
+<a class="btn btn-filled readmore" href="${post.link}">Read more</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -1040,11 +1040,11 @@ app.get('/trading-news',async(req,res)=>{
       let date=post.date.split('T')[0];
         return `<div class="card">
           <div> 
-                 <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap">
+                 <a href="${post.link}"><img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap"></a>
 <div class="card-body">
-<h5 class="card-title">${post.title.rendered}</h5>
+<a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.excerpt.rendered}</div>
-<button class="btn btn-filled readmore" onclick="window.localStorage.setItem('data','a2a3a');window.location.assign('${"/trading-news/"+post.slug}');">Read more</button>
+<a class="btn btn-filled readmore" href="${post.link}">Read more</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
