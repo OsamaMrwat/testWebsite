@@ -457,7 +457,6 @@ async function getPostSiteMaps(){
     // you got access to every property of those links here. Note the \n I've added to format it in the output - you don't need that in the real XML.
     return `\n<url><loc>https://www.evest.com/${link}</loc></url>`
   })
-00
   // the actual sitemap with all it's entries.
   let sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
 xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/1.1" 
@@ -466,10 +465,24 @@ xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entrie
 
 // writeFile function with filename, content and callback function
 fs.writeFile('./public/post-sitemap.xml', sitemap, function (err) {
-  
+  var n =  new Date();
+  var y = n.getFullYear();
+  var m = n.getMonth() + 1;
+  var d = n.getDate();
+  var h = n.getHours();
+  var min = n.getMinutes();
+  var s = n.getSeconds();
+  var date = y + "-" + m + "-" + d + " " + h + ":" + min + ":" + s;
+
   if (err) throw err;
-  console.log(' Post Sitemap -File is created successfully.'+" "+count++);
+  //console.log(`${date} - Post Sitemap -File is created successfully`+" "+count++);
+  fs.writeFile('./public/logForPost.txt',`${date} - Post Sitemap -File is created successfully`,function (err)  {
+    if (err) throw err;
+    console.log(`${date} - Log File is created successfully`);
+  })
 });
+
+
 
 }
 async function getPagesSiteMaps(){
@@ -1201,6 +1214,7 @@ app.get('/tag/:tag',async (req,res)=>{
 });
 
 
+
 app.use('/evest',evestRoutes);
 app.use('/',tradingplatform);
 app.use('/start-trading',startTrading);
@@ -1273,6 +1287,25 @@ app.post('/upload',(req,res)=>{
   }
 })
 
+app.get('/log',(req,res)=>{
+  const reject = () => {
+    res.setHeader('www-authenticate', 'Basic')
+    res.sendStatus(401)
+  }
+
+  const authorization = req.headers.authorization
+
+  if(!authorization) {
+    return reject()
+  }
+
+  const [username, password] = Buffer.from(authorization.replace('Basic ', ''), 'base64').toString().split(':')
+
+  if(! (username === 'admin' && password === 'q53hh=-Y5Sat?vUj')) {
+    return reject()
+  }
+  res.sendFile(__dirname+'/public/logForPost.txt');
+})
 
 /* redirect for not found routes*/
 app.get("*",(req,res) => {
