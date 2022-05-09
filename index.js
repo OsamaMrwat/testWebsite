@@ -843,6 +843,8 @@ function validateRequestOnRTIServer(eventType, req) {
 
 app.get('/test1', async (req, res) =>{
   const validResult = await validateRequestOnRTIServer("page_load", req);
+  var page={fields:{seo:{meta_description:`test1`,
+  meta_keywords:`test1`,page_title:`test1`}}};
 	if (!validResult || validResult.isInvalid) {
 		res.status(403).send("Visitor is invalid, session blocked!");
 	} else {
@@ -850,7 +852,8 @@ app.get('/test1', async (req, res) =>{
 		res.setHeader('Set-Cookie', validResult.setCookie);
 		res.render('test', {
 			tagHash: config.tagHash,
-			rtiServerResponse: JSON.stringify(validResult)
+			rtiServerResponse: JSON.stringify(validResult),
+      page:page
 		});
 	}
 })
