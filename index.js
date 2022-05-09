@@ -11,10 +11,18 @@ const fetch = require('node-fetch');
 const cors=require('cors');
 const { ToadScheduler, SimpleIntervalJob, Task } = require('toad-scheduler')
 
+//Cheque Zone Implementation
+const config = require('./config');
+const cookieParser = require('cookie-parser');
+const request = require("request");
+
+
 
 
 const app=express();
 app.use(require('express-status-monitor')());
+//cheqZone Implementation for cheque zone
+app.use(cookieParser());
 
 const fs = require('fs');
 const PORT= process.env.PORT||8080;
@@ -791,6 +799,60 @@ app.get('/indices',(req,res)=>{
 })
 app.get('/crypto',(req,res)=>{
   res.send(myapi.getCrypto);
+})
+
+
+// This function will invoke CHEQ's fraud engine to ensure the legitimate of the request
+function validateRequestOnRTIServer(eventType, req) {
+	return new Promise((resolve, reject) => {
+		// This is the body of the request which having some fields that used to tag each request as valid or not:
+		const form = {
+			'ApiKey': config.apiKey,
+			'TagHash': config.tagHash,
+			'ClientIP': req.ip,
+			'RequestURL': `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+			'ResourceType': req.headers['content-type'] || req.headers['Content-Type'],
+			'Method': req.method,
+			'Host': req.headers['host'] || req.headers['Host'],
+			'UserAgent': req.headers['user-agent'] || req.headers['User-Agent'],
+			'Accept': req.headers['accept'] || req.headers['Accept'],
+			'AcceptLanguage': req.headers['accept-language'] || req.headers['Accept-Language'],
+			'AcceptEncoding': req.headers['accept-encoding'] || req.headers['Accept-Encoding'],
+			'HeaderNames': 'Host,User-Agent,Accept,Accept-Langauge,Accept-Encoding,Cookie',
+			'CheqCookie': req.cookies["_cheq_rti"],
+			'EventType': eventType
+		}
+		console.log(JSON.stringify(form));
+		request.post({url: config.cheqsEngineUri, headers: {'Content-Type': 'application/x-www-form-urlencoded'}, form},
+			(error, response) => {
+        console.log(response);
+				if (error) {
+					return reject(error);
+				}
+				try {
+					resolve(JSON.parse(response.body));
+				} catch (err) {
+					console.error(err);
+					resolve();
+				}
+			});
+	});
+}
+
+
+
+app.get('/test1', async (req, res) =>{
+  const validResult = await validateRequestOnRTIServer("page_load", req);
+	if (!validResult || validResult.isInvalid) {
+		res.status(403).send("Visitor is invalid, session blocked!");
+	} else {
+		// Cookie saved on client side for binding between client detection and server one
+		res.setHeader('Set-Cookie', validResult.setCookie);
+		res.render('test', {
+			tagHash: config.tagHash,
+			rtiServerResponse: JSON.stringify(validResult)
+		});
+	}
 })
 
 // Routes
