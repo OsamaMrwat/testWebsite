@@ -476,7 +476,7 @@ fs.writeFile('./public/post-sitemap.xml', sitemap, function (err) {
 
   if (err) throw err;
   //console.log(`${date} - Post Sitemap -File is created successfully`+" "+count++);
-  fs.writeFile('./public/logForPost.txt',`${date} - Post Sitemap -File is created successfully`,function (err)  {
+  fs.appendFile('./public/logForPost.txt',`${date} - Post Sitemap -File is created successfully`,function (err)  {
     if (err) throw err;
     console.log(`${date} - Log File is created successfully`);
   })
