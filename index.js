@@ -38,7 +38,7 @@ const spainshRouting=require('./routes/spainshRouting');
 const marketsRouting=require('./routes/marketsRouting');
 const productsRouting=require('./routes/productsRouting');
 
-const mysql = require("mysql");
+
 // Body Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -63,367 +63,6 @@ app.use('/trade-room',express.static(__dirname+'/public/trade-room'))
 app.use('/legal',express.static(__dirname+'/public/legal'))
 app.use('/publicFiles',express.static(__dirname+'/public/publicFiles'))
 
-
-var connection = mysql.createConnection({
-  host     : process.env.DB_HOST,
-  user     : 'mena-evest_data',
-  password : process.env.DB_PASSWORD,
-  database : 'panda_db'
-});
-
-app.get("/coins/:id", (req, res) => {
-  const startDate=Date.parse('2022-04-01T21:00:00')/1000;
-  const endDate=Date.parse('2022-04-30T21:00:00')/1000;
-  const assetsForbeding = ['BTCUSD','ETHUSD','LTCUSD','ETCUSD','DSHUSD','XRPUSD','YCCUSD','SHBUSD','ADAUSD','SOLUSD','XLMUSD','DOTUSD','DOGUST',
-  '3M',
-'ACTBLIZARD',
-'ANGLO',
-'B.PETROL',
-'BARCLAYS',
-'BATS',
-'DOMINOS',
-'MARKS',
-'VODAFONE',
-'BTGROUP',
-'INVESTEC',
-'HSBC',
-'Lloyds',
-'NatWest',
-'AS-ROMA',
-'ADS',
-'ALLI',
-'BASF',
-'ANZ-ASX',
-'BAYER',
-'BMW',
-'Beiersdorf',
-'CONTINENTAL',
-'CTX-ASX',
-'DBFRA',
-'MERCEDES',
-'DPW',
-'EOAN',
-'DTELE',
-'FRESENIUS',
-'HEN',
-'HM',
-'HONDA',
-'LAZIO',
-'LUKOIL',
-'MITSUBISHI',
-'METRO',
-'MTNGroup',
-'NISSAN',
-'REPSOL',
-'SAP',
-'ORG-ASX',
-'Rosneft',
-'RIO-ASX',
-'SAND',
-'SIE',
-'Sberbank',
-'TELFON',
-'TELIA',
-'TOSHIBA',
-'TOTAL',
-'VINCI',
-'VOLV',
-'VOWGEN',
-'Alibaba-HK',
-'FDJ',
-'WOW-ASX',
-'XIAOMI',
-'GAZPROM',
-'Lufthansa',
-'SiemensH',
-'HERO',
-'LPKFLASER',
-'Aramco',
-'BERKSHIRE',
-'AMAZON',
-'HASBRO',
-'AIG',
-'ALCOA',
-'APPLE',
-'AMEX',
-'ARCELOR',
-'BAIDU',
-'ArmourInc',
-'AURORA',
-'ATT',
-'BOEING',
-'Alibaba',
-'B.A.Tobaco',
-'BOA',
-'CAT',
-'CHEVRON',
-'CITI',
-'CISCO',
-'DISNEY',
-'COMCAST',
-'COKE',
-'CRONOS',
-'Dropbox',
-'EBAY',
-'ESTEE',
-'EXXM',
-'ElectArts',
-'FACEBOOK',
-'FEDEX',
-'FERRARI',
-'FIREEYE',
-'FOX',
-'Ford',
-'GAP',
-'GE',
-'GM',
-'GOLDSACHS',
-'GOOGLE',
-'GOPRO',
-'HPACK',
-'HARLEY',
-'INTEL',
-'IBM',
-'HILTON',
-'JD',
-'JNJ',
-'JPM',
-'KraftHeinz',
-'LOCKHEED',
-'LYFT',
-'LibertyGlob',
-'MA',
-'MACYS',
-'MANU',
-'MCDON',
-'MORGAN_STA',
-'MSFT',
-'NIKE',
-'NOKIA',
-'NSDQ_COMP',
-'NTDOY',
-'NVIDIA',
-'Netflix',
-'Oracle',
-'PFIZER',
-'PG',
-'PepsiCo',
-'QUALCOMM',
-'RALPH',
-'SONY',
-'SBUX',
-'SNAP',
-'TEVA',
-'Spotify',
-'TESLA',
-'TLRY-NSDQ',
-'TOYOTA',
-'TRIPADVISOR',
-'UBER',
-'RAYTHEON',
-'UBS',
-'VERIZON',
-'TWITTER',
-'Visa',
-'VMWARE',
-'WMART',
-'WellFargo',
-'WEED',
-'Yandex',
-'YELP',
-'Delta',
-'Vipshop',
-'BIOGEN',
-'BIONTECH',
-'GILD',
-'MODERNA',
-'VIRBIOTECH',
-'Vertex',
-'ARCUS',
-'CLOROX',
-'COST',
-'INOVIO',
-'NANOVIR',
-'ZOOM',
-'AMGEN',
-'SOUTHWEST',
-'SPIRIT',
-'CopaHold',
-'AirTransp',
-'SkyWest',
-'HawaiianHL',
-'Ryanair',
-'Allegiant',
-'WMusic',
-'TakeTwo',
-'Lululemon',
-'DriveShack',
-'ShakeShack',
-'AMCentr',
-'FreshPet',
-'SRNETherap',
-'Chewy',
-'Carnival',
-'GNUS',
-'CarMax',
-'HomeDepot',
-'BlackBerry',
-'DraftKings',
-'CRIPSR',
-'Splunk',
-'DISCA',
-'Zscaler',
-'VirginG',
-'Zuora',
-'StitchFix',
-'BeyondMeat',
-'Pinterest',
-'Twilio',
-'Roku',
-'Salesforce',
-'SQUARE',
-'ZYNGA',
-'DicksSp',
-'FootLocker',
-'ETSY',
-'DataDog',
-'Workday',
-'Fastly',
-'Wayfair',
-'AutoDesk',
-'Redfin',
-'Okta',
-'Nutanix',
-'ULTA',
-'DollarTree',
-'DocuSign',
-'Teladoc',
-'IntuitiveS',
-'WIX',
-'LEMONADE',
-'NIKOLA',
-'GOHEALTH',
-'NCINO',
-'UNG',
-'UnileverNY',
-'BlackRock',
-'Shopify',
-'HARMONY',
-'HONEYWELL',
-'NIO',
-'RIOTINTO',
-'BHPGROUP',
-'Peloton',
-'SNOWFLAKE',
-'PROSUS',
-'BOOHOO',
-'EVOTEC',
-'ADOBE',
-'PAYPAL',
-'PM',
-'AIRBNB',
-'INTESA',
-'UNICREDIT',
-'MEDIASET',
-'SAIPEM',
-'JUVENTUS',
-'Stellantis',
-'AMD',
-'WASTE',
-'JAGUARH',
-'MICRONT',
-'ENPHASE',
-'FORTINET',
-'NOVAVAX',
-'ELECTRAMV',
-'GAMESTOP',
-'A.AIRLINES',
-'COINBASE',
-'VERANO',
-'ROLLS-ROYCE',
-'BAKER',
-'TAIWANSMC',
-'SPDR500',
-'OCUGEN',
-'ZIVOBIO',
-'TORCHLIGHT',
-'FIRSTSOLAR',
-'SolarEdge',
-'FISKER',
-'EHANG',
-'NEXTERA',
-'BROOKFIELD',
-'PlugPower',
-'Opendoor',
-'LucidGroup',
-'AvePoint',
-'ROBINHOOD',
-'AGNCInvest',
-'CANOO',
-'BOOTBARN',
-'ELEMENTS',
-'INNOVATIVE',
-'KORNIT',
-'VERITIV',
-'DOXIMITY',
-'ALTRIA',
-'UNICORP',
-'LVMH',
-'COUPANG',
-'COHENCOMP',
-'CHINAREC',
-'THENINE',
-'LithiumAmericas',
-'Livent',
-'RiotBlock',
-'Marathon',
-'Lightning',
-'DidiGlobal',
-'Bilibili',
-'Canann',
-'NewChinaIns',
-'Fortress',
-'MRK',
-'CHEMOCEN',
-'EQONEX',
-'RIVIAN',
-'YALLAGROUP',
-'JUNIPER',
-'MOODYS',
-'DAVITA',
-'VERISIGN',
-'SIRIUS',
-'CHARTER',
-'STONECO',
-'Dior',
-'Hermes',
-'Kering',
-'Airbus',
-'Unity ',
-'NUHOLDS',
-'OXYPETRO',
-'KROGER',
-'CHIPOTILE',
-'ANGHAMI',
-'HPACKEnt'];
-  connection.query(
-    `select * from panda_db.trading_trades where login=${req.params.id} and volume>0 and open_time>=${startDate} and open_time<=${endDate}`,
-    function (error, results, fields) {
-      if (error) throw error;
-      var volumeCount=0;
-      results.forEach(element => {
-        if(!(assetsForbeding.includes(element.symbol))){
-          volumeCount+=element.volume;
-        }
-        
-      })
-      var dataToSend={
-        coins:(volumeCount*5)
-      }
-      res.send(dataToSend);
-    }
-  );
-});
 var count=0;
 
 /*SiteMaps*/
@@ -841,31 +480,27 @@ function validateRequestOnRTIServer(eventType, req) {
 
 
 
-app.get('/test1', async (req, res) =>{
-  const validResult = await validateRequestOnRTIServer("page_load", req);
-  var page={fields:{seo:{meta_description:`test1`,
-  meta_keywords:`test1`,page_title:`test1`}}};
-	if (!validResult || validResult.isInvalid) {
-		res.status(403).send("Visitor is invalid, session blocked!");
-	} else {
-		// Cookie saved on client side for binding between client detection and server one
-		res.setHeader('Set-Cookie', validResult.setCookie);
-		res.render('test', {
-			tagHash: config.tagHash,
-			rtiServerResponse: JSON.stringify(validResult),
-      page:page
-		});
-	}
-})
 
 // Routes
-app.get('/', (req, res) => {
+app.get('/',  async(req, res) => {
   res.get('X-Frame-Options') // === 'Deny'
+
+
+  // const validResult = await validateRequestOnRTIServer("page_load", req);
+	// if (!validResult || validResult.isInvalid) {
+	// 	res.status(403).send("Visitor is invalid, session blocked!");
+	// } else {
+	// 	// Cookie saved on client side for binding between client detection and server one
+	// 	res.setHeader('Set-Cookie', validResult.setCookie);
+  // }
+
+
   butter.page.retrieve('*','homepage-en')
   .then(function(resp){
     var page1=resp.data.data;
-    res.render('index',{page:page1});
+    res.render('index',{page:page1,tagHash:config.tagHash});
   })
+
 })
 
 app.get('/ceo',(req,res)=>{
