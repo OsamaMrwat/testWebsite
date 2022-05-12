@@ -678,9 +678,7 @@ body > main > div.row.section4 > div > div:nth-child(3) > .col, body > main > di
   .textUnder{
     font-size: 9px;
   }
-  body > main > div:nth-child(3){
-    height:200px !important;
-  }
+
 
   #section1{
     height:180px !important;
