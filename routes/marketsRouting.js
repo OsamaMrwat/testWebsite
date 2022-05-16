@@ -2,21 +2,7 @@ const express = require("express");
 const router = express.Router();
 const fetch = require('node-fetch');
 const yahooFinance = require("yahoo-finance");
-
-router.get('/test',async(req,res)=>{
-    const url=`https://script.google.com/macros/s/AKfycbwpBePFAYnwnBxzG4zhtcrzYtauLDYSVPkaMQp7YAenSO8DaVNG_dItbaCOQZF9W0ti/exec`;
-    const options = {
-      "method": "GET",
-    }
-    const response = await fetch(url, options).then(res=>res.json()).then(data=>{
-        const cdata=data.data;
-        cdata.forEach((elem)=>{
-            console.log(elem.Symbol)
-        })
-    });
-    res.send("done");
-})
-
+const butter= require("buttercms")(process.env.BUTTER_KEY)
 
 
 router.get('/', (req, res)=>{
@@ -80,5 +66,6 @@ router.get('/stocks/us-stocks',async(req,res)=>{
     var page={fields:{seo:{meta_description:"test",meta_keyword:"test"},title:"test"}}
     res.render('Markets/usStocks',{page:page,stocks:stocks})
 })
+
 
 module.exports =router;

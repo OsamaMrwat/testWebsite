@@ -17,8 +17,6 @@ const cookieParser = require('cookie-parser');
 const request = require("request");
 
 
-
-
 const app=express();
 app.use(require('express-status-monitor')());
 //cheqZone Implementation for cheque zone
@@ -363,67 +361,9 @@ generator.on('done', () => {
 generator.start();
 
 
-app.get('/post-sitemap.xml', async(req, res)=>{
-  let all_links=[];
-  for (let page = 1; page < 10; page++) {
-    await axios
-      .get(
-        `https://cms.evest.com/wp-json/wp/v2/posts?page=${page}&per_page=100`
-      )
-      .then((res) => {
-        // push all links into our all_links variable
-        for (let ele in res.data) {
-          if(!res.data[ele].link.includes('commodities')){
-          all_links.push(res.data[ele].link.substring(22,));}
-        }
-      })
-      .catch((error) => {
-        return;
-      });
-  }
-  for (let page = 1; page < 10; page++) {
-    await axios
-      .get(
-        `https://cms.evest.com/ar/wp-json/wp/v2/posts?page=${page}&per_page=100`
-      )
-      .then((res) => {
-        // push all links into our all_links variable
-        for (let ele in res.data) {
-          all_links.push(res.data[ele].link.substring(22,));
-        }
-      })
-      .catch((error) => {
-        return;
-      });
-  }
-  let sitemap_entries = all_links.map((link) => {
-    // you got access to every property of those links here. Note the \n I've added to format it in the output - you don't need that in the real XML.
-    return `\n<url><loc>https://www.evest.com/${link}</loc></url>`
-  })
-
-  // the actual sitemap with all it's entries.
-  let sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/1.1" 
-xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entries.join('')}
-</urlset>`
-
-// writeFile function with filename, content and callback function
-fs.writeFile('./public/post-sitemap.xml', sitemap, function (err) {
-  var count=0;
-  if (err) throw err;
-  console.log('File is created successfully.'+" "+count++);
-  res.sendFile(__dirname+'/public/post-sitemap.xml');
-});
-
-  // getPagesSiteMaps();
-  // res.sendFile(__dirname+'/public/post_sitemap.xml');
-})
-
-
 
 /*StockWidget API*/
 const myapi=require('./pricesAPI');
-const { start } = require('repl');
 app.get('/stocks',(req,res)=>{
 res.send(myapi.getStocks);
 })
