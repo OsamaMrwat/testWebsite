@@ -10,6 +10,7 @@ var butter = require('buttercms')(process.env.BUTTER_KEY);
 const fetch = require('node-fetch');
 const cors=require('cors');
 const { ToadScheduler, SimpleIntervalJob, Task } = require('toad-scheduler')
+const helmet = require('helmet');
 
 //Cheque Zone Implementation
 const config = require('./config');
@@ -35,6 +36,10 @@ const arabicRouting=require('./routes/arabicRouting');
 const spainshRouting=require('./routes/spainshRouting');
 const marketsRouting=require('./routes/marketsRouting');
 const productsRouting=require('./routes/productsRouting');
+
+
+//helemet for security
+app.use(helmet.frameguard({ action: 'sameorigin' }));
 
 
 // Body Parser Middleware
@@ -434,9 +439,8 @@ app.get('/',  async(req, res) => {
 	// 	res.setHeader('Set-Cookie', validResult.setCookie);
   // }
 
-
   butter.page.retrieve('*','homepage-en')
-  .then(function(resp){
+  .then((resp)=>{
     var page1=resp.data.data;
     res.render('index',{page:page1,tagHash:config.tagHash});
   })
