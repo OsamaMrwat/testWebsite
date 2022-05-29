@@ -24,10 +24,10 @@ Allow: /market-news/
 Disallow: /wp-content/plugins/
 Disallow: /wp-admin/
 Disallow: /wp-admin/admin-ajax.php
-Allow: /ar/tag/
-Allow: /ar/tag/*
-Allow: /tag/
-Allow: /tag/*
+Disallow: /ar/tag/
+Disallow: /ar/tag/*
+Disallow: /tag/
+Disallow: /tag/*
 Disallow: /uncategorized/
 Disallow: /uncategorized/*
 Disallow: /testimonials-category/
@@ -54,4 +54,3 @@ Disallow: https://mena.evest.com/*
 Sitemap: https://www.evest.com/post-sitemap.xml
 Sitemap: https://www.evest.com/page-sitemap.xml
 Sitemap: https://www.evest.com/category-sitemap.xml
-Sitemap: https://www.evest.com/commodities-sitemap.xml
