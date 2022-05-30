@@ -390,7 +390,7 @@ router.get("/" + encodeURIComponent("أخبار-التداول"), async(req, res
 <div class="card-body">
 <a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
-<a class="btn btn-filled readmore" href="${post.link}">اقرا المزيد</a>
+<a class="btn btn-filled readmore" href="أخبار-التداول/${post.slug}?lang=ar">اقرا المزيد</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -486,7 +486,7 @@ router.get("/" + encodeURIComponent("اخبار-النفط"), async (req, res) =
 <div class="card-body">
 <a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
-<a class="btn btn-filled readmore" href="${post.link}">اقرا المزيد</a>
+<a class="btn btn-filled readmore" href="اخبار-النفط/${post.slug}?lang=ar">اقرا المزيد</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -583,7 +583,7 @@ const response = await fetch(url, options)
 <div class="card-body">
 <a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
-<a class="btn btn-filled readmore" href="${post.link}">اقرا المزيد</a>
+<a class="btn btn-filled readmore" href="اخبار-الذهب/${post.slug}?lang=ar">اقرا المزيد</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -685,7 +685,7 @@ router.get("/" + encodeURIComponent("اخبار-السوق"),  async(req, res) =
   <div class="card-body">
   <a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
   <div class="card-text description">${post.yoast_head_json.og_description}</div>
-  <a class="btn btn-filled readmore" href="${post.link}">اقرا المزيد</a>
+  <a class="btn btn-filled readmore" href="اخبار-السوق/${post.slug}?lang=ar">اقرا المزيد</a>
   </div></div>
   <div class="card-footer dateCreated">
   ${date}
@@ -781,7 +781,7 @@ router.get("/" + encodeURIComponent("مدونة-التداول"),  async (req, r
   <div class="card-body">
   <a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
   <div class="card-text description">${post.yoast_head_json.og_description}</div>
-  <a class="btn btn-filled readmore" href="${post.link}">اقرا المزيد</a>
+  <a class="btn btn-filled readmore" href="مدونة-التداول/${post.slug}?lang=ar">اقرا المزيد</a>
   </div></div>
   <div class="card-footer dateCreated">
   ${date}
