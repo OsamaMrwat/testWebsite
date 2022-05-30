@@ -386,9 +386,9 @@ router.get("/" + encodeURIComponent("أخبار-التداول"), async(req, res
         let date=post.date.split('T')[0];
         return `<div class="card">
           <div> 
-                 <a href="${post.link}"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
+                 <a href="أخبار-التداول/${post.slug}?lang=ar"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
 <div class="card-body">
-<a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
+<a href="أخبار-التداول/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
 <a class="btn btn-filled readmore" href="أخبار-التداول/${post.slug}?lang=ar">اقرا المزيد</a>
 </div></div>
@@ -482,9 +482,9 @@ router.get("/" + encodeURIComponent("اخبار-النفط"), async (req, res) =
       let date=post.date.split('T')[0];
       return `<div class="card">
         <div> 
-               <a href="${post.link}"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
+               <a href="اخبار-النفط/${post.slug}?lang=ar"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
 <div class="card-body">
-<a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
+<a href="اخبار-النفط/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
 <a class="btn btn-filled readmore" href="اخبار-النفط/${post.slug}?lang=ar">اقرا المزيد</a>
 </div></div>
@@ -579,9 +579,9 @@ const response = await fetch(url, options)
       let date=post.date.split('T')[0];
       return `<div class="card">
         <div> 
-               <a href="${post.link}"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
+               <a href="اخبار-الذهب/${post.slug}?lang=ar"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
 <div class="card-body">
-<a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
+<a href="اخبار-الذهب/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
 <a class="btn btn-filled readmore" href="اخبار-الذهب/${post.slug}?lang=ar">اقرا المزيد</a>
 </div></div>
@@ -681,9 +681,9 @@ router.get("/" + encodeURIComponent("اخبار-السوق"),  async(req, res) =
         let date=post.date.split('T')[0];
         return `<div class="card">
           <div> 
-                 <a href="${post.link}"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
+                 <a href="اخبار-السوق/${post.slug}?lang=ar"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
   <div class="card-body">
-  <a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
+  <a href="اخبار-السوق/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
   <div class="card-text description">${post.yoast_head_json.og_description}</div>
   <a class="btn btn-filled readmore" href="اخبار-السوق/${post.slug}?lang=ar">اقرا المزيد</a>
   </div></div>
@@ -777,9 +777,9 @@ router.get("/" + encodeURIComponent("مدونة-التداول"),  async (req, r
         let date=post.date.split('T')[0];
         return `<div class="card">
           <div> 
-                 <a href="${post.link}"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
+                 <a href="مدونة-التداول/${post.slug}?lang=ar"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
   <div class="card-body">
-  <a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
+  <a href="مدونة-التداول/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
   <div class="card-text description">${post.yoast_head_json.og_description}</div>
   <a class="btn btn-filled readmore" href="مدونة-التداول/${post.slug}?lang=ar">اقرا المزيد</a>
   </div></div>
