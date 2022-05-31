@@ -486,7 +486,7 @@ router.get("/" + encodeURIComponent("اخبار-النفط"), async (req, res) =
 <div class="card-body">
 <a href="اخبار-النفط/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
-<a class="btn btn-filled readmore" href="اخبار-النفط/${post.slug}?lang=ar">اقرا المزيد</a>
+<a class="btn btn-filled readmore" href=${post.link} >اقرا المزيد</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -495,7 +495,7 @@ ${date}
     }).join("");
     res.render("ar/Education/oil", { page: page , articles: article});
   });
-
+  // href="اخبار-النفط/${post.slug}?lang=ar"
   
 });
 router.get(
