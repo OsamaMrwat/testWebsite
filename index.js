@@ -72,65 +72,73 @@ var count=0;
 const axios=require('axios')
 async function getPostSiteMaps(){
   let all_links=[];
-  for (let page = 1; page < 10; page++) {
-    await axios
-      .get(
-        `https://cms.evest.com/wp-json/wp/v2/posts?page=${page}&per_page=100`
-      )
-      .then((res) => {
-        // push all links into our all_links variable
-        for (let ele in res.data) {
-          if(!res.data[ele].link.includes('commodities')){
-          all_links.push(res.data[ele].link.substring(22,));}
-        }
-      })
-      .catch((error) => {
-        return;
-      });
-  }
-  for (let page = 1; page < 10; page++) {
-    await axios
-      .get(
-        `https://cms.evest.com/ar/wp-json/wp/v2/posts?page=${page}&per_page=100`
-      )
-      .then((res) => {
-        // push all links into our all_links variable
-        for (let ele in res.data) {
-          all_links.push(res.data[ele].link.substring(22,));
-        }
-      })
-      .catch((error) => {
-        return;
-      });
-  }
-  let sitemap_entries = all_links.map((link) => {
-    // you got access to every property of those links here. Note the \n I've added to format it in the output - you don't need that in the real XML.
-    return `\n<url><loc>https://www.evest.com/${link}</loc></url>`
+  let categories=['trading-news' ,'oil-news','gold-news','market-news','blog-ar','trading-news-ar' ,'oil-news-ar','gold-news-ar','market-news-ar']
+
+  var status=new Promise((resolve, reject)=>{
+    categories.forEach(async(elem)=>{
+    for (let page = 1; page < 10; page++) {
+      await axios
+        .get(
+          `https://cms.evest.com/wp-json/wp/v2/${elem}?page=${page}&per_page=100`
+        )
+        .then((res) => {
+          // push all links into our all_links variable
+          for (let ele in res.data) {
+            if(!res.data[ele].link.includes('commodities')){
+            all_links.push(res.data[ele].link.substring(22,));}
+          }
+        })
+        .catch((error) => {
+          return;
+        });
+    }
+    for (let page = 1; page < 10; page++) {
+      await axios
+        .get(
+          `https://cms.evest.com/ar/wp-json/wp/v2/${elem}?page=${page}&per_page=100`
+        )
+        .then((res) => {
+          // push all links into our all_links variable
+          for (let ele in res.data) {
+            all_links.push(res.data[ele].link.substring(22,));
+          }
+        })
+        .catch((error) => {
+          return;
+        });
+    }
   })
-  // the actual sitemap with all it's entries.
-  let sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/1.1" 
-xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entries.join('')}
-</urlset>`
-
-// writeFile function with filename, content and callback function
-fs.writeFile('./public/post-sitemap.xml', sitemap, function (err) {
-  var n =  new Date();
-  var y = n.getFullYear();
-  var m = n.getMonth() + 1;
-  var d = n.getDate();
-  var h = n.getHours();
-  var min = n.getMinutes();
-  var s = n.getSeconds();
-  var date = y + "-" + m + "-" + d + " " + h + ":" + min + ":" + s;
-
-  if (err) throw err;
-  //console.log(`${date} - Post Sitemap -File is created successfully`+" "+count++);
-  fs.appendFile('./public/logForPost.txt',`${date} - Post Sitemap -File is created successfully`,function (err)  {
+  })
+  status.then(()=>{
+    let  sitemap_entries = all_links.map((link) => {
+      // you got access to every property of those links here. Note the \n I've added to format it in the output - you don't need that in the real XML.
+      return `\n<url><loc>https://www.evest.com/${link}</loc></url>`
+    })
+    // the actual sitemap with all it's entries.
+    let sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+  xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/1.1" 
+  xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entries.join('')}
+  </urlset>`
+  
+  // writeFile function with filename, content and callback function
+  fs.writeFile('./public/post-sitemap.xml', sitemap, function (err) {
+    var n =  new Date();
+    var y = n.getFullYear();
+    var m = n.getMonth() + 1;
+    var d = n.getDate();
+    var h = n.getHours();
+    var min = n.getMinutes();
+    var s = n.getSeconds();
+    var date = y + "-" + m + "-" + d + " " + h + ":" + min + ":" + s;
     if (err) throw err;
-    console.log(`${date} - Log File is created successfully`);
+    //console.log(`${date} - Post Sitemap -File is created successfully`+" "+count++);
+    fs.appendFile('./public/logForPost.txt',`${date} - Post Sitemap -File is created successfully`,function (err)  {
+      if (err) throw err;
+      console.log(`${date} - Log File is created successfully`);
+    })
+  });
+  
   })
-});
 
 
 
