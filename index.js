@@ -6,12 +6,11 @@ const nodemailer = require("nodemailer");
 const upload=require('express-fileupload');
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-var butter = require('buttercms')(process.env.BUTTER_KEY);
+var butter = require('buttercms')("eabb7d00a1cecacc7a57f771cc86fb0126ad94d8");
 const fetch = require('node-fetch');
 const cors=require('cors');
 const { ToadScheduler, SimpleIntervalJob, Task } = require('toad-scheduler')
 const helmet = require('helmet');
-
 //Cheque Zone Implementation
 const config = require('./config');
 const cookieParser = require('cookie-parser');
@@ -551,11 +550,14 @@ ${date}
 </div>
 </div>`
     }).join('');
-    res.render('Education/tradingNews',{page:page ,articles:article});
-  });
-
+    res.render('Education/oil',{page:page ,articles:article});
+  }
+  
+  );
 
 });
+
+
 app.get('/oil-news/:slug',async (req,res)=>{
   const url=`https://cms.evest.com/wp-json/wp/v2/oil-news?_embed&slug=${req.params.slug}`;
   const options = {
@@ -608,7 +610,7 @@ ${date}
 </div>
 </div>`
     }).join('');
-    res.render('Education/tradingNews',{page:page ,articles:article});
+    res.render('Education/gold',{page:page ,articles:article});
   });
 
 
@@ -665,7 +667,7 @@ ${date}
 </div>
 </div>`
     }).join('');
-    res.render('Education/tradingNews',{page:page ,articles:article});
+    res.render('Education/market',{page:page ,articles:article});
   });
 
 

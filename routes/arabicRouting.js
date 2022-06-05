@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-const butter = require("buttercms")(process.env.BUTTER_KEY);
+const butter = require("buttercms")("eabb7d00a1cecacc7a57f771cc86fb0126ad94d8");
 const fetch = require("node-fetch");
 
 router.get("/", (req, res) => {
@@ -365,8 +365,13 @@ router.get("/" + encodeURIComponent("منتجات-التداول"), (req, res) =
 
 /** News and Articles**/
 
-router.get("/" + encodeURIComponent("أخبار-التداول"), async(req, res) => {
-  const url='https://cms.evest.com/ar/wp-json/wp/v2/trading-news-ar?_embed&per_page=6&page=1'
+router.post("/" + encodeURIComponent("أخبار-التداول"), async (req, res) => {
+  let url;
+  console.log(`body is : ${req.body}`)
+
+  url = `https://cms.evest.com/ar/wp-json/wp/v2/trading-news-ar?_embed&per_page=6&page=1`
+  console.log(`server recive the number ${req.params}`)
+  console.log('------------------------------------------------------------------')
   const options = {
     method: "GET",
   };
@@ -383,7 +388,48 @@ router.get("/" + encodeURIComponent("أخبار-التداول"), async(req, res
         },
       };
       const article = data.map(post => {
-        console.log(decodeURIComponent(post.slug))
+        // console.log(decodeURIComponent(post.slug))
+        let date = post.date.split('T')[0];
+        return `<div class="card">
+          <div> 
+                 <a href="أخبار-التداول/${post.slug}?lang=ar"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
+<div class="card-body">
+<a href="أخبار-التداول/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
+<div class="card-text description">${post.yoast_head_json.og_description}</div>
+<a class="btn btn-filled readmore" href="أخبار-التداول/${post.slug}?lang=ar">اقرا المزيد</a>
+</div></div>
+<div class="card-footer dateCreated">
+${date}
+</div>
+</div>`
+      }).join("");
+      res.render("ar/Education/tradingNews", { page: page, articles: article });
+    })
+});
+
+router.get("/" + encodeURIComponent("أخبار-التداول"), async(req, res) => {
+  let url;
+
+         url = `https://cms.evest.com/ar/wp-json/wp/v2/trading-news-ar?_embed&per_page=6&page=1`
+  // console.log(`server recive the number ${req.params}`)
+  // console.log('------------------------------------------------------------------')
+  const options = {
+    method: "GET",
+  };
+  const response = await fetch(url, options)
+    .then((res) => res.json())
+    .then((data) => {
+      var page = {
+        fields: {
+          seo: {
+            meta_description: `أخبار التداول : هل أنت مهتم بأخبار التداول في الأسواق الخليجية والعالمية ؟ تبحث عن مواضيع الأكثر ثقة عبر الانترنت, والمواضيع التي تهمك؟ تابع EVEST`,
+            meta_keyword: `أخبار التداول`,
+            page_title: `أخبار التداول ايفست | الأسواق المالية | استثمر في الأسهم العالمية 100% بدون عمولة Evest`,
+          },
+        },
+      };
+      const article = data.map(post => {
+        // console.log(decodeURIComponent(post.slug))
         let date=post.date.split('T')[0];
         return `<div class="card">
           <div> 
@@ -401,6 +447,9 @@ ${date}
       res.render("ar/Education/tradingNews", { page: page , articles: article});
     })
 });
+
+
+
 router.get(
   "/" + encodeURIComponent("أخبار-التداول") + "/:slug",
   async (req, res) => {
@@ -409,27 +458,30 @@ router.get(
     const options = {
       method: "GET",
     };
-    const response = await fetch(url, options).then(res=>res.json()).then(data=>{  
-      var article=data;
-      const tags=article[0].tags.map(tag=>{
-        const tag_name=getTag.arabicTags.find(elem=>elem.tag_id === tag).Name;
-      return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
-    }).join(' ');
-    
-  
-      var page={fields:{seo:{meta_description:`${article[0].yoast_head_json.og_description}`,meta_keyword:``,page_title:`${article[0].yoast_head_json.og_title}`}}};
-      res.render('ar/Education/article',{page:page,content:article[0].content.rendered,
-        titleArticle:article[0].title.rendered,
-        imgUrl:article[0].yoast_head_json.og_image[0].url,
-        date:article[0].date,
-        url:article[0].link,
-        tags:tags,
-       og_img:`${article[0].yoast_head_json.og_image[0].url}`
+    const response = await fetch(url, options).then(res => res.json()).then(data => {
+      var article = data;
+      const tags = article[0].tags.map(tag => {
+        const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
+        return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
+      }).join(' ');
+
+
+      var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
+      res.render('ar/Education/article', {
+        page: page, content: article[0].content.rendered,
+        titleArticle: article[0].title.rendered,
+        imgUrl: article[0].yoast_head_json.og_image[0].url,
+        date: article[0].date,
+        url: article[0].link,
+        tags: tags,
+        og_img: `${article[0].yoast_head_json.og_image[0].url}`
       });
-      })
+    })
       .catch((err) => console.log(err));
   }
 );
+
+
 router.get(
   "/:slug" + "/" + encodeURIComponent("أخبار-التداول"),
   async (req, res) => {
