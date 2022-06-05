@@ -52,18 +52,21 @@ function hideLoading() {
 
 function getAll(number){
   displayLoading();
-        fetch(`https://cms.evest.com/wp-json/wp/v2/posts?_embed&categories=46&per_page=6&page=${number}`).then(res => {
-                return res.json()
-            }).then(data => {
-              hideLoading();
-                const article = data.map(post => {
-                  let date=post.date.split('T')[0];
-                  return `<div class="card">
+console.log('example')
+  fetch(`https://cms.evest.com/wp-json/wp/v2/market-news?_embed&per_page=6&page=${number}`)
+  .then(res =>  res.json())
+  .then(data => {
+
+    hideLoading();
+
+    const article = data.map(post => {
+      let date = post.date.split('T')[0];
+      return `<div class="card">
           <div> 
-                 <a href="${post.link}"><img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap"></a>
+                 <a href="${post.link}"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
 <div class="card-body">
 <a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
-<div class="card-text description">${post.excerpt.rendered}</div>
+<div class="card-text description">${post.yoast_head_json.og_description}</div>
 <a class="btn btn-filled readmore" href="${post.link}">Read more</a>
 </div></div>
 <div class="card-footer dateCreated">
@@ -71,9 +74,34 @@ ${date}
 </div>
 </div>`
     }).join('');
-                document.querySelector("#reslut").innerHTML = article;
-                document.documentElement.scrollTop=0;
-      })
+
+    document.querySelector("#reslut").innerHTML = article;
+    document.documentElement.scrollTop=0;
+
+
+  })
+//         fetch(`https://cms.evest.com/wp-json/wp/v2/posts?_embed&categories=46&per_page=6&page=${number}`).then(res => {
+//                 return res.json()
+//             }).then(data => {
+//               hideLoading();
+//                 const article = data.map(post => {
+//                   let date=post.date.split('T')[0];
+//                   return `<div class="card">
+//           <div> 
+//                  <a href="${post.link}"><img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap"></a>
+// <div class="card-body">
+// <a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
+// <div class="card-text description">${post.excerpt.rendered}</div>
+// <a class="btn btn-filled readmore" href="${post.link}">Read more</a>
+// </div></div>
+// <div class="card-footer dateCreated">
+// ${date}
+// </div>
+// </div>`
+//     }).join('');
+//                 document.querySelector("#reslut").innerHTML = article;
+//                 document.documentElement.scrollTop=0;
+//       })
     };
   </script>
 
