@@ -51,6 +51,8 @@ Disallow: https://ksa.evest.com/*
 Disallow: https://mena.evest.com/
 Disallow: https://mena.evest.com/*
 
-Sitemap: https://www.evest.com/post-sitemap.xml
-Sitemap: https://www.evest.com/page-sitemap.xml
-Sitemap: https://www.evest.com/category-sitemap.xml
+Sitemap: https://www.evest.com/sitemap_ar.xml
+Sitemap: https://www.evest.com/sitemap_en.xml
+Sitemap: https://www.evest.com/blog_ar.xml
+Sitemap: https://www.evest.com/news_ar.xml
+Sitemap: https://www.evest.com/news_en.xml
