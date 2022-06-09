@@ -1,203 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="X-Frame-Options" content="deny">
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content= " <%= (typeof page.fields.seo.meta_description != "undefined" ? page.fields.seo.meta_description : "") %>" />
-    <meta name="keywords" content= "<%= (typeof page.fields.seo.meta_keyword != "undefined" ? page.fields.seo.meta_keyword : "") %>" />
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-N6G9PB9');</script>
+
+<head>
+  <meta http-equiv="X-Frame-Options" content="deny">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content=" <%= (typeof page.fields.seo.meta_description != " undefined" ?
+    page.fields.seo.meta_description : "" ) %>" />
+  <meta name="keywords" content="<%= (typeof page.fields.seo.meta_keyword != " undefined" ? page.fields.seo.meta_keyword
+    : "" ) %>" />
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-N6G9PB9');</script>
   <!-- End Google Tag Manager -->
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- jQuery library -->
-    <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js" defer></script>
-    <!-- Popper JS -->
-    <script  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" defer></script>
-    <!-- Latest compiled JavaScript -->
-    <script   src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script> 
-    <!--Font Awesome ICONS-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!--Evest Styling CSS-->
-    <link rel="icon" type="image/png" href="/images/webp/icon2.webp"/>
-    <link rel="stylesheet" href="/css/style.min.css"/>
-    <link rel="stylesheet" href="/css/styleRes.min.css" >
-    <link rel="preload"  href="/fonts/Gotham/Gotham-Medium.otf" as="font" crossOrigin="anonymous" >
-    <link rel="preload"  href="/fonts/GE SS Two/GE SS Text Medium.otf" as="font" crossOrigin="anonymous" >
-    <link rel="shortcut icon" href="#" />
-    <title><%= page.fields.seo.page_title %></title>
-    <meta name="yandex-verification" content="fad78a1e5d2689d6" />
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js" defer></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" defer></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
+  <!--Font Awesome ICONS-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!--Evest Styling CSS-->
+  <link rel="icon" type="image/png" href="/images/webp/icon2.webp" />
+  <link rel="stylesheet" href="/css/style.min.css" />
+  <link rel="stylesheet" href="/css/styleRes.min.css">
+  <link rel="preload" href="/fonts/Gotham/Gotham-Medium.otf" as="font" crossOrigin="anonymous">
+  <link rel="preload" href="/fonts/GE SS Two/GE SS Text Medium.otf" as="font" crossOrigin="anonymous">
+  <link rel="shortcut icon" href="#" />
+  <title>
+    <%= page.fields.seo.page_title %>
+  </title>
+  <meta name="yandex-verification" content="fad78a1e5d2689d6" />
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 
-    <link rel="manifest" href="/manifest.json">
-  </head>
-  <body>
-    
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6G9PB9"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
- 
-    <!-- panda Forex plugin initialisation -->
-<div id="pts-forx-init-wraper">
+  <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6G9PB9" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- panda Forex plugin initialisation -->
+  <div id="pts-forx-init-wraper">
     <panda-forex-init></panda-forex-init>
     <panda-forex-personal-profile></panda-forex-personal-profile>
     <panda-forex-client-area></panda-forex-client-area>
     <panda-forex-deposit-credit show-button="false">
     </panda-forex-deposit-credit>
 
-</div>
-<div class="row" style="height:5px;background:var(--primary-color3);">
-</div>
-    <!--Nav Bar-->
-<nav id="englishNavBar" class="navbar navbar-expand-xl navbar-light bg-light sticky-top" style="display:none;height: 80px;background: white !important;" >
-      <a  href="/"><img alt="logo" src="/images/logo.webp" id="engLogo"/></a>
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon iconToggle"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="/trade-room">Trade <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Evest
-            </a>
+  </div>
+  <div class="row" style="height:5px;background:var(--primary-color3);">
+  </div>
+  <!--Nav Bar-->
+  <nav id="englishNavBar" class="navbar navbar-expand-xl navbar-light bg-light sticky-top"
+    style="display:none;height: 80px;background: white !important;">
+    <a href="/"><img alt="logo" src="/images/logo.webp" id="engLogo" /></a>
 
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/evest">Evest</a></li>
-              <li><a class="dropdown-item" href="/evest/why-evest">Why Evest?</a></li>
-              <li><a class="dropdown-item" href="/evest/regulatory-authorisation">Regulatory Authorisation</a></li>
-              <li><a class="dropdown-item" href="/evest/evest-ambassador">Evest Ambassador</a></li>
-              <li><a class="dropdown-item" href="/ceo">Meet the CEO</a></li>
-              <li><a class="dropdown-item" href="/evest/contact-us">Contact us</a></li>
-              <li><a class="dropdown-item" href="/evest/careers">Careers</a></li>
-              <li><a class="dropdown-item" href="/evest/help-desk">Help Desk</a></li>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon iconToggle"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/trade-room">Trade <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Evest
+          </a>
 
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Start Trading
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/start-trading/trading-account-types">Trading Account Types</a>
-              <a class="dropdown-item" href="/start-trading/trading-demo-account">Trading Demo Account</a>
-              <a class="dropdown-item" href="/start-trading/0-commission-on-stocks">0 Commission Stocks Trading</a>
-              <a class="dropdown-item" href="/start-trading/eib">Evest Investment Basket</a>
-              <a class="dropdown-item" href="/start-trading/islamic-trading-account">Islamic Trading Account</a>
-              <a class="dropdown-item" href="/start-trading/documents-policies">Documents & Policies</a>
-              <a class="dropdown-item" href="/start-trading/deposit-withdrawal">Deposit & Withdrawals</a>
-              <a class="dropdown-item" href="/start-trading/trading-fees">Trading Fees</a>
-              <a class="dropdown-item" href="/start-trading/trading-hours">Trading Hours</a>
-              <a class="dropdown-item" href="/start-trading/trading-calculator">Trading Calculator</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Trading Platforms
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/mobile-trading">Mobile Trading</a>
-              <a class="dropdown-item" href="/web-trading">Web Trading</a>
-              <a class="dropdown-item" href="/metatrader-5">Metatrader 5</a>
-              <a class="dropdown-item" href="/trading-app">Trading APP</a>
-            </div>
-          </li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/evest">Evest</a></li>
+            <li><a class="dropdown-item" href="/evest/why-evest">Why Evest?</a></li>
+            <li><a class="dropdown-item" href="/evest/regulatory-authorisation">Regulatory Authorisation</a></li>
+            <li><a class="dropdown-item" href="/evest/evest-ambassador">Evest Ambassador</a></li>
+            <li><a class="dropdown-item" href="/ceo">Meet the CEO</a></li>
+            <li><a class="dropdown-item" href="/evest/contact-us">Contact us</a></li>
+            <li><a class="dropdown-item" href="/evest/careers">Careers</a></li>
+            <li><a class="dropdown-item" href="/evest/help-desk">Help Desk</a></li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Trading Products
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/trading-products">Trading Products</a></li>
-              <li><a class="dropdown-item" href="/trade-room/?asset=EURUSD&utm_source=evest_en&utm_medium=menu_link&utm_campaign=Currencies/">Trade EUR/USD</a></li> 
-              <li> <a class="dropdown-item" href="/trade-room/?asset=BTCUSD&utm_source=evest_en&utm_medium=menu_link&utm_campaign=Cyrpto#/">Trade Bitcoin</a></li>
-              <li><a class="dropdown-item" href="/trade-room/?asset=GOLD&utm_source=evest_en&utm_medium=menu_link&utm_campaign=Commodities/">Invest In Gold</a></li> 
-              <li><a class="dropdown-item" href="/trade-room/?asset=USOIL&utm_source=evest_en&utm_medium=menu_link&utm_campaign=Commodities/">Invest In Oil</a></li> 
-              <li><a class="dropdown-item" href="/trade-room/?asset=APPLE&utm_source=evest_en&utm_medium=menu_link&utm_campaign=stocks/">Trade APPLE Stock</a></li> 
-              <li><a class="dropdown-item" href="/trade-room/?asset=TESLA&utm_source=evest_en&utm_medium=menu_link&utm_campaign=stocks/">Trade TESLA Stock</a></li> 
-
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Education
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/trading-academy" id="EngTA">Trading Academy</a></li>
-              <li class="sub">
-                <a class="dropdown-item" href="/trading-news">Trading News</a>
-                <ul class="dropdown-menu submenu-content" style="display: none">
-                  <li><a class="dropdown-item" href="/oil-news">Oil News</a></li>
-                  <li><a class="dropdown-item" href="/gold-news">Gold News</a></li>
-                  <li><a class="dropdown-item" href="/market-news">Market News</a></li>
-                </ul>
-              </li>
-              <li><a class="dropdown-item" href="/faq">F.A.Q</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-           <a href="/start-trading/cryptocurrency"> <p class="btn btn-filled btnCrypto animate__animated animate__tada animate__infinite animate__slow" href="">Crypto</p></a>
-          </li>
-        </ul>
-        
-        <div class="form-inline my-2 my-lg-0">
-          <div class="container" id="englishTools" style="display:flex;">
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Start Trading
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/start-trading/trading-account-types">Trading Account Types</a>
+            <a class="dropdown-item" href="/start-trading/trading-demo-account">Trading Demo Account</a>
+            <a class="dropdown-item" href="/start-trading/0-commission-on-stocks">0 Commission Stocks Trading</a>
+            <a class="dropdown-item" href="/start-trading/eib">Evest Investment Basket</a>
+            <a class="dropdown-item" href="/start-trading/islamic-trading-account">Islamic Trading Account</a>
+            <a class="dropdown-item" href="/start-trading/documents-policies">Documents & Policies</a>
+            <a class="dropdown-item" href="/start-trading/deposit-withdrawal">Deposit & Withdrawals</a>
+            <a class="dropdown-item" href="/start-trading/trading-fees">Trading Fees</a>
+            <a class="dropdown-item" href="/start-trading/trading-hours">Trading Hours</a>
+            <a class="dropdown-item" href="/start-trading/trading-calculator">Trading Calculator</a>
           </div>
-         <a class="btn btn-default navbar-btn btn-filled mobile-img" href="/mobile/#/login">Login</a>
-         <a class="btn btn-default navbar-btn btn-filled mobile-img" href="/mobile/#/signup">Sign Up</a>
-         
-          <panda-forex-menu>
-          </panda-forex-menu>
-          <div class="selected-lang lang-menu" style="    display: flex;
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Trading Platforms
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/mobile-trading">Mobile Trading</a>
+            <a class="dropdown-item" href="/web-trading">Web Trading</a>
+            <a class="dropdown-item" href="/metatrader-5">Metatrader 5</a>
+            <a class="dropdown-item" href="/trading-app">Trading APP</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Trading Products
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/trading-products">Trading Products</a></li>
+            <li><a class="dropdown-item"
+                href="/trade-room/?asset=EURUSD&utm_source=evest_en&utm_medium=menu_link&utm_campaign=Currencies/">Trade
+                EUR/USD</a></li>
+            <li> <a class="dropdown-item"
+                href="/trade-room/?asset=BTCUSD&utm_source=evest_en&utm_medium=menu_link&utm_campaign=Cyrpto#/">Trade
+                Bitcoin</a></li>
+            <li><a class="dropdown-item"
+                href="/trade-room/?asset=GOLD&utm_source=evest_en&utm_medium=menu_link&utm_campaign=Commodities/">Invest
+                In Gold</a></li>
+            <li><a class="dropdown-item"
+                href="/trade-room/?asset=USOIL&utm_source=evest_en&utm_medium=menu_link&utm_campaign=Commodities/">Invest
+                In Oil</a></li>
+            <li><a class="dropdown-item"
+                href="/trade-room/?asset=APPLE&utm_source=evest_en&utm_medium=menu_link&utm_campaign=stocks/">Trade
+                APPLE Stock</a></li>
+            <li><a class="dropdown-item"
+                href="/trade-room/?asset=TESLA&utm_source=evest_en&utm_medium=menu_link&utm_campaign=stocks/">Trade
+                TESLA Stock</a></li>
+
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Education
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/trading-academy" id="EngTA">Trading Academy</a></li>
+            <li class="sub">
+              <a class="dropdown-item" href="/trading-news">Trading News</a>
+              <ul class="dropdown-menu submenu-content" style="display: none">
+                <li><a class="dropdown-item" href="/oil-news">Oil News</a></li>
+                <li><a class="dropdown-item" href="/gold-news">Gold News</a></li>
+                <li><a class="dropdown-item" href="/market-news">Market News</a></li>
+              </ul>
+            </li>
+            <li><a class="dropdown-item" href="/faq">F.A.Q</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="/start-trading/cryptocurrency">
+            <p class="btn btn-filled btnCrypto animate__animated animate__tada animate__infinite animate__slow" href="">
+              Crypto</p>
+          </a>
+        </li>
+      </ul>
+
+      <div class="form-inline my-2 my-lg-0">
+        <div class="container" id="englishTools" style="display:flex;">
+        </div>
+        <a class="btn btn-default navbar-btn btn-filled mobile-img" href="/mobile/#/login">Login</a>
+        <a class="btn btn-default navbar-btn btn-filled mobile-img" href="/mobile/#/signup">Sign Up</a>
+
+        <panda-forex-menu>
+        </panda-forex-menu>
+        <div class="selected-lang lang-menu" style="    display: flex;
           /* flex-direction: row; */
           align-items: baseline;">
-            <i class="fas fa-globe-americas"></i>
-            <div class="dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                English
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                <a class="dropdown-item englang" style="font-family: 'Evest Med';">English</a>
-                <a class="dropdown-item arlang" style="font-family: 'Arabic Evest';">العربية</a>
-                <a class="dropdown-item eslang" style="font-family: 'Evest Med';">Spanish</a>
-              </div>
+          <i class="fas fa-globe-americas"></i>
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              English
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+              <a class="dropdown-item englang" style="font-family: 'Evest Med';">English</a>
+              <a class="dropdown-item arlang" style="font-family: 'Arabic Evest';">العربية</a>
+              <a class="dropdown-item eslang" style="font-family: 'Evest Med';">Spanish</a>
             </div>
           </div>
         </div>
-
       </div>
 
-</nav>
-  <nav id="arabicNavBar" class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="display:none;height: 80px;background: white !important;">
-    <a href="/ar?lang=ar"><img alt="logo" data-src="/images/arabic logo-01.png" style="width: 145px;height: 65px;"/></a>
-    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    </div>
+
+  </nav>
+  <nav id="arabicNavBar" class="navbar navbar-expand-lg navbar-light bg-light sticky-top"
+    style="display:none;height: 80px;background: white !important;">
+    <a href="/ar?lang=ar"><img alt="logo" data-src="/images/arabic logo-01.png"
+        style="width: 145px;height: 65px;" /></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon iconToggle"></span>
     </button>
-  
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav" style="margin-right: -2%;">
         <li class="nav-item active">
           <a class="nav-link" href="/trade-room?lang=ar">تداول <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             إيڤست
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            إيڤست
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="/ar/إيڤست?lang=ar"> إيڤست</a></li>
@@ -211,25 +249,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             ابدأ التداول
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="/ar/ابدا-التداول/انواع-الحسابات?lang=ar">أنواع حسابات التداول</a></li>
-          <li><a class="dropdown-item" href="/ar/ابدا-التداول/حساب-تداول-تجريبي?lang=ar">حساب تداول تجريبي</a></li>
-          <li><a class="dropdown-item" href="/ar/ابدا-التداول/تداول-الاسهم-0-عمولة?lang=ar">تداول الاسهم ب 0% عمولة</a></li>
-          <li><a class="dropdown-item" href="/ar/ابدا-التداول/سَلاَّت-تداول-استثمارية?lang=ar">سَلاَّت إيفست الاستثمارية</a></li>
-          <li><a class="dropdown-item" href="/ar/ابدا-التداول/حساب-تداول-إسلامي?lang=ar">حساب تداول إسلامي</a></li>
-          <li><a class="dropdown-item" href="/ar/ابدا-التداول/الوثائق-و-السياسات?lang=ar">الوثائق والسياسات</a></li>
-          <li><a class="dropdown-item" href="/ar/ابدا-التداول/الإيداع-و-السحب?lang=ar">الإيداع والسحب</a></li>
-          <li><a class="dropdown-item" href="/ar/ابدا-التداول/رسوم-ايفست?lang=ar">رسوم  إيڤست</a></li>
-          <li><a class="dropdown-item" href="/ar/ابدا-التداول/اوقات-التداول?lang=ar">اوقات التداول</a></li>
-          <li><a class="dropdown-item" href="/ar/ابدا-التداول/حاسبات-التداول?lang=ar">حاسبات التداول</a></li>
+            <li><a class="dropdown-item" href="/ar/ابدا-التداول/انواع-الحسابات?lang=ar">أنواع حسابات التداول</a></li>
+            <li><a class="dropdown-item" href="/ar/ابدا-التداول/حساب-تداول-تجريبي?lang=ar">حساب تداول تجريبي</a></li>
+            <li><a class="dropdown-item" href="/ar/ابدا-التداول/تداول-الاسهم-0-عمولة?lang=ar">تداول الاسهم ب 0%
+                عمولة</a></li>
+            <li><a class="dropdown-item" href="/ar/ابدا-التداول/سَلاَّت-تداول-استثمارية?lang=ar">سَلاَّت إيفست
+                الاستثمارية</a></li>
+            <li><a class="dropdown-item" href="/ar/ابدا-التداول/حساب-تداول-إسلامي?lang=ar">حساب تداول إسلامي</a></li>
+            <li><a class="dropdown-item" href="/ar/ابدا-التداول/الوثائق-و-السياسات?lang=ar">الوثائق والسياسات</a></li>
+            <li><a class="dropdown-item" href="/ar/ابدا-التداول/الإيداع-و-السحب?lang=ar">الإيداع والسحب</a></li>
+            <li><a class="dropdown-item" href="/ar/ابدا-التداول/رسوم-ايفست?lang=ar">رسوم إيڤست</a></li>
+            <li><a class="dropdown-item" href="/ar/ابدا-التداول/اوقات-التداول?lang=ar">اوقات التداول</a></li>
+            <li><a class="dropdown-item" href="/ar/ابدا-التداول/حاسبات-التداول?lang=ar">حاسبات التداول</a></li>
           </ul>
         </li>
-        
+
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             منصات التداول
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -241,38 +283,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             منتجات التداول
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/ar/منتجات-التداول?lang=ar">منتجات التداول</a>
-            <a class="dropdown-item" href="/trade-room/?lang=ar&asset=EURUSD&utm_source=evest_ar&utm_medium=menu_link&utm_campaign=Currencies#/">تداول يورو/دولار</a>
-            <a class="dropdown-item" href="/trade-room/?lang=ar&asset=BTCUSD&utm_source=evest_ar&utm_medium=menu_link&utm_campaign=CryptoCurrencies#/">تداول البيتكوين</a>
-            <a class="dropdown-item" href="/trade-room/?lang=ar&asset=GOLD&utm_source=evest_ar&utm_medium=menu_link&utm_campaign=Commodities#/">استثمر في الذهب</a>
-            <a class="dropdown-item" href="/trade-room/?lang=ar&asset=USOIL&utm_source=evest_ar&utm_medium=menu_link&utm_campaign=Commodities#/">استثمر في النفط</a>
-            <a class="dropdown-item" href="/trade-room/?lang=ar&asset=APPLE&utm_source=evest_ar&utm_medium=menu_link&utm_campaign=stocks#/">تداول اسهم ابل</a>
-            <a class="dropdown-item" href="/trade-room/?lang=ar&asset=TESLA&utm_source=evest_ar&utm_medium=menu_link&utm_campaign=stocks#/">تداول اسهم تيسلا</a>
+            <a class="dropdown-item"
+              href="/trade-room/?lang=ar&asset=EURUSD&utm_source=evest_ar&utm_medium=menu_link&utm_campaign=Currencies#/">تداول
+              يورو/دولار</a>
+            <a class="dropdown-item"
+              href="/trade-room/?lang=ar&asset=BTCUSD&utm_source=evest_ar&utm_medium=menu_link&utm_campaign=CryptoCurrencies#/">تداول
+              البيتكوين</a>
+            <a class="dropdown-item"
+              href="/trade-room/?lang=ar&asset=GOLD&utm_source=evest_ar&utm_medium=menu_link&utm_campaign=Commodities#/">استثمر
+              في الذهب</a>
+            <a class="dropdown-item"
+              href="/trade-room/?lang=ar&asset=USOIL&utm_source=evest_ar&utm_medium=menu_link&utm_campaign=Commodities#/">استثمر
+              في النفط</a>
+            <a class="dropdown-item"
+              href="/trade-room/?lang=ar&asset=APPLE&utm_source=evest_ar&utm_medium=menu_link&utm_campaign=stocks#/">تداول
+              اسهم ابل</a>
+            <a class="dropdown-item"
+              href="/trade-room/?lang=ar&asset=TESLA&utm_source=evest_ar&utm_medium=menu_link&utm_campaign=stocks#/">تداول
+              اسهم تيسلا</a>
           </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             تعليم
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="/ar/أكاديمية-التداول?lang=ar" id="ArTa">أكاديمية التداول</a></li>
-           <li class="sub"><a class="dropdown-item" href="/ar/أخبار-التداول?lang=ar">أخبار التداول</a>
-            <ul class="dropdown-menu submenu-content" style="display: none">
-              <li><a class="dropdown-item" href="/ar/اخبار-الذهب?lang=ar">اخبار الذهب</a></li>
-              <li><a class="dropdown-item" href="/ar/اخبار-النفط?lang=ar">اخبار النفط</a></li>
-              <li><a class="dropdown-item" href="/ar/اخبار-السوق?lang=ar">اخبار السوق</a></li>
-            </ul></li>
+            <li class="sub"><a class="dropdown-item" href="/ar/أخبار-التداول?lang=ar">أخبار التداول</a>
+              <ul class="dropdown-menu submenu-content" style="display: none">
+                <li><a class="dropdown-item" href="/ar/اخبار-الذهب?lang=ar">اخبار الذهب</a></li>
+                <li><a class="dropdown-item" href="/ar/اخبار-النفط?lang=ar">اخبار النفط</a></li>
+                <li><a class="dropdown-item" href="/ar/اخبار-السوق?lang=ar">اخبار السوق</a></li>
+              </ul>
+            </li>
             <li><a class="dropdown-item" href="/ar/مدونة-التداول?lang=ar">مدونة التداول</a></li>
-           <li><a class="dropdown-item" href="/ar/أسئلة-شائعة?lang=ar">أسئلة شائعة</a></li>
-            
+            <li><a class="dropdown-item" href="/ar/أسئلة-شائعة?lang=ar">أسئلة شائعة</a></li>
+
           </ul>
         </li>
         <li class="nav-item">
-          <a href="/ar/ابدا-التداول/العملات-الرقمية?lang=ar"><p class="btn btn-filled btnCrypto animate__animated animate__tada animate__infinite animate__slow" href="#">كربتو</p></a>
+          <a href="/ar/ابدا-التداول/العملات-الرقمية?lang=ar">
+            <p class="btn btn-filled btnCrypto animate__animated animate__tada animate__infinite animate__slow"
+              href="#">كربتو</p>
+          </a>
         </li>
       </ul>
       <div class="form-inline my-2 my-lg-0">
@@ -282,29 +342,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a class="btn btn-default navbar-btn btn-filled mobile-img" href="/mobile/#/signup?lang=ar">تسجيل</a>
         <panda-forex-menu>
         </panda-forex-menu>
-          <div class="lang-menu mr-1">
-            <div class="selected-lang" style="    display: flex;
+        <div class="lang-menu mr-1">
+          <div class="selected-lang" style="    display: flex;
             /* flex-direction: row; */
             align-items: baseline;">
-              <i class="fas fa-globe-americas"></i>
-              <div class="dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  العربية
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                  <a class="dropdown-item englang" style="font-family: 'Evest Med';">English</a>
-                  <a class="dropdown-item arlang" style="font-family: 'Arabic Evest';">العربية</a>
-                  <a class="dropdown-item eslang" style="font-family: 'Evest Med';">Spanish</a>
-                </div>
+            <i class="fas fa-globe-americas"></i>
+            <div class="dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                العربية
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                <a class="dropdown-item englang" style="font-family: 'Evest Med';">English</a>
+                <a class="dropdown-item arlang" style="font-family: 'Arabic Evest';">العربية</a>
+                <a class="dropdown-item eslang" style="font-family: 'Evest Med';">Spanish</a>
               </div>
             </div>
+          </div>
+        </div>
       </div>
-    </div>
   </nav>
-  <nav id="spainshNavBar" class="navbar navbar-expand-xl navbar-light bg-light sticky-top" style="display:none;height: 80px;background: white !important;" >
-    <a  href="/es?lang=es"><img alt="logo" src="/images/spanish Logo.png" id="esLogo"/></a>
-    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <nav id="spainshNavBar" class="navbar navbar-expand-xl navbar-light bg-light sticky-top"
+    style="display:none;height: 80px;background: white !important;">
+    <a href="/es?lang=es"><img alt="logo" src="/images/spanish Logo.png" id="esLogo" /></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon iconToggle"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -313,14 +376,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a class="nav-link" href="/trade-room">Trade <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             Evest
           </a>
 
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="/es/evest?lang=es">Evest</a></li>
             <li><a class="dropdown-item" href="/es/evest/Por-qué-Evest?lang=es">¿Por qué Evest?</a></li>
-            <li><a class="dropdown-item" href="/es/evest/autorización-reglamentaria?lang=es">Autorización Reglamentaria</a></li>
+            <li><a class="dropdown-item" href="/es/evest/autorización-reglamentaria?lang=es">Autorización
+                Reglamentaria</a></li>
             <li><a class="dropdown-item" href="/es/evest/Embajador-de-Evest?lang=es">Embajador de Evest</a></li>
             <li><a class="dropdown-item" href="es/Conocer-al-CEO?lang=es">Meet the CEO</a></li>
             <li><a class="dropdown-item" href="/es/evest/Contáctenos?lang=es">Contáctenos</a></li>
@@ -330,23 +395,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             comience hacer trading
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/es/comience-hacer-trading/Tipos-de-cuentas-de-trading?lang=es">Tipos de cuentas de trading</a>
+            <a class="dropdown-item" href="/es/comience-hacer-trading/Tipos-de-cuentas-de-trading?lang=es">Tipos de
+              cuentas de trading</a>
             <a class="dropdown-item" href="/es/comience-hacer-trading/Cuenta-Demo?lang=es">Cuenta Demo</a>
-            <a class="dropdown-item" href="/es/comience-hacer-trading/Cero-Comisión?lang=es">0% Comisión de trading de acciones</a>
-            <a class="dropdown-item" href="/es/comience-hacer-trading/cuenta-de-trading-islámica?lang=es">cuenta de trading islámica</a>
-            <a class="dropdown-item" href="/es/comience-hacer-trading/Documentos-y-políticas?lang=es">Documentos y políticas</a>
+            <a class="dropdown-item" href="/es/comience-hacer-trading/Cero-Comisión?lang=es">0% Comisión de trading de
+              acciones</a>
+            <a class="dropdown-item" href="/es/comience-hacer-trading/cuenta-de-trading-islámica?lang=es">cuenta de
+              trading islámica</a>
+            <a class="dropdown-item" href="/es/comience-hacer-trading/Documentos-y-políticas?lang=es">Documentos y
+              políticas</a>
             <a class="dropdown-item" href="/es/comience-hacer-trading/Depósito-y-Retiro?lang=es">Depósito y Retiro</a>
             <a class="dropdown-item" href="/es/comience-hacer-trading/Tarifas-de-Trading?lang=es">Tarifas de Trading</a>
-            <a class="dropdown-item" href="/es/comience-hacer-trading/El-horario-de-trading?lang=es">El horario de trading</a>
-            <a class="dropdown-item" href="/es/comience-hacer-trading/Calculadoras-de-Trading?lang=es">Calculadoras de Trading</a>
+            <a class="dropdown-item" href="/es/comience-hacer-trading/El-horario-de-trading?lang=es">El horario de
+              trading</a>
+            <a class="dropdown-item" href="/es/comience-hacer-trading/Calculadoras-de-Trading?lang=es">Calculadoras de
+              Trading</a>
           </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             platformas de trading
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -358,21 +431,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             Productos de trading
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="/es/productos-de-trading?lang=es">Productos de trading</a></li>
-            <li><a class="dropdown-item" href="/trade-room/?lang=es&asset=EURUSD&utm_source=evest_es&utm_medium=menu_link&utm_campaign=Currencies#/">Intercambio EUR/USD</a></li>
-            <li><a class="dropdown-item" href="/trade-room/?lang=es&asset=BTCUSD&utm_source=evest_es&utm_medium=menu_link&utm_campaign=CryptoCurrencies#/">Intercambio Bitcoin</a></li>
-            <li><a class="dropdown-item" href="/trade-room/?lang=es&asset=GOLD&utm_source=evest_es&utm_medium=menu_link&utm_campaign=Commodities#/">Invertir en oro</a></li> 
-            <li><a class="dropdown-item" href="/trade-room/?lang=es&asset=USOIL&utm_source=evest_es&utm_medium=menu_link&utm_campaign=Commodities#/">Invertir en petróleo</a></li> 
-            <li><a class="dropdown-item" href="/trade-room/?lang=es&asset=APPLE&utm_source=evest_es&utm_medium=menu_link&utm_campaign=stocks#/">Invertir Acciones De APPLE</a></li> 
-            <li><a class="dropdown-item" href="/trade-room/?lang=es&asset=TESLA&utm_source=evest_es&utm_medium=menu_link&utm_campaign=stocks#/">Invertir Acciones De TESLA</a></li> 
+            <li><a class="dropdown-item"
+                href="/trade-room/?lang=es&asset=EURUSD&utm_source=evest_es&utm_medium=menu_link&utm_campaign=Currencies#/">Intercambio
+                EUR/USD</a></li>
+            <li><a class="dropdown-item"
+                href="/trade-room/?lang=es&asset=BTCUSD&utm_source=evest_es&utm_medium=menu_link&utm_campaign=CryptoCurrencies#/">Intercambio
+                Bitcoin</a></li>
+            <li><a class="dropdown-item"
+                href="/trade-room/?lang=es&asset=GOLD&utm_source=evest_es&utm_medium=menu_link&utm_campaign=Commodities#/">Invertir
+                en oro</a></li>
+            <li><a class="dropdown-item"
+                href="/trade-room/?lang=es&asset=USOIL&utm_source=evest_es&utm_medium=menu_link&utm_campaign=Commodities#/">Invertir
+                en petróleo</a></li>
+            <li><a class="dropdown-item"
+                href="/trade-room/?lang=es&asset=APPLE&utm_source=evest_es&utm_medium=menu_link&utm_campaign=stocks#/">Invertir
+                Acciones De APPLE</a></li>
+            <li><a class="dropdown-item"
+                href="/trade-room/?lang=es&asset=TESLA&utm_source=evest_es&utm_medium=menu_link&utm_campaign=stocks#/">Invertir
+                Acciones De TESLA</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             educación
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -389,21 +476,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </ul>
         </li>
         <li class="nav-item">
-          <a href="/es/comience-hacer-trading/criptomonedas?lang=es"><p class="btn btn-filled btnCrypto animate__animated animate__tada animate__infinite animate__slow" href="#">Crypto</p></a>
+          <a href="/es/comience-hacer-trading/criptomonedas?lang=es">
+            <p class="btn btn-filled btnCrypto animate__animated animate__tada animate__infinite animate__slow"
+              href="#">Crypto</p>
+          </a>
         </li>
       </ul>
-      
+
       <div class="form-inline my-2 my-lg-0">
         <div class="container" id="esTools" style="display:flex;">
         </div>
-       <a class="btn btn-default navbar-btn btn-filled mobile-img" href="/mobile/#/login">Login</a>
-       <a class="btn btn-default navbar-btn btn-filled mobile-img" href="/mobile/#/signup">Sign Up</a>
+        <a class="btn btn-default navbar-btn btn-filled mobile-img" href="/mobile/#/login">Login</a>
+        <a class="btn btn-default navbar-btn btn-filled mobile-img" href="/mobile/#/signup">Sign Up</a>
         <panda-forex-menu>
         </panda-forex-menu>
         <div class="selected-lang" style="display: flex;align-items: baseline;">
           <i class="fas fa-globe-americas"></i>
           <div class="dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
               Spanish
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
@@ -420,411 +511,458 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </nav>
 
 
-    <main>
-      <%- body %>
-    </main>
+  <main>
+    <%- body %>
+  </main>
 
 
-    <div class="support-icon animate__animated animate__heartBeat animate__infinite animate__delay-5s animate__slow" id="support-main-icon">
-      <div class="icon">
-        <i class="fas fa-headset fa-3x"></i>
-      </div>
-      <div id="support-channels">
-        <a href="https://wa.me/97145081613" class="whatsapp_float icon_float" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
-        <a  class="icon_float chat_float"  id="helpEn" href="/evest/help-desk" > <i class="fas fa-comments"></i></a>
-        <a  class="icon_float chat_float" id="helpAr" href="/ar/إيڤست/مركز-المساعدة?lang=ar" > <i class="fas fa-comments"></i></a>
-        <a  class="icon_float chat_float" id="helpEs" href="es/evest/Centro-de-Ayuda?lang=es" > <i class="fas fa-comments"></i></a>
-      </div>
+  <div class="support-icon animate__animated animate__heartBeat animate__infinite animate__delay-5s animate__slow"
+    id="support-main-icon">
+    <div class="icon">
+      <i class="fas fa-headset fa-3x"></i>
     </div>
-
-    <div class="container" id="pandaBtns" style="display: flex;position: fixed; top: 23px;z-index: 999999999999999;width: fit-content;right: 9%;">
-      <panda-forex-login  show-logout="false" redirect-after-login="/trade-room" ></panda-forex-login>
-          <panda-forex-signup redirect-after-signup="/trade-room?lang=ar"></panda-forex-signup>
+    <div id="support-channels">
+      <a href="https://wa.me/97145081613" class="whatsapp_float icon_float" target="_blank"> <i
+          class="fa fa-whatsapp whatsapp-icon"></i></a>
+      <a class="icon_float chat_float" id="helpEn" href="/evest/help-desk"> <i class="fas fa-comments"></i></a>
+      <a class="icon_float chat_float" id="helpAr" href="/ar/إيڤست/مركز-المساعدة?lang=ar"> <i
+          class="fas fa-comments"></i></a>
+      <a class="icon_float chat_float" id="helpEs" href="es/evest/Centro-de-Ayuda?lang=es"> <i
+          class="fas fa-comments"></i></a>
     </div>
+  </div>
+
+  <div class="container" id="pandaBtns"
+    style="display: flex;position: fixed; top: 23px;z-index: 999999999999999;width: fit-content;right: 9%;">
+    <panda-forex-login show-logout="false" redirect-after-login="/trade-room"></panda-forex-login>
+    <panda-forex-signup redirect-after-signup="/trade-room?lang=ar"></panda-forex-signup>
+  </div>
 
 
 
 
-    <!--footer-->
-    <div class="container brandFooter" style="position: relative;bottom: -20px;">
-      <img id="homeBrands" data-src="/images/webp/fotter logos.webp" alt="" width="100%" class="desktop-img container"/>
-      <img data-src="/images/webp/Home Page (Phone)-04.webp" alt="brandfooter" class="mobile-img" width="100%">
-    </div>
-    <footer class="footer">
+  <!--footer-->
+  <div class="container brandFooter" style="position: relative;bottom: -20px;">
+    <img id="homeBrands" data-src="/images/webp/fotter logos.webp" alt="" width="100%" class="desktop-img container" />
+    <img data-src="/images/webp/Home Page (Phone)-04.webp" alt="brandfooter" class="mobile-img" width="100%">
+  </div>
+  <footer class="footer">
 
-      <div class="container" id="englishFooter" style="display: none;">
-        <div class="row">
-          <div class="col-md-4">
-            <img data-src="/images/webp/blacklogo.webp" alt="logoFooter" style="width: 150px;margin-left: -2%;" src="/images/webp/blacklogo.webp">
-            <p style="padding-top: 3%;color: rgb(181 181 181);font-size: 11px;">
+    <div class="container" id="englishFooter" style="display: none;">
+      <div class="row">
+        <div class="col-md-4">
+          <img data-src="/images/webp/blacklogo.webp" alt="logoFooter" style="width: 150px;margin-left: -2%;"
+            src="/images/webp/blacklogo.webp">
+          <p style="padding-top: 3%;color: rgb(181 181 181);font-size: 11px;">
             The information on this site <br>
-            is not intended for use by <br> 
+            is not intended for use by <br>
             any person in any country <br>
-            or jurisdiction where such <br> 
-            distribution or use would <br> 
+            or jurisdiction where such <br>
+            distribution or use would <br>
             be contrary to local law or <br> regulation
-          </p><ul class="navbar-nav icons" style="display: flex;flex-direction: row;color:#65EFE2;">
-              <li><a href="https://www.facebook.com/evestofficial/"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="https://www.instagram.com/evest_official/"><i class="fab fa-instagram"></i></a></li>
-              <li><a href="https://twitter.com/evestofficial"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="https://www.youtube.com/channel/UCgOHoUCzElFju7HgkuHLzfw"><i class="fab fa-youtube"></i></a></li>
-          </ul>
-          
-    </div>
-          <div class="col-md-4">
-            <h6 style="color: #65EFE2;font-weight: bold;">CONTACT US</h6>
-            <ul class="list-unstyled">
-              <li>support@evest.com</li>
-              <li> Atriafinancial LTD, S.I.P. Building , P.O Box 3010<br>Rue Pasteur , Port Vila Vanuatu.</li>
-              <li><span>UAE - Toll-Free:</span><br>+971-800-0311-1248</li>
-              <li><span>Saudi Arabia - Toll-Free:</span><br>+966-800-850-1019</li>
-              <li><span>Cyprus:</span><br>+357-25-055-810</li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h6 style="color: #65EFE2;font-weight: bold;">TRADING</h6>
-            <ul class="list-unstyled">
-              <li><a href="/start-trading/trading-account-types">Trading Account Types</a></li>
-              <li><a href="/start-trading/0-commission-on-stocks">0 Commission Stocks Trading</a></li>
-              <li><a href="/start-trading/trading-demo-account">Trading Demo Account</a></li>
-              <li><a href="/start-trading/islamic-trading-account">Islamic Trading Account</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4"></div>
-          <div class="col-md-4">
-            <h6 style="color: #65EFE2;font-weight: bold;">TRADING HELP</h6>
-            <ul class="list-unstyled">
-              <li><a href="/evest/contact-us/">Contact us</a></li>
-              <li><a href="/evest/help-desk">FAQ</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h6 style="color: #65EFE2;font-weight: bold;">ADDITIONAL LINKS</h6>
-            <ul class="list-unstyled">
-              <li><a href="/start-trading/documents-policies">Regulatory Authorization</a></li>
-              <li><a href="/start-trading/deposit-withdrawal">Deposits & Withdrawals</a></li>
-              <li><a href="https://lp.evestpartners.com/signup/">Become Partner</a></li>
-              <li><a href="/start-trading/trading-hours">Trading Hours</a></li>
-              <li><a href="/start-trading/trading-fees">Trading Fees</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="row justify-content-center align-items-center">
-          <p style="color:var(--primary-color3);font-size: 11px;margin-bottom: 2rem;padding-top: 4%;font-weight: 600;text-align: center;">
-            The websites <span style="color:white;">www.evest.com</span> and <span style="color:white;">mena.evest.com</span> are operated by ATRIAFINANCIAL LTD, which is licensed to carry on the business of dealing in securities.<br><br>
-            
-            ATRIAFINANCIAL LTD is authorized and regulated by the Vanuatu Financial Services Commission <span style="color:white;">(VFSC)</span> under license number <span style="color:white;">17910</span>.<br><br>
-            
-            EVEST is a brand owned by ATRIAFINANCIAL HOLDINGS LTD, a company incorporated in the United Kingdom with registration number <span style="color:white;">12745548</span>.<br><br>
-            
-            ATRIAFINANCIAL SA (PTY) LTD, is regulated by the South African Financial Sector Conduct Authority <span style="color:white;">(FSCA)</span>. FSCA license number <span style="color:white;">36060</span>.<br><br>
-            
-            ATRIAFINANCIAL BUSINESS SERVICES LTD, is a subsidiary of ATRIAFINANCIAL HOLDINGS LTD <br>
-            and it is incorporated in the Republic of Cyprus with registration number HE <span style="color:white;">419548</span>,<br>
-            having its registered address at Athallasas 62, Mezzanine, Strovolos, Nicosia, Cyprus,<br>
-            is a Paying Agent of ATRIAFINANCIAL LTD, all payments related to Paysafe will be processed by Atriafinancial Business Services Ltd.<br>
-            
-            ATRIAFINANCIAL CAPITAL LIMITED, a company incorporated in United Kingdom with registration number <span style="color:white;">10356128</span>,<br>
-            having its registered address at 11 Blackheath Village, London, England, SE3 9LA, is a Paying Agent of ATRIAFINANCIAL LTD.<br><br>
-            
-            <br><br>
-            Risk Warning: Trading Contracts For Difference (CFD) is highly speculative, carries a high level of risk and is not appropriate for every investor.<br>
-            Any advice provided on this website is general advice only, and has been prepared without taking your individual objectives,<br>
-            financial situation or needs into account. Before deciding to trade CFDs offered by mena.evest.com,<br>
-            you should carefully consider your objectives, financial situation, needs and level of experience, and consider seeking independent professional advice.<br>
-            By trading, you may sustain a loss of some or all of your invested capital, therefore, you should not speculate with capital that you cannot afford to lose.<br>
-            You should be aware of all the risks associated with trading on margin. Please read the full <a href="/legal/en/EN-RISK_DISCLOSURE.pdf" target="_blank" style="color:white!important;font-family: 'Evest Bold';">Risk Disclosure Statement</a>
-            and <a href="/legal/en/EN-TERMS_AND_CONDITIONS.pdf" target="_blank" style="color:white!important;font-family: 'Evest Bold';">Terms and Conditions</a>.<br><br>
-            
-            <span style="color:red;text-decoration:underline;">Please note</span> that Evest.com does not offer services to US, Canadian and EU countries residents
-        </p>
-        </div>
-      </div>
-
-      <div class="container" id="arabicFooter" style="display: none;">
-        <div class="row">
-          <div class="col-md-4">
-                  <img data-src="/images/webp/arabicFooterLogo.webp" alt="logoFooter">
-                <p style="padding-top: 6%;color: rgb(173, 173, 173);font-size: 14px;">
-                  المعلومات الواردة في هذا <br> 
-                  الموقع ليست مقصودة <br> 
-                  للاستخدام من قبل أي شخص <br> 
-                  في أي بلد أو الولاية القضائية <br>
-                  حيث هذا التوزيع أو سيكون <br> 
-                  الاستخدام مخالفًا للقانون <br> المحلي أو لائحة.
-                </p>
-                <ul class="navbar-nav icons" style="display: flex;flex-direction: row;color:#65EFE2;padding-top: 5%;">
-                  <li><a href="https://www.facebook.com/evestofficial/"><i class="fab fa-facebook-f"></i></a></li>
-                  <li><a href="https://www.instagram.com/evest_official/"><i class="fab fa-instagram"></i></a></li>
-                  <li><a href="https://twitter.com/evestofficial"><i class="fab fa-twitter"></i></a></li>
-                  <li><a href="https://www.youtube.com/channel/UCgOHoUCzElFju7HgkuHLzfw"><i class="fab fa-youtube"></i></a></li>
-              </ul>
-          </div>
-          <div class="col-md-4">
-            <h6 style="color: #65EFE2;font-weight: bold;">اتصل بنا</h6>
-            <ul class="list-unstyled">
-              <li>support@evest.com</li>
-              <li> شركة أتريا المالية المحدودة طريق كومول <br>
-                 السريع مبنى 
-                 جوفانت <span>1276</span> بورت فيلا فانواتوايوي اومولوجيتس</li>
-              <li>الإمارات العربية المتحدة - اتصال مجاني:<br><span>971-800-0311-1248+</span></li>
-              <li>المملكة العربية السعودية - اتصال مجاني:<br><span>966-800-850-1019+</span></li>
-              <li><span>قبرص:</span><br>+357-25-055-810</li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h6 style="color: #65EFE2;font-weight: bold;">التداول</h6>
-            <ul class="list-unstyled">
-              <li><a href="/ar/ابدا-التداول/انواع-الحسابات?lang=ar">أنواع الحسابات</a></li>
-              <li><a href="/ar/ابدا-التداول/تداول-الاسهم-0-عمولة?lang=ar"><span>0%</span> عمولة تداول الأسهم وصناديق الاستثمار</a></li>
-              <li><a href="/ar/ابدا-التداول/حساب-تداول-تجريبي?lang=ar">حساب تداول تجريبي</a></li>
-              <li><a href="/ar/ابدا-التداول/حساب-تداول-إسلامي?lang=ar">حساب تداول إسلامي</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4"></div>
-          <div class="col-md-4">
-            <h6 style="color: #65EFE2;font-weight: bold;">مساعدة في التداول</h6>
-            <ul class="list-unstyled">
-              <li><a href="/ar/إيڤست/مركز-المساعدة?lang=ar">أسئلة شائعة</a></li>
-              <li><a href="/ar/إيڤست/اتصل-بنا?lang=ar">اتصل بنا</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h6 style="color: #65EFE2;font-weight: bold;">روابط إضافية</h6>
-            <ul class="list-unstyled">
-              <li><a href="/ar/ابدا-التداول/الوثائق-و-السياسات?lang=ar">التنظيم والخصوصية</a></li>
-              <li><a href="/ar/ابدا-التداول/الوثائق-و-السياسات?lang=ar">الوثائق & السياسات</a></li>
-              <li><a href="">تراخيص التداول</a></li>
-              <li><a href="/ar/ابدا-التداول/رسوم-ايفست?lang=ar">رسوم ايفست</a></li>
-              <li><a href="/ar/ابدا-التداول/اوقات-التداول?lang=ar">اوقات التداول</a></li>
-              <li><a href="https://lp.evestpartners.com/signup/">كُن شريكاً</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="row justify-content-center align-items-center">
-          <p style="color:var(--primary-color3);font-size:11px;margin-bottom: 2rem;padding-top: 4%; padding-right: 5%;text-align: center;">
-            يتم تشغيل مواقع الويب <span style="color:white;">www.evest.com</span> و <span style="color:white;">mena.evest.com</span> بواسطة شركة  أتريا فاينانشال المحدودة المرخص لها بممارسة أعمال التعامل في الأوراق المالية.<br><br>
-            
-            شركة  أتريا فاينانشال المحدودة مرخصة ومنظمة من قبل لجنة الخدمات المالية بفانواتو <span style="color:white;">(VFSC)</span> بموجب ترخيص رقم <span style="color:white;">17910</span>.<br><br>
-
-            <span>EVEST</span> هي علامة تجارية مملوكة لشركة أتريا فاينانشال القابضة المحدودة، وهي شركة تأسست في المملكة المتحدة برقم تسجيل <span style="color:white;">12745548</span>.<br><br>
-
-            شركة  أتريا فاينانشال جنوب أفريقيا المحدودة، مرخصة من هيئة سلوك القطاع المالي في جنوب إفريقيا <span style="color:white;">(FSCA)</span>. رقم ترخيص <span>FSCA</span> <span style="color:white;">36060</span>.<br><br>
-
-            أتريا فاينانشال بزنس سيرفيسز المحدودة هي شركة تابعة لشركة أتريا فاينانشال القابضة المحدودة وتأسست في جمهورية قبرص<br>
-            برقم تسجيل <span style="color:white;">HE 419548</span> ، وعنوانها المسجل في  أثالاساس 62، ميزانين، ستروفولوس، نيقوسيا، قبرص،<br>
-            هي وكيل دفع لشركة  أتريا فاينانشال المحدودة، وستتم معالجة جميع المدفوعات المتعلقة بـ <span>Paysafe</span> بواسطة أتريا فاينانشال بزنس سيرفيسز المحدودة.<br><br>
-
-            أتريا فاينانشال كابيتال المحدودة، وهي شركة تأسست في المملكة المتحدة برقم تسجيل <span style="color:white;">10356128</span> ،<br>
-            وعنوانها المسجل في 11  بلاك هيث فيلاج 11، لندن ، إنجلترا، SE3 9LA ، هي وكيل دفع لشركة  أتريا فاينانشال المحدودة.<br><br>
-            
-            تحذير من المخاطر: تداول العقود مقابل الفروقات (CFD) ينطوي على درجة عالية من المضاربة ، وينطوي على درجة عالية من المخاطر ولا يناسب كل مستثمر.<br>
-            أي نصيحة يتم تقديمها على هذا الموقع هي نصيحة عامة فقط ، وقد تم إعدادها دون مراعاة أهدافك الفردية أو وضعك المالي أو احتياجاتك.<br>
-            قبل أن تقرر تداول العقود مقابل الفروقات التي تقدمها evest.com ، يجب أن تفكر بعناية في أهدافك ووضعك المالي واحتياجاتك ومستوى خبرتك ،<br>
-            والتفكير في طلب مشورة مهنية مستقلة. من خلال التداول ، قد تتعرض لخسارة بعض أو كل رأس المال المستثمر الخاص بك ،<br>
-            وبالتالي ، لا ينبغي عليك المضاربة برأس مال لا يمكنك تحمل خسارته.<br>
-            يجب أن تكون على دراية كاملة بكافة المخاطر المصاحبة لعمليات تداول على الهامش.<br>
-            يرجى قراءة بيان <a href="/legal/ar/AR-Atria%20Financial%20Ltd-RISK%20DISCLOSURES.pdf" target="_blank" style="color:white !important;"> الإفصاح عن المخاطر </a> الكامل و <a href="/legal/ar/AR-Atria%20financial-TERMS_AND_CONDITIONS.pdf" target="_blank" style="color:white !important;">الشروط والأحكام.</a>.<br><br>
-            
-            <strong style="color:red;">يرجى ملاحظة</strong> أن Evest.com لا يقدم خدمات للمقيمين في الولايات المتحدة وكندا ودول الاتحاد الأوروبي
           </p>
+          <ul class="navbar-nav icons" style="display: flex;flex-direction: row;color:#65EFE2;">
+            <li><a href="https://www.facebook.com/evestofficial/"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://www.instagram.com/evest_official/"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://twitter.com/evestofficial"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCgOHoUCzElFju7HgkuHLzfw"><i class="fab fa-youtube"></i></a>
+            </li>
+          </ul>
+
+        </div>
+        <div class="col-md-4">
+          <h6 style="color: #65EFE2;font-weight: bold;">CONTACT US</h6>
+          <ul class="list-unstyled">
+            <li>support@evest.com</li>
+            <li> Atriafinancial LTD, S.I.P. Building , P.O Box 3010<br>Rue Pasteur , Port Vila Vanuatu.</li>
+            <li><span>UAE - Toll-Free:</span><br>+971-800-012-0048</li>
+            <li><span>Saudi Arabia - Toll-Free:</span><br>+966-800-814-0106</li>
+            <li><span>Cyprus:</span><br>+357-2222-2779</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 style="color: #65EFE2;font-weight: bold;">TRADING</h6>
+          <ul class="list-unstyled">
+            <li><a href="/start-trading/trading-account-types">Trading Account Types</a></li>
+            <li><a href="/start-trading/0-commission-on-stocks">0 Commission Stocks Trading</a></li>
+            <li><a href="/start-trading/trading-demo-account">Trading Demo Account</a></li>
+            <li><a href="/start-trading/islamic-trading-account">Islamic Trading Account</a></li>
+          </ul>
         </div>
       </div>
-    </footer>
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <h6 style="color: #65EFE2;font-weight: bold;">TRADING HELP</h6>
+          <ul class="list-unstyled">
+            <li><a href="/evest/contact-us/">Contact us</a></li>
+            <li><a href="/evest/help-desk">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 style="color: #65EFE2;font-weight: bold;">ADDITIONAL LINKS</h6>
+          <ul class="list-unstyled">
+            <li><a href="/start-trading/documents-policies">Regulatory Authorization</a></li>
+            <li><a href="/start-trading/deposit-withdrawal">Deposits & Withdrawals</a></li>
+            <li><a href="https://lp.evestpartners.com/signup/">Become Partner</a></li>
+            <li><a href="/start-trading/trading-hours">Trading Hours</a></li>
+            <li><a href="/start-trading/trading-fees">Trading Fees</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row justify-content-center align-items-center">
+        <p
+          style="color:var(--primary-color3);font-size: 11px;margin-bottom: 2rem;padding-top: 4%;font-weight: 600;text-align: center;">
+          The websites <span style="color:white;">www.evest.com</span> and <span
+            style="color:white;">mena.evest.com</span> are operated by ATRIAFINANCIAL LTD, which is licensed to carry on
+          the business of dealing in securities.<br><br>
+
+          ATRIAFINANCIAL LTD is authorized and regulated by the Vanuatu Financial Services Commission <span
+            style="color:white;">(VFSC)</span> under license number <span style="color:white;">17910</span>.<br><br>
+
+          EVEST is a brand owned by ATRIAFINANCIAL HOLDINGS LTD, a company incorporated in the United Kingdom with
+          registration number <span style="color:white;">12745548</span>.<br><br>
+
+          ATRIAFINANCIAL SA (PTY) LTD, is regulated by the South African Financial Sector Conduct Authority <span
+            style="color:white;">(FSCA)</span>. FSCA license number <span style="color:white;">36060</span>.<br><br>
+
+          ATRIAFINANCIAL BUSINESS SERVICES LTD, is a subsidiary of ATRIAFINANCIAL HOLDINGS LTD <br>
+          and it is incorporated in the Republic of Cyprus with registration number HE <span
+            style="color:white;">419548</span>,<br>
+          having its registered address at Athallasas 62, Mezzanine, Strovolos, Nicosia, Cyprus,<br>
+          is a Paying Agent of ATRIAFINANCIAL LTD, all payments related to Paysafe will be processed by Atriafinancial
+          Business Services Ltd.<br>
+
+          ATRIAFINANCIAL CAPITAL LIMITED, a company incorporated in United Kingdom with registration number <span
+            style="color:white;">10356128</span>,<br>
+          having its registered address at 11 Blackheath Village, London, England, SE3 9LA, is a Paying Agent of
+          ATRIAFINANCIAL LTD.<br><br>
+
+          <br><br>
+          Risk Warning: Trading Contracts For Difference (CFD) is highly speculative, carries a high level of risk and
+          is not appropriate for every investor.<br>
+          Any advice provided on this website is general advice only, and has been prepared without taking your
+          individual objectives,<br>
+          financial situation or needs into account. Before deciding to trade CFDs offered by mena.evest.com,<br>
+          you should carefully consider your objectives, financial situation, needs and level of experience, and
+          consider seeking independent professional advice.<br>
+          By trading, you may sustain a loss of some or all of your invested capital, therefore, you should not
+          speculate with capital that you cannot afford to lose.<br>
+          You should be aware of all the risks associated with trading on margin. Please read the full <a
+            href="/legal/en/EN-RISK_DISCLOSURE.pdf" target="_blank"
+            style="color:white!important;font-family: 'Evest Bold';">Risk Disclosure Statement</a>
+          and <a href="/legal/en/EN-TERMS_AND_CONDITIONS.pdf" target="_blank"
+            style="color:white!important;font-family: 'Evest Bold';">Terms and Conditions</a>.<br><br>
+
+          <span style="color:red;text-decoration:underline;">Please note</span> that Evest.com does not offer services
+          to US, Canadian and EU countries residents
+        </p>
+      </div>
+    </div>
+
+    <div class="container" id="arabicFooter" style="display: none;">
+      <div class="row">
+        <div class="col-md-4">
+          <img data-src="/images/webp/arabicFooterLogo.webp" alt="logoFooter">
+          <p style="padding-top: 6%;color: rgb(173, 173, 173);font-size: 14px;">
+            المعلومات الواردة في هذا <br>
+            الموقع ليست مقصودة <br>
+            للاستخدام من قبل أي شخص <br>
+            في أي بلد أو الولاية القضائية <br>
+            حيث هذا التوزيع أو سيكون <br>
+            الاستخدام مخالفًا للقانون <br> المحلي أو لائحة.
+          </p>
+          <ul class="navbar-nav icons" style="display: flex;flex-direction: row;color:#65EFE2;padding-top: 5%;">
+            <li><a href="https://www.facebook.com/evestofficial/"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://www.instagram.com/evest_official/"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://twitter.com/evestofficial"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCgOHoUCzElFju7HgkuHLzfw"><i class="fab fa-youtube"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 style="color: #65EFE2;font-weight: bold;">اتصل بنا</h6>
+          <ul class="list-unstyled">
+            <li>support@evest.com</li>
+            <li> شركة أتريا المالية المحدودة طريق كومول <br>
+              السريع مبنى
+              جوفانت <span>1276</span> بورت فيلا فانواتوايوي اومولوجيتس</li>
+            <li>الإمارات العربية المتحدة - اتصال مجاني:<br><span>+971-800-012-0048</span></li>
+            <li>المملكة العربية السعودية - اتصال مجاني:<br><span>+966-800-814-0106</span></li>
+            <li><span>قبرص:</span><br>+357-2222-2779</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 style="color: #65EFE2;font-weight: bold;">التداول</h6>
+          <ul class="list-unstyled">
+            <li><a href="/ar/ابدا-التداول/انواع-الحسابات?lang=ar">أنواع الحسابات</a></li>
+            <li><a href="/ar/ابدا-التداول/تداول-الاسهم-0-عمولة?lang=ar"><span>0%</span> عمولة تداول الأسهم وصناديق
+                الاستثمار</a></li>
+            <li><a href="/ar/ابدا-التداول/حساب-تداول-تجريبي?lang=ar">حساب تداول تجريبي</a></li>
+            <li><a href="/ar/ابدا-التداول/حساب-تداول-إسلامي?lang=ar">حساب تداول إسلامي</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <h6 style="color: #65EFE2;font-weight: bold;">مساعدة في التداول</h6>
+          <ul class="list-unstyled">
+            <li><a href="/ar/إيڤست/مركز-المساعدة?lang=ar">أسئلة شائعة</a></li>
+            <li><a href="/ar/إيڤست/اتصل-بنا?lang=ar">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 style="color: #65EFE2;font-weight: bold;">روابط إضافية</h6>
+          <ul class="list-unstyled">
+            <li><a href="/ar/ابدا-التداول/الوثائق-و-السياسات?lang=ar">التنظيم والخصوصية</a></li>
+            <li><a href="/ar/ابدا-التداول/الوثائق-و-السياسات?lang=ar">الوثائق & السياسات</a></li>
+            <li><a href="">تراخيص التداول</a></li>
+            <li><a href="/ar/ابدا-التداول/رسوم-ايفست?lang=ar">رسوم ايفست</a></li>
+            <li><a href="/ar/ابدا-التداول/اوقات-التداول?lang=ar">اوقات التداول</a></li>
+            <li><a href="https://lp.evestpartners.com/signup/">كُن شريكاً</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row justify-content-center align-items-center">
+        <p
+          style="color:var(--primary-color3);font-size:11px;margin-bottom: 2rem;padding-top: 4%; padding-right: 5%;text-align: center;">
+          يتم تشغيل مواقع الويب <span style="color:white;">www.evest.com</span> و <span
+            style="color:white;">mena.evest.com</span> بواسطة شركة أتريا فاينانشال المحدودة المرخص لها بممارسة أعمال
+          التعامل في الأوراق المالية.<br><br>
+
+          شركة أتريا فاينانشال المحدودة مرخصة ومنظمة من قبل لجنة الخدمات المالية بفانواتو <span
+            style="color:white;">(VFSC)</span> بموجب ترخيص رقم <span style="color:white;">17910</span>.<br><br>
+
+          <span>EVEST</span> هي علامة تجارية مملوكة لشركة أتريا فاينانشال القابضة المحدودة، وهي شركة تأسست في المملكة
+          المتحدة برقم تسجيل <span style="color:white;">12745548</span>.<br><br>
+
+          شركة أتريا فاينانشال جنوب أفريقيا المحدودة، مرخصة من هيئة سلوك القطاع المالي في جنوب إفريقيا <span
+            style="color:white;">(FSCA)</span>. رقم ترخيص <span>FSCA</span> <span
+            style="color:white;">36060</span>.<br><br>
+
+          أتريا فاينانشال بزنس سيرفيسز المحدودة هي شركة تابعة لشركة أتريا فاينانشال القابضة المحدودة وتأسست في جمهورية
+          قبرص<br>
+          برقم تسجيل <span style="color:white;">HE 419548</span> ، وعنوانها المسجل في أثالاساس 62، ميزانين، ستروفولوس،
+          نيقوسيا، قبرص،<br>
+          هي وكيل دفع لشركة أتريا فاينانشال المحدودة، وستتم معالجة جميع المدفوعات المتعلقة بـ <span>Paysafe</span>
+          بواسطة أتريا فاينانشال بزنس سيرفيسز المحدودة.<br><br>
+
+          أتريا فاينانشال كابيتال المحدودة، وهي شركة تأسست في المملكة المتحدة برقم تسجيل <span
+            style="color:white;">10356128</span> ،<br>
+          وعنوانها المسجل في 11 بلاك هيث فيلاج 11، لندن ، إنجلترا، SE3 9LA ، هي وكيل دفع لشركة أتريا فاينانشال
+          المحدودة.<br><br>
+
+          تحذير من المخاطر: تداول العقود مقابل الفروقات (CFD) ينطوي على درجة عالية من المضاربة ، وينطوي على درجة عالية
+          من المخاطر ولا يناسب كل مستثمر.<br>
+          أي نصيحة يتم تقديمها على هذا الموقع هي نصيحة عامة فقط ، وقد تم إعدادها دون مراعاة أهدافك الفردية أو وضعك
+          المالي أو احتياجاتك.<br>
+          قبل أن تقرر تداول العقود مقابل الفروقات التي تقدمها evest.com ، يجب أن تفكر بعناية في أهدافك ووضعك المالي
+          واحتياجاتك ومستوى خبرتك ،<br>
+          والتفكير في طلب مشورة مهنية مستقلة. من خلال التداول ، قد تتعرض لخسارة بعض أو كل رأس المال المستثمر الخاص بك
+          ،<br>
+          وبالتالي ، لا ينبغي عليك المضاربة برأس مال لا يمكنك تحمل خسارته.<br>
+          يجب أن تكون على دراية كاملة بكافة المخاطر المصاحبة لعمليات تداول على الهامش.<br>
+          يرجى قراءة بيان <a href="/legal/ar/AR-Atria%20Financial%20Ltd-RISK%20DISCLOSURES.pdf" target="_blank"
+            style="color:white !important;"> الإفصاح عن المخاطر </a> الكامل و <a
+            href="/legal/ar/AR-Atria%20financial-TERMS_AND_CONDITIONS.pdf" target="_blank"
+            style="color:white !important;">الشروط والأحكام.</a>.<br><br>
+
+          <strong style="color:red;">يرجى ملاحظة</strong> أن Evest.com لا يقدم خدمات للمقيمين في الولايات المتحدة وكندا
+          ودول الاتحاد الأوروبي
+        </p>
+      </div>
+    </div>
+  </footer>
 
 
-    
 
-    <script src="/js/custom.min.js" defer></script>
 
-    <script type="text/javascript">
-      var Pushwoosh = Pushwoosh || [];
-      Pushwoosh.push(['init', {
-          logLevel: 'info', // possible values: error, info, debug
-          applicationCode: '998CB-7CEFC', // you application code from Pushwoosh Control Panel
-          safariWebsitePushID: 'web.com.example.domain', //  unique reverse-domain string, obtained in you Apple Developer Portal. Only needed if you send push notifications to Safari browser
-          defaultNotificationTitle: 'Evest Investing platform ', // sets a default title for push notifications
-          defaultNotificationImage: 'https://www.evest.com/images/icon.ico', // URL to custom custom notification image
-          autoSubscribe: true, // or true. If true, prompts a user to subscribe for pushes upon SDK initialization
-          subscribeWidget: {
-            enable: false
-          },
-          userId: 'user_id', // optional, set custom user ID
-          tags: {
-              'Name': 'Evest Webiste'   	// optional, set custom Tags
-          }										
-      }]);
-      </script>
+  <script src="/js/custom.min.js" defer></script>
 
-    <script>
-      $('#EngTA').on('click', function(){
-        if(window.Loggedin =='true'){
-          $(this).attr('href','/trading-academy/true')
-        }else{
-          $(this).attr('href','/trading-academy')
-        }
-      })
-      $('#ArTa').on('click', function(){
-        if(window.Loggedin =='true'){
-          $(this).attr('href','/ar/أكاديمية-التداول/true?lang=ar')
-        }else{
-          $(this).attr('href','/ar/أكاديمية-التداول?lang=ar')
-        }
-      })
+  <script type="text/javascript">
+    var Pushwoosh = Pushwoosh || [];
+    Pushwoosh.push(['init', {
+      logLevel: 'info', // possible values: error, info, debug
+      applicationCode: '998CB-7CEFC', // you application code from Pushwoosh Control Panel
+      safariWebsitePushID: 'web.com.example.domain', //  unique reverse-domain string, obtained in you Apple Developer Portal. Only needed if you send push notifications to Safari browser
+      defaultNotificationTitle: 'Evest Investing platform ', // sets a default title for push notifications
+      defaultNotificationImage: 'https://www.evest.com/images/icon.ico', // URL to custom custom notification image
+      autoSubscribe: true, // or true. If true, prompts a user to subscribe for pushes upon SDK initialization
+      subscribeWidget: {
+        enable: false
+      },
+      userId: 'user_id', // optional, set custom user ID
+      tags: {
+        'Name': 'Evest Webiste'   	// optional, set custom Tags
+      }
+    }]);
+  </script>
 
-$(document).ready(function(){
-  Notification.requestPermission().then(function (permission) {
-      // If the user accepts, let's create a notification
-    });
-})
+  <script>
+    $('#EngTA').on('click', function () {
+      if (window.Loggedin == 'true') {
+        $(this).attr('href', '/trading-academy/true')
+      } else {
+        $(this).attr('href', '/trading-academy')
+      }
+    })
+    $('#ArTa').on('click', function () {
+      if (window.Loggedin == 'true') {
+        $(this).attr('href', '/ar/أكاديمية-التداول/true?lang=ar')
+      } else {
+        $(this).attr('href', '/ar/أكاديمية-التداول?lang=ar')
+      }
+    })
 
-  $(document).ready(function () {
-    console.log($('html')[0].lang)
-    if ($('html')[0].lang == 'ar') {
-      $('#pandaBtns').css('left', '9%')
-      $('#pandaBtns').css('right', 'auto')
-    }
-  })
+    $(document).ready(function () {
+      Notification.requestPermission().then(function (permission) {
+        // If the user accepts, let's create a notification
+      });
+    })
+
+    $(document).ready(function () {
+      console.log($('html')[0].lang)
+      if ($('html')[0].lang == 'ar') {
+        $('#pandaBtns').css('left', '9%')
+        $('#pandaBtns').css('right', 'auto')
+      }
+    })
 
     if (screen && screen.width > 480) {
-    document.write('<script src="https://nfp.pandats.com/mena-evest-static/loader.js" defer><\/script>');
+      document.write('<script src="https://nfp.pandats.com/mena-evest-static/loader.js" defer><\/script>');
     }
 
-$(document).ready(function(){
-    $(".dropdown").hover(function(){
+    $(document).ready(function () {
+      $(".dropdown").hover(function () {
         var dropdownMenu = $(this).children(".dropdown-menu");
-        if(dropdownMenu.is(":visible")){
-            dropdownMenu.parent().toggleClass("open");
+        if (dropdownMenu.is(":visible")) {
+          dropdownMenu.parent().toggleClass("open");
         }
-    });
-}); 
-
-
-const images=document.querySelectorAll('[data-src]');
-function preloadImage(img){
-  const src=img.getAttribute("data-src");
-  if(!src){
-    return;
-  }
-  img.src=src;
-}
-const imgOptions={
-  treshold:1,
-  rootMargin:"0px 0px 300px 0px"
-};
-const imgObserver= new IntersectionObserver((enteries,imgObserver)=>{
-  enteries.forEach(entry=>{
-    if(!entry.isIntersecting){
-      return;
-    }else{
-      preloadImage(entry.target);
-      imgObserver.unobserve(entry.target);
-    }
-  })
-},imgOptions)
-images.forEach(image=>{
-  imgObserver.observe(image);
-})
-
-
-
-/*support-Channels*/
-$(document).ready(function() {
-  //get lang attribute
-  var lang = $('html').attr('lang');
-  if(lang=='ar'){
-    $('#helpAr').show();
-    $('.support-icon').css('right','auto')
-    $('.support-icon').css('left','6%')
-    $('#helpEn').hide();
-    $('#helpEs').hide();
-  }else if(lang=='es'){
-    $('#helpEs').show();
-    $('#helpAr').hide();
-    $('#helpEn').hide();
-  }else{
-    $('#helpEn').show();
-    $('#helpAr').hide();
-    $('#helpEs').hide();
-  }
-  $('.support-icon').click(function() {
-    
-
-    $(this).removeClass("animate__animated")
-    if( $(this).find('#support-channels').css('display') == 'flex' ) {
-      $(this).find('#support-channels').css('display', 'none');
-      $(this).addClass("animate__animated")
-    } else {
-      $(this).find('#support-channels').css('display', 'flex');
-      
-    }
-    
-  });
-})
-
-var statusOpen=false;
-
-function getStatus(){
-  if(document.querySelector("nav > button").getAttribute('aria-expanded')=='true'){
-    statusOpen=true;
-  }else{ 
-    statusOpen=false;
-  }
-}
-
-document.querySelector("#arabicNavBar > button").addEventListener("click", function(){
-  getStatus();
-  if(statusOpen){
-    this.children[0].style.backgroundImage="url('/images/menu.svg')";
-    statusOpen=!statusOpen;
-  }else{
-    this.children[0].style.backgroundImage="url('/images/x.svg')";
-    statusOpen=!statusOpen;
-  }
-});
-document.querySelector("#englishNavBar > button").addEventListener("click", function(){
-  getStatus();
-  if(statusOpen){
-    this.children[0].style.backgroundImage="url('/images/menu.svg')";
-  }else{
-    this.children[0].style.backgroundImage="url('/images/x.svg')";
-  }
-})
-document.querySelector("#spainshNavBar > button").addEventListener("click", function(){
-  getStatus();
-  if(statusOpen){
-    this.children[0].style.backgroundImage="url('/images/menu.svg')";
-    statusOpen=!statusOpen;
-  }else{
-    this.children[0].style.backgroundImage="url('/images/x.svg')";
-    statusOpen=!statusOpen;
-  }
-})
-
-Pushwoosh.push(['onLoad', function () {
-        console.log('Pushwoosh load!');
-      }]);
-        // Ready Event
-        Pushwoosh.push(function (api) {
-        console.log('Pushwoosh ready!');
       });
-
-      // Subscribe Event
-      Pushwoosh.push(['onLoad', function (api) {
-        Pushwoosh.addEventHandler('subscribe', function (payload) {
-          console.log('Triggered event: subscribe');
-        });
-      }]);
+    });
 
 
+    const images = document.querySelectorAll('[data-src]');
+    function preloadImage(img) {
+      const src = img.getAttribute("data-src");
+      if (!src) {
+        return;
+      }
+      img.src = src;
+    }
+    const imgOptions = {
+      treshold: 1,
+      rootMargin: "0px 0px 300px 0px"
+    };
+    const imgObserver = new IntersectionObserver((enteries, imgObserver) => {
+      enteries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        } else {
+          preloadImage(entry.target);
+          imgObserver.unobserve(entry.target);
+        }
+      })
+    }, imgOptions)
+    images.forEach(image => {
+      imgObserver.observe(image);
+    })
 
-</script>
 
-  </body>
+
+    /*support-Channels*/
+    $(document).ready(function () {
+      //get lang attribute
+      var lang = $('html').attr('lang');
+      if (lang == 'ar') {
+        $('#helpAr').show();
+        $('.support-icon').css('right', 'auto')
+        $('.support-icon').css('left', '6%')
+        $('#helpEn').hide();
+        $('#helpEs').hide();
+      } else if (lang == 'es') {
+        $('#helpEs').show();
+        $('#helpAr').hide();
+        $('#helpEn').hide();
+      } else {
+        $('#helpEn').show();
+        $('#helpAr').hide();
+        $('#helpEs').hide();
+      }
+      $('.support-icon').click(function () {
+
+
+        $(this).removeClass("animate__animated")
+        if ($(this).find('#support-channels').css('display') == 'flex') {
+          $(this).find('#support-channels').css('display', 'none');
+          $(this).addClass("animate__animated")
+        } else {
+          $(this).find('#support-channels').css('display', 'flex');
+
+        }
+
+      });
+    })
+
+    var statusOpen = false;
+
+    function getStatus() {
+      if (document.querySelector("nav > button").getAttribute('aria-expanded') == 'true') {
+        statusOpen = true;
+      } else {
+        statusOpen = false;
+      }
+    }
+
+    document.querySelector("#arabicNavBar > button").addEventListener("click", function () {
+      getStatus();
+      if (statusOpen) {
+        this.children[0].style.backgroundImage = "url('/images/menu.svg')";
+        statusOpen = !statusOpen;
+      } else {
+        this.children[0].style.backgroundImage = "url('/images/x.svg')";
+        statusOpen = !statusOpen;
+      }
+    });
+    document.querySelector("#englishNavBar > button").addEventListener("click", function () {
+      getStatus();
+      if (statusOpen) {
+        this.children[0].style.backgroundImage = "url('/images/menu.svg')";
+      } else {
+        this.children[0].style.backgroundImage = "url('/images/x.svg')";
+      }
+    })
+    document.querySelector("#spainshNavBar > button").addEventListener("click", function () {
+      getStatus();
+      if (statusOpen) {
+        this.children[0].style.backgroundImage = "url('/images/menu.svg')";
+        statusOpen = !statusOpen;
+      } else {
+        this.children[0].style.backgroundImage = "url('/images/x.svg')";
+        statusOpen = !statusOpen;
+      }
+    })
+
+    Pushwoosh.push(['onLoad', function () {
+      console.log('Pushwoosh load!');
+    }]);
+    // Ready Event
+    Pushwoosh.push(function (api) {
+      console.log('Pushwoosh ready!');
+    });
+
+    // Subscribe Event
+    Pushwoosh.push(['onLoad', function (api) {
+      Pushwoosh.addEventHandler('subscribe', function (payload) {
+        console.log('Triggered event: subscribe');
+      });
+    }]);
+
+
+
+  </script>
+
+</body>
 
 </html>
-
