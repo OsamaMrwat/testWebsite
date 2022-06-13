@@ -67,6 +67,12 @@ app.use('/publicFiles', express.static(__dirname + '/public/publicFiles'))
 
 var count = 0;
 
+/*Arabic Routing*/
+app.use('/ar', arabicRouting);
+
+/*Spainsh Routing*/
+app.use('/es', spainshRouting);
+
 /*SiteMaps*/
 const axios = require('axios')
 async function getPostSiteMaps() {
@@ -158,36 +164,6 @@ async function getPostSiteMaps() {
 
     }
   })
-  // console.log(all_links_ar)
-
-
-
-
-
-  // writeFile function with filename, content and callback function
-  // fs.writeFile('./public/news_en.xml', sitemap, function (err) {
-  //   var n = new Date();
-  //   var y = n.getFullYear();
-  //   var m = n.getMonth() + 1;
-  //   var d = n.getDate();
-  //   var h = n.getHours();
-  //   var min = n.getMinutes();
-  //   var s = n.getSeconds();
-  //   var date = y + "-" + m + "-" + d + " " + h + ":" + min + ":" + s;
-  //   if (err) throw err;
-  //   //console.log(`${date} - Post Sitemap -File is created successfully`+" "+count++);
-  //   fs.appendFile('./public/logForPost.txt', `${date} - Post Sitemap -File is created successfully`, function (err) {
-  //     if (err) throw err;
-  //     console.log(`${date} - Log File is created successfully`);
-  //   })
-  // });
-  // writeFile function with filename, content and callback function
-
-
-  // })
-
-
-
 
 }
 async function getPagesSiteMaps() {
@@ -1049,11 +1025,7 @@ app.use('/trading-products', productsRouting);
 
 
 
-/*Arabic Routing*/
-app.use('/ar', arabicRouting);
 
-/*Spainsh Routing*/
-app.use('/es', spainshRouting);
 
 
 
