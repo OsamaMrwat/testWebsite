@@ -51,8 +51,6 @@ Disallow: https://ksa.evest.com/*
 Disallow: https://mena.evest.com/
 Disallow: https://mena.evest.com/*
 
-<<<<<<< HEAD
-=======
 Disallow:	https://www.evest.com/ar/التداول-باستخدام-تراخيص-شركة-إيفست/أخبار-التداول/
 Disallow:	https://www.evest.com/ar/اخبار-الذهب/ارتفاع-لمعظم-أسواق-الأسهم-والذهب-يستق
 Disallow:	https://www.evest.com/ar/اخبار-السوق/أسواق-الأسهم-العالمية/es/Conocer-al-CEO?lang=es
@@ -487,13 +485,8 @@ Disallow: https://www.evest.com/ar/اخبار-السوق/النفط-في-ورط�
 Disallow: https://www.evest.com/oil-news/a-negative-start-for-asian-and-european-markets-oil-is-declining-given-opecs-decision/
 Disallow: https://www.evest.com/ar/أداء-جيد-للنفط-والذهب/أخبار-التداول/#!
 
->>>>>>> ac0b8515c56d7b22c5a0f18f04180c33bc2f3391
 Sitemap: https://www.evest.com/sitemap_ar.xml
 Sitemap: https://www.evest.com/sitemap_en.xml
 Sitemap: https://www.evest.com/blog_ar.xml
 Sitemap: https://www.evest.com/news_ar.xml
-<<<<<<< HEAD
 Sitemap: https://www.evest.com/news_en.xml
-=======
-Sitemap: https://www.evest.com/news_en.xml
->>>>>>> ac0b8515c56d7b22c5a0f18f04180c33bc2f3391
