@@ -264,11 +264,11 @@ var cods = [
   { name: "Virgin Islands, U.S.", dial_code: "+1 340", code: "VI" },
 ];
 
-var translate=[{en:"Missing field",ar:"Ù…Ø¹Ù„ÙˆÙ…Ø§Øª Ù…ÙÙ‚ÙˆØ¯Ø©"},
-{en:"Invalid field",ar:"Ù…Ø¹Ù„ÙˆÙ…Ø§Øª ØºÙŠØ± ØµØ§Ù„Ø­Ø©"},
-{en:"Value must be alphanumeric",ar:"ÙŠØ¬Ø¨ Ø£Ù† ØªÙƒÙˆÙ† Ø§Ù„Ù‚ÙŠÙ…Ø© Ø£Ø¨Ø¬Ø¯ÙŠØ© Ø±Ù‚Ù…ÙŠØ©"},
-{en:"Due to regulatory reasons, we do not accept customers from your region",ar:"Ù„Ø£Ø³Ø¨Ø§Ø¨ Ø®Ø§ØµØ© Ø¨Ø§Ù„ØªØ±Ø®ÙŠØµØŒ Ù†Ø­Ù† Ù„Ø§ Ù†Ù‚Ø¨Ù„ Ø¹Ù…Ù„Ø§Ø¡ Ù…Ù† Ù…Ù†Ø·Ù‚ØªÙƒ"},
-{en:"Customer already exists",ar:"Ø§Ù„Ø²Ø¨ÙˆÙ† Ù…Ø³Ø¬Ù‘Ù„ Ø³Ø§Ø¨Ù‚Ø§Ù‹"}]
+var translate = [{ en: "Missing field", ar: "Ù…Ø¹Ù„ÙˆÙ…Ø§Øª Ù…ÙÙ‚ÙˆØ¯Ø©" },
+{ en: "Invalid field", ar: "Ù…Ø¹Ù„ÙˆÙ…Ø§Øª ØºÙŠØ± ØµØ§Ù„Ø­Ø©" },
+{ en: "Value must be alphanumeric", ar: "ÙŠØ¬Ø¨ Ø£Ù† ØªÙƒÙˆÙ† Ø§Ù„Ù‚ÙŠÙ…Ø© Ø£Ø¨Ø¬Ø¯ÙŠØ© Ø±Ù‚Ù…ÙŠØ©" },
+{ en: "Due to regulatory reasons, we do not accept customers from your region", ar: "Ù„Ø£Ø³Ø¨Ø§Ø¨ Ø®Ø§ØµØ© Ø¨Ø§Ù„ØªØ±Ø®ÙŠØµØŒ Ù†Ø­Ù† Ù„Ø§ Ù†Ù‚Ø¨Ù„ Ø¹Ù…Ù„Ø§Ø¡ Ù…Ù† Ù…Ù†Ø·Ù‚ØªÙƒ" },
+{ en: "Customer already exists", ar: "Ø§Ù„Ø²Ø¨ÙˆÙ† Ù…Ø³Ø¬Ù‘Ù„ Ø³Ø§Ø¨Ù‚Ø§Ù‹" }]
 //-------------Getting the ip by location from API ipinfo----------------//
 var cc;
 var ip;
@@ -276,24 +276,24 @@ const response = fetch("https://ipinfo.io/?token=cc7afc256c9864")
   .then((res) => res.json())
   .then((data) => {
     cc = data.country;
-    ip=data.ip;
+    ip = data.ip;
   });
 
-let action=window.parent.location.pathname.split('/');
-client_src=window.parent.location.pathname;
-client_src=client_src.substring(1,client_src.length-1);
-action=action[1].split('_');
-let campaign=action[0];
-action=action[2];
-var setlang='ara';
-if(window.parent.location.pathname.split('_')[1].includes('e')){
-    setlang='enu';
+let action = window.parent.location.pathname.split('/');
+client_src = window.parent.location.pathname;
+client_src = client_src.substring(1, client_src.length - 1);
+action = action[1].split('_');
+let campaign = action[0];
+action = action[2];
+var setlang = 'ara';
+if (window.parent.location.pathname.split('_')[1].includes('e')) {
+  setlang = 'enu';
 }
 
 
-let params=window.location.search.replaceAll('&','|').substring(1);
-let aff_id=params.split('|')[params.split('|').findIndex(element => element.includes("Aff_id"))];
-let cx_token=params.split('|')[params.split('|').findIndex(element => element.includes("cx_token"))];
+let params = window.location.search.replaceAll('&', '|').substring(1);
+let aff_id = params.split('|')[params.split('|').findIndex(element => element.includes("Aff_id"))];
+let cx_token = params.split('|')[params.split('|').findIndex(element => element.includes("cx_token"))];
 //-------------------get the token from panda API when the page load----------------//
 function getToken() {
   PARTNER_ID = "85808";
@@ -486,7 +486,7 @@ function SHA1(msg) {
 
 
 //---------------Form submit -----------------//
-const errorText=document.getElementById("errorText");
+const errorText = document.getElementById("errorText");
 const myForm = document.getElementById("payment-form");
 
 myForm.addEventListener("submit", (e) => {
@@ -500,26 +500,24 @@ myForm.addEventListener("submit", (e) => {
     .title.split(" ");
   const prePhone = getCountry[getCountry.length - 1];
   let phone = document.getElementById("phoneNumber").value;
-  if(phone[0]=='0'){
-      phone=phone.substr(1,phone.length-1)
-      
+  if (phone[0] == '0') {
+    phone = phone.substr(1, phone.length - 1)
+
   }
-  let check=document.getElementsByName("promotions");
-  if(check[0].value == 'on')
-  {
-      check=1;
-  }else
-  {
-      check=0;
+  let check = document.getElementsByName("promotions");
+  if (check[0].value == 'on') {
+    check = 1;
+  } else {
+    check = 0;
   }
- 
+
   let userCC = cods.find(c => c.dial_code == getCountry[getCountry.length - 1]);
-    if (userCC.code != cc) {
-      cc = userCC.code;
-    }
-    if(document.referrer!='' || document.referrer != undefined ){
-        params=params+`|prevUrl=${document.referrer}`;
-    }
+  if (userCC.code != cc) {
+    cc = userCC.code;
+  }
+  if (document.referrer != '' || document.referrer != undefined) {
+    params = params + `|prevUrl=${document.referrer}`;
+  }
   const myData = {
     email: email,
     password: password,
@@ -527,12 +525,12 @@ myForm.addEventListener("submit", (e) => {
     firstName: fname,
     lastName: lname,
     phone: prePhone + phone,
-    referral:params,
-    clientSource:client_src,
-    language:setlang,
-    ip:ip,
-    acceptPromotions:check,
-    acceptTermsAndConditions:1,
+    referral: params,
+    clientSource: client_src,
+    language: setlang,
+    ip: ip,
+    acceptPromotions: check,
+    acceptTermsAndConditions: 1,
   };
   console.log(JSON.stringify(myData));
   fetch("https://mena-evest.pandats-api.io/api/v3/customers", {
@@ -543,58 +541,50 @@ myForm.addEventListener("submit", (e) => {
     },
     body: JSON.stringify(myData),
   }).then((response) => {
-      if(response.status=='201')
-      {
-          response.json().then(data=>
-          {
-              dataLayer.push({'event': 'registrationComplete'});
-              if(aff_id=="Aff_id=35116"){
-                  window.top.location.href="http://lpevest.com/thankyoupage3?"+cx_token;
-              }
-              else if(aff_id=="Aff_id=35109"){
-                  window.top.location.href="http://lpevest.com/thankyoupage3?id="+email;
-              }
-              else if(action=='sag'){
-                  window.top.location= "https://evest-camp.com/thankyoupage5/";
-              }
-              else if(action=='so' && campaign=='ramadan')
-              {
-                  window.top.location= "http://lps.evest.com/thankyoupage4";
-              }
-              else if(action=='go'){
-                  localStorage.setItem("loginToken",data.data.loginToken);
-                  window.top.location.href=("https://go.evest.com/thankyoupage")
-              }
-              else if(action=='af')
-              {
-                  window.top.location.href = data.data.loginToken;
-              }else if(action =='so'&& campaign=='mohanad')
-              {
-                  window.top.location.href="http://lps.evest.com/thankyoupage1";
-              }else if(action=='med' && campaign=='mohanad')
-              {
-                  
-                  window.top.location.href="https://lpevest.com/thankyoupage3/";
-                  
-              }
-              else if(action=='med')
-              {
-                  
-                  window.top.location.href="http://lpevest.com/thankyoupage3";
-              }else
-              {
-                  window.top.location.href="http://lps.evest.com/thankyoupage2";
-              }
-          }
-          );
-      }else{
-           response.json().then(data=>{
-               errorText.className="alert alert-danger";
-               let etext=data.error[0].description;
-               errorText.innerText=translate.find(elem => elem.en==etext).ar;
-           });
+    if (response.status == '201') {
+      response.json().then(data => {
+        dataLayer.push({ 'event': 'registrationComplete' });
+        if (aff_id == "Aff_id=35116") {
+          window.top.location.href = "http://lpevest.com/thankyoupage3?" + cx_token;
+        }
+        else if (aff_id == "Aff_id=35109") {
+          window.top.location.href = "http://lpevest.com/thankyoupage3?id=" + email;
+        }
+        else if (action == 'sag') {
+          window.top.location = "https://evest-camp.com/thankyoupage5/";
+        }
+        else if (action == 'so' && campaign == 'ramadan') {
+          window.top.location = "http://lps.evest.com/thankyoupage4";
+        }
+        else if (action == 'go') {
+          localStorage.setItem("loginToken", data.data.loginToken);
+          window.top.location.href = ("https://go.evest.com/thankyoupage")
+        }
+        else if (action == 'af') {
+          window.top.location.href = data.data.loginToken;
+        } else if (action == 'so' && campaign == 'mohanad') {
+          window.top.location.href = "http://lps.evest.com/thankyoupage1";
+        } else if (action == 'med' && campaign == 'mohanad') {
+
+          window.top.location.href = "https://lpevest.com/thankyoupage3/";
+
+        }
+        else if (action == 'med') {
+
+          window.top.location.href = "http://lpevest.com/thankyoupage3";
+        } else {
+          window.top.location.href = "http://lps.evest.com/thankyoupage2";
+        }
       }
-      
+      );
+    } else {
+      response.json().then(data => {
+        errorText.className = "alert alert-danger";
+        let etext = data.error[0].description;
+        errorText.innerText = translate.find(elem => elem.en == etext).ar;
+      });
+    }
+
   })
-  .catch((err) => console.log(err));
+    .catch((err) => console.log(err));
 });

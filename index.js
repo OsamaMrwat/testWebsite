@@ -639,7 +639,9 @@ app.get('/faq', (req, res) => {
 
 
 app.get('/oil-news', async (req, res) => {
-  const url = 'https://cms.evest.com/wp-json/wp/v2/oil-news?_embed&per_page=6&page=1';
+  // const url = 'https://cms.evest.com/wp-json/wp/v2/oil-news?_embed&per_page=6&page=1';
+  const url = 'https://evest.blog/wp-json/wp/v2/posts?categories=21&per_page=6&page=1';
+
   const options = {
     method: 'GET',
   };
@@ -656,9 +658,15 @@ app.get('/oil-news', async (req, res) => {
       };
       const article = data.map(post => {
         let date = post.date.split('T')[0];
+        let image;
+        if (post.yoast_head_json.og_image) {
+          image = post.yoast_head_json.og_image[0].url
+        } else
+          image = '/images/build/logo.png'
+
         return `<div class="card">
           <div> 
-                 <a href="${post.link}"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
+                 <a href="${post.link}"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
 <div class="card-body">
 <a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
@@ -706,6 +714,7 @@ app.get('/oil-news/:slug', async (req, res) => {
 
 
 app.get('/gold-news', async (req, res) => {
+  // const url = 'https://cms.evest.com/wp-json/wp/v2/gold-news?_embed&per_page=6&page=1';
   const url = 'https://cms.evest.com/wp-json/wp/v2/gold-news?_embed&per_page=6&page=1';
   const options = {
     method: 'GET',
@@ -770,7 +779,8 @@ app.get('/gold-news/:slug', async (req, res) => {
 
 
 app.get('/market-news', async (req, res) => {
-  const url = 'https://cms.evest.com/wp-json/wp/v2/market-news?_embed&per_page=6&page=1';
+  // const url = 'https://cms.evest.com/wp-json/wp/v2/market-news?_embed&per_page=6&page=1';
+  const url = 'https://evest.blog/wp-json/wp/v2/posts?categories=23&per_page=6&page=1';
   const options = {
     method: 'GET',
   };
@@ -787,9 +797,16 @@ app.get('/market-news', async (req, res) => {
       };
       const article = data.map(post => {
         let date = post.date.split('T')[0];
+        let image;
+
+        if (post.yoast_head_json.og_image) {
+          image = post.yoast_head_json.og_image[0].url
+        } else
+          image = '/images/build/logo.png'
+
         return `<div class="card">
           <div> 
-                 <a href="${post.link}"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
+                 <a href="${post.link}"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
 <div class="card-body">
 <a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
@@ -834,11 +851,13 @@ app.get('/market-news/:slug', async (req, res) => {
 
 
 app.get('/trading-news', async (req, res) => {
-  const url = 'https://cms.evest.com/wp-json/wp/v2/trading-news?_embed&per_page=6&page=1';
+  // const url = 'https://cms.evest.com/wp-json/wp/v2/trading-news?_embed&per_page=6&page=1';
+  const url = 'https://evest.blog/wp-json/wp/v2/posts?categories=8&per_page=5&page=1';
   const options = {
-    method: 'GET',
+    method: 'GET'
   };
-  const response = await fetch(url, options)
+
+  fetch(url, options)
     .then(res => res.json())
     .then((data) => {
       var page = {
@@ -851,18 +870,24 @@ app.get('/trading-news', async (req, res) => {
       };
       const article = data.map(post => {
         let date = post.date.split('T')[0];
+        let image;
+        if (post.yoast_head_json.og_image) {
+          image = post.yoast_head_json.og_image[0].url
+        } else
+          image = '/images/build/logo.png'
         return `<div class="card">
-          <div> 
-                 <a href="${post.link}"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
-<div class="card-body">
-<a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
-<div class="card-text description">${post.yoast_head_json.og_description}</div>
-<a class="btn btn-filled readmore" href="${post.link}">Read more</a>
-</div></div>
-<div class="card-footer dateCreated">
-${date}
-</div>
-</div>`
+            <div> 
+            <a href="${post.link}"><img class="card-img-top" src="${image}" alt="Card image cap" /></a>
+
+  <div class="card-body">
+  <a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
+  <div class="card-text description">${post.yoast_head_json.og_description}</div>
+  <a class="btn btn-filled readmore" href="${post.link}">Read more</a>
+  </div></div>
+  <div class="card-footer dateCreated">
+  ${date}
+  </div>
+  </div>`
       }).join('');
       res.render('Education/tradingNews', { page: page, articles: article });
     });
@@ -897,7 +922,64 @@ app.get('/trading-news/:slug', async (req, res) => {
 });
 
 
+app.post('/cvUpload', (req, res) => {
+  const data = req.body
 
+  if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(400).send('No files were uploaded.');
+  }
+
+  let attachment = req.files.cv.data.toString("base64")
+
+  const msg = {
+    // change mail to required mail
+    to: 'osama.ba@evest.com',
+    from: 'no-replay@customers-evest.com', // Use the email address or domain you verified above
+    subject: `New CV for position ${data.jobTitle} , location: ${data.jobLocation}`,
+    html: `  <h1>Job Position : ${data.jobTitle} In ${data.jobLocation}</h1>
+    CANDITATE NAME: ${data.fullNameInput} .<br><br>
+    <p>EMAIL: ${data.emailInput}.<br><br>
+    CANDITATE LOCATION: ${data.countryInput}.<br><br>
+    CURRENT POSITION : ${data.currentPositionInput} .<br><br>
+    Linkedin : ${data.linkedinInput} . <br><br>
+    TEL: ${data.TelephoneInput} . <br><br>
+    Notes: ${data.textAreaInput}.<br></p>`,
+    attachments: [
+      {
+        content: attachment,
+        filename: req.files.cv.name,
+        type: req.files.cv.mimetype,
+        disposition: "attachment"
+      }
+    ],
+    replyTo: `osama.ba@evest.com`
+  };
+
+
+
+  // sgMail
+  //   .send(msg)
+  //   .then(() => { }, error => {
+  //     console.error(error);
+
+  //     if (error.response) {
+  //       console.error(error.response.body)
+  //     }
+  //   });
+
+
+  // butter.page.retrieve('*', 'homepage-en')
+  //   .then(function (resp) {
+  //     var page1 = resp.data.data;
+  //     res.render('index', { page: page1, tagHash: config.tagHash });
+
+  //   })
+  //   .catch(function (resp) {
+  //     console.log(resp)
+  //   });
+
+  res.redirect('/')
+})
 
 
 app.post('/send', (req, res) => {
@@ -962,7 +1044,8 @@ app.post('/ceo', (req, res) => {
 })
 
 
-const getTag = require('./tagsApi')
+const getTag = require('./tagsApi');
+const { type } = require('os');
 app.get('/tag/:tag', async (req, res) => {
   const tag_id = getTag.englishTags.find(elem => elem.Name === req.params.tag).tag_id;
   console.log(+req.params.tag + " " + tag_id);
