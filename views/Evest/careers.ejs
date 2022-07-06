@@ -1,26 +1,104 @@
-<div class="mobile-img">
-    <div class="container" style="background: url('/images/Career Mobile-03.png');height:700px;background-size: cover;color:white;padding-top: 120%;">
-        <%- page.fields.header.heading %>
-        <%- page.fields.header.subheading %>  
-    </div>
-    <div class="container">
-        <div class="row" style="height: 50px;"></div>
-        <div class="row" style="background: #3C1858;height:70px;display: flex;justify-content: center;align-items: center;">
-        <h3>JOB LISTING</h3>
-        </div>
-        <div class="row">
-            <%- page.fields.sections.section1 %>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="background-color: #058080; border-radius: 7px;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                <br>
+                <h5 class="modal-title" id="exampleModalLongTitle2" style="color: white;"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" style="color: white;">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+
+                <div>
+                    <form class="cvForumClass" style="display: flex; justify-content: center; flex-direction: column;"
+                        action="/cvUpload" method="POST" enctype="multipart/form-data">
+                        <!-- <form action="/cvUpload" method="POST" enctype="multipart/mixed"> -->
+                        <div style="display: none;">
+                            <input id="jobTitle" name="jobTitle" type="text">
+                            <input id="jobLocation" name="jobLocation" type="text">
+                        </div>
+                        <div>
+                            <p id="fullNameInputmiss" style="color: red; display:none">This field is required</p>
+                            <input id="fullNameInput" name="fullNameInput" type="text" placeholder="Full Name *">
+                        </div>
+                        <div>
+                            <p id="TelephoneInputmiss" style="color: red; display:none">This field is required</p>
+                            <input id="TelephoneInput" name="TelephoneInput" type="number" placeholder="Telephone *">
+                        </div>
+                        <div>
+                            <p id="countryInputmiss" style="color: red; display:none">This field is required</p>
+                            <input id="countryInput" name="countryInput" type="text" placeholder="Country *">
+                        </div>
+                        <div>
+                            <p id="emailInputmiss" style="color: red; display:none">This field is required</p>
+                            <input id="emailInput" name="emailInput" type="email" placeholder="Email *">
+                        </div>
+                        <div>
+                            <input id="currentPositionInput" name="currentPositionInput" type="text"
+                                placeholder="Current Position">
+                        </div>
+
+                        <div>
+                            <input id="linkedinInput" name="linkedinInput" type="Linkedin" placeholder="Linkedin..">
+
+                        </div>
+                        <div>
+                            <textarea id="textAreaInput" name="textAreaInput" rows="4" cols="30"
+                                placeholder="Do you have any notes?"></textarea>
+                        </div>
+                        <div style="margin-top: 10px;">
+                            <input id="uploadFileInput" type="file" name="cv">
+                            <input id="sendCvButton" type="submit" value="Send cv"
+                                style="background-color: #54c9c9; margin-top:10px;">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
         </div>
     </div>
 </div>
+
+<div class="mobile-img">
+    <div class="container"
+        style="background: url('/images/Career Mobile-03.png');height:700px;background-size: cover;color:white;padding-top: 120%;">
+        <%- page.fields.header.heading %>
+            <%- page.fields.header.subheading %>
+    </div>
+    <div class="container">
+        <div class="row" style="height: 50px;"></div>
+        <div class="row"
+            style="background: #3C1858;height:70px;display: flex;justify-content: center;align-items: center;">
+            <h3>JOB LISTING</h3>
+        </div>
+        <div class="row">
+            <% for(var i=1; i < 100; i++) { %>
+
+                <%if (page.fields.sections[`section${i}`]) { %>
+
+                    <%- page.fields.sections[`section${i}`] %>
+
+                        <% } %>
+
+                            <% } %>
+        </div>
+    </div>
+</div>
+
 
 <div class="desktop-img">
 
     <div class="row" style="background: url('/images/webp/Career-En BG-02.webp');background-size: cover;">
         <div class="container" style="color:white;display: flex;justify-content: space-between;align-items: center;">
             <div class="container">
-               <%- page.fields.header.heading %>
-               <%- page.fields.header.subheading %>  
+                <%- page.fields.header.heading %>
+                    <%- page.fields.header.subheading %>
             </div>
             <div class="container">
                 <img src="/images/webp/enter.webp" alt="Enter" style="width: 100%;">
@@ -28,11 +106,117 @@
         </div>
     </div>
 
+
     <div class="container">
         <div class="row" style="height:0px;"></div>
-        <%- page.fields.sections.section1 %>
+        <!-- <%- page.fields.sections.section1 %> -->
+
+        <% for(var i=1; i < 100; i++) { %>
+
+            <%if (page.fields.sections[`section${i}`]) { %>
+
+                <%- page.fields.sections[`section${i}`] %>
+
+                    <% } %>
+
+                        <% } %>
+
+
+
+
+
     </div>
+
+
+    <script>
+        function formValidation(data) {
+            let arrMissingFields = []
+
+            if (data.country == '')
+                arrMissingFields.push('#countryInputmiss')
+            if (data.email == '')
+                arrMissingFields.push('#emailInputmiss')
+            if (data.fullName == '')
+                arrMissingFields.push('#fullNameInputmiss')
+            if (data.tel == '')
+                arrMissingFields.push('#TelephoneInputmiss')
+            if (data.file == '')
+                arrMissingFields.push('#uploadFileInputmiss')
+
+            return arrMissingFields
+        }
+
+        function errorMissingField(elementId) {
+            $(elementId).css('display', 'block').css('margin-bottom', '0').css('font-size', '14px')
+
+        }
+
+        $(document).ready(function () {
+            $(".btn").attr('data-toggle', 'modal').attr("data-target", '#exampleModalCenter')
+
+            $(".col-md-8 .btn-filled").on('click', lala);
+            function lala() {
+                const jobDesctioption = $(this).parent('.col-md-8').siblings('.col-md-4').children('h5')
+                const name = jobDesctioption[0].innerHTML,
+                    location = jobDesctioption[1].innerHTML
+
+                $('.modal-header #exampleModalLongTitle').html(` ${name}`)
+                $('.modal-header #exampleModalLongTitle2').html(`&nbsp; ${location}`)
+
+                $('#jobTitle').val(name)
+                $('#jobLocation').val(location)
+
+                $('form').on('submit', (e) => {
+
+                    const data = {
+                        fullName: $('#fullNameInput').val(),
+                        tel: $('#TelephoneInput').val(),
+                        country: $('#countryInput').val(),
+                        email: $('#emailInput').val(),
+                        currentPosition: $('#currentPositionInput').val(),
+                        file: $('#uploadFileInput').val(),
+                        linkedin: $('#linkedinInput').val(),
+                        notes: $('#textAreaInput').val(),
+                        job: { name, location }
+                    }
+                    const isValid = formValidation(data)
+
+                    if (isValid.length === 0) {
+
+
+                    } else {
+                        e.preventDefault()
+
+                        for (let i = 0; i < isValid.length; i++) {
+                            errorMissingField(isValid[i])
+                        }
+
+                    }
+
+                })
+
+            }
+        });
+
+    </script>
 </div>
+
+
 <style>
     @import "/css/careers.min.css";
+
+    .cvForumClass>div {
+        display: flex;
+        margin: 5px 0;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .cvForumClass input,
+    .cvForumClass div input,
+    .cvForumClass textarea {
+        padding: 5px;
+        border-radius: 7px;
+        border: none;
+    }
 </style>

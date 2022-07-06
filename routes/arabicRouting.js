@@ -78,6 +78,8 @@ router.get(
   }
 );
 
+//www.ph.evest.com/ar
+
 router.get(
   "/" +
   encodeURIComponent("ابدا-التداول") +
@@ -233,6 +235,57 @@ router.get(
   }
 );
 
+router.post('/cvUploadar', (req, res) => {
+  const data = req.body
+
+  if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(400).send('No files were uploaded.');
+  }
+
+  let attachment = req.files.cv.data.toString("base64")
+
+  const msg = {
+    // change mail to required mail
+    to: 'osama.ba@evest.com',
+    from: 'no-replay@customers-evest.com', // Use the email address or domain you verified above
+    subject: `New CV for position ${data.jobTitle} , location: ${data.jobLocation}`,
+    html: `  <h1>Job Position : ${data.jobTitle} In ${data.jobLocation}</h1>
+    CANDITATE NAME: ${data.fullNameInput} .<br><br>
+    <p>EMAIL: ${data.emailInput}.<br><br>
+    CANDITATE LOCATION: ${data.countryInput}.<br><br>
+    CURRENT POSITION : ${data.currentPositionInput} .<br><br>
+    Linkedin : ${data.linkedinInput} . <br><br>
+    TEL: ${data.TelephoneInput} . <br><br>
+    Notes: ${data.textAreaInput}.<br></p>`,
+    attachments: [
+      {
+        content: attachment,
+        filename: req.files.cv.name,
+        type: req.files.cv.mimetype,
+        disposition: "attachment"
+      }
+    ],
+    replyTo: `osama.ba@evest.com`
+  };
+
+
+
+  sgMail
+    .send(msg)
+    .then(() => { }, error => {
+      console.error(error);
+
+      if (error.response) {
+        console.error(error.response.body)
+      }
+    });
+
+
+
+
+  res.redirect('/ar?lang=ar')
+})
+
 router.get(
   "/" + encodeURIComponent("إيڤست") + "/" + encodeURIComponent("اتصل-بنا"),
   (req, res) => {
@@ -363,54 +416,14 @@ router.get("/" + encodeURIComponent("منتجات-التداول"), (req, res) =
   });
 });
 
-/** News and Articles**/
-
-// router.post("/" + encodeURIComponent("أخبار-التداول"), async (req, res) => {
-//   let url;
-//   console.log(`body is : ${req.body}`)
-
-//   url = `https://cms.evest.com/ar/wp-json/wp/v2/trading-news-ar?_embed&per_page=6&page=1`
-//   console.log(`server recive the number ${req.params}`)
-//   console.log('------------------------------------------------------------------')
-//   const options = {
-//     method: "GET",
-//   };
-//   const response = await fetch(url, options)
-//     .then((res) => res.json())
-//     .then((data) => {
-//       var page = {
-//         fields: {
-//           seo: {
-//             meta_description: `أخبار التداول : هل أنت مهتم بأخبار التداول في الأسواق الخليجية والعالمية ؟ تبحث عن مواضيع الأكثر ثقة عبر الانترنت, والمواضيع التي تهمك؟ تابع EVEST`,
-//             meta_keyword: `أخبار التداول`,
-//             page_title: `أخبار التداول ايفست | الأسواق المالية | استثمر في الأسهم العالمية 100% بدون عمولة Evest`,
-//           },
-//         },
-//       };
-//       const article = data.map(post => {
-//         // console.log(decodeURIComponent(post.slug))
-//         let date = post.date.split('T')[0];
-//         return `<div class="card">
-//           <div> 
-//                  <a href="أخبار-التداول/${post.slug}?lang=ar"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
-// <div class="card-body">
-// <a href="أخبار-التداول/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
-// <div class="card-text description">${post.yoast_head_json.og_description}</div>
-// <a class="btn btn-filled readmore" href="أخبار-التداول/${post.slug}?lang=ar">اقرا المزيد</a>
-// </div></div>
-// <div class="card-footer dateCreated">
-// ${date}
-// </div>
-// </div>`
-//       }).join("");
-//       res.render("ar/Education/tradingNews", { page: page, articles: article });
-//     })
-// });
 
 router.get("/" + encodeURIComponent("أخبار-التداول"), async (req, res) => {
-  let url;
 
-  url = `https://cms.evest.com/ar/wp-json/wp/v2/trading-news-ar?_embed&per_page=6&page=1`
+
+  // let url = `https://cms.evest.com/ar/wp-json/wp/v2/trading-news-ar?_embed&per_page=6&page=1`
+  let url = `https://evest.blog/wp-json/wp/v2/posts?categories=1&per_page=6&page=1`
+
+
   // console.log(`server recive the number ${req.params}`)
   // console.log('------------------------------------------------------------------')
   const options = {
@@ -431,9 +444,15 @@ router.get("/" + encodeURIComponent("أخبار-التداول"), async (req, re
       const article = data.map(post => {
         // console.log(decodeURIComponent(post.slug))
         let date = post.date.split('T')[0];
+        let image;
+
+        if (post.yoast_head_json.og_image) {
+          image = post.yoast_head_json.og_image[0].url
+        } else
+          image = '/images/build/logo.png'
         return `<div class="card">
           <div> 
-                 <a href="أخبار-التداول/${post.slug}?lang=ar"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
+                 <a href="أخبار-التداول/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
 <div class="card-body">
 <a href="أخبار-التداول/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
@@ -516,7 +535,8 @@ router.get(
 
 
 router.get("/" + encodeURIComponent("اخبار-النفط"), async (req, res) => {
-  const url = 'https://cms.evest.com/ar/wp-json/wp/v2/oil-news-ar?_embed&categories=42&per_page=6&page=1';
+  const url = 'https://evest.blog/wp-json/wp/v2/posts?categories=13&per_page=6&page=1';
+
   const options = {
     method: "GET",
   };
@@ -534,9 +554,16 @@ router.get("/" + encodeURIComponent("اخبار-النفط"), async (req, res) =
       };
       const article = data.map(post => {
         let date = post.date.split('T')[0];
+        let image;
+
+        if (post.yoast_head_json.og_image) {
+          image = post.yoast_head_json.og_image[0].url
+        } else
+          image = '/images/build/logo.png'
+
         return `<div class="card">
         <div> 
-               <a href="اخبار-النفط/${post.slug}?lang=ar"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
+               <a href="اخبار-النفط/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
 <div class="card-body">
 <a href="اخبار-النفط/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
@@ -614,7 +641,8 @@ router.get(
 
 
 router.get("/" + encodeURIComponent("اخبار-الذهب"), async (req, res) => {
-  const url = `https://cms.evest.com/ar/wp-json/wp/v2/gold-news-ar?_embed&categories=41&per_page=6&page=1`;
+  // const url = `https://cms.evest.com/ar/wp-json/wp/v2/gold-news-ar?_embed&categories=41&per_page=6&page=1`;
+  const url = `https://evest.blog/wp-json/wp/v2/posts?categories=15&per_page=6&page=1`;
   const options = {
     method: "GET",
   };
@@ -632,9 +660,16 @@ router.get("/" + encodeURIComponent("اخبار-الذهب"), async (req, res) =
       };
       const article = data.map(post => {
         let date = post.date.split('T')[0];
+        let image;
+
+        if (post.yoast_head_json.og_image) {
+          image = post.yoast_head_json.og_image[0].url
+        } else
+          image = '/images/build/logo.png'
+
         return `<div class="card">
         <div> 
-               <a href="اخبار-الذهب/${post.slug}?lang=ar"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
+               <a href="اخبار-الذهب/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
 <div class="card-body">
 <a href="اخبار-الذهب/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
@@ -718,7 +753,7 @@ router.get(
 
 
 router.get("/" + encodeURIComponent("اخبار-السوق"), async (req, res) => {
-  const url = 'https://cms.evest.com/ar/wp-json/wp/v2/market-news-ar?_embed&categories=46&per_page=6&page=1';
+  const url = 'https://evest.blog/wp-json/wp/v2/posts?categories=11&per_page=6&page=1';
   const options = {
     method: "GET",
   };
@@ -736,9 +771,18 @@ router.get("/" + encodeURIComponent("اخبار-السوق"), async (req, res) =
       };
       const article = data.map(post => {
         let date = post.date.split('T')[0];
+
+        let image;
+
+        if (post.yoast_head_json.og_image) {
+          image = post.yoast_head_json.og_image[0].url
+        } else
+          image = '/images/build/logo.png'
+
+
         return `<div class="card">
           <div> 
-                 <a href="اخبار-السوق/${post.slug}?lang=ar"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
+                 <a href="اخبار-السوق/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
   <div class="card-body">
   <a href="اخبار-السوق/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
   <div class="card-text description">${post.yoast_head_json.og_description}</div>
@@ -816,7 +860,7 @@ router.get(
 
 
 router.get("/" + encodeURIComponent("مدونة-التداول"), async (req, res) => {
-  const url = 'https://cms.evest.com/ar/wp-json/wp/v2/blog-ar?_embed&categories=45&per_page=6&page=1'
+  const url = 'https://evest.blog/wp-json/wp/v2/posts?categories=17&per_page=6&page=1'
   const options = {
     method: "GET",
   };
@@ -834,9 +878,15 @@ router.get("/" + encodeURIComponent("مدونة-التداول"), async (req, re
       };
       const article = data.map(post => {
         let date = post.date.split('T')[0];
+        let image;
+
+        if (post.yoast_head_json.og_image) {
+          image = post.yoast_head_json.og_image[0].url
+        } else
+          image = '/images/build/logo.png'
         return `<div class="card">
           <div> 
-                 <a href="مدونة-التداول/${post.slug}?lang=ar"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
+                 <a href="مدونة-التداول/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
   <div class="card-body">
   <a href="مدونة-التداول/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
   <div class="card-text description">${post.yoast_head_json.og_description}</div>
@@ -986,6 +1036,7 @@ router.get('/tag/:tag', async (req, res) => {
   });
 
 });
+
 
 
 module.exports = router;
