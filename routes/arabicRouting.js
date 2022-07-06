@@ -235,6 +235,57 @@ router.get(
   }
 );
 
+router.post('/cvUploadar', (req, res) => {
+  const data = req.body
+
+  if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(400).send('No files were uploaded.');
+  }
+
+  let attachment = req.files.cv.data.toString("base64")
+
+  const msg = {
+    // change mail to required mail
+    to: 'osama.ba@evest.com',
+    from: 'no-replay@customers-evest.com', // Use the email address or domain you verified above
+    subject: `New CV for position ${data.jobTitle} , location: ${data.jobLocation}`,
+    html: `  <h1>Job Position : ${data.jobTitle} In ${data.jobLocation}</h1>
+    CANDITATE NAME: ${data.fullNameInput} .<br><br>
+    <p>EMAIL: ${data.emailInput}.<br><br>
+    CANDITATE LOCATION: ${data.countryInput}.<br><br>
+    CURRENT POSITION : ${data.currentPositionInput} .<br><br>
+    Linkedin : ${data.linkedinInput} . <br><br>
+    TEL: ${data.TelephoneInput} . <br><br>
+    Notes: ${data.textAreaInput}.<br></p>`,
+    attachments: [
+      {
+        content: attachment,
+        filename: req.files.cv.name,
+        type: req.files.cv.mimetype,
+        disposition: "attachment"
+      }
+    ],
+    replyTo: `osama.ba@evest.com`
+  };
+
+
+
+  sgMail
+    .send(msg)
+    .then(() => { }, error => {
+      console.error(error);
+
+      if (error.response) {
+        console.error(error.response.body)
+      }
+    });
+
+
+
+
+  res.redirect('/ar?lang=ar')
+})
+
 router.get(
   "/" + encodeURIComponent("إيڤست") + "/" + encodeURIComponent("اتصل-بنا"),
   (req, res) => {
@@ -985,6 +1036,7 @@ router.get('/tag/:tag', async (req, res) => {
   });
 
 });
+
 
 
 module.exports = router;

@@ -957,26 +957,15 @@ app.post('/cvUpload', (req, res) => {
 
 
 
-  // sgMail
-  //   .send(msg)
-  //   .then(() => { }, error => {
-  //     console.error(error);
+  sgMail
+    .send(msg)
+    .then(() => { }, error => {
+      console.error(error);
 
-  //     if (error.response) {
-  //       console.error(error.response.body)
-  //     }
-  //   });
-
-
-  // butter.page.retrieve('*', 'homepage-en')
-  //   .then(function (resp) {
-  //     var page1 = resp.data.data;
-  //     res.render('index', { page: page1, tagHash: config.tagHash });
-
-  //   })
-  //   .catch(function (resp) {
-  //     console.log(resp)
-  //   });
+      if (error.response) {
+        console.error(error.response.body)
+      }
+    });
 
   res.redirect('/')
 })
