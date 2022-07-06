@@ -246,7 +246,7 @@ router.post('/cvUploadar', (req, res) => {
 
   const msg = {
     // change mail to required mail
-    to: 'osama.ba@evest.com',
+    to: 'isismael.h@evest.com',
     from: 'no-replay@customers-evest.com', // Use the email address or domain you verified above
     subject: `New CV for position ${data.jobTitle} , location: ${data.jobLocation}`,
     html: `  <h1>Job Position : ${data.jobTitle} In ${data.jobLocation}</h1>
@@ -472,7 +472,7 @@ ${date}
 router.get(
   "/" + encodeURIComponent("أخبار-التداول") + "/:slug",
   async (req, res) => {
-    const url = `https://cms.evest.com/ar/wp-json/wp/v2/trading-news-ar?_embed&slug=${req.params.slug}`;
+    const url = `https://evest.blog/wp-json/wp/v2/posts?categories=1&slug=${req.params.slug}`;
     console.log(url)
     const options = {
       method: "GET",
@@ -581,7 +581,7 @@ ${date}
 router.get(
   "/" + encodeURIComponent("اخبار-النفط") + "/:slug",
   async (req, res) => {
-    const url = `https://cms.evest.com/ar/wp-json/wp/v2/oil-news-ar?_embed&slug=${req.params.slug}`;
+    const url = `https://evest.blog/wp-json/wp/v2/posts?categories=13&slug=${req.params.slug}`;
     const options = {
       "method": "GET",
     };
@@ -688,7 +688,7 @@ ${date}
 router.get(
   "/" + encodeURIComponent("اخبار-الذهب") + "/:slug",
   async (req, res) => {
-    const url = `https://cms.evest.com/ar/wp-json/wp/v2/gold-news-ar?_embed&slug=${req.params.slug}`;
+    const url = `https://evest.blog/wp-json/wp/v2/posts?categories=15&slug=${req.params.slug}`;
     const options = {
       method: "GET",
     };
@@ -799,7 +799,7 @@ router.get("/" + encodeURIComponent("اخبار-السوق"), async (req, res) =
 router.get(
   "/" + encodeURIComponent("اخبار-السوق") + "/:slug",
   async (req, res) => {
-    const url = `https://cms.evest.com/ar/wp-json/wp/v2/market-news-ar?_embed&slug=${req.params.slug}`;
+    const url = `https://evest.blog/wp-json/wp/v2/posts?categories=11&slug=${req.params.slug}`;
     const options = {
       method: "GET",
     };
@@ -907,7 +907,7 @@ router.get("/" + encodeURIComponent("مدونة-التداول"), async (req, re
 router.get(
   "/" + encodeURIComponent("مدونة-التداول") + "/:slug",
   async (req, res) => {
-    const url = `https://cms.evest.com/ar/wp-json/wp/v2/blog-ar?_embed&slug=${req.params.slug}`;
+    const url = `https://evest.blog/wp-json/wp/v2/posts?categories=17&slug=${req.params.slug}`;
     const options = {
       method: "GET",
     };

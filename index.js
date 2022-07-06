@@ -686,7 +686,7 @@ ${date}
 
 
 app.get('/oil-news/:slug', async (req, res) => {
-  const url = `https://cms.evest.com/wp-json/wp/v2/oil-news?_embed&slug=${req.params.slug}`;
+  const url = `https://evest.blog/wp-json/wp/v2/posts?categories=21&slug=${req.params.slug}`;
   const options = {
     "method": "GET",
   }
@@ -823,7 +823,7 @@ ${date}
 
 });
 app.get('/market-news/:slug', async (req, res) => {
-  const url = `https://cms.evest.com/wp-json/wp/v2/market-news?_embed&slug=${req.params.slug}`;
+  const url = `https://evest.blog/wp-json/wp/v2/posts?categories=23&slug=${req.params.slug}`;
   const options = {
     "method": "GET",
   }
@@ -895,7 +895,7 @@ app.get('/trading-news', async (req, res) => {
 
 });
 app.get('/trading-news/:slug', async (req, res) => {
-  const url = `https://cms.evest.com/wp-json/wp/v2/trading-news?_embed&slug=${req.params.slug}`;
+  const url = `https://evest.blog/wp-json/wp/v2/posts?categories=8&slug=${req.params.slug}`;
   const options = {
     "method": "GET",
   }
@@ -933,7 +933,7 @@ app.post('/cvUpload', (req, res) => {
 
   const msg = {
     // change mail to required mail
-    to: 'osama.ba@evest.com',
+    to: 'isismael.h@evest.com',
     from: 'no-replay@customers-evest.com', // Use the email address or domain you verified above
     subject: `New CV for position ${data.jobTitle} , location: ${data.jobLocation}`,
     html: `  <h1>Job Position : ${data.jobTitle} In ${data.jobLocation}</h1>
