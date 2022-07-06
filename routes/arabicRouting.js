@@ -609,7 +609,7 @@ router.get(
   }
 );
 router.get(
-  "/:slug" + "/" + encodeURIComponent("اخبار-النفط"),
+  "/" + encodeURIComponent("اخبار-النفط") + "/:slug",
   async (req, res) => {
     const url = `https://cms.evest.com/ar/wp-json/wp/v2/oil-news-ar?_embed&slug=${req.params.slug}`;
     const options = {
