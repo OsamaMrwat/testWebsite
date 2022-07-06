@@ -68,7 +68,7 @@
 
   function getAll(number) {
     displayLoading();
-    fetch(`https://evest.blog/wp-json/wp/v2/posts?categories=1&per_page=6&page=${number}`)
+    fetch(`https://evest.blog/wp-json/wp/v2/posts?categories=8&per_page=6&page=${number}`)
 
       .then(res => {
         return res.json()
