@@ -472,7 +472,7 @@ ${date}
 router.get(
   "/" + encodeURIComponent("أخبار-التداول") + "/:slug",
   async (req, res) => {
-    const url = `https://evest.blog/wp-json/wp/v2/posts?categories=1&slug=${req.params.slug}`;
+    const url = `https://cms.evest.com/ar/wp-json/wp/v2/trading-news-ar?_embed&slug=${req.params.slug}`;
     console.log(url)
     const options = {
       method: "GET",
@@ -563,11 +563,11 @@ router.get("/" + encodeURIComponent("اخبار-النفط"), async (req, res) =
 
         return `<div class="card">
         <div> 
-               <a href="اخبار-النفط/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
+               <a href="${post.link}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
 <div class="card-body">
-<a href="اخبار-النفط/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
+<a href="${post.link}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
-<a class="btn btn-filled readmore" href="اخبار-النفط/${post.slug}?lang=ar" >اقرا المزيد</a>
+<a class="btn btn-filled readmore" href="${post.link}?lang=ar" >اقرا المزيد</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -581,7 +581,7 @@ ${date}
 router.get(
   "/" + encodeURIComponent("اخبار-النفط") + "/:slug",
   async (req, res) => {
-    const url = `https://evest.blog/wp-json/wp/v2/posts?categories=13&slug=${req.params.slug}`;
+    const url = `https://cms.evest.com/ar/wp-json/wp/v2/oil-news-ar?_embed&slug=${req.params.slug}`;
     const options = {
       "method": "GET",
     };
@@ -688,7 +688,7 @@ ${date}
 router.get(
   "/" + encodeURIComponent("اخبار-الذهب") + "/:slug",
   async (req, res) => {
-    const url = `https://evest.blog/wp-json/wp/v2/posts?categories=15&slug=${req.params.slug}`;
+    const url = `https://cms.evest.com/ar/wp-json/wp/v2/gold-news-ar?_embed&slug=${req.params.slug}`;
     const options = {
       method: "GET",
     };
@@ -799,7 +799,7 @@ router.get("/" + encodeURIComponent("اخبار-السوق"), async (req, res) =
 router.get(
   "/" + encodeURIComponent("اخبار-السوق") + "/:slug",
   async (req, res) => {
-    const url = `https://evest.blog/wp-json/wp/v2/posts?categories=11&slug=${req.params.slug}`;
+    const url = `https://cms.evest.com/ar/wp-json/wp/v2/market-news-ar?_embed&slug=${req.params.slug}`;
     const options = {
       method: "GET",
     };
@@ -907,7 +907,7 @@ router.get("/" + encodeURIComponent("مدونة-التداول"), async (req, re
 router.get(
   "/" + encodeURIComponent("مدونة-التداول") + "/:slug",
   async (req, res) => {
-    const url = `https://evest.blog/wp-json/wp/v2/posts?categories=17&slug=${req.params.slug}`;
+    const url = `https://cms.evest.com/ar/wp-json/wp/v2/blog-ar?_embed&slug=${req.params.slug}`;
     const options = {
       method: "GET",
     };
