@@ -715,7 +715,7 @@ app.get('/oil-news/:slug', async (req, res) => {
 
 app.get('/gold-news', async (req, res) => {
   // const url = 'https://cms.evest.com/wp-json/wp/v2/gold-news?_embed&per_page=6&page=1';
-  const url = 'https://cms.evest.com/wp-json/wp/v2/gold-news?_embed&per_page=6&page=1';
+  const url = 'https://evest.blog/wp-json/wp/v2/posts?categories=19&per_page=6&page=1';
   const options = {
     method: 'GET',
   };
@@ -732,9 +732,16 @@ app.get('/gold-news', async (req, res) => {
       };
       const article = data.map(post => {
         let date = post.date.split('T')[0];
+
+        let image;
+        if (post.yoast_head_json.og_image) {
+          image = post.yoast_head_json.og_image[0].url
+        } else
+          image = '/images/build/logo.png'
+
         return `<div class="card">
           <div> 
-                 <a href="${post.link}"><img class="card-img-top" src="${post.yoast_head_json.og_image[0].url}" alt="Card image cap"></a>
+                 <a href="${post.link}"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
 <div class="card-body">
 <a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
@@ -751,7 +758,7 @@ ${date}
 
 });
 app.get('/gold-news/:slug', async (req, res) => {
-  const url = `https://cms.evest.com/wp-json/wp/v2/gold-news?_embed&slug=${req.params.slug}`;
+  const url = `https://evest.blog/wp-json/wp/v2/posts?categories=19&slug=${req.params.slug}`;
   const options = {
     "method": "GET",
   }
@@ -843,7 +850,7 @@ app.get('/market-news/:slug', async (req, res) => {
       date: article[0].date,
       url: article[0].link,
       tags: tags,
-      og_img: `${article[0].yoast_head_json.og_image[0].url}`
+      og_img: `${image}`
     });
   }).catch(err => console.log(err));
 
