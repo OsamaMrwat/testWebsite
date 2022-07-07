@@ -95,11 +95,11 @@
 
           return `<div class="card">
           <div> 
-                 <a href="${post.link}"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
+                 <a href="/market-news/${post.slug}"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
 <div class="card-body">
-<a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
+<a href="/market-news/${post.slug}"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
-<a class="btn btn-filled readmore" href="${post.link}">Read more</a>
+<a class="btn btn-filled readmore" href="/market-news/${post.slug}">Read more</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -109,7 +109,6 @@ ${date}
 
         document.querySelector("#reslut").innerHTML = article;
         document.documentElement.scrollTop = 0;
-
 
       })
 

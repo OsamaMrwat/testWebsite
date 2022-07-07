@@ -452,11 +452,11 @@ router.get("/" + encodeURIComponent("أخبار-التداول"), async (req, re
           image = '/images/build/logo.png'
         return `<div class="card">
           <div> 
-                 <a href="أخبار-التداول/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
+                 <a href="/ar/أخبار-التداول/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
 <div class="card-body">
-<a href="أخبار-التداول/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
+<a href="/ar/أخبار-التداول/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
-<a class="btn btn-filled readmore" href="أخبار-التداول/${post.slug}?lang=ar">اقرا المزيد</a>
+<a class="btn btn-filled readmore" href="/ar/أخبار-التداول/${post.slug}?lang=ar">اقرا المزيد</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -472,28 +472,33 @@ ${date}
 router.get(
   "/" + encodeURIComponent("أخبار-التداول") + "/:slug",
   async (req, res) => {
-    const url = `https://cms.evest.com/ar/wp-json/wp/v2/trading-news-ar?_embed&slug=${req.params.slug}`;
-    console.log(url)
+    const url = `https://evest.blog/wp-json/wp/v2/posts?categories=1&slug=${req.params.slug}`;
+    // console.log(url)
     const options = {
       method: "GET",
     };
     const response = await fetch(url, options).then(res => res.json()).then(data => {
       var article = data;
       const tags = article[0].tags.map(tag => {
-        const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
-        return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
+        // const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
+        // return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
       }).join(' ');
 
+      let image;
+      if (article[0].yoast_head_json.og_image) {
+        image = article[0].yoast_head_json.og_image[0].url
+      } else
+        image = '/images/build/logo.png'
 
       var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
       res.render('ar/Education/article', {
         page: page, content: article[0].content.rendered,
         titleArticle: article[0].title.rendered,
-        imgUrl: article[0].yoast_head_json.og_image[0].url,
+        imgUrl: image,
         date: article[0].date,
         url: article[0].link,
         tags: tags,
-        og_img: `${article[0].yoast_head_json.og_image[0].url}`
+        og_img: image
       });
     })
       .catch((err) => console.log(err));
@@ -501,36 +506,36 @@ router.get(
 );
 
 
-router.get(
-  "/:slug" + "/" + encodeURIComponent("أخبار-التداول"),
-  async (req, res) => {
-    const url = `https://cms.evest.com/ar/wp-json/wp/v2/trading-news-ar?_embed&slug=${req.params.slug}`;
-    console.log(url)
-    const options = {
-      method: "GET",
-    };
-    const response = await fetch(url, options).then(res => res.json()).then(data => {
-      var article = data;
-      const tags = article[0].tags.map(tag => {
-        const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
-        return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
-      }).join(' ');
+// router.get(
+//   "/:slug" + "/" + encodeURIComponent("أخبار-التداول"),
+//   async (req, res) => {
+//     const url = `https://cms.evest.com/ar/wp-json/wp/v2/trading-news-ar?_embed&slug=${req.params.slug}`;
+//     console.log(url)
+//     const options = {
+//       method: "GET",
+//     };
+//     const response = await fetch(url, options).then(res => res.json()).then(data => {
+//       var article = data;
+//       const tags = article[0].tags.map(tag => {
+//         const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
+//         return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
+//       }).join(' ');
 
 
-      var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
-      res.render('ar/Education/article', {
-        page: page, content: article[0].content.rendered,
-        titleArticle: article[0].title.rendered,
-        imgUrl: article[0].yoast_head_json.og_image[0].url,
-        date: article[0].date,
-        url: article[0].link,
-        tags: tags,
-        og_img: `${article[0].yoast_head_json.og_image[0].url}`
-      });
-    })
-      .catch((err) => console.log(err));
-  }
-);
+//       var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
+//       res.render('ar/Education/article', {
+//         page: page, content: article[0].content.rendered,
+//         titleArticle: article[0].title.rendered,
+//         imgUrl: article[0].yoast_head_json.og_image[0].url,
+//         date: article[0].date,
+//         url: article[0].link,
+//         tags: tags,
+//         og_img: `${article[0].yoast_head_json.og_image[0].url}`
+//       });
+//     })
+//       .catch((err) => console.log(err));
+//   }
+// );
 
 
 
@@ -563,11 +568,11 @@ router.get("/" + encodeURIComponent("اخبار-النفط"), async (req, res) =
 
         return `<div class="card">
         <div> 
-               <a href="${post.link}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
+               <a href="/ar/اخبار-النفط/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
 <div class="card-body">
-<a href="${post.link}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
+<a href="/ar/اخبار-النفط/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
-<a class="btn btn-filled readmore" href="${post.link}?lang=ar" >اقرا المزيد</a>
+<a class="btn btn-filled readmore" href="/ar/اخبار-النفط/${post.slug}?lang=ar" >اقرا المزيد</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -581,63 +586,68 @@ ${date}
 router.get(
   "/" + encodeURIComponent("اخبار-النفط") + "/:slug",
   async (req, res) => {
-    const url = `https://cms.evest.com/ar/wp-json/wp/v2/oil-news-ar?_embed&slug=${req.params.slug}`;
+    const url = `https://evest.blog/wp-json/wp/v2/posts?categories=13&slug=${req.params.slug}`;
     const options = {
       "method": "GET",
     };
     const response = await fetch(url, options).then(res => res.json()).then(data => {
       var article = data;
       const tags = article[0].tags.map(tag => {
-        const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
-        return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
+        // const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
+        // return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
       }).join(' ');
 
+      let image;
+      if (article[0].yoast_head_json.og_image) {
+        image = article[0].yoast_head_json.og_image[0].url
+      } else
+        image = '/images/build/logo.png'
 
       var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
       res.render('ar/Education/article', {
         page: page, content: article[0].content.rendered,
         titleArticle: article[0].title.rendered,
-        imgUrl: article[0].yoast_head_json.og_image[0].url,
+        imgUrl: image,
         date: article[0].date,
         url: article[0].link,
         tags: tags,
-        og_img: `${article[0].yoast_head_json.og_image[0].url}`
+        og_img: image
       });
     })
       .catch((err) => console.log(err));
 
   }
 );
-router.get(
-  "/" + encodeURIComponent("اخبار-النفط") + "/:slug",
-  async (req, res) => {
-    const url = `https://cms.evest.com/ar/wp-json/wp/v2/oil-news-ar?_embed&slug=${req.params.slug}`;
-    const options = {
-      method: "GET",
-    };
-    const response = await fetch(url, options).then(res => res.json()).then(data => {
-      var article = data;
-      const tags = article[0].tags.map(tag => {
-        const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
-        return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
-      }).join(' ');
+// router.get(
+//   "/" + encodeURIComponent("اخبار-النفط") + "/:slug",
+//   async (req, res) => {
+//     const url = `https://cms.evest.com/ar/wp-json/wp/v2/oil-news-ar?_embed&slug=${req.params.slug}`;
+//     const options = {
+//       method: "GET",
+//     };
+//     const response = await fetch(url, options).then(res => res.json()).then(data => {
+//       var article = data;
+//       const tags = article[0].tags.map(tag => {
+//         const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
+//         return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
+//       }).join(' ');
 
 
-      var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
-      res.render('ar/Education/article', {
-        page: page, content: article[0].content.rendered,
-        titleArticle: article[0].title.rendered,
-        imgUrl: article[0].yoast_head_json.og_image[0].url,
-        date: article[0].date,
-        url: article[0].link,
-        tags: tags,
-        og_img: `${article[0].yoast_head_json.og_image[0].url}`
-      });
-    })
-      .catch((err) => console.log(err));
+//       var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
+//       res.render('ar/Education/article', {
+//         page: page, content: article[0].content.rendered,
+//         titleArticle: article[0].title.rendered,
+//         imgUrl: article[0].yoast_head_json.og_image[0].url,
+//         date: article[0].date,
+//         url: article[0].link,
+//         tags: tags,
+//         og_img: `${article[0].yoast_head_json.og_image[0].url}`
+//       });
+//     })
+//       .catch((err) => console.log(err));
 
-  }
-);
+//   }
+// );
 
 
 router.get("/" + encodeURIComponent("اخبار-الذهب"), async (req, res) => {
@@ -669,11 +679,11 @@ router.get("/" + encodeURIComponent("اخبار-الذهب"), async (req, res) =
 
         return `<div class="card">
         <div> 
-               <a href="اخبار-الذهب/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
+               <a href="/ar/اخبار-الذهب/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
 <div class="card-body">
-<a href="اخبار-الذهب/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
+<a href="/ar/اخبار-الذهب/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
-<a class="btn btn-filled readmore" href="اخبار-الذهب/${post.slug}?lang=ar">اقرا المزيد</a>
+<a class="btn btn-filled readmore" href="/ar/اخبار-الذهب/${post.slug}?lang=ar">اقرا المزيد</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -688,57 +698,32 @@ ${date}
 router.get(
   "/" + encodeURIComponent("اخبار-الذهب") + "/:slug",
   async (req, res) => {
-    const url = `https://cms.evest.com/ar/wp-json/wp/v2/gold-news-ar?_embed&slug=${req.params.slug}`;
+    const url = `https://evest.blog/wp-json/wp/v2/posts?categories=15&slug=${req.params.slug}`;
     const options = {
       method: "GET",
     };
     const response = await fetch(url, options).then(res => res.json()).then(data => {
       var article = data;
       const tags = article[0].tags.map(tag => {
-        const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
-        return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
+        // const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
+        // return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
       }).join(' ');
 
+      let image;
+      if (article[0].yoast_head_json.og_image) {
+        image = article[0].yoast_head_json.og_image[0].url
+      } else
+        image = '/images/build/logo.png'
 
       var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
       res.render('ar/Education/article', {
         page: page, content: article[0].content.rendered,
         titleArticle: article[0].title.rendered,
-        imgUrl: article[0].yoast_head_json.og_image[0].url,
+        imgUrl: image,
         date: article[0].date,
         url: article[0].link,
         tags: tags,
-        og_img: `${article[0].yoast_head_json.og_image[0].url}`
-      });
-    })
-      .catch((err) => console.log(err));
-
-  }
-);
-router.get(
-  "/:slug" + "/" + encodeURIComponent("اخبار-الذهب"),
-  async (req, res) => {
-    const url = `https://cms.evest.com/ar/wp-json/wp/v2/gold-news-ar?_embed&slug=${req.params.slug}`;
-    const options = {
-      method: "GET",
-    };
-    const response = await fetch(url, options).then(res => res.json()).then(data => {
-      var article = data;
-      const tags = article[0].tags.map(tag => {
-        const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
-        return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
-      }).join(' ');
-
-
-      var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
-      res.render('ar/Education/article', {
-        page: page, content: article[0].content.rendered,
-        titleArticle: article[0].title.rendered,
-        imgUrl: article[0].yoast_head_json.og_image[0].url,
-        date: article[0].date,
-        url: article[0].link,
-        tags: tags,
-        og_img: `${article[0].yoast_head_json.og_image[0].url}`
+        og_img: image
       });
     })
       .catch((err) => console.log(err));
@@ -747,9 +732,36 @@ router.get(
 );
 
 
+// router.get(
+//   "/:slug" + "/" + encodeURIComponent("اخبار-الذهب"),
+//   async (req, res) => {
+//     const url = `https://cms.evest.com/ar/wp-json/wp/v2/gold-news-ar?_embed&slug=${req.params.slug}`;
+//     const options = {
+//       method: "GET",
+//     };
+//     const response = await fetch(url, options).then(res => res.json()).then(data => {
+//       var article = data;
+//       const tags = article[0].tags.map(tag => {
+//         const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
+//         return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
+//       }).join(' ');
 
 
+//       var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
+//       res.render('ar/Education/article', {
+//         page: page, content: article[0].content.rendered,
+//         titleArticle: article[0].title.rendered,
+//         imgUrl: article[0].yoast_head_json.og_image[0].url,
+//         date: article[0].date,
+//         url: article[0].link,
+//         tags: tags,
+//         og_img: `${article[0].yoast_head_json.og_image[0].url}`
+//       });
+//     })
+//       .catch((err) => console.log(err));
 
+//   }
+// );
 
 
 router.get("/" + encodeURIComponent("اخبار-السوق"), async (req, res) => {
@@ -782,11 +794,11 @@ router.get("/" + encodeURIComponent("اخبار-السوق"), async (req, res) =
 
         return `<div class="card">
           <div> 
-                 <a href="اخبار-السوق/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
+                 <a href="/ar/اخبار-السوق/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
   <div class="card-body">
-  <a href="اخبار-السوق/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
+  <a href="/ar/اخبار-السوق/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
   <div class="card-text description">${post.yoast_head_json.og_description}</div>
-  <a class="btn btn-filled readmore" href="اخبار-السوق/${post.slug}?lang=ar">اقرا المزيد</a>
+  <a class="btn btn-filled readmore" href=/ar/اخبار-السوق/${post.slug}?lang=ar">اقرا المزيد</a>
   </div></div>
   <div class="card-footer dateCreated">
   ${date}
@@ -799,63 +811,68 @@ router.get("/" + encodeURIComponent("اخبار-السوق"), async (req, res) =
 router.get(
   "/" + encodeURIComponent("اخبار-السوق") + "/:slug",
   async (req, res) => {
-    const url = `https://cms.evest.com/ar/wp-json/wp/v2/market-news-ar?_embed&slug=${req.params.slug}`;
+    const url = `https:/evest.blog/wp-json/wp/v2/posts?categories=11&slug=${req.params.slug}`;
     const options = {
       method: "GET",
     };
     const response = await fetch(url, options).then(res => res.json()).then(data => {
       var article = data;
       const tags = article[0].tags.map(tag => {
-        const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
-        return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
+        // const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
+        // return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
       }).join(' ');
 
+      let image;
+      if (article[0].yoast_head_json.og_image) {
+        image = article[0].yoast_head_json.og_image[0].url
+      } else
+        image = '/images/build/logo.png'
 
       var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
       res.render('ar/Education/article', {
         page: page, content: article[0].content.rendered,
         titleArticle: article[0].title.rendered,
-        imgUrl: article[0].yoast_head_json.og_image[0].url,
+        imgUrl: image,
         date: article[0].date,
         url: article[0].link,
         tags: tags,
-        og_img: `${article[0].yoast_head_json.og_image[0].url}`
+        og_img: image
       });
     })
       .catch((err) => console.log(err));
 
   }
 );
-router.get(
-  "/:slug" + "/" + encodeURIComponent("اخبار-السوق"),
-  async (req, res) => {
-    const url = `https://cms.evest.com/ar/wp-json/wp/v2/market-news-ar?_embed&slug=${req.params.slug}`;
-    const options = {
-      method: "GET",
-    };
-    const response = await fetch(url, options).then(res => res.json()).then(data => {
-      var article = data;
-      const tags = article[0].tags.map(tag => {
-        const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
-        return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
-      }).join(' ');
+// router.get(
+//   "/:slug" + "/" + encodeURIComponent("اخبار-السوق"),
+//   async (req, res) => {
+//     const url = `https://cms.evest.com/ar/wp-json/wp/v2/market-news-ar?_embed&slug=${req.params.slug}`;
+//     const options = {
+//       method: "GET",
+//     };
+//     const response = await fetch(url, options).then(res => res.json()).then(data => {
+//       var article = data;
+//       const tags = article[0].tags.map(tag => {
+//         const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
+//         return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
+//       }).join(' ');
 
 
-      var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
-      res.render('ar/Education/article', {
-        page: page, content: article[0].content.rendered,
-        titleArticle: article[0].title.rendered,
-        imgUrl: article[0].yoast_head_json.og_image[0].url,
-        date: article[0].date,
-        url: article[0].link,
-        tags: tags,
-        og_img: `${article[0].yoast_head_json.og_image[0].url}`
-      });
-    })
-      .catch((err) => console.log(err));
+//       var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
+//       res.render('ar/Education/article', {
+//         page: page, content: article[0].content.rendered,
+//         titleArticle: article[0].title.rendered,
+//         imgUrl: article[0].yoast_head_json.og_image[0].url,
+//         date: article[0].date,
+//         url: article[0].link,
+//         tags: tags,
+//         og_img: `${article[0].yoast_head_json.og_image[0].url}`
+//       });
+//     })
+//       .catch((err) => console.log(err));
 
-  }
-);
+//   }
+// );
 
 
 
@@ -886,11 +903,11 @@ router.get("/" + encodeURIComponent("مدونة-التداول"), async (req, re
           image = '/images/build/logo.png'
         return `<div class="card">
           <div> 
-                 <a href="مدونة-التداول/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
+                 <a href="/ar/مدونة-التداول/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
   <div class="card-body">
-  <a href="مدونة-التداول/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
+  <a href="/ar/مدونة-التداول/${post.slug}?lang=ar"><h5 class="card-title">${post.title.rendered}</h5></a>
   <div class="card-text description">${post.yoast_head_json.og_description}</div>
-  <a class="btn btn-filled readmore" href="مدونة-التداول/${post.slug}?lang=ar">اقرا المزيد</a>
+  <a class="btn btn-filled readmore" href="/ar/مدونة-التداول/${post.slug}?lang=ar">اقرا المزيد</a>
   </div></div>
   <div class="card-footer dateCreated">
   ${date}
@@ -907,27 +924,32 @@ router.get("/" + encodeURIComponent("مدونة-التداول"), async (req, re
 router.get(
   "/" + encodeURIComponent("مدونة-التداول") + "/:slug",
   async (req, res) => {
-    const url = `https://cms.evest.com/ar/wp-json/wp/v2/blog-ar?_embed&slug=${req.params.slug}`;
+    const url = `https://evest.blog/wp-json/wp/v2/posts?categories=17&slug=${req.params.slug}`;
     const options = {
       method: "GET",
     };
     const response = await fetch(url, options).then(res => res.json()).then(data => {
       var article = data;
       const tags = article[0].tags.map(tag => {
-        const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
-        return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
+        // const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
+        // return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
       }).join(' ');
 
+      let image;
+      if (article[0].yoast_head_json.og_image) {
+        image = article[0].yoast_head_json.og_image[0].url
+      } else
+        image = '/images/build/logo.png'
 
       var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
       res.render('ar/Education/article', {
         page: page, content: article[0].content.rendered,
         titleArticle: article[0].title.rendered,
-        imgUrl: article[0].yoast_head_json.og_image[0].url,
+        imgUrl: image,
         date: article[0].date,
         url: article[0].link,
         tags: tags,
-        og_img: `${article[0].yoast_head_json.og_image[0].url}`
+        og_img: image
       });
     })
       .catch((err) => console.log(err));
