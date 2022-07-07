@@ -666,11 +666,11 @@ app.get('/oil-news', async (req, res) => {
 
         return `<div class="card">
           <div> 
-                 <a href="${post.link}"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
+                 <a href="/oil-news/${post.slug}"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
 <div class="card-body">
-<a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
+<a href="/oil-news/${post.slug}"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
-<a class="btn btn-filled readmore" href="${post.link}">Read more</a>
+<a class="btn btn-filled readmore" href="/oil-news/${post.slug}">Read more</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -693,20 +693,25 @@ app.get('/oil-news/:slug', async (req, res) => {
   const response = await fetch(url, options).then(res => res.json()).then(data => {
     var article = data;
     const tags = article[0].tags.map(tag => {
-      const tag_name = getTag.englishTags.find(elem => elem.tag_id === tag).Name;
-      return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
+      // const tag_name = getTag.englishTags.find(elem => elem.tag_id === tag).Name;
+      // return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
     }).join(' ');
 
+    let image;
+    if (article[0].yoast_head_json.og_image) {
+      image = article[0].yoast_head_json.og_image[0].url
+    } else
+      image = '/images/build/logo.png'
 
     var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
     res.render('Education/article', {
       page: page, content: article[0].content.rendered,
       titleArticle: article[0].title.rendered,
-      imgUrl: article[0].yoast_head_json.og_image[0].url,
+      imgUrl: image,
       date: article[0].date,
       url: article[0].link,
       tags: tags,
-      og_img: `${article[0].yoast_head_json.og_image[0].url}`
+      og_img: image
     });
   }).catch(err => console.log(err));
 
@@ -741,11 +746,11 @@ app.get('/gold-news', async (req, res) => {
 
         return `<div class="card">
           <div> 
-                 <a href="${post.link}"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
+                 <a href="/gold-news/${post.slug}"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
 <div class="card-body">
-<a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
+<a href="/gold-news/${post.slug}"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
-<a class="btn btn-filled readmore" href="${post.link}">Read more</a>
+<a class="btn btn-filled readmore" href="/gold-news/${post.slug}">Read more</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -765,20 +770,26 @@ app.get('/gold-news/:slug', async (req, res) => {
   const response = await fetch(url, options).then(res => res.json()).then(data => {
     var article = data;
     const tags = article[0].tags.map(tag => {
-      const tag_name = getTag.englishTags.find(elem => elem.tag_id === tag).Name;
-      return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
+      // const tag_name = getTag.englishTags.find(elem => elem.tag_id === tag).Name;
+      // return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
     }).join(' ');
+
+    let image;
+    if (article[0].yoast_head_json.og_image) {
+      image = article[0].yoast_head_json.og_image[0].url
+    } else
+      image = '/images/build/logo.png'
 
 
     var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
     res.render('Education/article', {
       page: page, content: article[0].content.rendered,
       titleArticle: article[0].title.rendered,
-      imgUrl: article[0].yoast_head_json.og_image[0].url,
+      imgUrl: image,
       date: article[0].date,
       url: article[0].link,
       tags: tags,
-      og_img: `${article[0].yoast_head_json.og_image[0].url}`
+      og_img: image
     });
   }).catch(err => console.log(err));
 
@@ -813,11 +824,11 @@ app.get('/market-news', async (req, res) => {
 
         return `<div class="card">
           <div> 
-                 <a href="${post.link}"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
+                 <a href="/market-news/${post.slug}"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
 <div class="card-body">
-<a href="${post.link}"><h5 class="card-title">${post.title.rendered}</h5></a>
+<a href="/market-news/${post.slug}"><h5 class="card-title">${post.title.rendered}</h5></a>
 <div class="card-text description">${post.yoast_head_json.og_description}</div>
-<a class="btn btn-filled readmore" href="${post.link}">Read more</a>
+<a class="btn btn-filled readmore" href="/market-news/${post.slug}">Read more</a>
 </div></div>
 <div class="card-footer dateCreated">
 ${date}
@@ -837,20 +848,25 @@ app.get('/market-news/:slug', async (req, res) => {
   const response = await fetch(url, options).then(res => res.json()).then(data => {
     var article = data;
     const tags = article[0].tags.map(tag => {
-      const tag_name = getTag.englishTags.find(elem => elem.tag_id === tag).Name;
-      return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
+      // const tag_name = getTag.englishTags.find(elem => elem.tag_id === tag).Name;
+      // return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
     }).join(' ');
 
+    let image;
+    if (article[0].yoast_head_json.og_image) {
+      image = article[0].yoast_head_json.og_image[0].url
+    } else
+      image = '/images/build/logo.png'
 
     var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
     res.render('Education/article', {
       page: page, content: article[0].content.rendered,
       titleArticle: article[0].title.rendered,
-      imgUrl: article[0].yoast_head_json.og_image[0].url,
+      imgUrl: image,
       date: article[0].date,
       url: article[0].link,
       tags: tags,
-      og_img: `${image}`
+      og_img: image
     });
   }).catch(err => console.log(err));
 
@@ -901,7 +917,6 @@ app.get('/trading-news', async (req, res) => {
 
 });
 app.get('/trading-news/:slug', async (req, res) => {
-  console.log('====================================================')
   const url = `https://evest.blog/wp-json/wp/v2/posts?categories=8&slug=${req.params.slug}`;
   const options = {
     "method": "GET",
