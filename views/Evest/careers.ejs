@@ -154,12 +154,14 @@
         $(document).ready(function () {
             $(".btn").attr('data-toggle', 'modal').attr("data-target", '#exampleModalCenter')
 
-            $(".col-md-8 .btn-filled").on('click', lala);
+            $(".btn-filled").on('click', lala);
             function lala() {
                 const jobDesctioption = $(this).parent('.col-md-8').siblings('.col-md-4').children('h5')
+                console.log(jobDesctioption)
                 const name = jobDesctioption[0].innerHTML,
                     location = jobDesctioption[1].innerHTML
 
+                // console.log(location)
                 $('.modal-header #exampleModalLongTitle').html(` ${name}`)
                 $('.modal-header #exampleModalLongTitle2').html(`&nbsp; ${location}`)
 

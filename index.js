@@ -961,7 +961,7 @@ app.post('/cvUpload', (req, res) => {
 
   const msg = {
     // change mail to required mail
-    to: 'isismael.h@evest.com',
+    to: 'ismael.h@evest.com',
     from: 'no-replay@customers-evest.com', // Use the email address or domain you verified above
     subject: `New CV for position ${data.jobTitle} , location: ${data.jobLocation}`,
     html: `  <h1>Job Position : ${data.jobTitle} In ${data.jobLocation}</h1>
@@ -980,7 +980,7 @@ app.post('/cvUpload', (req, res) => {
         disposition: "attachment"
       }
     ],
-    replyTo: `osama.ba@evest.com`
+    replyTo: `${data.emailInput}`
   };
 
 
