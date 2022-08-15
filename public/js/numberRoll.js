@@ -30,7 +30,7 @@ async function getArticles(){
       return `
   <div class="carousel-cell">
     <a href="${post.url_link}" target="_blank">
-    <img src="${post.yoast_head_json.schema["@graph"][2].url}" alt="${post.title.rendered}" title="${post.title.rendered}" style="width:450px">
+    <img src="${post.yoast_head_json.og_image[0].url}" alt="${post.title.rendered}" title="${post.title.rendered}" style="width:450px">
     </a>
   </div>`;
   }).join("");
