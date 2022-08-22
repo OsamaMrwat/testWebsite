@@ -878,6 +878,7 @@
     "creatingCustomer": "Creazione del cliente in corso",
     "copiedToCB": "Copiato negli appunti",
     "bitgo": "Bitgo",
+    "qrcode": "Pix - Banco Central",
     "accountBalance": "Saldo del conto",
     "scanQRCode": "Scansiona il codice QR",
     "bitcoinDeposit": "Deposito Bitcoin",
@@ -1078,7 +1079,7 @@
     "pending_text": "Grazie per aver caricato il documento. Il nostro team lo esaminerà presto",
     "two_sided": "Il documento è fronte/retro?",
     "trading_experience": "Hai esperienza con gli investimenti?",
-    "trades": "Trades",
+    "trades": "Commerci",
     "filterClosedTrades": "Filter trades history by",
     "allTypes": "All",
     "fasapay": "FasaPay",
@@ -1088,6 +1089,6 @@
     "unionpay_bank_card_number": "Numero Carta di Credito",
     "unionpay_national_id_card": "Carta d'Identità Nazionale",
     "bank_branch": "Filiale Bancaria",
-    "update": "Update",
+    "update": "Aggiornare",
     "description": "Descrizione"
 }

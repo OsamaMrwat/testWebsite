@@ -26,7 +26,7 @@
                             <i class="icon font-12"
                                ng-class="trade.closePriceDirection === 'asset-up' ? 'ion-android-arrow-up' : 'ion-android-arrow-down'"></i>
                         </span>
-                        <span ng-class="trade.closePriceDirection === 'asset-up' ? 'up' : 'down'">{{ trade.closePrice() | number:trade.asset.digits }}</span>
+                        <span ng-class="trade.closePriceDirection === 'asset-up' ? 'up' : 'down'">{{ trade.pendingCurrentPrice() | number:trade.asset.digits }}</span>
                     </div>
                 </div>
                 <div class="col-33 font-12 border-right-pending roboto pending-section center-text">
