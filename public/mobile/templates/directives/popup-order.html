@@ -1,4 +1,4 @@
-<ion-modal-view class="modal-page">
+<ion-modal-view class="modal-page popup-order-highlow">
 
     <ion-header-bar ng-class="data.isProcess ? 'processing' : (data.isError ? 'failed':'success')">
         <div class="modal-top" ng-class="data.isProcess ? 'processing' : (data.isError ? 'failed':'success')">
@@ -15,7 +15,7 @@
         <div class="modal-content">
             <div class="content">
                 <div>
-                    <span class="font-18 text-content" ng-bind-html="data.textContent"></span>
+                    <span class="text-content" ng-bind-html="data.textContent"></span>
                 </div>
             </div>
         </div>
