@@ -8,37 +8,37 @@ var crypto = [];
 
 //crypto  
 yahooFinance.quote({
-    symbol: "BTC-USD",
-    modules: ["price"] // see the docs for the full list
-}, function(err, quotes) {
+  symbol: "BTC-USD",
+  modules: ["price"] // see the docs for the full list
+}, function (err, quotes) {
   crypto.push(quotes);
 });
 
 yahooFinance.quote({
-    symbol: "ETH-USD",
-    modules: ["price"] // see the docs for the full list
-}, function(err, quotes) {
+  symbol: "ETH-USD",
+  modules: ["price"] // see the docs for the full list
+}, function (err, quotes) {
   crypto.push(quotes);
 });
 
 yahooFinance.quote({
-    symbol: "XRP-USD",
-    modules: ["price"] // see the docs for the full list
-}, function(err, quotes) {
+  symbol: "XRP-USD",
+  modules: ["price"] // see the docs for the full list
+}, function (err, quotes) {
   crypto.push(quotes);
 });
 
 yahooFinance.quote({
-    symbol: "DOGE-USD",
-    modules: ["price"] // see the docs for the full list
-}, function(err, quotes) {
+  symbol: "DOGE-USD",
+  modules: ["price"] // see the docs for the full list
+}, function (err, quotes) {
   crypto.push(quotes);
 })
 
 yahooFinance.quote({
-    symbol: "SOL-USD",
-    modules: ["price"] // see the docs for the full list
-}, function(err, quotes) {
+  symbol: "SOL-USD",
+  modules: ["price"] // see the docs for the full list
+}, function (err, quotes) {
   crypto.push(quotes);
 })
 
@@ -181,9 +181,9 @@ yahooFinance.quote(
     modules: ["price"], // see the docs for the full list
   },
   function (err, quotes) {
-    if(err){
+    if (err) {
       console.error(err)
-    }else{
+    } else {
       commodities.push(quotes);
     }
 
@@ -240,5 +240,5 @@ yahooFinance.quote(
 exports.getStocks = stocks;
 exports.getCurrency = currency;
 exports.getCommodities = commodities;
-exports.getIndices=indices;
-exports.getCrypto=crypto;
+exports.getIndices = indices;
+exports.getCrypto = crypto;

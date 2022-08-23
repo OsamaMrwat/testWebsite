@@ -870,6 +870,7 @@
     "creatingCustomer": "Creating customer",
     "copiedToCB": "Copied to clipboard",
     "bitgo": "Bitgo",
+    "qrcode": "Pix - Banco Central",
     "accountBalance": "Account Balance",
     "scanQRCode": "Scan QR Code",
     "bitcoinDeposit": "Bitcoin Deposit",
@@ -1044,5 +1045,6 @@
     "unionpay_national_id_card": "Cartão de Identidade Nacional",
     "bank_branch": "Sucursal do Banco",
     "update": "Update",
-    "description": "Descrição"
+    "description": "Descrição",
+    "qrcodeInfo": "Por favor, faça o upload do comprovante de pagamento na seção de documentos após a transação ser finalizada."
 }

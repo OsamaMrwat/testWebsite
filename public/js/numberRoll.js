@@ -12,20 +12,20 @@ function animateValue(obj, start, end, duration) {
 }
 
 const objs = document.getElementsByClassName("countdown");
-for(let obj of objs){
-  setInterval(animateValue(obj, 100, 0, 3000),2000)
+for (let obj of objs) {
+  setInterval(animateValue(obj, 100, 0, 3000), 2000)
 }
 const objs2 = document.getElementsByClassName("countup");
-for(let obj of objs2){
+for (let obj of objs2) {
   animateValue(obj, 0, 100, 5000);
 }
 
+// <img src="${post.yoast_head_json.schema["@graph"][2].url}" alt="${post.title.rendered}" title="${post.title.rendered}" style="width:450px">
 
 /* Press Realese*/
 var elem = document.querySelector('.main-carousel');
-async function getArticles(){
-  await fetch(`https://cms.evest.com/wp-json/wp/v2/press_release?_embded`).then(res=>res.json()).then(data=>
-  {
+async function getArticles() {
+  await fetch(`https://cms.evest.com/wp-json/wp/v2/press_release?_embded`).then(res => res.json()).then(data => {
     const article = data.map(post => {
       return `
   <div class="carousel-cell">
@@ -33,16 +33,16 @@ async function getArticles(){
     <img src="${post.yoast_head_json.og_image[0].url}" alt="${post.title.rendered}" title="${post.title.rendered}" style="width:450px">
     </a>
   </div>`;
-  }).join("");
+    }).join("");
 
-  document.querySelector("#PressRelease").innerHTML = article;
-});
-var flkty = new Flickity( elem, {
-  // options
-  cellAlign: 'left',
-  contain: true,
-  wrapAround: true,
-  freescroll:true
-});
+    document.querySelector("#PressRelease").innerHTML = article;
+  });
+  var flkty = new Flickity(elem, {
+    // options
+    cellAlign: 'left',
+    contain: true,
+    wrapAround: true,
+    freescroll: true
+  });
 }
 getArticles();

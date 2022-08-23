@@ -22,6 +22,54 @@
     </div>
 </div>
 
+<div ng-if="!profileRulesHelper.isHidden('tinAbsenceReason') && !personalProfileForm.tin">
+    <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border" id="tinAbsenceReason"
+         ng-class="{ 'has-error' : (form.tinAbsenceReason.$invalid && !form.tinAbsenceReason.$pristine) || (form.$submitted && form.tinAbsenceReason.$invalid) }">
+        <input type="text"
+               name="tinAbsenceReason"
+               ng-model="personalProfileForm.tinAbsenceReason"
+               ng-required="profileRulesHelper.isRequired('tinAbsenceReason') || !personalProfileForm.tin"
+               keyboard-watcher>
+        <span>{{::translation.tinAbsence}}</span>
+        <i class="icon ion-ios-close-empty"></i>
+        <i class="icon ion-ios-checkmark-empty"></i>
+    </div>
+    <div class="messages font-12" ng-messages="form.tinAbsenceReason.$error" ng-if="form.tinAbsenceReason.$dirty || form.$submitted">
+        <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+    </div>
+</div>
+
+
+<div ng-if="!profileRulesHelper.isHidden('pep')">
+    <div class="padding pb-0 pl-0" ng-click="showInfo('pep')" style="display: flex;">
+        {{::translation.pep}}
+        <span class="pep-description">?</span>
+    </div>
+
+    <div class="form-group item-input mb-3 mt-0 pl-0 pt-0 pb-0 custom-radio" id="pep"
+         ng-class="{ 'has-error' : form.pep.$invalid && !form.pep.$pristine }">
+        <ion-radio ng-value="false"
+                   name="pep"
+                   class="text-transform-capitalize"
+                   ng-model="personalProfileForm.pep"
+                   ng-required="profileRulesHelper.isRequired('pep')">
+            {{::translation.no}}
+        </ion-radio>
+        <ion-radio ng-value="true"
+                   name="pep"
+                   class="text-transform-capitalize"
+                   ng-model="personalProfileForm.pep"
+                   ng-required="profileRulesHelper.isRequired('pep')">
+            {{::translation.yes}}
+        </ion-radio>
+    </div>
+    <div class="messages font-12" ng-messages="form.pep.$error"
+         ng-if="form.pep.$dirty">
+        <div class="help-block" ng-message="required">Please select at least one option</div>
+    </div>
+</div>
+
+
 <div ng-If="!profileRulesHelper.isHidden('taxCountry')">
     <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border"
          id="taxCountry"
@@ -48,6 +96,8 @@
         <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
     </div>
 </div>
+
+
 
 
 <div ng-if="!profileRulesHelper.isHidden('isUSCitizen')">
