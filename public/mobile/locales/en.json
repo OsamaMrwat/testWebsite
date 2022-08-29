@@ -198,7 +198,6 @@
     "rateReach": " Open trade when rate reach",
     "rateWhen": "when rate",
     "allassets": "All assets",
-    "forex": "Forex",
     "commodities": "Commodities",
     "stocks": "Stocks",
     "shares": "Stocks",
@@ -1138,5 +1137,6 @@
         ]
     },
     "i_accept": "Accept",
-    "i_do_not_accept": "Exit"
+    "i_do_not_accept": "Exit",
+    "forex": "Currencies"
 }
