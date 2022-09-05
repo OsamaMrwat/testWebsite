@@ -1089,5 +1089,6 @@
     "unionpay_national_id_card": "Nationaler Personalausweis",
     "bank_branch": "Bankfiliale",
     "update": "Aktualisieren",
-    "description": "Beschreibung"
+    "description": "Beschreibung",
+    "pixCode": "Pix Code"
 }

@@ -1046,5 +1046,6 @@
     "bank_branch": "Sucursal do Banco",
     "update": "Update",
     "description": "Descrição",
-    "qrcodeInfo": "Por favor, faça o upload do comprovante de pagamento na seção de documentos após a transação ser finalizada."
+    "qrcodeInfo": "Por favor, faça o upload do comprovante de pagamento na seção de documentos após a transação ser finalizada.",
+    "pixCode": "Código Pix"
 }

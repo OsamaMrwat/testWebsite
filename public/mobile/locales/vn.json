@@ -1020,5 +1020,6 @@
     "reach": "Số người tiếp cận",
     "qrcodeInfo": "Please upload the proof of payment in the documents section when the transfer is done.",
     "electronicpayment": "Electronic Payment",
-    "pendingDepositMessage": "Dear ${clientName}, <br><br> in order to complete the transaction, please contact your account manager for further assistance."
+    "pendingDepositMessage": "Dear ${clientName}, <br><br> in order to complete the transaction, please contact your account manager for further assistance.",
+    "pixCode": "Pix Code"
 }

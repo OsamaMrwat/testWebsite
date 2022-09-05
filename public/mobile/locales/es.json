@@ -1091,5 +1091,6 @@
     "unionpay_national_id_card": "Doc nacional de identidad",
     "bank_branch": "Sucursal bancaria",
     "update": "Actualizar",
-    "description": "Descripción"
+    "description": "Descripción",
+    "pixCode": "Pix Code"
 }

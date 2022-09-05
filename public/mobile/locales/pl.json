@@ -1041,5 +1041,6 @@
 	"fasapay_account_name": "FasaPay Account Name",
 	"fasapay_wallet_account_number": "FasaPay Wallet Account Number",
     "update": "Update",
-    "description": "Opis"
+    "description": "Opis",
+    "pixCode": "Pix Code"
 }

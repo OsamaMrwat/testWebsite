@@ -1063,5 +1063,6 @@
     "fasapay_account_name": "FasaPay Account Name",
     "fasapay_wallet_account_number": "FasaPay Wallet Account Number",
     "update": "Update",
-    "description": "Leírás"
+    "description": "Leírás",
+    "pixCode": "Pix Code"
 }

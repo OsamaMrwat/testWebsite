@@ -1091,5 +1091,6 @@
     "description": "Описание",
     "lossPips": "Проигрыш в пипсах",
     "profitPips": "Прибыль в пипсах",
-    "reach": "Достиг цены"
+    "reach": "Достиг цены",
+    "pixCode": "Pix Code"
 }

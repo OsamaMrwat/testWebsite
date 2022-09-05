@@ -1090,5 +1090,6 @@
     "unionpay_national_id_card": "Carta d'Identità Nazionale",
     "bank_branch": "Filiale Bancaria",
     "update": "Aggiornare",
-    "description": "Descrizione"
+    "description": "Descrizione",
+    "pixCode": "Pix Code"
 }
