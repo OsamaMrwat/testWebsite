@@ -1,0 +1,66 @@
+<div class="row p-0">
+    <div class="col account-select-wrapper mt-10 mb-10">
+        <div class="form-group as-select">
+            <select class="custom-select no-appearance roboto-medium pl-7 pr-7"
+                    name="transfer-from"
+                    id="transfer-from"
+                    ng-model="current"
+                    ng-options="account.description for account in accounts">
+            </select>
+        </div>
+        <div ng-if="config.type === 'withdraw'">
+            <div class="row mt-10 pl-0 account-select-title">
+                <div class="col account-withdraw roboto-medium">
+                    <span>{{::translation.fundsWithdraw}}</span>
+                    <span>{{current.fundsToWithdraw | cryptoCurrency
+                        :current.currency:
+                        user.currencyDigits}}</span>
+                </div>
+            </div>
+        </div>
+        <div ng-if="config.type === 'transferFrom'">
+            <div class="row mt-10 pl-0 account-select-title">
+                <div class="col account-withdraw roboto-medium">
+                    <span>{{::translation.availableTransfer}}</span>
+                    <span>{{current.fundsToWithdraw | cryptoCurrency
+                        :current.currency:
+                        user.currencyDigits}}</span>
+                </div>
+            </div>
+        </div>
+        <div ng-if="config.type === 'balance'">
+            <div class="layout-row just-space account-select-title mt-10 pl-7 pr-7">
+                <div class="layout-col width-100">
+                    <div class="layout-row infoTitle font-13">
+                        {{::translation.balance}}
+                    </div>
+                    <div class="layout-row infoValues roboto-medium">
+                        {{current.balance | cryptoCurrency
+                        :current.currency
+                        :user.currencyDigits}}
+                    </div>
+                </div>
+                <div class="layout-col width-100" ng-if="showCredit">
+                    <div class="layout-row infoTitle font-13">
+                        {{::translation.credit}}
+                    </div>
+                    <div class="layout-row infoValues roboto-medium">
+                        {{current.credit | cryptoCurrency
+                        :account.currency
+                        :user.currencyDigits}}
+                    </div>
+                </div>
+                <div class="layout-col width-100">
+                    <div class="layout-row infoTitle font-13">
+                        {{::translation.equity}}
+                    </div>
+                    <div class="layout-row infoValues roboto-medium">
+                        {{current.equity | cryptoCurrency
+                        :current.currency
+                        :user.currencyDigits}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

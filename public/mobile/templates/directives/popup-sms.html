@@ -1,0 +1,106 @@
+<ion-modal-view class="modal-sms">
+    <ion-header-bar class="bar bar-stable bar-header" align-title="center">
+        <span class="title nav-title roboto-light font-14">{{::translation.smsVerification}}</span>
+    </ion-header-bar>
+    <ion-content scroll="true" overflow-scroll="true" class="has-footer sms-content roboto-light">
+        <div class="row pt-0">
+            <div class="col">
+                <div class="font-14 textHeader">
+                    {{::translation.smsVerificationText}}
+                </div>
+            </div>
+        </div>
+        <form name="formPhone" novalidate ng-submit="sendPhone(formPhone)">
+            <input type="submit" id="submitPhone" value="Submit" style="display:none"/>
+            <div class="row pt-0">
+                <div class="col">
+                    <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border" id="phone"
+                         ng-class="{ 'has-error' : (formPhone.phone.$invalid && !formPhone.phone.$pristine) || (formPhone.$submitted && formPhone.phone.$invalid) }">
+                        <input type="tel"
+                               name="phone"
+                               ng-model="sms.phone"
+                               ng-minlength="5"
+                               ng-maxlength="17"
+                               ng-pattern="validator('phone')"
+                               ng-readonly="sms.codeSent"
+                               keyboard-watcher
+                               required>
+                        <span>{{::translation.phoneFull}}</span>
+                        <i class="icon ion-ios-close-empty"></i>
+                        <i class="icon ion-ios-checkmark-empty"></i>
+                    </div>
+                    <div class="messages font-12" ng-messages="formPhone.phone.$error"
+                         ng-if="formPhone.phone.$dirty || formPhone.$submitted">
+                        <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+                        <div class="help-block" ng-message="minlength">{{::translation.messages.too_short}}</div>
+                        <div class="help-block" ng-message="maxlength">{{::translation.messages.too_long}}</div>
+                        <div class="help-block" ng-message="pattern">{{::translation.messages.numbers}}</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <form name="formCode" novalidate ng-submit="sendCode(formCode)">
+            <input type="submit" id="submitCode" value="Submit" style="display:none"/>
+            <div class="row pt-0" ng-if="sms.codeSent">
+                <div class="col">
+                    <div class="font-14">Please enter your mobile PIN code.</div>
+                    <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border" id="code"
+                         ng-class="{ 'has-error' : (formCode.code.$invalid && !formCode.code.$pristine) || (formCode.$submitted && formCode.code.$invalid) }">
+                        <input type="tel"
+                               name="code"
+                               ng-model="sms.code"
+                               ng-minlength="4"
+                               ng-maxlength="4"
+                               ng-pattern="validator('number')"
+                               keyboard-watcher
+                               required>
+                        <span>{{::translation.smsCode}}</span>
+                        <i class="icon ion-ios-close-empty"></i>
+                        <i class="icon ion-ios-checkmark-empty"></i>
+                    </div>
+                    <div class="messages font-12" ng-messages="formCode.code.$error"
+                         ng-if="formCode.code.$dirty || formCode.$submitted">
+                        <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+                        <div class="help-block" ng-message="minlength">{{::translation.messages.too_short}}</div>
+                        <div class="help-block" ng-message="maxlength">{{::translation.messages.too_long}}</div>
+                        <div class="help-block" ng-message="pattern">{{::translation.messages.numbers}}</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </ion-content>
+
+    <ion-footer-bar align-title="left" class="footer invest-buttons">
+        <div class="row p-0" ng-if="!sms.codeSent">
+            <div class="col">
+                <label for="submitPhone">
+                    <button class="button button-block button-full">
+                        {{translation.submit}}
+                    </button>
+                </label>
+            </div>
+        </div>
+
+        <div class="row p-0" ng-if="sms.codeSent">
+            <div class="col">
+                <label for="submitPhone">
+                    <button class="button button-transparent button-full">
+                        {{translation.smsResend}}
+                    </button>
+                </label>
+            </div>
+            <div class="col">
+                <label for="submitCode">
+                    <button class="button button-block button-full">
+                        {{translation.continue}}
+                    </button>
+                </label>
+            </div>
+        </div>
+    </ion-footer-bar>
+
+    <modal data="modal" template="templates/directives/popup-message.html"></modal>
+
+</ion-modal-view>
+
