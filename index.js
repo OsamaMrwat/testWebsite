@@ -70,7 +70,6 @@ app.use('/publicFiles', express.static(__dirname + '/public/publicFiles'))
 var count = 0;
 
 
-
 app.use('/', async (req, res, next) => {
 
 
@@ -111,7 +110,6 @@ app.use('/', async (req, res, next) => {
     })
 
 })
-
 
 
 /*Arabic Routing*/
