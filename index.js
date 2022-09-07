@@ -71,51 +71,15 @@ var count = 0;
 
 
 
-function validateRequestOnRTIServer(eventType, req) {
-  // return new Promise((resolve, reject) => {
-  // This is the body of the request which having some fields that used to tag each request as valid or not:
-  const form = {
-    'ApiKey': '84f32934-b799-442e-b155-38903b4ef453',
-    'TagHash': '2ec062e11ff1c8d7427ff441a149affa',
-    'ClientIP': req.ip,
-    'RequestURL': `${req.protocol}://${req.get('host')}${req.originalUrl}`,
-    'ResourceType': req.headers['content-type'] || req.headers['Content-Type'],
-    'Method': req.method,
-    'Host': req.headers['host'] || req.headers['Host'],
-    'UserAgent': req.headers['user-agent'] || req.headers['User-Agent'],
-    'Accept': req.headers['accept'] || req.headers['Accept'],
-    'AcceptLanguage': req.headers['accept-language'] || req.headers['Accept-Language'],
-    'AcceptEncoding': req.headers['accept-encoding'] || req.headers['Accept-Encoding'],
-    'HeaderNames': 'Host,User-Agent,Accept,Accept-Langauge,Accept-Encoding,Cookie',
-    'CheqCookie': req.cookies["_cheq_rti"],
-    'EventType': eventType
-  }
-  // console.log(form)
-  request.post({ url: 'https://obs.cheqzone.com/v1/realtime-interception', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, form },
-    (error, response) => {
-      if (error) {
-        console.log('error: ', error)
-      }
-      try {
-        console.log(response.body)
-      } catch (err) {
-        console.error(err);
-      }
-    });
-}
-
-
-
-
 app.use('/', async (req, res, next) => {
 
-  // await validateRequestOnRTIServer('page_load', req)
 
-
+  let ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
+  console.log(ip.split(',')[0])
   const form = {
     'ApiKey': '84f32934-b799-442e-b155-38903b4ef453',
     'TagHash': '2ec062e11ff1c8d7427ff441a149affa',
-    'ClientIP': req.ip,
+    'ClientIP': ip.split(',')[0],
     'RequestURL': `${req.protocol}://${req.get('host')}${req.originalUrl}`,
     'ResourceType': req.headers['content-type'] || req.headers['Content-Type'],
     'Method': req.method,
@@ -128,42 +92,25 @@ app.use('/', async (req, res, next) => {
     'CheqCookie': req.cookies["_cheq_rti"],
     'EventType': 'page_load'
   }
-  // console.log(form)
-  // request.post({ url: 'https://obs.cheqzone.com/v1/realtime-interception', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, form },
-  //   (error, response) => {
-  //     if (error) {
-  //       console.log('error: ', error)
-  //     }
-  //     try {
-  //       console.log(response.body)
-  //     } catch (err) {
-  //       console.error(err);
-  //     }
-  //   })
 
-  await fetch('https://obs.cheqzone.com/v1/realtime-interception', {
-    method: 'POST',
+  request.post({ url: 'https://obs.cheqzone.com/v1/realtime-interception', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, form },
+    (error, response) => {
+      if (error) {
+        console.log('error: ', error)
+      }
+      try {
+        console.log(response.body)
+        JSON.parse(response.body)
+        next()
+      } catch (err) {
+        console.error(err);
+        next()
 
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: JSON.stringify(form)
-  })
-    // .then(result => result.json())
-    .then(data => {
-      console.log(data.body);
-      next()
-
-    })
-    .catch(err => {
-      console.log(err);
-      next()
+      }
 
     })
 
 })
-
-
 
 
 
