@@ -1,11 +1,11 @@
 ,Silver,Gold ,Platinum ,Diamond ,Islamic
 ,,,,,
-Instument,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:
-COCOA,23,23.0,23.0,23.0,23.0
-COFFE,8.0,8.0,8.0,8.0,8.0
+Instrument,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:
+COCOA,23,23,23,23,23
+COFFE,8,8,8,8,8
 COPP,6,6,6,6,6
 CORN,7,7,7,7,7
-COTT2,6.0,6.0,6.0,6.0,6.0
+COTT2,6,6,6,6,6
 SBEAN,9.5,9.5,9.5,9.5,9.5
 SUG11,7,7,7,7,7
 WHEAT,7.5,7.5,7.5,7.5,7.5
@@ -16,6 +16,6 @@ XAUUSD ,3.5,3.5,3.5,3.5,3.5
 XAGUSD ,4,4,4,4,4
 ALUMINUM,13.5,13.5,13.5,13.5,13.5
 ZINC,133.5,133.5,133.5,133.5,133.5
-PLAT,10.0,10.0,10.0,10.0,10.0
+PLAT,10,10,10,10,10
 RBOB,5,5,5,5,5
 PALLAD,35,35,35,35,35
