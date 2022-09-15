@@ -54,9 +54,9 @@ router.get("/" + encodeURIComponent("أسئلة-شائعة"), (req, res) => {
 /* Start Trading Routes*/
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("انواع-الحسابات"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("انواع-الحسابات"),
   function (req, res) {
     butter.page.retrieve("*", "accounttypes-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -67,9 +67,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("الوثائق-و-السياسات"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("الوثائق-و-السياسات"),
   function (req, res) {
     butter.page.retrieve("*", "documentspolicies-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -82,9 +82,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("الإيداع-و-السحب"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("الإيداع-و-السحب"),
   (req, res) =>
     butter.page.retrieve("*", "depositandwithdrawal-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -94,9 +94,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("رسوم-ايفست"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("رسوم-ايفست"),
   (req, res) =>
     butter.page.retrieve("*", "tradingfees-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -106,9 +106,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("اوقات-التداول"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("اوقات-التداول"),
   (req, res) =>
     butter.page.retrieve("*", "tradinghours-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -118,9 +118,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("حاسبات-التداول"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("حاسبات-التداول"),
   (req, res) =>
     butter.page.retrieve("*", "tradingcalculator-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -130,9 +130,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("تداول-الاسهم-0-عمولة"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("تداول-الاسهم-0-عمولة"),
   (req, res) =>
     butter.page.retrieve("*", "zerocommission-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -142,9 +142,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("حساب-تداول-تجريبي"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("حساب-تداول-تجريبي"),
   (req, res) =>
     butter.page.retrieve("*", "demoaccount-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -154,9 +154,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("حساب-تداول-إسلامي"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("حساب-تداول-إسلامي"),
   (req, res) =>
     butter.page.retrieve("*", "islamic-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -166,9 +166,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("العملات-الرقمية"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("العملات-الرقمية"),
   (req, res) => {
     butter.page.retrieve("*", "crypto-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -179,9 +179,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("سَلاَّت-تداول-استثمارية"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("سَلاَّت-تداول-استثمارية"),
   (req, res) => {
     butter.page.retrieve("*", "eib-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -235,19 +235,19 @@ router.get(
   }
 );
 
-router.post('/cvUploadar', (req, res) => {
-  const data = req.body
+router.post("/cvUploadar", (req, res) => {
+  const data = req.body;
 
   if (!req.files || Object.keys(req.files).length === 0) {
-    return res.status(400).send('No files were uploaded.');
+    return res.status(400).send("No files were uploaded.");
   }
 
-  let attachment = req.files.cv.data.toString("base64")
+  let attachment = req.files.cv.data.toString("base64");
 
   const msg = {
     // change mail to required mail
-    to: 'ismael.h@evest.com',
-    from: 'no-replay@customers-evest.com', // Use the email address or domain you verified above
+    to: ["ismael.h@evest.com", "hr.cy@evest.com"],
+    from: "no-replay@customers-evest.com", // Use the email address or domain you verified above
     subject: `New CV for position ${data.jobTitle} , location: ${data.jobLocation}`,
     html: `  <h1>Job Position : ${data.jobTitle} In ${data.jobLocation}</h1>
     CANDITATE NAME: ${data.fullNameInput} .<br><br>
@@ -262,29 +262,25 @@ router.post('/cvUploadar', (req, res) => {
         content: attachment,
         filename: req.files.cv.name,
         type: req.files.cv.mimetype,
-        disposition: "attachment"
-      }
+        disposition: "attachment",
+      },
     ],
-    replyTo: `${data.emailInput}`
+    replyTo: `${data.emailInput}`,
   };
 
-
-
-  sgMail
-    .send(msg)
-    .then(() => { }, error => {
+  sgMail.send(msg).then(
+    () => {},
+    (error) => {
       console.error(error);
 
       if (error.response) {
-        console.error(error.response.body)
+        console.error(error.response.body);
       }
-    });
+    }
+  );
 
-
-
-
-  res.redirect('/ar?lang=ar')
-})
+  res.redirect("/ar?lang=ar");
+});
 
 router.get(
   "/" + encodeURIComponent("إيڤست") + "/" + encodeURIComponent("اتصل-بنا"),
@@ -298,8 +294,8 @@ router.get(
 router.post("/sendArabic", (req, res) => {
   const msg = {
     to: "support@evest.com",
-    from: "no-replay@customers-evest.com", // Use the email address or domain you verified above
-    subject: "New Message from the CEO website page",
+    from: `${req.body.email}`, // Use the email address or domain you verified above
+    subject: `تمّ إرسال بريد إلكتروني من ${req.body.fullName} `,
     html: `  <h1>You Got New Message</h1>
     <p>EMAIL: ${req.body.email}.<br><br>
     FULL NAME: ${req.body.fullName}.<br><br>
@@ -309,7 +305,7 @@ router.post("/sendArabic", (req, res) => {
   };
   //ES6
   sgMail.send(msg).then(
-    () => { },
+    () => {},
     (error) => {
       console.error(error);
 
@@ -349,9 +345,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("إيڤست") +
-  "/" +
-  encodeURIComponent("تراخيص-التداول"),
+    encodeURIComponent("إيڤست") +
+    "/" +
+    encodeURIComponent("تراخيص-التداول"),
   (req, res) => {
     butter.page
       .retrieve("*", "regulatoryauthorisation-ar")
@@ -394,7 +390,7 @@ router.post("/" + encodeURIComponent("المدير-التنفيذي"), (req, res
   };
   //ES6
   sgMail.send(msg).then(
-    () => { },
+    () => {},
     (error) => {
       console.error(error);
 
@@ -416,13 +412,9 @@ router.get("/" + encodeURIComponent("منتجات-التداول"), (req, res) =
   });
 });
 
-
 router.get("/" + encodeURIComponent("أخبار-التداول"), async (req, res) => {
-
-
   // let url = `https://cms.evest.com/ar/wp-json/wp/v2/trading-news-ar?_embed&per_page=6&page=1`
-  let url = `https://evest.blog/wp-json/wp/v2/posts?categories=1&per_page=6&page=1`
-
+  let url = `https://evest.blog/wp-json/wp/v2/posts?categories=1&per_page=6&page=1`;
 
   // console.log(`server recive the number ${req.params}`)
   // console.log('------------------------------------------------------------------')
@@ -441,16 +433,16 @@ router.get("/" + encodeURIComponent("أخبار-التداول"), async (req, re
           },
         },
       };
-      const article = data.map(post => {
-        // console.log(decodeURIComponent(post.slug))
-        let date = post.date.split('T')[0];
-        let image;
+      const article = data
+        .map((post) => {
+          // console.log(decodeURIComponent(post.slug))
+          let date = post.date.split("T")[0];
+          let image;
 
-        if (post.yoast_head_json.og_image) {
-          image = post.yoast_head_json.og_image[0].url
-        } else
-          image = '/images/build/logo.png'
-        return `<div class="card">
+          if (post.yoast_head_json.og_image) {
+            image = post.yoast_head_json.og_image[0].url;
+          } else image = "/images/build/logo.png";
+          return `<div class="card">
           <div> 
                  <a href="/ar/أخبار-التداول/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
 <div class="card-body">
@@ -461,13 +453,12 @@ router.get("/" + encodeURIComponent("أخبار-التداول"), async (req, re
 <div class="card-footer dateCreated">
 ${date}
 </div>
-</div>`
-      }).join("");
+</div>`;
+        })
+        .join("");
       res.render("ar/Education/tradingNews", { page: page, articles: article });
-    })
+    });
 });
-
-
 
 router.get(
   "/" + encodeURIComponent("أخبار-التداول") + "/:slug",
@@ -477,34 +468,45 @@ router.get(
     const options = {
       method: "GET",
     };
-    const response = await fetch(url, options).then(res => res.json()).then(data => {
-      var article = data;
-      const tags = article[0].tags.map(tag => {
-        // const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
-        // return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
-      }).join(' ');
+    const response = await fetch(url, options)
+      .then((res) => res.json())
+      .then((data) => {
+        var article = data;
+        const tags = article[0].tags
+          .map((tag) => {
+            // const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
+            // return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
+          })
+          .join(" ");
 
-      let image;
-      if (article[0].yoast_head_json.og_image) {
-        image = article[0].yoast_head_json.og_image[0].url
-      } else
-        image = '/images/build/logo.png'
+        let image;
+        if (article[0].yoast_head_json.og_image) {
+          image = article[0].yoast_head_json.og_image[0].url;
+        } else image = "/images/build/logo.png";
 
-      var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
-      res.render('ar/Education/article', {
-        page: page, content: article[0].content.rendered,
-        titleArticle: article[0].title.rendered,
-        imgUrl: image,
-        date: article[0].date,
-        url: article[0].link,
-        tags: tags,
-        og_img: image
-      });
-    })
+        var page = {
+          fields: {
+            seo: {
+              meta_description: `${article[0].yoast_head_json.og_description}`,
+              meta_keyword: ``,
+              page_title: `${article[0].yoast_head_json.og_title}`,
+            },
+          },
+        };
+        res.render("ar/Education/article", {
+          page: page,
+          content: article[0].content.rendered,
+          titleArticle: article[0].title.rendered,
+          imgUrl: image,
+          date: article[0].date,
+          url: article[0].link,
+          tags: tags,
+          og_img: image,
+        });
+      })
       .catch((err) => console.log(err));
   }
 );
-
 
 // router.get(
 //   "/:slug" + "/" + encodeURIComponent("أخبار-التداول"),
@@ -521,7 +523,6 @@ router.get(
 //         return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
 //       }).join(' ');
 
-
 //       var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
 //       res.render('ar/Education/article', {
 //         page: page, content: article[0].content.rendered,
@@ -537,10 +538,9 @@ router.get(
 //   }
 // );
 
-
-
 router.get("/" + encodeURIComponent("اخبار-النفط"), async (req, res) => {
-  const url = 'https://evest.blog/wp-json/wp/v2/posts?categories=13&per_page=6&page=1';
+  const url =
+    "https://evest.blog/wp-json/wp/v2/posts?categories=13&per_page=6&page=1";
 
   const options = {
     method: "GET",
@@ -557,16 +557,16 @@ router.get("/" + encodeURIComponent("اخبار-النفط"), async (req, res) =
           },
         },
       };
-      const article = data.map(post => {
-        let date = post.date.split('T')[0];
-        let image;
+      const article = data
+        .map((post) => {
+          let date = post.date.split("T")[0];
+          let image;
 
-        if (post.yoast_head_json.og_image) {
-          image = post.yoast_head_json.og_image[0].url
-        } else
-          image = '/images/build/logo.png'
+          if (post.yoast_head_json.og_image) {
+            image = post.yoast_head_json.og_image[0].url;
+          } else image = "/images/build/logo.png";
 
-        return `<div class="card">
+          return `<div class="card">
         <div> 
                <a href="/ar/اخبار-النفط/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
 <div class="card-body">
@@ -577,45 +577,56 @@ router.get("/" + encodeURIComponent("اخبار-النفط"), async (req, res) =
 <div class="card-footer dateCreated">
 ${date}
 </div>
-</div>`
-      }).join("");
+</div>`;
+        })
+        .join("");
       res.render("ar/Education/oil", { page: page, articles: article });
     });
-
 });
 router.get(
   "/" + encodeURIComponent("اخبار-النفط") + "/:slug",
   async (req, res) => {
     const url = `https://evest.blog/wp-json/wp/v2/posts?categories=13&slug=${req.params.slug}`;
     const options = {
-      "method": "GET",
+      method: "GET",
     };
-    const response = await fetch(url, options).then(res => res.json()).then(data => {
-      var article = data;
-      const tags = article[0].tags.map(tag => {
-        // const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
-        // return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
-      }).join(' ');
+    const response = await fetch(url, options)
+      .then((res) => res.json())
+      .then((data) => {
+        var article = data;
+        const tags = article[0].tags
+          .map((tag) => {
+            // const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
+            // return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
+          })
+          .join(" ");
 
-      let image;
-      if (article[0].yoast_head_json.og_image) {
-        image = article[0].yoast_head_json.og_image[0].url
-      } else
-        image = '/images/build/logo.png'
+        let image;
+        if (article[0].yoast_head_json.og_image) {
+          image = article[0].yoast_head_json.og_image[0].url;
+        } else image = "/images/build/logo.png";
 
-      var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
-      res.render('ar/Education/article', {
-        page: page, content: article[0].content.rendered,
-        titleArticle: article[0].title.rendered,
-        imgUrl: image,
-        date: article[0].date,
-        url: article[0].link,
-        tags: tags,
-        og_img: image
-      });
-    })
+        var page = {
+          fields: {
+            seo: {
+              meta_description: `${article[0].yoast_head_json.og_description}`,
+              meta_keyword: ``,
+              page_title: `${article[0].yoast_head_json.og_title}`,
+            },
+          },
+        };
+        res.render("ar/Education/article", {
+          page: page,
+          content: article[0].content.rendered,
+          titleArticle: article[0].title.rendered,
+          imgUrl: image,
+          date: article[0].date,
+          url: article[0].link,
+          tags: tags,
+          og_img: image,
+        });
+      })
       .catch((err) => console.log(err));
-
   }
 );
 // router.get(
@@ -632,7 +643,6 @@ router.get(
 //         return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
 //       }).join(' ');
 
-
 //       var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
 //       res.render('ar/Education/article', {
 //         page: page, content: article[0].content.rendered,
@@ -648,7 +658,6 @@ router.get(
 
 //   }
 // );
-
 
 router.get("/" + encodeURIComponent("اخبار-الذهب"), async (req, res) => {
   // const url = `https://cms.evest.com/ar/wp-json/wp/v2/gold-news-ar?_embed&categories=41&per_page=6&page=1`;
@@ -668,16 +677,16 @@ router.get("/" + encodeURIComponent("اخبار-الذهب"), async (req, res) =
           },
         },
       };
-      const article = data.map(post => {
-        let date = post.date.split('T')[0];
-        let image;
+      const article = data
+        .map((post) => {
+          let date = post.date.split("T")[0];
+          let image;
 
-        if (post.yoast_head_json.og_image) {
-          image = post.yoast_head_json.og_image[0].url
-        } else
-          image = '/images/build/logo.png'
+          if (post.yoast_head_json.og_image) {
+            image = post.yoast_head_json.og_image[0].url;
+          } else image = "/images/build/logo.png";
 
-        return `<div class="card">
+          return `<div class="card">
         <div> 
                <a href="/ar/اخبار-الذهب/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
 <div class="card-body">
@@ -688,12 +697,12 @@ router.get("/" + encodeURIComponent("اخبار-الذهب"), async (req, res) =
 <div class="card-footer dateCreated">
 ${date}
 </div>
-</div>`
-      }).join("");
+</div>`;
+        })
+        .join("");
 
       res.render("ar/Education/gold", { page: page, articles: article });
     });
-
 });
 router.get(
   "/" + encodeURIComponent("اخبار-الذهب") + "/:slug",
@@ -702,35 +711,45 @@ router.get(
     const options = {
       method: "GET",
     };
-    const response = await fetch(url, options).then(res => res.json()).then(data => {
-      var article = data;
-      const tags = article[0].tags.map(tag => {
-        // const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
-        // return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
-      }).join(' ');
+    const response = await fetch(url, options)
+      .then((res) => res.json())
+      .then((data) => {
+        var article = data;
+        const tags = article[0].tags
+          .map((tag) => {
+            // const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
+            // return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
+          })
+          .join(" ");
 
-      let image;
-      if (article[0].yoast_head_json.og_image) {
-        image = article[0].yoast_head_json.og_image[0].url
-      } else
-        image = '/images/build/logo.png'
+        let image;
+        if (article[0].yoast_head_json.og_image) {
+          image = article[0].yoast_head_json.og_image[0].url;
+        } else image = "/images/build/logo.png";
 
-      var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
-      res.render('ar/Education/article', {
-        page: page, content: article[0].content.rendered,
-        titleArticle: article[0].title.rendered,
-        imgUrl: image,
-        date: article[0].date,
-        url: article[0].link,
-        tags: tags,
-        og_img: image
-      });
-    })
+        var page = {
+          fields: {
+            seo: {
+              meta_description: `${article[0].yoast_head_json.og_description}`,
+              meta_keyword: ``,
+              page_title: `${article[0].yoast_head_json.og_title}`,
+            },
+          },
+        };
+        res.render("ar/Education/article", {
+          page: page,
+          content: article[0].content.rendered,
+          titleArticle: article[0].title.rendered,
+          imgUrl: image,
+          date: article[0].date,
+          url: article[0].link,
+          tags: tags,
+          og_img: image,
+        });
+      })
       .catch((err) => console.log(err));
-
   }
 );
-
 
 // router.get(
 //   "/:slug" + "/" + encodeURIComponent("اخبار-الذهب"),
@@ -745,7 +764,6 @@ router.get(
 //         const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
 //         return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
 //       }).join(' ');
-
 
 //       var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
 //       res.render('ar/Education/article', {
@@ -763,9 +781,9 @@ router.get(
 //   }
 // );
 
-
 router.get("/" + encodeURIComponent("اخبار-السوق"), async (req, res) => {
-  const url = 'https://evest.blog/wp-json/wp/v2/posts?categories=11&per_page=6&page=1';
+  const url =
+    "https://evest.blog/wp-json/wp/v2/posts?categories=11&per_page=6&page=1";
   const options = {
     method: "GET",
   };
@@ -781,18 +799,17 @@ router.get("/" + encodeURIComponent("اخبار-السوق"), async (req, res) =
           },
         },
       };
-      const article = data.map(post => {
-        let date = post.date.split('T')[0];
+      const article = data
+        .map((post) => {
+          let date = post.date.split("T")[0];
 
-        let image;
+          let image;
 
-        if (post.yoast_head_json.og_image) {
-          image = post.yoast_head_json.og_image[0].url
-        } else
-          image = '/images/build/logo.png'
+          if (post.yoast_head_json.og_image) {
+            image = post.yoast_head_json.og_image[0].url;
+          } else image = "/images/build/logo.png";
 
-
-        return `<div class="card">
+          return `<div class="card">
           <div> 
                  <a href="/ar/اخبار-السوق/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
   <div class="card-body">
@@ -803,10 +820,11 @@ router.get("/" + encodeURIComponent("اخبار-السوق"), async (req, res) =
   <div class="card-footer dateCreated">
   ${date}
   </div>
-  </div>`
-      }).join("");
+  </div>`;
+        })
+        .join("");
       res.render("ar/Education/market", { page: page, articles: article });
-    })
+    });
 });
 router.get(
   "/" + encodeURIComponent("اخبار-السوق") + "/:slug",
@@ -815,32 +833,43 @@ router.get(
     const options = {
       method: "GET",
     };
-    const response = await fetch(url, options).then(res => res.json()).then(data => {
-      var article = data;
-      const tags = article[0].tags.map(tag => {
-        // const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
-        // return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
-      }).join(' ');
+    const response = await fetch(url, options)
+      .then((res) => res.json())
+      .then((data) => {
+        var article = data;
+        const tags = article[0].tags
+          .map((tag) => {
+            // const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
+            // return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
+          })
+          .join(" ");
 
-      let image;
-      if (article[0].yoast_head_json.og_image) {
-        image = article[0].yoast_head_json.og_image[0].url
-      } else
-        image = '/images/build/logo.png'
+        let image;
+        if (article[0].yoast_head_json.og_image) {
+          image = article[0].yoast_head_json.og_image[0].url;
+        } else image = "/images/build/logo.png";
 
-      var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
-      res.render('ar/Education/article', {
-        page: page, content: article[0].content.rendered,
-        titleArticle: article[0].title.rendered,
-        imgUrl: image,
-        date: article[0].date,
-        url: article[0].link,
-        tags: tags,
-        og_img: image
-      });
-    })
+        var page = {
+          fields: {
+            seo: {
+              meta_description: `${article[0].yoast_head_json.og_description}`,
+              meta_keyword: ``,
+              page_title: `${article[0].yoast_head_json.og_title}`,
+            },
+          },
+        };
+        res.render("ar/Education/article", {
+          page: page,
+          content: article[0].content.rendered,
+          titleArticle: article[0].title.rendered,
+          imgUrl: image,
+          date: article[0].date,
+          url: article[0].link,
+          tags: tags,
+          og_img: image,
+        });
+      })
       .catch((err) => console.log(err));
-
   }
 );
 // router.get(
@@ -857,7 +886,6 @@ router.get(
 //         return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
 //       }).join(' ');
 
-
 //       var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
 //       res.render('ar/Education/article', {
 //         page: page, content: article[0].content.rendered,
@@ -874,10 +902,9 @@ router.get(
 //   }
 // );
 
-
-
 router.get("/" + encodeURIComponent("مدونة-التداول"), async (req, res) => {
-  const url = 'https://evest.blog/wp-json/wp/v2/posts?categories=17&per_page=6&page=1'
+  const url =
+    "https://evest.blog/wp-json/wp/v2/posts?categories=17&per_page=6&page=1";
   const options = {
     method: "GET",
   };
@@ -893,15 +920,15 @@ router.get("/" + encodeURIComponent("مدونة-التداول"), async (req, re
           },
         },
       };
-      const article = data.map(post => {
-        let date = post.date.split('T')[0];
-        let image;
+      const article = data
+        .map((post) => {
+          let date = post.date.split("T")[0];
+          let image;
 
-        if (post.yoast_head_json.og_image) {
-          image = post.yoast_head_json.og_image[0].url
-        } else
-          image = '/images/build/logo.png'
-        return `<div class="card">
+          if (post.yoast_head_json.og_image) {
+            image = post.yoast_head_json.og_image[0].url;
+          } else image = "/images/build/logo.png";
+          return `<div class="card">
           <div> 
                  <a href="/ar/مدونة-التداول/${post.slug}?lang=ar"><img class="card-img-top" src="${image}" alt="Card image cap"></a>
   <div class="card-body">
@@ -912,14 +939,12 @@ router.get("/" + encodeURIComponent("مدونة-التداول"), async (req, re
   <div class="card-footer dateCreated">
   ${date}
   </div>
-  </div>`
-      }).join("");
+  </div>`;
+        })
+        .join("");
 
       res.render("ar/Education/blog", { page: page, articles: article });
     });
-
-
-
 });
 router.get(
   "/" + encodeURIComponent("مدونة-التداول") + "/:slug",
@@ -928,32 +953,43 @@ router.get(
     const options = {
       method: "GET",
     };
-    const response = await fetch(url, options).then(res => res.json()).then(data => {
-      var article = data;
-      const tags = article[0].tags.map(tag => {
-        // const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
-        // return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
-      }).join(' ');
+    const response = await fetch(url, options)
+      .then((res) => res.json())
+      .then((data) => {
+        var article = data;
+        const tags = article[0].tags
+          .map((tag) => {
+            // const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
+            // return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
+          })
+          .join(" ");
 
-      let image;
-      if (article[0].yoast_head_json.og_image) {
-        image = article[0].yoast_head_json.og_image[0].url
-      } else
-        image = '/images/build/logo.png'
+        let image;
+        if (article[0].yoast_head_json.og_image) {
+          image = article[0].yoast_head_json.og_image[0].url;
+        } else image = "/images/build/logo.png";
 
-      var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
-      res.render('ar/Education/article', {
-        page: page, content: article[0].content.rendered,
-        titleArticle: article[0].title.rendered,
-        imgUrl: image,
-        date: article[0].date,
-        url: article[0].link,
-        tags: tags,
-        og_img: image
-      });
-    })
+        var page = {
+          fields: {
+            seo: {
+              meta_description: `${article[0].yoast_head_json.og_description}`,
+              meta_keyword: ``,
+              page_title: `${article[0].yoast_head_json.og_title}`,
+            },
+          },
+        };
+        res.render("ar/Education/article", {
+          page: page,
+          content: article[0].content.rendered,
+          titleArticle: article[0].title.rendered,
+          imgUrl: image,
+          date: article[0].date,
+          url: article[0].link,
+          tags: tags,
+          og_img: image,
+        });
+      })
       .catch((err) => console.log(err));
-
   }
 );
 router.get(
@@ -963,50 +999,62 @@ router.get(
     const options = {
       method: "GET",
     };
-    const response = await fetch(url, options).then(res => res.json()).then(data => {
-      var article = data;
-      const tags = article[0].tags.map(tag => {
-        const tag_name = getTag.arabicTags.find(elem => elem.tag_id === tag).Name;
-        return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`
-      }).join(' ');
+    const response = await fetch(url, options)
+      .then((res) => res.json())
+      .then((data) => {
+        var article = data;
+        const tags = article[0].tags
+          .map((tag) => {
+            const tag_name = getTag.arabicTags.find(
+              (elem) => elem.tag_id === tag
+            ).Name;
+            return `<a class="badge bg-secondary text-decoration-none link-light" href="/tag/${tag_name}">${tag_name}</a>`;
+          })
+          .join(" ");
 
-
-      var page = { fields: { seo: { meta_description: `${article[0].yoast_head_json.og_description}`, meta_keyword: ``, page_title: `${article[0].yoast_head_json.og_title}` } } };
-      res.render('ar/Education/article', {
-        page: page, content: article[0].content.rendered,
-        titleArticle: article[0].title.rendered,
-        imgUrl: article[0].yoast_head_json.og_image[0].url,
-        date: article[0].date,
-        url: article[0].link,
-        tags: tags,
-        og_img: `${article[0].yoast_head_json.og_image[0].url}`
-      });
-    })
+        var page = {
+          fields: {
+            seo: {
+              meta_description: `${article[0].yoast_head_json.og_description}`,
+              meta_keyword: ``,
+              page_title: `${article[0].yoast_head_json.og_title}`,
+            },
+          },
+        };
+        res.render("ar/Education/article", {
+          page: page,
+          content: article[0].content.rendered,
+          titleArticle: article[0].title.rendered,
+          imgUrl: article[0].yoast_head_json.og_image[0].url,
+          date: article[0].date,
+          url: article[0].link,
+          tags: tags,
+          og_img: `${article[0].yoast_head_json.og_image[0].url}`,
+        });
+      })
       .catch((err) => console.log(err));
-
   }
 );
 
-
-
 const getDurationInMilliseconds = (start) => {
-  const NS_PER_SEC = 1e9
-  const NS_TO_MS = 1e6
-  const diff = process.hrtime(start)
+  const NS_PER_SEC = 1e9;
+  const NS_TO_MS = 1e6;
+  const diff = process.hrtime(start);
 
-  return (diff[0] * NS_PER_SEC + diff[1]) / NS_TO_MS
-}
+  return (diff[0] * NS_PER_SEC + diff[1]) / NS_TO_MS;
+};
 
-
-const getTag = require('../tagsApi')
-router.get('/tag/:tag', async (req, res) => {
+const getTag = require("../tagsApi");
+router.get("/tag/:tag", async (req, res) => {
   const start = process.hrtime();
-  const tag_id = getTag.arabicTags.find(elem => elem.Name === req.params.tag).tag_id;
+  const tag_id = getTag.arabicTags.find(
+    (elem) => elem.Name === req.params.tag
+  ).tag_id;
   console.log(req.params.tag + " " + tag_id);
   if (tag_id === undefined) {
-    res.redirect('/');
+    res.redirect("/");
   }
-  const url = `https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&tags=${tag_id}&per_page=6&page=1`
+  const url = `https://cms.evest.com/ar/wp-json/wp/v2/posts?_embed&tags=${tag_id}&per_page=6&page=1`;
   const options = {
     method: "GET",
   };
@@ -1022,29 +1070,46 @@ router.get('/tag/:tag', async (req, res) => {
           },
         },
       };
-      const article = data.map(post => {
-        let date = post.date.split('T')[0];
-        return `<div class="card">
+      const article = data
+        .map((post) => {
+          let date = post.date.split("T")[0];
+          return `<div class="card">
                     <div> 
-                           <a href='${post.link + "?lang=ar"}'>  <img class="card-img-top" src="${post.featured_image_url}" alt="Card image cap" title="${post.title.rendered}"> </a>
+                           <a href='${
+                             post.link + "?lang=ar"
+                           }'>  <img class="card-img-top" src="${
+            post.featured_image_url
+          }" alt="Card image cap" title="${post.title.rendered}"> </a>
         <div class="card-body">
-        <a href='${post.link + "?lang=ar"}' ><h5 class="card-title">${post.title.rendered}</h5></a>
+        <a href='${post.link + "?lang=ar"}' ><h5 class="card-title">${
+            post.title.rendered
+          }</h5></a>
         <div class="card-text description">${post.excerpt.rendered}</div>
-        <a class="btn btn-filled readmore" href='${post.link + "?lang=ar"}'>أقرا المزيد</a>
+        <a class="btn btn-filled readmore" href='${
+          post.link + "?lang=ar"
+        }'>أقرا المزيد</a>
         </div></div>
         <div class="card-footer dateCreated">
         ${date}
         </div>
-        </div>`
-      }).join("");
-      res.render("ar/Education/tags", { page: page, articles: article, pageTitle: `Evest- ${req.params.tag} أرشيف`, tagId: tag_id });
-    }).catch(err => {
-      res.redirect('/');
+        </div>`;
+        })
+        .join("");
+      res.render("ar/Education/tags", {
+        page: page,
+        articles: article,
+        pageTitle: `Evest- ${req.params.tag} أرشيف`,
+        tagId: tag_id,
+      });
+    })
+    .catch((err) => {
+      res.redirect("/");
     });
   res.on("finish", () => {
     const durationInMilliseconds = getDurationInMilliseconds(start);
     console.log(
-      `${req.method} ${req.originalUrl
+      `${req.method} ${
+        req.originalUrl
       } [FINISHED] ${durationInMilliseconds.toLocaleString()} ms`
     );
   });
@@ -1052,13 +1117,11 @@ router.get('/tag/:tag', async (req, res) => {
   res.on("close", () => {
     const durationInMilliseconds = getDurationInMilliseconds(start);
     console.log(
-      `${req.method} ${req.originalUrl
+      `${req.method} ${
+        req.originalUrl
       } [CLOSED] ${durationInMilliseconds.toLocaleString()} ms`
     );
   });
-
 });
-
-
 
 module.exports = router;
