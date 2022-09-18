@@ -1,12 +1,12 @@
-Instument,Leverage Buy/Sell,Commission Per Lot,Long Swaps Base Currency,Short Swaps Base Currency,Contract Size
+Instrument,Leverage Buy/Sell,Commission Per Lot,Long Swaps Base Currency,Short Swaps Base Currency,Contract Size
 EURUSD,400,0,-5.2,-3.1,100000
 EURJPY,400,0,-3.8,-4.6,100000
 EURCHF,400,0,-5.2,-11.5,100000
 USDJPY,400,0,-2.7,-5.6,100000
 USDCAD,400,0,-4.2,-4.2,100000
 USDCHF,400,0,-4.2,-12.5,100000
-GBPUSD,400,0,-4.8,-3.0,100000
-GBPJPY,400,0,-3.3,-5.0,100000
+GBPUSD,400,0,-4.8,-3,100000
+GBPJPY,400,0,-3.3,-5,100000
 GBPCHF,400,0,-4.8,-11.9,100000
 AUDCAD,400,0,-4.8,-7.7,100000
 AUDCHF,400,0,-4.8,-11.9,100000

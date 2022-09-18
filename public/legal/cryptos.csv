@@ -1,4 +1,4 @@
-Instument,Leverage,Commission Per Lot,Long Swaps (Profit Currency),Short Swaps (Profit Currency),Contract Size
+Instrument,Leverage,Commission Per Lot,Long Swaps (Profit Currency),Short Swaps (Profit Currency),Contract Size
 BTCUSD,2,0,-10000,-10000,100
 ETHUSD,2,0,-300,-300,100
 LTCUSD,2,0,-110,-110,100
