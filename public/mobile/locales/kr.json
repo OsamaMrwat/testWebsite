@@ -899,5 +899,6 @@
     "bank_branch": "은행 지점",
     "update": "Update",
     "description": "설명",
-    "pixCode": "Pix Code"
+    "pixCode": "Pix Code",
+    "trading_central_not_validated": "Your account must have minimum of %minTotalDeposit% to access Trading Tools"
 }

@@ -1042,5 +1042,6 @@
 	"fasapay_wallet_account_number": "FasaPay Wallet Account Number",
     "update": "Update",
     "description": "Opis",
-    "pixCode": "Pix Code"
+    "pixCode": "Pix Code",
+    "trading_central_not_validated": "Your account must have minimum of %minTotalDeposit% to access Trading Tools"
 }
