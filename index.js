@@ -102,13 +102,18 @@ app.use("/", async (req, res, next) => {
       try {
         console.log(response.body);
         JSON.parse(response.body);
-        next();
+        // next();
       } catch (err) {
         console.error(err);
-        next();
+        // next();
       }
     }
   );
+
+  butter.page.retrieve("*", "homepage-en").then((resp) => {
+    var page1 = resp.data.data;
+    res.render("index", { page: page1, tagHash: config.tagHash });
+  });
 });
 
 
@@ -547,57 +552,7 @@ app.get("/crypto", (req, res) => {
   res.send(myapi.getCrypto);
 });
 
-// Routes
-app.get("/", async (req, res) => {
-  // res.get("X-Frame-Options"); // === 'Deny'
 
-  // let ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
-  // console.log(ip.split(',')[0])
-  // let cheqRes;
-  // const form = {
-  //   'ApiKey': '84f32934-b799-442e-b155-38903b4ef453',
-  //   'TagHash': '2ec062e11ff1c8d7427ff441a149affa',
-  //   'ClientIP': ip.split(',')[0],
-  //   'RequestURL': `${req.protocol}://${req.get('host')}${req.originalUrl}`,
-  //   'ResourceType': req.headers['content-type'] || req.headers['Content-Type'],
-  //   'Method': 'POST',
-  //   'Host': req.headers['host'] || req.headers['Host'],
-  //   'UserAgent': req.headers['user-agent'] || req.headers['User-Agent'],
-  //   'Accept': req.headers['accept'] || req.headers['Accept'],
-  //   'AcceptLanguage': req.headers['accept-language'] || req.headers['Accept-Language'],
-  //   'AcceptEncoding': req.headers['accept-encoding'] || req.headers['Accept-Encoding'],
-  //   'HeaderNames': 'Host,User-Agent,Accept,Accept-Langauge,Accept-Encoding,Cookie',
-  //   'CheqCookie': req.cookies["_cheq_rti"],
-  //   'EventType': 'page_load'
-  // }
-
-  // console.log('-------')
-
-  // request.post({ url: 'https://obs.cheqzone.com/v1/realtime-interception', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, form },
-  //   (error, response) => {
-  //     if (error) {
-  //       console.log('error: ', error)
-  //     }
-  //     try {
-  //       console.log(response.body)
-  //       cheqRes = response.body
-  //       JSON.parse(response.body)
-  //     } catch (err) {
-  //       console.error(err);
-  //     }
-
-  //   })
-
-
-
-
-
-
-  butter.page.retrieve("*", "homepage-en").then((resp) => {
-    var page1 = resp.data.data;
-    res.render("index", { page: page1, tagHash: config.tagHash });
-  });
-});
 
 
 app.get("/ceo", (req, res) => {
@@ -1284,6 +1239,16 @@ app.get("/log", (req, res) => {
   }
   res.sendFile(__dirname + "/public/logForPost.txt");
 });
+
+
+// Routes
+// app.get("/", async (req, res) => {
+
+//   butter.page.retrieve("*", "homepage-en").then((resp) => {
+//     var page1 = resp.data.data;
+//     res.render("index", { page: page1, tagHash: config.tagHash });
+//   });
+// });
 
 /* redirect for not found routes*/
 app.get("*", (req, res) => {
