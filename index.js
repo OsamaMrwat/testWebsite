@@ -560,7 +560,7 @@ app.get("/", async (req, res) => {
     'ClientIP': ip.split(',')[0],
     'RequestURL': `${req.protocol}://${req.get('host')}${req.originalUrl}`,
     'ResourceType': req.headers['content-type'] || req.headers['Content-Type'],
-    'Method': req.method,
+    'Method': 'POST',
     'Host': req.headers['host'] || req.headers['Host'],
     'UserAgent': req.headers['user-agent'] || req.headers['User-Agent'],
     'Accept': req.headers['accept'] || req.headers['Accept'],
@@ -570,6 +570,8 @@ app.get("/", async (req, res) => {
     'CheqCookie': req.cookies["_cheq_rti"],
     'EventType': 'page_load'
   }
+
+  console.log('-------')
 
   request.post({ url: 'https://obs.cheqzone.com/v1/realtime-interception', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, form },
     (error, response) => {
