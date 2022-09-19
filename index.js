@@ -66,9 +66,8 @@ app.use("/publicFiles", express.static(__dirname + "/public/publicFiles"));
 var count = 0;
 
 
-app.use("/", async (req, res, next) => {
+app.use("*", async (req, res, next) => {
   let ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
-  console.log(ip.split(",")[0]);
   const form = {
     ApiKey: "84f32934-b799-442e-b155-38903b4ef453",
     TagHash: "2ec062e11ff1c8d7427ff441a149affa",
@@ -102,18 +101,15 @@ app.use("/", async (req, res, next) => {
       try {
         console.log(response.body);
         JSON.parse(response.body);
-        // next();
+        next();
       } catch (err) {
         console.error(err);
-        // next();
+        next();
       }
     }
   );
 
-  butter.page.retrieve("*", "homepage-en").then((resp) => {
-    var page1 = resp.data.data;
-    res.render("index", { page: page1, tagHash: config.tagHash });
-  });
+
 });
 
 
@@ -1242,13 +1238,13 @@ app.get("/log", (req, res) => {
 
 
 // Routes
-// app.get("/", async (req, res) => {
+app.get("/", async (req, res) => {
 
-//   butter.page.retrieve("*", "homepage-en").then((resp) => {
-//     var page1 = resp.data.data;
-//     res.render("index", { page: page1, tagHash: config.tagHash });
-//   });
-// });
+  butter.page.retrieve("*", "homepage-en").then((resp) => {
+    var page1 = resp.data.data;
+    res.render("index", { page: page1, tagHash: config.tagHash });
+  });
+});
 
 /* redirect for not found routes*/
 app.get("*", (req, res) => {
