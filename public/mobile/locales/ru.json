@@ -1092,5 +1092,6 @@
     "lossPips": "Проигрыш в пипсах",
     "profitPips": "Прибыль в пипсах",
     "reach": "Достиг цены",
-    "pixCode": "Pix Code"
+    "pixCode": "Pix Code",
+    "trading_central_not_validated": "Your account must have minimum of %minTotalDeposit% to access Trading Tools"
 }

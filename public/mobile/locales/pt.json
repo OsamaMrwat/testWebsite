@@ -1047,5 +1047,6 @@
     "update": "Update",
     "description": "Descrição",
     "qrcodeInfo": "Por favor, faça o upload do comprovante de pagamento na seção de documentos após a transação ser finalizada.",
-    "pixCode": "Código Pix"
+    "pixCode": "Código Pix",
+    "trading_central_not_validated": "Your account must have minimum of %minTotalDeposit% to access Trading Tools"
 }
