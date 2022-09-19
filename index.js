@@ -150,8 +150,8 @@ async function getPostSiteMaps() {
       let sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
         xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/1.1" 
         xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entries.join(
-          ""
-        )}
+        ""
+      )}
         </urlset>`;
 
       fs.writeFile("./public/news_en.xml", sitemap, function (err) {
@@ -549,44 +549,44 @@ app.get("/crypto", (req, res) => {
 
 // Routes
 app.get("/", async (req, res) => {
-  res.get("X-Frame-Options"); // === 'Deny'
+  // res.get("X-Frame-Options"); // === 'Deny'
 
-  let ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
-  console.log(ip.split(',')[0])
-  let cheqRes;
-  const form = {
-    'ApiKey': '84f32934-b799-442e-b155-38903b4ef453',
-    'TagHash': '2ec062e11ff1c8d7427ff441a149affa',
-    'ClientIP': ip.split(',')[0],
-    'RequestURL': `${req.protocol}://${req.get('host')}${req.originalUrl}`,
-    'ResourceType': req.headers['content-type'] || req.headers['Content-Type'],
-    'Method': 'POST',
-    'Host': req.headers['host'] || req.headers['Host'],
-    'UserAgent': req.headers['user-agent'] || req.headers['User-Agent'],
-    'Accept': req.headers['accept'] || req.headers['Accept'],
-    'AcceptLanguage': req.headers['accept-language'] || req.headers['Accept-Language'],
-    'AcceptEncoding': req.headers['accept-encoding'] || req.headers['Accept-Encoding'],
-    'HeaderNames': 'Host,User-Agent,Accept,Accept-Langauge,Accept-Encoding,Cookie',
-    'CheqCookie': req.cookies["_cheq_rti"],
-    'EventType': 'page_load'
-  }
+  // let ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
+  // console.log(ip.split(',')[0])
+  // let cheqRes;
+  // const form = {
+  //   'ApiKey': '84f32934-b799-442e-b155-38903b4ef453',
+  //   'TagHash': '2ec062e11ff1c8d7427ff441a149affa',
+  //   'ClientIP': ip.split(',')[0],
+  //   'RequestURL': `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+  //   'ResourceType': req.headers['content-type'] || req.headers['Content-Type'],
+  //   'Method': 'POST',
+  //   'Host': req.headers['host'] || req.headers['Host'],
+  //   'UserAgent': req.headers['user-agent'] || req.headers['User-Agent'],
+  //   'Accept': req.headers['accept'] || req.headers['Accept'],
+  //   'AcceptLanguage': req.headers['accept-language'] || req.headers['Accept-Language'],
+  //   'AcceptEncoding': req.headers['accept-encoding'] || req.headers['Accept-Encoding'],
+  //   'HeaderNames': 'Host,User-Agent,Accept,Accept-Langauge,Accept-Encoding,Cookie',
+  //   'CheqCookie': req.cookies["_cheq_rti"],
+  //   'EventType': 'page_load'
+  // }
 
-  console.log('-------')
+  // console.log('-------')
 
-  request.post({ url: 'https://obs.cheqzone.com/v1/realtime-interception', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, form },
-    (error, response) => {
-      if (error) {
-        console.log('error: ', error)
-      }
-      try {
-        console.log(response.body)
-        cheqRes = response.body
-        JSON.parse(response.body)
-      } catch (err) {
-        console.error(err);
-      }
+  // request.post({ url: 'https://obs.cheqzone.com/v1/realtime-interception', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, form },
+  //   (error, response) => {
+  //     if (error) {
+  //       console.log('error: ', error)
+  //     }
+  //     try {
+  //       console.log(response.body)
+  //       cheqRes = response.body
+  //       JSON.parse(response.body)
+  //     } catch (err) {
+  //       console.error(err);
+  //     }
 
-    })
+  //   })
 
 
 
@@ -1060,7 +1060,7 @@ app.post("/cvUpload", (req, res) => {
   };
 
   sgMail.send(msg).then(
-    () => {},
+    () => { },
     (error) => {
       console.error(error);
 
@@ -1087,7 +1087,7 @@ app.post("/send", (req, res) => {
   };
   //ES6
   sgMail.send(msg).then(
-    () => {},
+    () => { },
     (error) => {
       console.error(error);
 
@@ -1124,7 +1124,7 @@ app.post("/ceo", (req, res) => {
   };
   //ES6
   sgMail.send(msg).then(
-    () => {},
+    () => { },
     (error) => {
       console.error(error);
 
