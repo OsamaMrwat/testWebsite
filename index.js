@@ -481,6 +481,10 @@ xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entrie
 //   getArabicBlogs()
 // }, 10000)
 
+getPagesSiteMaps();
+getPostSiteMaps();
+getArabicBlogs();
+
 setInterval(() => {
   getPagesSiteMaps();
   getPostSiteMaps();
