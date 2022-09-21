@@ -10,13 +10,13 @@
     <loc>https://www.evest.com/blog_ar.xml</loc>
   </url>
   <url>
-    <loc>https://www.evest.com/</loc>
-  </url>
-  <url>
     <loc>https://www.evest.com/news_ar.xml</loc>
   </url>
   <url>
     <loc>https://www.evest.com/news_en.xml</loc>
+  </url>
+  <url>
+    <loc>https://www.evest.com/</loc>
   </url>
   <url>
     <loc>https://www.evest.com/evest</loc>
@@ -67,10 +67,13 @@
     <loc>https://www.evest.com/start-trading/trading-fees</loc>
   </url>
   <url>
-    <loc>https://www.evest.com/mobile-trading</loc>
+    <loc>https://www.evest.com/start-trading/trading-hours</loc>
   </url>
   <url>
     <loc>https://www.evest.com/start-trading/trading-calculator</loc>
+  </url>
+  <url>
+    <loc>https://www.evest.com/mobile-trading</loc>
   </url>
   <url>
     <loc>https://www.evest.com/web-trading</loc>
@@ -79,34 +82,31 @@
     <loc>https://www.evest.com/metatrader-5</loc>
   </url>
   <url>
-    <loc>https://www.evest.com/start-trading/trading-hours</loc>
-  </url>
-  <url>
     <loc>https://www.evest.com/trading-app</loc>
-  </url>
-  <url>
-    <loc>https://www.evest.com/trading-products</loc>
   </url>
   <url>
     <loc>https://www.evest.com/trade-room/</loc>
   </url>
   <url>
-    <loc>https://www.evest.com/trading-news</loc>
-  </url>
-  <url>
-    <loc>https://www.evest.com/oil-news</loc>
+    <loc>https://www.evest.com/trading-products</loc>
   </url>
   <url>
     <loc>https://www.evest.com/trading-academy</loc>
   </url>
   <url>
-    <loc>https://www.evest.com/gold-news</loc>
+    <loc>https://www.evest.com/trading-news</loc>
+  </url>
+  <url>
+    <loc>https://www.evest.com/faq</loc>
+  </url>
+  <url>
+    <loc>https://www.evest.com/oil-news</loc>
   </url>
   <url>
     <loc>https://www.evest.com/market-news</loc>
   </url>
   <url>
-    <loc>https://www.evest.com/faq</loc>
+    <loc>https://www.evest.com/gold-news</loc>
   </url>
   <url>
     <loc>https://www.evest.com/start-trading/cryptocurrency</loc>
@@ -151,9 +151,6 @@
     <loc>https://www.evest.com/ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%AD%D8%B3%D8%A7%D8%A8-%D8%AA%D8%AF%D8%A7%D9%88%D9%84-%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A</loc>
   </url>
   <url>
-    <loc>https://www.evest.com/ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%84%D9%88%D8%AB%D8%A7%D8%A6%D9%82-%D9%88-%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D8%A7%D8%AA</loc>
-  </url>
-  <url>
     <loc>https://www.evest.com/ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%84%D8%A5%D9%8A%D8%AF%D8%A7%D8%B9-%D9%88-%D8%A7%D9%84%D8%B3%D8%AD%D8%A8</loc>
   </url>
   <url>
@@ -163,10 +160,13 @@
     <loc>https://www.evest.com/ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%88%D9%82%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84</loc>
   </url>
   <url>
-    <loc>https://www.evest.com/ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%AD%D8%A7%D8%B3%D8%A8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84</loc>
+    <loc>https://www.evest.com/ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%84%D9%88%D8%AB%D8%A7%D8%A6%D9%82-%D9%88-%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D8%A7%D8%AA</loc>
   </url>
   <url>
     <loc>https://www.evest.com/ar/%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84-%D9%85%D9%86-%D8%A7%D9%84%D8%AC%D9%88%D8%A7%D9%84</loc>
+  </url>
+  <url>
+    <loc>https://www.evest.com/ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%AD%D8%A7%D8%B3%D8%A8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84</loc>
   </url>
   <url>
     <loc>https://www.evest.com/ar/%D8%AA%D8%AF%D8%A7%D9%88%D9%84-%D9%85%D9%86-%D8%A7%D9%84%D9%85%D8%AA%D8%B5%D9%81%D8%AD</loc>
@@ -184,9 +184,6 @@
     <loc>https://www.evest.com/ar/%D8%A3%D9%83%D8%A7%D8%AF%D9%8A%D9%85%D9%8A%D8%A9-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84</loc>
   </url>
   <url>
-    <loc>https://www.evest.com/ar/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84</loc>
-  </url>
-  <url>
     <loc>https://www.evest.com/ar/%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%B0%D9%87%D8%A8</loc>
   </url>
   <url>
@@ -196,10 +193,13 @@
     <loc>https://www.evest.com/ar/%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%B3%D9%88%D9%82</loc>
   </url>
   <url>
+    <loc>https://www.evest.com/ar/%D9%85%D8%AF%D9%88%D9%86%D8%A9-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84</loc>
+  </url>
+  <url>
     <loc>https://www.evest.com/ar/%D8%A3%D8%B3%D8%A6%D9%84%D8%A9-%D8%B4%D8%A7%D8%A6%D8%B9%D8%A9</loc>
   </url>
   <url>
-    <loc>https://www.evest.com/ar/%D9%85%D8%AF%D9%88%D9%86%D8%A9-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84</loc>
+    <loc>https://www.evest.com/ar/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84</loc>
   </url>
   <url>
     <loc>https://www.evest.com/ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9</loc>
@@ -280,9 +280,6 @@
     <loc>https://www.evest.com/evest/contact-us/</loc>
   </url>
   <url>
-    <loc>https://www.evest.com/legal/Sharia.pdf</loc>
-  </url>
-  <url>
     <loc>https://www.evest.com/legal/en/EN-Complaint_Policy.pdf</loc>
   </url>
   <url>
@@ -292,22 +289,25 @@
     <loc>https://www.evest.com/legal/en/EN-KNOW-YOUR-CUSTOMER-REQUIREMENTS.pdf</loc>
   </url>
   <url>
+    <loc>https://www.evest.com/legal/Sharia.pdf</loc>
+  </url>
+  <url>
+    <loc>https://www.evest.com/legal/en/EN-TERMS_AND_CONDITIONS.pdf</loc>
+  </url>
+  <url>
     <loc>https://www.evest.com/legal/en/EN-Privacy_Policy.pdf</loc>
   </url>
   <url>
     <loc>https://www.evest.com/legal/en/EN-Cookies_Policy.pdf</loc>
   </url>
   <url>
-    <loc>https://www.evest.com/legal/en/EN-TERMS_AND_CONDITIONS.pdf</loc>
-  </url>
-  <url>
     <loc>https://www.evest.com/evest/why-evest/</loc>
   </url>
   <url>
-    <loc>https://www.evest.com/legal/en/ATRIAFINANCIAL_LTD_Bonus_Policy.pdf</loc>
+    <loc>https://www.evest.com/evest/careers/</loc>
   </url>
   <url>
-    <loc>https://www.evest.com/evest/careers/</loc>
+    <loc>https://www.evest.com/legal/en/ATRIAFINANCIAL_LTD_Bonus_Policy.pdf</loc>
   </url>
   <url>
     <loc>https://www.evest.com/trading-news/bitcoin-falls-to-its-lowest-level-in-2022</loc>
@@ -331,19 +331,16 @@
     <loc>https://www.evest.com/oil-news/the-decrease-in-chinese-demands-negatively-affects-oil-price</loc>
   </url>
   <url>
-    <loc>https://www.evest.com/oil-news/wholesale-retractions-oil-and-european-indices-in-the-red-zone-2</loc>
+    <loc>https://www.evest.com/oil-news/oil-decreased-to-below-100</loc>
   </url>
   <url>
-    <loc>https://www.evest.com/oil-news/oil-decreased-to-below-100</loc>
+    <loc>https://www.evest.com/oil-news/wholesale-retractions-oil-and-european-indices-in-the-red-zone-2</loc>
   </url>
   <url>
     <loc>https://www.evest.com/oil-news/a-large-drop-in-inventories-leads-to-a-rise-in-oil-prices</loc>
   </url>
   <url>
     <loc>https://www.evest.com/oil-news/inventories-suddenly-rise-by-4-million-barrels-2</loc>
-  </url>
-  <url>
-    <loc>https://www.evest.com/gold-news/gold-prices-decline-with-anticipation</loc>
   </url>
   <url>
     <loc>https://www.evest.com/market-news/wholesale-retractions-oil-and-european-indices-in-the-red-zone</loc>
@@ -364,6 +361,9 @@
     <loc>https://www.evest.com/market-news/wall-street-declines</loc>
   </url>
   <url>
+    <loc>https://www.evest.com/gold-news/gold-prices-decline-with-anticipation</loc>
+  </url>
+  <url>
     <loc>https://www.evest.com/ar/</loc>
   </url>
   <url>
@@ -376,34 +376,16 @@
     <loc>https://www.evest.com/legal/ar/AR-KNOW-YOUR-CUSTOMER-REQUIREMENTS.pdf</loc>
   </url>
   <url>
-    <loc>https://www.evest.com/legal/ar/AR-Atria%20financial-TERMS_AND_CONDITIONS.pdf</loc>
+    <loc>https://www.evest.com/legal/ar/AR-Atria_financial-Ltd-Cookies-Policy.pdf</loc>
   </url>
   <url>
     <loc>https://www.evest.com/legal/ar/AR-Atria_financial__Privacy_Policy.pdf</loc>
   </url>
   <url>
-    <loc>https://www.evest.com/legal/ar/AR-Atria_financial-Ltd-Cookies-Policy.pdf</loc>
+    <loc>https://www.evest.com/legal/ar/AR-Atria%20financial-TERMS_AND_CONDITIONS.pdf</loc>
   </url>
   <url>
     <loc>https://www.evest.com/legal/ar/ATRIAFINANCIAL_LTD_Bonus_Policy.pdf</loc>
-  </url>
-  <url>
-    <loc>https://www.evest.com/ar/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A8%D8%AA%D9%83%D9%88%D9%8A%D9%86-%D8%AA%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9-%D8%A7%D9%84%D9%89-%D8%A3%D8%AF%D9%86%D9%89-%D9%85%D8%B3%D8%AA%D9%88%D9%8A%D8%A7%D8%AA%D9%87%D8%A7-%D9%81%D9%8A-2022</loc>
-  </url>
-  <url>
-    <loc>https://www.evest.com/ar/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%84%D8%A3%D8%B3%D9%87%D9%85-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A%D8%A9-%D8%AA%D8%BA%D9%84%D9%82-%D9%81%D9%8A-%D8%AD%D8%A7%D9%84%D8%A9-%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9</loc>
-  </url>
-  <url>
-    <loc>https://www.evest.com/ar/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%84%D8%A7%D9%86%D9%87%D9%8A%D8%A7%D8%B1-%D9%81%D9%8A-%D8%A7%D9%84%D8%A3%D8%B5%D9%88%D9%84-%D8%B0%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%AE%D8%A7%D8%B7%D8%B1-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%8A</loc>
-  </url>
-  <url>
-    <loc>https://www.evest.com/ar/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%84%D8%AF%D9%88%D9%84%D8%A7%D8%B1-%D8%A7%D9%84%D9%82%D9%88%D9%8A-%D8%B3%D8%A8%D8%A8%D8%A7-%D9%81%D9%8A-%D8%AE%D9%81%D8%B6-%D8%AF%D9%8A%D9%88%D9%86-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85-55</loc>
-  </url>
-  <url>
-    <loc>https://www.evest.com/ar/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D9%8A%D8%A7%D8%B7%D9%8A-%D8%A7%D9%84%D9%8A%D8%A7%D8%A8%D8%A7%D9%86%D9%8A-%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D8%BA-1-2-%D8%AA%D8%B1%D9%8A%D9%84%D9%8A%D9%88%D9%86-%D8%AF%D9%88</loc>
-  </url>
-  <url>
-    <loc>https://www.evest.com/ar/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%A7%D9%84%D9%86%D9%81%D8%B7-%D8%AA%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9-%D9%84%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A-%D8%B9%D9%84%D9%89-%D8%A7%D9%84</loc>
   </url>
   <url>
     <loc>https://www.evest.com/ar/%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%B0%D9%87%D8%A8/%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9-%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%A7%D9%84%D8%B0%D9%87%D8%A8-%D9%85%D8%B9-%D8%AA%D8%B1%D9%82%D8%A8-%D8%AE%D8%B7%D8%A7%D8%A8-%D8%AC%D9%8A%D8%B1%D9%88%D9%85-%D8%A8%D8%A3</loc>
@@ -476,6 +458,24 @@
   </url>
   <url>
     <loc>https://www.evest.com/ar/%D9%85%D8%AF%D9%88%D9%86%D8%A9-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%AA%D8%B3%D9%84%D8%A7-%D8%AA%D8%A8%D9%8A%D8%B9-75%D9%AA-%D9%85%D9%86-%D8%B9%D9%85%D9%84%D8%AA%D9%87%D8%A7-%D8%A7%D9%84%D8%A8%D9%8A%D8%AA%D9%83%D9%88%D9%8A%D9%86-%D9%85%D8%B9-%D8%AA%D8%B1%D8%A7</loc>
+  </url>
+  <url>
+    <loc>https://www.evest.com/ar/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A8%D8%AA%D9%83%D9%88%D9%8A%D9%86-%D8%AA%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9-%D8%A7%D9%84%D9%89-%D8%A3%D8%AF%D9%86%D9%89-%D9%85%D8%B3%D8%AA%D9%88%D9%8A%D8%A7%D8%AA%D9%87%D8%A7-%D9%81%D9%8A-2022</loc>
+  </url>
+  <url>
+    <loc>https://www.evest.com/ar/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%84%D8%A3%D8%B3%D9%87%D9%85-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A%D8%A9-%D8%AA%D8%BA%D9%84%D9%82-%D9%81%D9%8A-%D8%AD%D8%A7%D9%84%D8%A9-%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9</loc>
+  </url>
+  <url>
+    <loc>https://www.evest.com/ar/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%84%D8%A7%D9%86%D9%87%D9%8A%D8%A7%D8%B1-%D9%81%D9%8A-%D8%A7%D9%84%D8%A3%D8%B5%D9%88%D9%84-%D8%B0%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%AE%D8%A7%D8%B7%D8%B1-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%8A</loc>
+  </url>
+  <url>
+    <loc>https://www.evest.com/ar/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%84%D8%AF%D9%88%D9%84%D8%A7%D8%B1-%D8%A7%D9%84%D9%82%D9%88%D9%8A-%D8%B3%D8%A8%D8%A8%D8%A7-%D9%81%D9%8A-%D8%AE%D9%81%D8%B6-%D8%AF%D9%8A%D9%88%D9%86-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85-55</loc>
+  </url>
+  <url>
+    <loc>https://www.evest.com/ar/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D9%8A%D8%A7%D8%B7%D9%8A-%D8%A7%D9%84%D9%8A%D8%A7%D8%A8%D8%A7%D9%86%D9%8A-%D8%A7%D9%84%D8%A8%D8%A7%D9%84%D8%BA-1-2-%D8%AA%D8%B1%D9%8A%D9%84%D9%8A%D9%88%D9%86-%D8%AF%D9%88</loc>
+  </url>
+  <url>
+    <loc>https://www.evest.com/ar/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%A7%D9%84%D9%86%D9%81%D8%B7-%D8%AA%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9-%D9%84%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A-%D8%B9%D9%84%D9%89-%D8%A7%D9%84</loc>
   </url>
   <url>
     <loc>https://www.evest.com/ar/%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%B0%D9%87%D8%A8/%D8%A7%D9%84%D9%84%D9%88%D9%86-%D8%A7%D9%84%D8%A3%D8%AE%D8%B6%D8%B1-%D9%8A%D8%B7%D8%BA%D9%8A-%D8%B9%D9%84%D9%89-%D8%AA%D8%AF%D8%A7%D9%88%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%B0%D9%87%D8%A8-%D9%88%D8%A7/</loc>
