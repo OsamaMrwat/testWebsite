@@ -24,10 +24,45 @@
     <div class="row" style="background: url('images/webp/MEET THE CEO ARA-02.webp');background-size: cover;">
       <%- page.fields.sections[6].fields.content %>
     </div>
-
+    <!-- 
     <div class="row mobileApp" style="background:#64eee02d;box-shadow: -2px -2px 37px #00000017;">
       <%- page.fields.sections[7].fields.content %>
+    </div> -->
+
+
+    <div class="container" style="display: flex;align-items: center;">
+      <div class="col-lg-6">
+        <div class="row">
+          <h2 style="font-weight: bold;">ابق متصلاً بصفقاتك بنسبة <span>100٪</span> ولا <br />تفوت فرصة تداول مرة أخرى
+            مع تطبيق <br />التداول المجاني الخاص بنا</h2>
+        </div>
+        <div class="row">
+          <p>ابق على اتصال بنسبة <span>100٪</span> مع الصفقات الخاصة بك ولا تفوت <br />فرصة تداول مرة أخرى. <a
+              href="https://www.evest.com/ar/%D8%AA%D8%B7%D8%A8%D9%8A%D9%82-%D8%AA%D8%AF%D8%A7%D9%88%D9%84-%D8%A7%D9%8A%D9%81%D8%B3%D8%AA?lang=ar"
+              title="تطبيق التداول" rel="follow">تطبيق التداول</a> الخاص بنا مجاني بنسبة <br /><span>100٪</span> وهو
+            مصمم لمحاكاة
+            <a href="https://www.evest.com/ar/%D8%AA%D8%AF%D8%A7%D9%88%D9%84-%D9%85%D9%86-%D8%A7%D9%84%D9%85%D8%AA%D8%B5%D9%81%D8%AD?lang=ar"
+              title="منصة الويب تريدر" rel="follow">منصة الويب تريدر</a> الخاصة بنا <br />لمنحك تجربة مماثلة لتجربة
+            التداول على
+            موقعنا. علاوة على <br />ذلك، يتيح لك تطبيق إيڤست الوصول الكامل لتتبع تقدم <br />صفقاتك أثناء تنقلاتك.
+          </p>
+
+        </div>
+        <div class="row">
+          <div class="signup">
+            <div class="btn btn-filled" id="app" style="width: 250px;" data-toggle="modal" data-target="#exampleModal">
+              احصل على التطبيق</div>
+          </div>
+        </div>
+        <div class="row telephone"></div>
+        <div class="row"><a href="https://evest.onelink.me/o6qP/63b4f023"><img id="logosapp"
+              data-src="/images/webp/storesIcons.webp" alt="Logos" style="width: 80%; margin-top: 5%;" /></a></div>
+      </div>
+      <div class="col-lg-6"><img data-src="/images/webp/mobile.webp" alt="phoneapp"
+          style="margin-top: -73px; width: 660px;" /></div>
     </div>
+
+
 
     <div class="row" style="background:url('/images/webp/back2.webp');height:295px">
       <%- page.fields.sections[8].fields.content %>
@@ -69,6 +104,41 @@
         </div>
       </div>
     </div>
+
+
+
+    <!-- ------------------------------------------------------------------------------------ -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true" style="direction: rtl;">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" id="getApp" style="background-color: white;">
+          <div class="modal-header" style="align-items: center;">
+            <h5 class="modal-title" id="exampleModalLabel">احصل على التطبيق</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin: 0;">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <form action="" id="smsForm" style="display: none;">
+                <input type="tel" name="phone" id="phone">
+                <button class="btn btn-filled" type="submit">احصل على التطبيق</button>
+              </form>
+            </div>
+            <div class="row my-4" style="justify-content: center;">
+              <img src="/images/webp/appQrCode.webp" alt="QRcode-app" width=100% style="width: 250px;">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btnlimit" data-dismiss="modal">اغلق</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ------------------------------------------------------------------------------------ -->
+
+
 
 
     <style>
