@@ -288,7 +288,7 @@ function getToken() {
   })
     .then((e) => e.json())
     .then((e) => (token = e.data.token))
-    .catch((e) => {});
+    .catch((e) => { });
 }
 function SHA1(e) {
   function a(e, a) {
@@ -322,11 +322,11 @@ function SHA1(e) {
         o < 128
           ? (a += String.fromCharCode(o))
           : o > 127 && o < 2048
-          ? ((a += String.fromCharCode((o >> 6) | 192)),
-            (a += String.fromCharCode((63 & o) | 128)))
-          : ((a += String.fromCharCode((o >> 12) | 224)),
-            (a += String.fromCharCode(((o >> 6) & 63) | 128)),
-            (a += String.fromCharCode((63 & o) | 128)));
+            ? ((a += String.fromCharCode((o >> 6) | 192)),
+              (a += String.fromCharCode((63 & o) | 128)))
+            : ((a += String.fromCharCode((o >> 12) | 224)),
+              (a += String.fromCharCode(((o >> 6) & 63) | 128)),
+              (a += String.fromCharCode((63 & o) | 128)));
       }
       return a;
     })(e)).length,
@@ -355,7 +355,7 @@ function SHA1(e) {
         (e.charCodeAt(A - 1) << 8) |
         128;
   }
-  for (M.push(c); M.length % 16 != 14; ) M.push(0);
+  for (M.push(c); M.length % 16 != 14;) M.push(0);
   for (
     M.push(A >>> 29), M.push((A << 3) & 4294967295), o = 0;
     o < M.length;
@@ -408,8 +408,8 @@ const myForm = document.getElementById("smsForm");
 myForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const a = document
-      .getElementsByClassName("iti__selected-flag")[0]
-      .title.split(" "),
+    .getElementsByClassName("iti__selected-flag")[0]
+    .title.split(" "),
     d = a[a.length - 1].substring(1, 4);
   let o = document.getElementById("phone").value,
     c = cods.find((e) => e.dial_code == a[a.length - 1]);
@@ -433,12 +433,13 @@ myForm.addEventListener("submit", (e) => {
       fetch(
         `https://sms1.commpeak.com:8002/api?username=appssmslink&amp;password=rdcJKB5kFMXFRaB5&amp;ani=EVEST&amp;dnis=${n}&amp;message=Welcome to Evest - You Can download the app from here :https://evest.onelink.me/o6qP/f95ae5ce&amp;command=submit&amp;longMessageMode=split`,
         { method: "POST", mode: "no-cors" }
-      ).then((response) => {alert("Thank you , you will receive messages soon!")});
+      ).then((response) => { alert("Thank you , you will receive messages soon!") });
     })
-    .catch((e) => {});
+    .catch((e) => { });
 }),
   $("#app").click(function () {
-    $(".telephone").css("display", "block");
+    $("#smsForm").css("display", "block");
+    // $(".telephone").css("display", "block");
   });
 var input = document.querySelector("#phone"),
   iti = window.intlTelInput(input, {
@@ -448,7 +449,7 @@ var input = document.querySelector("#phone"),
     geoIpLookup: function (e, a) {
       $.get(
         "https://ipinfo.io/?token=cc7afc256c9864",
-        function () {},
+        function () { },
         "jsonp"
       ).always(function (a) {
         var d = a && a.country ? a.country : "kw";
