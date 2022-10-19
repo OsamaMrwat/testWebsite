@@ -77,16 +77,16 @@ router.post("/send", (req, res) => {
     replyTo: `${req.body.email}`,
   };
   //ES6
-  sgMail.send(msg).then(
-    () => {},
-    (error) => {
-      console.error(error);
+  // sgMail.send(msg).then(
+  //   () => {},
+  //   (error) => {
+  //     console.error(error);
 
-      if (error.response) {
-        console.error(error.response.body);
-      }
-    }
-  );
+  //     if (error.response) {
+  //       console.error(error.response.body);
+  //     }
+  //   }
+  // );
   var page = {
     fields: {
       seo: {
@@ -150,7 +150,7 @@ router.get("/evest/" + encodeURIComponent("Embajador-de-Evest"), (req, res) => {
 
 router.get(
   "/comience-hacer-trading/" +
-    encodeURIComponent("Tipos-de-cuentas-de-trading"),
+  encodeURIComponent("Tipos-de-cuentas-de-trading"),
   (req, res) => {
     butter.page.retrieve("*", "accounttypes-es").then(function (resp) {
       var page1 = resp.data.data;
