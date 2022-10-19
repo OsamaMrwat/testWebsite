@@ -15,7 +15,8 @@ const helmet = require("helmet");
 const config = require("./config");
 const cookieParser = require("cookie-parser");
 const request = require("request");
-
+var http = require("http");
+var captcha = require("nodejs-captcha");
 /*SiteMaps*/
 const axios = require("axios");
 
@@ -481,9 +482,9 @@ xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entrie
 //   getArabicBlogs()
 // }, 10000)
 
-getPagesSiteMaps();
-getPostSiteMaps();
-getArabicBlogs();
+// getPagesSiteMaps();
+// getPostSiteMaps();
+// getArabicBlogs();
 
 setInterval(() => {
   getPagesSiteMaps();
@@ -1066,8 +1067,43 @@ app.post("/send", (req, res) => {
 });
 
 app.post("/ceo", (req, res) => {
+
+
+
+  const response_key = req.body["g-recaptcha-response"];
+
+  const secret_key = "6LeouZEiAAAAAGIzAiyVRWS3zOKVzCoOGmAW0tPD";
+
+  console.log(response_key)
+  const url =
+    `https://www.google.com/recaptcha/api/siteverify?secret=${secret_key}&response=${response_key}`;
+
+  console.log('-------------------')
+  fetch(url, {
+    method: "post",
+  })
+    .then((response) => response.json())
+    .then((google_response) => {
+      console.log(google_response)
+      // google_response is the object return by
+      // google as a response
+      if (google_response.success == true) {
+        //   if captcha is verified
+
+        return res.send({ response: "Successful" });
+      } else {
+        // if captcha is not verified
+        return res.send({ response: "Failed" });
+      }
+    })
+    .catch((error) => {
+      // Some error while verify captcha
+      return res.json({ error });
+    });
+
   const msg = {
-    to: "ceo@evest.com",
+    // to: "ceo@evest.com",
+    to: "osama.ba@evest.com",
     from: '"CEO Page"<no-replay@customers-evest.com>', // Use the email address or domain you verified above
     subject: ` ${req.body.email} Send You New Message from the CEO website page`,
     html: `  <h1>You Got New Message</h1>
@@ -1077,18 +1113,22 @@ app.post("/ceo", (req, res) => {
     MESSAGE: ${req.body.message}.<br></p>`,
     replyTo: `${req.body.email}`,
   };
-  //ES6
-  sgMail.send(msg).then(
-    () => { },
-    (error) => {
-      console.error(error);
 
-      if (error.response) {
-        console.error(error.response.body);
-      }
-    }
-  );
-  res.redirect("/ceo");
+
+  //ES6
+  // sgMail.send(msg).then(
+  //   () => { },
+  //   (error) => {
+  //     console.error(error);
+
+  //     if (error.response) {
+  //       console.error(error.response.body);
+  //     }
+  //   }
+  // );
+  // res.redirect("/ceo");
+
+
 });
 
 const getTag = require("./tagsApi");
