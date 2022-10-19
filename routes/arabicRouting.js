@@ -4,6 +4,8 @@ const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const butter = require("buttercms")("eabb7d00a1cecacc7a57f771cc86fb0126ad94d8");
 const fetch = require("node-fetch");
+const IP = require('ip');
+
 
 router.get("/", (req, res) => {
   butter.page.retrieve("*", "homepage-ar").then(function (resp) {
@@ -292,6 +294,8 @@ router.get(
   }
 );
 router.post("/sendArabic", (req, res) => {
+  const ipAddress = IP.address()
+
   const msg = {
     to: "support@evest.com",
     from: `${req.body.email}`, // Use the email address or domain you verified above
@@ -300,8 +304,10 @@ router.post("/sendArabic", (req, res) => {
     <p>EMAIL: ${req.body.email}.<br><br>
     FULL NAME: ${req.body.fullName}.<br><br>
     SUBJECT: ${req.body.subject}.<br><br>
-    MESSAGE: ${req.body.message}.<br></p>`,
-    replyTo: `${req.body.email}`,
+    MESSAGE: ${req.body.message}.<br>
+    IP : ${ipAddress}<br><br>
+    </p>`,
+    // replyTo: `${req.body.email}`,
   };
   //ES6
   sgMail.send(msg).then(

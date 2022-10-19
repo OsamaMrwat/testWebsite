@@ -1030,6 +1030,8 @@ app.post("/cvUpload", (req, res) => {
 });
 
 app.post("/send", (req, res) => {
+  const ipAddress = IP.address()
+
   const msg = {
     to: "support@evest.com",
     from: `${req.body.email}`, // Use the email address or domain you verified above
@@ -1038,8 +1040,9 @@ app.post("/send", (req, res) => {
     <p>EMAIL: ${req.body.email}.<br><br>
     FULL NAME: ${req.body.fullName}.<br><br>
     SUBJECT: ${req.body.subject}.<br><br>
-    MESSAGE: ${req.body.message}.<br></p>`,
-    replyTo: `${req.body.email}`,
+    MESSAGE: ${req.body.message}.<br>
+    IP : ${ipAddress} <br><br>
+    </p>`
   };
   //ES6
   sgMail.send(msg).then(
