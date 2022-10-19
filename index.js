@@ -16,7 +16,7 @@ const config = require("./config");
 const cookieParser = require("cookie-parser");
 const request = require("request");
 var http = require("http");
-var captcha = require("nodejs-captcha");
+const IP = require('ip');
 /*SiteMaps*/
 const axios = require("axios");
 
@@ -1066,67 +1066,75 @@ app.post("/send", (req, res) => {
     });
 });
 
-app.post("/ceo", (req, res) => {
+app.post("/ceo", async (req, res) => {
 
+  // const response_key = req.body["g-recaptcha-response"];
 
+  // const secret_key = "6LfTXJIiAAAAACtU8BpQ9_8p1BeG4SnsEexmpz-S";
 
-  const response_key = req.body["g-recaptcha-response"];
+  // console.log(response_key)
+  // console.log('-------------------')
 
-  const secret_key = "6LeouZEiAAAAAGIzAiyVRWS3zOKVzCoOGmAW0tPD";
+  // console.log(secret_key)
+  // const url =
+  //   `https://www.google.com/recaptcha/api/siteverify?secret=${secret_key}&response=${response_key}`;
 
-  console.log(response_key)
-  const url =
-    `https://www.google.com/recaptcha/api/siteverify?secret=${secret_key}&response=${response_key}`;
+  // await fetch(url, {
+  //   method: "POST",
+  // })
+  //   .then((response) => response.json())
+  //   .then((google_response) => {
+  //     console.log(google_response)
+  //     // google_response is the object return by
+  //     // google as a response
+  //     if (google_response.success == true) {
+  //       //   if captcha is verified
 
-  console.log('-------------------')
-  fetch(url, {
-    method: "post",
-  })
-    .then((response) => response.json())
-    .then((google_response) => {
-      console.log(google_response)
-      // google_response is the object return by
-      // google as a response
-      if (google_response.success == true) {
-        //   if captcha is verified
+  //       return res.send({ response: "Successful" });
 
-        return res.send({ response: "Successful" });
-      } else {
-        // if captcha is not verified
-        return res.send({ response: "Failed" });
-      }
-    })
-    .catch((error) => {
-      // Some error while verify captcha
-      return res.json({ error });
-    });
+  //     } else {
 
+  //       // if captcha is not verified
+  //       return res.send({ response: "Failed" });
+  //       // res.redirect("/ceo");
+
+  //     }
+  //   })
+  //   .catch((error) => {
+  //     // Some error while verify captcha
+  //     return res.json({ error });
+  //   });
+  const ipAddress = IP.address()
+  console.log(ipAddress)
   const msg = {
-    // to: "ceo@evest.com",
-    to: "osama.ba@evest.com",
+    to: "ceo@evest.com",
+    // to: "osama.ba@evest.com",
     from: '"CEO Page"<no-replay@customers-evest.com>', // Use the email address or domain you verified above
     subject: ` ${req.body.email} Send You New Message from the CEO website page`,
     html: `  <h1>You Got New Message</h1>
     <p>EMAIL: ${req.body.email}.<br><br>
     FULL NAME: ${req.body.fullName}.<br><br>
     SUBJECT: ${req.body.subject}.<br><br>
-    MESSAGE: ${req.body.message}.<br></p>`,
+    MESSAGE: ${req.body.message}.<br><br>
+    IP : ${ipAddress}</p>`
+    ,
+
     replyTo: `${req.body.email}`,
   };
 
 
   //ES6
-  // sgMail.send(msg).then(
-  //   () => { },
-  //   (error) => {
-  //     console.error(error);
+  sgMail.send(msg).then(
+    () => { },
+    (error) => {
+      console.error(error);
 
-  //     if (error.response) {
-  //       console.error(error.response.body);
-  //     }
-  //   }
-  // );
-  // res.redirect("/ceo");
+      if (error.response) {
+        console.error(error.response.body);
+      }
+    }
+  );
+  res.redirect("/ceo");
 
 
 });
