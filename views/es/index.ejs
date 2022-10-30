@@ -1,96 +1,101 @@
- <!--Slider-->
+<!--Slider-->
 
 <%-page.fields.sections[0].fields.content %>
-<%- page.fields.mobile_view[0].fields.content %>
+  <%- page.fields.mobile_view[0].fields.content %>
 
-<!--End of slider-->
-<!---->
-<div class="row"  style="background:url('/images/webp/back1.webp');height: 295px;">
-  <%- page.fields.sections[1].fields.content %> 
-</div>
+    <!--End of slider-->
+    <!---->
+    <div class="row" style="background:url('/images/webp/back1.webp');height: 295px;">
+      <%- page.fields.sections[1].fields.content %>
+    </div>
 
-<div class="row sect2">
-  <%- page.fields.sections[2].fields.content %>
-</div>
+    <div class="row sect2">
+      <%- page.fields.sections[2].fields.content %>
+    </div>
 
-<div class="row  section4 ">
-  <%- page.fields.sections[3].fields.content %>
-</div>
+    <div class="row  section4 ">
+      <%- page.fields.sections[3].fields.content %>
+    </div>
 
-<div class="row">
-  <%- page.fields.sections[4].fields.content %>
-</div>
-
-
-<div class="row">
-  <%- page.fields.sections[5].fields.content %>
-</div>
+    <div class="row">
+      <%- page.fields.sections[4].fields.content %>
+    </div>
 
 
-<div class="row" style="background: url('images/MEET%20THE%20CEO%20ENG-02.png');background-size: cover;">
-  <%- page.fields.sections[6].fields.content %>
-  <%- page.fields.mobile_view[1].fields.content %>
-</div>
-
-<div class="row mobileApp" style="background:#64eee02d;box-shadow: -2px -2px 37px #00000017;">
-  <%- page.fields.sections[7].fields.content %>
-</div>
+    <div class="row">
+      <%- page.fields.sections[5].fields.content %>
+    </div>
 
 
-<div class="row numbersLast" style="background:url('/images/webp/back2.webp');height:295px"> 
-  <%- page.fields.sections[8].fields.content %>
-</div>
+    <div class="row" style="background: url('images/MEET%20THE%20CEO%20ENG-02.png');background-size: cover;">
+      <%- page.fields.sections[6].fields.content %>
+        <%- page.fields.mobile_view[1].fields.content %>
+    </div>
 
-<div class="row"  style="background-color: #00384c;padding-left: 0px;padding-right: 0;height: 100%;">
-  <%- page.fields.sections[9].fields.content %>
-</div>
-
-<style>
-@import "/css/homeEs.min.css";
-</style>
+    <div class="row mobileApp" style="background:#64eee02d;box-shadow: -2px -2px 37px #00000017;">
+      <%- page.fields.sections[7].fields.content %>
+    </div>
 
 
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" defer></script>
-<script src="/js/numberRoll.min.js" defer></script>
+    <div class="row numbersLast" style="background:url('/images/webp/back2.webp');height:295px">
+      <%- page.fields.sections[8].fields.content %>
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
-<!--Country code for phone-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js" integrity="sha512-QMUqEPmhXq1f3DnAVdXvu40C8nbTgxvBGvNruP6RFacy3zWKbNTmx7rdQVVM2gkd2auCWhlPYtcW2tHwzso4SA==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.css" integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw==" crossorigin="anonymous"  defer/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer />
-<script src="/js/scriptsms.min.js" defer></script>
-<script src="/js/pricesWidget.min.js" defer ></script>
+    <div class="row" style="background-color: #00384c;padding-left: 0px;padding-right: 0;height: 100%;">
+      <%- page.fields.sections[9].fields.content %>
+    </div>
+
+    <style>
+      @import "/css/homeEs.min.css";
+    </style>
 
 
-<script>
-  $('#myCarousel').on('slide.bs.carousel', function () {
-    var $nextImage = $('.active.carousel-item', this).next('.carousel-item').find('img');
-    $nextImage.attr('src', $nextImage.data('lazy-load-src'));
-});
-new Splide( '.splide',{
-  heightRatio: 0.3,
-  autoHeight:true,
-  autoplay:true,
-  interval:5000,
-  lazyLoad:true,
-  rewind:true,
-  type:'fade',
-  perPage:1,
-} ).mount();
-randSlides();
-//change ul li order randomly
-function randSlides() {
-  var ul = document.querySelector('.splide__list');
-var li = document.querySelectorAll('.splide__slide');
-var liArray = Array.prototype.slice.call(li, 0);
-liArray.sort(function() {return 0.5 - Math.random()});
-ul.appendChild(liArray[0]);
-ul.appendChild(liArray[1]);
-ul.appendChild(liArray[2]);
-ul.appendChild(liArray[3]);
-ul.appendChild(liArray[4]);
-}
-</script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" defer></script>
+    <script src="/js/numberRoll.min.js" defer></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <!--Country code for phone-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"
+      integrity="sha512-QMUqEPmhXq1f3DnAVdXvu40C8nbTgxvBGvNruP6RFacy3zWKbNTmx7rdQVVM2gkd2auCWhlPYtcW2tHwzso4SA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.css"
+      integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw=="
+      crossorigin="anonymous" defer />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css"
+      integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" defer />
+    <script src="/js/scriptsms.min.js" defer></script>
+    <script src="/js/pricesWidget.min.js" defer></script>
+
+
+    <script>
+      $('#myCarousel').on('slide.bs.carousel', function () {
+        var $nextImage = $('.active.carousel-item', this).next('.carousel-item').find('img');
+        $nextImage.attr('src', $nextImage.data('lazy-load-src'));
+      });
+      new Splide('.splide', {
+        heightRatio: 0.3,
+        autoHeight: true,
+        autoplay: true,
+        interval: 5000,
+        lazyLoad: true,
+        rewind: true,
+        type: 'fade',
+        perPage: 1,
+      }).mount();
+      randSlides();
+      //change ul li order randomly
+      function randSlides() {
+        var ul = document.querySelector('.splide__list');
+        var li = document.querySelectorAll('.splide__slide');
+        var liArray = Array.prototype.slice.call(li, 0);
+        liArray.sort(function () { return 0.5 - Math.random() });
+        ul.appendChild(liArray[0]);
+        ul.appendChild(liArray[1]);
+        ul.appendChild(liArray[2]);
+        ul.appendChild(liArray[3]);
+        ul.appendChild(liArray[4]);
+      }
+    </script>

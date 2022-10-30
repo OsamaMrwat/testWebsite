@@ -16,7 +16,6 @@
       <%- page.fields.sections[4].fields.content %>
     </div>
 
-
     <div class="row">
       <%- page.fields.sections[5].fields.content %>
     </div>
@@ -99,16 +98,15 @@
 
 
     <style>
-      @import "/css/arabicHome.min.css";
-
-      .modal-content {
-        background-color: white;
-      }
+      @import "/css/arabicHome.css";
     </style>
-
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" defer></script>
-    <script src="/js/numberRoll.min.js"></script>
+    <script src="/js/numberRoll.min.js" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <!--Country code for phone-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"
       integrity="sha512-QMUqEPmhXq1f3DnAVdXvu40C8nbTgxvBGvNruP6RFacy3zWKbNTmx7rdQVVM2gkd2auCWhlPYtcW2tHwzso4SA=="
       crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
@@ -121,41 +119,14 @@
     <script src="/js/scriptsms.min.js" defer></script>
     <script src="/js/pricesWidget.min.js" defer></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+
     <script>
-      randSlides();
-      var splide = new Splide('.splide', {
-        heightRatio: 0.3,
-        autoHeight: true,
-        autoplay: true,
-        interval: 5000,
-        lazyLoad: true,
-        rewind: true,
-        pauseOnHover: true,
-        pauseOnFocus: true,
-        type: 'fade',
-        perPage: 1,
-        direction: 'rtl'
-      }).mount();
-      //change ul li order randomly
-      function randSlides() {
-        var ul = document.querySelector('.splide__list');
-        var li = document.querySelectorAll('.splide__slide');
-        var liArray = Array.prototype.slice.call(li, 0);
-        liArray.sort(function () { return 0.5 - Math.random() });
-        ul.appendChild(liArray[0]);
-        ul.appendChild(liArray[1]);
-        ul.appendChild(liArray[2]);
-        ul.appendChild(liArray[3]);
-      }
-
-
-
-      // var modal = document.getElementById('popup-modal');
+      //   var modal = document.getElementById('popup-modal');
       // var span = document.getElementsByClassName("modal-close")[0];
       // var closeIt= document.getElementById('aCo');
-
+      // closeIt.onclick = function() {
+      // modal.style.display = "none";
+      // }
 
       //  window.onload = function() {
       //  setTimeout(function() {
@@ -171,27 +142,38 @@
       //  span.onclick = function() {
       // modal.style.display = "none";
       // }
-      // closeIt.onclick = function() {
-      // modal.style.display = "none";
-      // }
 
+      randSlides();
 
-      var myModal = document.getElementById('app')
-      var myNewModal = document.getElementById('myNewModal')
+      $('#myCarousel').on('slide.bs.carousel', function () {
+        var $nextImage = $('.active.carousel-item', this).next('.carousel-item').find('img');
+        $nextImage.attr('src', $nextImage.data('lazy-load-src'));
+      });
+      new Splide('.splide', {
+        heightRatio: 0.3,
+        autoHeight: true,
+        autoplay: true,
+        interval: 5000,
+        lazyLoad: true,
+        rewind: true,
+        type: 'fade',
+        perPage: 1,
+        pauseOnHover: true
+      }).mount();
 
-      myModal.addEventListener('click', function () {
-        myNewModal.style.display = 'block'
-      })
+      //change ul li order randomly
+      function randSlides() {
+        var ul = document.querySelector('.splide__list');
+        var li = document.querySelectorAll('.splide__slide');
+        var liArray = Array.prototype.slice.call(li, 0);
+        liArray.sort(function () { return 0.5 - Math.random() });
+        ul.appendChild(liArray[0]);
+        ul.appendChild(liArray[1]);
+        ul.appendChild(liArray[2]);
+        ul.appendChild(liArray[3]);
+      }
 
-
-
-      var minusButton = document.getElementsByClassName('btn-close')[0]
-
-      minusButton.addEventListener('click', function () {
-        myNewModal.style.display = 'none'
-      })
-
-
+      console.log()
 
 
     </script>
