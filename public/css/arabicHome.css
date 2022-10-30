@@ -4,19 +4,28 @@ panda-forex-login .forex-button-pandats.simple-button-pandats,
 }
 
 
-.lang-menu .selected-lang:before {
-  background-image: url(https://www.countryflags.io/sa/flat/32.png);
-}
+/* .lang-menu .selected-lang:before {
+  background-image: url('https://www.countryflags.io/sa/flat/32.png');
+} */
 
 main .container {
   height: 560px;
 }
 
-body {
+body>nav,
+body>.splide,
+body>div {
   text-align: right;
   direction: rtl;
   font-family: "Arabic Evest", sans-serif !important;
 }
+
+.container {
+  text-align: right;
+  direction: rtl;
+}
+
+
 
 span {
   font-family: "Evest Font";
@@ -515,7 +524,7 @@ body>main>div:nth-child(10)>div>.col-sm {
   }
 
   body>main>div:nth-child(11)>div {
-    /* height:400px !important; */
+    height: 400px !important;
   }
 
   body>main>div:nth-child(11)>div>div>h1 {
