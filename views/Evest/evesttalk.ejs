@@ -1,0 +1,239 @@
+<div class="first-section">
+  <div class="container-1">
+    <img alt="logo" src="/images/asset 1 Logo.svg" id="heading-img" />
+    <h1><%- page.fields.content.heading%></h1>
+    <h3><%- page.fields.content.sub_heading%></h3>
+    <br />
+    <div class="container-2">
+      <h2>
+        <%- page.fields.content.date%>
+        <br />
+        <%- page.fields.content.hour%>
+      </h2>
+    </div>
+    <br /><br />
+    <img alt="mic image" src="/images/social-icons.svg" id="social-icons-img" />
+  </div>
+  <img alt="mic image" src="/images/mic.svg" id="mic-img" />
+  <img alt="mic image" src="/images/rein_maila.svg" id="rein-img" />
+</div>
+<div class="second-section">
+  <h1><%- page.fields.content.second_heading%></h1>
+  <p><%- page.fields.content.second_section_para%></p>
+</div>
+<br />
+<div class="videos-section">
+  <div class="one-video-container">
+    <div class="video">
+      <video width="100%" controls>
+        <source src="/images/evest_talk_promo.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="host-container">
+      <div>
+        <h3 id="host-name"><%- page.fields.content.host_name%></h3>
+        <p id="host-title"><%- page.fields.content.host_title%></p>
+        <p id="host-specialization">
+          <%- page.fields.content.host_specialization%>
+        </p>
+        <br />
+        <br />
+        <h3 id="episode-description">
+          <%- page.fields.content.episode_description%>
+        </h3>
+        <br />
+        <p id="episode-date"><%- page.fields.content.episode_date%></p>
+      </div>
+      <img alt="guest image" src="/images/hala_bassam.svg" id="guest-image" />
+    </div>
+  </div>
+  <div class="coming-soon">
+    <img alt="guest image" src="/images/Coming soon.svg" />
+    <img alt="guest image" src="/images/Coming soon.svg" />
+    <img alt="guest image" src="/images/Coming soon.svg" />
+    <img alt="guest image" src="/images/Coming soon.svg" />
+    <img alt="guest image" src="/images/Coming soon.svg" />
+    <img alt="guest image" src="/images/Coming soon.svg" />
+  </div>
+</div>
+<div class="question-para-link-container">
+  <h1><%- page.fields.content.question%></h1>
+  <p><%- page.fields.content.question_para%></p>
+  <button>
+    <h4>Share Your Thoughts</h4>
+  </button>
+</div>
+
+<style>
+  .first-section {
+    background-image: url("/images/BG 1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .container-1 {
+    display: flex;
+    padding-top: 5rem;
+    align-items: baseline;
+    justify-content: center;
+    z-index: 3;
+  }
+  #heading-img {
+    margin-bottom: 1rem;
+  }
+  .container-1 > h1,
+  h3 {
+    color: #fff;
+    font-family: "Evest Med" !important;
+  }
+  .container-2 h2 {
+    color: var(--primary-color3);
+    font-family: "Evest Med";
+  }
+  #social-icons-img {
+    width: 80%;
+    margin-bottom: 2rem;
+  }
+  #mic-img {
+    width: 300px;
+    height: 300px;
+    margin-bottom: -6rem;
+  }
+  #rein-img {
+    width: 30%;
+    height: 30%;
+  }
+  .second-section {
+    /* margin-top: 7rem; */
+    margin: 7rem 13rem 0 13rem;
+  }
+  .second-section h1 {
+    /* text-align: center; */
+    color: var(--primary-color2);
+    font-size: 3.5em;
+  }
+  .second-section p {
+    font-size: 1.5em;
+  }
+  .one-video-container {
+    line-height: 0.5rem;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 5rem 2rem 5rem;
+  }
+  .host-container {
+    background-image: url("/images/box.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 1.5rem;
+    border-radius: 24px;
+    display: flex;
+  }
+  #episode-description,
+  #host-name {
+    color: var(--primary-color1);
+  }
+  #host-title,
+  #episode-date {
+    color: var(--primary-color2);
+    font-weight: bold;
+  }
+  #host-specialization {
+    font-weight: bold;
+  }
+  #episode-description {
+    font-size: 1.5em;
+  }
+  #guest-image {
+    width: 40%;
+  }
+  .video > video {
+    border-radius: 24px;
+  }
+  .coming-soon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .coming-soon > img {
+    margin: 2rem 5rem 2rem 5rem;
+  }
+  .question-para-link-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .question-para-link-container h1 {
+    color: var(--primary-color2);
+    width: 40%;
+  }
+  .question-para-link-container p {
+    width: 40%;
+  }
+  .question-para-link-container button {
+    border: none;
+    border-radius: 12px;
+    background-color: var(--primary-color1);
+    color: #fff;
+    padding: 0.5rem;
+    width: 25%;
+  }
+
+  @media screen and (max-width: 767px) {
+    .first-section {
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+    }
+    .container-1 {
+      flex-direction: column;
+      align-items: center;
+    }
+    #mic-img {
+      width: 30%;
+    }
+    .second-section {
+      margin: 3rem 3rem 0 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .second-section h1 {
+      font-size: 1.6em;
+      text-align: center;
+    }
+    .one-video-container {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+    #episode-description {
+      font-size: 0.75em !important;
+    }
+    #host-name,
+    #episode-date {
+      font-size: 12px !important;
+      width: 115%;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .container-1 {
+      flex-direction: column;
+    }
+    .one-video-container {
+      /* padding-top: 3rem; */
+    }
+    #episode-description {
+      width: 80%;
+      margin-bottom: 2.5rem;
+    }
+    .host-container > div {
+      margin-top: 3%;
+    }
+  }
+</style>

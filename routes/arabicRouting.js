@@ -4,8 +4,7 @@ const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const butter = require("buttercms")("eabb7d00a1cecacc7a57f771cc86fb0126ad94d8");
 const fetch = require("node-fetch");
-const IP = require('ip');
-
+const IP = require("ip");
 
 router.get("/", (req, res) => {
   butter.page.retrieve("*", "homepage-ar").then(function (resp) {
@@ -56,9 +55,9 @@ router.get("/" + encodeURIComponent("أسئلة-شائعة"), (req, res) => {
 /* Start Trading Routes*/
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("انواع-الحسابات"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("انواع-الحسابات"),
   function (req, res) {
     butter.page.retrieve("*", "accounttypes-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -69,9 +68,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("الوثائق-و-السياسات"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("الوثائق-و-السياسات"),
   function (req, res) {
     butter.page.retrieve("*", "documentspolicies-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -84,9 +83,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("الإيداع-و-السحب"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("الإيداع-و-السحب"),
   (req, res) =>
     butter.page.retrieve("*", "depositandwithdrawal-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -96,9 +95,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("رسوم-ايفست"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("رسوم-ايفست"),
   (req, res) =>
     butter.page.retrieve("*", "tradingfees-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -108,9 +107,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("اوقات-التداول"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("اوقات-التداول"),
   (req, res) =>
     butter.page.retrieve("*", "tradinghours-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -120,9 +119,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("حاسبات-التداول"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("حاسبات-التداول"),
   (req, res) =>
     butter.page.retrieve("*", "tradingcalculator-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -132,9 +131,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("تداول-الاسهم-0-عمولة"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("تداول-الاسهم-0-عمولة"),
   (req, res) =>
     butter.page.retrieve("*", "zerocommission-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -144,9 +143,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("حساب-تداول-تجريبي"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("حساب-تداول-تجريبي"),
   (req, res) =>
     butter.page.retrieve("*", "demoaccount-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -156,9 +155,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("حساب-تداول-إسلامي"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("حساب-تداول-إسلامي"),
   (req, res) =>
     butter.page.retrieve("*", "islamic-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -168,9 +167,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("العملات-الرقمية"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("العملات-الرقمية"),
   (req, res) => {
     butter.page.retrieve("*", "crypto-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -181,9 +180,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("ابدا-التداول") +
-  "/" +
-  encodeURIComponent("سَلاَّت-تداول-استثمارية"),
+    encodeURIComponent("ابدا-التداول") +
+    "/" +
+    encodeURIComponent("سَلاَّت-تداول-استثمارية"),
   (req, res) => {
     butter.page.retrieve("*", "eib-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -271,7 +270,7 @@ router.post("/cvUploadar", (req, res) => {
   };
 
   sgMail.send(msg).then(
-    () => { },
+    () => {},
     (error) => {
       console.error(error);
 
@@ -294,7 +293,7 @@ router.get(
   }
 );
 router.post("/sendArabic", (req, res) => {
-  const ipAddress = IP.address()
+  const ipAddress = IP.address();
 
   const msg = {
     to: "support@evest.com",
@@ -311,7 +310,7 @@ router.post("/sendArabic", (req, res) => {
   };
   //ES6
   sgMail.send(msg).then(
-    () => { },
+    () => {},
     (error) => {
       console.error(error);
 
@@ -327,6 +326,20 @@ router.post("/sendArabic", (req, res) => {
       message: "تم ارسال الرسالة بنجاح , سوف نقوم بتواصل معك باقرب وقت",
     });
   });
+});
+
+router.get("evest-talk-ar", (req, res) => {
+  butter.page
+    .retrieve("*", "evest-talk-ar")
+    .then(function (resp) {
+      var page1 = resp.data.data;
+      res.render("ar/Evest/evesttalk", {
+        page: page1,
+      });
+    })
+    .catch(function (resp) {
+      console.log(resp);
+    });
 });
 
 router.get(
@@ -351,9 +364,9 @@ router.get(
 
 router.get(
   "/" +
-  encodeURIComponent("إيڤست") +
-  "/" +
-  encodeURIComponent("تراخيص-التداول"),
+    encodeURIComponent("إيڤست") +
+    "/" +
+    encodeURIComponent("تراخيص-التداول"),
   (req, res) => {
     butter.page
       .retrieve("*", "regulatoryauthorisation-ar")
@@ -382,8 +395,7 @@ router.get("/" + encodeURIComponent("المدير-التنفيذي"), (req, res)
 });
 
 router.post("/" + encodeURIComponent("المدير-التنفيذي"), (req, res) => {
-
-  const ipAddress = IP.address()
+  const ipAddress = IP.address();
 
   const msg = {
     to: "ceo@evest.com",
@@ -399,7 +411,7 @@ router.post("/" + encodeURIComponent("المدير-التنفيذي"), (req, res
   };
   //ES6
   sgMail.send(msg).then(
-    () => { },
+    () => {},
     (error) => {
       console.error(error);
 
@@ -1084,15 +1096,19 @@ router.get("/tag/:tag", async (req, res) => {
           let date = post.date.split("T")[0];
           return `<div class="card">
                     <div> 
-                           <a href='${post.link + "?lang=ar"
-            }'>  <img class="card-img-top" src="${post.featured_image_url
-            }" alt="Card image cap" title="${post.title.rendered}"> </a>
+                           <a href='${
+                             post.link + "?lang=ar"
+                           }'>  <img class="card-img-top" src="${
+            post.featured_image_url
+          }" alt="Card image cap" title="${post.title.rendered}"> </a>
         <div class="card-body">
-        <a href='${post.link + "?lang=ar"}' ><h5 class="card-title">${post.title.rendered
-            }</h5></a>
+        <a href='${post.link + "?lang=ar"}' ><h5 class="card-title">${
+            post.title.rendered
+          }</h5></a>
         <div class="card-text description">${post.excerpt.rendered}</div>
-        <a class="btn btn-filled readmore" href='${post.link + "?lang=ar"
-            }'>أقرا المزيد</a>
+        <a class="btn btn-filled readmore" href='${
+          post.link + "?lang=ar"
+        }'>أقرا المزيد</a>
         </div></div>
         <div class="card-footer dateCreated">
         ${date}
@@ -1113,7 +1129,8 @@ router.get("/tag/:tag", async (req, res) => {
   res.on("finish", () => {
     const durationInMilliseconds = getDurationInMilliseconds(start);
     console.log(
-      `${req.method} ${req.originalUrl
+      `${req.method} ${
+        req.originalUrl
       } [FINISHED] ${durationInMilliseconds.toLocaleString()} ms`
     );
   });
@@ -1121,7 +1138,8 @@ router.get("/tag/:tag", async (req, res) => {
   res.on("close", () => {
     const durationInMilliseconds = getDurationInMilliseconds(start);
     console.log(
-      `${req.method} ${req.originalUrl
+      `${req.method} ${
+        req.originalUrl
       } [CLOSED] ${durationInMilliseconds.toLocaleString()} ms`
     );
   });
