@@ -328,19 +328,22 @@ router.post("/sendArabic", (req, res) => {
   });
 });
 
-router.get("evest-talk-ar", (req, res) => {
-  butter.page
-    .retrieve("*", "evest-talk-ar")
-    .then(function (resp) {
-      var page1 = resp.data.data;
-      res.render("ar/Evest/evesttalk", {
-        page: page1,
+router.get(
+  "/" + encodeURIComponent("إيڤست") + "/" + encodeURIComponent("ايفست-توك"),
+  (req, res) => {
+    butter.page
+      .retrieve("*", "evest-talk-ar")
+      .then(function (resp) {
+        var page1 = resp.data.data;
+        res.render("ar/Evest/evesttalk", {
+          page: page1,
+        });
+      })
+      .catch(function (resp) {
+        console.log(resp);
       });
-    })
-    .catch(function (resp) {
-      console.log(resp);
-    });
-});
+  }
+);
 
 router.get(
   "/" + encodeURIComponent("إيڤست") + "/" + encodeURIComponent("وظائف-إيڤست"),

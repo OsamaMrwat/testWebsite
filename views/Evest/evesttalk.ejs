@@ -16,6 +16,11 @@
   </div>
   <img alt="mic image" src="/images/mic.svg" id="mic-img" />
   <img alt="mic image" src="/images/rein_maila.svg" id="rein-img" />
+  <img
+    alt="rien mic combined"
+    src="/images/combined_mic_rein_en.svg"
+    id="combined-mic-rien-en"
+  />
 </div>
 <div class="second-section">
   <h1><%- page.fields.content.second_heading%></h1>
@@ -55,12 +60,20 @@
     <img alt="guest image" src="/images/Coming soon.svg" />
     <img alt="guest image" src="/images/Coming soon.svg" />
   </div>
+  <div class="coming-soon-mob">
+    <img alt="guest image" src="/images/Coming soon mobile.svg" />
+    <img alt="guest image" src="/images/Coming soon mobile.svg" />
+    <img alt="guest image" src="/images/Coming soon mobile.svg" />
+    <img alt="guest image" src="/images/Coming soon mobile.svg" />
+    <img alt="guest image" src="/images/Coming soon mobile.svg" />
+    <img alt="guest image" src="/images/Coming soon mobile.svg" />
+  </div>
 </div>
 <div class="question-para-link-container">
   <h1><%- page.fields.content.question%></h1>
   <p><%- page.fields.content.question_para%></p>
   <button>
-    <h4>Share Your Thoughts</h4>
+    <h4><%- page.fields.content.btn_text%></h4>
   </button>
 </div>
 
@@ -162,6 +175,14 @@
   .coming-soon > img {
     margin: 2rem 5rem 2rem 5rem;
   }
+  .coming-soon-mob {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .coming-soon-mob > img {
+    margin: 2rem 3rem 2rem 3rem;
+  }
   .question-para-link-container {
     display: flex;
     flex-direction: column;
@@ -194,8 +215,19 @@
       flex-direction: column;
       align-items: center;
     }
-    #mic-img {
-      width: 30%;
+    #mic-img,
+    #rein-img {
+      display: none;
+    }
+    #host-name,
+    #host-title,
+    #episode-description,
+    #episode-date {
+      width: 115% !important;
+    }
+    #host-specialization {
+      width: 100% !important;
+      line-height: 1rem;
     }
     .second-section {
       margin: 3rem 3rem 0 3rem;
@@ -208,22 +240,48 @@
       text-align: center;
     }
     .one-video-container {
-      grid-template-columns: 1fr;
-      gap: 0.5rem;
+      display: flex;
+      flex-direction: column-reverse;
+      margin: 2rem 3rem 2rem 3rem;
     }
     #episode-description {
-      font-size: 0.75em !important;
+      font-size: 0.7em !important;
     }
-    #host-name,
-    #episode-date {
+    #host-name {
       font-size: 12px !important;
       width: 115%;
+    }
+    #episode-date {
+      font-size: 11px !important;
+      width: 100% !important;
+      line-height: 1rem;
+    }
+    #guest-image {
+      width: 50%;
+    }
+    .coming-soon {
+      display: none;
+    }
+    .question-para-link-container h1,
+    p {
+      width: 80% !important;
+      font-size: 1.5rem;
+    }
+    .question-para-link-container button {
+      width: 100%;
+      border-radius: 0;
+    }
+    .question-para-link-container button > h4 {
+      margin-bottom: 0;
     }
   }
 
   @media screen and (min-width: 768px) {
     .container-1 {
       flex-direction: column;
+    }
+    #combined-mic-rien-en {
+      display: none;
     }
     .one-video-container {
       /* padding-top: 3rem; */
@@ -234,6 +292,9 @@
     }
     .host-container > div {
       margin-top: 3%;
+    }
+    .coming-soon-mob {
+      display: none;
     }
   }
 </style>
