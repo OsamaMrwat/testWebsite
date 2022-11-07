@@ -510,6 +510,7 @@ body > main > div:nth-child(6) > div > div > div:nth-child(1) > img:hover {
   min-width: -moz-max-content;
   min-width: max-content;
 }
+
 .form-inline {
   display: flex;
   justify-content: space-between;
