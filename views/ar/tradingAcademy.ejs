@@ -1,34 +1,54 @@
 <!-- The DIV for the implementation -->
-<div id="mte-education-root" class="mte-root container" style="margin: 0 auto; overflow: hidden; width: 100%;"></div>
+<div
+  id="mte-education-root"
+  class="mte-root container"
+  style="margin: 0 auto; overflow: hidden; width: 100%"
+></div>
 <!-- Parameters -->
 <script>
-var userRef="b73f16d"; /* User reference code */
-var mte_language='ar' /* Language */
-var trade_link="/trade-room"; /* Trading platform URL */
-var open_account ="Your opening account URL"; /* Opening account URL */
-var logoIntro = true; /* Play logo video */
-var mte_demo=true; /* Locked mode */
-console.log(mte_demo)
-var theme = "material";
+  var userRef = "b73f16d"; /* User reference code */
+  var mte_language = "ar"; /* Language */
+  var trade_link = "/trade-room"; /* Trading platform URL */
+  var open_account = "Your opening account URL"; /* Opening account URL */
+  var logoIntro = true; /* Play logo video */
+  var mte_demo = true; /* Locked mode */
+  console.log(mte_demo);
+  var theme = "material";
 </script>
 <!-- Scripts and styles -->
-<link href="https://s3-eu-west-1.amazonaws.com/data.mte-media.com/react/main.css" rel="stylesheet">
-<script  src="https://s3-eu-west-1.amazonaws.com/data.mte-media.com/react/react.v2.js" defer></script>
-<script  src="https://s3-eu-west-1.amazonaws.com/data.mte-media.com/react/react.v2.main.js" defer ></script>
-<script src="https://s3-eu-west-1.amazonaws.com/data.mte-media.com/react/runtime~main.js" defer></script>
-<script src="/js/custom.min.js"></script>
+<link
+  href="https://s3-eu-west-1.amazonaws.com/data.mte-media.com/react/main.css"
+  rel="stylesheet"
+/>
+<script
+  src="https://s3-eu-west-1.amazonaws.com/data.mte-media.com/react/react.v2.js"
+  defer
+></script>
+<script
+  src="https://s3-eu-west-1.amazonaws.com/data.mte-media.com/react/react.v2.main.js"
+  defer
+></script>
+<script
+  src="https://s3-eu-west-1.amazonaws.com/data.mte-media.com/react/runtime~main.js"
+  defer
+></script>
+<script src="/js/custom.js"></script>
 <style>
-.cssload-thecube .cssload-cube:before { background-color:var(--primary-color1) !important;} /*loader color*/
-.top-bar{background-color: #eee;}/*Navbar background color*/
-body{  
+  .cssload-thecube .cssload-cube:before {
+    background-color: var(--primary-color1) !important;
+  } /*loader color*/
+  .top-bar {
+    background-color: #eee;
+  } /*Navbar background color*/
+  body {
     direction: rtl;
     text-align: right;
-    font-family: "Arabic Evest" , sans-serif !important;
-}
-.lang-menu .selected-lang:before{
-  background-image: url(https://www.countryflags.io/sa/flat/32.png);
-}
-#arabicFooter{
-  display: block !important;
-}
+    font-family: "Arabic Evest", sans-serif !important;
+  }
+  .lang-menu .selected-lang:before {
+    background-image: url(https://www.countryflags.io/sa/flat/32.png);
+  }
+  #arabicFooter {
+    display: block !important;
+  }
 </style>
