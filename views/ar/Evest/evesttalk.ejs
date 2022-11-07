@@ -16,6 +16,11 @@
   </div>
   <img alt="mic image" src="/images/mic.svg" id="mic-img" />
   <img alt="rien image" src="/images/rien_ar.svg" id="rein-img" />
+  <img
+    alt="rien mic combined"
+    src="/images/combined_mic_rien_ar.svg"
+    id="combined-mic-rien-ar"
+  />
 </div>
 <div class="second-section">
   <h1><%- page.fields.content.second_heading%></h1>
@@ -180,7 +185,7 @@
     justify-content: center;
   }
   .coming-soon-mob > img {
-    margin: 2rem 5rem 2rem 5rem;
+    margin: 2rem 3rem 2rem 3rem;
   }
   .question-para-link-container {
     display: flex;
@@ -213,9 +218,24 @@
     .container-1 {
       flex-direction: column;
       align-items: center;
+      padding-top: 1rem;
     }
-    #mic-img {
-      width: 30%;
+    .container-1 h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: -0.5rem;
+      width: 70%;
+    }
+    .container-2 h2 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    #heading-img {
+      width: 80%;
+    }
+    #mic-img,
+    #rein-img {
+      display: none;
     }
     .second-section {
       margin: 3rem 3rem 0 3rem;
@@ -228,19 +248,49 @@
       text-align: center;
     }
     .one-video-container {
-      grid-template-columns: 1fr;
-      gap: 0.5rem;
+      display: flex;
+      flex-direction: column-reverse;
+      margin: 2rem 3rem 2rem 3rem;
+    }
+    .host-container {
+      flex-direction: row-reverse;
+      padding: 2rem;
+    }
+    #host-name,
+    #host-specialization,
+    #host-title,
+    #episode-description,
+    #episode-date {
+      width: 115% !important;
     }
     #episode-description {
       font-size: 0.75em !important;
     }
-    #host-name,
+    #host-name {
+      font-weight: bold;
+      font-size: 13px;
+    }
+    #guest-image {
+      width: 50%;
+    }
     #episode-date {
-      font-size: 12px !important;
+      font-size: 11px !important;
       width: 115%;
     }
     .coming-soon {
       display: none;
+    }
+    .question-para-link-container h1,
+    p {
+      width: 80% !important;
+      font-size: 1.5rem;
+    }
+    .question-para-link-container button {
+      width: 100%;
+      border-radius: 0;
+    }
+    .question-para-link-container button > h4 {
+      margin-bottom: 0;
     }
   }
 
@@ -250,6 +300,9 @@
     }
     .container-1 {
       flex-direction: column;
+    }
+    #combined-mic-rien-ar {
+      display: none;
     }
     .one-video-container {
       /* padding-top: 3rem; */
