@@ -1,11 +1,14 @@
-
-.iti__flag {background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/img/flags.png");}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .iti__flag {background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/img/flags@2x.png");}
+.iti__flag {
+  background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/img/flags.png");
 }
 
-@font-face{
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {
+    background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/img/flags@2x.png");
+  }
+}
+
+@font-face {
   font-family: "Evest Med";
   src: url("/fonts/Gotham/Gotham-Medium.otf");
   font-display: swap;
@@ -27,22 +30,22 @@
   font-family: "Arabic Light";
   src: url("/fonts/GE SS Two/GE SS Text Light.otf");
 }
-:root{
-  --primary-color1:#022A3A;
-  --primary-color2:#058080;
-  --primary-color3:#64F0E3;
-  --supportive-color1:#0B0B0B;
-  --supportive-color2:#B7B8BA;
-  --supportive-color3:#DCCB84;
-  --secondary-color1:#42135B;
-  --secondary-color2:#0036B0;
-  --secondary-color3:#1E2D80;
-  --secondary-color4:#1B4544;
-  --secondary-color5:#880004;
-  --secondary-color6:#9B6523;
+:root {
+  --primary-color1: #022a3a;
+  --primary-color2: #058080;
+  --primary-color3: #64f0e3;
+  --supportive-color1: #0b0b0b;
+  --supportive-color2: #b7b8ba;
+  --supportive-color3: #dccb84;
+  --secondary-color1: #42135b;
+  --secondary-color2: #0036b0;
+  --secondary-color3: #1e2d80;
+  --secondary-color4: #1b4544;
+  --secondary-color5: #880004;
+  --secondary-color6: #9b6523;
 }
 body {
-  background-color:#f7f7f7;
+  background-color: #f7f7f7;
   font-family: "Evest Font", sans-serif !important;
   margin: 0;
   padding: 0;
@@ -54,8 +57,7 @@ body {
   margin-bottom: -20px;
 }*/
 
-
-.support-icon{
+.support-icon {
   z-index: 999;
   position: fixed;
   color: var(--primary-color1);
@@ -72,7 +74,7 @@ body {
   cursor: pointer;
 }
 
-#support-channels{
+#support-channels {
   display: none;
   justify-content: space-evenly;
   align-items: center;
@@ -81,7 +83,7 @@ body {
   bottom: 120px;
 }
 
-.support-icon > .icon{
+.support-icon > .icon {
   font-size: 12px;
   display: flex;
   align-items: center;
@@ -101,58 +103,57 @@ body {
   font-size: 30px;
   box-shadow: 2px 2px 3px #999;
   z-index: 100;
-  }
+}
 
-  .icon_float+.icon_float {
-    margin-top: 25%;
-  }
-  
-  .whatsapp_float{
-    background-color: #25d366;
-  }
-  .chat_float{
-    background-color: var(--primary-color2);
-  }
-  .help_float{
-    background-color: var(--primary-color1);
-  }
-  .fa-comments{
-    position: relative;
-    top:10%;
-  }
+.icon_float + .icon_float {
+  margin-top: 25%;
+}
 
+.whatsapp_float {
+  background-color: #25d366;
+}
+.chat_float {
+  background-color: var(--primary-color2);
+}
+.help_float {
+  background-color: var(--primary-color1);
+}
+.fa-comments {
+  position: relative;
+  top: 10%;
+}
+
+.whatsapp-icon {
+  margin-top: 16px;
+}
+/* for mobile */
+@media screen and (max-width: 767px) {
   .whatsapp-icon {
-  margin-top:16px;
+    margin-top: 10px;
   }
-  /* for mobile */
-  @media screen and (max-width: 767px){
-   .whatsapp-icon {
-  margin-top:10px;
-   }
   .whatsapp_float {
-      width: 40px;
-      height: 40px;
-      bottom: 20px;
-      font-size: 22px;
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    font-size: 22px;
   }
-  }
+}
 
-
-.mobile-img{
+.mobile-img {
   display: none;
 }
 /* Genral styling*/
-.mm-5{
-margin-bottom: 5rem;
+.mm-5 {
+  margin-bottom: 5rem;
 }
 #arabicNavBar .dropdown-item {
   text-align: right;
 }
-#arabicNavBar .dropdown-menu{
+#arabicNavBar .dropdown-menu {
   right: 2%;
 }
 
-.tablet-space{
+.tablet-space {
   display: none;
 }
 
@@ -170,37 +171,34 @@ margin-bottom: 5rem;
   height: fit-content;
   text-align: center;
   font-weight: inherit !important;
-  font-size: 15px; 
-  padding:0 -1rem !important ;
+  font-size: 15px;
+  padding: 0 -1rem !important ;
 }
 
 /* Menu Styling*/
-.dropdown-item{
+.dropdown-item {
   text-align: left;
-  color: var(--primary-color3)  !important;
+  color: var(--primary-color3) !important;
 }
-#englishNavBar .submenu-item{
-text-align: left !important;
-color: var(--primary-color3)  !important;
+#englishNavBar .submenu-item {
+  text-align: left !important;
+  color: var(--primary-color3) !important;
 }
-.dropdown-item:hover,.submenu-item:hover{
+.dropdown-item:hover,
+.submenu-item:hover {
   background-color: white;
-  color:var(--primary-color1)  !important;
+  color: var(--primary-color1) !important;
 }
-.dropdown-menu{
+.dropdown-menu {
   text-align: right;
-    margin-top: -5px;
-    border: none;
-    position: absolute;
-    left: 69%;
-    min-width: 16rem;
-    left:2% !important;
+  margin-top: -5px;
+  border: none;
+  position: absolute;
+  left: 69%;
+  min-width: 16rem;
+  left: 2% !important;
   background-color: var(--primary-color1);
 }
-
-
-
-
 
 /* .menu{
   text-align: center;
@@ -225,72 +223,73 @@ color: var(--primary-color3)  !important;
   display: none;
 } */
 
-
-
 /*footer*/
 footer {
   position: relative;
   bottom: -20px;
   width: 100%;
-  background-color:black;
-}
-footer .container{
   background-color: black;
 }
-footer a , footer .list-unstyled li{
-  color:rgb(173, 173, 173) !important;
+footer .container {
+  background-color: black;
+}
+footer a,
+footer .list-unstyled li {
+  color: rgb(173, 173, 173) !important;
 }
 
-footer a:hover{
-  color:var(--primary-color3) !important;
+footer a:hover {
+  color: var(--primary-color3) !important;
 }
-.list-unstyled li{
-  color:rgb(173, 173, 173);
+.list-unstyled li {
+  color: rgb(173, 173, 173);
   margin-bottom: 7px;
-  font-size:13px;
+  font-size: 13px;
 }
-.list-unstyled li span{
+.list-unstyled li span {
   font-weight: bolder;
 }
-#englishFooter .icons li+li{
+#englishFooter .icons li + li {
   margin-left: 20px;
 }
-#arabicFooter .icons li+li{
+:lang(ar) #arabicFooter {
+  direction: rtl;
+}
+#arabicFooter .icons li + li {
   margin-right: 35px;
 }
-#arabicFooter > div:nth-child(1) > div.col-2 > div:nth-child(1) > img{
+#arabicFooter > div:nth-child(1) > div.col-2 > div:nth-child(1) > img {
   margin-right: 13px;
 }
-#arabicFooter > div.row.my-4.desktop-img.pl-3 > div > ul{
+#arabicFooter > div.row.my-4.desktop-img.pl-3 > div > ul {
   padding: 0;
 }
-#arabicFooter > div:nth-child(1) > div:nth-child(1){
+#arabicFooter > div:nth-child(1) > div:nth-child(1) {
   padding-top: 4% !important;
   padding-right: 5%;
 }
-#arabicFooter > div:nth-child(1) > div{
+#arabicFooter > div:nth-child(1) > div {
   padding-top: 5.4%;
 }
-#arabicFooter ul{
+#arabicFooter ul {
   padding-right: 0;
 }
-#arabicFooter ul>li{
+#arabicFooter ul > li {
   font-size: 13px;
 }
-#englishFooter > div:nth-child(1){
+#englishFooter > div:nth-child(1) {
   padding-top: 3% !important;
 }
-#arabicNavBar>#navbarSupportedContent > ul > li.nav-item.dropdown.show > div{
+#arabicNavBar > #navbarSupportedContent > ul > li.nav-item.dropdown.show > div {
   width: max-content;
 }
-
 
 /* override panda styling*/
 
 panda-forex-accounts .mainpandats .button-pandats {
   color: #00384c !important;
   padding: 0 2px 0 10px;
-  border-left: 1px solid rgba(222,222,222,.38);
+  border-left: 1px solid rgba(222, 222, 222, 0.38);
   font-size: 14px;
   -ms-text-overflow: ellipsis;
   text-overflow: ellipsis;
@@ -301,135 +300,235 @@ panda-forex-accounts .mainpandats .button-pandats {
   border-radius: 61px;
   width: fit-content;
   border: 2px solid #00384c;
-  border-left:2px solid #00384c !important;
-  border-right:2px solid #00384c !important;
-  font-family: "Evest Font" ,sans-serif;
+  border-left: 2px solid #00384c !important;
+  border-right: 2px solid #00384c !important;
+  font-family: "Evest Font", sans-serif;
 }
-.mainpandats login-popup .popup-wrapper-pandats .col-right-pandats{
-  background: url('/images/login.jpg') !important;
+.mainpandats login-popup .popup-wrapper-pandats .col-right-pandats {
+  background: url("/images/login.jpg") !important;
 }
-.mainpandats div{
-  color:var(--primary-color1) !important;
+.mainpandats div {
+  color: var(--primary-color1) !important;
   font-weight: bold;
 }
-.mainpandats h1{
-  color:var(--primary-color1) !important;
+.mainpandats h1 {
+  color: var(--primary-color1) !important;
 }
 
-panda-forex-accounts .mainpandats .button-pandats:hover{
+panda-forex-accounts .mainpandats .button-pandats:hover {
   background-color: #00384c !important;
   color: white !important;
-  font-family: "Evest Font" ,sans-serif;
+  font-family: "Evest Font", sans-serif;
 }
 panda-forex-account-status .mainpandats ul li div {
-  color:#00384c !important;
-  font-family: "Evest Font" ,sans-serif;
+  color: #00384c !important;
+  font-family: "Evest Font", sans-serif;
 }
 
-body > nav > div > div.btng > div.status > panda-forex-account-status > div > ul > li.profit-pandats.total-pl.up-pandats div{
+body
+  > nav
+  > div
+  > div.btng
+  > div.status
+  > panda-forex-account-status
+  > div
+  > ul
+  > li.profit-pandats.total-pl.up-pandats
+  div {
   color: white !important;
-  font-family: "Evest Font" ,sans-serif;
+  font-family: "Evest Font", sans-serif;
 }
 
-body > nav > div > div.btng > div.status > panda-forex-account-status > div > ul > li.profit-pandats.margin-level.down-pandats div{
+body
+  > nav
+  > div
+  > div.btng
+  > div.status
+  > panda-forex-account-status
+  > div
+  > ul
+  > li.profit-pandats.margin-level.down-pandats
+  div {
   color: white !important;
-  font-family: "Evest Font" ,sans-serif;
+  font-family: "Evest Font", sans-serif;
 }
 
-panda-forex-theme-switch custom-select .frx-dropdown-pandats{
+panda-forex-theme-switch custom-select .frx-dropdown-pandats {
   z-index: 1000;
-  border:none;
-  color:#00384c !important;
-  font-family: "Evest Font" ,sans-serif;
+  border: none;
+  color: #00384c !important;
+  font-family: "Evest Font", sans-serif;
 }
 
-panda-forex-trading-platform .mainpandats .wrapper-pandats .platform-wrapper-pandats{
+panda-forex-trading-platform
+  .mainpandats
+  .wrapper-pandats
+  .platform-wrapper-pandats {
   height: 900px;
-  font-family: "Evest Font" ,sans-serif;
+  font-family: "Evest Font", sans-serif;
 }
 
-panda-forex-menu .mainpandats .button-pandats:hover{
+panda-forex-menu .mainpandats .button-pandats:hover {
   background: var(--supportive-color2) !important;
 }
 
-
 /*client area*/
-.mainpandats .popup-wrapper-pandats .title-popup-pandats{
+.mainpandats .popup-wrapper-pandats .title-popup-pandats {
   background-color: white !important;
 }
-panda-forex-client-area .mainpandats .popup-wrapper-pandats .wrap-content-pandats .nav-pandats .nav-list-pandats ul li a.active-pandats, panda-forex-client-area .mainpandats .popup-wrapper-pandats .wrap-content-pandats .nav-pandats .nav-list-pandats ul li a:hover{
+panda-forex-client-area
+  .mainpandats
+  .popup-wrapper-pandats
+  .wrap-content-pandats
+  .nav-pandats
+  .nav-list-pandats
+  ul
+  li
+  a.active-pandats,
+panda-forex-client-area
+  .mainpandats
+  .popup-wrapper-pandats
+  .wrap-content-pandats
+  .nav-pandats
+  .nav-list-pandats
+  ul
+  li
+  a:hover {
   background-color: var(--primary-color1) !important;
-  color:white !important;
+  color: white !important;
 }
-#pts-forx-init-wraper > panda-forex-client-area > div > div > client-area-popup > div > div.popup-wrapper-pandats.roboto-pandats.layout-column > div.wrap-content-pandats.layout-row.shrinkable.content-gap30 > div.nav-pandats.layout-column > div.nav-footer-pandats.layout-row > div > div > span{
-  color:white !important;
+#pts-forx-init-wraper
+  > panda-forex-client-area
+  > div
+  > div
+  > client-area-popup
+  > div
+  > div.popup-wrapper-pandats.roboto-pandats.layout-column
+  > div.wrap-content-pandats.layout-row.shrinkable.content-gap30
+  > div.nav-pandats.layout-column
+  > div.nav-footer-pandats.layout-row
+  > div
+  > div
+  > span {
+  color: white !important;
 }
 
-#pts-forx-init-wraper > panda-forex-client-area > div > div > client-area-popup > div > div.popup-wrapper-pandats.roboto-pandats.layout-column > div.wrap-content-pandats.layout-row.shrinkable.content-gap30 > div.nav-pandats.layout-column > div.nav-footer-pandats.layout-row > div > div > i{
-  color:white !important;
+#pts-forx-init-wraper
+  > panda-forex-client-area
+  > div
+  > div
+  > client-area-popup
+  > div
+  > div.popup-wrapper-pandats.roboto-pandats.layout-column
+  > div.wrap-content-pandats.layout-row.shrinkable.content-gap30
+  > div.nav-pandats.layout-column
+  > div.nav-footer-pandats.layout-row
+  > div
+  > div
+  > i {
+  color: white !important;
 }
 
-#pts-forx-init-wraper > panda-forex-client-area > div > div > client-area-popup > div > div.popup-wrapper-pandats.roboto-pandats.layout-column > div.wrap-content-pandats.layout-row.shrinkable.content-gap30 > div.nav-pandats.layout-column > div.nav-footer-pandats.layout-row > div:hover{
-color:var(--primary-color1) !important;
+#pts-forx-init-wraper
+  > panda-forex-client-area
+  > div
+  > div
+  > client-area-popup
+  > div
+  > div.popup-wrapper-pandats.roboto-pandats.layout-column
+  > div.wrap-content-pandats.layout-row.shrinkable.content-gap30
+  > div.nav-pandats.layout-column
+  > div.nav-footer-pandats.layout-row
+  > div:hover {
+  color: var(--primary-color1) !important;
 }
 /***End of panda override***/
 
-
-
-
 /*Menu Style on hover*/
 @media all and (min-width: 992px) {
-	.navbar .dropdown-menu-end{ right:0; left: auto;  }
-	.navbar .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  }
-	.navbar .nav-item:hover .nav-link{ color: #fff;  }
-	.navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
-	.navbar .dropdown-menu.fade-up{ top:180%;  }
-	.navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
+  .navbar .dropdown-menu-end {
+    right: 0;
+    left: auto;
+  }
+  .navbar .nav-item .dropdown-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    margin-top: 0;
+  }
+  .navbar .nav-item:hover .nav-link {
+    color: #fff;
+  }
+  .navbar .dropdown-menu.fade-down {
+    top: 80%;
+    transform: rotateX(-75deg);
+    transform-origin: 0% 0%;
+  }
+  .navbar .dropdown-menu.fade-up {
+    top: 180%;
+  }
+  .navbar .nav-item:hover .dropdown-menu {
+    transition: 0.3s;
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+    transform: rotateX(0deg);
+  }
 }
 
-
-#englishNavBar .submenu-content{
+#englishNavBar .submenu-content {
   text-align: left;
 }
-#arabicNavBar .submenu-content{
+#arabicNavBar .submenu-content {
   text-align: right;
 }
 
-.sub:hover .submenu-content{
-  display:block !important;
+.sub:hover .submenu-content {
+  display: block !important;
   position: absolute;
   left: 100% !important;
   top: 30% !important;
 }
-#arabicNavBar .sub:hover .submenu-content{
+#arabicNavBar .sub:hover .submenu-content {
   right: 100% !important;
 }
 /*********************** new Styling *****************************/
 
 /*Slider homepage dots*/
-.splide__pagination__page{
-  background:var(--primary-color1) !important;
+.splide__pagination__page {
+  background: var(--primary-color1) !important;
 }
 
-.splide__pagination__page.is-active{
-  background:var(--primary-color3) !important;
+.splide__pagination__page.is-active {
+  background: var(--primary-color3) !important;
 }
 
-.nav-link:lang(es){
-font-size: 15px;
+.nav-link:lang(es) {
+  font-size: 15px;
 }
-#engLogo{
-  width:80%;
+#engLogo {
+  width: 80%;
 }
 
-#esLogo{
+#esLogo {
   width: 145px;
   margin-left: 3%;
   padding-right: 3%;
 }
 
-h1:lang(en),h2:lang(en),h3:lang(en),h4:lang(en),h5:lang(en),h6:lang(en),
-h1:lang(es),h2:lang(es),h3:lang(es),h4:lang(es),h5:lang(es),h6:lang(es){
+h1:lang(en),
+h2:lang(en),
+h3:lang(en),
+h4:lang(en),
+h5:lang(en),
+h6:lang(en),
+h1:lang(es),
+h2:lang(es),
+h3:lang(es),
+h4:lang(es),
+h5:lang(es),
+h6:lang(es) {
   font-family: "Evest Bold";
 }
 
@@ -437,51 +536,60 @@ body a {
   color: var(--primary-color1);
   text-decoration: none !important;
 }
-nav a{
-  color:var(--primary-color1) !important;
+:lang(ar) body {
+  /* direction: rtl !important; */
+  text-align: right;
+}
+nav a {
+  color: var(--primary-color1) !important;
 }
 
 /*Navbar*/
-.nav-link{
-  background: linear-gradient(to right, var(--primary-color1) 50%,var(--primary-color3) 50%,var(--primary-color3));
+.nav-link {
+  background: linear-gradient(
+    to right,
+    var(--primary-color1) 50%,
+    var(--primary-color3) 50%,
+    var(--primary-color3)
+  );
   background-size: 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: 0.5s ease-out;
-  font-family: 'Evest Med';
-}
-
-
-
-
-#arabicNavBar .nav-link{
-  font-family: 'Arabic Evest' !important;
-}
-
-.nav-link:hover{
-  background-position: -200%;
-}
-
-.dropdown-item:hover{
-  cursor: pointer;
-}
-#lang{
-  border:none;
   font-family: "Evest Med";
 }
 
-body > main > div:nth-child(6) > div > div > div:nth-child(1)>img:hover{
+#arabicNavBar .nav-link {
+  font-family: "Arabic Evest" !important;
+}
+
+:lang(ar) #arabicNavBar {
+  direction: rtl;
+}
+
+.nav-link:hover {
+  background-position: -200%;
+}
+
+.dropdown-item:hover {
+  cursor: pointer;
+}
+#lang {
+  border: none;
+  font-family: "Evest Med";
+}
+
+body > main > div:nth-child(6) > div > div > div:nth-child(1) > img:hover {
   cursor: pointer;
 }
 
- #englishNavBar #navbarSupportedContent > div > div > div > div,
- #spainshNavBar #navbarSupportedContent > div > div > div > div{
+#englishNavBar #navbarSupportedContent > div > div > div > div,
+#spainshNavBar #navbarSupportedContent > div > div > div > div {
   left: -25px !important;
   min-width: max-content;
 }
 
-
-.form-inline{
+.form-inline {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -489,59 +597,67 @@ body > main > div:nth-child(6) > div > div > div:nth-child(1)>img:hover{
 }
 
 #englishNavBar .dropdown-toggle::after,
-#spainshNavBar .dropdown-toggle::after{
+#spainshNavBar .dropdown-toggle::after {
   vertical-align: baseline;
-  margin-left:0;
+  margin-left: 0;
 }
-#navbarSupportedContent > div > button > a{
-  color:white !important;
+#navbarSupportedContent > div > button > a {
+  color: white !important;
   text-decoration: none;
 }
-#navbarSupportedContent > div > button > a:hover{
-  color:var(--primary-color1) !important;
+#navbarSupportedContent > div > button > a:hover {
+  color: var(--primary-color1) !important;
   text-decoration: none;
 }
 
-#navbarSupportedContent{
+#navbarSupportedContent {
   justify-content: space-between;
   align-items: center;
 }
 
-#spainshNavBar #navbarSupportedContent{
-  margin-left:0;
+#spainshNavBar #navbarSupportedContent {
+  margin-left: 0;
 }
-
 
 /*Panda Override*/
-.roboto-pandats{
-  font-family: "Evest Font" ,sans-serif !important;
-  
+.roboto-pandats {
+  font-family: "Evest Font", sans-serif !important;
 }
-panda-forex-menu .mainpandats .button-pandats{
+panda-forex-menu .mainpandats .button-pandats {
   width: fit-content;
   height: fit-content;
-  color:var(--primary-color2) !important;
-  font-weight: bolder ;
+  color: var(--primary-color2) !important;
+  font-weight: bolder;
   border-radius: 15px !important;
   margin-right: 10px !important;
   font-size: 15px !important;
-  font-family: "Evest Font" ,sans-serif;
+  font-family: "Evest Font", sans-serif;
 }
-panda-forex-menu .mainpandats .button-pandats:hover{
+panda-forex-menu .mainpandats .button-pandats:hover {
   background-color: var(--primary-color2) !important;
   color: white !important;
-  font-family: "Evest Font" ,sans-serif;
+  font-family: "Evest Font", sans-serif;
 }
-panda-forex-account-status .mainpandats li .title-pandats{
-  font-family: 'Evest font' !important;
+panda-forex-account-status .mainpandats li .title-pandats {
+  font-family: "Evest font" !important;
 }
-.mainpandats login-popup .popup-wrapper-pandats .content-pandats .popUpLogo-pandats .brand-logo-pandats {
-  background: url('/images/logo.png') no-repeat 0 0 !important;
-  background-position-x: right  !important;
+.mainpandats
+  login-popup
+  .popup-wrapper-pandats
+  .content-pandats
+  .popUpLogo-pandats
+  .brand-logo-pandats {
+  background: url("/images/logo.png") no-repeat 0 0 !important;
+  background-position-x: right !important;
   height: 100%;
   width: 100%;
 }
-panda-forex-deposit-credit .mainpandats .popup-wrapper-pandats .wrap-content-pandats .logoWrap .brand-logo-pandats{
+panda-forex-deposit-credit
+  .mainpandats
+  .popup-wrapper-pandats
+  .wrap-content-pandats
+  .logoWrap
+  .brand-logo-pandats {
   background: url(/images/logo.png) no-repeat 0 0 !important;
   background-position-x: right !important;
   height: 200px !important;
@@ -550,66 +666,66 @@ panda-forex-deposit-credit .mainpandats .popup-wrapper-pandats .wrap-content-pan
   justify-content: center;
   align-items: center;
 }
-panda-forex-login .forex-button-pandats.simple-button-pandats{
+panda-forex-login .forex-button-pandats.simple-button-pandats {
   background-color: white !important;
   color: var(--primary-color2) !important;
-border-radius: 25px !important;
-border-color: var(--primary-color2) !important;
-border-width: 2px !important;
-height: fit-content !important;
-text-align: center !important;
-font-weight: bold !important;
-font-size: 13px !important; 
-font-family: "Evest Font",sans-serif;
+  border-radius: 25px !important;
+  border-color: var(--primary-color2) !important;
+  border-width: 2px !important;
+  height: fit-content !important;
+  text-align: center !important;
+  font-weight: bold !important;
+  font-size: 13px !important;
+  font-family: "Evest Font", sans-serif;
 }
-panda-forex-login .forex-button-pandats.simple-button-pandats:hover{
+panda-forex-login .forex-button-pandats.simple-button-pandats:hover {
   background-color: var(--primary-color2) !important;
   color: white !important;
 }
-.mainpandats .forex-button-pandats{
+.mainpandats .forex-button-pandats {
   background-color: var(--primary-color2) !important;
   color: white !important;
   border-radius: 25px !important;
-border-color: var(--primary-color2) !important;
-border-width: 2px !important;
-height: fit-content !important;
-text-align: center !important;
-font-weight: bold !important;
-font-size: 13px !important; 
-font-family: "Evest Font" ,sans-serif;
+  border-color: var(--primary-color2) !important;
+  border-width: 2px !important;
+  height: fit-content !important;
+  text-align: center !important;
+  font-weight: bold !important;
+  font-size: 13px !important;
+  font-family: "Evest Font", sans-serif;
 }
-.mainpandats .forex-button-pandats:hover{
+.mainpandats .forex-button-pandats:hover {
   background-color: white !important;
   color: var(--primary-color2) !important;
 }
-.mainpandats a{
+.mainpandats a {
   color: var(--primary-color2) !important;
-  font-family: "Evest Font" ,sans-serif;
+  font-family: "Evest Font", sans-serif;
 }
-#navbarSupportedContent > div > panda-forex-login > div ,
-#navbarSupportedContent > div > panda-forex-signup > div{
-  margin-left:-5%;
+#navbarSupportedContent > div > panda-forex-login > div,
+#navbarSupportedContent > div > panda-forex-signup > div {
+  margin-left: -5%;
 }
 
-.btn-ceo{
+.btn-ceo {
   font-family: "Evest Med";
 }
-.btn-ceoA{
+.btn-ceoA {
   font-family: "Arabic Evest";
 }
 
-.btn-ceoA>span{
-  font-family: 'Evest Med';
+.btn-ceoA > span {
+  font-family: "Evest Med";
 }
 
-.btn-ceo:hover,.btn-ceoA:hover{
-  background:white !important;
-  color:var(--primary-color2) !important;
+.btn-ceo:hover,
+.btn-ceoA:hover {
+  background: white !important;
+  color: var(--primary-color2) !important;
   border: 2px solid var(--primary-color2);
 }
 
-
-.modal{
+.modal {
   display: none;
   position: fixed;
   z-index: 9999;
@@ -619,11 +735,11 @@ font-family: "Evest Font" ,sans-serif;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
   font-family: sans-serif;
-  }
-  .modal-content{
+}
+.modal-content {
   background-color: var(--primary-color1);
   width: 100%;
   padding: 15px;
@@ -631,145 +747,149 @@ font-family: "Evest Font" ,sans-serif;
   position: relative;
   box-sizing: border-box;
   max-width: 650px;
-  margin:auto;
-  border-radius:0px;
+  margin: auto;
+  border-radius: 0px;
   border: 0px solid #fcfcfc;
   padding: 15px;
   -webkit-border-image: url(none) 30 stretch; /* Safari 3.1-5 */
   -o-border-image: url(none) 30 stretch; /* Opera 11-12.1 */
   border-image: url(none) 30 stretch;
-  }
-  .modal-close{
+}
+.modal-close {
   font-size: 20px;
   float: right;
   font-weight: 700;
   color: #ffffff;
   font-size: 25px;
   margin-top: -10px;
-  transition: all .2s;
+  transition: all 0.2s;
   cursor: pointer;
   width: auto;
   display: flex;
   justify-content: flex-end;
-  }
+}
 
-  .modal-close:hover{
+.modal-close:hover {
   color: var(--primary-color3);
-  }
-  .modal-text{
+}
+.modal-text {
   text-align: left;
-  color:var(--primary-color3);
-  }
-  .modal-text h2{
+  color: var(--primary-color3);
+}
+.modal-text h2 {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 5%;
-
-  }
-  .modal-text p{
+}
+.modal-text p {
   font-size: 17px;
   margin-top: -15px;
   margin-bottom: 50px;
+}
+.modal-footer {
+  padding: 20px 30px;
+  color: var(--primary-color1);
+  width: auto;
+  background-color: #f7f7f7;
+  margin: -15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-footer > button:hover {
+  background: var(--primary-color3) !important;
+  color: var(--primary-color1) !important;
+}
+.modal-footer > a:hover {
+  color: var(--primary-color3) !important;
+}
+
+@media screen and (max-width: 27em) {
+  .modal-text p {
+    font-size: 15px;
   }
-  .modal-footer{
-    padding: 20px 30px;
+}
+
+#engLogo {
+  width: 160px;
+}
+#englishNavBar > a {
+  margin-right: 1%;
+}
+
+.CryptoItem {
+  font-family: "Evest Med";
+  animation: glow 1s infinite;
+  display: block;
+  padding: 0.5rem 1rem;
+}
+:lang(ar) > .CryptoItem {
+  font-family: "Arabic Evest";
+}
+
+@keyframes glow {
+  0% {
     color: var(--primary-color1);
-    width: auto;
-    background-color: #f7f7f7;
-    margin: -15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    }
+  }
+  50% {
+    color: var(--primary-color3);
+  }
+  100% {
+    color: var(--primary-color1);
+  }
+}
 
-    .modal-footer > button:hover{
-      background: var(--primary-color3) !important;
-      color:var(--primary-color1) !important;
-    }
-    .modal-footer > a:hover{
-      color:var(--primary-color3) !important;
-    }
-
-  @media screen and (max-width: 27em) {
-  .modal-text p{
-  font-size: 15px;
-  }
-  }
-
-  #engLogo{
-    width:160px;
-  }
-  #englishNavBar > a{
-    margin-right: 1%;
-  }
-
-  .CryptoItem{
-    font-family: 'Evest Med';
-    animation: glow 1s infinite;
-    display: block;
-    padding: .5rem 1rem;
-  }
-  :lang(ar) > .CryptoItem{
-    font-family: 'Arabic Evest';
-  }
-  
-  @keyframes glow {
-    0% {
-      color:var(--primary-color1);
-    }
-    50% {
-      color:var(--primary-color3);
-    }
-    100% {
-      color:var(--primary-color1);
-    }
-  }
-
-
-  
 .CryptoBtn {
-  font-family: 'Evest Bold';
+  font-family: "Evest Bold";
   font-size: 13px;
   text-transform: uppercase;
   font-weight: 700;
-  background: linear-gradient(90deg,rgba(129,230,217,1) 0,rgba(79,209,197,1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(129, 230, 217, 1) 0,
+    rgba(79, 209, 197, 1) 100%
+  );
   border: none;
   border-radius: 1000px;
-  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
-  transition: all .3s ease-in-out 0s;
+  box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
+  transition: all 0.3s ease-in-out 0s;
   cursor: pointer;
   outline: 0;
   position: relative;
   padding: 10px;
-  }
+}
 
-  .CryptoBtn::before {
-content: '';
+.CryptoBtn::before {
+  content: "";
   border-radius: 1000px;
   min-width: calc(100% + 12px);
   min-height: calc(100% + 12px);
   border: 6px solid var(--primary-color3);
-  box-shadow: 0 0 60px rgba(0,255,203,.64);
+  box-shadow: 0 0 60px rgba(0, 255, 203, 0.64);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  transition: all .3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 
-.CryptoBtn:hover, .CryptoBtn:focus {
+.CryptoBtn:hover,
+.CryptoBtn:focus {
   color: #313133;
   transform: translateY(-6px);
 }
 
-.CryptoBtn:hover::before, .CryptoBtn:focus::before {
+.CryptoBtn:hover::before,
+.CryptoBtn:focus::before {
   opacity: 1;
 }
 
 .CryptoBtn::after {
-  content: '';
-  width: 30px; height: 30px;
+  content: "";
+  width: 30px;
+  height: 30px;
   border-radius: 100%;
   border: 6px solid var(--primary-color3);
   position: absolute;
@@ -780,7 +900,8 @@ content: '';
   animation: ring 1.5s infinite;
 }
 
-.CryptoBtn:hover::after, .CryptoBtn:focus::after {
+.CryptoBtn:hover::after,
+.CryptoBtn:focus::after {
   animation: none;
   display: none;
 }
@@ -797,10 +918,10 @@ content: '';
     opacity: 0;
   }
 }
-.btnCrypto{
-  font-family: 'Evest Bold';
+.btnCrypto {
+  font-family: "Evest Bold";
 }
-:lang(ar)>.btnCrypto{
-  font-family: 'Arabic Evest';
+:lang(ar) > .btnCrypto {
+  font-family: "Arabic Evest";
 }
-  /* for desktop */
+/* for desktop */
