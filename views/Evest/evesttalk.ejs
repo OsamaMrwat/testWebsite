@@ -16,7 +16,31 @@
       </h2>
     </div>
     <br /><br />
-    <img alt="mic image" src="/images/social-icons.svg" id="social-icons-img" />
+    <div class="social-icons-container">
+      <a href="https://bit.ly/3E4yZpk">
+        <img alt="mic image" src="/images/si1.svg" id="social-icons-img" />
+      </a>
+      <a href="https://apple.co/3WlPDIj
+      ">
+        <img alt="mic image" src="/images/si2.svg" id="social-icons-img" />
+      </a>
+      <a href="https://spoti.fi/3sSX8c0">
+        <img alt="mic image" src="/images/si3.svg" id="social-icons-img" />
+      </a>
+      <a href=" https://www.facebook.com/evestofficialar">
+        <img alt="mic image" src="/images/si4.svg" id="social-icons-img" />
+      </a>
+      <a href="https://www.instagram.com/evest_official/
+      ">
+        <img alt="mic image" src="/images/si5.svg" id="social-icons-img" />
+      </a>
+      <a href="https://twitter.com/EvestOfficial">
+        <img alt="mic image" src="/images/si6.svg" id="social-icons-img" />
+      </a>
+      <a href="https://bit.ly/3DPh45X">
+        <img alt="mic image" src="/images/si7.svg" id="social-icons-img" />
+      </a>
+    </div>
   </div>
   <img alt="mic image" src="/images/mic.svg" id="mic-img" />
   <img alt="mic image" src="/images/rein_maila.svg" id="rein-img" />
@@ -34,9 +58,16 @@
 <div class="videos-section">
   <div class="one-video-container">
     <div class="video">
-      <video width="100%" controls>
-        <source src="/images/evest_talk_promo.mp4" type="video/mp4" />
-      </video>
+      <!-- <video
+        width="100%"
+        controls
+        src="https://mohanadalwadiyaevest.s3.eu-central-1.amazonaws.com/evesttalkepisode1/%D8%B1%D9%8A%D9%86+%D8%A7%D9%84%D9%85%D9%8A%D9%84%D8%B9+%D9%85%D9%82%D8%AF%D9%85%D8%A9+%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC+Evest+Talk.mp4
+        "
+        type="video/mp4"
+      ></video> -->
+      <video width="100%" controls
+        src="https://mohanadalwadiyaevest.s3.eu-central-1.amazonaws.com/evest_talk_promo/evest_talk_promo.mp4"
+        type="video/mp4"></video>
     </div>
     <div class="host-container">
       <div>
@@ -62,8 +93,40 @@
       <img alt="guest image" src="/images/hala_bassam.svg" id="guest-image" />
     </div>
   </div>
+
+  <div class="one-video-container">
+    <div class="video">
+      <video width="100%" controls
+        src="https://mohanadalwadiyaevest.s3.eu-central-1.amazonaws.com/evest_talk_promo/evest_talk_promo.mp4"
+        type="video/mp4"></video>
+    </div>
+    <div class="host-container">
+      <div>
+        <h3 id="host-name">
+          <%- page.fields.content.host2_name%>
+        </h3>
+        <p id="host-title">
+          <%- page.fields.content.host2_title%>
+        </p>
+        <p id="host-specialization">
+          <%- page.fields.content.host2_specialization%>
+        </p>
+        <br />
+        <br />
+        <h3 id="episode-description">
+          <%- page.fields.content.episode2_description%>
+        </h3>
+        <br />
+        <p id="episode-date">
+          <%- page.fields.content.episode2_date%>
+        </p>
+      </div>
+      <img alt="guest image" src="/images/aboud.svg" id="guest-image" />
+    </div>
+  </div>
+
   <div class="coming-soon">
-    <img alt="guest image" src="/images/Coming soon.svg" />
+    <!-- <img alt="guest image" src="/images/Coming soon.svg" /> -->
     <img alt="guest image" src="/images/Coming soon.svg" />
     <img alt="guest image" src="/images/Coming soon.svg" />
     <img alt="guest image" src="/images/Coming soon.svg" />
@@ -71,7 +134,7 @@
     <img alt="guest image" src="/images/Coming soon.svg" />
   </div>
   <div class="coming-soon-mob">
-    <img alt="guest image" src="/images/Coming soon mobile.svg" />
+    <!-- <img alt="guest image" src="/images/Coming soon mobile.svg" /> -->
     <img alt="guest image" src="/images/Coming soon mobile.svg" />
     <img alt="guest image" src="/images/Coming soon mobile.svg" />
     <img alt="guest image" src="/images/Coming soon mobile.svg" />
@@ -79,13 +142,76 @@
     <img alt="guest image" src="/images/Coming soon mobile.svg" />
   </div>
 </div>
-<!-- <div class="question-para-link-container">
-  <h1><%- page.fields.content.question%></h1>
-  <p><%- page.fields.content.question_para%></p>
-  <button onclick="location.href = '/evest/contact-us#/'">
-    <h4><%- page.fields.content.btn_text%></h4>
+
+<div class="question-para-link-container">
+  <h1>
+    <%- page.fields.content.question%>
+  </h1>
+  <p>
+    <%- page.fields.content.question_para%>
+  </p>
+  <button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
+    <h4>
+      <%- page.fields.content.btn_text%>
+    </h4>
   </button>
-</div> -->
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Share your thoughts</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/sendEvestTalk" method="POST">
+          <div class="form-group">
+            <div class="form-element" id="two-labels">
+              <label>First Name</label>
+              <input type="text" required placeholder="First Name" name="firstName" />
+            </div>
+            <div class="form-element" id="two-labels">
+              <label>Last Name</label>
+              <input type="text" required placeholder="Last Name" name="lastName" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-element" id="two-labels">
+              <label>Email Address</label>
+              <input type="email" required placeholder="youremail@mail.com" name="email" />
+            </div>
+            <div class="form-element" id="two-labels">
+              <label>Phone</label>
+              <input type="tel" required placeholder="0123456789" name="phonenumber" />
+            </div>
+          </div>
+          <div class="form-element">
+            <label>Occupation</label>
+            <input type="text" required name="job" />
+          </div>
+          <div>
+            <div class="form-element">
+              <label>Share your ideas here</label>
+              <textarea required name="message"> </textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Close
+            </button> -->
+            <button type="submit" value="submit" class="submit-btn">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 <style>
   .first-section {
@@ -120,9 +246,13 @@
     font-family: "Evest Med";
   }
 
+  .social-icons-container {
+    display: flex;
+  }
+
   #social-icons-img {
-    width: 80%;
-    margin-bottom: 2rem;
+    width: 25px;
+    margin: 0.5rem 0.25rem 2rem 0.25rem;
   }
 
   #mic-img {
@@ -241,6 +371,58 @@
     width: 25%;
   }
 
+  /* Modal styling */
+  .modal-content {
+    background-color: #f7f7f7;
+    max-width: 700px;
+    width: 700px;
+  }
+
+  .submit-btn {
+    background-color: var(--primary-color2);
+    border-color: antiquewhite;
+    width: 40%;
+    border-radius: 8px;
+    color: #fff;
+    padding: 0.5rem;
+  }
+
+  .modal-footer {
+    width: 700px;
+    margin: 0;
+    justify-content: center;
+  }
+
+  :lang(ar) .modal-title {
+    font-family: "Arabic Evest" !important;
+    font-weight: bold;
+  }
+
+  .form-element {
+    display: flex;
+    flex-direction: column;
+  }
+
+  :lang(ar) .form-element {
+    font-family: "Arabic Evest" !important;
+  }
+
+  .form-element>input {
+    border-color: #f7f7f7;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    justify-content: space-between;
+  }
+
   @media screen and (max-width: 767px) {
     .first-section {
       flex-direction: column-reverse;
@@ -324,6 +506,20 @@
 
     .question-para-link-container button>h4 {
       margin-bottom: 0;
+    }
+
+    .modal-footer {
+      width: 300px;
+      margin: 0;
+      justify-content: center;
+    }
+
+    .modal-content {
+      width: 300px;
+    }
+
+    .form-group {
+      flex-direction: column;
     }
   }
 

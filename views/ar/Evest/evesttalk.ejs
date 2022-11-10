@@ -12,7 +12,30 @@
       </h2>
     </div>
     <br /><br />
-    <img alt="mic image" src="/images/social-icons.svg" id="social-icons-img" />
+    <div class="social-icons-container">
+      <a href="https://bit.ly/3E4yZpk">
+        <img alt="mic image" src="/images/si1.svg" id="social-icons-img" />
+      </a>
+      <a href="https://www.facebook.com/">
+      <img alt="mic image" src="/images/si2.svg" id="social-icons-img" />
+    </a>
+    <a href="https://spoti.fi/3sSX8c0">
+        <img alt="mic image" src="/images/si3.svg" id="social-icons-img" />
+      </a>
+      <a href=" https://www.facebook.com/evestofficialar">
+        <img alt="mic image" src="/images/si4.svg" id="social-icons-img" />
+      </a>
+      <a href="https://www.instagram.com/evest_official/
+      ">
+        <img alt="mic image" src="/images/si5.svg" id="social-icons-img" />
+      </a>
+      <a href="https://twitter.com/EvestOfficial">
+        <img alt="mic image" src="/images/si6.svg" id="social-icons-img" />
+      </a>
+      <a href="https://bit.ly/3DPh45X">
+        <img alt="mic image" src="/images/si7.svg" id="social-icons-img" />
+      </a>
+    </div>
   </div>
   <img alt="mic image" src="/images/mic.svg" id="mic-img" />
   <img alt="rien image" src="/images/rien_ar.svg" id="rein-img" />
@@ -30,10 +53,26 @@
 <div class="videos-section">
   <div class="one-video-container">
     <div class="video">
-      <video width="100%" controls>
-        <source src="/images/evest_talk_promo.mp4" type="video/mp4" />
-      </video>
-    </div>
+         <!-- <video
+        width="100%"
+        controls
+        src="https://mohanadalwadiyaevest.s3.eu-central-1.amazonaws.com/evesttalkepisode1/%D8%B1%D9%8A%D9%86+%D8%A7%D9%84%D9%85%D9%8A%D9%84%D8%B9+%D9%85%D9%82%D8%AF%D9%85%D8%A9+%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC+Evest+Talk.mp4
+        "
+        type="video/mp4"
+      ></video> -->
+       <!-- <video
+        width="100%"
+        controls
+        src="https://mohanadalwadiyaevest.s3.eu-central-1.amazonaws.com/evesttalkepisode1/%D8%B1%D9%8A%D9%86+%D8%A7%D9%84%D9%85%D9%8A%D9%84%D8%B9+%D9%85%D9%82%D8%AF%D9%85%D8%A9+%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC+Evest+Talk.mp4
+        "
+        type="video/mp4"
+      ></video> -->
+      <video
+        width="100%"
+        controls
+        src="https://mohanadalwadiyaevest.s3.eu-central-1.amazonaws.com/evest_talk_promo/evest_talk_promo.mp4"
+        type="video/mp4"
+      ></video>
     <div class="host-container">
       <div>
         <h3 id="host-name"><%- page.fields.content.host_name%></h3>
@@ -52,8 +91,35 @@
       <img alt="guest image" src="/images/hala_ar.svg" id="guest-image" />
     </div>
   </div>
+  <div class="one-video-container">
+    <div class="video">
+      <video
+      width="100%"
+      controls
+      src="https://mohanadalwadiyaevest.s3.eu-central-1.amazonaws.com/evest_talk_promo/evest_talk_promo.mp4"
+      type="video/mp4"
+    ></video>
+    </div>
+    <div class="host-container">
+      <div>
+        <h3 id="host-name"><%- page.fields.content.host2_name%></h3>
+        <p id="host-title"><%- page.fields.content.host2_title%></p>
+        <p id="host-specialization">
+          <%- page.fields.content.host2_specialization%>
+        </p>
+        <br />
+        <br />
+        <h3 id="episode-description">
+          <%- page.fields.content.episode2_description%>
+        </h3>
+        <br />
+        <p id="episode-date"><%- page.fields.content.episode2_date%></p>
+      </div>
+      <img alt="guest image" src="/images/aboud.svg" id="guest-image" />
+    </div>
+  </div>
   <div class="coming-soon">
-    <img alt="guest image" src="/images/coming soon ar.svg" />
+    <!-- <img alt="guest image" src="/images/coming soon ar.svg" /> -->
     <img alt="guest image" src="/images/coming soon ar.svg" />
     <img alt="guest image" src="/images/coming soon ar.svg" />
     <img alt="guest image" src="/images/coming soon ar.svg" />
@@ -61,7 +127,7 @@
     <img alt="guest image" src="/images/coming soon ar.svg" />
   </div>
   <div class="coming-soon-mob">
-    <img alt="guest image" src="/images/coming soon_mob_ar.svg" />
+    <!-- <img alt="guest image" src="/images/coming soon_mob_ar.svg" /> -->
     <img alt="guest image" src="/images/coming soon_mob_ar.svg" />
     <img alt="guest image" src="/images/coming soon_mob_ar.svg" />
     <img alt="guest image" src="/images/coming soon_mob_ar.svg" />
@@ -69,254 +135,420 @@
     <img alt="guest image" src="/images/coming soon_mob_ar.svg" />
   </div>
 </div>
-<!-- <div class="question-para-link-container">
-  <h1><%- page.fields.content.question%></h1>
-  <p><%- page.fields.content.question_para%></p>
-  <button onclick="location.href = '/ar/إيڤست/اتصل-بنا?lang=ar#/';">
+
+<div class="question-para-link-container">
+    <h1><%- page.fields.content.question%></h1>
+    <p><%- page.fields.content.question_para%></p>
+  <button
+    type="button"
+    data-toggle="modal"
+    data-target="#exampleModal"
+    data-whatever="@getbootstrap"
+  >
     <h4><%- page.fields.content.btn_text%></h4>
   </button>
-</div> -->
+</div>
 
-<style>
-  body {
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">شاركنا أفكارك</h5>
+        <button
+          class="close"
+          type="button"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/sendEvestTalkAr" method="POST">
+          <div class="form-group">
+            <div class="form-element" id="two-labels">
+              <label>الإسم الأول</label>
+              <input
+                type="text"
+                required=""
+                placeholder="الاسم الأول"
+                name="firstName"
+              />
+            </div>
+            <div class="form-element" id="two-labels">
+              <label>اسم العائلة</label>
+              <input
+                type="text"
+                required=""
+                placeholder="اسم العائلة"
+                name="lastName"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-element" id="two-labels">
+              <label>البريد الإلكتروني </label>
+              <input
+                type="email"
+                required=""
+                placeholder="youremail@mail.com"
+                name="email"
+              />
+            </div>
+            <div class="form-element" id="two-labels">
+              <label>رقم الهاتف</label>
+              <input
+                type="tel"
+                required=""
+                placeholder="0123456789"
+                name="phonenumber"
+              />
+            </div>
+          </div>
+          <div class="form-element">
+            <label>الوظيفة</label>
+            <input type="text" required="" placeholder="الوظيفة" name="job" />
+          </div>
+          <div>
+            <div class="form-element">
+              <label>شاركنا أفكارك هنا</label>
+              <textarea required name="message"> </textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button> -->
+        <button type="button" value="Submit" class="submit-btn">إرسال</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <style>
+      body {
+        font-family: "Arabic Evest" !important;
+      }
+      .first-section {
+        background-image: url("/images/BG 1.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        direction: rtl;
+      }
+      .container-1 {
+        display: flex;
+        padding-top: 5rem;
+        align-items: baseline;
+        justify-content: center;
+        z-index: 3;
+      }
+      #heading-img {
+        margin-bottom: 1rem;
+      }
+      .container-1 > h1,
+      h3 {
+        color: #fff;
+      }
+      .container-2 h2 {
+        color: var(--primary-color3);
+        text-align: right;
+      }
+      .social-icons-container {
+        display: flex;
+      }
+      #social-icons-img {
+        width: 25px;
+        margin: 0.5rem 0.25rem 2rem 0.25rem;
+      }
+      #mic-img {
+        width: 300px;
+        height: 300px;
+        margin-bottom: -6rem;
+      }
+      #rein-img {
+        width: 30%;
+        height: 30%;
+      }
+      .second-section {
+        /* margin-top: 7rem; */
+        margin: 7rem 13rem 0 13rem;
+        text-align: right;
+      }
+      .second-section h1 {
+        /* text-align: center; */
+        color: var(--primary-color2);
+        font-size: 3.5em;
+      }
+      .second-section p {
+        font-size: 1.5em;
+      }
+      .one-video-container {
+        line-height: 0.5rem;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin: 2rem 5rem 2rem 5rem;
+      }
+      .host-container {
+        background-image: url("/images/box.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 1.5rem;
+        border-radius: 24px;
+        display: flex;
+        text-align: right;
+      }
+      #episode-description,
+      #host-name {
+        color: var(--primary-color1);
+      }
+      #host-title,
+      #episode-date {
+        color: var(--primary-color2);
+        font-weight: bold;
+      }
+      #host-specialization {
+        font-weight: bold;
+      }
+      #episode-description {
+        font-size: 1.5em;
+      }
+      #guest-image {
+        width: 40%;
+      }
+      .video > video {
+        border-radius: 24px;
+      }
+      .coming-soon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .coming-soon > img {
+        margin: 2rem 5rem 2rem 5rem;
+      }
+      .coming-soon-mob {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .coming-soon-mob > img {
+        margin: 2rem 3rem 2rem 3rem;
+      }
+      .question-para-link-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .question-para-link-container h1 {
+        color: var(--primary-color2);
+        width: 26%;
+      }
+      .question-para-link-container p {
+        width: 34%;
+      }
+      .question-para-link-container button {
+        border: none;
+        border-radius: 12px;
+        background-color: var(--primary-color1);
+        color: #fff;
+        padding: 0.5rem;
+        width: 25%;
+      }
+
+      /* Modal styling */
+      .modal-content {
+        background-color: #f7f7f7;
+        max-width: 700px;
+        width: 700px;
+      }
+
+      .submit-btn {
+        background-color: var(--primary-color2);
+        border-color: antiquewhite;
+        width: 40%;
+        border-radius: 8px;
+        color: #fff;
+        padding: 0.5rem;
+      }
+      .close {
+        margin: 0 !important;
+      }
+      .modal-footer {
+        width: 700px;
+        margin: 0;
+        justify-content: center;
+      }
+      :lang(ar) .modal-footer button {
     font-family: "Arabic Evest" !important;
   }
-  .first-section {
-    background-image: url("/images/BG 1.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    direction: rtl;
-  }
-  .container-1 {
-    display: flex;
-    padding-top: 5rem;
-    align-items: baseline;
-    justify-content: center;
-    z-index: 3;
-  }
-  #heading-img {
-    margin-bottom: 1rem;
-  }
-  .container-1 > h1,
-  h3 {
-    color: #fff;
-  }
-  .container-2 h2 {
-    color: var(--primary-color3);
-    text-align: right;
-  }
-  #social-icons-img {
-    width: 80%;
-    margin-bottom: 2rem;
-  }
-  #mic-img {
-    width: 300px;
-    height: 300px;
-    margin-bottom: -6rem;
-  }
-  #rein-img {
-    width: 30%;
-    height: 30%;
-  }
-  .second-section {
-    /* margin-top: 7rem; */
-    margin: 7rem 13rem 0 13rem;
-    text-align: right;
-  }
-  .second-section h1 {
-    /* text-align: center; */
-    color: var(--primary-color2);
-    font-size: 3.5em;
-  }
-  .second-section p {
-    font-size: 1.5em;
-  }
-  .one-video-container {
-    line-height: 0.5rem;
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin: 2rem 5rem 2rem 5rem;
-  }
-  .host-container {
-    background-image: url("/images/box.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 1.5rem;
-    border-radius: 24px;
-    display: flex;
-    text-align: right;
-  }
-  #episode-description,
-  #host-name {
-    color: var(--primary-color1);
-  }
-  #host-title,
-  #episode-date {
-    color: var(--primary-color2);
-    font-weight: bold;
-  }
-  #host-specialization {
-    font-weight: bold;
-  }
-  #episode-description {
-    font-size: 1.5em;
-  }
-  #guest-image {
-    width: 40%;
-  }
-  .video > video {
-    border-radius: 24px;
-  }
-  .coming-soon {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .coming-soon > img {
-    margin: 2rem 5rem 2rem 5rem;
-  }
-  .coming-soon-mob {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .coming-soon-mob > img {
-    margin: 2rem 3rem 2rem 3rem;
-  }
-  .question-para-link-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .question-para-link-container h1 {
-    color: var(--primary-color2);
-    width: 26%;
-  }
-  .question-para-link-container p {
-    width: 34%;
-  }
-  .question-para-link-container button {
-    border: none;
-    border-radius: 12px;
-    background-color: var(--primary-color1);
-    color: #fff;
-    padding: 0.5rem;
-    width: 25%;
-  }
+      .modal-header {
+        direction: rtl;
+      }
+      :lang(ar) .modal-title{
+        font-family: "Arabic Evest" !important;
+        font-weight: bold;
+      }
+      .form-element {
+        display: flex;
+        flex-direction: column;
+      }
+      :lang(ar) .form-element {
+        font-family: "Arabic Evest" !important;
+      }
+      .form-element > input {
+        border-color: #f7f7f7;
+        border-top-style: hidden;
+        border-right-style: hidden;
+        border-left-style: hidden;
+        border-bottom-style: hidden;
+        border-radius: 5px;
+        direction: rtl;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+      }
+      .form-group {
+        display: flex;
+        justify-content: space-between;
+      }
 
-  @media screen and (max-width: 767px) {
-    .first-section {
-      flex-direction: column-reverse;
-      justify-content: center;
-      align-items: center;
-    }
-    .container-1 {
-      flex-direction: column;
-      align-items: center;
-      padding-top: 1rem;
-    }
-    .container-1 h1 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: -0.5rem;
-      width: 70%;
-    }
-    .container-2 h2 {
-      font-size: 1.5rem;
-      text-align: center;
-    }
-    #heading-img {
-      width: 80%;
-    }
-    #mic-img,
-    #rein-img {
-      display: none;
-    }
-    .second-section {
-      margin: 3rem 3rem 0 3rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .second-section h1 {
-      font-size: 1.6em;
-      text-align: center;
-    }
-    .one-video-container {
-      display: flex;
-      flex-direction: column-reverse;
-      margin: 2rem 3rem 2rem 3rem;
-    }
-    .host-container {
-      flex-direction: row-reverse;
-      padding: 2rem;
-    }
-    #host-name,
-    #host-specialization,
-    #host-title,
-    #episode-description,
-    #episode-date {
-      width: 115% !important;
-    }
-    #episode-description {
-      font-size: 0.75em !important;
-    }
-    #host-name {
-      font-weight: bold;
-      font-size: 13px;
-    }
-    #guest-image {
-      width: 50%;
-    }
-    #episode-date {
-      font-size: 11px !important;
-      width: 115%;
-    }
-    .coming-soon {
-      display: none;
-    }
-    .question-para-link-container h1,
-    p {
-      width: 80% !important;
-      font-size: 1.5rem;
-    }
-    .question-para-link-container button {
-      width: 100%;
-      border-radius: 0;
-    }
-    .question-para-link-container button > h4 {
-      margin-bottom: 0;
-    }
-  }
+      @media screen and (max-width: 767px) {
+        .first-section {
+          flex-direction: column-reverse;
+          justify-content: center;
+          align-items: center;
+        }
+        .container-1 {
+          flex-direction: column;
+          align-items: center;
+          padding-top: 1rem;
+        }
+        .container-1 h1 {
+          text-align: center;
+          font-size: 2rem;
+          margin-bottom: -0.5rem;
+          width: 70%;
+        }
+        .container-2 h2 {
+          font-size: 1.5rem;
+          text-align: center;
+        }
+        #heading-img {
+          width: 80%;
+        }
+        #mic-img,
+        #rein-img {
+          display: none;
+        }
+        .second-section {
+          margin: 3rem 3rem 0 3rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .second-section h1 {
+          font-size: 1.6em;
+          text-align: center;
+        }
+        .one-video-container {
+          display: flex;
+          flex-direction: column-reverse;
+          margin: 2rem 3rem 2rem 3rem;
+        }
+        .host-container {
+          flex-direction: row-reverse;
+          padding: 2rem;
+        }
+        #host-name,
+        #host-specialization,
+        #host-title,
+        #episode-description,
+        #episode-date {
+          width: 115% !important;
+        }
+        #episode-description {
+          font-size: 0.75em !important;
+        }
+        #host-name {
+          font-weight: bold;
+          font-size: 13px;
+        }
+        #guest-image {
+          width: 50%;
+        }
+        #episode-date {
+          font-size: 11px !important;
+          width: 115%;
+        }
+        .coming-soon {
+          display: none;
+        }
+        .question-para-link-container h1,
+        p {
+          width: 80% !important;
+          font-size: 1.5rem;
+        }
+        .question-para-link-container button {
+          width: 100%;
+          border-radius: 0;
+        }
+        .question-para-link-container button > h4 {
+          margin-bottom: 0;
+        }
+        .modal-footer{
+          width: 300px;
+          margin: 0;
+          justify-content: center;
+        }
+        .modal-content{
+          width: 300px;
+        }
+        .form-group{
+          flex-direction: column;
+        }
+      }
 
-  @media screen and (min-width: 768px) {
-    /* body {
+      @media screen and (min-width: 768px) {
+        /* body {
       direction: rtl;
     } */
-    .container-1 {
-      flex-direction: column;
-    }
-    #combined-mic-rien-ar {
-      display: none;
-    }
-    .one-video-container {
-      /* padding-top: 3rem; */
-    }
-    #episode-description {
-      width: 80%;
-      margin-bottom: 2.5rem;
-    }
-    .host-container > div {
-      margin-top: 3%;
-    }
-    .coming-soon-mob {
-      display: none;
-    }
-  }
-</style>
+        .container-1 {
+          flex-direction: column;
+        }
+        #combined-mic-rien-ar {
+          display: none;
+        }
+        .one-video-container {
+          /* padding-top: 3rem; */
+        }
+        #episode-description {
+          width: 80%;
+          margin-bottom: 2.5rem;
+        }
+        .host-container > div {
+          margin-top: 3%;
+        }
+        .coming-soon-mob {
+          display: none;
+        }
+        #two-labels > input {
+          width: 300px;
+        }
+      }
+    </style>
+  </div>
+</div>

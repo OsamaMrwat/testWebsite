@@ -120,12 +120,11 @@ app.use("/ar", arabicRouting);
 /*Spainsh Routing*/
 app.use("/es", spainshRouting);
 
-
 app.post("/sendEvestTalk", async (req, res) => {
   // const ipAddress = IP.address();
 
   const msg = {
-    to: ["osama.ba@evest.com"],
+    to: ["osama.ba@evest.com", "seo@evest.com", "rossol.kadhem@evest.com"],
     // to: "osama.ba@evest.com",
     from: `${req.body.email}`, // Use the email address or domain you verified above
     subject: `New Message from the Evest Talk website page`,
