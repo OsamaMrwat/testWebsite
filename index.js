@@ -16,7 +16,7 @@ const config = require("./config");
 const cookieParser = require("cookie-parser");
 const request = require("request");
 var http = require("http");
-const IP = require("ip");
+const IP = require('ip');
 /*SiteMaps*/
 const axios = require("axios");
 
@@ -66,6 +66,7 @@ app.use("/publicFiles", express.static(__dirname + "/public/publicFiles"));
 
 var count = 0;
 
+
 // app.use("*", async (req, res, next) => {
 //   let ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
 //   const form = {
@@ -109,7 +110,9 @@ var count = 0;
 //     }
 //   );
 
+
 // });
+
 
 /*Arabic Routing*/
 app.use("/ar", arabicRouting);
@@ -185,8 +188,8 @@ async function getPostSiteMaps() {
       let sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
         xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/1.1" 
         xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entries.join(
-          ""
-        )}
+        ""
+      )}
         </urlset>`;
 
       fs.writeFile("./public/news_en.xml", sitemap, function (err) {
@@ -585,6 +588,9 @@ app.get("/indices", (req, res) => {
 app.get("/crypto", (req, res) => {
   res.send(myapi.getCrypto);
 });
+
+
+
 
 app.get("/ceo", (req, res) => {
   butter.page
@@ -1046,7 +1052,7 @@ app.post("/cvUpload", (req, res) => {
   };
 
   sgMail.send(msg).then(
-    () => {},
+    () => { },
     (error) => {
       console.error(error);
 
@@ -1060,7 +1066,7 @@ app.post("/cvUpload", (req, res) => {
 });
 
 app.post("/send", (req, res) => {
-  const ipAddress = IP.address();
+  const ipAddress = IP.address()
 
   const msg = {
     to: "support@evest.com",
@@ -1072,11 +1078,11 @@ app.post("/send", (req, res) => {
     SUBJECT: ${req.body.subject}.<br><br>
     MESSAGE: ${req.body.message}.<br>
     IP : ${ipAddress} <br><br>
-    </p>`,
+    </p>`
   };
   //ES6
   sgMail.send(msg).then(
-    () => {},
+    () => { },
     (error) => {
       console.error(error);
 
@@ -1100,6 +1106,7 @@ app.post("/send", (req, res) => {
 });
 
 app.post("/ceo", async (req, res) => {
+
   // const response_key = req.body["g-recaptcha-response"];
 
   // const secret_key = "6LfTXJIiAAAAACtU8BpQ9_8p1BeG4SnsEexmpz-S";
@@ -1136,8 +1143,8 @@ app.post("/ceo", async (req, res) => {
   //     // Some error while verify captcha
   //     return res.json({ error });
   //   });
-  const ipAddress = IP.address();
-  console.log(ipAddress);
+  const ipAddress = IP.address()
+  console.log(ipAddress)
   const msg = {
     to: "ceo@evest.com",
     // to: "osama.ba@evest.com",
@@ -1148,13 +1155,16 @@ app.post("/ceo", async (req, res) => {
     FULL NAME: ${req.body.fullName}.<br><br>
     SUBJECT: ${req.body.subject}.<br><br>
     MESSAGE: ${req.body.message}.<br><br>
-    IP : ${ipAddress}</p>`,
+    IP : ${ipAddress}</p>`
+    ,
+
     replyTo: `${req.body.email}`,
   };
 
+
   //ES6
   sgMail.send(msg).then(
-    () => {},
+    () => { },
     (error) => {
       console.error(error);
 
@@ -1164,6 +1174,8 @@ app.post("/ceo", async (req, res) => {
     }
   );
   res.redirect("/ceo");
+
+
 });
 
 const getTag = require("./tagsApi");
@@ -1315,8 +1327,10 @@ app.get("/log", (req, res) => {
   res.sendFile(__dirname + "/public/logForPost.txt");
 });
 
+
 // Routes
 app.get("/", async (req, res) => {
+
   butter.page.retrieve("*", "homepage-en").then((resp) => {
     var page1 = resp.data.data;
     res.render("index", { page: page1, tagHash: config.tagHash });

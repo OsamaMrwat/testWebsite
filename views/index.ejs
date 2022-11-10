@@ -1,235 +1,180 @@
-<script
-  src="https://ob.cheqzone.com/i/<%= tagHash %>.js"
-  class="ct_clicktrue_1"
-  type="text/javascript"
-></script>
+<script src="https://ob.cheqzone.com/i/<%= tagHash %>.js" class="ct_clicktrue_1" type="text/javascript"></script>
 
 <!--Slider-->
-<%- page.fields.sections[0].fields.content %> <%-
-page.fields.mobile_view[0].fields.content %>
+<%- page.fields.sections[0].fields.content %>
+  <%- page.fields.mobile_view[0].fields.content %>
 
-<!--End of slider-->
-<!---->
-<div
-  class="row"
-  style="background: url('/images/webp/back1.webp'); height: 295px"
->
-  <%- page.fields.sections[1].fields.content %>
-</div>
+    <!--End of slider-->
+    <!---->
+    <div class="row" style="background: url('/images/webp/back1.webp'); height: 295px">
+      <%- page.fields.sections[1].fields.content %>
+    </div>
 
-<div class="row sect2"><%- page.fields.sections[2].fields.content %></div>
+    <div class="row sect2">
+      <%- page.fields.sections[2].fields.content %>
+    </div>
 
-<div class="row section4"><%- page.fields.sections[3].fields.content %></div>
+    <div class="row section4">
+      <%- page.fields.sections[3].fields.content %>
+    </div>
 
-<div class="row"><%- page.fields.sections[4].fields.content %></div>
+    <div class="row">
+      <%- page.fields.sections[4].fields.content %>
+    </div>
 
-<div class="row"><%- page.fields.sections[5].fields.content %></div>
+    <div class="row">
+      <%- page.fields.sections[5].fields.content %>
+    </div>
 
-<div
-  class="row"
-  style="
+    <div class="row" style="
     background: url('images/webp/MEET%20THE%20CEO%20ENG-02.webp');
     background-size: cover;
-  "
->
-  <%- page.fields.sections[6].fields.content %>
-</div>
-
-<div
-  class="row mobileApp"
-  style="background: #64eee02d; box-shadow: -2px -2px 37px #00000017"
->
-  <%- page.fields.sections[7].fields.content %>
-</div>
-<div
-  class="row numbersLast"
-  style="background: url('/images/webp/back2.webp'); height: 295px"
->
-  <%- page.fields.sections[8].fields.content %>
-</div>
-<div class="row" style="background-color: #00384c">
-  <%- page.fields.sections[9].fields.content %>
-</div>
-
-<!--Cookies popup-->
-<div id="popup-modal" class="modal">
-  <div class="modal-content animated bounce">
-    <a class="modal-close">×</a>
-    <div class="modal-text">
-      <p id="WarningArabic" style="display: none">a</p>
-      <p id="WarningEnglish" style="display: none">
-        If you are having problem in the trading platform, due to security
-        updates,<br />
-        Please download the Metatrader 5 platform (MT5) via this link
-        <br /><br />
-        <a
-          href="https://download.mql5.com/cdn/web/18665/mt5/atriafinancial5setup.exe"
-          style="color: var(--primary-color3)"
-          >Download MT5</a
-        ><br /><br />
-        To continue trading <br />
-        Thanks for your patience
-      </p>
+  ">
+      <%- page.fields.sections[6].fields.content %>
     </div>
-    <div class="modal-footer">
-      <a
-        class="btn btn-filled"
-        style="background: var(--primary-color1)"
-        id="aCo"
-        >Continue</a
-      >
-    </div>
-  </div>
-</div>
-<!--End of cookies popup-->
 
-<!-- Modal -->
-<div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog" role="document">
-    <div class="modal-content" id="getApp">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Get The App</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <form action="" id="smsForm" style="display: none">
-            <input type="tel" name="phone" id="phone" />
-            <button class="btn btn-filled" type="submit">Get the link</button>
-          </form>
+    <div class="row mobileApp" style="background: #64eee02d; box-shadow: -2px -2px 37px #00000017">
+      <%- page.fields.sections[7].fields.content %>
+    </div>
+    <div class="row numbersLast" style="background: url('/images/webp/back2.webp'); height: 295px">
+      <%- page.fields.sections[8].fields.content %>
+    </div>
+    <div class="row" style="background-color: #00384c">
+      <%- page.fields.sections[9].fields.content %>
+    </div>
+
+    <!--Cookies popup-->
+    <div id="popup-modal" class="modal">
+      <div class="modal-content animated bounce">
+        <a class="modal-close">×</a>
+        <div class="modal-text">
+          <p id="WarningArabic" style="display: none">a</p>
+          <p id="WarningEnglish" style="display: none">
+            If you are having problem in the trading platform, due to security
+            updates,<br />
+            Please download the Metatrader 5 platform (MT5) via this link
+            <br /><br />
+            <a href="https://download.mql5.com/cdn/web/18665/mt5/atriafinancial5setup.exe"
+              style="color: var(--primary-color3)">Download MT5</a><br /><br />
+            To continue trading <br />
+            Thanks for your patience
+          </p>
         </div>
-        <div class="row my-4">
-          <img
-            src="/images/webp/appQrCode.webp"
-            alt="QRcode-app"
-            width="100%"
-            style="width: 250px"
-          />
+        <div class="modal-footer">
+          <a class="btn btn-filled" style="background: var(--primary-color1)" id="aCo">Continue</a>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btnlimit" data-dismiss="modal">
-          Close
-        </button>
+    </div>
+    <!--End of cookies popup-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" id="getApp">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Get The App</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <form action="" id="smsForm" style="display: none">
+                <input type="tel" name="phone" id="phone" />
+                <button class="btn btn-filled" type="submit">Get the link</button>
+              </form>
+            </div>
+            <div class="row my-4">
+              <img src="/images/webp/appQrCode.webp" alt="QRcode-app" width="100%" style="width: 250px" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btnlimit" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<style>
-  @import "/css/home.css";
-</style>
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/flickity@2/dist/flickity.min.css"
-/>
-<script
-  src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"
-  defer
-></script>
-<script src="/js/numberRoll.min.js" defer></script>
+    <style>
+      @import "/css/home.css";
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" defer></script>
+    <script src="/js/numberRoll.min.js" defer></script>
 
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css"
-/>
-<!--Country code for phone-->
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"
-  integrity="sha512-QMUqEPmhXq1f3DnAVdXvu40C8nbTgxvBGvNruP6RFacy3zWKbNTmx7rdQVVM2gkd2auCWhlPYtcW2tHwzso4SA=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-  defer
-></script>
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.css"
-  integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw=="
-  crossorigin="anonymous"
-  defer
-/>
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css"
-  integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-  defer
-/>
-<script src="/js/scriptsms.min.js" defer></script>
-<script src="/js/pricesWidget.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css" />
+    <!--Country code for phone-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"
+      integrity="sha512-QMUqEPmhXq1f3DnAVdXvu40C8nbTgxvBGvNruP6RFacy3zWKbNTmx7rdQVVM2gkd2auCWhlPYtcW2tHwzso4SA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.css"
+      integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw=="
+      crossorigin="anonymous" defer />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css"
+      integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" defer />
+    <script src="/js/scriptsms.min.js" defer></script>
+    <script src="/js/pricesWidget.min.js" defer></script>
 
-<script>
-  //   var modal = document.getElementById('popup-modal');
-  // var span = document.getElementsByClassName("modal-close")[0];
-  // var closeIt= document.getElementById('aCo');
-  // closeIt.onclick = function() {
-  // modal.style.display = "none";
-  // }
+    <script>
+      //   var modal = document.getElementById('popup-modal');
+      // var span = document.getElementsByClassName("modal-close")[0];
+      // var closeIt= document.getElementById('aCo');
+      // closeIt.onclick = function() {
+      // modal.style.display = "none";
+      // }
 
-  //  window.onload = function() {
-  //  setTimeout(function() {
-  //    if(window.location.pathname.split("/")[1]=="ar"){
-  //     document.getElementById('WarningArabic').style.display = "block";
-  //   }else{
-  //     document.getElementById('WarningEnglish').style.display = "block";
-  //   }
-  //  modal.style.display = 'block';
-  //  }, 2000);
-  //  }
+      //  window.onload = function() {
+      //  setTimeout(function() {
+      //    if(window.location.pathname.split("/")[1]=="ar"){
+      //     document.getElementById('WarningArabic').style.display = "block";
+      //   }else{
+      //     document.getElementById('WarningEnglish').style.display = "block";
+      //   }
+      //  modal.style.display = 'block';
+      //  }, 2000);
+      //  }
 
-  //  span.onclick = function() {
-  // modal.style.display = "none";
-  // }
+      //  span.onclick = function() {
+      // modal.style.display = "none";
+      // }
 
-  randSlides();
 
-  $("#myCarousel").on("slide.bs.carousel", function () {
-    var $nextImage = $(".active.carousel-item", this)
-      .next(".carousel-item")
-      .find("img");
-    $nextImage.attr("src", $nextImage.data("lazy-load-src"));
-  });
-  new Splide(".splide", {
-    heightRatio: 0.3,
-    autoHeight: true,
-    autoplay: true,
-    interval: 5000,
-    lazyLoad: true,
-    rewind: true,
-    type: "fade",
-    perPage: 1,
-    pauseOnHover: true,
-  }).mount();
+      $("#myCarousel").on("slide.bs.carousel", function () {
+        var $nextImage = $(".active.carousel-item", this)
+          .next(".carousel-item")
+          .find("img");
+        $nextImage.attr("src", $nextImage.data("lazy-load-src"));
+      });
+      new Splide(".splide", {
+        heightRatio: 0.3,
+        autoHeight: true,
+        autoplay: true,
+        interval: 5000,
+        lazyLoad: true,
+        rewind: true,
+        type: "fade",
+        perPage: 1,
+        pauseOnHover: true,
+      }).mount();
 
-  //change ul li order randomly
-  function randSlides() {
-    var ul = document.querySelector(".splide__list");
-    var li = document.querySelectorAll(".splide__slide");
-    var liArray = Array.prototype.slice.call(li, 0);
-    liArray.sort(function () {
-      return 0.5 - Math.random();
-    });
-    ul.appendChild(liArray[0]);
-    ul.appendChild(liArray[1]);
-    ul.appendChild(liArray[2]);
-    ul.appendChild(liArray[3]);
-  }
+      //change ul li order randomly
+      function randSlides() {
+        var ul = document.querySelector(".splide__list");
+        var li = document.querySelectorAll(".splide__slide");
+        var liArray = Array.prototype.slice.call(li, 0);
+        liArray.sort(function () {
+          return 0.5 - Math.random();
+        });
+        ul.appendChild(liArray[0]);
+        ul.appendChild(liArray[1]);
+        ul.appendChild(liArray[2]);
+        ul.appendChild(liArray[3]);
+      }
 
-  console.log();
-</script>
+      console.log();
+    </script>

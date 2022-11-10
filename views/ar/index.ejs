@@ -143,12 +143,12 @@
       // modal.style.display = "none";
       // }
 
-      randSlides();
 
       $('#myCarousel').on('slide.bs.carousel', function () {
-        var $nextImage = $('.active.carousel-item', this).next('.carousel-item').find('img');
+        var $nextImage = $('.active.carousel-item', this).next('.carousel-item').find('img')
         $nextImage.attr('src', $nextImage.data('lazy-load-src'));
       });
+
       new Splide('.splide', {
         heightRatio: 0.3,
         autoHeight: true,
