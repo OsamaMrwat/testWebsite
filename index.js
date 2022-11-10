@@ -117,6 +117,42 @@ app.use("/ar", arabicRouting);
 /*Spainsh Routing*/
 app.use("/es", spainshRouting);
 
+app.post("/sendEvestTalk", async (req, res) => {
+  // const ipAddress = IP.address();
+
+  const msg = {
+    to: ["osama.ba@evest.com"],
+    // to: "osama.ba@evest.com",
+    from: `${req.body.email}`, // Use the email address or domain you verified above
+    subject: `New Message from the Evest Talk website page`,
+    html: `<h1>You Got New Message</h1>
+    <p>EMAIL: ${req.body.email}.<br><br>
+    First NAME: ${req.body.firstName}.<br><br>
+    Last NAME: ${req.body.lastName}.<br><br>
+    Phone: ${req.body.phonenumber}.<br><br>
+    Job: ${req.body.job}.<br><br>
+    MESSAGE: ${req.body.message}.<br><br></p>`,
+    // replyTo: `${req.body.email}`,
+  };
+
+  // console.log(msg);
+  //ES6
+  sgMail.send(msg).then(
+    (res) => {
+      console.log(res);
+    },
+    (error) => {
+      console.error(error);
+
+      if (error.response) {
+        console.error(error.response.body);
+      }
+    }
+  );
+
+  res.redirect("/evest/evest-talk-en");
+});
+
 async function getPostSiteMaps() {
   let all_links_en = [];
   let categories_en = ["trading-news", "oil-news", "gold-news", "market-news"];
@@ -479,9 +515,9 @@ xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entrie
 //   getArabicBlogs()
 // }, 10000)
 
-getPagesSiteMaps();
-getPostSiteMaps();
-getArabicBlogs();
+// getPagesSiteMaps();
+// getPostSiteMaps();
+// getArabicBlogs();
 
 setInterval(() => {
   getPagesSiteMaps();

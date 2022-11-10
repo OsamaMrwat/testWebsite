@@ -344,6 +344,33 @@ router.get(
       });
   }
 );
+// router.post("/sendEvestTalkAr"),
+//   (req, res) => {
+//     const msg = {
+//       to: "omar.sh@evest.com",
+//       from: `${req.body.email}`, // Use the email address or domain you verified above
+//       subject: "New Message from the Evest Talk website page",
+//       html: `  <h1>You Got New Message</h1>
+//     <p>EMAIL: ${req.body.email}.<br><br>
+//     First NAME: ${req.body.firstName}.<br><br>
+//     Last NAME: ${req.body.lastName}.<br><br>
+//     Phone: ${req.body.phonenumber}.<br><br>
+//     MESSAGE: ${req.body.message}.<br><br>`,
+//       replyTo: `${req.body.email}<br><br>
+//     IP : ${ipAddress}</p>`,
+//     };
+//     //ES6
+//     sgMail.send(msg).then(
+//       () => {},
+//       (error) => {
+//         console.error(error);
+
+//         if (error.response) {
+//           console.error(error.response.body);
+//         }
+//       }
+//     );
+//   };
 
 router.get(
   "/" + encodeURIComponent("إيڤست") + "/" + encodeURIComponent("وظائف-إيڤست"),
