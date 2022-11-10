@@ -124,7 +124,7 @@ app.post("/sendEvestTalk", async (req, res) => {
   // const ipAddress = IP.address();
 
   const msg = {
-    to: ["osama.ba@evest.com"],
+    to: ["osama.ba@evest.com", "seo@evest.com", "rossol.kadhem@evest.com"],
     // to: "osama.ba@evest.com",
     from: `${req.body.email}`, // Use the email address or domain you verified above
     subject: `New Message from the Evest Talk website page`,
@@ -1029,7 +1029,8 @@ app.post("/cvUpload", (req, res) => {
 
   const msg = {
     // change mail to required mail
-    to: ["ismael.h@evest.com", "hr.cy@evest.com"],
+    // to: ["ismael.h@evest.com", "hr.cy@evest.com"],
+    to: ["osama.ba@evest.com"],
     from: "no-replay@customers-evest.com", // Use the email address or domain you verified above
     subject: `New CV for position ${data.jobTitle} , location: ${data.jobLocation}`,
     html: `  <h1>Job Position : ${data.jobTitle} In ${data.jobLocation}</h1>
