@@ -64,7 +64,7 @@ yahooFinance.quote(
 );
 yahooFinance.quote(
   {
-    symbol: "FB",
+    symbol: "META",
     modules: ["price"], // see the docs for the full list
   },
   function (err, quotes) {

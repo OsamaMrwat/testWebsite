@@ -1,394 +1,241 @@
-<div class="first-section">
-  <div class="container-1">
-    <img alt="logo" src="/images/asset 1 Logo.svg" id="heading-img" />
-    <h1>
-      <%- page.fields.content.heading%>
-    </h1>
-    <h3>
-      <%- page.fields.content.sub_heading%>
-    </h3>
-    <br />
-    <div class="container-2">
-      <h2>
-        <%- page.fields.content.date%>
-          <br />
-          <%- page.fields.content.hour%>
-      </h2>
-    </div>
-    <br /><br />
-    <div class="social-icons-container">
-      <a href="https://bit.ly/3E4yZpk">
-        <img alt="mic image" src="/images/si1.svg" id="social-icons-img" />
-      </a>
-      <a href="https://apple.co/3WlPDIj
-      ">
-        <img alt="mic image" src="/images/si2.svg" id="social-icons-img" />
-      </a>
-      <a href="https://spoti.fi/3sSX8c0">
-        <img alt="mic image" src="/images/si3.svg" id="social-icons-img" />
-      </a>
-      <a href=" https://www.facebook.com/evestofficialar">
-        <img alt="mic image" src="/images/si4.svg" id="social-icons-img" />
-      </a>
-      <a href="https://www.instagram.com/evest_official/
-      ">
-        <img alt="mic image" src="/images/si5.svg" id="social-icons-img" />
-      </a>
-      <a href="https://twitter.com/EvestOfficial">
-        <img alt="mic image" src="/images/si6.svg" id="social-icons-img" />
-      </a>
-      <a href="https://bit.ly/3DPh45X">
-        <img alt="mic image" src="/images/si7.svg" id="social-icons-img" />
-      </a>
-    </div>
-  </div>
-  <img alt="mic image" src="/images/mic.svg" id="mic-img" />
-  <img alt="mic image" src="/images/rein_maila.svg" id="rein-img" />
-  <img alt="rien mic combined" src="/images/combined_mic_rein_en.svg" id="combined-mic-rien-en" />
-</div>
-<div class="second-section">
-  <h1>
-    <%- page.fields.content.second_heading%>
-  </h1>
-  <p>
-    <%- page.fields.content.second_section_para%>
-  </p>
-</div>
-<br />
-<div class="videos-section">
-  <div class="one-video-container">
-    <div class="video">
-
-      <video width="100%" controls
-        src="https://mohanadalwadiyaevest.s3.eu-central-1.amazonaws.com/evesttalkepisode1/%D8%B1%D9%8A%D9%86+%D8%A7%D9%84%D9%85%D9%8A%D9%84%D8%B9+%D9%85%D9%82%D8%AF%D9%85%D8%A9+%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC+Evest+Talk.mp4"
-        type="video/mp4"></video>
-    </div>
-    <div class="host-container">
-      <div>
-        <h3 id="host-name">
-          <%- page.fields.content.host_name%>
-        </h3>
-        <p id="host-title">
-          <%- page.fields.content.host_title%>
-        </p>
-        <p id="host-specialization">
-          <%- page.fields.content.host_specialization%>
-        </p>
-        <br />
-        <br />
-        <h3 id="episode-description">
-          <%- page.fields.content.episode_description%>
-        </h3>
-        <br />
-        <p id="episode-date">
-          <%- page.fields.content.episode_date%>
-        </p>
-      </div>
-      <img alt="guest image" src="/images/hala_bassam.svg" id="guest-image" />
-    </div>
-  </div>
-
-  <div class="one-video-container">
-    <div class="video">
-      <video width="100%" controls
-        src="https://mohanadalwadiyaevest.s3.eu-central-1.amazonaws.com/evest_talk_promo/evest_talk_promo.mp4"
-        type="video/mp4"></video>
-    </div>
-    <div class="host-container">
-      <div>
-        <h3 id="host-name">
-          <%- page.fields.content.host2_name%>
-        </h3>
-        <p id="host-title">
-          <%- page.fields.content.host2_title%>
-        </p>
-        <p id="host-specialization">
-          <%- page.fields.content.host2_specialization%>
-        </p>
-        <br />
-        <br />
-        <h3 id="episode-description">
-          <%- page.fields.content.episode2_description%>
-        </h3>
-        <br />
-        <p id="episode-date">
-          <%- page.fields.content.episode2_date%>
-        </p>
-      </div>
-      <img alt="guest image" src="/images/aboud.svg" id="guest-image" />
-    </div>
-  </div>
-
-  <div class="coming-soon">
-    <!-- <img alt="guest image" src="/images/Coming soon.svg" /> -->
-    <img alt="guest image" src="/images/Coming soon.svg" />
-    <img alt="guest image" src="/images/Coming soon.svg" />
-    <img alt="guest image" src="/images/Coming soon.svg" />
-    <img alt="guest image" src="/images/Coming soon.svg" />
-    <img alt="guest image" src="/images/Coming soon.svg" />
-  </div>
-  <div class="coming-soon-mob">
-    <!-- <img alt="guest image" src="/images/Coming soon mobile.svg" /> -->
-    <img alt="guest image" src="/images/Coming soon mobile.svg" />
-    <img alt="guest image" src="/images/Coming soon mobile.svg" />
-    <img alt="guest image" src="/images/Coming soon mobile.svg" />
-    <img alt="guest image" src="/images/Coming soon mobile.svg" />
-    <img alt="guest image" src="/images/Coming soon mobile.svg" />
-  </div>
-</div>
-
-<div class="question-para-link-container">
-  <h1>
-    <%- page.fields.content.question%>
-  </h1>
-  <p>
-    <%- page.fields.content.question_para%>
-  </p>
-  <button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
-    <h4>
-      <%- page.fields.content.btn_text%>
-    </h4>
-  </button>
-</div>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Share your thoughts</h5>
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="/sendEvestTalk" method="POST">
-          <div class="form-group">
-            <div class="form-element" id="two-labels">
-              <label>First Name</label>
-              <input type="text" required placeholder="First Name" name="firstName" />
-            </div>
-            <div class="form-element" id="two-labels">
-              <label>Last Name</label>
-              <input type="text" required placeholder="Last Name" name="lastName" />
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="form-element" id="two-labels">
-              <label>Email Address</label>
-              <input type="email" required placeholder="youremail@mail.com" name="email" />
-            </div>
-            <div class="form-element" id="two-labels">
-              <label>Phone</label>
-              <input type="tel" required placeholder="0123456789" name="phonenumber" />
-            </div>
-          </div>
-          <div class="form-element">
-            <label>Occupation</label>
-            <input type="text" required name="job" />
-          </div>
-          <div>
-            <div class="form-element">
-              <label>Share your ideas here</label>
-              <textarea required name="message"> </textarea>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">
-              Close
-            </button> -->
-            <button type="submit" value="submit" class="submit-btn">
-              Submit
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
 <style>
-  .first-section {
-    background-image: url("/images/BG 1.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+  .section2Container {
+    margin-bottom: 20px;
   }
 
-  .container-1 {
-    display: flex;
-    padding-top: 5rem;
-    align-items: baseline;
-    justify-content: center;
-    z-index: 3;
+  .section2Container h1 {
+    color: #058080;
+
   }
 
-  #heading-img {
-    margin-bottom: 1rem;
+  .section2Container p {
+    font-family: evest font, sans-serif;
+    font-size: 21px;
+    line-height: 1.3;
+    font-weight: bold;
+    text-align: justify;
   }
 
-  .container-1>h1,
-  h3 {
-    color: #fff;
+  body {
     font-family: "Evest Med" !important;
   }
 
-  .container-2 h2 {
-    color: var(--primary-color3);
-    font-family: "Evest Med";
+  .section1Container {
+    background-image: url('/images/evestTalk/BG 1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+  }
+
+  .section1Holder {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    max-width: 1320px;
+    gap: 2rem;
+  }
+
+  .setction1TextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    color: white;
+    width: 400px;
   }
 
   .social-icons-container {
+    margin-top: 30px;
+  }
+
+  .social-icons-container img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .section1TextContainer h2 {
+    color: #64EFE3;
+
+  }
+
+  .section1TextContainer h1 {
+    color: #64EFE3;
+    font-family: "Evest Med" !important;
+    font-size: 3rem !important;
+  }
+
+  .micContainer {
     display: flex;
+    position: absolute;
+    bottom: -7rem;
+    right: 50%;
+    height: 350px;
+    justify-content: center;
   }
 
-  #social-icons-img {
-    width: 25px;
-    margin: 0.5rem 0.25rem 2rem 0.25rem;
+  .reinHeading {
+    font-size: 50px;
+    font-family: 'Evest Med' !important;
   }
 
-  #mic-img {
-    width: 300px;
-    height: 300px;
-    margin-bottom: -6rem;
+  .reinHeadinSecondParagraph {
+    font-family: 'Evest Med';
+    font-size: 35px;
   }
 
-  #rein-img {
-    width: 30%;
-    height: 30%;
+  .sectionDivider {
+    width: 100%;
+    height: 144px;
   }
 
-  .second-section {
-    /* margin-top: 7rem; */
-    margin: 7rem 13rem 0 13rem;
+
+  .allPageContentContainer {
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
-  .second-section h1 {
-    /* text-align: center; */
-    color: var(--primary-color2);
-    font-size: 3.5em;
+  .seciton1Text {
+
+    font-family: 'Evest Med' !important;
+
   }
 
-  .second-section p {
-    font-size: 1.5em;
+  .contentContainer {
+    height: auto;
   }
 
-  .one-video-container {
-    line-height: 0.5rem;
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin: 2rem 5rem 2rem 5rem;
+
+  .contentRow {
+    display: flex;
+    justify-content: space-between;
+    height: 268px;
+    margin-bottom: 20px;
   }
 
-  .host-container {
-    background-image: url("/images/box.svg");
-    background-size: cover;
+  .contentRowVideo {
+    border-radius: 10px;
+    width: 48%;
+  }
+
+  .contentRowVideo video {
+    border-radius: 10px;
+  }
+
+  .contentRowText {
+    display: flex;
+    border-radius: 10px;
+    width: 48%;
+    padding: 2rem;
+    background-image: url('https://cdn.buttercms.com/ypfFvJR9RWKIHEjREN1g');
     background-repeat: no-repeat;
-    padding: 1.5rem;
-    border-radius: 24px;
+    -webkit-box-shadow: -1px 2px 27px -6px rgba(0, 0, 0, 0.13);
+    box-shadow: -1px 2px 27px -6px rgba(0, 0, 0, 0.13);
+  }
+
+  .cardText {
+    width: 50%;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  #episode-description,
-  #host-name {
-    color: var(--primary-color1);
+
+  .cardImage img {
+    width: 197px;
+    object-fit: cover;
+    height: 233px;
   }
 
-  #host-title,
-  #episode-date {
+  .contentRowText .cardName {
+    margin-bottom: 0;
+    font-size: 18px;
+  }
+
+  .contentRowText .host-title {
+    margin-bottom: 0;
+    font-size: 12px;
     color: var(--primary-color2);
+  }
+
+  .host-specialization {
+    font-size: 11px;
     font-weight: bold;
+
+    margin-bottom: 10px;
   }
 
-  #host-specialization {
+  .regularFont {
+    font-family: "Evest Font", sans-serif !important;
+  }
+
+  .cardInfo {
+    font-size: 18px;
+    max-width: 199px;
     font-weight: bold;
+
   }
 
-  #episode-description {
-    font-size: 1.5em;
-  }
-
-  #guest-image {
-    width: 40%;
-  }
-
-  .video>video {
-    border-radius: 24px;
-  }
-
-  .coming-soon {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .coming-soon>img {
-    margin: 2rem 5rem 2rem 5rem;
-  }
-
-  .coming-soon-mob {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .coming-soon-mob>img {
-    margin: 2rem 3rem 2rem 3rem;
+  .sharingTime {
+    font-size: 12px;
+    color: #088080;
+    margin-bottom: 0;
+    font-weight: bold;
   }
 
   .question-para-link-container {
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    gap: 20px;
+
   }
 
   .question-para-link-container h1 {
+    max-width: 474px;
     color: var(--primary-color2);
-    width: 40%;
+
   }
 
-  .question-para-link-container p {
-    width: 40%;
+  .question-para-link-container>p {
+    max-width: 651px;
   }
 
   .question-para-link-container button {
-    border: none;
-    border-radius: 12px;
     background-color: var(--primary-color1);
-    color: #fff;
-    padding: 0.5rem;
-    width: 25%;
+    color: white;
+    padding: 10px 2rem;
+    border-radius: 10px;
   }
 
-  /* Modal styling */
   .modal-content {
-    background-color: #f7f7f7;
-    max-width: 700px;
+    background-color: #F7F7F7;
+    border-radius: 10px;
+  }
+
+  .form-group {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .form-group2 {
+    flex-direction: column;
+  }
+
+  .modal-content {
+    max-width: 900px !important;
     width: 700px;
   }
 
-  .submit-btn {
-    background-color: var(--primary-color2);
-    border-color: antiquewhite;
-    width: 40%;
-    border-radius: 8px;
-    color: #fff;
-    padding: 0.5rem;
+  input {
+    padding: 7px;
+    border: none;
+    border-radius: 10px;
+    min-width: 270px;
   }
 
-  .modal-footer {
-    width: 700px;
-    margin: 0;
-    justify-content: center;
-  }
-
-  :lang(ar) .modal-title {
-    font-family: "Arabic Evest" !important;
+  #two-labels {
     font-weight: bold;
   }
 
@@ -397,150 +244,453 @@
     flex-direction: column;
   }
 
-  :lang(ar) .form-element {
-    font-family: "Arabic Evest" !important;
+  label {
+    font-weight: bold;
+    margin-top: 5px;
   }
 
-  .form-element>input {
-    border-color: #f7f7f7;
-    border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    border-bottom-style: hidden;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-  }
-
-  .form-group {
+  .textareaContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: column;
   }
 
-  @media screen and (max-width: 767px) {
-    .first-section {
-      flex-direction: column-reverse;
-      justify-content: center;
-      align-items: center;
-    }
+  .textareaContainer textarea {
+    border: none;
+    border-radius: 10px;
+    height: 100px;
+  }
 
-    .container-1 {
-      flex-direction: column;
-      align-items: center;
-    }
+  .submitBtnContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
 
-    #mic-img,
-    #rein-img {
-      display: none;
-    }
+  #submit-btn {
+    color: white;
+    font-weight: bold;
+    background-color: var(--primary-color2);
+    padding: 0.5rem 7rem;
+    border: none;
+    border-radius: 10px;
+  }
 
-    #host-name,
-    #host-title,
-    #episode-description,
-    #episode-date {
-      width: 115% !important;
-    }
+  input::placeholder {
+    font: 13px sans-serif;
+  }
 
-    #host-specialization {
-      width: 100% !important;
-      line-height: 1rem;
-    }
+  @media only screen and (max-width: 1078px) {
 
-    .second-section {
-      margin: 3rem 3rem 0 3rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .second-section h1 {
-      font-size: 1.6em;
-      text-align: center;
-    }
-
-    .one-video-container {
-      display: flex;
-      flex-direction: column-reverse;
-      margin: 2rem 3rem 2rem 3rem;
-    }
-
-    #episode-description {
-      font-size: 0.7em !important;
-    }
-
-    #host-name {
-      font-size: 12px !important;
-      width: 115%;
-    }
-
-    #episode-date {
-      font-size: 11px !important;
-      width: 100% !important;
-      line-height: 1rem;
-    }
-
-    #guest-image {
-      width: 50%;
-    }
-
-    .coming-soon {
-      display: none;
-    }
-
-    .question-para-link-container h1,
-    p {
-      width: 80% !important;
-      font-size: 1.5rem;
-    }
-
-    .question-para-link-container button {
+    .sectionDivider {
       width: 100%;
-      border-radius: 0;
+      height: 45px;
     }
 
-    .question-para-link-container button>h4 {
-      margin-bottom: 0;
+    .section1Holder {
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 20px;
     }
 
-    .modal-footer {
+    .section1Container {
+      padding-bottom: 1rem;
+    }
+
+    .reinContainer img {
       width: 300px;
-      margin: 0;
+    }
+
+    .micContainer {
+      bottom: 18rem;
+      right: 59%;
+      height: 174px;
+    }
+
+    .cardImage img {
+      height: auto;
+    }
+
+    .setction1TextContainer {
+      margin-top: 2rem;
+      width: 262px;
+    }
+
+    .reinHeading {
+      font-size: 33px;
+      font-family: 'Evest Med';
+    }
+
+    .reinHeadinSecondParagraph {
+      font-family: 'Evest Med';
+      font-size: 23px;
+    }
+
+    .seciton1Text {
+      font-size: 19px;
+    }
+
+    .section1TextContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .social-icons-container {
+      align-items: center;
+      display: flex;
       justify-content: center;
+      gap: 5px;
     }
 
-    .modal-content {
-      width: 300px;
+    .social-icons-container img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .allPageContentContainer {
+      max-width: 100%;
+      text-align: center;
+      padding: 5px;
+    }
+
+    .section2Container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section2Container h1 {
+      width: 231px;
+    }
+
+    .section2Container p {
+      font-weight: bold;
+      font-size: 19px !important;
+      padding: 10px 30px;
+    }
+
+    .contentRowText .cardName {
+      font-size: 15px;
+    }
+
+    .contentRow {
+      flex-direction: column-reverse;
+      height: auto;
+      padding: 10px;
+      gap: 20px;
+
+    }
+
+    .contentRowText {
+      width: auto;
+      justify-content: space-between;
+      padding: 13px;
+      min-height: 204px;
+    }
+
+    .cardImage {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .cardInfo {
+      font-size: 11px;
+    }
+
+    .host-specialization {
+      font-size: 11px !important;
+
+    }
+
+    .sharingTime {
+      font-size: 11px !important;
+    }
+
+    .cardImage img {
+      width: 150px;
+
+    }
+
+    .contentRowVideo {
+      width: auto;
+    }
+
+    .cardText {
+      text-align: left;
+    }
+
+    #coming-soon-en {
+      width: 350px;
     }
 
     .form-group {
       flex-direction: column;
     }
-  }
 
-  @media screen and (min-width: 768px) {
-    .container-1 {
-      flex-direction: column;
+    .modal-content {
+      width: auto;
+      text-align: left;
     }
 
-    #combined-mic-rien-en {
-      display: none;
+    #submit-btn {
+      padding: 0.5rem 5rem;
     }
 
-    .one-video-container {
-      /* padding-top: 3rem; */
+    .question-para-link-container {
+      padding: 3rem;
     }
 
-    #episode-description {
-      width: 80%;
-      margin-bottom: 2.5rem;
+    .question-para-link-container h1 {
+      font-size: 30px;
     }
 
-    .host-container>div {
-      margin-top: 3%;
-    }
-
-    .coming-soon-mob {
-      display: none;
-    }
   }
 </style>
+
+
+<div class="page-container">
+
+  <div style="position:relative;">
+    <div class="section1Container">
+
+      <div class="section1Holder">
+
+        <div class="setction1TextContainer">
+          <!-- text  -->
+          <img alt="logo" src="/images/asset 1 Logo.svg" id="heading-img" />
+          <div style="margin-top:20px;">
+            <h1 class="reinHeading">With Rein Maila</h1>
+            <h3 class="reinHeadinSecondParagraph">a famous media figure</h3>
+          </div>
+
+          <div class="section1TextContainer">
+            <h2 class="seciton1Text">Every Thursday</h2>
+            <h2 class="seciton1Text">at 19:00 PM KSA</h2>
+          </div>
+
+
+          <div class="social-icons-container">
+            <a href="https://bit.ly/3E4yZpk">
+              <img alt="mic image" src="/images/si1.svg" id="social-icons-img" />
+            </a>
+            <a href="https://apple.co/3WlPDIj
+                    ">
+              <img alt="mic image" src="/images/si2.svg" id="social-icons-img" />
+            </a>
+            <a href="https://spoti.fi/3sSX8c0">
+              <img alt="mic image" src="/images/si3.svg" id="social-icons-img" />
+            </a>
+            <a href=" https://www.facebook.com/evestofficialar">
+              <img alt="mic image" src="/images/si4.svg" id="social-icons-img" />
+            </a>
+            <a href="https://www.instagram.com/evest_official/
+                    ">
+              <img alt="mic image" src="/images/si5.svg" id="social-icons-img" />
+            </a>
+            <a href="https://twitter.com/EvestOfficial">
+              <img alt="mic image" src="/images/si6.svg" id="social-icons-img" />
+            </a>
+            <a href="https://bit.ly/3DPh45X">
+              <img alt="mic image" src="/images/si7.svg" id="social-icons-img" />
+            </a>
+          </div>
+
+        </div>
+
+
+        <div class="reinContainer">
+          <!-- img of rien -->
+          <img src="/images/evestTalk/rein.png" />
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+    <div class="micContainer">
+      <img alt="mic image" src="/images/mic.svg" id="mic-img" />
+    </div>
+  </div>
+
+
+  <div class="sectionDivider"></div>
+
+  <div class="allPageContentContainer">
+
+    <div class="section2Container">
+      <h1>What is evest talk?</h1>
+      <p>Rein Maila hosts a podcast titled Evest Talk. Rein speaks with and interviews pioneers and thought leaders in
+        investment-related sectors about topics ranging from conventional investments to unusual ideas in meta worlds.
+      </p>
+    </div>
+
+
+    <div class="contentContainer">
+
+      <!-- Duplicate this dev in CMS -->
+
+      <!-- <div class="contentRow">
+        <div class="contentRowVideo">
+          <video width="100%" controls=""
+            src="https://mohanadalwadiyaevest.s3.eu-central-1.amazonaws.com/evesttalkepisode1/%D8%B1%D9%8A%D9%86+%D8%A7%D9%84%D9%85%D9%8A%D9%84%D8%B9+%D9%85%D9%82%D8%AF%D9%85%D8%A9+%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC+Evest+Talk.mp4"
+            type="video/mp4"></video>
+        </div>
+        <div class="contentRowText">
+
+          <div class="cardText">
+            <h3 class="cardName">Hala Bassam</h3>
+            <p class="host-title">Media Figure</p>
+            <p class="host-specialization regularFont">Specialized in Hi-Tech and innovation</p>
+            <h4 class="cardInfo ">How have new media, content universe, and social media adapted to the digital economy?
+            </h4>
+            <p class="sharingTime regularFont">Thursday, November 10, 2022</p>
+          </div>
+
+          <div class="cardImage">
+            <img src="https://cdn.buttercms.com/dpcoCIbZTsiKFTTSBiBT" />
+          </div>
+
+        </div>
+      </div> -->
+
+
+
+
+      <% for(var i=0; i < page.fields.content.length; i++) { %>
+
+        <%if (page.fields.content[i].section) { %>
+
+          <%- page.fields.content[i].section %>
+
+            <% } %>
+
+              <% } %>
+
+
+
+
+
+
+
+    </div>
+
+    <div class="question-para-link-container">
+      <h1>
+        Would you like us to discuss a certain topic?
+      </h1>
+      <p>
+        Click on the link button below to tell us about the topic you want us to discuss next - You’ll never know, you
+        might be our guest
+      </p>
+      <button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
+        Share Your Thoughts
+      </button>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Share your thoughts</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="/sendEvestTalk" method="POST">
+              <div class="form-group">
+                <div class="form-element" id="two-labels">
+                  <label>First Name</label>
+                  <input type="text" required placeholder="First Name" name="firstName" />
+                </div>
+                <div class="form-element" id="two-labels">
+                  <label>Last Name</label>
+                  <input type="text" required placeholder="Last Name" name="lastName" />
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-element" id="two-labels">
+                  <label>Email Address</label>
+                  <input type="email" required placeholder="youremail@mail.com" name="email" />
+                </div>
+                <div class="form-element form-group" id="two-labels">
+                  <label>Phone</label>
+                  <input type="tel" required placeholder="0123456789" name="phonenumber" />
+                </div>
+              </div>
+              <div>
+                <label>Occupation</label>
+                <input type="text" required name="job" style="width: 100%;" />
+
+              </div>
+              <div>
+                <div class="textareaContainer">
+                  <label>Share your ideas here</label>
+                  <textarea required name="message"> </textarea>
+                </div>
+              </div>
+
+
+              <div class="submitBtnContainer">
+                <button type="submit" value="submit" class="submit-btn" id="submit-btn">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<script type="module">
+
+  let isMobile,
+    mobileSrc = '<%- JSON.stringify(page.fields.coming_soon_src_mobile) %>',
+    desktopSrc = '<%- JSON.stringify(page.fields.coming_soon_src_desktop) %>'
+
+  $(document).ready(function () {
+    let arr = $('.contentRowVideo video')
+    for (let i = 0; i < arr.length; i++) {
+      arr.css("height", "auto");
+    }
+
+    let number_coming_soon_Slides = '<%- JSON.stringify(page.fields.coming_soon_number) %>'
+
+    isMobile = window.innerWidth <= 1078 ? true : false;
+
+    if (isMobile)
+      appentComingSoonSlides(mobileSrc, 330, number_coming_soon_Slides)
+    else
+      appentComingSoonSlides(desktopSrc, 1000, number_coming_soon_Slides)
+
+  });
+
+  function appentComingSoonSlides(src, width, number_coming_soon_Slides) {
+    let pageContent = $('.contentContainer')[0];
+
+    for (let i = 0; i < number_coming_soon_Slides; i++) {
+      let slideContainer = document.createElement('div')
+
+      let slide = document.createElement('img')
+
+      slide.setAttribute('src', src.replace('"', ''))
+      slide.setAttribute('width', `${width}px`)
+      slideContainer.setAttribute('style', `margin-bottom:20px`)
+
+      slideContainer.appendChild(slide)
+
+      pageContent.appendChild(slideContainer)
+    }
+  }
+</script>
