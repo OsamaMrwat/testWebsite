@@ -55,9 +55,9 @@ router.get("/" + encodeURIComponent("أسئلة-شائعة"), (req, res) => {
 /* Start Trading Routes*/
 router.get(
   "/" +
-    encodeURIComponent("ابدا-التداول") +
-    "/" +
-    encodeURIComponent("انواع-الحسابات"),
+  encodeURIComponent("ابدا-التداول") +
+  "/" +
+  encodeURIComponent("انواع-الحسابات"),
   function (req, res) {
     butter.page.retrieve("*", "accounttypes-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -68,9 +68,9 @@ router.get(
 
 router.get(
   "/" +
-    encodeURIComponent("ابدا-التداول") +
-    "/" +
-    encodeURIComponent("الوثائق-و-السياسات"),
+  encodeURIComponent("ابدا-التداول") +
+  "/" +
+  encodeURIComponent("الوثائق-و-السياسات"),
   function (req, res) {
     butter.page.retrieve("*", "documentspolicies-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -83,9 +83,9 @@ router.get(
 
 router.get(
   "/" +
-    encodeURIComponent("ابدا-التداول") +
-    "/" +
-    encodeURIComponent("الإيداع-و-السحب"),
+  encodeURIComponent("ابدا-التداول") +
+  "/" +
+  encodeURIComponent("الإيداع-و-السحب"),
   (req, res) =>
     butter.page.retrieve("*", "depositandwithdrawal-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -95,9 +95,9 @@ router.get(
 
 router.get(
   "/" +
-    encodeURIComponent("ابدا-التداول") +
-    "/" +
-    encodeURIComponent("رسوم-ايفست"),
+  encodeURIComponent("ابدا-التداول") +
+  "/" +
+  encodeURIComponent("رسوم-ايفست"),
   (req, res) =>
     butter.page.retrieve("*", "tradingfees-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -107,9 +107,9 @@ router.get(
 
 router.get(
   "/" +
-    encodeURIComponent("ابدا-التداول") +
-    "/" +
-    encodeURIComponent("اوقات-التداول"),
+  encodeURIComponent("ابدا-التداول") +
+  "/" +
+  encodeURIComponent("اوقات-التداول"),
   (req, res) =>
     butter.page.retrieve("*", "tradinghours-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -119,9 +119,9 @@ router.get(
 
 router.get(
   "/" +
-    encodeURIComponent("ابدا-التداول") +
-    "/" +
-    encodeURIComponent("حاسبات-التداول"),
+  encodeURIComponent("ابدا-التداول") +
+  "/" +
+  encodeURIComponent("حاسبات-التداول"),
   (req, res) =>
     butter.page.retrieve("*", "tradingcalculator-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -131,9 +131,9 @@ router.get(
 
 router.get(
   "/" +
-    encodeURIComponent("ابدا-التداول") +
-    "/" +
-    encodeURIComponent("تداول-الاسهم-0-عمولة"),
+  encodeURIComponent("ابدا-التداول") +
+  "/" +
+  encodeURIComponent("تداول-الاسهم-0-عمولة"),
   (req, res) =>
     butter.page.retrieve("*", "zerocommission-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -143,9 +143,9 @@ router.get(
 
 router.get(
   "/" +
-    encodeURIComponent("ابدا-التداول") +
-    "/" +
-    encodeURIComponent("حساب-تداول-تجريبي"),
+  encodeURIComponent("ابدا-التداول") +
+  "/" +
+  encodeURIComponent("حساب-تداول-تجريبي"),
   (req, res) =>
     butter.page.retrieve("*", "demoaccount-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -155,9 +155,9 @@ router.get(
 
 router.get(
   "/" +
-    encodeURIComponent("ابدا-التداول") +
-    "/" +
-    encodeURIComponent("حساب-تداول-إسلامي"),
+  encodeURIComponent("ابدا-التداول") +
+  "/" +
+  encodeURIComponent("حساب-تداول-إسلامي"),
   (req, res) =>
     butter.page.retrieve("*", "islamic-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -167,9 +167,9 @@ router.get(
 
 router.get(
   "/" +
-    encodeURIComponent("ابدا-التداول") +
-    "/" +
-    encodeURIComponent("العملات-الرقمية"),
+  encodeURIComponent("ابدا-التداول") +
+  "/" +
+  encodeURIComponent("العملات-الرقمية"),
   (req, res) => {
     butter.page.retrieve("*", "crypto-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -180,9 +180,9 @@ router.get(
 
 router.get(
   "/" +
-    encodeURIComponent("ابدا-التداول") +
-    "/" +
-    encodeURIComponent("سَلاَّت-تداول-استثمارية"),
+  encodeURIComponent("ابدا-التداول") +
+  "/" +
+  encodeURIComponent("سَلاَّت-تداول-استثمارية"),
   (req, res) => {
     butter.page.retrieve("*", "eib-ar").then(function (resp) {
       var page1 = resp.data.data;
@@ -270,7 +270,7 @@ router.post("/cvUploadar", (req, res) => {
   };
 
   sgMail.send(msg).then(
-    () => {},
+    () => { },
     (error) => {
       console.error(error);
 
@@ -310,7 +310,7 @@ router.post("/sendArabic", (req, res) => {
   };
   //ES6
   sgMail.send(msg).then(
-    () => {},
+    () => { },
     (error) => {
       console.error(error);
 
@@ -332,7 +332,7 @@ router.get(
   "/" + encodeURIComponent("إيڤست") + "/" + encodeURIComponent("ايفست-توك"),
   (req, res) => {
     butter.page
-      .retrieve("*", "evest-talk-ar")
+      .retrieve("*", "evest-talk-generic-ar")
       .then(function (resp) {
         var page1 = resp.data.data;
         res.render("ar/Evest/evesttalk", {
@@ -344,33 +344,37 @@ router.get(
       });
   }
 );
-// router.post("/sendEvestTalkAr"),
-//   (req, res) => {
-//     const msg = {
-//       to: "omar.sh@evest.com",
-//       from: `${req.body.email}`, // Use the email address or domain you verified above
-//       subject: "New Message from the Evest Talk website page",
-//       html: `  <h1>You Got New Message</h1>
-//     <p>EMAIL: ${req.body.email}.<br><br>
-//     First NAME: ${req.body.firstName}.<br><br>
-//     Last NAME: ${req.body.lastName}.<br><br>
-//     Phone: ${req.body.phonenumber}.<br><br>
-//     MESSAGE: ${req.body.message}.<br><br>`,
-//       replyTo: `${req.body.email}<br><br>
-//     IP : ${ipAddress}</p>`,
-//     };
-//     //ES6
-//     sgMail.send(msg).then(
-//       () => {},
-//       (error) => {
-//         console.error(error);
 
-//         if (error.response) {
-//           console.error(error.response.body);
-//         }
-//       }
-//     );
-//   };
+router.post('/sendEvestTalkAr', (req, res) => {
+  const ipAddress = IP.address();
+
+  const msg = {
+    to: "osama.ba@evest.com",
+    from: `${req.body.email}`, // Use the email address or domain you verified above
+    subject: "New Message from the Evest Talk website page",
+    html: `  <h1>You Got New Message</h1>
+    <p>EMAIL: ${req.body.email}.<br><br>
+    First NAME: ${req.body.firstName}.<br><br>
+    Last NAME: ${req.body.lastName}.<br><br>
+    Phone: ${req.body.phonenumber}.<br><br>
+    MESSAGE: ${req.body.message}.<br><br>,
+    IP : ${ipAddress}</p>`,
+    replyTo: req.body.email
+  };
+  //ES6
+  sgMail.send(msg).then(
+    () => { },
+    (error) => {
+      console.error(error);
+
+      if (error.response) {
+        console.error(error.response.body);
+      }
+    }
+  );
+
+  res.redirect('/ar/إيڤست/ايفست-توك?lang=ar')
+})
 
 router.get(
   "/" + encodeURIComponent("إيڤست") + "/" + encodeURIComponent("وظائف-إيڤست"),
@@ -394,9 +398,9 @@ router.get(
 
 router.get(
   "/" +
-    encodeURIComponent("إيڤست") +
-    "/" +
-    encodeURIComponent("تراخيص-التداول"),
+  encodeURIComponent("إيڤست") +
+  "/" +
+  encodeURIComponent("تراخيص-التداول"),
   (req, res) => {
     butter.page
       .retrieve("*", "regulatoryauthorisation-ar")
@@ -441,7 +445,7 @@ router.post("/" + encodeURIComponent("المدير-التنفيذي"), (req, res
   };
   //ES6
   sgMail.send(msg).then(
-    () => {},
+    () => { },
     (error) => {
       console.error(error);
 
@@ -486,7 +490,6 @@ router.get("/" + encodeURIComponent("أخبار-التداول"), async (req, re
       };
       const article = data
         .map((post) => {
-          // console.log(decodeURIComponent(post.slug))
           let date = post.date.split("T")[0];
           let image;
 
@@ -1101,7 +1104,6 @@ router.get("/tag/:tag", async (req, res) => {
   const tag_id = getTag.arabicTags.find(
     (elem) => elem.Name === req.params.tag
   ).tag_id;
-  console.log(req.params.tag + " " + tag_id);
   if (tag_id === undefined) {
     res.redirect("/");
   }
@@ -1126,19 +1128,15 @@ router.get("/tag/:tag", async (req, res) => {
           let date = post.date.split("T")[0];
           return `<div class="card">
                     <div> 
-                           <a href='${
-                             post.link + "?lang=ar"
-                           }'>  <img class="card-img-top" src="${
-            post.featured_image_url
-          }" alt="Card image cap" title="${post.title.rendered}"> </a>
+                           <a href='${post.link + "?lang=ar"
+            }'>  <img class="card-img-top" src="${post.featured_image_url
+            }" alt="Card image cap" title="${post.title.rendered}"> </a>
         <div class="card-body">
-        <a href='${post.link + "?lang=ar"}' ><h5 class="card-title">${
-            post.title.rendered
-          }</h5></a>
+        <a href='${post.link + "?lang=ar"}' ><h5 class="card-title">${post.title.rendered
+            }</h5></a>
         <div class="card-text description">${post.excerpt.rendered}</div>
-        <a class="btn btn-filled readmore" href='${
-          post.link + "?lang=ar"
-        }'>أقرا المزيد</a>
+        <a class="btn btn-filled readmore" href='${post.link + "?lang=ar"
+            }'>أقرا المزيد</a>
         </div></div>
         <div class="card-footer dateCreated">
         ${date}
@@ -1159,8 +1157,7 @@ router.get("/tag/:tag", async (req, res) => {
   res.on("finish", () => {
     const durationInMilliseconds = getDurationInMilliseconds(start);
     console.log(
-      `${req.method} ${
-        req.originalUrl
+      `${req.method} ${req.originalUrl
       } [FINISHED] ${durationInMilliseconds.toLocaleString()} ms`
     );
   });
@@ -1168,8 +1165,7 @@ router.get("/tag/:tag", async (req, res) => {
   res.on("close", () => {
     const durationInMilliseconds = getDurationInMilliseconds(start);
     console.log(
-      `${req.method} ${
-        req.originalUrl
+      `${req.method} ${req.originalUrl
       } [CLOSED] ${durationInMilliseconds.toLocaleString()} ms`
     );
   });

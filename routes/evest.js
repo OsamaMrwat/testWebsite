@@ -61,7 +61,7 @@ router.get("/help-desk", (req, res) => {
 
 router.get("/evest-talk-en", (req, res) => {
   butter.page
-    .retrieve("*", "evest-talk-en")
+    .retrieve("*", "evest-talk-generic-en")
     .then(function (resp) {
       var page1 = resp.data.data;
       res.render("Evest/evesttalk", {

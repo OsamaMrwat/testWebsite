@@ -125,7 +125,6 @@ app.post("/sendEvestTalk", async (req, res) => {
 
   const msg = {
     to: ["osama.ba@evest.com", "seo@evest.com", "rossol.kadhem@evest.com"],
-    // to: "osama.ba@evest.com",
     from: `${req.body.email}`, // Use the email address or domain you verified above
     subject: `New Message from the Evest Talk website page`,
     html: `<h1>You Got New Message</h1>
@@ -138,12 +137,9 @@ app.post("/sendEvestTalk", async (req, res) => {
     // replyTo: `${req.body.email}`,
   };
 
-  // console.log(msg);
-  //ES6
+
   sgMail.send(msg).then(
-    (res) => {
-      console.log(res);
-    },
+    (res) => { console.log(res) },
     (error) => {
       console.error(error);
 

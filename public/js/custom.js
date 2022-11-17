@@ -85,10 +85,10 @@ var forexEvents = {
   init: appInitCallback,
   themeChange: themeChangeCallback,
 };
-function depositSuccessCallback(e) {}
-function depositFailCallback(e) {}
-function signupSuccessCallback(e) {}
-function signupFailCallback(e) {}
+function depositSuccessCallback(e) { }
+function depositFailCallback(e) { }
+function signupSuccessCallback(e) { }
+function signupFailCallback(e) { }
 function loginSuccessCallback(e) {
   tipRanksAnalytics(e);
   localStorage.setItem("loggedin", "true");
@@ -115,7 +115,7 @@ function loginSuccessCallback(e) {
     }
   }
 }
-function loginFailCallback(e) {}
+function loginFailCallback(e) { }
 function logoutCallback(e) {
   location.reload();
   localStorage.removeItem("loggedin");
@@ -129,7 +129,7 @@ function themeChangeCallback(e) {
   "theme-dark" === (a = e).theme
     ? $("body").addClass("theme-dark").removeClass("theme-white")
     : "theme-white" === a.theme &&
-      $("body").addClass("theme-white").removeClass("theme-dark");
+    $("body").addClass("theme-white").removeClass("theme-dark");
 }
 
 function changeThemeColorCHKBX(e) {
@@ -143,9 +143,9 @@ function changeThemeColorCHKBX(e) {
         ? t.prop("checked", !1)
         : t.prop("checked", !0)
       : "click" === e &&
-        (D === n
-          ? runPlugin("forexSwitchTheme", { theme: "theme-dark" })
-          : runPlugin("forexSwitchTheme", { theme: n }));
+      (D === n
+        ? runPlugin("forexSwitchTheme", { theme: "theme-dark" })
+        : runPlugin("forexSwitchTheme", { theme: n }));
 }
 
 window.addEventListener("beforeunload", function () {
@@ -153,21 +153,21 @@ window.addEventListener("beforeunload", function () {
 });
 
 var labels = {
-    resetTitle: "إعادة تعيين",
-    closeTitle: "أغلق",
-    menuTitle: "ضبط الموقع",
-    increaseText: "زيادة حجم النص",
-    decreaseText: "تقليل حجم النص",
-    increaseTextSpacing: "زيادة تباعد النص",
-    decreaseTextSpacing: "تقليل تباعد النص",
-    invertColors: "ألوان مقلوبة",
-    grayHues: "أحادية اللون",
-    underlineLinks: "تسطير الروابط",
-    bigCursor: "مؤشر كبير",
-    readingGuide: "دليل القراءة",
-    textToSpeech: "النص إلى الكلام",
-    speechToText: " الكلام إلى نص",
-  },
+  resetTitle: "إعادة تعيين",
+  closeTitle: "أغلق",
+  menuTitle: "ضبط الموقع",
+  increaseText: "زيادة حجم النص",
+  decreaseText: "تقليل حجم النص",
+  increaseTextSpacing: "زيادة تباعد النص",
+  decreaseTextSpacing: "تقليل تباعد النص",
+  invertColors: "ألوان مقلوبة",
+  grayHues: "أحادية اللون",
+  underlineLinks: "تسطير الروابط",
+  bigCursor: "مؤشر كبير",
+  readingGuide: "دليل القراءة",
+  textToSpeech: "النص إلى الكلام",
+  speechToText: " الكلام إلى نص",
+},
   arabic = {
     labels: labels,
     icon: {
@@ -336,7 +336,6 @@ var arLinks = [
     ar: "/ar/%D8%A5%D9%8A%DA%A4%D8%B3%D8%AA/%D8%A7%D9%8A%D9%81%D8%B3%D8%AA-%D8%AA%D9%88%D9%83",
     es: "/es",
   },
-
   {
     en: "/start-trading/cryptocurrency",
     ar: "/ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9",
@@ -363,6 +362,7 @@ for (var i = 0; i < engLang.length; i++) {
       console.log(lang);
       if (lang == "ar") {
         location.href = arLinks.find((e) => e.ar == page).en;
+        arLinks.find((e) => e.ar == page).en;
       } else {
         location.href = arLinks.find((e) => e.es == page).en;
       }
@@ -378,7 +378,6 @@ for (var i = 0; i < arLang.length; i++) {
       if (lang == "es") {
         location.href = arLinks.find((e) => e.es == page).ar + "?lang=ar";
       } else {
-        console.log(page);
         location.href = arLinks.find((e) => e.en == page).ar + "?lang=ar";
       }
     });
