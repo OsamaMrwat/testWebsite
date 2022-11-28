@@ -306,7 +306,7 @@ router.post("/sendArabic", (req, res) => {
     MESSAGE: ${req.body.message}.<br>
     IP : ${ipAddress}<br><br>
     </p>`,
-    // replyTo: `${req.body.email}`,
+    replyTo: `${req.body.email}`,
   };
   //ES6
   sgMail.send(msg).then(
