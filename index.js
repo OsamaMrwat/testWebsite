@@ -154,20 +154,34 @@ app.post("/sendEvestTalk", async (req, res) => {
 
 async function getPostSiteMaps() {
   let all_links_en = [];
-  let categories_en = ["trading-news", "oil-news", "gold-news", "market-news"];
+  let categories_en = [
+    // "trading-news", "oil-news", "gold-news", "market-news",
+    8,
+    21,
+    19
+  ];
 
   var status = new Promise((resolve, reject) => {
     categories_en.forEach(async (elem) => {
       for (let page = 1; page < 3; page++) {
         await axios
           .get(
-            `https://cms.evest.com/wp-json/wp/v2/${elem}?page=${page}&per_page=100`
+            `https://evest.blog/wp-json/wp/v2/posts?categories=${elem}&per_page=100&page=${page}`
           )
           .then((res) => {
             // push all links into our all_links variable
             for (let ele in res.data) {
-              if (!res.data[ele].link.includes("commodities")) {
-                all_links_en.push(res.data[ele].link.substring(22));
+              if (elem === 8) { // if it trading news
+                all_links_en.push(`trading-news${res.data[ele].link.split('trading-news')[1]}`);
+                // console.log(res.data[ele].link.split('trading-news')[1])
+              } else if (elem === 21) { // if it is oil news
+                if (res.data[ele].link.includes('trading-news'))
+                  continue;
+                else
+                  all_links_en.push(`oil-news${res.data[ele].link.split('oil-news')[1]}`)
+                // console.log(`oil-news${res.data[ele].link.split('oil-news')[1]}`)
+              } else if (elem === 19) {
+                all_links_en.push(`gold-news${res.data[ele].link.split('gold-news')[1]}`)
               }
             }
           })
@@ -190,7 +204,7 @@ async function getPostSiteMaps() {
 
       fs.writeFile("./public/news_en.xml", sitemap, function (err) {
         if (err) throw err;
-        console.log("File is created successfully.");
+        console.log("File is created successfully. news_en.xml");
       });
     });
   });
@@ -198,10 +212,9 @@ async function getPostSiteMaps() {
 
   let all_links_ar = [];
   let categories_ar = [
-    "trading-news-ar",
-    "oil-news-ar",
-    "gold-news-ar",
-    "market-news-ar",
+    1,
+    15,
+    13
   ];
 
   categories_ar.forEach(async (elem) => {
@@ -209,7 +222,7 @@ async function getPostSiteMaps() {
       await axios
         .get(
           // اخبار التداولnews
-          `https://cms.evest.com/ar/wp-json/wp/v2/${elem}?page=${page}&per_page=100`
+          `https://evest.blog/wp-json/wp/v2/posts?categories=${elem}&per_page=100&page=${page}`
         )
         .then((res) => {
           // push all links into our all_links variable
@@ -221,11 +234,10 @@ async function getPostSiteMaps() {
           return;
         });
 
-      // console.log(all_links_ar)
 
       let sitemap_entries2 = all_links_ar.map((link) => {
         // you got access to every property of those links here. Note the \n I've added to format it in the output - you don't need that in the real XML.
-        return `\n<url><loc>https://www.evest.com/${link}</loc></url>`;
+        return `\n<url><loc>https://www.evest.com/ar/${link}</loc></url>`;
       });
       // the actual sitemap with all it's entries.
       let sitemap2 = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
@@ -237,14 +249,61 @@ async function getPostSiteMaps() {
 
       fs.writeFile("./public/news_ar.xml", sitemap2, function (err) {
         if (err) throw err;
-        console.log("File is created successfully.");
+        console.log("File is created successfully. news_ar.xml");
       });
     }
   });
 }
+
 async function getPagesSiteMaps() {
-  let all_links = [];
-  let all_links_ar = [];
+  let all_links = [`evest/evest-talk-en`, 'evest/why-evest', 'evest/regulatory-authorisation', 'evest/evest-ambassador', 'ceo', 'evest/careers', 'evest/help-desk', 'start-trading/eib', 'start-trading/cryptocurrency', 'trading-products',
+    'trade-room/?asset=EURUSD',
+    'trade-room/?asset=BTCUSD',
+    'trade-room/?asset=GOLD',
+    'trade-room/?asset=USOIL',
+    'trade-room/?asset=APPLE',
+    'trade-room/?asset=TESLA',
+    'trading-academy', 'trading-news', 'faq'];
+  let all_links_ar = [
+    'ar/إيڤست/ايفست-توك?lang=ar', 'trade-room/?lang=ar', 'ar/%D8%A5%D9%8A%DA%A4%D8%B3%D8%AA?lang=ar',
+    'ar/%D8%A5%D9%8A%DA%A4%D8%B3%D8%AA/%D8%AA%D8%B1%D8%A7%D8%AE%D9%8A%D8%B5-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84?lang=ar',
+    'ar/%D8%A5%D9%8A%DA%A4%D8%B3%D8%AA/%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D8%A5%D9%8A%DA%A4%D8%B3%D8%AA?lang=ar',
+    'ar/%D8%A5%D9%8A%DA%A4%D8%B3%D8%AA/%D8%B3%D9%81%D9%8A%D8%B1-%D8%A5%D9%8A%DA%A4%D8%B3%D8%AA?lang=ar',
+    'ar/%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D8%B1-%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%D9%8A?lang=ar',
+    'ar/%D8%A5%D9%8A%DA%A4%D8%B3%D8%AA/%D8%A7%D8%AA%D8%B5%D9%84-%D8%A8%D9%86%D8%A7?lang=ar',
+    'ar/%D8%A5%D9%8A%DA%A4%D8%B3%D8%AA/%D9%88%D8%B8%D8%A7%D8%A6%D9%81-%D8%A5%D9%8A%DA%A4%D8%B3%D8%AA?lang=ar',
+    'ar/%D8%A5%D9%8A%DA%A4%D8%B3%D8%AA/%D9%85%D8%B1%D9%83%D8%B2-%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9?lang=ar',
+    'ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%86%D9%88%D8%A7%D8%B9-%D8%A7%D9%84%D8%AD%D8%B3%D8%A7%D8%A8%D8%A7%D8%AA?lang=ar',
+    'ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%AD%D8%B3%D8%A7%D8%A8-%D8%AA%D8%AF%D8%A7%D9%88%D9%84-%D8%AA%D8%AC%D8%B1%D9%8A%D8%A8%D9%8A?lang=ar',
+    'ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%AD%D8%B3%D8%A7%D8%A8-%D8%AA%D8%AF%D8%A7%D9%88%D9%84-%D8%AA%D8%AC%D8%B1%D9%8A%D8%A8%D9%8A?lang=ar',
+    'ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%B3%D9%8E%D9%84%D8%A7%D9%91%D9%8E%D8%AA-%D8%AA%D8%AF%D8%A7%D9%88%D9%84-%D8%A7%D8%B3%D8%AA%D8%AB%D9%85%D8%A7%D8%B1%D9%8A%D8%A9?lang=ar',
+    'ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9?lang=ar',
+    'ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%AD%D8%B3%D8%A7%D8%A8-%D8%AA%D8%AF%D8%A7%D9%88%D9%84-%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A?lang=ar',
+    'ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%84%D9%88%D8%AB%D8%A7%D8%A6%D9%82-%D9%88-%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D8%A7%D8%AA?lang=ar',
+    'ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%84%D8%A5%D9%8A%D8%AF%D8%A7%D8%B9-%D9%88-%D8%A7%D9%84%D8%B3%D8%AD%D8%A8?lang=ar',
+    'ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%B1%D8%B3%D9%88%D9%85-%D8%A7%D9%8A%D9%81%D8%B3%D8%AA?lang=ar',
+    'ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%A7%D9%88%D9%82%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84?lang=ar',
+    'ar/%D8%A7%D8%A8%D8%AF%D8%A7-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84/%D8%AD%D8%A7%D8%B3%D8%A8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84?lang=ar',
+    'ar/%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84-%D9%85%D9%86-%D8%A7%D9%84%D8%AC%D9%88%D8%A7%D9%84?lang=ar',
+    'ar/%D8%AA%D8%AF%D8%A7%D9%88%D9%84-%D9%85%D9%86-%D8%A7%D9%84%D9%85%D8%AA%D8%B5%D9%81%D8%AD?lang=ar',
+    'ar/%D8%AA%D8%AF%D8%A7%D9%88%D9%84-%D9%85%D9%86-%D8%A7%D9%84%D9%85%D8%AA%D8%B5%D9%81%D8%AD?lang=ar',
+    'ar/%D9%85%D9%8A%D8%AA%D8%A7%D8%AA%D8%B1%D9%8A%D8%AF%D8%B1-5?lang=ar',
+    'ar/%D8%AA%D8%B7%D8%A8%D9%8A%D9%82-%D8%AA%D8%AF%D8%A7%D9%88%D9%84-%D8%A7%D9%8A%D9%81%D8%B3%D8%AA?lang=ar',
+    'ar/%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84?lang=ar',
+    'trade-room/?asset=EURUSD',
+    'trade-room/?asset=BTCUSD',
+    'trade-room/?asset=GOLD',
+    'trade-room/?asset=USOIL',
+    'trade-room/?asset=APPLE',
+    'trade-room/?asset=TESLA',
+    'ar/%D8%A3%D9%83%D8%A7%D8%AF%D9%8A%D9%85%D9%8A%D8%A9-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84?lang=ar',
+    'ar/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84?lang=ar',
+    'ar/%D9%85%D8%AF%D9%88%D9%86%D8%A9-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84?lang=ar',
+    'ar/%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%B3%D9%88%D9%82?lang=ar',
+    'ar/%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%B3%D9%88%D9%82?lang=ar',
+    'ar/%D9%85%D8%AF%D9%88%D9%86%D8%A9-%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84?lang=ar',
+    'ar/%D8%A3%D8%B3%D8%A6%D9%84%D8%A9-%D8%B4%D8%A7%D8%A6%D8%B9%D8%A9?lang=ar',
+    'ar/%D8%A5%D9%8A%DA%A4%D8%B3%D8%AA/%D8%A7%D9%8A%D9%81%D8%B3%D8%AA-%D8%AA%D9%88%D9%83?lang=ar'];
 
   await axios
     .get(`https://cms.evest.com/wp-json/wp/v2/pages?page=1&per_page=100`)
@@ -260,23 +319,24 @@ async function getPagesSiteMaps() {
     });
 
   // for (let page = 1; page < 10; page++) {
-  await axios
-    .get(`https://cms.evest.com/ar/wp-json/wp/v2/pages?page=1&per_page=100`)
-    .then((res) => {
-      // push all links into our all_links variable
-      for (let ele in res.data) {
-        all_links_ar.push(res.data[ele].link.substring(22));
-      }
-    })
-    .catch((error) => {
-      return;
-    });
+  // await axios
+  //   .get(`https://cms.evest.com/ar/wp-json/wp/v2/pages?page=1&per_page=100`)
+  //   .then((res) => {
+  //     // push all links into our all_links variable
+  //     for (let ele in res.data) {
+  //       all_links_ar.push(res.data[ele].link.substring(22));
+  //     }
+  //   })
+  //   .catch((error) => {
+  //     return;
+  //   });
   // }
 
   let sitemap_entries = all_links.map((link) => {
     // you got access to every property of those links here. Note the \n I've added to format it in the output - you don't need that in the real XML.
     return `\n<url><loc>https://www.evest.com/${link}</loc></url>`;
   });
+
 
   // the actual sitemap with all it's entries.
   let sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
@@ -315,15 +375,14 @@ xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entrie
 
 async function getArabicBlogs() {
   let all_links = [];
-  for (let page = 1; page < 10; page++) {
+  for (let page = 1; page < 3; page++) {
     await axios
       .get(
-        `https://cms.evest.com/ar/wp-json/wp/v2/blog-ar?page=${page}&per_page=100`
+        `https://evest.blog/wp-json/wp/v2/posts?categories=17&per_page=100&page=${page}`
       )
       .then((res) => {
-        // push all links into our all_links variable
         for (let ele in res.data) {
-          all_links.push(res.data[ele].link.substring(22));
+          all_links.push(res.data[ele].slug);
         }
       })
       .catch((error) => {
@@ -333,7 +392,7 @@ async function getArabicBlogs() {
 
   let sitemap_entries = all_links.map((link) => {
     // you got access to every property of those links here. Note the \n I've added to format it in the output - you don't need that in the real XML.
-    return `\n<url><loc>https://www.evest.com/${link}</loc></url>`;
+    return `\n<url><loc>https://www.evest.com/ar/مدونة-التداول/${link}</loc></url>`;
   });
 
   // the actual sitemap with all it's entries.
@@ -350,6 +409,7 @@ xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entrie
     console.log("File is created successfully.");
   });
 }
+
 
 async function getCategoriesSiteMaps() {
   let all_links = [];
@@ -503,51 +563,21 @@ xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entrie
   });
 }
 
-// -------------------------------------
-// This is the website pages
-// getPagesSiteMaps()
-
-// This is the news in english and arabic
-// getPostSiteMaps()
-
-// setInterval(() => {
-//   getArabicBlogs()
-// }, 10000)
-
-// getPagesSiteMaps();
-// getPostSiteMaps();
-// getArabicBlogs();
-
-setInterval(() => {
-  getPagesSiteMaps();
+try {
   getPostSiteMaps();
-  getArabicBlogs();
-}, 86400000);
+  getArabicBlogs()
+  getPagesSiteMaps();
 
-// setInterval(() => {
+  setInterval(() => {
+    getPagesSiteMaps();
+    getPostSiteMaps();
+    getArabicBlogs();
+  }, 86400000);
 
-// }, 86401000)
+} catch (e) {
+  console.log(e)
+}
 
-// setInterval(() => {
-// }, 86402000)
-// -------------------------------------
-
-// function getAllXMLs() {
-// getPostSiteMaps();
-// getPagesSiteMaps();
-// getCategoriesSiteMaps();
-// getTagsSiteMaps();
-// getCommoditiesSiteMaps();
-// }
-
-// const postSitemap=
-
-// const scheduler = new ToadScheduler()
-
-// const task = new Task('simple task', getPostSiteMaps)
-// const job = new SimpleIntervalJob({ seconds: 5 }, task)
-
-// scheduler.addSimpleIntervalJob(job)
 
 const SitemapGenerator = require("sitemap-generator");
 // create generator
