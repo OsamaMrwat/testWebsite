@@ -163,7 +163,7 @@ async function getPostSiteMaps() {
 
   var status = new Promise((resolve, reject) => {
     categories_en.forEach(async (elem) => {
-      for (let page = 1; page < 3; page++) {
+      for (let page = 1; page < 8; page++) {
         await axios
           .get(
             `https://evest.blog/wp-json/wp/v2/posts?categories=${elem}&per_page=100&page=${page}`
@@ -218,7 +218,7 @@ async function getPostSiteMaps() {
   ];
 
   categories_ar.forEach(async (elem) => {
-    for (let page = 1; page < 3; page++) {
+    for (let page = 1; page < 8; page++) {
       await axios
         .get(
           // اخبار التداولnews
@@ -375,7 +375,7 @@ xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entrie
 
 async function getArabicBlogs() {
   let all_links = [];
-  for (let page = 1; page < 3; page++) {
+  for (let page = 1; page < 8; page++) {
     await axios
       .get(
         `https://evest.blog/wp-json/wp/v2/posts?categories=17&per_page=100&page=${page}`
