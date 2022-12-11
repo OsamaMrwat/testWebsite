@@ -1,0 +1,74 @@
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+
+<div style="margin: 0 auto;width: 80%">
+
+
+
+
+    <div>
+
+
+        <form action="/documentUpload" method="POST" enctype="multipart/form-data">
+
+            <div style="display: flex;gap: 20px">
+                <div>
+                    <label for="cars">Choose a File:</label>
+
+                    <select name="files" id="files">
+                        <option value="none">None</option>
+                        <option value="COMPLAINTS">COMPLAINTS HANDLING POLICY</option>
+                        <option value="RISK_DISCLOSURE">RISK DISCLOSURE</option>
+                        <option value="KYC">KNOW YOUR CLIENT REQUIREMENTS</option>
+                        <option value="TERMS_AND_CONDITIONS">CLIENT AGREEMENT</option>
+                        <option value="Privacy_Policy">Privacy Policy</option>
+                        <option value="Cookies_Policy">COOKIES POLICY</option>
+                        <option value="Bonus_Policy">BONUSES POLICY</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="cars">Language:</label>
+
+                    <select name="language" id="languages">
+                        <option value="none">None</option>
+                        <option value="en">English</option>
+                        <option value="ar">arabic</option>
+                    </select>
+
+                </div>
+            </div>
+
+
+
+
+
+            <div style="margin-top: 10px;">
+                <input id="uploadFileInput" type="file" name="cv">
+                <input id="sendCvButton" type="submit" value="Upload File">
+            </div>
+        </form>
+
+
+
+        <%if (uploaded) { %>
+
+            <div
+                style="margin-top: 20px; background-color : #2fb72f99; color : white; font-weight: bold;padding: 10px; border-radius:10px">
+                <p style="margin-bottom: 0">File Uploaded successfully</p>
+            </div>
+
+            <% } %>
+
+
+    </div>
+
+
+
+</div>
