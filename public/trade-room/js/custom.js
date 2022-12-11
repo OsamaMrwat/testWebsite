@@ -92,7 +92,7 @@ function loginSuccessCallback(event) {
     const currency = event.customer.currency
     event.customer.tradingAccounts
 
-    console.log()
+
     localStorage.setItem("loggedin", "true");
     $('#tvDiv').show();
     $('#coinsDiv').show();
@@ -122,18 +122,43 @@ function loginSuccessCallback(event) {
         }
     });
 
-    console.log(customer)
+    // console.log(customer)
 
-    console.log(window.top.document.getElementById("cpWebGAPlugin"))
-    if (null == window.top.document.getElementById("cpWebGAPlugin")) {
-        var headID = document.getElementsByTagName("head")[0],
-            newScript = document.createElement("script");
+    // console.log(window.top.document.getElementById("cpWebGAPlugin"))
+    // if (null == window.top.document.getElementById("cpWebGAPlugin")) {
+    //     var headID = document.getElementsByTagName("head")[0],
+    //         newScript = document.createElement("script");
 
-        newScript.type = "text/javascript";
-        newScript.src = "https://evest.cpattern.com/scripts/HtmlGeneralPlugin.aspx";
-        newScript.id = "cpWebGAPlugin";
-        headID.appendChild(newScript)
-    };
+    //     newScript.type = "text/javascript";
+    //     newScript.src = "https://evest.cpattern.com/scripts/HtmlGeneralPlugin.aspx";
+    //     newScript.id = "cpWebGAPlugin";
+    //     headID.appendChild(newScript)
+    // };
+
+    const inputCpatternFieldNames = {
+        "cp_currency": { name: "cp_currency", val: event.customer.currency },
+        "cp_login": { name: "cp_login", val: '' },
+        "cp_live": { name: "cp_live/demo", val: 'Live' },
+        "cp_language": { name: "cp_language", val: event.customer.country }
+    }
+
+
+    event.customer.tradingAccounts.map(acc => {
+        if (acc.live) {
+            inputCpatternFieldNames['cp_login'].val = acc.login
+        }
+    })
+
+    let parent = document.getElementById('accountSettingsContainer')
+
+    for (const prop in inputCpatternFieldNames) {
+        let input = document.createElement('input')
+        input.type = 'hidden'
+        input.name = prop
+        input.value = inputCpatternFieldNames[prop].val;
+        parent.appendChild(input)
+    }
+
 
 
 }
@@ -144,8 +169,10 @@ function loginFailCallback(event) {
 
 function logoutCallback(event) {
     //console.log('logout callback event', event);
-    location.reload();
+    const cpatternInputs = $('#accountSettingsContainer');
+    cpatternInputs.empty()
     localStorage.removeItem("loggedin");
+    location.reload();
 }
 
 window.addEventListener('beforeunload', function () {
