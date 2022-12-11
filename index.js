@@ -120,6 +120,93 @@ app.use("/ar", arabicRouting);
 /*Spainsh Routing*/
 app.use("/es", spainshRouting);
 
+
+
+app.use('/documents', (req, res) => {
+
+
+  const reject = () => {
+    res.setHeader("www-authenticate", "Basic");
+    res.sendStatus(401);
+  };
+
+  const authorization = req.headers.authorization;
+  if (!authorization) {
+    return reject();
+  }
+
+  const [username, password] = Buffer.from(
+    authorization.replace("Basic ", ""),
+    "base64"
+  )
+    .toString()
+    .split(":");
+
+  if (!(username === process.env.DOCUMENTS_USER_NAME && password === process.env.DOCUMENTS_USER_PASS)) {
+    return reject();
+  }
+
+
+  var page = {
+    fields: {
+      seo: {
+        meta_description: "",
+        meta_keywords: ``,
+        page_title: `upload file to get public link`,
+      },
+    },
+  };
+  res.render("documents", { page: page, link: "", uploaded: false });
+})
+
+
+app.post('/documentUpload', (req, res) => {
+  const data = req.body;
+
+  const filesNames = {
+    'COMPLAINTS': { en: 'EN-Complaint_Policy.pdf', ar: 'AR-Atria financial Ltd-Complaint Policy.pdf' },
+    'RISK_DISCLOSURE': { en: 'EN-RISK_DISCLOSURE.pdf', ar: 'AR-Atria Financial Ltd-RISK DISCLOSURES.pdf' },
+    'KYC': { en: 'EN-KNOW-YOUR-CUSTOMER-REQUIREMENTS.pdf', ar: 'AR-KNOW-YOUR-CUSTOMER-REQUIREMENTS.pdf' },
+    'TERMS_AND_CONDITIONS': { en: 'EN-TERMS_AND_CONDITIONS.pdf', ar: 'AR-Atria financial-TERMS_AND_CONDITIONS.pdf' },
+    'Privacy_Policy': { en: 'EN-Privacy_Policy.pdf', ar: 'AR-Atria_financial__Privacy_Policy.pdf' },
+    'Cookies_Policy': { en: 'EN-Cookies_Policy.pdf', ar: 'AR-Atria_financial-Ltd-Cookies-Policy.pdf' },
+    'Bonus_Policy': { en: 'ATRIAFINANCIAL_LTD_Bonus_Policy.pdf', ar: 'ATRIAFINANCIAL_LTD_Bonus_Policy.pdf' },
+  }
+
+  const knownLanguage = data.language === 'en' ? true : data.language === 'ar' ? true : false
+
+  let path;
+
+  if (!req.files || Object.keys(req.files).length === 0 || data.files === 'none' || data.language === 'none' || !knownLanguage) {
+    return res.status(400).send("No files were uploaded.");
+  }
+
+  var page = {
+    fields: {
+      seo: {
+        meta_description: "",
+        meta_keywords: ``,
+        page_title: `upload file to get public link`,
+      },
+    },
+  };
+
+  if (filesNames[data.files]) {
+
+    path = `./public/legal/${data.language}/${filesNames[data.files][data.language]}`
+    let attachment = req.files.cv.data.toString("base64");
+
+    fs.writeFile(path, attachment, { encoding: 'base64' }, function (err) {
+      console.log('File created');
+    });
+
+    return res.render("documents", { page: page, link: "", uploaded: true });
+  }
+
+  res.render("documents", { page: page, link: "", uploaded: false });
+
+})
+
 app.post("/sendEvestTalk", async (req, res) => {
   // const ipAddress = IP.address();
 
@@ -564,9 +651,9 @@ xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entrie
 }
 
 try {
-  getPostSiteMaps();
-  getArabicBlogs()
-  getPagesSiteMaps();
+  // getPostSiteMaps();
+  // getArabicBlogs()
+  // getPagesSiteMaps();
 
   setInterval(() => {
     getPagesSiteMaps();
