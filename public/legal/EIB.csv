@@ -1,5 +1,5 @@
 Instrument,Leverage Buy/Sell,Commission Per Lot,Long Swaps Base Currency,Short Swaps Base Currency, Contract Size
-USTECH,10,0,-100,-100,100
+USTECH,10,0,-40,-40,100
 USBANKS,10,0,-10,-10,100
 GERGIANTS,10,0,-8.4,-8.4,100
 USHEAVY,10,0,-10,-10,100
@@ -12,3 +12,4 @@ FASHION,10,0,-96,-96,100
 W.BUFFETT1,10,0,-32,-32,100
 W.BUFFETT2,10,0,-15,-15,100
 CRYPTOETF,2,0,-40,-40,100
+METAVERSE,10,0,-20,-20,100
