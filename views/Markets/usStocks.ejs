@@ -14,8 +14,7 @@
     </div>
 
   </div>
-  <div class="container bg-white my-4"
-    style="display:flex;flex-direction:column;">
+  <div class="container bg-white my-4" style="display:flex;flex-direction:column;">
     <div class="row" style="width:20%">
       <div class="contianer py-3 mx-4"
         style="display: flex;justify-content: space-between;align-items: baseline;width:100%;">
@@ -66,113 +65,131 @@ align-items: baseline;">
           <th style="width:10%">VOL</th>
           <th style="width:10%">MKT CAP</th>
         </tr>
-        <div class="container"> <%- stocks %></div>
-       
+        <div class="container">
+          <%- stocks %>
+        </div>
+
       </table>
     </div>
   </div>
 </div>
 <style>
-    #myInput {
-  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
-  background-position: 10px 12px; /* Position the search icon */
-  background-repeat: no-repeat; /* Do not repeat the icon image */
-  width: 100%; /* Full-width */
-  font-size: 16px; /* Increase font-size */
-  padding: 12px 20px 12px 40px; /* Add some padding */
-  border: 1px solid #ddd; /* Add a grey border */
-  margin-bottom: 12px; /* Add some space below the input */
-}
+  #myInput {
+    background-image: url('/css/searchicon.png');
+    /* Add a search icon to input */
+    background-position: 10px 12px;
+    /* Position the search icon */
+    background-repeat: no-repeat;
+    /* Do not repeat the icon image */
+    width: 100%;
+    /* Full-width */
+    font-size: 16px;
+    /* Increase font-size */
+    padding: 12px 20px 12px 40px;
+    /* Add some padding */
+    border: 1px solid #ddd;
+    /* Add a grey border */
+    margin-bottom: 12px;
+    /* Add some space below the input */
+  }
 
-#myTable {
-  border-collapse: collapse; /* Collapse borders */
-  width: 100%; /* Full-width */
-  border: 1px solid #ddd; /* Add a grey border */
-  font-size: 18px; /* Increase font-size */
-}
+  #myTable {
+    border-collapse: collapse;
+    /* Collapse borders */
+    width: 100%;
+    /* Full-width */
+    border: 1px solid #ddd;
+    /* Add a grey border */
+    font-size: 18px;
+    /* Increase font-size */
+  }
 
-#myTable th, #myTable td {
-  text-align: left; /* Left-align text */
-  padding: 12px; /* Add padding */
-}
+  #myTable th,
+  #myTable td {
+    text-align: left;
+    /* Left-align text */
+    padding: 12px;
+    /* Add padding */
+  }
 
-#myTable tr {
-  /* Add a bottom border to all table rows */
-  border-bottom: 1px solid #ddd;
-}
+  #myTable tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd;
+  }
 
-#myTable tr.header, #myTable tr:hover {
-  /* Add a grey background color to the table header and on hover */
-  background-color: #f1f1f1;
-}
+  #myTable tr.header,
+  #myTable tr:hover {
+    /* Add a grey background color to the table header and on hover */
+    background-color: #f1f1f1;
+  }
 
-    .pagination {
-  display: inline-block;
-  background-color:white;
-}
+  .pagination {
+    display: inline-block;
+    background-color: white;
+  }
 
-.pagination a {
-  color: black;
-  float: left;
-  padding: 8px 16px;
-  text-decoration: none;
-  background:white
-}
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    background: white
+  }
 
-.pagination a.active {
-  background-color: #d1d1d1;
-  color: white;
-}
+  .pagination a.active {
+    background-color: #d1d1d1;
+    color: white;
+  }
 
-.pagination a:hover:not(.active) {
-  background-color: #ddd;
-}
+  .pagination a:hover:not(.active) {
+    background-color: #ddd;
+  }
 </style>
 
 <script>
-    //function generate breadcrumbs from url
-    function generateBreadcrumbs(url) {
-        var url = url.split("/");
-        var breadcrumbs = "";
-        for (var i = 0; i < url.length; i++) {
-            if (url[i] != "") {
-                breadcrumbs += "<a href='/markets/" + url[i] + "'>" + url[i] + "</a>";
-                if (i != url.length - 1) {
-                    breadcrumbs += " > ";
-                }
-            }
+  //function generate breadcrumbs from url
+  function generateBreadcrumbs(url) {
+    var url = url.split("/");
+    var breadcrumbs = "";
+    for (var i = 0; i < url.length; i++) {
+      if (url[i] != "") {
+        breadcrumbs += "<a href='/markets/" + url[i] + "'>" + url[i] + "</a>";
+        if (i != url.length - 1) {
+          breadcrumbs += " > ";
         }
-        document.getElementById("breadcrumbs").innerHTML = breadcrumbs;
+      }
     }
-    generateBreadcrumbs(window.location.pathname);
+    document.getElementById("breadcrumbs").innerHTML = breadcrumbs;
+  }
+  generateBreadcrumbs(window.location.pathname);
 
-    //pagination function change active class when click
-    $(document).ready(function() {
-        $(".pagination a").on("click", function() {
-            $(".pagination a").removeClass("active");
-            $(this).addClass("active");
-            console.log($(this).text())
-        });
+  //pagination function change active class when click
+  $(document).ready(function () {
+    $(".pagination a").on("click", function () {
+      $(".pagination a").removeClass("active");
+      $(this).addClass("active");
+      console.log($(this).text())
     });
+  });
 
-//search function in table
-function myFunction() {
-  var input, filter, table, tr, th, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 1; i < tr.length; i++) {
-    th = tr[i].getElementsByTagName("th")[0];
-    if (th) {
-      if (th.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
+  //search function in table
+  function myFunction() {
+    var input, filter, table, tr, th, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 1; i < tr.length; i++) {
+      th = tr[i].getElementsByTagName("th")[0];
+      if (th) {
+        if (th.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
       }
     }
   }
-}
 
 
 </script>
