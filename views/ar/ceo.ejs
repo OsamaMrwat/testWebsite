@@ -1,5 +1,16 @@
+<head>
+  <title>CEO</title>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script>
+    function onSubmit(token) {
+      document.getElementById("evest-form").submit();
+    }
+  </script>
+</head>
+
 <div class="mobile-img">
-  <div class="container" style="background: url('/images/meet the CEO Mobile-04.png');height:700px;background-size: cover;color:white;">
+  <div class="container"
+    style="background: url('/images/meet the CEO Mobile-04.png');height:700px;background-size: cover;color:white;">
     <h1 style="
     padding-top: 108%;
     padding-right: 5%;
@@ -13,33 +24,33 @@
       يشرف السيّد علي حسن على التموضع الاستراتيجي<br> للشركة القبرصية التي تبلغ قيمتها
       <span>50</span> مليون دولار. <span>EVEST</span> هي <br>
       شركة تداول رائدة عبر الإنترنت تتألق كشركة غير تقليدية<br>
-       في صناعة تداول العقود مقابل الفروقات. لأكثر من <span>15</span> عاماً،<br>
-        وثق العملاء والزملاء في علي حسن
+      في صناعة تداول العقود مقابل الفروقات. لأكثر من <span>15</span> عاماً،<br>
+      وثق العملاء والزملاء في علي حسن
       لتسهيل وبناء<br> استراتيجيات شاملة والإشراف على التنفيذ بكل مستوى.<br><br>
-"إن نهجنا السّباق في صناعة تداول عقود الفروقات عبر<br>
- الإنترنت ، سوف يجعلنا نغير قواعد
- اللعبة في المنطقة.<br>
-  لدى <span>EVEST</span> نموذج أعمال يعتمد على وجود علاقة مصلحة<br>
-   متبادلة طويلة 
- الأجل مع العملاء"<br>
-{<span style="font-family:'Arabic Evest';color: white;">علي حسن</span>}<br><br>
+      "إن نهجنا السّباق في صناعة تداول عقود الفروقات عبر<br>
+      الإنترنت ، سوف يجعلنا نغير قواعد
+      اللعبة في المنطقة.<br>
+      لدى <span>EVEST</span> نموذج أعمال يعتمد على وجود علاقة مصلحة<br>
+      متبادلة طويلة
+      الأجل مع العملاء"<br>
+      {<span style="font-family:'Arabic Evest';color: white;">علي حسن</span>}<br><br>
 
 
-يبتكر السيد علي حسن اليوم قناة اتصال جديدة لم يتم<br>
- تفعيلها من قبل في صناعة
-التداول، حيث يمكن للعملاء<br>
- التحدث إليه مباشرة بسهولة ضغطة زر تظهر<br> للمستخدمين
-بعد تسجيل الدخول.<br><br>
+      يبتكر السيد علي حسن اليوم قناة اتصال جديدة لم يتم<br>
+      تفعيلها من قبل في صناعة
+      التداول، حيث يمكن للعملاء<br>
+      التحدث إليه مباشرة بسهولة ضغطة زر تظهر<br> للمستخدمين
+      بعد تسجيل الدخول.<br><br>
 
-ستضمن قناة الاتصال الجديدة هذه أن يتابع السيد علي <br>
-حسن شخصياً أي تعليقات أو
-اقتراحات أو شكاوى من طرف <br>
-العملاء. ستضع هذه القناة أيضاً جميع الموظفين في<br>
- حالة تأهب لأنهم يعلمون أن هناك خطاً مباشراً مفتوحاً<br>
-  على مدار الساعة طوال أيام الأسبوع
-مع الرئيس التنفيذي.
+      ستضمن قناة الاتصال الجديدة هذه أن يتابع السيد علي <br>
+      حسن شخصياً أي تعليقات أو
+      اقتراحات أو شكاوى من طرف <br>
+      العملاء. ستضع هذه القناة أيضاً جميع الموظفين في<br>
+      حالة تأهب لأنهم يعلمون أن هناك خطاً مباشراً مفتوحاً<br>
+      على مدار الساعة طوال أيام الأسبوع
+      مع الرئيس التنفيذي.
     </p>
-    <form action="/ar/المدير-التنفيذي" method="POST" style="width:100%">
+    <form action="/ar/المدير-التنفيذي" method="POST" style="width:100%" id="evest-form">
       <div class="form-group row">
         <label for="name" class="col-sm-3 col-form-label">الاسم</label>
         <div class="col-sm-9">
@@ -72,13 +83,14 @@
 </div>
 
 <div class="desktop-img">
-  <div class="row" style="background:url('/images/MEET THE CEO ARA-02.png');height:530px;background-size: cover;color:white;display:flex;justify-content: flex-start;align-items: center;">
+  <div class="row"
+    style="background:url('/images/MEET THE CEO ARA-02.png');height:530px;background-size: cover;color:white;display:flex;justify-content: flex-start;align-items: center;">
     <div class="container">
-      <%- page.fields.header.heading %> 
+      <%- page.fields.header.heading %>
     </div>
   </div>
   <div class="container">
-    <%- page.fields.sections.section1  %> 
+    <%- page.fields.sections.section1 %>
   </div>
 </div>
 <style>

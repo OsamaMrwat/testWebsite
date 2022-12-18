@@ -1,50 +1,16 @@
-<!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
+<head>
+  <title>CEO</title>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script>
+    function onSubmit(token) {
+      document.getElementById("evest-form").submit();
+    }
+  </script>
+</head>
 
-<!-- <head>
-
-  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfTXJIiAAAAACtU8BpQ9_8p1BeG4SnsEexmpz-S"></script>
-
-</head> -->
 
 
-<div class="mobile-img">
-  <div class="container"
-    style="background: url('/images/meet the CEO Mobile-03.png');height:700px;background-size: cover;color: white;">
-    <%- page.fields.header.heading %>
-  </div>
-  <div class="container">
-    <%- page.fields.sections.section1 %>
-      <form action="/ceo" method="POST" style="width:100%">
-        <div class="form-group row">
-          <label for="name" class="col-sm-3 col-form-label">Name</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" id="name" name="fullName">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="email" class="col-sm-3 col-form-label">Email</label>
-          <div class="col-sm-9">
-            <input type="email" class="form-control" id="email" name="email">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="subject" class="col-sm-3 col-form-label">Subject</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" id="subject" name="subject">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="message" class="col-sm-3 col-form-label">Message</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" id="message" name="message">
-          </div>
-        </div>
-        <div class="form-group row">
-          <button type="submit" value="Submit" class="btn btn-filled">SUBMIT</button>
-        </div>
-      </form>
-  </div>
-</div>
+
 
 <div class="desktop-img">
   <div class="row"
@@ -57,7 +23,7 @@
   <div class="row">
     <div class="container">
       <%- page.fields.sections.section1 %>
-        <form action="/ceo" method="POST">
+        <form action="/ceo" method="POST" id="evest-form">
           <div class="form-group row">
             <div class="col-md-6">
               <label for="name" class="col-sm-3 col-form-label">Name</label>
@@ -94,12 +60,57 @@
           </div> -->
 
           <div class="form-group row" style="padding-left: 30px;">
-            <button type="submit" value="Submit" class="btn btn-filled">SUBMIT</button>
+            <button type="submit" value="Submit" class="btn btn-filled g-recaptcha"
+              data-sitekey="6LdUQIsjAAAAAE2aW1EKmDFpixjfoU1eGcJlidsH" data-callback="onSubmit">Submit</button>
           </div>
         </form>
     </div>
   </div>
 </div>
+
+
+<div class="mobile-img">
+  <div class="container"
+    style="background: url('/images/meet the CEO Mobile-03.png');height:700px;background-size: cover;color: white;">
+    <%- page.fields.header.heading %>
+  </div>
+  <div class="container">
+    <%- page.fields.sections.section1 %>
+      <form action="/ceo" method="POST" style="width:100%" id="evest-form">
+        <div class="form-group row">
+          <label for="name" class="col-sm-3 col-form-label">Name</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="name" name="fullName">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="email" class="col-sm-3 col-form-label">Email</label>
+          <div class="col-sm-9">
+            <input type="email" class="form-control" id="email" name="email">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="subject" class="col-sm-3 col-form-label">Subject</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="subject" name="subject">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="message" class="col-sm-3 col-form-label">Message</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="message" name="message">
+          </div>
+        </div>
+        <div class="form-group row">
+          <button type="submit" value="Submit" class="btn btn-filled g-recaptcha"
+            data-sitekey="6LdUQIsjAAAAAE2aW1EKmDFpixjfoU1eGcJlidsH" data-callback="onSubmit">Submit</button>
+        </div>
+      </form>
+  </div>
+</div>
+
+
+
 <style>
   @import "/css/ceo.min.css";
 </style>
