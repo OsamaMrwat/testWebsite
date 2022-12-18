@@ -473,6 +473,16 @@
   }
 </style>
 
+<head>
+  <title>ايفست توك</title>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script>
+    function onSubmit(token) {
+      document.getElementById("evest-form").submit();
+    }
+  </script>
+</head>
+
 <div class="page-container">
 
   <div style="position:relative;">
@@ -622,7 +632,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form action="/ar/sendEvestTalkAr" method="POST">
+            <form action="/ar/sendEvestTalkAr" method="POST" id="evest-form">
               <div class="form-group">
                 <div class="form-element" id="two-labels">
                   <label>الاسم الاول</label>
@@ -659,7 +669,8 @@
 
 
               <div class="submitBtnContainer">
-                <button type="submit" value="submit" class="submit-btn" id="submit-btn">
+                <button type="submit" value="submit" class="submit-btn g-recaptcha" id="submit-btn"
+                  data-sitekey="6LdUQIsjAAAAAE2aW1EKmDFpixjfoU1eGcJlidsH" data-callback="onSubmit">
                   ارسال
                 </button>
               </div>
