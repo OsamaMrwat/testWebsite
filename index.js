@@ -118,7 +118,7 @@ var count = 0;
 app.use("/ar", arabicRouting);
 
 /*Spainsh Routing*/
-app.use("/es", spainshRouting);
+// app.use("/es", spainshRouting);
 
 
 

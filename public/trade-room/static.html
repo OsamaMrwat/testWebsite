@@ -320,7 +320,14 @@
       })
 
 
-      setTimeout(function () {
+      setTimeout(() => {
+
+        if (window.location.search.split('=').includes('ar')) {
+          $('.cp_languageClass').val('ar')
+        } else {
+          $('.cp_languageClass').val('en')
+        }
+
         if (null == window.top.document.getElementById("cpPluginGA")) {
           var a = window.top.document.getElementsByTagName("head")[0],
             b = window.top.document.createElement("script");
@@ -330,7 +337,7 @@
           b.id = "cpPluginGA";
           a.appendChild(b)
         }
-      }, 3E3);
+      }, 3E3)
 
 
     })
