@@ -1,1 +1,232 @@
-.mainpandats .forex-button-pandats.simple-button-pandats,panda-forex-login .forex-button-pandats.simple-button-pandats{font-family:"Arabic Evest",sans-serif!important}body{text-align:right;direction:rtl;font-family:"Arabic Evest",sans-serif!important}span{font-family:"Evest Font"}.lang-menu .selected-lang:before{background-image:url(https://www.countryflags.io/sa/flat/32.png)}.desktop-img>div:nth-child(1)>.container>.col-md-6{padding-right:5%}.desktop-img>div:nth-child(1)>.container>.col-md-6>h1{padding-top:8%}.desktop-img>div:nth-child(1)>.container>.col-md-6>h3{padding-top:3%;padding-bottom:1%;color:var(--primary-color3)!important}.desktop-img>div>.container>.col-md-6>ul,body>main>div.desktop-img>div:nth-child(4)>div>div>div:nth-child(2)>ul{margin-right:-41px}body>main>div.desktop-img>div.row>div>div:nth-child(2)>ul>li{color:#fff;font-size:15px}body>main>div.desktop-img>div.row>div>div:nth-child(2)>ul>li>i{color:var(--primary-color3);font-size:12px}.desktop-img>div:nth-child(1)>.container{display:flex;align-items:center;justify-content:center;height:500px}body>main>div.desktop-img>div:nth-child(3)>div{display:flex;flex-direction:column;align-items:center;justify-content:space-around}.btn-pr{background:var(--primary-color3);font-size:15px}.btn-pr:hover{background:var(--primary-color1);color:var(--primary-color3);border:2px solid var(--primary-color3)}body>main>div>div.container.text-center{padding-bottom:5%}body>main>div>div.container.text-center>p{color:#022a3aa1;padding-top:2%;padding-bottom:2%}body>main>div.desktop-img>div:nth-child(4)>div>div>div:nth-child(2)>ul>li>i{color:#fff;font-size:10px}body>main>div.desktop-img>div:nth-child(4)>div>div>div:nth-child(2)>ul>li{color:var(--primary-color1);font-size:14px;font-weight:700}main .btn-filled{color:#fff!important;font-size:16px;background:var(--primary-color1)}body>main>div>div:nth-child(4){padding:110px 40px}.q{color:var(--primary-color2)}.col-md-6>.row>h6{font-size:15px}body>main>div>div:nth-child(5){display:flex;flex-direction:column;justify-content:center;align-items:center}body>main>div>div:nth-child(5)>div:nth-child(2)>div:nth-child(1){text-align:right;padding-right:12%}body>main>div>div:nth-child(5)>div:nth-child(2)>div:nth-child(2){text-align:right;padding-right:6%}body>main>div>div:nth-child(5)>div.row.pt-4>div>.row+.row{padding-top:4%}@media (max-width:767px){body>main>div.mobile-img>div>ul>li{color:#fff;font-size:11px;line-height:10px}body>main>div.mobile-img>div>ul>li>i{font-size:8px}body>main>div.mobile-img>div:nth-child(4)>div>div:nth-child(2)>ul>li{font-size:11px;font-weight:lighter!important}body>main>div.mobile-img>div:nth-child(4)>div>div:nth-child(2)>ul>li>i{font-size:6px}body>main>div.mobile-img>div.container.text-left>q,h6{font-size:12px;text-align:right}.q{color:var(--primary-color3)}}@media (max-width:1023px) and (min-width:768px){body>main>div>div:nth-child(1){height:340px!important}body>main>div:nth-child(1)>div:nth-child(1)>h1{font-size:20px}body>main>div:nth-child(1)>div:nth-child(1)>h4{font-size:14px;color:var(--primary-color3)}body>main>div.desktop-img>div:nth-child(4)>div>div>div:nth-child(2)>ul>li,body>main>div:nth-child(1)>div>ul>li{font-size:11px}body>main>div>div:nth-child(1)>button{font-size:12px}.h1,h1{font-size:25px}h2,h3,h4{font-size:20px}body>main>div>div.container.text-center>p{font-size:11px}body>main>div>div:nth-child(3){height:340px!important}body>main>div>div:nth-child(4){padding:100px 15px}body>main>div>div.container.text-center.pt-5>h6>strong,body>main>div>div:nth-child(4)>div>div:nth-child(2)>h6:nth-child(2)>strong{font-size:12px}body>main>div>div:nth-child(4)>div>div:nth-child(1)>h1{font-size:25px;padding-right:5%}.col-md-6>.row>h6{font-size:11px}body>main>div>div:nth-child(5)>div.row.pt-4>div:nth-child(2)>div:nth-child(3)>button{font-size:11px}body>main>div>div:nth-child(5)>div:nth-child(2)>div:nth-child(1){text-align:right;padding-right:5%}}
+.mainpandats .forex-button-pandats.simple-button-pandats,
+panda-forex-login .forex-button-pandats.simple-button-pandats {
+    font-family: "Arabic Evest", sans-serif !important
+}
+
+body {
+    text-align: right;
+    direction: rtl;
+    font-family: "Arabic Evest", sans-serif !important
+}
+
+span {
+    font-family: "Evest Font"
+}
+
+.lang-menu .selected-lang:before {
+    background-image: url(https://www.countryflags.io/sa/flat/32.png)
+}
+
+.desktop-img>div:nth-child(1)>.container>.col-md-6 {
+    padding-right: 5%
+}
+
+.desktop-img>div:nth-child(1)>.container>.col-md-6>h1 {
+    padding-top: 8%
+}
+
+.desktop-img>div:nth-child(1)>.container>.col-md-6>h3 {
+    padding-top: 3%;
+    padding-bottom: 1%;
+    color: var(--primary-color3) !important
+}
+
+.desktop-img>div>.container>.col-md-6>ul,
+body>main>div.desktop-img>div:nth-child(4)>div>div>div:nth-child(2)>ul {
+    margin-right: -41px
+}
+
+body>main>div.desktop-img>div.row>div>div:nth-child(2)>ul>li {
+    color: #fff;
+    font-size: 15px
+}
+
+body>main>div.desktop-img>div.row>div>div:nth-child(2)>ul>li>i {
+    color: var(--primary-color3);
+    font-size: 12px
+}
+
+.desktop-img>div:nth-child(1)>.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px
+}
+
+body>main>div.desktop-img>div:nth-child(3)>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around
+}
+
+.btn-pr {
+    background: var(--primary-color3);
+    font-size: 15px
+}
+
+.btn-pr:hover {
+    background: var(--primary-color1);
+    color: var(--primary-color3);
+    border: 2px solid var(--primary-color3)
+}
+
+body>main>div>div.container.text-center {
+    padding-bottom: 5%
+}
+
+body>main>div>div.container.text-center>p {
+    color: #022a3aa1;
+    padding-top: 2%;
+    padding-bottom: 2%
+}
+
+body>main>div.desktop-img>div:nth-child(4)>div>div>div:nth-child(2)>ul>li>i {
+    color: #fff;
+    font-size: 10px
+}
+
+body>main>div.desktop-img>div:nth-child(4)>div>div>div:nth-child(2)>ul>li {
+    color: var(--primary-color1);
+    font-size: 14px;
+    font-weight: 700
+}
+
+main .btn-filled {
+    color: #fff !important;
+    font-size: 16px;
+    background: var(--primary-color1)
+}
+
+body>main>div>div:nth-child(4) {
+    padding: 110px 40px
+}
+
+.q {
+    color: var(--primary-color2)
+}
+
+.col-md-6>.row>h6 {
+    font-size: 15px
+}
+
+body>main>div>div:nth-child(5) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+body>main>div>div:nth-child(5)>div:nth-child(2)>div:nth-child(1) {
+    text-align: right;
+    padding-right: 12%
+}
+
+body>main>div>div:nth-child(5)>div:nth-child(2)>div:nth-child(2) {
+    text-align: right;
+    padding-right: 6%
+}
+
+body>main>div>div:nth-child(5)>div.row.pt-4>div>.row+.row {
+    padding-top: 4%
+}
+
+@media (max-width:767px) {
+    body>main>div.mobile-img>div>ul>li {
+        color: #fff;
+        font-size: 11px;
+        line-height: 10px
+    }
+
+    body>main>div.mobile-img>div>ul>li>i {
+        font-size: 8px
+    }
+
+    body>main>div.mobile-img>div:nth-child(4)>div>div:nth-child(2)>ul>li {
+        font-size: 11px;
+        font-weight: lighter !important
+    }
+
+    body>main>div.mobile-img>div:nth-child(4)>div>div:nth-child(2)>ul>li>i {
+        font-size: 6px
+    }
+
+    body>main>div.mobile-img>div.container.text-left>q,
+    h6 {
+        font-size: 12px;
+        text-align: right
+    }
+
+    .q {
+        color: var(--primary-color3)
+    }
+}
+
+@media (max-width:1023px) and (min-width:768px) {
+    body>main>div>div:nth-child(1) {
+        height: 340px !important
+    }
+
+    body>main>div:nth-child(1)>div:nth-child(1)>h1 {
+        font-size: 20px
+    }
+
+    body>main>div:nth-child(1)>div:nth-child(1)>h4 {
+        font-size: 14px;
+        color: var(--primary-color3)
+    }
+
+    body>main>div.desktop-img>div:nth-child(4)>div>div>div:nth-child(2)>ul>li,
+    body>main>div:nth-child(1)>div>ul>li {
+        font-size: 11px
+    }
+
+    body>main>div>div:nth-child(1)>button {
+        font-size: 12px
+    }
+
+    .h1,
+    h1 {
+        font-size: 25px
+    }
+
+    h2,
+    h3,
+    h4 {
+        font-size: 20px
+    }
+
+    body>main>div>div.container.text-center>p {
+        font-size: 11px
+    }
+
+    body>main>div>div:nth-child(3) {
+        height: 340px !important
+    }
+
+    body>main>div>div:nth-child(4) {
+        padding: 100px 15px
+    }
+
+    body>main>div>div.container.text-center.pt-5>h6>strong,
+    body>main>div>div:nth-child(4)>div>div:nth-child(2)>h6:nth-child(2)>strong {
+        font-size: 12px
+    }
+
+    body>main>div>div:nth-child(4)>div>div:nth-child(1)>h1 {
+        font-size: 25px;
+        padding-right: 5%
+    }
+
+    .col-md-6>.row>h6 {
+        font-size: 11px
+    }
+
+    body>main>div>div:nth-child(5)>div.row.pt-4>div:nth-child(2)>div:nth-child(3)>button {
+        font-size: 11px
+    }
+
+    body>main>div>div:nth-child(5)>div:nth-child(2)>div:nth-child(1) {
+        text-align: right;
+        padding-right: 5%
+    }
+}
