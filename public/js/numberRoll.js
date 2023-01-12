@@ -25,7 +25,7 @@ for (let obj of objs2) {
 /* Press Realese*/
 var elem = document.querySelector('.main-carousel');
 async function getArticles() {
-  await fetch(`https://cms.evest.com/wp-json/wp/v2/press_release?_embded`).then(res => res.json()).then(data => {
+  await fetch(`https://evest.blog/wp-json/wp/v2/posts?categories=3090`).then(res => res.json()).then(data => {
     const article = data.map(post => {
       return `
   <div class="carousel-cell">
