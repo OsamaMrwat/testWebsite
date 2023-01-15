@@ -651,9 +651,9 @@ xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entrie
 }
 
 try {
-  getPostSiteMaps();
-  getArabicBlogs()
-  getPagesSiteMaps();
+  // getPostSiteMaps();
+  // getArabicBlogs()
+  // getPagesSiteMaps();
 
   setInterval(() => {
     getPagesSiteMaps();
@@ -1183,7 +1183,8 @@ app.post("/send", (req, res) => {
   const ipAddress = IP.address()
 
   const msg = {
-    to: "support@evest.com",
+    // to: "support@evest.com",
+    to: "osama.ba@evest.com",
     from: `${req.body.email}`, // Use the email address or domain you verified above
     subject: `${req.body.fullName} sent you a new message from the support website page`,
     html: `  <h1>You Got New Message</h1>
