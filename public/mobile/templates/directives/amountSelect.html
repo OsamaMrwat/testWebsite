@@ -1,0 +1,100 @@
+<ion-modal-view class="modal-page amount-select">
+    <ion-header-bar class="bar bar-stable bar-header" align-title="center">
+        <div class="buttons">
+            <div class="display-flex back-button" on-tap="close()">
+                <i class="icon ion-android-arrow-back align-self padding-left font-22"></i>
+            </div>
+        </div>
+        <div class="title nav-title roboto-light font-14">{{::translation.selectAmount}}</div>
+    </ion-header-bar>
+
+    <ion-content scrollbar-y="true" overflow-scroll="true" class="assets-search-offset view-area">
+        <form name="form" novalidate ng-submit="continue(form)">
+            <input type="submit" id="submit" value="Submit" style="display:none"/>
+            <div class="invest-top">
+                <div class="row incdec-amount inc-dec pb-0" inc-dec>
+                    <div class="col pt-35 amount-area">
+                        <button type="button"
+                                ng-click="upDown({ model: amount, digits: config.digits, step: config.step, direction: 'decrease', min: config.min, max: config.max, speedStep: changeStep })"
+                                on-touch="upDownRepeat({ model: amount, digits: config.digits, step: config.step, direction: 'decrease', min: config.min, max: config.max, speedStep: changeStep })"
+                                on-release="upDownStop()"
+                                class="button button-down">
+                            <i class="ion-android-remove"></i>
+                        </button>
+                        <div class="wrapper-amount amount-input">
+                            <div class="font-36 amount-input-currency" ng-if="config.pspCurrencies && config.pspCurrencies.length == 0">
+                                {{constants.currencySymbols[user.activeTradingAccount.currency]}}
+                            </div>
+                            <div class="font-36 amount-input-currency" ng-if="config.pspCurrencies && config.pspCurrencies.length > 0">
+                                {{constants.currencySymbols[amount.pspCurrency]}}
+                            </div>
+                            <input type="number"
+                                   ng-model="amount.value"
+                                   name="amount"
+                                   min="{{config.min}}"
+                                   max="{{config.max}}"
+                                   tabindex="1"
+                                   keyboard-watcher
+                                   required>
+                        </div>
+                        <button type="button"
+                                ng-click="upDown({ model: amount, digits: config.digits, step: config.step, direction: 'increase', min: config.min, max: config.max, speedStep: changeStep })"
+                                on-touch="upDownRepeat({ model: amount, digits: config.digits, step: config.step, direction: 'increase', min: config.min, max: config.max, speedStep: changeStep})"
+                                on-release="upDownStop()"
+                                class="button button-up">
+                            <i class="ion-android-add"></i>
+                        </button>
+                    </div>
+                    <div class="messages pb-55" ng-messages="form.amount.$error">
+                        <div ng-if="form.amount.$dirty || form.$submitted">
+                            <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+                            <div class="help-block" ng-message="min">{{translation.minimumAmount}} {{config.min}}</div>
+                            <div class="help-block" ng-message="max">{{translation.maximumAmount}} {{config.max}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row currency-select-area" ng-if="config.pspCurrencies && config.pspCurrencies.length > 0">
+                <div class="col">
+                    <div class="row white font-14" >
+                        {{::translation.selectPspCurrency}}
+                    </div>
+                    <div class="row account-select-wrapper mt-10 mb-10">
+                        <div class="form-group as-select">
+                            <select class="custom-select no-appearance roboto-medium pl-7 pr-7"
+                                    name="select-pspCurrency"
+                                    ng-model="amount.pspCurrency"
+                                    ng-options="option as option for option in config.pspCurrencies">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row p-0">
+                <div class="radio-toolbar">
+                    <label ng-repeat="amountValue in config.listAmounts">
+                        <input type="radio"
+                               ng-model="amount.value"
+                               ng-value="amountValue">
+                        <span class="font-18">{{amountValue}}</span>
+                    </label>
+                </div>
+            </div>
+        </form>
+    </ion-content>
+    <ion-footer-bar align-title="left" class="invest-buttons">
+        <div class="row p-0">
+            <div class="col">
+                <label for="submit">
+                    <button class="button button-block success-button button-full roboto-light">
+                        {{::translation.continue}}
+                    </button>
+                </label>
+            </div>
+        </div>
+    </ion-footer-bar>
+
+</ion-modal-view>
+

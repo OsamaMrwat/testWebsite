@@ -1,0 +1,304 @@
+<div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border" id="firstName"
+     ng-class="{ 'has-error' : (form.firstName.$invalid && !form.firstName.$pristine) || (form.$submitted && form.firstName.$invalid) }">
+    <input type="text"
+           name="firstName"
+           ng-model="signupForm.firstName"
+           ng-minlength="2"
+           ng-maxlength="32"
+           required
+           keyboard-watcher
+           class="has-context-menu"
+           ng-pattern="validator('name')">
+    <span>{{::translation.firstName}}</span>
+    <i class="icon ion-ios-close-empty"></i>
+    <i class="icon ion-ios-checkmark-empty"></i>
+</div>
+<div class="messages font-12" ng-messages="form.firstName.$error" ng-if="form.firstName.$dirty || form.$submitted">
+    <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+    <div class="help-block" ng-message="minlength">{{::translation.messages.too_short}}</div>
+    <div class="help-block" ng-message="maxlength">{{::translation.messages.too_long}}</div>
+    <div class="help-block" ng-message="pattern">{{::translation.messages.invalid_Firtsname}}</div>
+</div>
+
+<div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border" id="lastName"
+     ng-class="{ 'has-error' : (form.lastName.$invalid && !form.lastName.$pristine) || (form.$submitted && form.lastName.$invalid) }">
+    <input type="text"
+           name="lastName"
+           ng-model="signupForm.lastName"
+           ng-minlength="1"
+           ng-maxlength="32"
+           ng-pattern="validator('name')"
+           keyboard-watcher
+           class="has-context-menu"
+           required>
+    <span>{{::translation.lastName}}</span>
+    <i class="icon ion-ios-close-empty"></i>
+    <i class="icon ion-ios-checkmark-empty"></i>
+</div>
+<div class="messages font-12" ng-messages="form.lastName.$error" ng-if="form.lastName.$dirty || form.$submitted">
+    <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+    <div class="help-block" ng-message="minlength">{{::translation.messages.too_short}}</div>
+    <div class="help-block" ng-message="maxlength">{{::translation.messages.too_long}}</div>
+    <div class="help-block" ng-message="pattern">{{::translation.messages.invalid_Lastname}}</div>
+</div>
+
+<div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border"
+     ng-class="{ 'has-error' : (form.email.$invalid && !form.email.$pristine) || (form.$submitted && form.email.$invalid) }">
+    <input type="email"
+           name="email"
+           ng-model="signupForm.email"
+           ng-minlength="4"
+           ng-maxlength="80"
+           ng-pattern="validator('email')"
+           keyboard-watcher
+           class="has-context-menu"
+           required>
+    <span class="input-label">{{::translation.emailRegistration}}</span>
+    <i class="icon ion-ios-close-empty"></i>
+    <i class="icon ion-ios-checkmark-empty"></i>
+</div>
+<div class="messages font-12" ng-messages="form.email.$error" ng-if="form.email.$dirty || form.$submitted">
+    <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+    <div class="help-block" ng-message="minlength">{{::translation.messages.too_short}}</div>
+    <div class="help-block" ng-message="maxlength">{{::translation.messages.too_long}}</div>
+    <div class="help-block" ng-message="email">{{::translation.messages.invalid_email}}</div>
+    <div class="help-block" ng-message="pattern">{{::translation.messages.invalid_email}}</div>
+</div>
+
+<div class="row p-0">
+    <div class="col pl-0 pb-0 pt-0 pr-5">
+        <div class="form-group item-input item-stacked-label bottom-border mb-15 pl-0 pb-0"
+             ng-class="{ 'has-error' : (form.password.$invalid && !form.password.$pristine) || (form.$submitted && form.password.$invalid) }">
+            <input type="{{password.checked?'text':'password'}}" name="password"
+                   ng-model="signupForm.password"
+                   ng-minlength="6"
+                   ng-maxlength="12"
+                   ng-pattern="validator('password')"
+                   keyboard-watcher
+                   class="has-context-menu"
+                   required>
+            <span class="input-label">{{::translation.password}}</span>
+            <i class="icon ion-ios-close-empty"></i>
+            <i class="icon ion-ios-checkmark-empty"></i>
+        </div>
+        <div class="messages font-12" ng-messages="form.password.$error" ng-if="form.password.$dirty || form.$submitted">
+            <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+            <div class="help-block" ng-message="minlength">{{::translation.messages.too_short}}</div>
+            <div class="help-block" ng-message="maxlength">{{::translation.messages.too_long}}</div>
+            <div class="help-block" ng-message="pattern">{{::translation.messages.numbers_chars}}</div>
+        </div>
+    </div>
+    <div class="col pr-0 pb-0 pt-0 pl-5">
+        <div class="form-group item-input item-stacked-label bottom-border mb-15 pl-0 pb-0"
+             ng-class="{ 'has-error' : (form.confirmPassword.$invalid && !form.confirmPassword.$pristine) || (form.$submitted && form.confirmPassword.$invalid) }">
+            <input type="{{password.checked?'text':'password'}}" name="confirmPassword"
+                   ng-model="signupForm.confirmPassword"
+                   required
+                   keyboard-watcher
+                   class="has-context-menu"
+                   compare-to="signupForm.password">
+            <span class="input-label-75">{{::translation.confirmPassword}}</span>
+            <i class="icon ion-ios-close-empty"></i>
+            <i class="icon ion-ios-checkmark-empty"></i>
+        </div>
+        <div class="messages font-12" ng-messages="form.confirmPassword.$error" ng-if="form.confirmPassword.$dirty || form.$submitted">
+            <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+            <div class="help-block" ng-message="compareTo">{{::translation.messages.password_not_matched}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="row p-0">
+    <div class="col col-33 pl-0 pb-0 pt-0 pr-5">
+        <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border country-wrapper" id="country"
+             ng-class="{ 'has-error' : (form.country.$invalid && !form.country.$pristine) || (form.$submitted && form.country.$invalid) }"
+             on-tap="countriesModal('country', form)">
+            <div class="flag-icon" ng-class="'flag-icon-' + signupForm.country.toLowerCase()"></div>
+            <div class="flag-plus" ng-if="signupForm.country">+</div>
+            <input type="text"
+                   class="custom-select custom-input flag-select"
+                   name="country"
+                   ng-model="phoneCode"
+                   readonly
+                   keyboard-watcher
+                   required>
+            <span>{{::translation.country}}</span>
+            <i class="icon ion-ios-close-empty"></i>
+            <i class="icon ion-ios-checkmark-empty"></i>
+        </div>
+        <div class="messages font-12" ng-messages="form.country.$error" ng-if="form.country.$touched || form.$submitted">
+            <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+        </div>
+    </div>
+    <div class="col col-67 pl-0 pb-0 pt-0 pr-5">
+        <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border" id="phone"
+             ng-class="{ 'has-error' : (form.phone.$invalid && !form.phone.$pristine) || (form.$submitted && form.phone.$invalid) }">
+            <input type="tel"
+                   name="phone"
+                   ng-model="signupForm.phone"
+                   minLength="5"
+                   maxLength="17"
+                   ng-minlength="5"
+                   ng-maxlength="17"
+                   required
+                   keyboard-watcher
+                   ng-pattern="validator('phone')">
+            <span>{{::translation.phone}}</span>
+            <i class="icon ion-ios-close-empty"></i>
+            <i class="icon ion-ios-checkmark-empty"></i>
+        </div>
+        <div class="messages font-12" ng-messages="form.phone.$error" ng-if="form.phone.$dirty || form.$submitted">
+            <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+            <div class="help-block" ng-message="minlength">{{::translation.messages.too_short}}</div>
+            <div class="help-block" ng-message="maxlength">{{::translation.messages.too_long}}</div>
+            <div class="help-block" ng-message="pattern">{{::translation.messages.numbers}}</div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div ng-if="isPromo">
+    <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border" id="promocode"
+         ng-class="{ 'has-error' : form.promocode.$invalid && !form.promocode.$pristine }">
+        <input  ng-if="promoCodes.length > 0" type="text"
+               name="promocode"
+               ng-model="signupForm.promocode"
+               on-tap="countriesModal('promocode', form)"
+               ng-minlength="2"
+               ng-maxlength="32"
+                keyboard-watcher
+               ng-pattern="validator('alphanum')">
+        <input  ng-if="promoCodes.length == 0" type="text"
+                name="promocode"
+                ng-model="signupForm.promocode"
+                ng-minlength="2"
+                ng-maxlength="32"
+                keyboard-watcher
+                ng-pattern="validator('alphanum')">
+        <span>{{::translation.promo}}</span>
+        <i class="icon ion-ios-close-empty"></i>
+        <i class="icon ion-ios-checkmark-empty"></i>
+    </div>
+    <div class="messages font-12" ng-messages="form.promocode.$error" ng-if="form.promocode.$dirty">
+        <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+        <div class="help-block" ng-message="minlength">{{::translation.messages.too_short}}</div>
+        <div class="help-block" ng-message="maxlength">{{::translation.messages.too_long}}</div>
+        <div class="help-block" ng-message="pattern">{{::translation.messages.mixWordsNumbers}}</div>
+    </div>
+</div>
+
+<div class="p-0">
+    <div class="form-group item-stacked-label mb-15 mt-10 pl-0 pb-0"
+         ng-if="!constants.signUpOver18CheckboxIsHidden"
+    >
+        <ion-checkbox class="mt-10 border-0 modern-checkbox font-12 sub-info"
+                      ng-class="{'error-checkbox': (form.terms.$invalid && !form.terms.$pristine) || (form.$submitted && form.terms.$invalid) }"
+                      name="terms"
+                      ng-model="signupForm.terms"
+                      ng-required="!constants.termsNonLeverage || !signupForm.termsNonLeverage"
+                      ng-if="!constants.signupTermsExtended"
+        >
+            <span>{{::translation.login_bottom_text}}</span>&nbsp;
+            <span ng-if="constants.externalLinks.accountTerms">{{::translation.login_bottom_text2}}</span>
+        </ion-checkbox>
+        <a ng-if="constants.externalLinks.accountTerms" target="_blank" class="text-transform-capitalize"
+           href="{{constants.externalLinks.accountTerms}}"
+        >
+            {{::translation.login_bottom_text2}}
+        </a>
+
+        <ion-checkbox class="mt-10 border-0 modern-checkbox font-12 sub-info"
+                      ng-class="{'error-checkbox': (form.terms.$invalid && !form.terms.$pristine) || (form.$submitted && form.terms.$invalid) }"
+                      name="terms"
+                      ng-model="signupForm.terms"
+                      ng-required="!constants.termsNonLeverage || !signupForm.termsNonLeverage"
+                      ng-if="constants.signupTermsExtended"
+        >
+
+            {{::translation.over_18_year_part1}}
+        </ion-checkbox>
+
+        <a ng-if="constants.externalLinks.termsAndConditions" ng-href="{{constants.externalLinks.termsAndConditions + '?lang=' + lang}}" target="_blank">{{::translation.over_18_year_part2}}&nbsp;</a>
+        <span ng-if="constants.externalLinks.termsAndConditions === ''">{{::translation.over_18_year_part2}}&nbsp;</span>
+        <a ng-if="constants.externalLinks.privacyPolicy" ng-href="{{constants.externalLinks.privacyPolicy + '?lang=' + lang}}" target="_blank">, {{::translation.over_18_year_part2_a}}&nbsp;</a>
+        <span ng-if="constants.externalLinks.privacyPolicy === ''">, {{::translation.over_18_year_part2_a}}&nbsp;</span>
+
+        <a ng-if="constants.externalLinks.riskDislosure" ng-href="{{constants.externalLinks.riskDislosure + '?lang=' + lang}}" target="_blank">, {{::translation.over_18_year_part2_b}}</a>
+        <a ng-if="constants.externalLinks.orderExecutionPolicy" ng-href="{{constants.externalLinks.orderExecutionPolicy + '?lang=' + lang}}" target="_blank">, {{::translation.over_18_year_part2_c}}</a>
+        <a ng-if="constants.externalLinks.conflictsofInterestPolicy" ng-href="{{constants.externalLinks.conflictsofInterestPolicy + '?lang=' + lang}}" target="_blank">, {{::translation.over_18_year_part2_d}}</a>
+        <a ng-if="constants.externalLinks.clientCategorisation" ng-href="{{constants.externalLinks.clientCategorisation + '?lang=' + lang}}" target="_blank">, {{::translation.over_18_year_part2_e}}</a>
+        <a ng-if="constants.externalLinks.investorCompensation" ng-href="{{constants.externalLinks.investorCompensation + '?lang=' + lang}}" target="_blank">, {{::translation.over_18_year_part2_g}}</a>
+        <a ng-if="constants.externalLinks.keyInformation" ng-href="{{constants.externalLinks.keyInformation + '?lang=' + lang}}" target="_blank">, {{::translation.over_18_year_part2_i}}</a>
+
+        <span ng-if="constants.signupTermsExtended">{{::translation.over_18_year_part3}}&nbsp;</span>
+        <a ng-if="constants.externalLinks.accountTerms && translation.over_18_year_part4" ng-href="{{constants.externalLinks.accountTerms + '?lang=' + lang}}" target="_blank">{{::translation.over_18_year_part4}}&nbsp;</a>
+        <span ng-if="!constants.externalLinks.accountTerms && translation.over_18_year_part4">{{::translation.over_18_year_part4}}&nbsp;</span>
+        <span ng-if="translation.over_18_year_part5">{{::translation.over_18_year_part5}}</span>
+
+    </div>
+</div>
+
+<div class="p-0" ng-if="constants.signupEnableCheckKYC">
+    <div class="form-group item-stacked-label mb-15 mt-10 pl-0 pb-0 layout-row customer-policy">
+        <ion-checkbox class="mt-10 border-0 modern-checkbox font-12 sub-info layout-column"
+                      ng-class="{'error-checkbox': (form.kyc.$invalid && !form.kyc.$pristine) || (form.$submitted && form.kyc.$invalid) }"
+                      name="kyc"
+                      ng-model="signupForm.acceptKyc"
+                      ng-required="true">
+            {{::translation.readAndAgree}}
+        </ion-checkbox>
+        <span class="layout-column font-12 mt-10 pl-0 item border-0">
+            <a href="{{constants.externalLinks.kycPolicy}}" target="_blank">{{::translation.kyc}}</a>
+        </span>
+    </div>
+</div>
+
+<div class="p-0" ng-if="constants.termsNonLeverage">
+    <div class="form-group item-stacked-label mb-15 mt-10 pl-0 pb-0">
+        <ion-checkbox class="mt-10 border-0 modern-checkbox font-12 sub-info"
+                      name="termsNonLeverage"
+                      ng-model="signupForm.termsNonLeverage"
+                      ng-required="!signupForm.terms">
+            {{::translation.termsNonLeverage}}
+        </ion-checkbox>
+    </div>
+</div>
+
+
+<div class="p-0" ng-if="isAcceptPromotions">
+    <div class="form-group item-stacked-label mb-15 mt-10 pl-0 pb-0">
+        <ion-checkbox class="mt-10 border-0 modern-checkbox font-12 sub-info"
+                      name="acceptPromotions"
+                      ng-model="signupForm.acceptPromotions">
+            {{::translation.acceptPromotions}}
+        </ion-checkbox>
+    </div>
+</div>
+
+
+<div class="content">
+    <div class="sub-details text-center padding add-line font-11" on-tap="navigate('welcome')">
+        {{::translation.signupWith}}
+    </div>
+
+    <div class="social">
+        <button class="button button-social font-14"
+                on-tap="signinWithGoogle(form)"
+                type="button"
+                ng-if="socialAuthService.isProviderReady('google')">
+            <i class="button-google"></i> Google
+        </button>
+        <button class="button button-social font-14"
+                on-tap="signinWithFacebook(form)"
+                type="button"
+                ng-if="socialAuthService.isProviderReady('facebook')">
+            <i class="button-facebook"></i> Facebook
+        </button>
+    </div>
+
+    <div class="sub-info text-center padding font-12">{{::translation.login_bottom_text}}
+    </div>
+</div>

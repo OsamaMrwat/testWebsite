@@ -1,0 +1,52 @@
+<ion-modal-view class="modal-page">
+
+    <ion-header-bar ng-class="data.isProcess ? 'processing' : (data.isError ? 'failed':'success')">
+        <div class="modal-top" ng-class="data.isProcess ? 'processing' : (data.isError ? 'failed':'success')">
+            <div class="icon" ng-if="!data.isProcess"
+                 ng-class="data.isError ? ' ion-ios-close-outline' : 'ion-ios-checkmark-outline'"></div>
+            <div ng-if="data.isProcess">
+                <ion-spinner class="spinner-processing"></ion-spinner>
+            </div>
+            <h1 class="roboto-light pl-5 pr-5">{{ data.textTitle }}</h1>
+        </div>
+    </ion-header-bar>
+
+    <ion-content>
+        <div class="modal-content deposit-success" ng-if="!data.isError">
+            <div class="card">
+                <div class="row">
+                    <div class="col col-40 font-12 title">{{::translation.date}}</div>
+                    <div class="col font-12 value">{{data.date|date:'medium'}}</div>
+                </div>
+                <div class="row">
+                    <div class="col col-40 font-12 title">{{::translation.transactionId}}</div>
+                    <div class="col font-12 value">{{data.transactionId}}</div>
+                </div>
+                <div class="row">
+                    <div class="col col-40 font-12 title">{{::translation.amount}}</div>
+                    <div class="col font-12 value">{{data.amount}}&nbsp;{{data.currency}}</div>
+                </div>
+                <div class="row" ng-if="data.method.length > 0">
+                    <div class="col col-40 font-12 title">{{::translation.depositMethod}}</div>
+                    <div class="col font-12 value">{{data.method}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-content" ng-if="data.isError">
+            {{data.textContent}}
+        </div>
+
+    </ion-content>
+
+    <ion-footer-bar align-title="left" class="invest-buttons" ng-show="!data.isProcess">
+        <div class="row p-0">
+            <div class="col">
+                <button class="button button-block button-full" on-tap="hide()" ng-if="!data.isProcess">
+                    <span>{{ data.actionText }}</span>
+                </button>
+            </div>
+        </div>
+    </ion-footer-bar>
+
+</ion-modal-view>
+
