@@ -1,0 +1,243 @@
+﻿<html>
+    <head>
+        <title>GuiDraw pattern</title>
+    </head>
+<body>
+ <div> 
+ <div id="gui-pattern">
+        
+     <fan-pattern>
+         <tr> 
+             <td><input id="control-background-level-%order%" class="visibility-onoff  control-background-level" type="checkbox" checked="checked"/></td> 
+             <td><input type="text" autocomplete="off" autofocus="" id="input-level-%order%" value="%input-value%" prevvalue="%input-value%"  class="class-input-level dialog-text-input dialog-spinner onlynumeric"  /></td> 
+             <td><input id="color-background-level-%order%" type="color" class ="class-color-widget spectrum-color"  levelindex="%levelindex%" /></td> 
+             <td>
+                 <div id="slider-5-level-%order%"  class="class-slider-5 slider-border slider-horizontal "> 
+                     <div class="gradient" > 
+                     </div></div>
+             </td> 
+             <td> <select id="line-select-level-%order%" class ="dialog-select lineselect" levelindex="%levelindex%"> 
+                      %border_style_pattern%
+                  </select>
+             </td>  
+         </tr>
+     </fan-pattern>
+ 
+     <square-trendline-pattern>
+         <tr>
+             <td data-localize="dialogs.draw.lb-trendline">Trend Line</td>
+             <td><input id="color-trendline" type="color" class ="class-color-widget spectrum-color"  /></td>
+             <td>
+                 <div id="trendline-width"  class="class-slider-5 slider-border slider-horizontal ">
+                     <div class="gradient" >
+                     </div></div>
+             </td>
+             <td> 
+                 <select id="line-select-trendline" class ="dialog-select lineselect">  
+                     %border_style_pattern%
+                 </select>
+             </td>
+         </tr> 
+     </square-trendline-pattern>
+ 
+     <square-levels-pattern>
+         <tr>
+             <td><input type="text" autocomplete="off" autofocus="" id="Text1"  readonly value="%input-value%" prevvalue="%input-value%"  class="class-input-level dialog-text-input dialog-spinner onlynumeric"  /></td>
+             <td><input  id="color-background-level-%order%" type="color" class ="class-color-widget spectrum-color" levelindex="%levelindex%"  /></td>
+             <td>
+                 <div  id="slider-5-level-%order%"  class="class-slider-5 slider-border slider-horizontal ">
+                     <div class="gradient" >
+                     </div></div>
+             </td>
+             <td> 
+                 <select id="line-select-level-%order%" class ="dialog-select lineselect" levelindex="%levelindex%"> 
+                     %border_style_pattern%
+                 </select>
+             </td>
+         </tr>
+     </square-levels-pattern>
+        
+     <fiboarc-trendline-pattern>
+         <tr>
+             <td colspan="2" data-localize="dialogs.draw.lb-trendline" >Trend Line</td>
+             <td><input id="color-trendline" type="color" class ="class-color-widget spectrum-color"  /></td>
+             <td>
+                 <div id="trendline-width"  class="class-slider-5 slider-border slider-horizontal ">
+                     <div class="gradient" >
+                     </div></div>
+             </td>
+             <td> 
+                 <select id="line-select-trendline" class ="dialog-select lineselect"> 
+                     %border_style_pattern%
+                 </select>
+             </td>
+         </tr>
+     </fiboarc-trendline-pattern>
+     
+     <fiboarc-levels-pattern>
+         <tr>
+             <td><input id="control-background-level-%order%" class="visibility-onoff control-background-level" type="checkbox"  levelindex="%levelindex%" checked="checked"/></td>
+             <td><input type="text" autocomplete="off" autofocus="" id="input-level-%order%" value="%input-value%" prevvalue="%input-value%"  class="class-input-level dialog-text-input dialog-spinner onlynumeric"  /></td>
+             <td><input id="color-background-level-%order%" type="color" class ="class-color-widget spectrum-color" levelindex="%levelindex%" /></td>
+             <td>
+                 <div id="slider-5-level-%order%"  class="class-slider-5 slider-border slider-horizontal ">
+                     <div class="gradient" >
+                     </div></div>
+             </td>
+             <td> 
+                 <select id="line-select-level-%order%" class ="dialog-select lineselect" levelindex="%levelindex%"> 
+                     %border_style_pattern%
+                 </select>
+             </td>
+         </tr> 
+     </fiboarc-levels-pattern>
+        
+     <fibo-trendline-pattern>
+         <tr>
+             <td colspan="2" data-localize="dialogs.draw.lb-trendline">Trend Line</td>
+             <td><input id="color-trendline" type="color" class ="class-color-widget spectrum-color"  /></td>
+             <td>
+                 <div id="trendline-width"  class="class-slider-5 slider-border slider-horizontal ">
+                     <div class="gradient" >
+                     </div></div>
+             </td>
+             <td> 
+                 <select id="line-select-trendline" class ="dialog-select lineselect"> 
+                     %border_style_pattern%
+                 </select>
+             </td>
+         </tr> 
+     </fibo-trendline-pattern>
+        
+     <fibo-levels-pattern>
+         <tr>
+             <td><input id="control-background-level-%order%" class="visibility-onoff control-background-level" type="checkbox" checked="checked"/></td>
+             <td><input type="text" autocomplete="off" autofocus="" id="input-level-%order%" value="%input-value%" prevvalue="%input-value%"  class="class-input-level dialog-text-input dialog-spinner onlynumeric"  /></td>
+             <td><input id="color-background-level-%order%" type="color" class ="class-color-widget spectrum-color" levelindex="%levelindex%" /></td>
+             <td>
+                 <div id="slider-5-level-%order%"  class="class-slider-5 slider-border slider-horizontal ">
+                     <div class="gradient" >
+                     </div></div>
+             </td>
+             <td> 
+                 <select id="line-select-level-%order%" class ="dialog-select lineselect" levelindex="%levelindex%"> 
+                     %border_style_pattern%
+                 </select>
+             </td>         
+         </tr> 
+     </fibo-levels-pattern>
+        
+     <fork-trendline-pattern>
+         <tr>
+             <td colspan="2" data-localize="dialogs.draw.lb-meridian">Meridian</td>
+             <td><input id="color-median" type="color" class ="class-color-widget spectrum-color"  /></td>
+             <td>
+                 <div id="median-width"  class="class-slider-5 slider-border slider-horizontal ">
+                     <div class="gradient" >
+                     </div></div>
+             </td>
+             <td> 
+                 <select id="line-select-median" class ="dialog-select lineselect"> 
+                     %border_style_pattern%
+                 </select>
+             </td>  
+         </tr> 
+     </fork-trendline-pattern>
+        
+     <fork-levels-pattern>
+         <tr>
+             <td><input id="control-background-level-%order%" class="visibility-onoff control-background-level" type="checkbox" checked="checked"/></td>
+             <td><input type="text" autocomplete="off" autofocus="" id="input-level-%order%" value="%input-value%" prevvalue="%input-value%"  class="class-input-level dialog-text-input dialog-spinner onlynumeric"  /></td>
+             <td><input id="color-background-level-%order%" type="color" class ="class-color-widget spectrum-color" levelindex="%levelindex%" /></td>
+             <td>
+                 <div id="slider-5-level-%order%"  class="class-slider-5 slider-border slider-horizontal ">
+                     <div class="gradient" >
+                     </div></div>
+             </td>
+             <td> 
+                 <select id="line-select-level-%order%" class ="dialog-select lineselect" levelindex="%levelindex%"> 
+                     %border_style_pattern%
+                 </select>
+             </td>  
+         </tr>
+     </fork-levels-pattern>
+
+     <coordinates_pattern>
+         <tr>
+             <td> <span data-localize="dialogs.draw.lb-price">Price</span> %id% </td>
+             <td><input type="text"  id="input-price-%id%"  prevvalue="%pricevalue%"  idx="%id%" class="dialog-text-input onlynumeric inputprice" autocomplete="off" autofocus=""  value ="%pricevalue%"  /></td>
+             <td><span data-localize="dialogs.draw.lb-date">Date</span> #</td>
+             <td>
+                 <input class="dialog-text-input datespinner-input" idx="%id%" id="date-%id%" readonly value="%datevalue%"/>
+                 <input class="dialog-text-input dialog-spinner datespinner " idx="%id%" id="date-spinner-%id%" value="0"/>
+             </td>
+         </tr>
+     </coordinates_pattern>
+
+        
+     <fibo-levels-pattern>
+         <tr>
+             <td><input id="control-background-level-%order%" class="visibility-onoff control-background-level" type="checkbox" checked="checked"/></td>
+             <td><input type="text" autocomplete="off" autofocus="" id="input-level-%order%" value="%input-value%" prevvalue="%input-value%"  class="class-input-level dialog-text-input dialog-spinner onlynumeric"  /></td>
+             <td><input id="color-background-level-%order%" type="color" class ="class-color-widget spectrum-color" levelindex="%levelindex%" /></td>
+             <td>
+                 <div id="slider-5-level-%order%"  class="class-slider-5 slider-border slider-horizontal ">
+                     <div class="gradient" >
+                     </div></div>
+             </td>
+             <td> 
+                 <select id="line-select-level-%order%" class ="dialog-select lineselect" levelindex="%levelindex%"> 
+                     %border_style_pattern%
+                 </select>
+             </td>         
+         </tr> 
+     </fibo-levels-pattern>
+        
+     <linereg-trendline-pattern>
+         <tr>
+             <td  data-localize="dialogs.draw.lb-trendline">Trend Line</td>
+             <td><input id="color-trendline" type="color" class ="class-color-widget spectrum-color"  /></td>
+             <td>
+                 <div id="trendline-width"  class="class-slider-5 slider-border slider-horizontal ">
+                     <div class="gradient" >
+                     </div></div>
+             </td>
+             <td> 
+                 <select id="line-select-trendline" class ="dialog-select lineselect"> 
+                     %border_style_pattern%
+                 </select>
+             </td>
+         </tr> 
+     </linereg-trendline-pattern>
+        
+     <linereg-levels-pattern>
+         <tr>
+             <td data-localize="dialogs.draw.lb-%linename%">%linecaption%</td>
+             <td><input id="color-background-level-%order%" type="color" class ="class-color-widget spectrum-color" levelindex="%levelindex%" /></td>
+             <td>
+                 <div id="slider-5-level-%order%"  class="class-slider-5 slider-border slider-horizontal ">
+                     <div class="gradient" >
+                     </div></div>
+             </td>
+             <td> 
+                 <select id="line-select-level-%order%" class ="dialog-select lineselect" levelindex="%levelindex%"> 
+                     %border_style_pattern%
+                 </select>
+             </td>  
+         </tr>
+     </linereg-levels-pattern>
+        
+        
+     <border-style-pattern>
+         <option data-localize="dialogs.common.linetype.solid" value="solid">solid</option> 
+         <option data-localize="dialogs.common.linetype.dashed" value="dash">dash</option> 
+         <option data-localize="dialogs.common.linetype.doted" value="dot">dotted</option>
+     </border-style-pattern>
+
+
+ </div>
+</div>
+ </body>
+</html>
+
+ 

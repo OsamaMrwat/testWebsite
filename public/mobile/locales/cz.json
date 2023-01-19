@@ -1029,7 +1029,5 @@
     "fasapay_account_name": "FasaPay Account Name",
     "fasapay_wallet_account_number": "FasaPay Wallet Account Number",
     "update": "Update",
-    "description": "Popis",
-    "pixCode": "Pix Code",
-    "trading_central_not_validated": "Abyste mohli mít přístup k obchodním nástrojům, váš účet musí mít minimální% minCelkový vklad%"
+    "description": "Popis"
 }

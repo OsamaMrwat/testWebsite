@@ -1020,7 +1020,5 @@
     "reach": "Mencapai",
     "qrcodeInfo": "Please upload the proof of payment in the documents section when the transfer is done.",
     "electronicpayment": "Electronic Payment",
-    "pendingDepositMessage": "Dear ${clientName}, <br><br> in order to complete the transaction, please contact your account manager for further assistance.",
-    "pixCode": "Pix Code",
-    "trading_central_not_validated": "Akun Anda harus memiliki minimal %minTotalDeposit% untuk mengakses Peralatan Trading"
+    "pendingDepositMessage": "Dear ${clientName}, <br><br> in order to complete the transaction, please contact your account manager for further assistance."
 }

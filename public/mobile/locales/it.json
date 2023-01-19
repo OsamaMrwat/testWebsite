@@ -1090,7 +1090,5 @@
     "unionpay_national_id_card": "Carta d'Identità Nazionale",
     "bank_branch": "Filiale Bancaria",
     "update": "Aggiornare",
-    "description": "Descrizione",
-    "pixCode": "Pix Code",
-    "trading_central_not_validated": "Your account must have minimum of %minTotalDeposit% to access Trading Tools"
+    "description": "Descrizione"
 }

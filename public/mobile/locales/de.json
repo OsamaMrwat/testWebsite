@@ -1089,7 +1089,5 @@
     "unionpay_national_id_card": "Nationaler Personalausweis",
     "bank_branch": "Bankfiliale",
     "update": "Aktualisieren",
-    "description": "Beschreibung",
-    "pixCode": "Pix Code",
-    "trading_central_not_validated": "Your account must have minimum of %minTotalDeposit% to access Trading Tools"
+    "description": "Beschreibung"
 }

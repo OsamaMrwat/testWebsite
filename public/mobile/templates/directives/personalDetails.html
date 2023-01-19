@@ -70,109 +70,6 @@
     </div>
 </div>
 
-<div ng-if="!profileRulesHelper.isHidden('country')">
-    <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border"
-         id="country"
-         ng-class="{ 'has-error' : (form.country.$invalid && !form.country.$pristine) || (form.$submitted && form.country.$invalid) }">
-        <input type="text"
-               class="custom-select custom-input"
-               name="country"
-               ng-model="personalProfileForm.country.country"
-               on-tap="!profileRulesHelper.isReadonly('country', user.country) && openCountryModal()"
-               readonly
-               ng-required="profileRulesHelper.isRequired('country')">
-        <span>{{::translation.country}}</span>
-        <i class="icon ion-ios-close-empty"></i>
-        <i class="icon ion-ios-checkmark-empty"></i>
-        <country-select ng-if="countryModal"
-                        items="countries"
-                        config="countryModalConfig"
-                        on-submit="setCountry(message)"
-                        on-close="closeModal()">
-        </country-select>
-    </div>
-    <div class="messages font-12" ng-messages="form.country.$error" ng-if="form.country.$touched || form.$submitted">
-        <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
-    </div>
-</div>
-
-<div ng-if="!profileRulesHelper.isHidden('city')">
-    <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border"
-         id="city"
-         ng-class="{ 'has-error' : (form.city.$invalid && !form.city.$pristine) || (form.$submitted && form.city.$invalid) }">
-        <input type="text"
-               name="city"
-               ng-model="personalProfileForm.city"
-               ng-minlength="2"
-               ng-maxlength="100"
-               ng-required="profileRulesHelper.isRequired('city')"
-               ng-readonly="profileRulesHelper.isReadonly('city', user.city)"
-               keyboard-watcher
-               ng-pattern="validator('name')"
-               style="user-select: text !important;"
-        >
-        <span>{{::translation.city}}</span>
-        <i class="icon ion-ios-close-empty"></i>
-        <i class="icon ion-ios-checkmark-empty"></i>
-    </div>
-    <div class="messages font-12" ng-messages="form.city.$error" ng-if="form.city.$dirty || from.$submitted">
-        <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
-        <div class="help-block" ng-message="minlength">{{::translation.messages.too_short}}</div>
-        <div class="help-block" ng-message="maxlength">{{::translation.messages.too_long}}</div>
-        <div class="help-block" ng-message="pattern">{{::translation.messages.invalid_city}}</div>
-    </div>
-</div>
-
-<div ng-if="!profileRulesHelper.isHidden('address')">
-    <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border"
-         id="address"
-         ng-class="{ 'has-error' : (form.address.$invalid && !form.address.$pristine) || (form.$submitted && form.address.$invalid) }">
-        <input type="text"
-               name="address"
-               ng-model="personalProfileForm.address"
-               ng-minlength="2"
-               ng-maxlength="100"
-               keyboard-watcher
-               ng-pattern="validator('address')"
-               ng-required="profileRulesHelper.isRequired('address')"
-               ng-readonly="profileRulesHelper.isReadonly('address', user.address)">
-        <span>{{::translation.address}}</span>
-        <i class="icon ion-ios-close-empty"></i>
-        <i class="icon ion-ios-checkmark-empty"></i>
-    </div>
-    <div class="messages font-12" ng-messages="form.address.$error" ng-if="form.address.$dirty || form.$submitted">
-        <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
-        <div class="help-block" ng-message="minlength">{{::translation.messages.too_short}}</div>
-        <div class="help-block" ng-message="maxlength">{{::translation.messages.too_long}}</div>
-        <div class="help-block" ng-message="pattern">{{::translation.messages.invalid_address}}</div>
-    </div>
-</div>
-
-<div ng-if="!profileRulesHelper.isHidden('postCode')">
-    <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border"
-         id="postCode"
-         ng-class="{ 'has-error' : (form.postCode.$invalid && !form.postCode.$pristine) || (form.$submitted && form.postCode.$invalid) }">
-        <input type="text"
-               name="postCode"
-               ng-model="personalProfileForm.postCode"
-               ng-minlength="3"
-               ng-maxlength="15"
-               keyboard-watcher
-               ng-pattern="validator('alphanum')"
-               ng-required="profileRulesHelper.isRequired('postCode')"
-               ng-readonly="profileRulesHelper.isReadonly('postCode', user.postCode)">
-        <span>{{::translation.zipCode}}</span>
-        <i class="icon ion-ios-close-empty"></i>
-        <i class="icon ion-ios-checkmark-empty"></i>
-    </div>
-    <div class="messages font-12" ng-messages="form.postCode.$error" ng-if="form.postCode.$dirty || form.$submitted">
-        <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
-        <div class="help-block" ng-message="minlength">{{::translation.messages.too_short}}</div>
-        <div class="help-block" ng-message="maxlength">{{::translation.messages.too_long}}</div>
-        <div class="help-block" ng-message="pattern">{{::translation.messages.mixWordsNumbers}}</div>
-    </div>
-</div>
-
 <div ng-if="!profileRulesHelper.isHidden('phone')">
     <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border"
          id="phone"
@@ -198,6 +95,32 @@
         <div class="help-block" ng-message="minlength">{{::translation.messages.too_short}}</div>
         <div class="help-block" ng-message="maxlength">{{::translation.messages.too_long}}</div>
         <div class="help-block" ng-message="pattern">{{::translation.messages.numbers}}</div>
+    </div>
+</div>
+
+<div ng-if="!profileRulesHelper.isHidden('country')">
+    <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border"
+         id="country"
+         ng-class="{ 'has-error' : (form.country.$invalid && !form.country.$pristine) || (form.$submitted && form.country.$invalid) }">
+        <input type="text"
+               class="custom-select custom-input"
+               name="country"
+               ng-model="personalProfileForm.country.country"
+               on-tap="!profileRulesHelper.isReadonly('country', user.country) && openCountryModal()"
+               readonly
+               ng-required="profileRulesHelper.isRequired('country')">
+        <span>{{::translation.country}}</span>
+        <i class="icon ion-ios-close-empty"></i>
+        <i class="icon ion-ios-checkmark-empty"></i>
+        <country-select ng-if="countryModal"
+                        items="countries"
+                        config="countryModalConfig"
+                        on-submit="setCountry(message)"
+                        on-close="closeModal()">
+        </country-select>
+    </div>
+    <div class="messages font-12" ng-messages="form.country.$error" ng-if="form.country.$touched || form.$submitted">
+        <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
     </div>
 </div>
 
@@ -250,6 +173,83 @@
     <div class="messages font-12" ng-messages="form.citizenship.$error"
          ng-if="form.citizenship.$touched || form.$submitted">
         <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+    </div>
+</div>
+
+<div ng-if="!profileRulesHelper.isHidden('address')">
+    <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border"
+         id="address"
+         ng-class="{ 'has-error' : (form.address.$invalid && !form.address.$pristine) || (form.$submitted && form.address.$invalid) }">
+        <input type="text"
+               name="address"
+               ng-model="personalProfileForm.address"
+               ng-minlength="2"
+               ng-maxlength="100"
+               keyboard-watcher
+               ng-pattern="validator('address')"
+               ng-required="profileRulesHelper.isRequired('address')"
+               ng-readonly="profileRulesHelper.isReadonly('address', user.address)">
+        <span>{{::translation.address}}</span>
+        <i class="icon ion-ios-close-empty"></i>
+        <i class="icon ion-ios-checkmark-empty"></i>
+    </div>
+    <div class="messages font-12" ng-messages="form.address.$error" ng-if="form.address.$dirty || form.$submitted">
+        <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+        <div class="help-block" ng-message="minlength">{{::translation.messages.too_short}}</div>
+        <div class="help-block" ng-message="maxlength">{{::translation.messages.too_long}}</div>
+        <div class="help-block" ng-message="pattern">{{::translation.messages.invalid_address}}</div>
+    </div>
+</div>
+
+<div ng-if="!profileRulesHelper.isHidden('city')">
+    <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border"
+         id="city"
+         ng-class="{ 'has-error' : (form.city.$invalid && !form.city.$pristine) || (form.$submitted && form.city.$invalid) }">
+        <input type="text"
+               name="city"
+               ng-model="personalProfileForm.city"
+               ng-minlength="2"
+               ng-maxlength="100"
+               ng-required="profileRulesHelper.isRequired('city')"
+               ng-readonly="profileRulesHelper.isReadonly('city', user.city)"
+               keyboard-watcher
+               ng-pattern="validator('name')"
+               style="user-select: text !important;"
+        >
+        <span>{{::translation.city}}</span>
+        <i class="icon ion-ios-close-empty"></i>
+        <i class="icon ion-ios-checkmark-empty"></i>
+    </div>
+    <div class="messages font-12" ng-messages="form.city.$error" ng-if="form.city.$dirty || from.$submitted">
+        <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+        <div class="help-block" ng-message="minlength">{{::translation.messages.too_short}}</div>
+        <div class="help-block" ng-message="maxlength">{{::translation.messages.too_long}}</div>
+        <div class="help-block" ng-message="pattern">{{::translation.messages.invalid_city}}</div>
+    </div>
+</div>
+
+<div ng-if="!profileRulesHelper.isHidden('postCode')">
+    <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border"
+         id="postCode"
+         ng-class="{ 'has-error' : (form.postCode.$invalid && !form.postCode.$pristine) || (form.$submitted && form.postCode.$invalid) }">
+        <input type="text"
+               name="postCode"
+               ng-model="personalProfileForm.postCode"
+               ng-minlength="3"
+               ng-maxlength="15"
+               keyboard-watcher
+               ng-pattern="validator('alphanum')"
+               ng-required="profileRulesHelper.isRequired('postCode')"
+               ng-readonly="profileRulesHelper.isReadonly('postCode', user.postCode)">
+        <span>{{::translation.zipCode}}</span>
+        <i class="icon ion-ios-close-empty"></i>
+        <i class="icon ion-ios-checkmark-empty"></i>
+    </div>
+    <div class="messages font-12" ng-messages="form.postCode.$error" ng-if="form.postCode.$dirty || form.$submitted">
+        <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
+        <div class="help-block" ng-message="minlength">{{::translation.messages.too_short}}</div>
+        <div class="help-block" ng-message="maxlength">{{::translation.messages.too_long}}</div>
+        <div class="help-block" ng-message="pattern">{{::translation.messages.mixWordsNumbers}}</div>
     </div>
 </div>
 
@@ -315,7 +315,3 @@
         <div class="help-block" ng-message="required">Please select at least one option</div>
     </div>
 </div>
-
-<custom-fields
-        ng-if="personalProfileForm.country && personalProfileForm.country.customFields && constants['splitPersonalDetails']">
-</custom-fields>

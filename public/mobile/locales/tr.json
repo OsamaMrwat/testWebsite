@@ -976,7 +976,5 @@
     "bank_branch": "Bank Branch",
     "lossPips": "Loss Pips",
     "profitPips": "Profit Pips",
-    "reach": "Reach",
-    "pixCode": "Pix Code",
-    "trading_central_not_validated": "Alım Satım Araçlarına erişmek için hesabınızda minimum %minTotalDeposit% olmalıdır"
+    "reach": "Reach"
 }
