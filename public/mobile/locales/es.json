@@ -473,7 +473,9 @@
         "4007": "La operación ha fallado, por favor, inténtelo de nuevo",
         "4008": "La operación ha fallado, por favor, inténtelo de nuevo",
         "4009": "Error general",
-        "4010": "La subida ha fallado, por favor, inténtalo de nuevo"
+        "4010": "La subida ha fallado, por favor, inténtalo de nuevo",
+        "3070": "Unfortunately the transfer cannot be processed due the trading account parameters, please contact your account manager for further assistance.",
+        "4402": "El código que ingresó no es válido, inténtelo de nuevo "
     },
     "current_rate": "Precio actual",
     "welcome": "Bienvenido",
@@ -1091,5 +1093,15 @@
     "unionpay_national_id_card": "Doc nacional de identidad",
     "bank_branch": "Sucursal bancaria",
     "update": "Actualizar",
-    "description": "Descripción"
+    "description": "Descripción",
+    "pixCode": "Pix Code",
+    "trading_central_not_validated": "Your account must have minimum of %minTotalDeposit% to access Trading Tools",
+    "3070": "Unfortunately the transfer cannot be processed due the trading account parameters, please contact your account manager for further assistance.",
+    "smsLogin": "Inicie sesión en SMS",
+    "pleaseInsertYourEmailMessage": "Inserte su correo electrónico y haga clic en el botón. Enviaremos una contraseña única a su celular. Tenga en cuenta que el código es válido durante 10 minutos",
+    "sendCode": "Enviar código",
+    "backToLoginWithPassword": "Vuelva al inicio de sesión con contraseña",
+    "enterTheCodeSentMessage": "Ingrese el código que recibió en su celular. Tenga en cuenta que el código es válido durante 10 minutos",
+    "didNotReceiveSms": "¿No recibió la contraseña de un solo uso?",
+    "resendCode": "Reenviar código"
 }

@@ -69,7 +69,6 @@
     </div>
 </div>
 
-
 <div ng-If="!profileRulesHelper.isHidden('taxCountry')">
     <div class="form-group item-input item-stacked-label mb-15 mt-10 pl-0 pb-0 bottom-border"
          id="taxCountry"
@@ -96,8 +95,6 @@
         <div class="help-block" ng-message="required">{{::translation.messages.required}}</div>
     </div>
 </div>
-
-
 
 
 <div ng-if="!profileRulesHelper.isHidden('isUSCitizen')">
@@ -196,12 +193,12 @@
     </div>
 
 
-    <div class="padding pb-0 pl-0" ng-if="personalProfileForm.isMarried">
+    <div class="padding pb-0 pl-0" ng-if="personalProfileForm.isMarried && !profileRulesHelper.isHidden('isSpouse')">
         {{::translation.isSpouse}}
     </div>
 
     <div class="form-group item-input mb-3 mt-0 pl-0 pt-0 pb-0 custom-radio" id="isSpouse"
-         ng-if="personalProfileForm.isMarried"
+         ng-if="personalProfileForm.isMarried && !profileRulesHelper.isHidden('isSpouse')"
          ng-class="{ 'has-error' : form.isSpouse.$invalid && !form.isSpouse.$pristine }">
         <ion-radio ng-value="false"
                    name="isSpouse"
@@ -244,4 +241,33 @@
     </div>
 </div>
 
-<custom-fields ng-if="personalProfileForm.country && personalProfileForm.country.customFields"></custom-fields>
+
+<div ng-if="!profileRulesHelper.isHidden('gender')">
+    <div class="padding pb-0 pl-0">{{::translation.gender}}</div>
+
+    <div class="form-group item-input mb-3 mt-0 pl-0 pt-0 pb-0 custom-radio" id="gender"
+         ng-class="{ 'has-error' : form.gender.$invalid && !form.gender.$pristine }">
+        <ion-radio ng-value="1"
+                   name="gender"
+                   class="text-transform-capitalize"
+                   ng-model="personalProfileForm.gender"
+                   ng-required="profileRulesHelper.isRequired('gender')">
+            {{::translation.male}}
+        </ion-radio>
+        <ion-radio ng-value="2"
+                   name="gender"
+                   class="text-transform-capitalize"
+                   ng-model="personalProfileForm.gender"
+                   ng-required="profileRulesHelper.isRequired('gender')">
+            {{::translation.female}}
+        </ion-radio>
+    </div>
+    <div class="messages font-12" ng-messages="form.gender.$error"
+         ng-if="form.gender.$dirty">
+        <div class="help-block" ng-message="required">Please select at least one option</div>
+    </div>
+</div>
+
+<custom-fields
+        ng-if="personalProfileForm.country && personalProfileForm.country.customFields && !constants['splitPersonalDetails']">
+</custom-fields>

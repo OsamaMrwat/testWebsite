@@ -2,7 +2,10 @@
     <div class="row card-ios p-0">
         <div class="col col-67 display-flex">
             <div class="col col-50 symbol">
-                <div class="name font-14 roboto">{{ trade.outputName }}</div>
+                <div class="name font-14 roboto">
+                    <i class="icon icon-social" ng-if="trade.fromSocial()"></i>
+                    {{ trade.outputName }}
+                </div>
                 <div class="sub-name">
                     <span class="display-block font-11 status roboto-light">{{::translation.open_price}}</span>
                     <span class="font-13 roboto status-value">{{ trade.openPrice | number:trade.asset.digits }}</span>
@@ -14,7 +17,7 @@
                           ng-class="trade.action === 'buy' ? 'buy' : 'short'">
                         {{translation[trade.action]}}
                     </span>
-                    <span class="short-color">{{ trade.lots | number:2 }}</span>
+                    <span class="short-color">{{ trade.lots | number:trade.asset.lotDigits }}</span>
                 </div>
                 <div class="sub-name">
                     <span class="display-block font-11 status roboto-light">{{::translation.market_price}}</span>
@@ -48,17 +51,23 @@
                 </div>
             </div>
             <div class="row profit-section text-right">
-                <div class="sub-name width-100">
+                <div class="col p-0 duplicate" on-tap="$event.stopPropagation();executeTrade(trade)">
+                    <i class="ion-ios-copy-outline"></i>
+                </div>
+                <div class="col p-0 sub-name width-100">
                     <span class="font-11 status roboto-light display-block">{{::translation.profit}}</span>
                     <span class="font-11 roboto-medium profitValue" ng-class="[trade.profitDirection, showConvertToUsd ? 'display-block' : '']">
                         {{trade.profit() | cryptoCurrency
-                        :user.activeTradingAccount.currency
-                        :user.currencyDigits}}
+                            :user.activeTradingAccount.currency
+                            :user.currencyDigits}}
                     </span>
                     <span class="font-10 roboto-medium profitValueUSD" ng-if="showConvertToUsd" ng-class="trade.profitDirection">
                         ({{trade.profitToUsd() | cryptoCurrency:'USD':2}})
                     </span>
                 </div>
+
+<!--                <div class="sub-name width-100">-->
+<!--                </div>-->
             </div>
         </div>
     </div>

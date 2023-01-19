@@ -473,7 +473,9 @@
         "4007": "Fehler bei Vorgang, bitte versuchen Sie es erneut",
         "4008": "Fehler bei Vorgang, bitte versuchen Sie es erneut",
         "4009": "Allgemeiner Fehler",
-        "4010": "Upload-Fehler, bitte versuchen Sie es erneut"
+        "4010": "Upload-Fehler, bitte versuchen Sie es erneut",
+        "3070": "Leider kann die Überweisung aufgrund der Handelskontoparameter nicht bearbeitet werden. Bitte kontaktieren Sie Ihren Kundenbetreuer für weitere Unterstützung.",
+        "4402": "The code inserted is invalid, please try again"
     },
     "current_rate": "Aktueller Kurs",
     "welcome": "Willkommen",
@@ -1079,7 +1081,7 @@
     "two_sided": "Ist das Dokument zweiseitig?",
     "trading_experience": "Do you have experience with investments?",
     "trades": "Händel",
-    "filterClosedTrades": "Filter trades history by",
+    "filterClosedTrades": "Historie filtern nach",
     "allTypes": "Alles",
     "fasapay": "FasaPay",
     "fasapay_account_name": "FasaPay Account Name",
@@ -1089,5 +1091,14 @@
     "unionpay_national_id_card": "Nationaler Personalausweis",
     "bank_branch": "Bankfiliale",
     "update": "Aktualisieren",
-    "description": "Beschreibung"
+    "description": "Beschreibung",
+    "pixCode": "Pix Code",
+    "trading_central_not_validated": "Your account must have minimum of %minTotalDeposit% to access Trading Tools",
+    "smsLogin": "SMS Login",
+    "pleaseInsertYourEmailMessage": "Please insert your email and click the button. <br> <br> We’ll send a one time password to your mobile. <br> Please note that the code is valid for 10 minutes",
+    "sendCode": "Send code",
+    "backToLoginWithPassword": "Back to login with password",
+    "enterTheCodeSentMessage": "Enter the code sent to your mobile <br> Please note that the code is valid for 10 minutes",
+    "didNotReceiveSms": "Didn't receive the OTP?",
+    "resendCode": "Resend code"
 }

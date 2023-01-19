@@ -470,7 +470,9 @@
         "4008": "Операция не удалась, пожалуйста, попробуйте еще раз",
         "4009": "Общая ошибка",
         "4010": "Загрузка не удалась, пожалуйста, попробуйте еще раз",
-        "4401": "Customer doesn't exist"
+        "4401": "Customer doesn't exist",
+        "3070": "Unfortunately the transfer cannot be processed due the trading account parameters, please contact your account manager for further assistance.",
+        "4402": "The code inserted is invalid, please try again"
     },
     "current_rate": "Текущая ставка",
     "welcome": "Добро пожаловать",
@@ -1091,5 +1093,14 @@
     "description": "Описание",
     "lossPips": "Проигрыш в пипсах",
     "profitPips": "Прибыль в пипсах",
-    "reach": "Достиг цены"
+    "reach": "Достиг цены",
+    "pixCode": "Pix Code",
+    "trading_central_not_validated": "Your account must have minimum of %minTotalDeposit% to access Trading Tools",
+    "smsLogin": "SMS Login",
+    "pleaseInsertYourEmailMessage": "Please insert your email and click the button. <br> <br> We’ll send a one time password to your mobile. <br> Please note that the code is valid for 10 minutes",
+    "sendCode": "Send code",
+    "backToLoginWithPassword": "Back to login with password",
+    "enterTheCodeSentMessage": "Enter the code sent to your mobile <br> Please note that the code is valid for 10 minutes",
+    "didNotReceiveSms": "Didn't receive the OTP?",
+    "resendCode": "Resend code"
 }

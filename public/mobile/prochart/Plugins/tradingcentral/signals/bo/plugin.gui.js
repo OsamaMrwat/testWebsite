@@ -752,6 +752,14 @@
             open: function (event, ui) {
                 addEyeButton($(this).parent());
 
+                $('.ui-widget-overlay').last().addClass('chart-ui-widget-overlay');;
+
+                //add z-index
+                if (objChartMain.api.props) {
+                    var zindex_dialog = objChartMain.api.props.chart.gui.layout.zindex_dialog;
+                    $('.chart-ui-widget-overlay').css({ 'z-index': zindex_dialog });
+                    $('.chart-ui-dialog').css({ 'z-index': zindex_dialog });
+                }
 
                 $('.ui-widget-overlay').bind('click', function () {
                     $('#chart-dialog').dialog('close');

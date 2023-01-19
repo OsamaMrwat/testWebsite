@@ -466,7 +466,9 @@
 		"4007": "Operacja nie powiodła się, spróbuj ponownie",
 		"4008": "Operacja nie powiodła się, spróbuj ponownie",
 		"4009": "Błąd ogólny",
-		"4010": "Przesyłanie nie powiodło się, spróbuj ponownie"
+		"4010": "Przesyłanie nie powiodło się, spróbuj ponownie",
+		"3070": "Unfortunately the transfer cannot be processed due the trading account parameters, please contact your account manager for further assistance.",
+		"4402": "The code inserted is invalid, please try again"
 	},
 	"current_rate": "Stawka obecna",
 	"welcome": "Witamy",
@@ -1041,5 +1043,14 @@
 	"fasapay_account_name": "FasaPay Account Name",
 	"fasapay_wallet_account_number": "FasaPay Wallet Account Number",
     "update": "Update",
-    "description": "Opis"
+    "description": "Opis",
+    "pixCode": "Pix Code",
+    "trading_central_not_validated": "Your account must have minimum of %minTotalDeposit% to access Trading Tools",
+	"smsLogin": "SMS Login",
+	"pleaseInsertYourEmailMessage": "Please insert your email and click the button. <br> <br> We’ll send a one time password to your mobile. <br> Please note that the code is valid for 10 minutes",
+	"sendCode": "Send code",
+	"backToLoginWithPassword": "Back to login with password",
+	"enterTheCodeSentMessage": "Enter the code sent to your mobile <br> Please note that the code is valid for 10 minutes",
+	"didNotReceiveSms": "Didn't receive the OTP?",
+	"resendCode": "Resend code"
 }

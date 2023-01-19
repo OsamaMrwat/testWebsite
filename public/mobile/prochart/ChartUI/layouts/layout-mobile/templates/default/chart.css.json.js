@@ -109,8 +109,12 @@
         },
         "area": {
             "strokeWidth": "1",
-            "stroke": "#8888FF",
-            "fill": "#8888FF"
+            "stroke": "#0094FF",
+            "fill": "#606090",
+            "fillOpacity": 0.5,
+            "fill2": "#01F6F5",
+            "fillOpacity2": 0.5,
+			"fontColor" : "rgb(255,255,255)"
         },
         "histogram": {
             "strokeWidth": "1",
@@ -160,7 +164,7 @@
 		"animation" : {
 			"lightDot" : {
 				"dotRadius" : 4,
-				"inRadius" : 0, 
+				"inRadius" : 0,
 				"outFromRadius" : 10,
 				"outToRadius" : 30,
 				"inColor" : "rgba(100,255,100,1)",
@@ -1005,7 +1009,7 @@
             "fill": "#8A4CFF"
         }
     },
-    
+
 	"indicators" : {
 		"levels" : {
 			"level1":	{ "stroke": "#FF0000", "strokeWidth": "1", "strokeOpacity": "0.9", "strokeDasharray": "dashed" },
@@ -1017,107 +1021,107 @@
 	                     {  "cssclass": "level1", "stroke": "#FF0000", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" },
                          { "cssclass": "level2", "stroke": "#0000FF", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" },
                          { "cssclass": "level3", "stroke": "#00FF00", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed"}
-	            ]              
+	            ]
 	    },
 	    "stochrsi":{
 	            "levels":[
 	                    {  "cssclass": "level1", "stroke": "#FF0000", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" },
                          { "cssclass": "level2", "stroke": "#0000FF", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" },
                          { "cssclass": "level3", "stroke": "#00FF00", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed"}
-	            ]              
-	    },   
+	            ]
+	    },
 	    "roc":{
 	            "levels":[
-                         { "cssclass": "level2", "stroke": "#0000FF", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" }                        
-	            ]              
+                         { "cssclass": "level2", "stroke": "#0000FF", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" }
+	            ]
 	    },
 	    "bbpercent":{
 	            "levels":[
                         { "cssclass": "level2", "stroke": "#999999", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" } ,
-	                   { "cssclass": "level2", "stroke": "#999999", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" } 
-	            ]              
+	                   { "cssclass": "level2", "stroke": "#999999", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" }
+	            ]
 	    },
   	    "momentum":{
 	            "levels":[
 	                     {  "cssclass": "level1", "stroke": "#FF0000", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" },
                          { "cssclass": "level2", "stroke": "#0000FF", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" },
                          { "cssclass": "level3", "stroke": "#00FF00", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed"}
-	            ]              
-	    },   
+	            ]
+	    },
 	    "macd":{
 	            "levels":[
-                         { "cssclass": "level2", "stroke": "#999999", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" }                        
-	            ] 
-            }, 
+                         { "cssclass": "level2", "stroke": "#999999", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" }
+	            ]
+            },
         "gator":{
 	            "levels":[
-                         { "cssclass": "ADVHistogramFlat", "stroke": "#999999", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" }                        
-	            ] 
+                         { "cssclass": "ADVHistogramFlat", "stroke": "#999999", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" }
+	            ]
             } ,
         "uo":{
 	            "levels":[
 	                 {  "cssclass": "level2", "stroke": "#999999", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" },
                          { "cssclass": "level2", "stroke": "#999999", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" }
-	            ]              
+	            ]
 	    } ,
         "ao":{
 	            "levels":[
 	                { "cssclass": "level2", "stroke": "#999999", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" }
-	            ]              
+	            ]
 	    },
         "demarker":{
 	            "levels":[
 	                 {  "cssclass": "level1", "stroke": "#FF0000", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" },
                          { "cssclass": "level2", "stroke": "#0000FF", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" },
                          { "cssclass": "level3", "stroke": "#00FF00", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed"}
-	            ]              
+	            ]
 	    } ,
            "dpo":{
 	            "levels":[
 	                { "cssclass": "level2", "stroke": "#999999", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" }
-	            ]              
+	            ]
 	    } ,
            "stochastic":{
 	            "levels":[
 	                { "cssclass": "level2", "stroke": "#999999", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" }
-	            ]              
+	            ]
 	    }   ,
            "slowstochastic":{
 	            "levels":[
 	                { "cssclass": "level2", "stroke": "#999999", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" }
-	            ]              
+	            ]
 	    }  ,
            "co":{
 	            "levels":[
 	                { "cssclass": "level2", "stroke": "#999999", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" }
-	            ]              
+	            ]
 	    } ,
            "eom":{
 	            "levels":[
 	                { "cssclass": "level2", "stroke": "#999999", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" }
-	            ]              
+	            ]
 	    }  ,
            "fi":{
 	            "levels":[
 	                { "cssclass": "level2", "stroke": "#999999", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" }
-	            ]              
+	            ]
 	    }   ,
            "pvo":{
 	            "levels":[
 	                { "cssclass": "level2", "stroke": "#999999", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" }
-	            ]              
+	            ]
 	    } ,
           "mfi":{
 	            "levels":[
 	                 {  "cssclass": "level1", "stroke": "#FF0000", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" },
                          { "cssclass": "level2", "stroke": "#0000FF", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed" },
                          { "cssclass": "level3", "stroke": "#00FF00", "strokeWidth": 1, "strokeOpacity": 0.9, "strokeDasharray": "dashed"}
-	            ]              
-	    }        
-	                   
+	            ]
+	    }
+
 	},
-	
-	
+
+
 	"price_cs_flat": {
         "stroke": "#555555",
         "fill": "#555555",
@@ -1697,21 +1701,54 @@
         "fill": "#4CFF4C"
     },
     "AdvGridH": {
-        "stroke": "#E8E8E8",
+        "stroke": "#F4F4F4",
         "strokeWidth": "1"
     },
     "AdvGridV": {
-        "stroke": "#E8E8E8",
+        "stroke": "#F4F4F4",
         "strokeWidth": "1"
     },
+    "Grid" : {
+    "linesH" : {
+        "stroke": "#F4F4F4",
+            "strokeWidth": "1",
+            "dashStyle" : null
+    },
+    "linesV" : {
+        "stroke": "#F4F4F4",
+            "strokeWidth": "1",
+            "dashStyle" : null
+    },
+    "ticks" : {
+        "mainH" : {
+            "stroke": "#000000",
+                "strokeWidth": 0,
+                "length"  : 0,
+                "onTop" : false
+        },
+        "mainV" : {
+            "stroke": "#000000",
+                "strokeWidth": 0,
+                "length"  : 0,
+                "onLeft" : true
+
+        },
+        "sub" : {
+            "stroke": "#F4F4F4",
+                "strokeWidth": 0,
+                "length"  : 5,
+                "frequency" : 2
+        }
+    }
+},
     "VAxis": {
         "fill": "transparent",
-        "fontFill": "#BABABA",
+        "fontFill": "#000000",
         "font": "normal 11px Arial"
     },
     "HAxis": {
         "fill": "transparent",
-        "fontFill": "#BABABA",
+        "fontFill": "#000000",
         "font": "normal 11px Arial"
     },
     "RTMarker": {

@@ -25,7 +25,7 @@
                         <span>{{::translation.sell}}</span>
                     </button>
 
-                    <div class="font-12 open-sans black text-center asset-price" ng-class="asset.bidDirection">
+                    <div class="font-12 open-sans black text-center asset-price" ng-class="asset.bidDirection" ng-if="!constants['isShowOnlyMidPrice']">
                         {{asset.markupBid() | number:asset.digits }}
                     </div>
                 </div>
@@ -40,11 +40,16 @@
                         <span>{{::translation.buy}}</span>
                     </button>
 
-                    <div class="font-12 open-sans black text-center asset-price" ng-class="asset.askDirection">
+                    <div class="font-12 open-sans black text-center asset-price" ng-class="asset.askDirection" ng-if="!constants['isShowOnlyMidPrice']">
                         {{asset.markupAsk() | number:asset.digits }}
                     </div>
                 </div>
             </div>
+            <dvi class="row" ng-if="constants['isShowOnlyMidPrice']">
+                <div class="row text-center just-center asset-price open-sans black font-12"  ng-class="asset.midDirection">
+                    {{asset.getMarkupMid() | number:asset.digits }}
+                </div>
+            </dvi>
         </div>
     </div>
 </div>

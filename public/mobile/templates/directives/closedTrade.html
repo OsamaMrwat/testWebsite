@@ -6,6 +6,7 @@
                 {{ '#' + trade.orderId }}&zwj;
             </div>
             <div class="col col-33 trade-name">
+                <i class="icon icon-social" ng-if="trade.fromSocial()"></i>
                 {{ trade.outputName }}
             </div>
             <div class="col col-33">

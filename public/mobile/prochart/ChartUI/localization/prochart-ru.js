@@ -163,6 +163,8 @@
       "button-cancel": "Отменить",
       "button-applyorder": "Изменить ордер",
       "button-deleteorder": "Удалить ордер",
+      "button-save-settings": "Сохранить настройки",
+      "button-reset-settings": "Сбросить",
       "linetype": {
         "solid": "Сплошная",
         "doted": "Точечная",

@@ -466,7 +466,9 @@
         "3044": "As a matter of our internal legal risk management policy, we are unable to accept you as a customer unless your spouse had consented to this financial relationship.",
         "3045": "You have indicated that you are a Politically Exposed Person. As a matter of our compliance policy, we are currently unable to accept customers who are PEPs.",
         "3046": "Trading in CFDs is very risky. Based on our approach to appropriateness of CFD trading to certain groups of clients, we cannot accept you as our customer.",
-        "4401": "Customer doesn't exist"
+        "4401": "Customer doesn't exist",
+        "3070": "Unfortunately the transfer cannot be processed due the trading account parameters, please contact your account manager for further assistance.",
+        "4402": "The code inserted is invalid, please try again"
     },
     "current_rate": "Geçerli Kur",
     "welcome": "Hoşgeldiniz",
@@ -976,5 +978,14 @@
     "bank_branch": "Bank Branch",
     "lossPips": "Loss Pips",
     "profitPips": "Profit Pips",
-    "reach": "Reach"
+    "reach": "Reach",
+    "pixCode": "Pix Code",
+    "trading_central_not_validated": "Alım Satım Araçlarına erişmek için hesabınızda minimum %minTotalDeposit% olmalıdır",
+    "smsLogin": "SMS Login",
+    "pleaseInsertYourEmailMessage": "Please insert your email and click the button. <br> <br> We’ll send a one time password to your mobile. <br> Please note that the code is valid for 10 minutes",
+    "sendCode": "Send code",
+    "backToLoginWithPassword": "Back to login with password",
+    "enterTheCodeSentMessage": "Enter the code sent to your mobile <br> Please note that the code is valid for 10 minutes",
+    "didNotReceiveSms": "Didn't receive the OTP?",
+    "resendCode": "Resend code"
 }

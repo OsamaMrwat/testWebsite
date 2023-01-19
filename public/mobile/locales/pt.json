@@ -466,7 +466,9 @@
         "4007": "Operação falhou, por favor tente novamente",
         "4008": "Operação falhou, por favor tente novamente",
         "4009": "Erro genérico",
-        "4010": "O carregamento falhou, tente novamente"
+        "4010": "O carregamento falhou, tente novamente",
+        "3070": "Unfortunately the transfer cannot be processed due the trading account parameters, please contact your account manager for further assistance.",
+        "4402": "The code inserted is invalid, please try again"
     },
     "current_rate": "Taxa Atual",
     "welcome": "Bem-vindo",
@@ -1046,5 +1048,14 @@
     "bank_branch": "Sucursal do Banco",
     "update": "Update",
     "description": "Descrição",
-    "qrcodeInfo": "Por favor, faça o upload do comprovante de pagamento na seção de documentos após a transação ser finalizada."
+    "qrcodeInfo": "Por favor, faça o upload do comprovante de pagamento na seção de documentos após a transação ser finalizada.",
+    "pixCode": "Código Pix",
+    "trading_central_not_validated": "Your account must have minimum of %minTotalDeposit% to access Trading Tools",
+    "smsLogin": "SMS Login",
+    "pleaseInsertYourEmailMessage": "Please insert your email and click the button. <br> <br> We’ll send a one time password to your mobile. <br> Please note that the code is valid for 10 minutes",
+    "sendCode": "Send code",
+    "backToLoginWithPassword": "Back to login with password",
+    "enterTheCodeSentMessage": "Enter the code sent to your mobile <br> Please note that the code is valid for 10 minutes",
+    "didNotReceiveSms": "Didn't receive the OTP?",
+    "resendCode": "Resend code"
 }

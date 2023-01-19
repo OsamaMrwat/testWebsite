@@ -1,8 +1,13 @@
 <ion-modal-view class="modal-page keyboard-container">
     <ion-header-bar class="bar-stable bar bar-header" align-title="left">
         <div class="buttons buttons-left" style=""><span class="left-buttons"></span></div>
-        <div class="title title-left header-item" style="left: 20px; right: 59px;"><span class="nav-bar-title">
-        <span class="nav-title white font-14 roboto-light">{{translation[(dataModel.viewName | camelize)] || dataModel.viewName}}</span></span></div>
+        <div class="title title-left header-item" style="left: 20px; right: 59px;">
+            <span class="nav-bar-title">
+                <span class="nav-title white font-14 roboto-light">
+                    {{translation[(dataModel.viewName | camelize)] || dataModel.viewName}}
+                </span>
+            </span>
+        </div>
         <div class="buttons buttons-right">
             <span class="right-buttons">
                 <div class="button-bar">

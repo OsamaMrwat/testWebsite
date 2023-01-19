@@ -11,7 +11,7 @@
                           ng-class="(trade.action === 'buy_stop' || trade.action === 'buy_limit') ? 'buy' : 'short'">
                         {{translation[trade.action]}}
                     </span>
-                    <span>{{trade.lots | number:2}}</span>
+                    <span>{{trade.lots | number: trade.asset.lotDigits}}</span>
                     <span>{{::translation.lots}}</span>
                 </div>
             </div>

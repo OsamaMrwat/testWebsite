@@ -14,13 +14,13 @@
          },
      "chart":
      {
-        "bar": "Bar",
-        "value": "Value",
-        "date": "Date",
-        "open": "Open",
-        "close": "Close",
-        "low": "Low",
-        "high": "High"
+        "bar": "bar",
+        "value": "value",
+        "date": "date",
+        "open": "open",
+        "close": "close",
+        "low": "low",
+        "high": "high" 
 
      },
      "menu":
@@ -48,7 +48,7 @@
          },
          "majors2":
          {
-             "title":"Custom Majors"
+             "title":"Custom Majors22"
          },
          "indicators":
          {
@@ -72,6 +72,7 @@
             "15M": "15 Minutes",
             "30M": "30 Minutes",
             "60M": "Hourly",
+			"1H": "Hourly",
             "2H": "2 Hours",
             "4H": "4 Hours",
             "6H": "6 Hours",
@@ -145,6 +146,7 @@
              "title":"General:",
              "screenshot":"Take ScreenShot",
              "fullscreen":"Full Screen",
+             "normalscreen":"Normal Screen",
              "globalproperties":"Global Properties"
          },
          "tools":
@@ -473,22 +475,173 @@
          },
          "tradingcentral":
          {
-             "name":"Trading Central",
+             "name":"TC.Technical Analysis",
              "desc":"Acclaimed as the leading provider of technical strategies and offering deep market knowledge and expertise, Trading Central has won the trust of hundreds of financial institutions worldwide. Forex Time enhances its own market analysis with Trading Central's analytical tools, bringing its traders a variety of technical analysis methods to use in their trading strategies and simultaneously educating them in the field of technical analysis.Trading Central is a member of three Independent Research Providers (IRP) Associations (Euro IRP, Asia IRP and Investorside) and is regulated by three market authorities. The regulatory authorities are as follows: the AMF (Autorité des Marchés Financiers), the U.S. Securities and Exchange Commission (SEC) and the Hong Kong-based Securities and Futures Commission (SFC).",
-             "items":
+			 "legend" : {
+				 "intraday" : "TC.Technical Analysis(30m)",
+				 "st" : "TC.Technical Analysis(1d)"
+			 },
+             "lines":
              {
-                 "pivot":
-                 {
-                     "name":"Pivot Lines",
-                     "desc":"Price levels of significance in technical analysis of a financial market that is used by traders as a predictive indicator of market movement."
-                 },
-                 "cspattern":
-                 {
-                     "name":"Candlestick Patterns",
-                     "desc":"A Candlestick pattern is a movement in prices shown graphically on a candlestick chart that some believe can predict a particular market movement."
-                 }
+                 "pivot": "pivot",
+				 "sup1": "support1",
+				 "sup2": "support2",
+				 "sup3": "support3",
+				 "res1": "resistance1",
+				 "res2": "resistance2",
+				 "res3": "resistance3"
+             },
+			 "outOfRangeLabel":
+             {
+                 "pivot": "piv",
+				 "sup1": "sup1",
+				 "sup2": "sup2",
+				 "sup3": "sup3",
+				 "res1": "res1",
+				 "res2": "res2",
+				 "res3": "res3"
              }
-         } ,
+         },
+         "sigmainvest":
+         {
+             "name":"SI.Technical Analysis",
+             "desc":"(TBD)",
+			 "legend" : {
+				 "intraday" : "SI.Technical Analysis(30m)",
+				 "st" : "SI.Technical Analysis(1d)"
+			 },
+             "lines":
+             {
+                 "pivot": "pivot",
+				 "sup1": "support1",
+				 "sup2": "support2",
+				 "sup3": "support3",
+				 "res1": "resistance1",
+				 "res2": "resistance2",
+				 "res3": "resistance3"
+             },
+			 "outOfRangeLabel":
+             {
+                 "pivot": "piv",
+				 "sup1": "sup1",
+				 "sup2": "sup2",
+				 "sup3": "sup3",
+				 "res1": "res1",
+				 "res2": "res2",
+				 "res3": "res3"
+             },
+			 "patterns" : {
+				"Pivot"	: "Pivot",
+				"BearishAbandonedBaby": "Bearish Abandoned Baby",
+				"BearishAdvanceBlock": "Bearish Advance Block",
+				"BearishBeltHold": "Bearish Belt Hold",
+				"BearishBreakaway": "Bearish Breakaway",
+				"BearishDarkCloudCover": "Bearish Dark Cloud Cover",
+				"BearishDeliberation": "Bearish Deliberation",
+				"BearishDojiStar": "Bearish Doji Star",
+				"BearishEngulfing": "Bearish Engulfing",
+				"BearishEveningStar": "Bearish Evening Star",
+				"BearishEveningDojiStar": "Bearish Evening Doji Star",
+				"BearishHangingMan": "Bearish Hanging Man",
+				"BearishHarami": "Bearish Harami",
+				"BearishHaramiCross": "Bearish Harami Cross",
+				"BearishIdenticalThreeCrows": "Bearish Identical Three Crows",
+				"BearishKicking": "Bearish Kicking",
+				"BearishMeetingLines": "Bearish Meeting Lines",
+				"BearishShootingStar": "Bearish Shooting Star",
+				"BearishThreeBlackCrows": "Bearish Three Black Crows",
+				"BearishThreeInsideDown": "Bearish Three Inside Down",
+				"BearishThreeOutsideDown": "Bearish Three Outside Down",
+				"BearishTriStar": "Bearish Tri Star",
+				"BearishTweezerTop": "Bearish Tweezer Top",
+				"BearishTwoCrows": "Bearish Two Crows",
+				"BearishUpsideGapTwoCrows": "Bearish Upside Gap Two Crows",
+				"ContinuationBearishDownsideGapThreeMethods": "Continuation Bearish Downside Gap Three Methods",
+				"ContinuationBearishDownsideTasukiGap": "Continuation Bearish Downside Tasuki Gap",
+				"ContinuationBearishFallingThreeMethods": "Continuation Bearish Falling Three Methods",
+				"ContinuationBearishInNeck": "Continuation Bearish In Neck",
+				"ContinuationBearishOnNeck": "Continuation Bearish On Neck",
+				"ContinuationBearishSeparatingLines": "Continuation Bearish Separating Lines",
+				"ContinuationBearishSideBySideWhiteLines": "Continuation Bearish Side By Side White Lines",
+				"ContinuationBearishThreeLineStrike": "Continuation Bearish Three Line Strike",
+				"ContinuationBearishThrusting": "Continuation Bearish Thrusting",
+				"BullishAbandonedBaby": "Bullish Abandoned Baby",
+				"BullishBeltHold": "Bullish Belt Hold",
+				"BullishBreakaway": "Bullish Breakaway",
+				"BullishConcealingBabySwallow": "Bullish Concealing Baby Swallow",
+				"BullishDojiStar": "Bullish Doji Star",
+				"BullishEngulfing": "Bullish Engulfing",
+				"BullishHammer": "Bullish Hammer",
+				"BullishHarami": "Bullish Harami",
+				"BullishHaramiCross": "Bullish Harami Cross",
+				"BullishHomingPigeon": "Bullish Homing Pigeon",
+				"BullishInvertedHammer": "Bullish Inverted Hammer",
+				"BullishKicking": "Bullish Kicking",
+				"BullishLadderBottom": "Bullish Ladder Bottom",
+				"BullishMatchingLow": "Bullish Matching Low",
+				"BullishMeetingLines": "Bullish Meeting Lines",
+				"BullishMorningDojiStar": "Bullish Morning Doji Star",
+				"BullishMorningStar": "Bullish Morning Star",
+				"BullishPiercingLine": "Bullish Piercing Line",
+				"BullishStickSandwich": "Bullish Stick Sandwich",
+				"BullishThreeInsideUp": "Bullish Three Inside Up",
+				"BullishThreeOutsideUp": "Bullish Three Outside Up",
+				"BullishThreeStarsInTheSouth": "Bullish Three Stars In The South",
+				"BullishThreeWhiteSoldiers": "Bullish Three White Soldiers",
+				"BullishTriStar": "Bullish Tri Star",
+				"BullishTweezerBottom": "Bullish Tweezer Bottom",
+				"BullishUniqueThreeRiverBottom": "Bullish Unique Three River Bottom",
+				"ContinuationBullishMatHold": "Continuation Bullish Mat Hold",
+				"ContinuationBullishRisingThreeMethods": "Continuation Bullish Rising Three Methods",
+				"ContinuationBullishSeparatingLines": "Continuation Bullish Separating Lines",
+				"ContinuationBullishSideBySideWhiteLines": "Continuation Bullish Side By Side White Lines",
+				"ContinuationBullishThreeLineStrike": "Continuation Bullish Three Line Strike",
+				"ContinuationBullishUpsideGapThreeMethods": "Continuation Bullish Upside Gap Three Methods",
+				"ContinuationBullishUpsideTasukiGap": "Continuation Bullish Upside Tasuki Gap",
+				"SlowLine" : "Slow line",
+				"MiddleLine" : "Middle line",
+				"FastLine" : "Fast line",
+				"ERROR" : "Erroe",
+				"HS" : "Head And Shoulder",
+				"IHS" : "Inverted Head And Shoulder",
+				"Cup" : "Cup And Handle",
+				"Triangle" : "Triangle",
+				"DescendingTriangle" : "Descending Triangle",
+				"AscendingTriangle" : "Ascending Triangle",
+				"AscendingChannel" : "Ascending Channel",
+				"DescendingChannel" : "Descending Channel",
+				"Pannet" : "Pannet",
+				"BullFlag" : "Bull Flag",
+				"BearFlag" : "Bear Flag",
+				"Falling Wedge" : "Falling Wedge",
+				"Rising Wedge" : "Rising Wedge",
+				"Double Bottom" : "Double Bottom",
+				"Double Top" : "Double Top",
+				"TripleBottom" : "Triple Bottom",
+				"TripleTop" : "Triple Top",
+				"Megaphone" : "Megaphone",
+				"Rectangle"	: "Rectangle",
+				"three drives"	: "Three Drives",
+				"crab"	: "Crab",
+				"deepcrab"	: "Deep Crab",
+				"butterfly"	: "Butterfly",
+				"bat"	: "Bat",
+				"gartley"	: "Gartley",
+				"abcd"	: "ABCD",
+				"altbat"	: "Alternate Bat",
+				"shark"	: "Shark",
+				"Expired" : "Expired",
+				"Failed" : "Failed",
+				"Succeeded" : "Succeeded",
+				"BreakedOut" : "Breaked Out",
+				"Emerging" : "Emerging",
+				"Target" : "Target",
+				"Alternate" : "Alternate",
+				"chartpattern" : "Chart Pattern",
+				"fibonacci" : "Fibonacci Pattern"
+				 
+			 }
+         }  ,
          "autochartist":
          {
              "name":"AutoCharttist",
