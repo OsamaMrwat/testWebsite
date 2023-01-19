@@ -1,0 +1,74 @@
+<div class="opentrade-item">
+    <div class="row card-ios p-0">
+        <div class="col col-67 display-flex">
+            <div class="col col-50 symbol">
+                <div class="name font-14 roboto">
+                    <i class="icon icon-social" ng-if="trade.fromSocial()"></i>
+                    {{ trade.outputName }}
+                </div>
+                <div class="sub-name">
+                    <span class="display-block font-11 status roboto-light">{{::translation.open_price}}</span>
+                    <span class="font-13 roboto status-value">{{ trade.openPrice | number:trade.asset.digits }}</span>
+                </div>
+            </div>
+            <div class="col col-50 state border-right-order pt-2">
+                <div class="current-state font-12 short">
+                    <span class="trade-state roboto-light"
+                          ng-class="trade.action === 'buy' ? 'buy' : 'short'">
+                        {{translation[trade.action]}}
+                    </span>
+                    <span class="short-color">{{ trade.lots | number:trade.asset.lotDigits }}</span>
+                </div>
+                <div class="sub-name">
+                    <span class="display-block font-11 status roboto-light">{{::translation.market_price}}</span>
+                    <span class="font-13 roboto">
+                        <span class="direction-state" ng-class="trade.closePriceDirection === 'asset-up' ? 'up' : 'down'">
+                            <i class="icon font-12"
+                               ng-class="trade.closePriceDirection === 'asset-up' ? 'ion-android-arrow-up' : 'ion-android-arrow-down'"></i>
+                        </span>
+                        <span ng-class="trade.closePriceDirection === 'asset-up' ? 'up' : 'down'">
+                            {{ trade.closePrice() | number:trade.asset.digits }}
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col col-33 display-flex results-section">
+            <div class="row">
+                <div class="col p-0">
+                    <div class="display-block font-10 lh-1">
+                        <span class="trade-name">TP:</span>
+                        <span class="trade-value" ng-if="trade.takeProfit > 0">
+                            {{ trade.takeProfit | number:trade.asset.digits }}
+                        </span>
+                    </div>
+                    <div class="display-block font-10 lh-1">
+                        <span class="trade-name">SL:</span>
+                        <span class="trade-value" ng-if="trade.stopLoss > 0">
+                            {{ trade.stopLoss | number:trade.asset.digits }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row profit-section text-right">
+                <div class="col p-0 duplicate" on-tap="$event.stopPropagation();executeTrade(trade)">
+                    <i class="ion-ios-copy-outline"></i>
+                </div>
+                <div class="col p-0 sub-name width-100">
+                    <span class="font-11 status roboto-light display-block">{{::translation.profit}}</span>
+                    <span class="font-11 roboto-medium profitValue" ng-class="[trade.profitDirection, showConvertToUsd ? 'display-block' : '']">
+                        {{trade.profit() | cryptoCurrency
+                            :user.activeTradingAccount.currency
+                            :user.currencyDigits}}
+                    </span>
+                    <span class="font-10 roboto-medium profitValueUSD" ng-if="showConvertToUsd" ng-class="trade.profitDirection">
+                        ({{trade.profitToUsd() | cryptoCurrency:'USD':2}})
+                    </span>
+                </div>
+
+<!--                <div class="sub-name width-100">-->
+<!--                </div>-->
+            </div>
+        </div>
+    </div>
+</div>

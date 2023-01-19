@@ -1,0 +1,73 @@
+<div class="tap-radio" id="question-{{question.id}}">
+    <form name="form" novalidate>
+        <div class="labetTitle text-center">
+            {{::question.label}}
+        </div>
+
+        <div class="answer" ng-repeat="answer in question.answers"
+             ng-if="!question.isCountryAnswers && !question.onlyOther">
+            <label ng-class="{'disabled': viewOnly, 'active': answer.id === tmp.value }">
+                <input type="radio"
+                       required
+                       value="{{answer.id}}"
+                       ng-model="tmp.value"
+                       ng-change="updateModel()"
+                       ng-disabled="viewOnly">
+                <span>{{answer.label}}</span>
+            </label>
+
+        </div>
+
+        <div class="form-group as-select" ng-if="question.isCountryAnswers">
+            <label class="select-placeholder" ng-if="!tmp.value">
+                {{::translation.specifyOtherAnswer}}
+            </label>
+            <select class="custom-select no-appearance roboto-medium pl-7 pr-7"
+                    ng-if="!viewOnly"
+                    ng-class="{'disabled': viewOnly, 'active': answer.id === tmp.value }"
+                    required
+                    name="select-method"
+                    ng-model="tmp.value"
+                    ng-change="updateModel()"
+                    ng-disabled="viewOnly">
+                <option ng-repeat="answer in question.answers" ng-value="answer.id">
+                    {{answer.label}}
+                </option>
+            </select>
+
+            <div class="bottom-border font-16 item-stacked-label view-only" ng-if="viewOnly">
+                {{::translation.questionnarie_answers[tmp.value]}}
+            </div>
+
+        </div>
+
+        <div class="form-group item-stacked-label bottom-border" ng-if="showOther && !question.onlyOther"
+             ng-class="{ 'has-error' : (form.other.$invalid && !form.other.$pristine) || (form.$submitted && form.other.$invalid) }">
+            <label>{{::translation.specifyOtherAnswer}}</label>
+            <input type="text"
+                   name="other"
+                   ng-model="question.other"
+                   ng-minlength="1"
+                   ng-maxlength="128"
+                   required
+                   keyboard-watcher
+                   ng-disabled="viewOnly"
+                   ng-change="updateModel()">
+        </div>
+
+
+        <div class="form-group item-stacked-label bottom-border" ng-if="question.onlyOther"
+             ng-class="{ 'has-error' : (form.other.$invalid && !form.other.$pristine) || (form.$submitted && form.other.$invalid) }">
+            <label>{{::translation.specifyOtherAnswer}}</label>
+            <input type="text"
+                   name="other"
+                   ng-model="question.other"
+                   ng-minlength="1"
+                   ng-maxlength="128"
+                   required
+                   keyboard-watcher
+                   ng-disabled="viewOnly"
+                   ng-change="updateModel()">
+        </div>
+    </form>
+</div>

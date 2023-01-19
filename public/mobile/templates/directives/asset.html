@@ -1,0 +1,55 @@
+<div class="asset-item">
+    <div class="row p-0">
+        <div class="col-50 symbol" on-tap="app.navigate('root.app.chart', {direction:'left',assetId: asset.id, category: selectedIndex})">
+            <div class="chart-icon-wrapper">
+                <div class="chart-icon">
+                    <i class="icon icon-candle font-24"></i>
+                </div>
+                <div class="assets-name-wrapper">
+                    <div class="name roboto-light asset-name">{{asset.outputName}}</div>
+                    <span class="font-12 open-sans" ng-class="asset.dailyChangeRender()">{{ asset.dailyChange() }}%</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-50 price text-right">
+            <div class="row p-0">
+                <div class="col-50 pr-2">
+
+                    <button on-tap="app.navigate('root.app.invest', {action:'sell',direction:'left',assetId: asset.id, category: selectedIndex})"
+                            class="sell-button font-12 width-95 mr-3 open-sans" ng-if="!state">
+                        <span>{{::translation.sell}}</span>
+                    </button>
+
+                    <button on-tap="app.navigate(state, {direction:'left'})"
+                            class="sell-button font-12 width-95 mr-3 open-sans" ng-if="state">
+                        <span>{{::translation.sell}}</span>
+                    </button>
+
+                    <div class="font-12 open-sans black text-center asset-price" ng-class="asset.bidDirection" ng-if="!constants['isShowOnlyMidPrice']">
+                        {{asset.markupBid() | number:asset.digits }}
+                    </div>
+                </div>
+                <div class="col-50 pl-2">
+                    <button on-tap="app.navigate('root.app.invest', {action:'buy',direction:'left',assetId: asset.id,  category: selectedIndex})"
+                            class="buy-button font-12 width-95 open-sans" ng-if="!state">
+                        <span>{{::translation.buy}}</span>
+                    </button>
+
+                    <button on-tap="app.navigate(state, {direction:'left'})"
+                            class="buy-button font-12 width-95 open-sans" ng-if="state">
+                        <span>{{::translation.buy}}</span>
+                    </button>
+
+                    <div class="font-12 open-sans black text-center asset-price" ng-class="asset.askDirection" ng-if="!constants['isShowOnlyMidPrice']">
+                        {{asset.markupAsk() | number:asset.digits }}
+                    </div>
+                </div>
+            </div>
+            <dvi class="row" ng-if="constants['isShowOnlyMidPrice']">
+                <div class="row text-center just-center asset-price open-sans black font-12"  ng-class="asset.midDirection">
+                    {{asset.getMarkupMid() | number:asset.digits }}
+                </div>
+            </dvi>
+        </div>
+    </div>
+</div>

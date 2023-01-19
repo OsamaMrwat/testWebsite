@@ -1,0 +1,138 @@
+<div class="closedtrade-item">
+    <div class="card-ios p-0" ng-if="trade.actionCode < 6">
+
+        <div class="font-14 row">
+            <div class="col col-33 trade-name">
+                {{ '#' + trade.orderId }}&zwj;
+            </div>
+            <div class="col col-33 trade-name">
+                <i class="icon icon-social" ng-if="trade.fromSocial()"></i>
+                {{ trade.outputName }}
+            </div>
+            <div class="col col-33">
+                <div class="current-state font-12" ng-class="trade.action">
+                    <span class="title roboto-light">{{translation[trade.action]}}</span>
+                    <span class="value">{{ trade.lots }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="tradeInfo col col-67 display-flex">
+                <div class="col col-50 symbol">
+                    <div>
+                        <span class="display-block font-11 status roboto-light">{{::translation.open_price}}</span>
+                        <span class="font-13 open-sans price-value">{{ trade.openPrice | number:trade.digits }}</span>
+                    </div>
+                    <div class="openDate font-10 open-sans">
+                        <span class="display-block">{{ trade.openTime | date:'dd.MM.yyyy':clientTimeZone }}</span>
+                        <span class="display-block">{{ trade.openTime | date:'HH:mm:ss':clientTimeZone }}</span>
+                    </div>
+                </div>
+                <div class="col col-50 border-right-order">
+                    <div>
+                        <span class="display-block font-11 status roboto-light">{{::translation.close}}</span>
+                        <span class="font-13 open-sans price-value">{{ trade.closePrice | number:trade.digits }}</span>
+                    </div>
+                    <div class="closeDate font-10 open-sans">
+                        <span class="display-block">{{ trade.closeTime | date:'dd.MM.yyyy':clientTimeZone }}</span>
+                        <span class="display-block">{{ trade.closeTime | date:'HH:mm:ss':clientTimeZone }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-33 display-flex results-section">
+                <div class="">
+                    <div class="col">
+                        <div class="display-block font-10 lh-1">
+                            <span>TP</span>
+                            <span>{{ trade.takeProfit | number:trade.digits }}</span>
+                        </div>
+                        <div class="display-block font-10 lh-1">
+                            <span>SL</span>
+                            <span>{{ trade.stopLoss | number:trade.digits }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="text-right width-100">
+                        <span class="font-11 status roboto-light display-block">{{::translation.profit}}</span>
+                        <span class="font-11 roboto-medium" ng-class="[trade.profit > 0 ? 'up' : 'down', showConvertToUsd ? 'display-block' : '']">
+                            {{ trade.profit | cryptoCurrency
+                                :user.activeTradingAccount.currency
+                                :user.currencyDigits}}
+                        </span>
+                        <span class="font-10 roboto-medium profitValueUSD" ng-if="showConvertToUsd" ng-class="trade.profit > 0 ? 'up' : 'down'">
+                            ({{trade.profitToUsd() | cryptoCurrency:'USD':2}})
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="card-ios p-0" ng-if="trade.actionCode >= 6">
+
+        <div class="font-14 row">
+            <div class="col col-33 trade-name">
+                {{ '#' + trade.orderId }}&zwj;
+            </div>
+            <div class="col col-33 trade-name">
+                {{ trade.outputName }}
+            </div>
+            <div class="col col-33">
+                <div class="current-state font-12 buy">
+                    <span class="title roboto-light">{{translation[trade.action]}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="tradeInfo col col-67 display-flex">
+                <div class="col col-50 symbol">
+                    <div>
+                        <span class="display-block font-11 status roboto-light">{{::translation.open_price}}</span>
+                        <span class="font-13 open-sans price-value">{{ trade.openPrice | number:trade.digits }}</span>
+                    </div>
+                    <div class="openDate font-10 open-sans">
+                        <span class="display-block">{{ trade.openTime | date:'dd.MM.yyyy':clientTimeZone }}</span>
+                        <span class="display-block">{{ trade.openTime | date:'HH:mm:ss':clientTimeZone }}</span>
+                    </div>
+                </div>
+                <div class="col col-50 border-right-order">
+                    <div>
+                        <span class="display-block font-11 status roboto-light">{{::translation.close}}</span>
+                        <span class="font-13 open-sans price-value">{{ trade.closePrice | number:trade.digits }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-33 display-flex results-section">
+                <div class="">
+                    <div class="col">
+                        <div class="display-block font-10 lh-1">
+                            <span>TP</span>
+                            <span>{{ trade.takeProfit | number:trade.digits }}</span>
+                        </div>
+                        <div class="display-block font-10 lh-1">
+                            <span>SL</span>
+                            <span>{{ trade.stopLoss | number:trade.digits }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="text-right width-100">
+                        <span class="font-11 status roboto-light display-block">{{::translation.profit}}</span>
+                        <span class="font-11 roboto-medium" ng-class="[trade.profit > 0 ? 'up' : 'down', showConvertToUsd ? 'display-block' : '']">
+                            {{ trade.profit | cryptoCurrency
+                                :user.activeTradingAccount.currency
+                                :user.currencyDigits}}
+                        </span>
+                        <span class="font-10 roboto-medium profitValueUSD" ng-if="showConvertToUsd" ng-class="trade.profit > 0 ? 'up' : 'down'">
+                            ({{trade.profitToUsd() | cryptoCurrency:'USD':2}})
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

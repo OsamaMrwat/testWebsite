@@ -1,0 +1,48 @@
+<ion-modal-view class="modal-page countries-select custom-style">
+
+    <ion-header-bar ng-class="data.isError ? 'failed' : 'success'">
+        <div class="modal-top" ng-class="data.isError ? 'failed' : 'success'">
+            <div class="icon" ng-class="data.isError ? ' ion-ios-close-outline' : 'ion-ios-checkmark-outline'"></div>
+            <h1 class="roboto-light pl-5 pr-5">{{ data.title }}</h1>
+        </div>
+    </ion-header-bar>
+
+    <ion-content scrollbar-y="true" overflow-scroll="true" class="">
+        <div class="modal-content">
+            <div class="content">
+                <div>
+                    <span class="font-18 text-content" ng-bind-html="data.content"></span>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+
+    <ion-footer-bar align-title="left" class="modal-footer" style="flex-direction: column">
+        <div class="row" ng-if="data.isCheckbox">
+            <div class="col">
+                <ion-checkbox class="mt-10 border-0 modern-checkbox font-12 sub-info"
+                              ng-model="data.accept"
+                              name="accept">
+                    <span>{{::translation[data.checkboxText]}}</span>&nbsp;
+                </ion-checkbox>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col" ng-if="data.onCancel">
+                <button class="button success-button button-full button-full roboto-light" on-tap="tapCancel()">
+                    <span>{{ data.cancelTitle || 'Cancel' }}</span>
+                </button>
+            </div>
+            <div class="col" ng-if="data.onOk">
+                <button class="button success-button button-full button-full roboto-light"
+                        on-tap="tapOk()"
+                        ng-disabled="data.isCheckbox && !data.accept">
+                    <span>{{ data.okTitle || 'Ok' }}</span>
+                </button>
+            </div>
+        </div>
+    </ion-footer-bar>
+
+</ion-modal-view>
+

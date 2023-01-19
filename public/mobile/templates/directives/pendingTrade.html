@@ -1,0 +1,44 @@
+<div class="pending-item">
+    <div class="card-ios p-0">
+
+        <div class="row">
+            <div class="col pb-5">
+                <div class="font-14 output-name">{{trade.outputName}}</div>
+            </div>
+            <div class="col state">
+                <div class="current-state font-11 text-right">
+                    <span class="trade-state roboto-light short"
+                          ng-class="(trade.action === 'buy_stop' || trade.action === 'buy_limit') ? 'buy' : 'short'">
+                        {{translation[trade.action]}}
+                    </span>
+                    <span>{{trade.lots | number: trade.asset.lotDigits}}</span>
+                    <span>{{::translation.lots}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-self">
+            <div class="row pl-0 pt-0 pr-0">
+                <div class="col-33 font-12 border-right-pending roboto pending-section">
+                    <div class="roboto-light muted">{{::translation.current}}</div>
+                    <div class="roboto">
+                        <span class="direction-state" ng-class="trade.closePriceDirection === 'asset-up' ? 'up' : 'down'">
+                            <i class="icon font-12"
+                               ng-class="trade.closePriceDirection === 'asset-up' ? 'ion-android-arrow-up' : 'ion-android-arrow-down'"></i>
+                        </span>
+                        <span ng-class="trade.closePriceDirection === 'asset-up' ? 'up' : 'down'">{{ trade.pendingCurrentPrice() | number:trade.asset.digits }}</span>
+                    </div>
+                </div>
+                <div class="col-33 font-12 border-right-pending roboto pending-section center-text">
+                    <div class="roboto-light muted">{{::translation.distance}}</div>
+                    <div class="roboto">{{ trade.pendingDistance() | number:2}}</div>
+                </div>
+                <div class="col-33 font-12 roboto pending-section text-right">
+                    <div class="roboto-light muted">{{::translation.target}}</div>
+                    <div class="roboto">{{ trade.openPrice | number:trade.asset.digits }}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
