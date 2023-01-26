@@ -1142,8 +1142,7 @@ app.post("/cvUpload", (req, res) => {
 
   const msg = {
     // change mail to required mail
-    // to: ["ismael.h@evest.com", "hr.cy@evest.com"],
-    to: ["osama.ba@evest.com"],
+    to: ["osama.ba@evest.com", "ismael.h@evest.com", "hr.cy@evest.com"],
     from: "no-replay@customers-evest.com", // Use the email address or domain you verified above
     subject: `New CV for position ${data.jobTitle} , location: ${data.jobLocation}`,
     html: `  <h1>Job Position : ${data.jobTitle} In ${data.jobLocation}</h1>
