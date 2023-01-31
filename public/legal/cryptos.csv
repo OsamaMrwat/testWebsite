@@ -1,13 +1,14 @@
-Instrument,Leverage,Commission Per Lot,Long Swaps (Profit Currency),Short Swaps (Profit Currency),Contract Size
-BTCUSD,2,0,-10000,-10000,100
-ETHUSD,2,0,-300,-300,100
-LTCUSD,2,0,-110,-110,100
-ETCUSD,2,0,-95,-95,100
-DSHUSD,2,0,-130,-130,100
-XRPUSD,2,0,-1.5,-1.5,100
-SHBUSD.mln,2,0,-500,-500,100
-ADAUSD,2,0,-8,-8,1000
-SOLUSD,2,0,-110,-110,100
-DOGUST,2,0,-1,-1,100
-XLMUSD,2,0,-0.6,-0.6,100
-DOTUSD,2,0,-65,-65,100
+,,,Silver,,Gold,,Platinum,,Diamond,
+Instrument,Leverage, Contract Size ,Long Swaps Base Currency,Short Swaps Base Currency,Long Swaps Base Currency,Short Swaps Base Currency,Long Swaps Base Currency,Short Swaps Base Currency,Long Swaps Base Currency,Short Swaps Base Currency
+BTCUSD,2,100      ,-10750,-10750,-10500,-10500,-10250,-10250,-10000,-10000
+ETHUSD,2,100      ,-375,-375,-350,-350,-325,-325,-300,-300
+LTCUSD,2,100      ,-170,-170,-150,-150,-130,-130,-110,-110
+ETCUSD,2,100      ,-125,-125,-115,-115,-105,-105,-95,-95
+DSHUSD,2,100      ,-190,-190,-170,-170,-150,-150,-130,-130
+XRPUSD,2,100      ,-1.5,-1.5,-1.5,-1.5,-1.5,-1.5,-1.5,-1.5
+SHBUSD.mln,2,100      ,-50,-50,-50,-50,-50,-50,-50,-50
+ADAUSD,2,1000      ,-10,-10,-8,-8,-6.5,-6.5,-5,-5
+SOLUSD,2,100      ,-170,-170,-150,-150,-130,-130,-110,-110
+DOGUST,2,100      ,-1,-1,-1,-1,-1,-1,-1,-1
+XLMUSD,2,100      ,-0.6,-0.6,-0.6,-0.6,-0.6,-0.6,-0.6,-0.6
+DOTUSD,2,100      ,-95,-95,-85,-85,-75,-75,-65,-65

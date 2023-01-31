@@ -1,17 +1,17 @@
-,Silver,Gold ,Platinum ,Diamond ,Islamic
-,,,,,
-Instrument,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:
-USTECH,2.1,2.1,2.1,2.1,2.1
-USBANKS,2.1,2.1,2.1,2.1,2.1
-GERGIANTS,2.1,2.1,2.1,2.1,2.1
-USHEAVY,2.1,2.1,2.1,2.1,2.1
-USRETAIL,2.1,2.1,2.1,2.1,2.1
-UKBANKS,2.7,2.7,2.7,2.7,2.7
-BIGPHARMA,2.2,2.2,2.2,2.2,2.2
-BIGPHARMA2,3,3,3,3,3
-BLUECHIPS,2.5,2.5,2.5,2.5,2.5
-FASHION,5,5,5,5,5
-W.BUFFETT1,3.1,3.1,3.1,3.1,3.1
-W.BUFFETT2,2.3,2,2,2.3,2.3
-CRYPTOETF,3.3,3.3,3.3,3.3,3.3
-METAVERSE,2.1,2.1,2.1,2.1,2.1
+,Silver,Gold ,Platinum ,Diamond ,Islamic,IslamicPro
+,,,,,,
+Instrument,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:
+USTECH,2.2,1.9,1.6,1.3,2.2,1.6
+USBANKS,2.2,1.9,1.6,1.3,2.2,1.6
+GERGIANTS,2.2,1.9,1.6,1.3,2.2,1.6
+USHEAVY,2.5,2.2,1.9,1.6,2.5,1.9
+USRETAIL,2.2,1.9,1.6,1.3,2.2,1.6
+UKBANKS,2.6,2.3,2,1.7,2.6,2
+BIGPHARMA,2.2,1.9,1.6,1.3,2.2,1.6
+BIGPHARMA2,2.2,1.9,1.6,1.3,2.2,1.6
+BLUECHIPS,2.2,1.9,1.6,1.3,2.2,1.6
+FASHION,5,4.7,4.4,4.1,5,4.4
+W.BUFFETT1,2.6,2.3,2,1.7,2.6,2
+W.BUFFETT2,2.2,1.9,1.6,1.3,2.2,1.6
+CRYPTOETF,9,8.7,8.4,8.1,9,8.4
+METAVERSE,2.2,1.9,1.6,1.3,2.2,1.6

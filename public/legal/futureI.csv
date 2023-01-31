@@ -1,9 +1,10 @@
-Instrument,Leverage Buy/Sell,Commission Per Lot,Long Swaps Base Currency,Short Swaps Base Currency,Contract Size
-DOW,100,0,-207,-207,10      
-FTSE,100,0,-45,-45,10      
-DAX,100,0,-93,-93,10      
-SP,100,0,-253,-253,100      
-NSDQ,100,0,-160,-160,100      
-$IND,100,0,-60,-60,100      
-RUSS,100,0,-120,-120,100      
-VIX,100,0,-60,-60,1000
+,,,Silver,,Gold,,Platinum,,Diamond,
+Instrument,Leverage Buy/Sell, Contract Size ,Long Swaps Base Currency,Short Swaps Base Currency,Long Swaps Base Currency,Short Swaps Base Currency,Long Swaps Base Currency,Short Swaps Base Currency,Long Swaps Base Currency,Short Swaps Base Currency
+DOW,100,10      ,-210,-210,-208,-208,-207,-207,-205,-205
+FTSE,100,10      ,-47,-47,-46,-46,-45,-45,-43,-43
+DAX,100,10      ,-95,-95,-94,-94,-93,-93,-91,-91
+SP,100,100      ,-255,-255,-254,-254,-252,-252,-250,-250
+NSDQ,100,100      ,-163,-163,-161,-161,-159,-159,-157,-157
+$IND,100,100      ,-63,-63,-62,-62,-60,-60,-58,-58
+RUSS,100,100      ,-123,-123,-122,-122,-120,-120,-118,-118
+VIX,100,1000      ,-65,-65,-63,-63,-60,-60,-58,-58

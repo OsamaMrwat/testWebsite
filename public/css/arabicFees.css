@@ -1,115 +1,134 @@
 panda-forex-login .forex-button-pandats.simple-button-pandats,
-.mainpandats .forex-button-pandats.simple-button-pandats{
-  font-family: "Arabic Evest",sans-serif !important;
+.mainpandats .forex-button-pandats.simple-button-pandats {
+  font-family: "Arabic Evest", sans-serif !important;
 }
 
 
-.lang-menu .selected-lang:before{
+.lang-menu .selected-lang:before {
   background-image: url(https://www.countryflags.io/sa/flat/32.png);
 }
 
-  body{
-      text-align: right;
-      direction: rtl;
-      font-family: "Arabic Evest" ,sans-serif !important;
-  }
- 
-  span{
-    font-family: "Evest Font";
-  }
-main .container{
+body {
+  text-align: right;
+  direction: rtl;
+  font-family: "Arabic Evest", sans-serif !important;
+}
+
+span {
+  font-family: "Evest Font";
+}
+
+main .container {
   height: max-content;
 }
-table{
-    width:100%;
-    table-layout: fixed;
-  }
-  .tbl-header{
-    background-color: var(--primary-color1);
-   }
-  .tbl-content{
-    overflow-x:auto;
-    margin-top: 0px;
-  }
-  th{
-    padding: 0px 15px;
-    text-align: center;
-    font-weight: 500;
-    font-size: 12px;
-    font-family: "Evest Med";
-    text-transform: uppercase;
-  }
-  td {
-    text-align: right;
-    vertical-align: middle;
-    font-size: 15px;
-    color: var(--primray-color1);
-    padding-right: 2%;
+
+table {
+  width: 100%;
+  table-layout: fixed;
 }
-  #titleTabel{
-    text-align: center;
-    font-size: 20px;
-    font-family: 'Arabic Evest';
-    color:white;
-  }
-  .line1{
-    background: #022a3a26;
-  }
-  button {
-    color: white;
-    border-radius: 9px;
-    background: var(--primary-color1);
-    border: none;
-    margin: 0px 2px;
-    font-family: 'Evest Med';
-  }
-  .bttn{
-    background: var(--secondary-color6) !important;
-  }
-  .bttn:hover{
-    background: white !important;
-    color: var(--secondary-color6) !important;
-  }
-  button:hover{
-    color:var(--primary-color3);
-  }
 
-  h1{
-    padding-right: 5%;
-    margin-top: -5.5%;
-  }
-  .cost{
-    background: #002e418e;
-  }
-  body > main > div > div.row.my-5.cost > div:nth-child(1){
-    margin-top: 1%;
-    margin-left: 4% !important;
-  }
-  body > main > div > div.row.my-5.cost > div:nth-child(3){
-    margin-top: 1%;
-    margin-left: 4% !important;
-    margin-right: 4% !important;
-  }
-  .mobile-img{
-    display: none !important; ;
-  }
+.tbl-header {
+  background-color: var(--primary-color1);
+}
 
-  #csv-display > table > tbody > tr > td{
-    color:white;
-    text-align:center;
-  }
+.tbl-content {
+  overflow-x: auto;
+  margin-top: 0px;
+}
 
-  #spread-table{
-    height: 500px;
-    overflow-y: scroll;
-    font-family: 'Evest Med' !important;
-  }
-  #csv-display{
-    height: 500px;
-    overflow-y: scroll;
-    font-family: 'Evest Med' !important;
-  }
-  /* width */
+th {
+  padding: 0px 15px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+  font-family: "Evest Med";
+  text-transform: uppercase;
+}
+
+td {
+  text-align: right;
+  vertical-align: middle;
+  font-size: 15px;
+  color: var(--primray-color1);
+  padding-right: 2%;
+}
+
+#titleTabel {
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Arabic Evest';
+  color: white;
+}
+
+.line1 {
+  background: #022a3a26;
+}
+
+button {
+  color: white;
+  border-radius: 9px;
+  background: var(--primary-color1);
+  border: none;
+  margin: 0px 2px;
+  font-family: 'Evest Med';
+}
+
+.bttn {
+  background: var(--secondary-color6) !important;
+}
+
+.bttn:hover {
+  background: white !important;
+  color: var(--secondary-color6) !important;
+}
+
+button:hover {
+  color: var(--primary-color3);
+}
+
+h1 {
+  padding-right: 5%;
+  margin-top: -5.5%;
+}
+
+.cost {
+  background: #002e418e;
+}
+
+body>main>div>div.row.my-5.cost>div:nth-child(1) {
+  margin-top: 1%;
+  margin-left: 4% !important;
+}
+
+body>main>div>div.row.my-5.cost>div:nth-child(3) {
+  margin-top: 1%;
+  margin-left: 4% !important;
+  margin-right: 4% !important;
+}
+
+.mobile-img {
+  display: none !important;
+  ;
+}
+
+#csv-display>table>tbody>tr>td {
+  color: white;
+  text-align: center;
+}
+
+#spread-table {
+  height: 500px;
+  overflow-y: scroll;
+  font-family: 'Evest Med' !important;
+}
+
+#csv-display {
+  height: 500px;
+  overflow-y: scroll;
+  font-family: 'Evest Med' !important;
+}
+
+/* width */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -118,76 +137,112 @@ table{
 ::-webkit-scrollbar-track {
   background: var(--primary-color1);
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-color3); 
-  border:1px solid var(--primary-color1);
+  background: var(--primary-color3);
+  border: 1px solid var(--primary-color1);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-color1); 
-  border:1px solid var(--primary-color3);
+  background: var(--primary-color1);
+  border: 1px solid var(--primary-color3);
 }
 
-  @media (max-width:767px){
-    .table td{
-      font-size: 6px;
-    }
-    .mobile-img{
-      display: flex !important;
-    }
-    #titleTabel{
-      font-size: 19px;
-    }
-    td{
-      font-size: 15px;
-    }
-    body > main > div:nth-child(2) > div.row.my-4 > h6{
-      font-size: 13px;
-    }
-    body > main > div:nth-child(2) > div.row.my-5.cost > div:nth-child(1) > h3{
-      font-size: 19px;
-      padding-top: 5%;
-    }
-    th{
-      padding: 10px 0px;
-      text-align: center;
-      font-weight: 500;
-      font-size: 7px;
-      color: #fff;
-      text-transform: uppercase;
-    }
-    body > main > div:nth-child(2) > div.row.my-5.cost > div:nth-child(2)>button{
-      font-size: 10px;
-    }
-    body > main > div:nth-child(2) > div.row.my-5.cost > div:nth-child(2)>button+button{
-      margin-bottom: 5%;
-    }
-    body > main > div:nth-child(2) > div.row.my-5.cost > div:nth-child(2){
-      align-items: baseline !important;
-    }
-    body > main > div:nth-child(2) > div.row.my-5.cost > div:nth-child(1) > h6{
-      font-size: 12px;
-    }
-    #brandslogos{
-      display: none;
-    }
-    body > main > div:nth-child(2) > div.container.mt-5.cost > div.container.p-4 > h6{
-      font-size: 15px;
-    }
-    .cost{
-      padding: 0;
-    }
-    body > main > div:nth-child(2) > div.container.mt-5.cost > div:nth-child(3){
-      direction:ltr;
-      padding: 3px;
-    }
+.my-table-row :nth-child(4),
+.my-table-row :nth-child(5) {
+  background-color: #939497;
+}
+
+.my-table-row :nth-child(6),
+.my-table-row :nth-child(7) {
+  background-color: #AC8027;
+  color: black !important;
+}
+
+.my-table-row :nth-child(8),
+.my-table-row :nth-child(9) {
+  background-color: #83A4B8;
+}
+
+.my-table-row :nth-child(10),
+.my-table-row :nth-child(11) {
+  background-color: #81C2E5;
+}
+
+@media (max-width:767px) {
+  .table td {
+    font-size: 6px;
+  }
+
+  .mobile-img {
+    display: flex !important;
+  }
+
+  #titleTabel {
+    font-size: 19px;
+  }
+
+  td {
+    font-size: 15px;
+  }
+
+  body>main>div:nth-child(2)>div.row.my-4>h6 {
+    font-size: 13px;
+  }
+
+  body>main>div:nth-child(2)>div.row.my-5.cost>div:nth-child(1)>h3 {
+    font-size: 19px;
+    padding-top: 5%;
+  }
+
+  th {
+    padding: 10px 0px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 7px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  body>main>div:nth-child(2)>div.row.my-5.cost>div:nth-child(2)>button {
+    font-size: 10px;
+  }
+
+  body>main>div:nth-child(2)>div.row.my-5.cost>div:nth-child(2)>button+button {
+    margin-bottom: 5%;
+  }
+
+  body>main>div:nth-child(2)>div.row.my-5.cost>div:nth-child(2) {
+    align-items: baseline !important;
+  }
+
+  body>main>div:nth-child(2)>div.row.my-5.cost>div:nth-child(1)>h6 {
+    font-size: 12px;
+  }
+
+  #brandslogos {
+    display: none;
+  }
+
+  body>main>div:nth-child(2)>div.container.mt-5.cost>div.container.p-4>h6 {
+    font-size: 15px;
+  }
+
+  .cost {
+    padding: 0;
+  }
+
+  body>main>div:nth-child(2)>div.container.mt-5.cost>div:nth-child(3) {
+    direction: ltr;
+    padding: 3px;
+  }
 
 }
-@media (max-width:1023px)and (min-width:768px){
-  .headerImg{
+
+@media (max-width:1023px)and (min-width:768px) {
+  .headerImg {
     background-repeat: no-repeat !important;
     background-size: contain !important;
     color: white !important;
@@ -197,29 +252,36 @@ table{
     display: flex;
     flex-direction: column;
   }
-  body > main > div > div.container.headerImg > h1{
+
+  body>main>div>div.container.headerImg>h1 {
     font-size: 1.5rem;
     margin-top: -3%;
   }
-  p{
+
+  p {
     font-size: 11px !important;
     padding-top: 1% !important;
   }
-  body > main > div > div.row.my-5.cost > div:nth-child(1) > h3{
+
+  body>main>div>div.row.my-5.cost>div:nth-child(1)>h3 {
     font-size: 1.3rem;
   }
-  body > main > div > div.row.my-5.cost > div:nth-child(1) > h6{
-    font-size:0.7rem;
+
+  body>main>div>div.row.my-5.cost>div:nth-child(1)>h6 {
+    font-size: 0.7rem;
   }
-  button{
+
+  button {
     font-size: 12px;
   }
-  body > main > div > div.row.my-5.cost > div:nth-child(2){
+
+  body>main>div>div.row.my-5.cost>div:nth-child(2) {
     margin-left: 6% !important;
   }
 }
+
 @media (min-width:1024px) and (max-width:1366px) {
-  .headerImg{
+  .headerImg {
     background-position-x: -88px !important;
   }
 }

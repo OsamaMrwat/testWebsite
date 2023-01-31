@@ -1,11 +1,11 @@
-,Silver,Gold ,Platinum ,Diamond ,Islamic
-,,,,,
-Instrument,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:
-DOW,70,70,70,70,70
-FTSE,55,55,55,55,55
-DAX,50,50,50,50,50
-SP,52.5,52.5,52.5,52.5,52.5
-NSDQ,75,75,75,75,75
-RUSS,51,51,51,51,51
-$IND,51,51,51,51,51
-VIX,55,55,55,55,55
+,Silver,Gold ,Platinum ,Diamond ,Islamic,IslamicPro
+,,,,,,
+Instrument,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:
+DOW,60,57.5,55,50,60,55
+FTSE,55.4,52.9,50.4,45.4,55.4,50.4
+DAX,60,57.5,55,50,60,55
+SP,52.5,50,47.5,42.5,52.5,47.5
+NSDQ,55,52.5,50,45,55,50
+RUSS,51,48.5,46,41,51,46
+$IND,50.9,48.4,45.9,40.9,50.9,45.9
+VIX,55,52.5,50,45,55,50

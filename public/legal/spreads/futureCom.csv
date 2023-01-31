@@ -1,21 +1,21 @@
-,Silver,Gold ,Platinum ,Diamond ,Islamic
-,,,,,
-Instrument,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:
-COCOA,23,23,23,23,23
-COFFE,8,8,8,8,8
-COPP,6,6,6,6,6
-CORN,7,7,7,7,7
-COTT2,6,6,6,6,6
-SBEAN,9.5,9.5,9.5,9.5,9.5
-SUG11,7,7,7,7,7
-WHEAT,7.5,7.5,7.5,7.5,7.5
-NGAS,5.2,5.2,5.2,5.2,5.2
-USOIL,0.5,0.5,0.5,0.5,0.5
-BRENTOIL,0.7,0.7,0.7,0.7,0.7
-XAUUSD ,3.5,3.5,3.5,3.5,3.5
-XAGUSD ,4,4,4,4,4
-ALUMINUM,13.5,13.5,13.5,13.5,13.5
-ZINC,133.5,133.5,133.5,133.5,133.5
-PLAT,10,10,10,10,10
-RBOB,5,5,5,5,5
-PALLAD,35,35,35,35,35
+,Silver,Gold ,Platinum ,Diamond ,Islamic,IslamicPro
+,,,,,,
+Instrument,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:,Spread in Pip Starting From:
+COCOA,24,23,22,21,24,22
+COFFE,7.5,6.5,5.5,4.5,7.5,5.5
+COPP,8.2,7.2,6.2,5.2,8.2,6.2
+CORN,8.5,7.5,6.5,5.5,8.5,6.5
+COTT2,6.6,5.6,4.6,3.6,6.6,4.6
+SBEAN,10.5,9.5,8.5,7.5,10.5,8.5
+SUG11,10,9,8,7,10,8
+WHEAT,8.5,7.5,6.5,5.5,8.5,6.5
+NGAS,6.3,5.3,4.3,3.3,6.3,4.3
+USOIL,1,0.9,0.7,0.5,1,0.7
+BRENTOIL,1.1,1,0.7,0.5,1.1,0.7
+XAUUSD ,3.7,3.5,3.2,3,3.7,3.2
+XAGUSD ,3.9,3.5,3.1,2.7,3.9,3.1
+ALUMINUM,29.5,28.5,27.5,26.5,29.5,27.5
+ZINC,134.5,133.5,133,132,134.5,133
+PLAT,9.5,8.5,7.5,6.5,9.5,7.5
+RBOB,7.4,6.4,5.4,4.4,7.4,5.4
+PALLAD,36,35,34,33,36,34
