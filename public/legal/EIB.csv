@@ -1,15 +1,16 @@
-Instrument,Leverage Buy/Sell,Commission Per Lot,Long Swaps Base Currency,Short Swaps Base Currency, Contract Size
-USTECH,10,0,-40,-40,100
-USBANKS,10,0,-10,-10,100
-GERGIANTS,10,0,-8.4,-8.4,100
-USHEAVY,10,0,-10,-10,100
-USRETAIL,10,0,-10,-10,100
-UKBANKS,10,0,-150,-150,100
-BIGPHARMA,10,0,-20,-20,100
-BIGPHARMA2,10,0,-25,-25,100
-BLUECHIPS,10,0,-20,-20,100
-FASHION,10,0,-96,-96,100
-W.BUFFETT1,10,0,-32,-32,100
-W.BUFFETT2,10,0,-15,-15,100
-CRYPTOETF,2,0,-40,-40,100
-METAVERSE,10,0,-20,-20,100
+,,,Silver,,Gold,,Platinum,,Diamond,
+Instrument,Leverage Buy/Sell, Contract Size ,Long Swaps Base Currency,Short Swaps Base Currency,Long Swaps Base Currency,Short Swaps Base Currency,Long Swaps Base Currency,Short Swaps Base Currency,Long Swaps Base Currency,Short Swaps Base Currency
+USTECH,10,100,-40,-40,-30,-30,-25,-25,-20,-20
+USBANKS,10,100,-10,-10,-10,-10,-10,-10,-10,-10
+GERGIANTS,10,100,-8.4,-8.4,-8.4,-8.4,-8.4,-8.4,-8.4,-8.4
+USHEAVY,10,100,-10,-10,-10,-10,-10,-10,-10,-10
+USRETAIL,10,100,-10,-10,-10,-10,-10,-10,-10,-10
+UKBANKS,10,100,-150,-150,-150,-150,-150,-150,-150,-150
+BIGPHARMA,10,100,-20,-20,-20,-20,-20,-20,-20,-20
+BIGPHARMA2,10,100,-25,-25,-25,-25,-25,-25,-25,-25
+BLUECHIPS,10,100,-20,-20,-20,-20,-20,-20,-20,-20
+FASHION,10,100,-96,-96,-96,-96,-96,-96,-96,-96
+W.BUFFETT1,10,100,-32,-32,-32,-32,-32,-32,-32,-32
+W.BUFFETT2,10,100,-15,-15,-15,-15,-15,-15,-15,-15
+CRYPTOETF,2,100,-40,-40,-40,-40,-40,-40,-40,-40
+METAVERSE,10,100,-20,-20,-20,-20,-20,-20,-20,-20
