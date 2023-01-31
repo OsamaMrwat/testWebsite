@@ -324,7 +324,7 @@ async function getPostSiteMaps() {
 
       let sitemap_entries2 = all_links_ar.map((link) => {
         // you got access to every property of those links here. Note the \n I've added to format it in the output - you don't need that in the real XML.
-        return `\n<url><loc>https://www.evest.com/ar/${link}</loc></url>`;
+        return `\n<url><loc>https://www.evest.com${link}</loc></url>`;
       });
       // the actual sitemap with all it's entries.
       let sitemap2 = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
@@ -651,9 +651,9 @@ xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entrie
 }
 
 try {
-  // getPostSiteMaps();
-  // getArabicBlogs()
-  // getPagesSiteMaps();
+  getPostSiteMaps();
+  getArabicBlogs()
+  getPagesSiteMaps();
 
   setInterval(() => {
     getPagesSiteMaps();
