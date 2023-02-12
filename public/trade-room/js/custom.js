@@ -92,6 +92,22 @@ function loginSuccessCallback(event) {
     const currency = event.customer.currency
     event.customer.tradingAccounts
 
+    jQuery.ajax({
+        type: "GET",
+        url: `https://lpevest.com/decode_function/index.php?customerId=${event.customer.customerId}`,
+        dataType: 'json',
+
+        success: function (obj, textstatus) {
+            let accountId = obj;
+            var loginObj = {
+                memberId: accountId,
+                email: event.customer.email,
+                brand: "YADq8eLNfDEHhZwWByUTPDAK",
+                popupToken: "Z4wUw9QaYnAVgZLhwxbeCCkC",
+            }
+            $solitics.loginSuccess(loginObj);
+        }
+    });
 
     localStorage.setItem("loggedin", "true");
     $('#tvDiv').show();
