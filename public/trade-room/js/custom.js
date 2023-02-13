@@ -100,11 +100,12 @@ function loginSuccessCallback(event) {
         success: function (obj, textstatus) {
             let accountId = obj;
             var loginObj = {
-                memberId: accountId,
+                memberId: accountId.toString(),
                 email: event.customer.email,
                 brand: "YADq8eLNfDEHhZwWByUTPDAK",
                 popupToken: "Z4wUw9QaYnAVgZLhwxbeCCkC",
             }
+
             $solitics.loginSuccess(loginObj);
         }
     });
