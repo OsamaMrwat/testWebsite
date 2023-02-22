@@ -8,6 +8,12 @@
 
   }
 
+  .season2HeaderContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
   .section2Container p {
     font-family: evest font, sans-serif;
     font-size: 21px;
@@ -21,7 +27,7 @@
   }
 
   .section1Container {
-    background-image: url('/images/evestTalk/BG 1.png');
+    background-image: url('/images/evestTalk/BG 3.png');
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -68,8 +74,8 @@
   .micContainer {
     display: flex;
     position: absolute;
-    bottom: -7rem;
-    right: 50%;
+    bottom: -10rem;
+    right: 47%;
     height: 350px;
     justify-content: center;
   }
@@ -98,7 +104,8 @@
   .seciton1Text {
 
     font-family: 'Evest Med' !important;
-
+    font-size: 1.3rem;
+    color: var(--primary-color3);
   }
 
   .contentContainer {
@@ -287,6 +294,16 @@
       height: 45px;
     }
 
+    .season2HeaderContainer img {
+      width: 130px;
+    }
+
+    .season2HeaderContainer h3 {
+      font-size: 22px;
+      margin-bottom: 0;
+    }
+
+
     .section1Holder {
       flex-direction: column-reverse;
       align-items: center;
@@ -302,7 +319,7 @@
     }
 
     .micContainer {
-      bottom: 18rem;
+      bottom: 17rem;
       right: 59%;
       height: 174px;
     }
@@ -314,6 +331,7 @@
     .setction1TextContainer {
       margin-top: 2rem;
       width: 262px;
+      text-align: center;
     }
 
     .reinHeading {
@@ -327,7 +345,8 @@
     }
 
     .seciton1Text {
-      font-size: 19px;
+      font-size: 17px;
+      font-weight: 100;
     }
 
     .section1TextContainer {
@@ -467,15 +486,18 @@
 
         <div class="setction1TextContainer">
           <!-- text  -->
-          <img alt="logo" src="/images/asset 1 Logo.svg" id="heading-img" />
           <div style="margin-top:20px;">
-            <h1 class="reinHeading">With Rein Maila</h1>
-            <h3 class="reinHeadinSecondParagraph">a famous media figure</h3>
+            <h1 class="reinHeading">Soon in <br /> March</h1>
+            <!-- <h3 class="reinHeadinSecondParagraph">a famous media figure</h3> -->
+            <div class="season2HeaderContainer">
+              <img alt="logo" src="/images/asset 1 Logo.svg" id="heading-img" width="200px" />
+              <h3 style="color: var(--primary-color3)"> - Season 2</h3>
+            </div>
           </div>
 
           <div class="section1TextContainer">
-            <h2 class="seciton1Text">Every Thursday</h2>
-            <h2 class="seciton1Text">at 19:00 PM KSA</h2>
+            <h4 class="seciton1Text">With the famous media figure</h4>
+            <img alt="logo" src="/images/evestTalk/Rein maila.png" id="heading-img" width="130px" />
           </div>
 
 
@@ -510,9 +532,8 @@
 
         <div class="reinContainer">
           <!-- img of rien -->
-          <img src="/images/evestTalk/rein.png" />
+          <img src="/images/evestTalk/reinMailaBg.png" />
         </div>
-
 
       </div>
 
