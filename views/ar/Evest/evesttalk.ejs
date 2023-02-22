@@ -9,6 +9,23 @@
     margin-bottom: 20px;
   }
 
+  .season2HeaderContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+  }
+
+  .season2HeaderContainer h3 {
+    font-size: 17px;
+
+  }
+
+  .reinContainer img {
+    transform: scaleX(-1);
+  }
+
+
   .section2Container h1 {
     color: #058080;
     font-family: "Arabic Evest", sans-serif !important;
@@ -22,7 +39,7 @@
   }
 
   .section1Container {
-    background-image: url('/images/evestTalk/BG 1.png');
+    background-image: url('/images/evestTalk/BG 3.png');
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -34,7 +51,7 @@
     justify-content: space-between;
     align-items: flex-end;
     max-width: 1320px;
-    gap: 2rem;
+    gap: 8rem;
   }
 
   .setction1TextContainer {
@@ -55,25 +72,29 @@
     height: 30px;
   }
 
-  .section1TextContainer h2 {
-    color: #64EFE3;
+  .section1TextContainer {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
   }
 
   .seciton1Text {
     font-size: 20px;
   }
 
-  .section1TextContainer h1 {
+  .section1TextContainer h4 {
     color: #64EFE3;
     font-family: "Arabic Evest", sans-serif !important;
-    font-size: 3rem !important;
+    font-size: 20px !important;
+
   }
 
   .micContainer {
     display: flex;
     position: absolute;
     bottom: -7rem;
-    right: 38%;
+    right: 41%;
     height: 350px;
     justify-content: center;
   }
@@ -309,16 +330,35 @@
       gap: 20px;
     }
 
+    .section1TextContainer h4 {
+      font-size: 15px !important;
+
+    }
+
+    .season2HeaderContainer h3 {
+      font-size: 15px !important;
+    }
+
     .section1Container {
       padding-bottom: 1rem;
     }
 
     .reinContainer img {
       width: 300px;
+
+    }
+
+    .season2HeaderContainer img {
+      width: 130px;
+    }
+
+    .season2HeaderContainer h3 {
+      font-size: 18px;
+      margin-bottom: 0 !important;
     }
 
     .micContainer {
-      bottom: 18rem;
+      bottom: 16rem;
       right: 6%;
       height: 174px;
     }
@@ -349,7 +389,6 @@
 
     .section1TextContainer {
       display: flex;
-      flex-direction: column;
       align-items: center;
     }
 
@@ -490,17 +529,23 @@
 
       <div class="section1Holder">
 
+
+
+
         <div class="setction1TextContainer">
           <!-- text  -->
-          <img alt="logo" src="/images/asset 1 Logo.svg" id="heading-img" />
           <div style="margin-top:20px;">
-            <h1 class="reinHeading">مع الإعلامية </h1>
-            <h3 class="reinHeadinSecondParagraph"> البارزة رين الميلع </h3>
+            <h1 class="reinHeading">قريباً في <br /> مارس 2023</h1>
+            <!-- <h3 class="reinHeadinSecondParagraph">a famous media figure</h3> -->
+            <div class="season2HeaderContainer">
+              <h3 style="color: var(--primary-color3);"> الموسم الثاني من </h3>
+              <img alt="logo" src="/images/asset 1 Logo.svg" id="heading-img" width="200px" />
+            </div>
           </div>
 
           <div class="section1TextContainer">
-            <h2 class="seciton1Text">كل خميس الساعة 19:00 مساءً</h2>
-            <h2 class="seciton1Text">بتوقيت السعودية</h2>
+            <h4 class="seciton1Text">مع الإعلامية البارزة </h4>
+            <img alt="logo" src="/images/evestTalk/reinMailaAR.png" id="heading-img" width="130px" />
           </div>
 
 
@@ -509,7 +554,7 @@
               <img alt="mic image" src="/images/si1.svg" id="social-icons-img" />
             </a>
             <a href="https://apple.co/3WlPDIj
-                    ">
+                          ">
               <img alt="mic image" src="/images/si2.svg" id="social-icons-img" />
             </a>
             <a href="https://spoti.fi/3sSX8c0">
@@ -519,7 +564,7 @@
               <img alt="mic image" src="/images/si4.svg" id="social-icons-img" />
             </a>
             <a href="https://www.instagram.com/evest_official/
-                    ">
+                          ">
               <img alt="mic image" src="/images/si5.svg" id="social-icons-img" />
             </a>
             <a href="https://twitter.com/EvestOfficial">
@@ -532,9 +577,10 @@
 
         </div>
 
+
         <div class="reinContainer">
           <!-- img of rien -->
-          <img src="/images/evestTalk/rein-header-ar.png" />
+          <img src="/images/evestTalk/reinMailaBg.png" />
         </div>
 
       </div>
