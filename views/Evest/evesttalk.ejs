@@ -287,6 +287,18 @@
     font: 13px sans-serif;
   }
 
+  .seperatorEvest {
+    padding: 1rem;
+    margin: 2rem 0;
+    background: linear-gradient(90deg, rgba(67, 20, 92, 0.2721463585434174) 0%, rgba(233, 233, 233, 0.26094187675070024) 48%);
+    color: #43145c
+  }
+
+  .seperatorEvest h5 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+
   @media only screen and (max-width: 1078px) {
 
     .sectionDivider {
@@ -464,6 +476,27 @@
       font-size: 30px;
     }
 
+    .separatorHolder {
+      width: 91%;
+      margin: 0 auto;
+    }
+
+    .seperatorEvest {
+      padding: 0.5rem;
+      margin: 2rem 0;
+      background: linear-gradient(90deg, rgba(67, 20, 92, 0.2721463585434174) 0%, rgba(233, 233, 233, 0.26094187675070024) 48%);
+      color: #43145c;
+      width: 100%;
+      text-align: left;
+
+    }
+
+
+    .seperatorEvest h5 {
+      font-size: 1.1rem;
+      margin-bottom: 0;
+    }
+
   }
 </style>
 
@@ -556,6 +589,42 @@
       <p>Rein Maila hosts a podcast titled Evest Talk. Rein speaks with and interviews pioneers and thought leaders in
         investment-related sectors about topics ranging from conventional investments to unusual ideas in meta worlds.
       </p>
+    </div>
+
+    <div class="separatorHolder">
+
+      <div class="seperatorEvest">
+        <h5>Now Playing - Season 2</h5>
+      </div>
+
+    </div>
+
+
+    <div class="contentContainer">
+
+
+      <% for(var i=0; i < page.fields.ep2.length; i++) { %>
+
+        <%if (page.fields.ep2[i].section) { %>
+
+          <%- page.fields.ep2[i].section %>
+
+            <% } %>
+
+              <% } %>
+
+
+
+
+
+    </div>
+
+    <div class="separatorHolder">
+
+      <div class="seperatorEvest">
+        <h5>Season 1</h5>
+      </div>
+
     </div>
 
 
