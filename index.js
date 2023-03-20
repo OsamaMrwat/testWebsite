@@ -67,7 +67,7 @@ app.use("/publicFiles", express.static(__dirname + "/public/publicFiles"));
 var count = 0;
 
 
-// app.use("*", async (req, res, next) => {
+// app.use("/", async (req, res, next) => {
 //   let ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
 //   const form = {
 //     ApiKey: "84f32934-b799-442e-b155-38903b4ef453",
@@ -112,7 +112,53 @@ var count = 0;
 
 
 // });
+var cheqResCookie;
 
+app.use('/', async (req, res, next) => {
+
+  let ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+  const form = {
+    ApiKey: "84f32934-b799-442e-b155-38903b4ef453",
+    TagHash: "2ec062e11ff1c8d7427ff441a149affa",
+    ClientIP: ip.split(",")[0],
+    RequestURL: `${req.protocol}://${req.get("host")}${req.originalUrl}`,
+    ResourceType: req.headers["content-type"] || req.headers["Content-Type"],
+    Method: req.method,
+    Host: req.headers["host"] || req.headers["Host"],
+    UserAgent: req.headers["user-agent"] || req.headers["User-Agent"],
+    Accept: req.headers["accept"] || req.headers["Accept"],
+    AcceptLanguage:
+      req.headers["accept-language"] || req.headers["Accept-Language"],
+    AcceptEncoding:
+      req.headers["accept-encoding"] || req.headers["Accept-Encoding"],
+    HeaderNames:
+      "Host,User-Agent,Accept,Accept-Langauge,Accept-Encoding,Cookie",
+    CheqCookie: req.cookies["_cheq_rti"],
+    EventType: "page_load",
+  };
+  console.log(form)
+
+  request.post(
+    {
+      url: "https://obs.cheqzone.com/v1/realtime-interception",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      form,
+    },
+    (error, response) => {
+      if (error) {
+        console.log("error: ", error);
+      }
+      try {
+        console.log(response.body);
+        cheqResCookie = JSON.parse(response.body);
+        next();
+      } catch (err) {
+        console.error(err);
+        next();
+      }
+    }
+  );
+})
 
 /*Arabic Routing*/
 app.use("/ar", arabicRouting);
@@ -651,9 +697,9 @@ xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">${sitemap_entrie
 }
 
 try {
-  getPostSiteMaps();
-  getArabicBlogs()
-  getPagesSiteMaps();
+  // getPostSiteMaps();
+  // getArabicBlogs()
+  // getPagesSiteMaps();
 
   setInterval(() => {
     getPagesSiteMaps();
@@ -702,7 +748,20 @@ app.get("/crypto", (req, res) => {
   res.send(myapi.getCrypto);
 });
 
-
+app.get("/test1", (req, res) => {
+  var page = {
+    fields: {
+      seo: {
+        meta_description: 'test page'
+      },
+      // cheq: cheqResCookie
+      cheq: 'lala'
+    }
+  }
+  res.render("test1", {
+    page: page,
+  });
+});
 
 
 app.get("/ceo", (req, res) => {

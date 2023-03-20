@@ -1,11 +1,19 @@
+<script async src='https://ob.robotflowermobile.com/i/2ec062e11ff1c8d7427ff441a149affa.js' data-ch='cheq4ppc'
+    class='ct_clicktrue_11133' data-jsonp="onCheqResponse">
+    </script>
+
+<noscript>
+    <iframe src='https://obs.robotflowermobile.com/ns/2ec062e11ff1c8d7427ff441a149affa.html?ch=cheq4ppc' width='0'
+        height='0' style='display:none'></iframe>
+</noscript>
+
+<script>
+    let cheq = '<%- JSON.stringify(page.fields.cheq) %>';
+
+    console.log(cheq.replaceAll('"', ''))
+</script>
+
 <!-- heading -->
 <div class="container">
-    <%- page.fields.header.heading%>
-</div>
-<!-- section 1 -->
-<div class="container desktop-img">
-    <%- page.fields.sections.section1%>
-</div>
-<div class="mobile-img">
-    <%- page.fields.mobile_view[0].fields.content %>
+    <%- JSON.stringify(page.fields.cheq).replaceAll('"', '' ) %>
 </div>
