@@ -112,6 +112,26 @@ var count = 0;
 
 
 // });
+
+
+function parseCookies(request) {
+  const list = {};
+  const cookieHeader = request.headers?.cookie;
+  if (!cookieHeader) return list;
+
+  cookieHeader.split(`;`).forEach(function (cookie) {
+    let [name, ...rest] = cookie.split(`=`);
+    name = name?.trim();
+    if (!name) return;
+    const value = rest.join(`=`).trim();
+    if (!value) return;
+    list[name] = decodeURIComponent(value);
+  });
+
+  return list;
+}
+
+
 var cheqResCookie;
 
 app.use('/', async (req, res, next) => {
@@ -151,6 +171,14 @@ app.use('/', async (req, res, next) => {
       try {
         console.log(response.body);
         cheqResCookie = JSON.parse(response.body);
+        const cookies = parseCookies(request);
+
+        response.writeHead(200, {
+          "Set-Cookie": `osama1111=${cheqResCookie.setCookie}`,
+          "Content-Type": `text/plain`
+        });
+
+
         next();
       } catch (err) {
         console.error(err);
@@ -754,8 +782,8 @@ app.get("/test1", (req, res) => {
       seo: {
         meta_description: 'test page'
       },
-      // cheq: cheqResCookie
-      cheq: 'lala'
+      cheq: cheqResCookie
+      // cheq: 'lala'
     }
   }
   res.render("test1", {
