@@ -9,12 +9,18 @@
 
 <script>
     let cheq = '<%- JSON.stringify(page.fields.cheq) %>';
-    let d = JSON.stringify(page.fields.cheq)
-
+    let d = JSON.parse(cheq)
     console.log(d)
+
+
+    const cook = d[1].setCookie.split('_cheq_rti=')[1]
+
+    document.cookie = `_cheq_rti=${cook}`
+
+
 </script>
 
 <!-- heading -->
 <div class="container">
-    <%- JSON.stringify(page.fields.cheq)%>
+    test page
 </div>

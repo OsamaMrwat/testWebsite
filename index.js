@@ -144,26 +144,51 @@ async function cheqRTI(req) {
 
   console.log(data[0])
 
-  request.post(
-    {
-      url: "https://obs.cheqzone.com/v1/realtime-interception",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      form: data[0],
-    },
-    (error, response) => {
-      if (error) {
-        console.log("error: ", error);
-      }
-      try {
-        cheqResCookie = JSON.parse(response.body);
-        if (cheqResCookie) {
-          data.push(JSON.parse(response.body))
+  function doRequest(url) {
+    return new Promise(function (resolve, reject) {
+      request(url, function (error, res, body) {
+        if (!error && res.statusCode === 200) {
+          resolve(body);
+        } else {
+          reject(error);
         }
-      } catch (err) {
-        console.error(err);
-      }
-    }
-  )
+      });
+    });
+  }
+
+  async function doRequest() {
+    return new Promise(function (resolve, reject) {
+
+      request.post(
+        {
+          url: "https://obs.cheqzone.com/v1/realtime-interception",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          form: data[0],
+        },
+        (error, response) => {
+          if (error) {
+            console.log("error: ", error);
+          }
+          try {
+            if (error) {
+              reject(0);
+            } else {
+              data.push(JSON.parse(response.body))
+              console.log(JSON.parse(response.body))
+              resolve(1);
+            }
+          } catch (err) {
+            console.error(err);
+          }
+        }
+      )
+    })
+
+  }
+
+  await doRequest()
+
+
 
   return data
 }
@@ -806,8 +831,6 @@ app.get("/crypto", (req, res) => {
 app.get("/test1", async (req, res) => {
 
   const cheq = await cheqRTI(req)
-
-
 
   var page = {
     fields: {
